@@ -41,7 +41,7 @@ Hello, World!
 
 #### 动态数据
 
-使用 `{{.}}` 访问传入的数据。可以通过 `{{.Field}}` 访问结构体字段。
+使用 <code v-pre>{{.}}</code> 访问传入的数据。可以通过 <code v-pre>{{.Field}}</code> 访问结构体字段。
 
 ```go
 tmpl, err := template.New("example").Parse("Name: {{.Name}}, Age: {{.Age}}")

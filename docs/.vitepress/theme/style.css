@@ -1,0 +1,133 @@
+/* ============================================================
+   Hello Golang · 主题样式
+   品牌色空位：品牌资产（logo.svg / favicon.svg）到位后，
+   在本文件顶部新增「品牌色」区块覆写以下四个变量：
+     --vp-c-brand-1  品牌主色（亮色模式文字/图标）
+     --vp-c-brand-2  悬停态
+     --vp-c-brand-3  按下态
+     --vp-c-brand-soft  半透明底色（高亮块、按钮）
+   深色模式需在 .dark 下另覆写一组同色系更亮的值。
+   当前保持 VitePress 默认品牌色。
+   ============================================================ */
+
+/* ---------- 品牌色（空位） ----------
+
+:root {
+  --vp-c-brand-1: #xxxxxx;
+  --vp-c-brand-2: #xxxxxx;
+  --vp-c-brand-3: #xxxxxx;
+  --vp-c-brand-soft: rgba(xx, xx, xx, 0.14);
+}
+.dark { ... }
+------------------------------------ */
+
+:root {
+  --vp-font-body: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Hiragino Sans GB',
+    'Microsoft YaHei', 'Noto Sans CJK SC', 'Segoe UI', sans-serif;
+  --vp-font-mono: ui-monospace, 'SF Mono', 'JetBrains Mono', Menlo, Consolas, monospace;
+}
+
+/* ---------- 基础 ---------- */
+
+body {
+  font-family: var(--vp-font-body);
+  font-size: 16.5px;
+  line-height: 1.75;
+  text-rendering: optimizeLegibility;
+}
+
+/* 浏览器表面（滚动条、焦点环属于设计） */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--vp-c-border);
+  border-radius: 5px;
+  border: 2px solid var(--vp-c-bg);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--vp-c-text-3);
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+:focus-visible {
+  outline: 2px solid var(--vp-c-brand-1);
+  outline-offset: 2px;
+}
+
+/* ---------- 中文正文排印：段首缩进 · 行距 · 块间距 ---------- */
+/* 缩进只在主题层做（text-indent），源文里不敲全角空格；
+   列表、引用、表格、提示容器内的段落按阅读习惯不缩进 */
+
+.vp-doc p {
+  text-indent: 2em;
+  margin: 1.05em 0;
+}
+.vp-doc li p,
+.vp-doc blockquote p,
+.vp-doc th p,
+.vp-doc td p,
+.vp-doc .custom-block p {
+  text-indent: 0;
+}
+
+/* 标题与正文的呼吸：h2 下留一段、h3 上留半段 */
+.vp-doc h1 {
+  font-size: 1.9rem;
+  line-height: 1.4;
+}
+.vp-doc h2 {
+  font-size: 1.4rem;
+  margin: 3rem 0 1.5rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--vp-c-border);
+}
+.vp-doc h3 {
+  font-size: 1.25rem;
+  margin: 2rem 0 0.8rem;
+}
+
+/* 块级内容的上下留白统一口径 */
+.vp-doc table {
+  width: 100%;
+  margin: 1.4rem 0;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+.vp-doc th,
+.vp-doc td {
+  line-height: 1.6;
+  padding: 0.6rem 0.9rem;
+}
+.vp-doc li {
+  margin: 0.35rem 0;
+}
+/* 图片单独成段时居中排，与上下文拉开 */
+.vp-doc p > img:only-child {
+  display: block;
+  margin: 1rem auto;
+}
+
+/* ---------- 正文链接：划线 ---------- */
+
+.vp-doc :not(h1, h2, h3, h4, h5, h6) a {
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+/* ---------- 代码 ---------- */
+
+.vp-doc :not(pre, h1, h2, h3, h4, h5, h6) > code {
+  font-family: var(--vp-font-mono);
+  font-size: 0.85em;
+  border-radius: 4px;
+  padding: 2px 6px;
+}
+
+.vp-doc div[class*='language-'] code {
+  font-size: 0.875rem;
+  line-height: 1.7;
+}

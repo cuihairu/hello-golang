@@ -1,0 +1,2220 @@
+[
+  {
+    "text": "前言",
+    "link": "/introduction/Introduction",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "演化",
+        "link": "/introduction/Lineage"
+      },
+      {
+        "text": "特色",
+        "link": "/introduction/Feature"
+      }
+    ]
+  },
+  {
+    "text": "环境搭建",
+    "link": "/env/Install",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "环境变量",
+        "link": "/env/Env"
+      },
+      {
+        "text": "包管理器",
+        "link": "/env/Modules"
+      },
+      {
+        "text": "Go工具链",
+        "link": "/env/Tools"
+      },
+      {
+        "text": "代理加速",
+        "link": "/env/GOPROXY"
+      },
+      {
+        "text": "集成开发环境",
+        "link": "/env/ide",
+        "collapsed": true,
+        "items": [
+          {
+            "text": "VsCode",
+            "link": "/env/vscode"
+          },
+          {
+            "text": "Goland",
+            "link": "/env/Goland"
+          },
+          {
+            "text": "Vim",
+            "link": "/env/Vim"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "text": "入门",
+    "link": "/start/Starter",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "你好Go",
+        "link": "/start/Hello"
+      },
+      {
+        "text": "编译",
+        "link": "/start/Build"
+      },
+      {
+        "text": "运行与参数",
+        "link": "/start/Run"
+      },
+      {
+        "text": "项目结构",
+        "link": "/start/Structure"
+      }
+    ]
+  },
+  {
+    "text": "命名",
+    "link": "/naming/Naming",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "关键字和保留字",
+        "link": "/naming/KeywordsAndReservedWords"
+      },
+      {
+        "text": "标识符命名规则",
+        "link": "/naming/IdentifierNamingRules"
+      }
+    ]
+  },
+  {
+    "text": "变量",
+    "link": "/var/Variable",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "变量的定义和初始化",
+        "link": "/var/VarAndInit"
+      },
+      {
+        "text": "常见的赋值模式",
+        "link": "/var/Assignment"
+      },
+      {
+        "text": "变量的作用域和生命周期",
+        "link": "/var/ScopeAndLifetime"
+      },
+      {
+        "text": "内存管理",
+        "link": "/var/Segment"
+      }
+    ]
+  },
+  {
+    "text": "常量与字面量",
+    "link": "/const/Const",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "nil",
+        "link": "/const/Nil"
+      },
+      {
+        "text": "true和false",
+        "link": "/const/TrueAndFalse"
+      },
+      {
+        "text": "枚举·类型与iota",
+        "link": "/const/Iota"
+      },
+      {
+        "text": "不能定义常量的情况",
+        "link": "/const/Cant"
+      }
+    ]
+  },
+  {
+    "text": "基本数据类型",
+    "link": "/type/Type",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "整型",
+        "link": "/type/Int"
+      },
+      {
+        "text": "浮点型",
+        "link": "/type/Float"
+      },
+      {
+        "text": "复数",
+        "link": "/type/Complex"
+      },
+      {
+        "text": "布尔型",
+        "link": "/type/Bool"
+      },
+      {
+        "text": "字符串",
+        "link": "/type/String"
+      },
+      {
+        "text": "字节",
+        "link": "/type/Byte"
+      },
+      {
+        "text": "rune",
+        "link": "/type/Rune"
+      }
+    ]
+  },
+  {
+    "text": "复合数据类型",
+    "link": "/type/CompositeType",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "数组",
+        "link": "/type/Array"
+      },
+      {
+        "text": "切片",
+        "link": "/type/Slice"
+      },
+      {
+        "text": "Map",
+        "link": "/type/Map"
+      },
+      {
+        "text": "指针",
+        "link": "/type/Pointer"
+      },
+      {
+        "text": "结构体",
+        "link": "/type/Struct"
+      },
+      {
+        "text": "接口",
+        "link": "/type/Interface"
+      },
+      {
+        "text": "Big类型",
+        "link": "/type/Big"
+      },
+      {
+        "text": "链表",
+        "link": "/type/LinkedList"
+      },
+      {
+        "text": "ring",
+        "link": "/type/Ring"
+      },
+      {
+        "text": "栈",
+        "link": "/type/Heap"
+      },
+      {
+        "text": "Json",
+        "link": "/type/Json"
+      },
+      {
+        "text": "文本模板",
+        "link": "/type/Template"
+      },
+      {
+        "text": "Html模板",
+        "link": "/type/HtmlTemplate"
+      }
+    ]
+  },
+  {
+    "text": "类型转换",
+    "link": "/type/Conv",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "基本类型之间的转换",
+        "link": "/type/BaseConv"
+      },
+      {
+        "text": "类型断言",
+        "link": "/type/Assertion"
+      },
+      {
+        "text": "类型switch",
+        "link": "/type/Switch"
+      },
+      {
+        "text": "类型推断",
+        "link": "/type/TypeInference"
+      }
+    ]
+  },
+  {
+    "text": "控制流语句",
+    "link": "/syntax/ControlFlow",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "条件语句",
+        "link": "/syntax/Conditional",
+        "collapsed": true,
+        "items": [
+          {
+            "text": "if",
+            "link": "/syntax/If"
+          },
+          {
+            "text": "switch",
+            "link": "/syntax/Switch"
+          }
+        ]
+      },
+      {
+        "text": "循环语句",
+        "link": "/syntax/Loop",
+        "collapsed": true,
+        "items": [
+          {
+            "text": "for循环",
+            "link": "/syntax/For"
+          }
+        ]
+      },
+      {
+        "text": "跳转语句",
+        "link": "/syntax/Jump",
+        "collapsed": true,
+        "items": [
+          {
+            "text": "break",
+            "link": "/syntax/Break"
+          },
+          {
+            "text": "continue",
+            "link": "/syntax/Continue"
+          },
+          {
+            "text": "goto",
+            "link": "/syntax/Goto"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "text": "函数",
+    "link": "/func/History",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "函数的定义和调用",
+        "link": "/func/DefineAndCall"
+      },
+      {
+        "text": "参数传递",
+        "link": "/func/Arguments"
+      },
+      {
+        "text": "可变参数",
+        "link": "/func/VariadicParameters"
+      },
+      {
+        "text": "多返回值",
+        "link": "/func/MultipleReturnValues"
+      },
+      {
+        "text": "函数值",
+        "link": "/func/FuncValue"
+      },
+      {
+        "text": "匿名函数和闭包",
+        "link": "/func/AnonymousFunc"
+      },
+      {
+        "text": "递归函数",
+        "link": "/func/RecursiveFunction"
+      },
+      {
+        "text": "延迟函数调用",
+        "link": "/func/Defer"
+      },
+      {
+        "text": "Go内置函数",
+        "link": "/func/InnerFunc"
+      }
+    ]
+  },
+  {
+    "text": "惯用法",
+    "link": "/idioms/Idioms",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "简短声明",
+        "link": "/idioms/ShortVarDecl"
+      },
+      {
+        "text": "空标识符",
+        "link": "/idioms/BlankIdentifier"
+      },
+      {
+        "text": "多值返回",
+        "link": "/func/MultipleReturnValues"
+      },
+      {
+        "text": "comma ok idiom",
+        "link": "/idioms/CommaOk"
+      },
+      {
+        "text": "defer",
+        "link": "/func/Defer"
+      },
+      {
+        "text": "switch",
+        "link": "/syntax/Switch"
+      },
+      {
+        "text": "select",
+        "link": "/concurrency/Select"
+      },
+      {
+        "text": "匿名函数和闭包",
+        "link": "/func/AnonymousFunc"
+      },
+      {
+        "text": "标签",
+        "link": "/idioms/Labels"
+      },
+      {
+        "text": "range迭代",
+        "link": "/idioms/Range"
+      },
+      {
+        "text": "结构体标签",
+        "link": "/idioms/StructTags"
+      }
+    ]
+  },
+  {
+    "text": "错误处理",
+    "link": "/error/Error",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "错误的概念与类型",
+        "link": "/error/ErrorType"
+      },
+      {
+        "text": "panic与recover",
+        "link": "/error/PanicAndRecover"
+      },
+      {
+        "text": "error 处理",
+        "link": "/error/Errors"
+      }
+    ]
+  },
+  {
+    "text": "方法",
+    "link": "/oop/OOP",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "方法声明",
+        "link": "/oop/Methods"
+      },
+      {
+        "text": "基于指针对象的方法",
+        "link": "/oop/PointerReceiver"
+      },
+      {
+        "text": "嵌入结构体扩展",
+        "link": "/oop/Embedding"
+      }
+    ]
+  },
+  {
+    "text": "接口与类型断言",
+    "link": "/oop/Interface",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "接口的定义与实现",
+        "link": "/oop/InterfaceImpl"
+      },
+      {
+        "text": "类型断言",
+        "link": "/oop/TypeAssertion"
+      },
+      {
+        "text": "接口的多态性",
+        "link": "/oop/Poly"
+      }
+    ]
+  },
+  {
+    "text": "并发编程",
+    "link": "/concurrency/Concurrency",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "CSP 模型",
+        "link": "/concurrency/CSP"
+      },
+      {
+        "text": "Actor 模型",
+        "link": "/concurrency/Actor"
+      },
+      {
+        "text": "协程",
+        "link": "/concurrency/Goroutine"
+      },
+      {
+        "text": "协程的实现",
+        "link": "/concurrency/GoroutineImpl"
+      },
+      {
+        "text": "管道",
+        "link": "/concurrency/Chan"
+      },
+      {
+        "text": "管道实现",
+        "link": "/concurrency/ChanImpl"
+      },
+      {
+        "text": "select语句",
+        "link": "/concurrency/Select"
+      },
+      {
+        "text": "WaitGroup",
+        "link": "/concurrency/WaitGroup"
+      },
+      {
+        "text": "ErrorGroup",
+        "link": "/concurrency/ErrorGroup"
+      },
+      {
+        "text": "调度器",
+        "link": "/concurrency/GMP"
+      },
+      {
+        "text": "Reactor模式",
+        "link": "/dp/Reactor"
+      },
+      {
+        "text": "Proactor模式",
+        "link": "/dp/Proactor"
+      },
+      {
+        "text": "Observer模式",
+        "link": "/dp/Observer"
+      }
+    ]
+  },
+  {
+    "text": "并发与同步",
+    "link": "/sync/Sync",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "同步原语",
+        "link": "/sync/Primitives"
+      },
+      {
+        "text": "原子操作",
+        "link": "/sync/Atomic"
+      },
+      {
+        "text": "竞争条件",
+        "link": "/sync/RaceCondition"
+      },
+      {
+        "text": "临界区",
+        "link": "/sync/CriticalSection"
+      },
+      {
+        "text": "互拆锁",
+        "link": "/sync/Mutex"
+      },
+      {
+        "text": "读写锁",
+        "link": "/sync/RWMutex"
+      },
+      {
+        "text": "自旋锁",
+        "link": "/sync/Spinlock"
+      },
+      {
+        "text": "内存同步",
+        "link": "/sync/MemorySynchronization"
+      },
+      {
+        "text": "runtime 运行时操作",
+        "link": "/sync/Runtime"
+      },
+      {
+        "text": "context 上下文",
+        "link": "/sync/Context"
+      }
+    ]
+  },
+  {
+    "text": "运算符",
+    "link": "/operator/Operator",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "算术运算符",
+        "link": "/operator/Arithmetic"
+      },
+      {
+        "text": "关系运算符",
+        "link": "/operator/Relational"
+      },
+      {
+        "text": "逻辑运算符",
+        "link": "/operator/Logical"
+      },
+      {
+        "text": "位运算符",
+        "link": "/operator/Bitwise"
+      },
+      {
+        "text": "赋值运算符",
+        "link": "/operator/Assignment"
+      },
+      {
+        "text": "一元运算符",
+        "link": "/operator/Unary"
+      },
+      {
+        "text": "位长度运算符",
+        "link": "/operator/BitLen"
+      },
+      {
+        "text": "容量运算符",
+        "link": "/operator/Cap"
+      },
+      {
+        "text": "类型断言",
+        "link": "/operator/TypeAssertion"
+      },
+      {
+        "text": "接受者运算符",
+        "link": "/operator/Receiver"
+      }
+    ]
+  },
+  {
+    "text": "包和模块",
+    "link": "/mod/Pkg",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "包的概念与使用",
+        "link": "/mod/Package"
+      },
+      {
+        "text": "Go Modules",
+        "link": "/mod/Mod"
+      },
+      {
+        "text": "Go Vendor",
+        "link": "/mod/Vendor"
+      },
+      {
+        "text": "模块工作区",
+        "link": "/mod/Work"
+      },
+      {
+        "text": "包的导入路径与可见性",
+        "link": "/mod/Import"
+      },
+      {
+        "text": "init函数",
+        "link": "/mod/Init"
+      },
+      {
+        "text": "包的安装和原理",
+        "link": "/mod/Get"
+      },
+      {
+        "text": "发布包",
+        "link": "/mod/New"
+      }
+    ]
+  },
+  {
+    "text": "泛型",
+    "link": "/generics/Generics",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "泛型基础",
+        "link": "/generics/Syntax"
+      },
+      {
+        "text": "泛型约束",
+        "link": "/generics/Constraints"
+      },
+      {
+        "text": "泛型编程模式",
+        "link": "/generics/Pattern"
+      },
+      {
+        "text": "实战案例",
+        "link": "/generics/Structure"
+      },
+      {
+        "text": "性能与优化",
+        "link": "/generics/Performance"
+      },
+      {
+        "text": "泛型高级主题",
+        "link": "/generics/Advanced"
+      }
+    ]
+  },
+  {
+    "text": "文件与IO操作",
+    "link": "/io/IO",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "文件基础",
+        "link": "/io/File"
+      },
+      {
+        "text": "文件操作",
+        "link": "/io/FileOperation"
+      },
+      {
+        "text": "文件高级操作",
+        "link": "/io/FileAdvanced"
+      },
+      {
+        "text": "输入输出流",
+        "link": "/io/InputOutput"
+      },
+      {
+        "text": "高效 IO 操作",
+        "link": "/io/EfficientIO"
+      },
+      {
+        "text": "文件与 IO 的安全性",
+        "link": "/io/Security"
+      },
+      {
+        "text": "常见文件格式处理",
+        "link": "/io/CommonFormats"
+      },
+      {
+        "text": "实战案例",
+        "link": "/io/Example"
+      },
+      {
+        "text": "进阶主题",
+        "link": "/io/Advanced"
+      },
+      {
+        "text": "io 基本接口和实现",
+        "link": "/io/ModIO"
+      },
+      {
+        "text": "os 操作系统功能",
+        "link": "/io/ModOS"
+      },
+      {
+        "text": "path 路径操作",
+        "link": "/io/ModPath"
+      },
+      {
+        "text": "工具与库",
+        "link": "/io/Utils"
+      }
+    ]
+  },
+  {
+    "text": "正则表达式",
+    "link": "/regex/Readme",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "Go 的正则表达式库",
+        "link": "/regex/Lib"
+      },
+      {
+        "text": "正则表达式的应用",
+        "link": "/regex/Use"
+      },
+      {
+        "text": "正则表达式的高级用法",
+        "link": "/regex/Advanced"
+      },
+      {
+        "text": "常见正则表达式模式",
+        "link": "/regex/Usual"
+      },
+      {
+        "text": "错误处理与调试",
+        "link": "/regex/Debug"
+      }
+    ]
+  },
+  {
+    "text": "数据处理",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "bytes"
+      },
+      {
+        "text": "strings 字符串操作"
+      },
+      {
+        "text": "strconv"
+      },
+      {
+        "text": "text 文本处理工具"
+      },
+      {
+        "text": "regexp"
+      },
+      {
+        "text": "unicode 字符操作"
+      },
+      {
+        "text": "bufio"
+      },
+      {
+        "text": "image"
+      }
+    ]
+  },
+  {
+    "text": "数据编码",
+    "link": "/encoding/Encoding",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "数据编码标准",
+        "link": "/encoding/Formats"
+      },
+      {
+        "text": "文本编码",
+        "link": "/encoding/Text"
+      },
+      {
+        "text": "二进制编码",
+        "link": "/encoding/Binary"
+      },
+      {
+        "text": "图像和音频编码",
+        "link": "/encoding/Voice"
+      },
+      {
+        "text": "json",
+        "link": "/encoding/JSON"
+      },
+      {
+        "text": "xml",
+        "link": "/encoding/XML"
+      },
+      {
+        "text": "base64",
+        "link": "/encoding/Base64"
+      },
+      {
+        "text": "csv",
+        "link": "/encoding/CSV"
+      },
+      {
+        "text": "ini",
+        "link": "/encoding/Ini"
+      },
+      {
+        "text": "TOML",
+        "link": "/encoding/TOML"
+      }
+    ]
+  },
+  {
+    "text": "时间日期",
+    "link": "/time/ConceptTime",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "time包",
+        "link": "/time/PkgTime"
+      },
+      {
+        "text": "时间格式化与解析",
+        "link": "/time/FormatAndParse"
+      },
+      {
+        "text": "时区处理",
+        "link": "/time/TimeZone"
+      },
+      {
+        "text": "定时器与计时器",
+        "link": "/time/TimerAndTicker"
+      },
+      {
+        "text": "时间的高级应用",
+        "link": "/time/Advanced"
+      },
+      {
+        "text": "常见问题与最佳实践",
+        "link": "/time/Practice"
+      }
+    ]
+  },
+  {
+    "text": "数学",
+    "link": "/math/Math",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "数学函数",
+        "link": "/math/MathFunc"
+      },
+      {
+        "text": "随机数生成与概率计算",
+        "link": "/math/MathRand"
+      },
+      {
+        "text": "线性代数",
+        "link": "/math/LinearAlgebra"
+      },
+      {
+        "text": "数学优化",
+        "link": "/math/Optimize"
+      },
+      {
+        "text": "数值计算",
+        "link": "/math/Calc"
+      },
+      {
+        "text": "统计分析",
+        "link": "/math/Statistics"
+      },
+      {
+        "text": "数学在计算机科学中的应用",
+        "link": "/math/Science"
+      }
+    ]
+  },
+  {
+    "text": "设计模式",
+    "link": "/dp/DesignPatterns",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "创建型模式",
+        "link": "/dp/Creational",
+        "collapsed": true,
+        "items": [
+          {
+            "text": "工厂模式",
+            "link": "/dp/FactoryMethod"
+          },
+          {
+            "text": "抽象工厂模式",
+            "link": "/dp/AbstractFactory"
+          },
+          {
+            "text": "生成器模式",
+            "link": "/dp/Builder"
+          },
+          {
+            "text": "原型模式",
+            "link": "/dp/Prototype"
+          },
+          {
+            "text": "单例模式",
+            "link": "/dp/Singleton"
+          }
+        ]
+      },
+      {
+        "text": "结构型模式",
+        "link": "/dp/Structural",
+        "collapsed": true,
+        "items": [
+          {
+            "text": "适配器模式",
+            "link": "/dp/Adapter"
+          },
+          {
+            "text": "桥接模式",
+            "link": "/dp/Bridge"
+          },
+          {
+            "text": "组合模式",
+            "link": "/dp/Composite"
+          },
+          {
+            "text": "装饰模式",
+            "link": "/dp/Decorator"
+          },
+          {
+            "text": "外观模式",
+            "link": "/dp/Facade"
+          },
+          {
+            "text": "享元模式",
+            "link": "/dp/Flyweight"
+          },
+          {
+            "text": "代理模式",
+            "link": "/dp/Proxy"
+          },
+          {
+            "text": "迭代器模式",
+            "link": "/dp/Iterator"
+          }
+        ]
+      },
+      {
+        "text": "行为模式",
+        "link": "/dp/Behavioral",
+        "collapsed": true,
+        "items": [
+          {
+            "text": "责任链模式",
+            "link": "/dp/ChainofResponsibility"
+          },
+          {
+            "text": "命令模式",
+            "link": "/dp/Command"
+          },
+          {
+            "text": "中介者模式",
+            "link": "/dp/Mediator"
+          },
+          {
+            "text": "备忘录模式",
+            "link": "/dp/Memento"
+          },
+          {
+            "text": "观察者模式",
+            "link": "/dp/Observer"
+          },
+          {
+            "text": "状态模式",
+            "link": "/dp/State"
+          },
+          {
+            "text": "策略模式",
+            "link": "/dp/Strategy"
+          },
+          {
+            "text": "模板方法模式",
+            "link": "/dp/TemplateMethod"
+          },
+          {
+            "text": "访问者模式",
+            "link": "/dp/Visitor"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "text": "日志",
+    "link": "/log/Log",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "go标准log库",
+        "link": "/log/ModLog"
+      },
+      {
+        "text": "第三方log库",
+        "link": "/log/LibLog"
+      },
+      {
+        "text": "日志聚合",
+        "link": "/log/Aggregation"
+      }
+    ]
+  },
+  {
+    "text": "数据库与持久化",
+    "link": "/db/Readme",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "常见数据库安装",
+        "link": "/db/Install"
+      },
+      {
+        "text": "数据库基础概念",
+        "link": "/db/Base"
+      },
+      {
+        "text": "数据库范式",
+        "link": "/db/Normalization"
+      },
+      {
+        "text": "SQL必知必会",
+        "link": "/db/SQL"
+      },
+      {
+        "text": "使用数据库/SQL库",
+        "link": "/db/Lib"
+      },
+      {
+        "text": "数据库连接池",
+        "link": "/db/ConnectPool"
+      },
+      {
+        "text": "ORM框架",
+        "link": "/db/ORM"
+      },
+      {
+        "text": "数据迁移和管理",
+        "link": "/db/Migrate"
+      },
+      {
+        "text": "事务处理",
+        "link": "/db/Tx"
+      },
+      {
+        "text": "性能优化",
+        "link": "/db/Performance"
+      },
+      {
+        "text": "测试",
+        "link": "/db/Mock"
+      },
+      {
+        "text": "安全",
+        "link": "/db/Security"
+      },
+      {
+        "text": "高可用和备份",
+        "link": "/db/Availability"
+      },
+      {
+        "text": "NoSQL数据库",
+        "link": "/db/NoSQL"
+      },
+      {
+        "text": "实践项目",
+        "link": "/db/Project"
+      },
+      {
+        "text": "数据库分片、分布式事务和一致性",
+        "link": "/db/Sharding"
+      },
+      {
+        "text": "GraphQL",
+        "link": "/db/GraphQL"
+      },
+      {
+        "text": "数据库监控和日志",
+        "link": "/db/Monitor"
+      }
+    ]
+  },
+  {
+    "text": "工具与命名行",
+    "link": "/cmd/Readme",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "命令行参数",
+        "link": "/cmd/Syntax"
+      },
+      {
+        "text": "标准库 flag",
+        "link": "/cmd/Flag"
+      },
+      {
+        "text": "使用第三方库解析命令行参数",
+        "link": "/cmd/Lib"
+      },
+      {
+        "text": "命令行工具的设计与实现",
+        "link": "/cmd/Design"
+      }
+    ]
+  },
+  {
+    "text": "测试",
+    "link": "/test/Test",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "基本测试",
+        "link": "/test/BaseTest"
+      },
+      {
+        "text": "基准测试",
+        "link": "/test/Benchmark"
+      },
+      {
+        "text": "示例测试",
+        "link": "/test/Example"
+      },
+      {
+        "text": "高级测试技术",
+        "link": "/test/Advanced"
+      },
+      {
+        "text": "第三方测试库",
+        "link": "/test/Lib"
+      },
+      {
+        "text": "测试覆盖率",
+        "link": "/test/Cover"
+      },
+      {
+        "text": "测试最佳实践",
+        "link": "/test/Practice"
+      }
+    ]
+  },
+  {
+    "text": "反射",
+    "link": "/reflection/Reflection",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "反射基础"
+      },
+      {
+        "text": "reflect.TypeOf和reflect.ValueOf"
+      },
+      {
+        "text": "动态访问和修改变量"
+      },
+      {
+        "text": "方法集和接口的动态调用"
+      },
+      {
+        "text": "发射与错误处理"
+      },
+      {
+        "text": "发射在测试和调试中的应用"
+      },
+      {
+        "text": "动态创建类型"
+      },
+      {
+        "text": "反射与泛型"
+      },
+      {
+        "text": "反射与并发"
+      },
+      {
+        "text": "反射的性能"
+      },
+      {
+        "text": "反射的安全和限制"
+      }
+    ]
+  },
+  {
+    "text": "debug与性能优化",
+    "link": "/debug/Debug",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "debug 标准库调试工具",
+        "link": "/debug/Utils"
+      },
+      {
+        "text": "expvar 导出变量",
+        "link": "/debug/Expvar"
+      },
+      {
+        "text": "GDB",
+        "link": "/debug/GDB"
+      },
+      {
+        "text": "Delve",
+        "link": "/debug/Delve"
+      },
+      {
+        "text": "pprof",
+        "link": "/debug/Pprof"
+      }
+    ]
+  },
+  {
+    "text": "压缩与归档",
+    "link": "/compress/Readme",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "压缩工具集",
+        "link": "/compress/Compress"
+      },
+      {
+        "text": "归档工具集",
+        "link": "/compress/Archive"
+      },
+      {
+        "text": "综合应用",
+        "link": "/compress/Composite"
+      },
+      {
+        "text": "高级应用",
+        "link": "/compress/Advanced"
+      },
+      {
+        "text": "错误处理与测试",
+        "link": "/compress/ErrHandleAndTest"
+      }
+    ]
+  },
+  {
+    "text": "系统编程",
+    "link": "/sys/Sys",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "syscall"
+      },
+      {
+        "text": "unsafe"
+      }
+    ]
+  },
+  {
+    "text": "加密与安全",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "crypto 加密原语"
+      },
+      {
+        "text": "tls TLS协议"
+      }
+    ]
+  },
+  {
+    "text": "网络编程",
+    "link": "/net/Intro",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "网络基础",
+        "link": "/net/Proto"
+      },
+      {
+        "text": "高级网络编程",
+        "link": "/net/Advanced"
+      },
+      {
+        "text": "并发网络编程"
+      },
+      {
+        "text": "网络安全"
+      },
+      {
+        "text": "网络编程工具与库"
+      },
+      {
+        "text": "滑动窗口",
+        "link": "/net/SlidingWindow"
+      },
+      {
+        "text": "netpoll",
+        "link": "/net/Netpoll"
+      }
+    ]
+  },
+  {
+    "text": "CGO",
+    "link": "/cgo/CGO",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "CGO工作原理"
+      },
+      {
+        "text": "go 调用c函数"
+      },
+      {
+        "text": "c 调用go函数"
+      },
+      {
+        "text": "CGO的数据类型"
+      },
+      {
+        "text": "CGO中的字符串处理"
+      },
+      {
+        "text": "CGO的错误处理"
+      },
+      {
+        "text": "CGO的并发"
+      },
+      {
+        "text": "CGO的性能考量"
+      },
+      {
+        "text": "CGO的安全和限制"
+      },
+      {
+        "text": "CGO的调试和测试"
+      },
+      {
+        "text": "CGO与模块"
+      },
+      {
+        "text": "CGO与泛型"
+      },
+      {
+        "text": "FFI"
+      }
+    ]
+  },
+  {
+    "text": "内存分配器与GC",
+    "link": "/alloc/Alloc",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "Go内存管理概述"
+      },
+      {
+        "text": "arena"
+      },
+      {
+        "text": "Go内存分配机制"
+      },
+      {
+        "text": "Go的内存分配器架构"
+      },
+      {
+        "text": "mcache: Go的本地内存缓存"
+      },
+      {
+        "text": "中心缓存"
+      },
+      {
+        "text": "堆内存分配"
+      },
+      {
+        "text": "GC",
+        "link": "/gc/GC"
+      },
+      {
+        "text": "GC对内存分配的影响"
+      },
+      {
+        "text": "GC与内存分配器的协同"
+      },
+      {
+        "text": "内存分配的性能优化"
+      },
+      {
+        "text": "内存分配问题的诊断和解决"
+      },
+      {
+        "text": "自定义内存分配器"
+      },
+      {
+        "text": "内存分配器与系统资源管理"
+      },
+      {
+        "text": "内存分配的安全性"
+      }
+    ]
+  },
+  {
+    "text": "插件系统与动态补丁",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "plugin"
+      }
+    ]
+  },
+  {
+    "text": "发布",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "编译与构建"
+      },
+      {
+        "text": "混淆"
+      },
+      {
+        "text": "embed 包嵌入"
+      },
+      {
+        "text": "容器化分化"
+      },
+      {
+        "text": "压缩和归档"
+      },
+      {
+        "text": "签名和验证"
+      },
+      {
+        "text": "软件仓库"
+      }
+    ]
+  },
+  {
+    "text": "Plan9汇编",
+    "link": "/asm/Assembly",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "Plan9 汇编基础"
+      },
+      {
+        "text": "Plan9 汇编语法"
+      },
+      {
+        "text": "Plan9的系统架构与汇编"
+      },
+      {
+        "text": "编写Plan9程序"
+      },
+      {
+        "text": "Plan9汇编中的数据处理"
+      }
+    ]
+  },
+  {
+    "text": "数据结构与算法",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "数组",
+        "link": "/algo/arrary/array",
+        "collapsed": true,
+        "items": [
+          {
+            "text": "动态数组",
+            "link": "/algo/array/DynamicArray"
+          },
+          {
+            "text": "多维数组",
+            "link": "/algo/array/MultidimensionalArray"
+          },
+          {
+            "text": "稀疏数组",
+            "link": "/algo/array/SparseArray"
+          },
+          {
+            "text": "环形缓冲区",
+            "link": "/algo/array/CircularBuffer"
+          },
+          {
+            "text": "优先队列",
+            "link": "/algo/array/PriorityQueue"
+          },
+          {
+            "text": "双端队列",
+            "link": "/algo/array/DoubleEndedQueue"
+          }
+        ]
+      },
+      {
+        "text": "链表",
+        "link": "/algo/list/list",
+        "collapsed": true,
+        "items": [
+          {
+            "text": "单向链表",
+            "link": "/algo/list/SinglyLinkedList"
+          },
+          {
+            "text": "双端队列",
+            "link": "/algo/list/DoubleEndedQueue"
+          },
+          {
+            "text": "栈",
+            "link": "/algo/list/Stack"
+          },
+          {
+            "text": "队列",
+            "link": "/algo/list/Queue"
+          },
+          {
+            "text": "跳表",
+            "link": "/algo/list/SkipList"
+          },
+          {
+            "text": "静态链表",
+            "link": "/algo/list/StaticLinkedList"
+          },
+          {
+            "text": "动态数组",
+            "link": "/algo/list/DynamicArray"
+          },
+          {
+            "text": "环形缓冲区",
+            "link": "/algo/list/CircularBuffer"
+          },
+          {
+            "text": "哈希链表",
+            "link": "/algo/list/HashLinkedList"
+          }
+        ]
+      },
+      {
+        "text": "栈",
+        "link": "/algo/stack/Stack"
+      },
+      {
+        "text": "队列",
+        "link": "/algo/queue/Queue"
+      },
+      {
+        "text": "哈希表",
+        "link": "/algo/hash/Hash"
+      },
+      {
+        "text": "树",
+        "link": "/algo/tree/Tree",
+        "collapsed": true,
+        "items": [
+          {
+            "text": "二叉树",
+            "link": "/algo/tree/BinaryTree"
+          },
+          {
+            "text": "完全二叉树",
+            "link": "/algo/tree/CompleteBinaryTree"
+          },
+          {
+            "text": "满二叉树",
+            "link": "/algo/tree/FullBinaryTree"
+          },
+          {
+            "text": "二叉搜索树",
+            "link": "/algo/tree/BinarySearchTree"
+          },
+          {
+            "text": "平衡二叉树",
+            "link": "/algo/tree/BalancedBinaryTree"
+          },
+          {
+            "text": "AVL",
+            "link": "/algo/tree/AVLTree"
+          },
+          {
+            "text": "红黑树",
+            "link": "/algo/tree/RedBlackTree"
+          },
+          {
+            "text": "B树",
+            "link": "/algo/tree/BTree"
+          },
+          {
+            "text": "B+树",
+            "link": "/algo/tree/B+Tree"
+          },
+          {
+            "text": "前缀树",
+            "link": "/algo/tree/PrefixTree"
+          },
+          {
+            "text": "后缀树",
+            "link": "/algo/tree/SuffixTree"
+          },
+          {
+            "text": "霍夫曼树",
+            "link": "/algo/tree/HuffmanTree"
+          },
+          {
+            "text": "最小生成树",
+            "link": "/algo/tree/MinimumSpanningTree"
+          },
+          {
+            "text": "最大生成树",
+            "link": "/algo/tree/MaximumSpanningTree"
+          },
+          {
+            "text": "堆",
+            "link": "/algo/tree/Heap"
+          },
+          {
+            "text": "线段树",
+            "link": "/algo/tree/SegmentTree"
+          },
+          {
+            "text": "树堆",
+            "link": "/algo/tree/TreeHeap"
+          },
+          {
+            "text": "表达式树",
+            "link": "/algo/tree/ExpressionTree"
+          },
+          {
+            "text": "四叉树",
+            "link": "/algo/tree/Quadtree"
+          },
+          {
+            "text": "八叉树",
+            "link": "/algo/tree/Octree"
+          },
+          {
+            "text": "K-D树",
+            "link": "/algo/tree/K-DimensionalTree"
+          },
+          {
+            "text": "二叉堆",
+            "link": "/algo/tree/BinaryHeap"
+          },
+          {
+            "text": "二叉搜索堆",
+            "link": "/algo/tree/BinarySearchHeap"
+          },
+          {
+            "text": "伸展树",
+            "link": "/algo/tree/SplayTree"
+          },
+          {
+            "text": "树状数组",
+            "link": "/algo/tree/FenwickTree"
+          },
+          {
+            "text": "Link/Cut Tree",
+            "link": "/algo/tree/LinkTree"
+          },
+          {
+            "text": "FibonacciHeap",
+            "link": "/algo/tree/FibonacciHeap"
+          },
+          {
+            "text": "Treap",
+            "link": "/algo/tree/Treap"
+          },
+          {
+            "text": "后缀数组",
+            "link": "/algo/tree/SuffixArray"
+          },
+          {
+            "text": "动态树",
+            "link": "/algo/tree/DynamicTree"
+          },
+          {
+            "text": "区间树",
+            "link": "/algo/tree/RangeTree"
+          },
+          {
+            "text": "隐式线段树",
+            "link": "/algo/tree/ImplicitSegmentTree"
+          },
+          {
+            "text": "笛卡尔树",
+            "link": "/algo/tree/CartesianTree"
+          }
+        ]
+      },
+      {
+        "text": "图"
+      },
+      {
+        "text": "搜索"
+      },
+      {
+        "text": "排序",
+        "link": "/algo/sort/Sort",
+        "collapsed": true,
+        "items": [
+          {
+            "text": "冒泡排序",
+            "link": "/algo/sort/BubbleSort"
+          },
+          {
+            "text": "选择排序",
+            "link": "/algo/sort/SelectionSort"
+          },
+          {
+            "text": "插入排序",
+            "link": "/algo/sort/InsertionSort"
+          },
+          {
+            "text": "归并排序",
+            "link": "/algo/sort/MergeSort"
+          },
+          {
+            "text": "快速排序",
+            "link": "/algo/sort/QuickSort"
+          },
+          {
+            "text": "堆排序",
+            "link": "/algo/sort/HeapSort"
+          },
+          {
+            "text": "稳定排序",
+            "link": "/algo/sort/StableSort"
+          },
+          {
+            "text": "希尔排序",
+            "link": "/algo/sort/ShellSort"
+          },
+          {
+            "text": "计数排序",
+            "link": "/algo/sort/CountingSort"
+          },
+          {
+            "text": "基数排序",
+            "link": "/algo/sort/RadixSort"
+          },
+          {
+            "text": "桶排序",
+            "link": "/algo/sort/BucketSort"
+          },
+          {
+            "text": "比特位排序",
+            "link": "/algo/sort/BitwiseSort"
+          },
+          {
+            "text": "蒂姆排序",
+            "link": "/algo/sort/TimSort"
+          },
+          {
+            "text": "鸡尾酒排序",
+            "link": "/algo/sort/CocktailSort"
+          },
+          {
+            "text": "葛尼玛排序",
+            "link": "/algo/sort/GnomeSort"
+          },
+          {
+            "text": "梳排序",
+            "link": "/algo/sort/CombSort"
+          },
+          {
+            "text": "循环排序",
+            "link": "/algo/sort/CycleSort"
+          },
+          {
+            "text": "鸽巢排序",
+            "link": "/algo/sort/PigeonholeSort"
+          },
+          {
+            "text": "博戈排序",
+            "link": "/algo/sort/BogoSort"
+          },
+          {
+            "text": "树排序",
+            "link": "/algo/sort/TreeSort"
+          },
+          {
+            "text": "平滑排序",
+            "link": "/algo/sort/SmoothSort"
+          },
+          {
+            "text": "双基快速排序",
+            "link": "/algo/sort/DualPivotQuickSort"
+          },
+          {
+            "text": "奇偶排序",
+            "link": "/algo/sort/OddEvenSort"
+          },
+          {
+            "text": "闪排序",
+            "link": "/algo/sort/FlashSort"
+          },
+          {
+            "text": "分配排序",
+            "link": "/algo/sort/DistributionSort"
+          },
+          {
+            "text": "双向冒泡排序",
+            "link": "/algo/sort/BidirectionalBubbleSort"
+          },
+          {
+            "text": "重建排序",
+            "link": "/algo/sort/RebuildSort"
+          },
+          {
+            "text": "图书馆排序",
+            "link": "/algo/sort/LibrarySort"
+          },
+          {
+            "text": "猴子排序",
+            "link": "/algo/sort/MonkeySort"
+          },
+          {
+            "text": "奇奇排序",
+            "link": "/algo/sort/BozoSort"
+          },
+          {
+            "text": "班尼奥排序",
+            "link": "/algo/sort/BeadSort"
+          },
+          {
+            "text": "睡眠排序",
+            "link": "/algo/sort/SleepSort"
+          },
+          {
+            "text": "波纹排序",
+            "link": "/algo/sort/RippleSort"
+          },
+          {
+            "text": "二叉插入排序",
+            "link": "/algo/sort/BinaryInsertionSort"
+          },
+          {
+            "text": "裸基数排序",
+            "link": "/algo/sort/StrandSort"
+          },
+          {
+            "text": "平滑排序",
+            "link": "/algo/sort/SmoothSort"
+          },
+          {
+            "text": "潘卡克排序",
+            "link": "/algo/sort/PancakeSort"
+          },
+          {
+            "text": "桥接排序",
+            "link": "/algo/sort/BridgeSort"
+          },
+          {
+            "text": "平行堆排序",
+            "link": "/algo/sort/ParallelHeapSort"
+          },
+          {
+            "text": "组排序",
+            "link": "/algo/sort/GroupSort"
+          },
+          {
+            "text": "奇偶奇归并排序",
+            "link": "/algo/sort/OddEvenMergeSort"
+          },
+          {
+            "text": "位图排序",
+            "link": "/algo/sort/BitmapSort"
+          },
+          {
+            "text": "区间树排序",
+            "link": "/algo/sort/IntervalTreeSort"
+          },
+          {
+            "text": "抛物线排序",
+            "link": "/algo/sort/ParabolicSort"
+          },
+          {
+            "text": "卡塔兰排序",
+            "link": "/algo/sort/CatalanSort"
+          },
+          {
+            "text": "顺序树排序",
+            "link": "/algo/sort/OrderTreeSort"
+          },
+          {
+            "text": "分层快速排序",
+            "link": "/algo/sort/LayeredQuickSort"
+          }
+        ]
+      },
+      {
+        "text": "分治"
+      },
+      {
+        "text": "回溯"
+      },
+      {
+        "text": "动态规划"
+      },
+      {
+        "text": "贪心"
+      }
+    ]
+  },
+  {
+    "text": "Redis 与Go",
+    "link": "/redis/Readme",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "字符串",
+        "link": "/redis/String"
+      },
+      {
+        "text": "哈希",
+        "link": "/redis/Hash"
+      },
+      {
+        "text": "列表",
+        "link": "/redis/List"
+      },
+      {
+        "text": "集合",
+        "link": "/redis/Set"
+      },
+      {
+        "text": "有序集合",
+        "link": "/redis/SortedSet"
+      },
+      {
+        "text": "位图",
+        "link": "/redis/Bitmap"
+      },
+      {
+        "text": "HyperLogLog",
+        "link": "/redis/HyperLogLog"
+      },
+      {
+        "text": "地理空间数据",
+        "link": "/redis/Geospatial"
+      },
+      {
+        "text": "流",
+        "link": "/redis/Streams"
+      }
+    ]
+  },
+  {
+    "text": "分布式系统",
+    "link": "/distribution/Readme"
+  },
+  {
+    "text": "中间件",
+    "link": "/middleware/Readme",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "消息队列系统",
+        "link": "/middleware/MessageQueue",
+        "collapsed": true,
+        "items": [
+          {
+            "text": "Apache Kafka",
+            "link": "/middleware/ApacheKafka"
+          },
+          {
+            "text": "RabbitMQ"
+          },
+          {
+            "text": "Apache ActiveMQ"
+          },
+          {
+            "text": "Amazon SQS"
+          }
+        ]
+      },
+      {
+        "text": "流处理平台",
+        "collapsed": true,
+        "items": [
+          {
+            "text": "流处理平台概述"
+          },
+          {
+            "text": "Apache Flink"
+          },
+          {
+            "text": "Apache Storm"
+          },
+          {
+            "text": "Apache Samza"
+          },
+          {
+            "text": "Google Dataflow"
+          }
+        ]
+      },
+      {
+        "text": "数据库和数据存储系统",
+        "collapsed": true,
+        "items": [
+          {
+            "text": "数据库和数据存储系统概述"
+          },
+          {
+            "text": "Apache Pulsar"
+          },
+          {
+            "text": "Redis Streams"
+          },
+          {
+            "text": "Amazon Kinesis"
+          },
+          {
+            "text": "Apache HBase"
+          }
+        ]
+      },
+      {
+        "text": "日志处理系统",
+        "collapsed": true,
+        "items": [
+          {
+            "text": "日志处理系统概述"
+          },
+          {
+            "text": "Elasticsearch"
+          },
+          {
+            "text": "Logstash"
+          },
+          {
+            "text": "Fluentd"
+          }
+        ]
+      },
+      {
+        "text": "事件流平台",
+        "collapsed": true,
+        "items": [
+          {
+            "text": "事件流平台概述"
+          },
+          {
+            "text": "NATS"
+          },
+          {
+            "text": "Apache Kafka Streams"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "text": "web开发"
+  },
+  {
+    "text": "Gin框架",
+    "link": "/gin/Gin",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "Gin 的基本使用",
+        "link": "/gin/Use"
+      },
+      {
+        "text": "路由机制",
+        "link": "/gin/Route"
+      },
+      {
+        "text": "中间件机制",
+        "link": "/gin/Middleware"
+      },
+      {
+        "text": "请求处理机制",
+        "link": "/gin/Request"
+      },
+      {
+        "text": "响应处理机制",
+        "link": "/gin/Response"
+      },
+      {
+        "text": "错误处理机制",
+        "link": "/gin/Error"
+      },
+      {
+        "text": "路由性能优化",
+        "link": "/gin/Optimize"
+      },
+      {
+        "text": "配置管理",
+        "link": "/gin/Config"
+      },
+      {
+        "text": "测试与调试",
+        "link": "/gin/Debug"
+      },
+      {
+        "text": "源码解析",
+        "link": "/gin/Source"
+      },
+      {
+        "text": "高级应用",
+        "link": "/gin/advanced"
+      },
+      {
+        "text": "扩展",
+        "link": "/gin/Extend"
+      }
+    ]
+  },
+  {
+    "text": "附录 · 未入目录",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "Batcher's Odd Even Merge Sort",
+        "link": "/algo/sort/Batcher'sOddEvenMergeSort"
+      },
+      {
+        "text": "Stooge Sort",
+        "link": "/algo/sort/StoogeSort"
+      },
+      {
+        "text": "GC",
+        "link": "/alloc/GC"
+      },
+      {
+        "text": "Parse",
+        "link": "/cmd/Parse"
+      },
+      {
+        "text": "Chan 1",
+        "link": "/concurrency/Chan 1"
+      },
+      {
+        "text": "Goroutine 1",
+        "link": "/concurrency/Goroutine 1"
+      },
+      {
+        "text": "Object Pool",
+        "link": "/dp/ObjectPool"
+      },
+      {
+        "text": "Gob",
+        "link": "/encoding/Gob"
+      },
+      {
+        "text": "Hex",
+        "link": "/encoding/Hex"
+      },
+      {
+        "text": "Concurrence",
+        "link": "/net/Concurrence"
+      },
+      {
+        "text": "Socket",
+        "link": "/net/Socket"
+      },
+      {
+        "text": "Install",
+        "link": "/redis/Install"
+      },
+      {
+        "text": "Mutual Exclusion",
+        "link": "/sync/MutualExclusion"
+      },
+      {
+        "text": "Mutual Lock",
+        "link": "/sync/MutualLock"
+      },
+      {
+        "text": "REMutex",
+        "link": "/sync/REMutex"
+      },
+      {
+        "text": "Declaration",
+        "link": "/syntax/Declaration"
+      },
+      {
+        "text": "Variable",
+        "link": "/syntax/Variable"
+      }
+    ]
+  }
+]
