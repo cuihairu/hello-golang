@@ -32,17 +32,6 @@ body {
   caret-color: var(--vp-c-brand-1);
 }
 
-/* ---------- 品牌色（空位） ----------
-
-:root {
-  --vp-c-brand-1: #xxxxxx;
-  --vp-c-brand-2: #xxxxxx;
-  --vp-c-brand-3: #xxxxxx;
-  --vp-c-brand-soft: rgba(xx, xx, xx, 0.14);
-}
-.dark { ... }
------------------------------------- */
-
 :root {
   --vp-font-body: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Hiragino Sans GB',
     'Microsoft YaHei', 'Noto Sans CJK SC', 'Segoe UI', sans-serif;
