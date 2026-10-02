@@ -31,81 +31,72 @@
 ```go
 package main
 
-import (
-	"fmt"
-	"math"
-)
+import "fmt"
 
 // 闪排序函数
 func flashSort(arr []int) {
 	n := len(arr)
-	if n == 0 {
+	if n <= 1 {
 		return
 	}
 
-	// 找到最大值和最小值
-	minVal, maxVal := arr[0], arr[0]
-	for _, v := range arr {
-		if v < minVal {
-			minVal = v
+	// 找到最小值和最大值
+	minVal, maxIdx := arr[0], 0
+	for i := 1; i < n; i++ {
+		if arr[i] < minVal {
+			minVal = arr[i]
 		}
-		if v > maxVal {
-			maxVal = v
+		if arr[i] > arr[maxIdx] {
+			maxIdx = i
 		}
+	}
+	if minVal == arr[maxIdx] { // 所有元素相等，无需排序
+		return
 	}
 
 	// 计算类别数量
-	m := int(float64(n) * 0.43)
+	m := int(0.43 * float64(n))
 	if m < 2 {
 		m = 2
 	}
 
 	// 初始化类别计数数组
 	L := make([]int, m)
-	c := float64(m-1) / float64(maxVal-minVal)
+	c := float64(m-1) / float64(arr[maxIdx]-minVal)
 
 	// 统计每个类别的数量
-	for _, v := range arr {
-		k := int(float64(v-minVal) * c)
+	for i := 0; i < n; i++ {
+		k := int(c * float64(arr[i]-minVal))
 		L[k]++
 	}
 
-	// 累计类别计数
+	// 累计类别计数，L[k] 变为第 k 类的右边界（不包含）
 	for i := 1; i < m; i++ {
 		L[i] += L[i-1]
 	}
 
-	// 分类和排序
+	// 把最大值换到数组开头，作为置换循环的起点
+	arr[maxIdx], arr[0] = arr[0], arr[maxIdx]
+
+	// 循环置换：把每个元素移动到它所属类别的边界位置上
 	count := 0
-	i := 0
+	j := 0
 	k := m - 1
-	for count < n {
-		for i >= L[k] {
+	for count < n-1 {
+		for j > L[k]-1 { // 找到尚未就位的位置 j
 			k--
-			i = 0
 		}
-
-		v := arr[i]
-		j := int(float64(v-minVal) * c)
-		for i < L[j] {
-			j++
+		flash := arr[j] // 取出该位置元素，送回它所属的类别
+		for j != L[k] {
+			k = int(c * float64(flash-minVal))
+			arr[L[k]-1], flash = flash, arr[L[k]-1]
+			L[k]--
+			count++
 		}
-		if j != k {
-			arr[i], arr[L[j]-1] = arr[L[j]-1], arr[i]
-			L[j]--
-		} else {
-			i++
-		}
-		count++
 	}
 
-	// 对每个类别进行局部排序
-	start := 0
-	for i := 0; i < m; i++ {
-		end := L[i]
-		insertionSort(arr[start:end])
-		start = end
-	}
+	// 各类别内部已基本有序，最后做一次插入排序收尾
+	insertionSort(arr)
 }
 
 // 插入排序函数

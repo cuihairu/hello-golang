@@ -134,6 +134,9 @@ func Copy[T ReadWriter](src, dst T) error {
     buf := make([]byte, 1024)
     for {
         n, err := src.Read(buf)
+        if err == io.EOF {
+            return nil // 读到末尾，正常结束
+        }
         if err != nil {
             return err
         }

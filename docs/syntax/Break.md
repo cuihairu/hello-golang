@@ -65,37 +65,67 @@ func main() {
 
 #### `select` 语句中的 `break`
 
-在 `select` 语句中，`break` 用于跳出 `select` 语句的执行。这通常用于退出 `select` 语句和 `for` 循环结合使用的情况。
+在 `select` 语句中，`break` 用于跳出 `select` 语句的执行。需要注意：当 `select` 位于 `for` 循环内部时，不带标签的 `break` 只会跳出 `select` 本身，而不会跳出外层的 `for` 循环。如果要退出循环，必须使用带标签的 `break`。
 
-**示例：**
+**示例：不带标签的 `break` 只跳出 `select`**
 
 ```go
 package main
 
-import (
-    "fmt"
-    "time"
-)
+import "fmt"
 
 func main() {
-    ch := make(chan int)
-
-    go func() {
-        time.Sleep(1 * time.Second)
-        ch <- 1
-    }()
+    ch := make(chan int, 3)
+    ch <- 1
+    ch <- 2
+    close(ch)
 
     for {
         select {
-        case msg := <-ch:
+        case msg, ok := <-ch:
+            if !ok {
+                fmt.Println("channel closed")
+                break // 只跳出 select，for 循环还会继续下一轮
+            }
             fmt.Println("Received:", msg)
-            break
+        }
+        if len(ch) == 0 {
+            // select 中已经取不到数据，通过其他条件结束循环
+            fmt.Println("done")
+            return
         }
     }
 }
 ```
 
-在这个示例中，`break` 语句用于退出 `for` 循环中的 `select` 语句。`break` 语句在这里终止了 `for` 循环的执行。
+**示例：使用标签跳出 `for` 循环**
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+    ch := make(chan int, 3)
+    ch <- 1
+    ch <- 2
+    close(ch)
+
+loop:
+    for {
+        select {
+        case msg, ok := <-ch:
+            if !ok {
+                fmt.Println("channel closed")
+                break loop // 跳出外层的 for 循环
+            }
+            fmt.Println("Received:", msg)
+        }
+    }
+}
+```
+
+在这个示例中，`break loop` 语句会终止 `for` 循环；如果写成不带标签的 `break`，则只结束当前这一次 `select`，循环会无限执行下去。
 
 ### 注意事项
 
@@ -131,7 +161,7 @@ OuterLoop:
 
 - **`for` 循环**：`break` 用于提前终止循环体的执行。
 - **`switch` 语句**：`break` 通常不需要，因为 `case` 自动跳出 `switch`，但可以用于更复杂的控制流。
-- **`select` 语句**：`break` 可以用来退出 `select` 和其所在的 `for` 循环。
+- **`select` 语句**：`break` 用来退出当前的 `select`；要退出其所在的 `for` 循环，必须使用带标签的 `break`。
 - **标签**：`break` 与标签一起使用，可以跳出多层嵌套的循环。
 
 `break` 语句是 Go 语言中一个重要的控制流工具，帮助程序员更灵活地控制程序的执行流程。

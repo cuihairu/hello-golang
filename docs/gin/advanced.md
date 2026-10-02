@@ -34,7 +34,13 @@ GORM 是一个流行的 Go 语言 ORM 库，用于简化数据库操作。在 Gi
 - **在 Gin 中使用 GORM**：
   ```go
   import "github.com/gin-gonic/gin"
-  
+
+  // User 模型与数据库中的 users 表对应
+  type User struct {
+      ID   uint   `json:"id"`
+      Name string `json:"name"`
+  }
+
   func main() {
       r := gin.Default()
       db := SetupDatabase()
@@ -59,14 +65,14 @@ JWT（JSON Web Token）是一种常用的认证机制，用于保护 API 的安�
 ##### 13.2.1 JWT 简介
 
 - **JWT 基本概念**：介绍 JWT 的结构（头部、负载、签名）和工作原理。
-- **JWT 的安装和配置**：如何在 Gin 项目中安装和使用 JWT 库（如 `github.com/dgrijalva/jwt-go`）。
+- **JWT 的安装和配置**：如何在 Gin 项目中安装和使用 JWT 库（如 `github.com/golang-jwt/jwt/v5`，它是已停止维护的 `github.com/dgrijalva/jwt-go` 的社区继任分支）。
 
 ##### 13.2.2 Gin 中实现 JWT 认证
 
 - **生成 JWT**：
   ```go
-  import "github.com/dgrijalva/jwt-go"
-  
+  import "github.com/golang-jwt/jwt/v5"
+
   func GenerateToken(username string) (string, error) {
       token := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
           "username": username,
@@ -128,10 +134,12 @@ WebSocket 是一种用于实时通信的协议，在 Gin 框架中集成 WebSock
 - **创建 WebSocket 处理器**：
   ```go
   import (
-      "github.com/gorilla/websocket"
+      "net/http"
+
       "github.com/gin-gonic/gin"
+      "github.com/gorilla/websocket"
   )
-  
+
   var upgrader = websocket.Upgrader{
       CheckOrigin: func(r *http.Request) bool {
           return true

@@ -213,7 +213,10 @@ func main() {
 	defer listener.Close()
 
 	for {
-		listener.SetDeadline(time.Now().Add(10 * time.Second))
+		// net.Listener 接口没有 SetDeadline 方法，需要断言为 *net.TCPListener
+		if tcpListener, ok := listener.(*net.TCPListener); ok {
+			tcpListener.SetDeadline(time.Now().Add(10 * time.Second))
+		}
 		conn, err := listener.Accept()
 		if err != nil {
 			if err, ok := err.(net.Error); ok && err.Timeout() {

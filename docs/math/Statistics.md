@@ -69,7 +69,7 @@
           Sigma: 1,   // 标准差
       }
       x := 1.0
-      fmt.Println("正态分布概率密度:", normal.Probability(x))
+      fmt.Println("正态分布概率密度:", normal.Prob(x))  // 输出: 正态分布概率密度: 0.24197072451914337
   }
   ```
 
@@ -135,9 +135,9 @@
   func main() {
       x := []float64{1, 2, 3, 4, 5}
       y := []float64{2, 4, 6, 8, 10}
-      var m, c float64
-      stat.LinearRegression(x, y, nil, false, &m, &c)
-      fmt.Printf("回归方程: y = %.2fx + %.2f\n", m, c)
+      // LinearRegression 返回截距 alpha 和斜率 beta
+      alpha, beta := stat.LinearRegression(x, y, nil, false)
+      fmt.Printf("回归方程: y = %.2fx + %.2f\n", beta, alpha)  // 输出: 回归方程: y = 2.00x + 0.00
   }
   ```
 

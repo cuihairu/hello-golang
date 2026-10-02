@@ -134,35 +134,33 @@ Go语言的并发模型基于 Goroutine 和调度器。Goroutine 是一种轻量
 
 ### 代码分析
 
-下面是 Go 运行时中与 `select` 相关的一些关键代码：
+下面是 `select` 底层核心逻辑的简化示意伪代码（不是真实源码；真实实现在 `runtime/select.go` 的 `selectgo` 函数中，签名为 `func selectgo(cas0 *scase, order0 *uint16, pc0 *uintptr, nsends, nrecvs int, block bool) (int, bool)`）：
 
 ```go
-func selectgo(sel *hselect) (int, bool) {
-    // 初始化
-    ncases := sel.ncases
-    tcase0 := sel.cases
-    scase0 := sel.scases
-    lock(&sched.lock)
-    // 检查是否有可以立即执行的case
-    var nready int
-    var tsel int
-    var scase *scase
+// 伪代码：示意 select 的整体流程
+func selectSelect(cases []scase, block bool) (int, bool) {
+    ncases := len(cases)
+
+    // 1. 遍历所有 case，检查是否有可以立即执行的
+    var ready []int
     for i := 0; i < ncases; i++ {
-        if scase0[i].sendx == 0 && scase0[i].recvx == 0 {
-            nready++
-            tsel = i
+        if caseCanProceed(&cases[i]) {
+            ready = append(ready, i)
         }
     }
-    if nready > 0 {
-        // 随机选择一个准备好的case执行
-        unlock(&sched.lock)
-        return tsel, true
+    if len(ready) > 0 {
+        // 2. 多个就绪时随机选择一个，保证公平
+        return ready[fastrand()%uint32(len(ready))], true
     }
-    // 阻塞等待
-    gopark(sel, unlockf, "select", traceEvGoBlockSelect, 1)
-    // 唤醒执行
-    lock(&sched.lock)
-    // ...
+    if !block {
+        return -1, false // 有 default 分支时直接返回
+    }
+
+    // 3. 把当前 goroutine 依次加入每个 case 对应通道的等待队列，然后挂起
+    gopark(selectGoPark, "select")
+
+    // 4. 被某个通道唤醒后，由唤醒方记录命中的 case 序号并返回
+    return parkResult(), true
 }
 ```
 

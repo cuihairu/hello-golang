@@ -2,7 +2,7 @@ Go 标准库中提供了一些调试工具和功能，帮助开发者进行代�
 
 ### 1. **`log` 包**
 
-`log` 包提供了基本的日志记录功能，能够帮助开发者在程序中输出调试信息。可以通过 `log` 包记录不同级别的日志信息，帮助排查问题。例如：
+`log` 包提供了基本的日志记录功能，能够帮助开发者在程序中输出调试信息，便于排查问题（标准库 `log` 本身不区分日志级别，若需要分级日志可使用 Go 1.21 引入的 `log/slog`）。例如：
 
 ```go
 import "log"
@@ -63,7 +63,11 @@ go install github.com/go-delve/delve/cmd/dlv@latest
 - **启动调试**：
 
 ```sh
-dlv debug <your_program>
+# 编译当前包并启动调试（最常用）
+dlv debug
+
+# 调试已编译好的二进制
+dlv exec ./your_program
 ```
 
 - **常用命令**：

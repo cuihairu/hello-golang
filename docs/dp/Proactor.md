@@ -68,7 +68,6 @@ import (
 	"fmt"
 	"net"
 	"os"
-	"time"
 )
 
 type CompletionHandler func(conn net.Conn, data []byte)

@@ -75,22 +75,31 @@ $$
 
 单纯形法是一种用于解决线性规划问题的算法。它通过在可行域的顶点之间移动来寻找最优解。
 
-- **示例**：使用 `gonum` 实现线性规划（需要额外的库支持）：
+- **示例**：使用 `gonum` 的 `optimize` 包求解无约束优化问题（带线性约束的线性规划需要额外的库支持）：
   ```go
+  package main
+
   import (
       "fmt"
       "gonum.org/v1/gonum/optimize"
   )
 
   func main() {
-      // 定义目标函数和约束条件
-      problem := &optimize.Problem{
-          // Objective function and constraints setup
+      // 目标函数: f(x) = (x0 - 3)^2 + (x1 - 2)^2，理论最小值在 (3, 2)
+      problem := optimize.Problem{
+          Func: func(x []float64) float64 {
+              return (x[0]-3)*(x[0]-3) + (x[1]-2)*(x[1]-2)
+          },
       }
 
-      // 求解优化问题
-      result := optimize.Minimize(problem, nil)
-      fmt.Println("最优解:", result.X)
+      // 使用 Nelder-Mead 单纯形算法求解
+      result, err := optimize.Minimize(problem, []float64{0, 0}, nil, &optimize.NelderMead{})
+      if err != nil {
+          fmt.Println("优化失败:", err)
+          return
+      }
+      fmt.Println("最优解:", result.X)    // 输出: 最优解: [3.0000000000000004 2]
+      fmt.Println("目标函数值:", result.F) // 输出: 目标函数值: 1.9721522630525295e-31
   }
   ```
 

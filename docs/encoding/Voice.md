@@ -15,14 +15,14 @@
 - **应用**：数字摄影、网页图像
 - **特点**：压缩比高，但可能会导致图像质量损失
 
-**Go 示例代码**：
+**Go 示例代码**（注意需要匿名导入对应的图像解码包，`image.Decode` 才能识别该格式）：
 ```go
 package main
 
 import (
     "fmt"
     "image"
-    "image/jpeg"
+    _ "image/jpeg"
     "os"
 )
 
@@ -63,7 +63,7 @@ package main
 import (
     "fmt"
     "image"
-    "image/png"
+    _ "image/png"
     "os"
 )
 
@@ -104,7 +104,7 @@ package main
 import (
     "fmt"
     "image"
-    "image/gif"
+    _ "image/gif"
     "os"
 )
 
@@ -142,14 +142,13 @@ func main() {
 - **应用**：数字音乐、音频流
 - **特点**：高压缩比，但会损失部分音质
 
-**Go 示例代码**（播放 MP3 文件需要第三方库，如 `github.com/hajimehoshi/ebiten`）：
+**Go 示例代码**（Go 标准库不支持 MP3 编解码，播放 MP3 文件需要第三方库，如 `github.com/faiface/beep` 或 `github.com/hajimehoshi/oto`）：
 ```go
 package main
 
 import (
     "fmt"
     "os"
-    "github.com/hajimehoshi/ebiten"
 )
 
 func main() {
@@ -161,7 +160,8 @@ func main() {
     }
     defer file.Close()
 
-    // 播放 MP3 文件（需要使用合适的第三方库）
+    // 解码和播放 MP3 文件需要使用合适的第三方库，
+    // 例如 github.com/hajimehoshi/go-mp3 提供的 mp3.NewDecoder(file)
     fmt.Println("MP3 file opened. Playback requires a media player library.")
 }
 ```
@@ -182,7 +182,7 @@ package main
 import (
     "fmt"
     "os"
-    "github.com/go-audio/audio"
+
     "github.com/go-audio/wav"
 )
 
@@ -195,17 +195,17 @@ func main() {
     }
     defer file.Close()
 
-    // 解码 WAV 文件
+    // 解码 WAV 文件，IsValidFile 会读取并校验文件头
     decoder := wav.NewDecoder(file)
-    if err := decoder.Decode(); err != nil {
-        fmt.Println("Error decoding WAV:", err)
+    if !decoder.IsValidFile() {
+        fmt.Println("Error: not a valid WAV file")
         return
     }
 
     // 打印音频信息
     fmt.Printf("Sample Rate: %d\n", decoder.SampleRate)
     fmt.Printf("Channels: %d\n", decoder.NumChans)
-    fmt.Printf("Bits Per Sample: %d\n", decoder.BitsPerSample)
+    fmt.Printf("Bits Per Sample: %d\n", decoder.BitDepth)
 }
 ```
 

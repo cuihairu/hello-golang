@@ -6,7 +6,7 @@
 
 1. **初始化**: 创建一个比原始数组大的数组，并在数组中留出空位（gap）。
 2. **插入**: 遍历原始数组，将每个元素插入到新数组的适当位置，如果遇到空位，则直接插入，否则移动元素直到找到空位。
-3. **重分配空位**: 在插入过程中，如果空位不足，重新分配空位，扩展数组并重新插入元素。
+3. **预留空位**: 新数组长度取元素个数的 2 倍，保证插入过程中始终有空位可用，无需扩容。
 4. **清理**: 完成所有插入操作后，移除空位，得到排序后的数组。
 
 ### 代码示例（Go语言实现）
@@ -19,49 +19,8 @@ import (
 	"math"
 )
 
-// 插入元素到有空位的数组
-func insertWithGaps(arr []int, n int, gaps int) []int {
-	newArr := make([]int, 2*n)
-	for i := range newArr {
-		newArr[i] = math.MaxInt64
-	}
-
-	for i := 0; i < n; i++ {
-		pos := i + gaps*(i+1)
-		newArr[pos] = arr[i]
-	}
-
-	return newArr
-}
-
-// 插入元素并保持数组有序
-func insertElement(arr []int, gaps int, elem int) []int {
-	i := 0
-	for ; i < len(arr); i++ {
-		if arr[i] == math.MaxInt64 || arr[i] > elem {
-			break
-		}
-	}
-
-	j := len(arr) - 1
-	for ; j > i; j-- {
-		arr[j] = arr[j-1]
-	}
-	arr[i] = elem
-
-	return arr
-}
-
-// 移除空位，得到排序后的数组
-func removeGaps(arr []int) []int {
-	result := []int{}
-	for _, val := range arr {
-		if val != math.MaxInt64 {
-			result = append(result, val)
-		}
-	}
-	return result
-}
+// gapMark 表示新数组中的空位（gap）
+const gapMark = math.MaxInt
 
 // 图书馆排序算法
 func librarySort(arr []int) []int {
@@ -70,14 +29,85 @@ func librarySort(arr []int) []int {
 		return arr
 	}
 
-	gaps := int(math.Ceil(math.Log2(float64(n))))
-	newArr := insertWithGaps(arr, n, gaps)
+	// 1. 初始化：新数组容量约为元素个数的 2 倍，全部置为空位
+	newArr := make([]int, 2*n)
+	for i := range newArr {
+		newArr[i] = gapMark
+	}
+	// 第一个元素放在中间，前后都留有空位
+	newArr[n] = arr[0]
 
+	// 2. 依次插入剩余元素
 	for i := 1; i < n; i++ {
-		newArr = insertElement(newArr, gaps, arr[i])
+		insertWithGap(newArr, arr[i])
 	}
 
-	return removeGaps(newArr)
+	// 3. 清理：移除空位，得到排序结果
+	return removeGaps(newArr, n)
+}
+
+// insertWithGap 在带空位的有序数组中插入 elem，保持有序
+func insertWithGap(arr []int, elem int) {
+	// 定位：找到第一个值 >= elem 的真实元素下标 p
+	p := lowerBound(arr, elem)
+
+	if p == len(arr) { // elem 比所有元素都大，直接放到最后一个元素之后
+		e := len(arr) - 1
+		for arr[e] == gapMark {
+			e--
+		}
+		arr[e+1] = elem
+		return
+	}
+
+	// 从 p 向右找最近的空位 g，把 [p, g-1] 整体右移一格，腾出位置放入 elem
+	g := p
+	for arr[g] != gapMark {
+		g++
+	}
+	copy(arr[p+1:g+1], arr[p:g])
+	arr[p] = elem
+}
+
+// lowerBound 在带空位的数组中查找第一个值 >= elem 的真实元素下标
+func lowerBound(arr []int, elem int) int {
+	lo, hi := 0, len(arr)-1
+	res := len(arr)
+	for lo <= hi {
+		mid := (lo + hi) / 2
+		if arr[mid] == gapMark {
+			// mid 落在空位上：向左找最近的真实元素来判断方向
+			l := mid
+			for l >= lo && arr[l] == gapMark {
+				l--
+			}
+			if l < lo {
+				// [lo, mid] 全是空位，插入点只可能在右半区
+				lo = mid + 1
+			} else if arr[l] >= elem {
+				hi = l
+			} else {
+				lo = mid + 1
+			}
+		} else if arr[mid] >= elem {
+			res = mid
+			hi = mid - 1
+		} else {
+			lo = mid + 1
+		}
+	}
+	return res
+}
+
+// 移除空位，得到排序后的数组
+func removeGaps(arr []int, n int) []int {
+	result := make([]int, 0, n)
+	for _, val := range arr {
+		if val != gapMark {
+			result = append(result, val)
+		}
+	}
+	return result
 }
 
 func main() {

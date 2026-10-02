@@ -26,13 +26,13 @@
 
 1. **直接调试程序**
 
-   使用 `dlv debug` 命令可以启动调试器并调试 Go 源代码：
+   使用 `dlv debug` 命令可以编译并调试当前目录下的 Go 包（在 `main.go` 所在目录直接运行即可；也可传入包路径，如 `dlv debug ./cmd/app`）：
 
    ```sh
-   dlv debug <your_program.go>
+   dlv debug
    ```
 
-   这会编译并启动程序，并进入调试模式。
+   这会编译并启动程序，并进入调试模式。注意 `dlv debug` 接收的是包路径，不能直接传源文件名。
 
 2. **调试已编译程序**
 
@@ -201,21 +201,23 @@ func add(a, b int) int {
 
 1. **启动调试**
 
+   在 `main.go` 所在目录运行：
+
    ```sh
-   dlv debug main.go
+   dlv debug
    ```
 
 2. **在 `delve` 提示符下**
 
    ```sh
-   (dlv) break main.go:8
+   (dlv) break main.go:9
    (dlv) continue
    (dlv) print x
-   (dlv) step
    (dlv) print result
+   (dlv) step
    ```
 
-   这些命令设置了断点，继续执行程序，并查看变量值。
+   这些命令在 `fmt.Println(result)` 处设置断点（此时 `result` 已被赋值为 30），继续执行程序并查看变量值。
 
 ### 总结
 

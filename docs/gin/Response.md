@@ -89,16 +89,23 @@ Gin 允许开发者定义自定义渲染器，以支持更多类型的响应格�
 
 ##### 7.4.1 定义渲染器接口
 
-自定义渲染器需要实现 `gin.Render` 接口：
+自定义渲染器需要实现 `render.Render` 接口（`github.com/gin-gonic/gin/render`），它包含两个方法：`Render(http.ResponseWriter) error` 和 `WriteContentType(http.ResponseWriter)`：
 
 ```go
+package main
+
+import (
+    "net/http"
+)
+
 type MyRenderer struct {
-    Data any
+    Data string
 }
 
-func (r MyRenderer) Render(w io.Writer) error {
-    // 实现渲染逻辑
-    return nil
+func (r MyRenderer) Render(w http.ResponseWriter) error {
+    // 实现渲染逻辑，把数据写到响应体中
+    _, err := w.Write([]byte("data: " + r.Data))
+    return err
 }
 
 func (r MyRenderer) WriteContentType(w http.ResponseWriter) {
@@ -108,7 +115,7 @@ func (r MyRenderer) WriteContentType(w http.ResponseWriter) {
 
 ##### 7.4.2 使用自定义渲染器
 
-使用自定义渲染器返回响应：
+使用 `c.Render` 配合自定义渲染器返回响应：
 
 ```go
 func customRenderResponse(c *gin.Context) {

@@ -145,6 +145,7 @@ package main
 import (
     "bufio"
     "fmt"
+    "io"
     "os"
 )
 
@@ -260,6 +261,7 @@ package main
 import (
     "encoding/binary"
     "fmt"
+    "io"
     "os"
 )
 

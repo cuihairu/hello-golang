@@ -60,7 +60,7 @@ Go 的 `os` 包提供了与操作系统交互的功能，包括文件系统操�
    - **`os.Rename(oldpath, newpath string) error`**：重命名文件或移动文件。
    - **`os.Mkdir(name string, perm FileMode) error`**：创建目录。
    - **`os.MkdirAll(path string, perm FileMode) error`**：递归创建目录。
-   - **`os.Rmdir(name string) error`**：删除空目录。
+   - **`os.Remove(name string) error`**：删除文件或空目录（删除非空目录用 `os.RemoveAll`）。
 
    **示例**：
 
@@ -96,7 +96,7 @@ Go 的 `os` 包提供了与操作系统交互的功能，包括文件系统操�
        }
 
        // Remove the directory
-       err = os.Rmdir("exampleDir")
+       err = os.Remove("exampleDir")
        if err != nil {
            fmt.Println("Error removing directory:", err)
            return
@@ -171,9 +171,9 @@ Go 的 `os` 包提供了与操作系统交互的功能，包括文件系统操�
 
 #### 3. 进程管理
 
-1. **`ExecCommand(name string, arg ...string) *Cmd`**
+1. **`exec.Command(name string, arg ...string) *Cmd`**
 
-   创建一个用于执行命令的 `Cmd` 对象。
+   创建一个用于执行命令的 `Cmd` 对象（位于 `os/exec` 包）。
 
    ```go
    package main
@@ -230,7 +230,7 @@ Go 的 `os` 包提供了与操作系统交互的功能，包括文件系统操�
 
 4. **`Kill() error`**
 
-   发送信号终止进程。
+   发送信号终止进程（`os.Process` 的方法）。
 
    ```go
    package main
@@ -243,8 +243,11 @@ Go 的 `os` 包提供了与操作系统交互的功能，包括文件系统操�
    func main() {
        pid := os.Getpid()
        fmt.Println("Current PID:", pid)
-       // To kill the process, use the os.Kill function with the appropriate signal
-       // os.Kill(pid, syscall.SIGKILL)
+       // 终止进程需要先拿到 *os.Process，再调用其 Kill 方法：
+       // p, err := os.FindProcess(pid)
+       // if err == nil {
+       //     err = p.Kill()
+       // }
    }
    ```
 
@@ -256,6 +259,10 @@ Go 的 `os` 包提供了与操作系统交互的功能，包括文件系统操�
 
    ```go
    package os
+
+   import "time"
+
+   type FileMode uint32
 
    type FileInfo interface {
        Name() string
@@ -285,12 +292,18 @@ Go 的 `os` 包提供了与操作系统交互的功能，包括文件系统操�
    type FileMode uint32
    ```
 
-   - 常用常量：
+   - 打开文件时常用的 flag 常量（作为 `os.OpenFile` 的 `flag` 参数，类型为 int）：
      - `os.O_RDONLY`：只读模式。
      - `os.O_WRONLY`：只写模式。
      - `os.O_RDWR`：读写模式。
      - `os.O_CREATE`：如果文件不存在则创建。
      - `os.O_TRUNC`：截断文件。
+     - `os.O_APPEND`：追加写入。
+
+   - `FileMode` 自身的常用常量：
+     - `os.ModeDir`：目录。
+     - `os.ModePerm`：Unix 权限位掩码（0777）。
+     - `os.ModeSymlink`：符号链接。
 
    **示例**：
 
@@ -346,10 +359,10 @@ Go 的 `os` 包提供了与操作系统交互的功能，包括文件系统操�
 
 2. **`Abs(path string) (string, error)`**
 
-   获取路径的绝对路径。
+   获取路径的绝对路径（位于 `path/filepath` 包）。
 
    ```go
-   package path
+   package filepath
 
    func Abs(path string) (string, error)
    ```
@@ -370,9 +383,7 @@ Go 的 `os` 包提供了与操作系统交互的功能，包括文件系统操�
            fmt.Println("Error getting absolute path:", err)
            return
        }
-       fmt.Println("Absolute Path:",
-
- absPath)
+       fmt.Println("Absolute Path:", absPath)
    }
    ```
 

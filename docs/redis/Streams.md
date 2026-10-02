@@ -84,9 +84,9 @@ Redis 流（Streams）的底层实现是基于一个链表结构和散列结构�
    package main
 
    import (
-       "github.com/go-redis/redis/v8"
        "context"
-       "fmt"
+
+       "github.com/go-redis/redis/v8"
    )
 
    var ctx = context.Background()
@@ -140,7 +140,8 @@ Redis 流（Streams）的底层实现是基于一个链表结构和散列结构�
 4. **使用消费者组读取消息**
    ```go
    func example(rdb *redis.Client) {
-       _, err := rdb.XGroupCreateMkStream(ctx, "messages", "group1", "$").Result()
+       // "0" 表示从流的开头开始消费已有消息；若使用 "$" 则只消费创建组之后新写入的消息
+       _, err := rdb.XGroupCreateMkStream(ctx, "messages", "group1", "0").Result()
        if err != nil {
            panic(err)
        }

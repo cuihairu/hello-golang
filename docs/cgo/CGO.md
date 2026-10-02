@@ -18,6 +18,7 @@ package main
 
 /*
 #include <stdio.h>
+#include <stdlib.h>
 
 void myPrint(char* s) {
     printf("%s\n", s);
@@ -33,6 +34,8 @@ func main() {
     C.myPrint(cstr)
 }
 ```
+
+> 注意：`C.free` 需要 C 的 `free` 函数声明，因此注释中必须 `#include <stdlib.h>`，否则会报 `could not determine what C.free refers to`。
 
 ### 2. 类型转换
 

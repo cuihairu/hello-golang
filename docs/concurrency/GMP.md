@@ -182,10 +182,10 @@ func stealWork(fromP *p, toP *p) {
 
 - **GOMAXPROCS**：
 
-通过 `runtime.GOMAXPROCS` 函数或环境变量设置可以调整并发的线程数。`GOMAXPROCS` 控制了同时运行的操作系统线程的数量，从而影响 `goroutine` 的调度和性能。
+通过 `runtime.GOMAXPROCS` 函数或环境变量设置可以调整并发度。`GOMAXPROCS` 控制的是同时执行 Go 代码的逻辑处理器 `P` 的数量，也就是同时运行 `goroutine` 的最大并行度；它并不限制操作系统线程 `M` 的总数——当 `M` 因系统调用或 cgo 而阻塞时，运行时会自动创建或复用新的 `M`。
 
 ```go
-runtime.GOMAXPROCS(4) // Set the number of OS threads to 4
+runtime.GOMAXPROCS(4) // 设置同时执行 Go 代码的逻辑处理器 P 的数量为 4
 ```
 
 #### 3.2 调度器性能

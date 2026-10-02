@@ -10,8 +10,8 @@
 使用模板方法模式，我们可以在基类中定义一个模板方法，该方法包含了算法的整体结构，并调用一些可以被子类重写的钩子方法。具体的步骤由子类实现。基类保证了算法的骨架不被改变，而子类则提供了具体的实现细节。
 
 #### 模式结构
-1. **抽象类（Abstract Class）**：定义模板方法，并实现模板方法中的部分步骤。声明钩子方法，子类可以重写这些方法以提供具体实现。
-2. **具体类（Concrete Class）**：继承抽象类，并实现抽象类中声明的钩子方法，提供具体的步骤实现。
+1. **抽象类（Abstract Class）**：定义模板方法（算法骨架），并声明可被替换的钩子步骤。
+2. **具体类（Concrete Class）**：提供钩子步骤的具体实现，替换掉抽象类中的默认步骤。
 
 #### 代码
 以下是使用Go语言实现的模板方法模式示例：
@@ -21,74 +21,65 @@ package main
 
 import "fmt"
 
-// 抽象类 - 报表生成
-type ReportGenerator struct{}
+// ReportGenerator 是报表生成的"抽象类"，承载算法骨架。
+// Go 没有继承，嵌入结构体的方法调用是静态分派，子类型里"重写"的方法不会被模板方法调用，
+// 因此这里用函数字段来承载钩子步骤，由具体的报表类型在构造时注入自己的实现。
+type ReportGenerator struct {
+    fetch    func()
+    process  func()
+    output   func()
+}
 
-// 模板方法 - 定义算法骨架
+// GenerateReport 是模板方法 - 定义算法骨架
 func (r *ReportGenerator) GenerateReport() {
-    r.FetchData()
-    r.ProcessData()
-    r.OutputReport()
+    r.fetch()
+    r.process()
+    r.output()
 }
 
-// 钩子方法 - 数据获取，子类可以重写
-func (r *ReportGenerator) FetchData() {
-    fmt.Println("获取数据")
+// NewReportGenerator 使用默认步骤创建报表生成器
+func NewReportGenerator(fetch, process, output func()) *ReportGenerator {
+    return &ReportGenerator{fetch: fetch, process: process, output: output}
 }
 
-// 钩子方法 - 数据处理，子类可以重写
-func (r *ReportGenerator) ProcessData() {
-    fmt.Println("处理数据")
+// 具体类 - 销售报表生成，注入销售报表的具体步骤
+func NewSalesReportGenerator() *ReportGenerator {
+    return NewReportGenerator(
+        func() { fmt.Println("获取销售数据") },
+        func() { fmt.Println("处理销售数据") },
+        func() { fmt.Println("输出销售报表") },
+    )
 }
 
-// 钩子方法 - 报表输出，子类可以重写
-func (r *ReportGenerator) OutputReport() {
-    fmt.Println("输出报表")
-}
-
-// 具体类 - 销售报表生成
-type SalesReportGenerator struct {
-    ReportGenerator
-}
-
-func (r *SalesReportGenerator) FetchData() {
-    fmt.Println("获取销售数据")
-}
-
-func (r *SalesReportGenerator) ProcessData() {
-    fmt.Println("处理销售数据")
-}
-
-func (r *SalesReportGenerator) OutputReport() {
-    fmt.Println("输出销售报表")
-}
-
-// 具体类 - 财务报表生成
-type FinancialReportGenerator struct {
-    ReportGenerator
-}
-
-func (r *FinancialReportGenerator) FetchData() {
-    fmt.Println("获取财务数据")
-}
-
-func (r *FinancialReportGenerator) ProcessData() {
-    fmt.Println("处理财务数据")
-}
-
-func (r *FinancialReportGenerator) OutputReport() {
-    fmt.Println("输出财务报表")
+// 具体类 - 财务报表生成，注入财务报表的具体步骤
+func NewFinancialReportGenerator() *ReportGenerator {
+    return NewReportGenerator(
+        func() { fmt.Println("获取财务数据") },
+        func() { fmt.Println("处理财务数据") },
+        func() { fmt.Println("输出财务报表") },
+    )
 }
 
 func main() {
     // 创建销售报表生成器
-    salesReport := &SalesReportGenerator{}
+    salesReport := NewSalesReportGenerator()
     salesReport.GenerateReport()
 
     // 创建财务报表生成器
-    financialReport := &FinancialReportGenerator{}
+    financialReport := NewFinancialReportGenerator()
     financialReport.GenerateReport()
 }
+```
+
+输出：
+
+```
+获取销售数据
+处理销售数据
+输出销售报表
+获取财务数据
+处理财务数据
+输出财务报表
 ```
 
 #### 适用场景
@@ -97,9 +88,9 @@ func main() {
 - 当实现代码重复且多次出现相同的算法结构时，模板方法模式可以减少代码重复。
 
 #### 实现方式
-1. 定义一个抽象类，包含模板方法和一些可以被子类重写的钩子方法。
-2. 实现具体的子类，重写抽象类中的钩子方法，提供特定的实现。
-3. 客户端代码使用抽象类定义的模板方法来执行算法，子类提供具体的实现细节。
+1. 定义一个结构体，包含模板方法和承载钩子步骤的函数字段（或接口）。
+2. 为每种具体报表提供构造函数，注入各自的钩子实现。
+3. 客户端代码通过构造函数创建具体报表生成器，调用统一的模板方法执行算法。
 
 #### 优缺点
 **优点**：

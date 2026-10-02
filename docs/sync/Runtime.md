@@ -21,7 +21,7 @@ GMP 模型是 Go runtime 用于管理并发的核心机制：
 - **M（Machine）**: 操作系统线程。
 - **P（Processor）**: 逻辑处理器，调度 goroutine 到 M 上。
 
-P 的数量等于 `GOMAXPROCS` 的值，表示可以同时运行的 goroutine 数量。Go runtime 通过 GMP 模型有效地管理和调度 goroutine，实现高效并发。
+P 的数量等于 `GOMAXPROCS` 的值，表示同一时刻最多有多少个 goroutine 可以真正并行执行 Go 代码。Go runtime 通过 GMP 模型有效地管理和调度 goroutine，实现高效并发。
 
 #### 3. 内存同步
 
@@ -36,11 +36,11 @@ Go 提供了多种原语来进行内存同步，保证多 goroutine 间的内存
 
 #### 4. Go runtime 相关函数
 
-- `runtime.GOMAXPROCS(n int) int`: 设置可以并行执行的最大 goroutine 数量。
+- `runtime.GOMAXPROCS(n int) int`: 设置可同时执行 Go 代码的最大 CPU（P）数量，并返回先前的设置。
 - `runtime.Gosched()`: 让出当前 goroutine 的执行权，调度器会重新调度其他 goroutine。
 - `runtime.Goexit()`: 退出当前 goroutine，不影响其他 goroutine 的执行。
 - `runtime.NumCPU() int`: 返回当前系统的 CPU 数量。
-- `runtime.NumGoroutine() int`: 返回当前正在运行的 goroutine 数量。
+- `runtime.NumGoroutine() int`: 返回当前存活（存在）的 goroutine 数量。
 
 ### 示例代码
 

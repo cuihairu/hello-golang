@@ -64,8 +64,10 @@ func main() {
 **示例：接口的内部结构**
 
 ```go
+// 简化示意（`type` 是 Go 关键字，不能用作字段名，这里用 `typ` 表示；
+// 真实实现见 runtime 包中的 eface、iface 和 itab）
 type _interface struct {
-    type  *typeDescriptor // 指向类型描述符
+    typ   *typeDescriptor // 指向类型描述符
     value unsafe.Pointer  // 实际值的指针
 }
 

@@ -4,22 +4,25 @@
 
 ### 算法概述
 
-奇偶奇归并排序的核心思想是将排序任务划分成多个小任务，然后利用并行处理来加速归并过程。主要分为以下步骤：
+奇偶奇归并排序的核心思想是把排序过程表达成一个固定的"比较-交换"网络（sorting network）：
 
-1. **奇偶分组**: 将数据分成奇数和偶数索引的位置，然后分别对这些数据进行排序。
-2. **奇偶合并**: 将奇数位置和偶数位置的排序结果进行合并。这个过程是通过将数据对半分，奇数和偶数位置交替合并的方式来完成。
-3. **递归排序**: 对每个分组递归应用相同的奇偶合并策略，直到所有数据都被排序。
+1. **递归划分**: 把序列从中间对半分成两半，分别递归排序，使左右两半各自有序。
+2. **奇偶归并**: 对已排序的两半，先递归地归并其中的偶数下标子序列和奇数下标子序列，再用一轮固定位置的比较-交换把两者交织成整体有序。
+3. **补齐长度**: 经典网络只对长度为 2 的幂的序列成立，一般长度需要先用哨兵值补齐到 2 的幂，排序后再去掉哨兵。
 
 ### 算法步骤
 
 1. **初始化**:
-   - 将数据分成奇数和偶数索引的子数组。
+   - 若序列长度不是 2 的幂，先在末尾补足够多的最大值哨兵，把长度补齐到 2 的幂。
 
-2. **奇偶排序**:
-   - 对奇数位置和偶数位置的子数组分别进行归并排序。
+2. **递归排序**:
+   - `oddEvenMergeSort` 把区间 `[lo, hi]` 从中点分成两半，先递归排序左半部分和右半部分。
 
-3. **奇偶合并**:
-   - 对奇数和偶数位置的子数组进行奇偶合并操作，最终将整个数组排序完成。
+3. **奇偶归并**:
+   - `oddEvenMerge` 以步长 `r` 处理区间：递归地按步长 `2r` 归并偶数下标子序列和奇数下标子序列，最后对 `(i, i+r)` 这些固定位置执行比较-交换，使两半合并为整体有序。
+
+4. **还原结果**:
+   - 排序完成后去掉末尾的哨兵，即得到原数组的有序序列。
 
 ### 代码示例（Go语言实现）
 
@@ -30,70 +33,63 @@ package main
 
 import (
     "fmt"
-    "sort"
 )
 
-// 合并两个已排序的子数组
-func merge(arr []int, left int, mid int, right int) {
-    n1 := mid - left + 1
-    n2 := right - mid
-
-    L := make([]int, n1)
-    R := make([]int, n2)
-
-    for i := 0; i < n1; i++ {
-        L[i] = arr[left + i]
+// compareExchange 比较交换：保证 arr[i] <= arr[j]
+func compareExchange(arr []int, i, j int) {
+    if arr[i] > arr[j] {
+        arr[i], arr[j] = arr[j], arr[i]
     }
-    for j := 0; j < n2; j++ {
-        R[j] = arr[mid + 1 + j]
-    }
+}
 
-    i, j, k := 0, 0, left
-    for i < n1 && j < n2 {
-        if L[i] <= R[j] {
-            arr[k] = L[i]
-            i++
-        } else {
-            arr[k] = R[j]
-            j++
+// oddEvenMerge 用奇偶归并的方式合并 arr[lo..hi]（闭区间），
+// 前提是 arr[lo..mid] 与 arr[mid+1..hi] 各自有序，且 hi-lo+1 是 2 的幂
+func oddEvenMerge(arr []int, lo, hi, r int) {
+    step := r * 2
+    if step < hi-lo {
+        oddEvenMerge(arr, lo, hi, step)   // 归并偶数下标子序列
+        oddEvenMerge(arr, lo+r, hi, step) // 归并奇数下标子序列
+        for i := lo + r; i <= hi-r; i += step {
+            compareExchange(arr, i, i+r)
         }
-        k++
-    }
-
-    for i < n1 {
-        arr[k] = L[i]
-        i++
-        k++
-    }
-
-    for j < n2 {
-        arr[k] = R[j]
-        j++
-        k++
+    } else {
+        compareExchange(arr, lo, lo+r)
     }
 }
 
-// 奇偶归并排序函数
-func oddEvenMergeSort(arr []int, left int, right int) {
-    if left < right {
-        mid := (left + right) / 2
-
-        // 对奇数和偶数位置进行递归排序
-        oddEvenMergeSort(arr, left, mid)
-        oddEvenMergeSort(arr, mid+1, right)
-
-        // 合并已排序的子数组
-        merge(arr, left, mid, right)
+// 奇偶归并排序函数，对 arr[lo..hi]（闭区间）排序，要求区间长度为 2 的幂
+func oddEvenMergeSort(arr []int, lo, hi int) {
+    if hi-lo >= 1 {
+        mid := lo + (hi-lo)/2
+        oddEvenMergeSort(arr, lo, mid)
+        oddEvenMergeSort(arr, mid+1, hi)
+        oddEvenMerge(arr, lo, hi, 1)
     }
 }
 
-// 主排序函数
-func oddEvenMergeSortWrapper(arr []int) {
-    oddEvenMergeSort(arr, 0, len(arr)-1)
+// 主排序函数：任意长度先用最大值哨兵补齐到 2 的幂，排序后取回前 n 个元素
+func oddEvenMergeSortWrapper(arr []int) []int {
+    n := len(arr)
+    if n < 2 {
+        return arr
+    }
+    size := 1
+    for size < n {
+        size *= 2
+    }
+    padded := make([]int, size)
+    copy(padded, arr)
+    for i := n; i < size; i++ {
+        padded[i] = int(^uint(0) >> 1) // MaxInt 哨兵
+    }
+    oddEvenMergeSort(padded, 0, size-1)
+    copy(arr, padded[:n])
+    return arr
 }
 
 func main() {
     arr := []int{38, 27, 43, 3, 9, 82, 10}
+    fmt.Println("Original array:", arr)
     oddEvenMergeSortWrapper(arr)
     fmt.Println("Sorted array:", arr)
 }
@@ -106,12 +102,12 @@ func main() {
   - 平均情况: $O(n \log^2 n)$
   - 最好情况: $O(n \log^2 n)$
 
-- **空间复杂度**: $O(n)$ （需要额外的空间来存储临时数组）
+- **空间复杂度**: $O(n)$ （示例实现为把长度补齐到 2 的幂而复制了一份切片；比较交换网络本身可以原地执行）
 
 ### 稳定性
 
-奇偶奇归并排序是稳定的排序算法，因为在合并操作过程中不会改变相同元素的相对顺序。
+奇偶奇归并排序是不稳定的：归并网络中的比较-交换发生在相距 `r` 的两个元素之间，相等元素可能被交换而改变相对顺序。它的另一个特点是整个网络与数据的初始内容无关（数据无关性），每一轮的比较位置固定，因此非常适合硬件实现和并行执行。
 
 ### 总结
 
-奇偶奇归并排序是一种适合并行计算的排序算法，通过分组和合并操作来提高排序效率。它结合了归并排序的优势，尤其适用于大规模数据的排序任务。通过将数据分成奇数和偶数位置进行排序，并利用合并操作来完成排序，奇偶奇归并排序提供了一种高效且稳定的排序方案。
+奇偶奇归并排序是一种基于比较交换网络的排序算法，通过奇偶分组和递归归并来提高排序效率。它的比较序列固定、与输入数据无关，天然适合并行计算和硬件实现。虽然它不是稳定排序，且比较次数 $O(n \log^2 n)$ 略多于最优的比较排序，但凭借规则的网格结构，它在并行排序场景中仍然是一种经典方案。

@@ -23,7 +23,7 @@ Go 语言的协程（goroutine）与 `netpoll` 的配合是其高并发能力的
 
 ## 源码实现
 
-Go 的 `netpoll` 主要在 `runtime/netpoll.go` 中实现，核心部分包括事件轮询（polling）、事件注册和处理、与 goroutine 的调度配合等。
+Go 的 `netpoll` 主要在 `runtime/netpoll.go` 中实现，核心部分包括事件轮询（polling）、事件注册和处理、与 goroutine 的调度配合等。下面摘录的是 Go 1.27 源码（精简注释版），不同版本的字段和签名可能略有差异。
 
 ### 核心数据结构
 
@@ -31,25 +31,34 @@ Go 的 `netpoll` 主要在 `runtime/netpoll.go` 中实现，核心部分包括�
 
 #### `pollDesc`
 
-`pollDesc` 是 `netpoll` 中的核心数据结构之一，用于描述一个网络 I/O 的文件描述符。它包含了文件描述符的状态信息以及事件处理函数。
+`pollDesc` 是 `netpoll` 中的核心数据结构之一，用于描述一个网络 I/O 的文件描述符。每个被轮询的 fd 都对应一个 `pollDesc`，其中记录了读/写两侧正在等待的 goroutine 以及超时定时器等信息。
 
 ```go
 type pollDesc struct {
-    link    *pollDesc // link for list of ready descriptors
-    wd      *pollWork // work descriptor
-    locking int32     // 0 if unlocked, 1 if locked
-}
-```
+    _     sys.NotInHeap
+    link  *pollDesc      // 在 pollcache 中使用，由 pollcache.lock 保护
+    fd    uintptr        // 在 pollDesc 生命周期内不变
+    fdseq atomic.Uintptr // 防止使用已失效的 pollDesc
 
-#### `pollWork`
+    atomicInfo atomic.Uint32 // 原子保存 closing/rd/wd 的摘要位，供 netpollcheckerr 免锁检查
 
-`pollWork` 结构体描述了一个具体的 I/O 操作。
+    // rg、wg 原子访问，保存 g 指针：
+    // pdReady（就绪）、pdWait（正在挂起）或正在等待读/写的 G
+    rg atomic.Uintptr // 等待读的 goroutine
+    wg atomic.Uintptr // 等待写的 goroutine
 
-```go
-type pollWork struct {
-    fd       int32 // file descriptor
-    mask     int32 // event mask (what events we are interested in)
-    user     uintptr // user data (usually a pointer to the pollDesc)
+    lock    mutex // 保护以下字段
+    closing bool
+    rrun    bool      // 读超时定时器是否正在运行
+    wrun    bool      // 写超时定时器是否正在运行
+    user    uint32    // 用户可设置的 cookie
+    rseq    uintptr   // 防止过期的读定时器
+    rt      timer     // 读超时定时器
+    rd      int64     // 读超时时间点（nanotime，-1 表示已过期）
+    wseq    uintptr   // 防止过期的写定时器
+    wt      timer     // 写超时定时器
+    wd      int64     // 写超时时间点
+    self    *pollDesc // 用于间接接口的存储，见 (*pollDesc).makeArg
 }
 ```
 
@@ -59,58 +68,81 @@ type pollWork struct {
 
 #### 事件注册
 
-在 `netpoll` 中，注册一个文件描述符的事件是通过 `netpollopen` 函数完成的。
+在 `netpoll` 中（Linux 实现 `runtime/netpoll_epoll.go`），注册一个文件描述符的事件是通过 `netpollopen` 函数完成的：
 
 ```go
-func netpollopen(fd uintptr, pd *pollDesc) int32 {
-    // 使用 epoll 或 kqueue 注册文件描述符
-    return epollctl(epfd, _EPOLL_CTL_ADD, int32(fd), &ev)
+// netpollopen 向 epoll 实例注册 fd（源码，Go 1.27）
+func netpollopen(fd uintptr, pd *pollDesc) uintptr {
+    var ev linux.EpollEvent
+    ev.Events = linux.EPOLLIN | linux.EPOLLOUT | linux.EPOLLRDHUP | linux.EPOLLET
+    tp := taggedPointerPack(unsafe.Pointer(pd), pd.fdseq.Load())
+    *(*taggedPointer)(unsafe.Pointer(&ev.Data)) = tp
+    return linux.EpollCtl(epfd, linux.EPOLL_CTL_ADD, int32(fd), &ev)
 }
 ```
 
-这里的 `epollctl` 函数调用了底层的 `epoll_ctl` 系统调用，将文件描述符添加到 `epoll` 实例中。
+这里的 `netpollopen` 内部调用了 `epollctl`，最终执行底层的 `epoll_ctl` 系统调用，将文件描述符添加到 `epoll` 实例中。
 
 #### 事件轮询
 
-事件轮询是通过 `netpoll` 函数实现的。
+事件轮询是通过 `netpoll` 函数实现的。注意它的参数是延迟时间 `delay`（纳秒），而不是 `block bool`：
 
 ```go
-func netpoll(block bool) *g {
-    var waitms int64
-    if block {
-        waitms = -1 // block indefinitely
+// netpoll 检查就绪的网络连接（源码签名，Go 1.27）
+// 返回就绪的 goroutine 列表；delay < 0 表示永久阻塞，delay == 0 表示非阻塞
+func netpoll(delay int64) (gList, int32) {
+    if epfd == -1 {
+        return gList{}, 0
+    }
+    var waitms int32
+    if delay < 0 {
+        waitms = -1
+    } else if delay == 0 {
+        waitms = 0
     } else {
-        waitms = 0 // return immediately
+        waitms = int32(delay / 1e6) // 换算为毫秒
     }
 
-    var events [128]epollevent
-    n := epollwait(epfd, &events[0], int32(len(events)), waitms)
-    if n < 0 {
-        if n != -_EINTR {
-            throw("runtime: netpoll: epollwait failed")
+    var events [128]linux.EpollEvent
+retry:
+    n, errno := linux.EpollWait(epfd, events[:], int32(len(events)), waitms)
+    if errno != 0 {
+        if errno != _EINTR {
+            println("runtime: epollwait on fd", epfd, "failed with", errno)
+            throw("runtime: netpoll failed")
         }
-        return nil
+        goto retry
     }
 
-    var gp *g
+    var toRun gList
     for i := int32(0); i < n; i++ {
-        ev := &events[i]
-        pd := *(**pollDesc)(unsafe.Pointer(&ev.data))
-        if (ev.events & (_EPOLLIN | _EPOLLRDHUP | _EPOLLHUP | _EPOLLERR)) != 0 {
-            pd.setEventErr(_POLLERR)
-        } else if (ev.events & _EPOLLIN) != 0 {
-            pd.setEventErr(_POLLIN)
-        } else if (ev.events & _EPOLLOUT) != 0 {
-            pd.setEventErr(_POLLOUT)
-        } else {
-            throw("runtime: netpoll: unexpected epoll event")
+        ev := events[i]
+        if ev.Events == 0 {
+            continue
+        }
+        var mode int32
+        if ev.Events&(linux.EPOLLIN|linux.EPOLLRDHUP|linux.EPOLLHUP|linux.EPOLLERR) != 0 {
+            mode += 'r'
+        }
+        if ev.Events&(linux.EPOLLOUT|linux.EPOLLHUP|linux.EPOLLERR) != 0 {
+            mode += 'w'
+        }
+        if mode != 0 {
+            // 从 event.Data 中取出注册时的 pollDesc（Go 1.26 起为 taggedPointer）
+            tp := *(*taggedPointer)(unsafe.Pointer(&ev.Data))
+            pd := (*pollDesc)(tp.pointer())
+            tag := tp.tag()
+            if pd.fdseq.Load() == tag {
+                pd.setEventErr(ev.Events == linux.EPOLLERR, tag)
+                netpollready(&toRun, pd, mode)
+            }
         }
     }
-    return gp
+    return toRun, 0
 }
 ```
 
-这里的 `epollwait` 调用了底层的 `epoll_wait` 系统调用，等待 I/O 事件的发生。`epoll_wait` 返回后，`netpoll` 会遍历所有发生事件的文件描述符，并将事件分发给相应的 `pollDesc` 进行处理。
+这里的 `epollwait` 封装了底层的 `epoll_wait` 系统调用，等待 I/O 事件的发生。`epoll_wait` 返回后，`netpoll` 会遍历所有发生事件的文件描述符，并把需要唤醒的 goroutine 收集到 `gList` 中，交由调度器执行。
 
 ### 与 goroutine 的配合
 
@@ -118,18 +150,31 @@ func netpoll(block bool) *g {
 
 #### 唤醒 goroutine
 
-当 `netpoll` 轮询到事件时，会调用 `netpollready` 函数来唤醒相应的 goroutine。
+当 `netpoll` 轮询到事件时，会调用 `netpollready` 函数把等待在该 `pollDesc` 上的 goroutine 放入待运行列表：
 
 ```go
-func netpollready(gp *g, pd *pollDesc, mode int32) {
-    if !runqput(gp) {
-        globrunqput(gp)
+// netpollready 把因等待 fd 读/写事件而阻塞的 goroutine 放入 toRun（源码签名，Go 1.27）
+// mode 为 'r'、'w' 或 'r'+'w'
+func netpollready(toRun *gList, pd *pollDesc, mode int32) int32 {
+    delta := int32(0)
+    var rg, wg *g
+    if mode == 'r' || mode == 'r'+'w' {
+        rg = netpollunblock(pd, 'r', true, &delta)
     }
-    wakep()
+    if mode == 'w' || mode == 'r'+'w' {
+        wg = netpollunblock(pd, 'w', true, &delta)
+    }
+    if rg != nil {
+        toRun.push(rg)
+    }
+    if wg != nil {
+        toRun.push(wg)
+    }
+    return delta
 }
 ```
 
-这里的 `runqput` 和 `globrunqput` 是 Go 调度器的内部函数，用于将 goroutine 放入本地或全局运行队列中。`wakep` 函数则用于唤醒一个处理器（P），以便调度器可以立即处理新的 goroutine。
+调度器（`findRunnable` 等）会定期调用 `netpoll`，将返回的 goroutine 列表注入运行队列；`gList` 是运行时内部的双向链表，`runqput`/`globrunqput` 等调度器内部函数负责把这些 goroutine 放入本地或全局运行队列，从而恢复被 I/O 阻塞的 goroutine 的执行。
 
 ### 为什么选择单一 Reactor 模型
 

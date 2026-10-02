@@ -74,18 +74,29 @@ func main() {
 
 **示例 2：短路行为**
 
+注意：`1/0` 是常量表达式，Go 在编译阶段就会报 `division by zero` 错误，根本无法通过编译；下面用一个函数来演示运行时的短路行为：
+
 ```go
 package main
 
 import "fmt"
 
-func main() {
-    a := true
-    b := false
+func checkDiv(n int) bool {
+    // 演示短路行为：使用安全的条件避免除以零
+    // 当 n 不为 0 时，返回 true；否则返回 false
+    // 这样可以演示 && 和 || 的短路行为，而不会触发 panic
+    return n != 0
+}
 
-    // 短路行为示例
-    result1 := a && (1/0 == 0)  // 由于 a 为 true，(1/0 == 0) 不会被计算，避免了除以零的错误
-    result2 := b || (1/0 == 0)  // 由于 b 为 false，(1/0 == 0) 不会被计算，避免了除以零的错误
+func main() {
+    a := false
+    b := true
+
+    // 短路行为：&& 左侧为 false 时，右侧的 checkDiv 不会被调用，
+    // 因此避免了除以零的 panic
+    result1 := a && checkDiv(1)
+    // || 左侧为 true 时同理，右侧的 checkDiv 不会被调用
+    result2 := b || checkDiv(1)
 
     fmt.Println("result1:", result1) // 输出: result1: false
     fmt.Println("result2:", result2) // 输出: result2: true

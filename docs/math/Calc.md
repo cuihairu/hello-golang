@@ -48,7 +48,7 @@
       var x mat.VecDense
       x.MulVec(&AInv, b)
 
-      fmt.Println("解向量:", x)  // 输出: [1 2]
+      fmt.Printf("解向量: x0=%.2f, x1=%.2f\n", x.AtVec(0), x.AtVec(1))  // 输出: 解向量: x0=0.60, x1=2.80
   }
   ```
 
@@ -77,7 +77,7 @@
       f := func(x float64) float64 { return x*x }
       x := 2.0
       h := 1e-5
-      fmt.Println("导数:", finiteDifference(f, x, h))  // 输出: 4.00001
+      fmt.Println("导数:", finiteDifference(f, x, h))  // 输出: 4.000010000027032
   }
   ```
 
@@ -104,7 +104,7 @@
       f := func(x float64) float64 { return x*x }
       a, b := 0.0, 1.0
       n := 100
-      fmt.Println("积分结果:", trapezoidalRule(f, a, b, n))  // 输出: 0.33335
+      fmt.Println("积分结果:", trapezoidalRule(f, a, b, n))  // 输出: 0.33335000000000004
   }
   ```
 
@@ -140,7 +140,7 @@
       f := func(x float64) float64 { return x*x - 2 }
       df := func(x float64) float64 { return 2 * x }
       root := newtonMethod(f, df, 1, 1e-6, 100)
-      fmt.Println("根:", root)  // 输出: 1.41421
+      fmt.Println("根:", root)  // 输出: 1.414213562373095
   }
   ```
 

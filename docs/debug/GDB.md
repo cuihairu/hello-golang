@@ -140,7 +140,7 @@ gdb ./myprogram
 在调试过程中，可以修改变量的值：
 
 ```gdb
-(gdb) set variableName = newValue
+(gdb) set variable variableName = newValue
 ```
 
 **3.9 列出源代码**

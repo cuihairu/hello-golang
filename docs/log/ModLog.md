@@ -35,6 +35,7 @@ package main
 
 import (
 	"log/slog"
+	"os"
 )
 
 func main() {
@@ -59,7 +60,7 @@ log.Panic("This is a panic log message") // 会调用 panic()
 ```go
 logger.Info("This is an info message")
 logger.Warn("This is a warning message")
-logger.Error("This is an error message", slog.Error(err))
+logger.Error("This is an error message", slog.Any("error", err))
 ```
 
 ##### 2.3 日志输出格式
@@ -257,6 +258,7 @@ package main
 
 import (
 	"log/slog"
+	"os"
 	"sync"
 )
 
@@ -301,11 +303,13 @@ func NewLogger(filename string) *log.Logger {
 
 ##### 8.2 集成到一个实际项目中
 
+假设上面的 `logutil` 包位于当前模块的 `logutil` 子目录中（模块名为 `example.com/myapp`），则在主包中这样引用：
+
 ```go
 package main
 
 import (
-	"logutil"
+	"example.com/myapp/logutil"
 )
 
 func main() {

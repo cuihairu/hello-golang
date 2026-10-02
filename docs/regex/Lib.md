@@ -24,8 +24,8 @@ import "regexp"
 re := regexp.MustCompile(`pattern`)
 ```
 
-**2. 匹配完整字符串**
-- **`MatchString`**：检查整个字符串是否匹配正则表达式。
+**2. 匹配字符串**
+- **`MatchString`**：检查字符串中是否存在与正则表达式匹配的部分（非锚定匹配；若要匹配完整字符串，需在模式两端加上 `^` 和 `$`）。
 ```go
 matched := re.MatchString("test string")
 ```
@@ -89,7 +89,7 @@ re := regexp.MustCompile(`pattern`)
 ```
 
 **2. 检查匹配**
-- **`MatchString`**：检查字符串是否匹配正则表达式。
+- **`MatchString`**：检查字符串中是否存在匹配（非锚定匹配；若要匹配完整字符串，需在模式两端加上 `^` 和 `$`）。
 ```go
 matched := re.MatchString("test string")
 ```

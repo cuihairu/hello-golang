@@ -14,7 +14,6 @@ package main
 import (
     "fmt"
     "os"
-    "syscall"
 )
 
 func getFileInfo(filePath string) {
@@ -49,7 +48,11 @@ func main() {
 
 分布式文件系统（DFS）用于在多台机器上共享文件和存储数据。它能够提供高可用性、高可靠性和高扩展性。
 
-**Go 示例代码**（使用 Apache Hadoop 分布式文件系统 HDFS）：
+**Go 示例代码**（使用 Apache Hadoop 分布式文件系统 HDFS，先安装客户端库）：
+
+```bash
+go get github.com/colinmarc/hdfs/v2
+```
 
 ```go
 package main
@@ -67,9 +70,17 @@ func main() {
     }
 
     filePath := "/user/hadoop/example.txt"
-    err = client.WriteFile(filePath, []byte("Hello, HDFS!\n"), 0644)
+    writer, err := client.Create(filePath)
     if err != nil {
+        fmt.Println("Error creating file on HDFS:", err)
+        return
+    }
+    if _, err := writer.Write([]byte("Hello, HDFS!\n")); err != nil {
         fmt.Println("Error writing to HDFS:", err)
+        return
+    }
+    if err := writer.Close(); err != nil {
+        fmt.Println("Error closing file on HDFS:", err)
         return
     }
 
@@ -85,37 +96,54 @@ func main() {
 
 #### 10.3 大数据文件处理
 
-大数据文件处理涉及对大规模数据集进行高效的读取、写入和处理。常见的方法包括分布式计算和批处理。
+大数据文件处理涉及对大规模数据集进行高效的读取、写入和处理。常见的方法包括分布式计算和批处理。Go 没有官方的 Apache Spark 客户端，处理单个大文件时通常使用流式读取，逐块处理而不把整个文件加载进内存。
 
-**Go 示例代码**（使用 Apache Spark 进行大数据处理）：
+**Go 示例代码**（流式统计大文件的词频）：
 
 ```go
 package main
 
 import (
+    "bufio"
     "fmt"
-    "github.com/zeroshade/spark"
+    "os"
+    "sort"
+    "strings"
 )
 
 func main() {
-    conf := spark.NewConf()
-    conf.SetAppName("Go Spark Example")
-    sc := spark.NewContext(conf)
+    filePath := "data.txt"
+    file, err := os.Open(filePath)
+    if err != nil {
+        fmt.Println("Error opening file:", err)
+        return
+    }
+    defer file.Close()
 
-    filePath := "hdfs://namenode:9000/user/hadoop/data.txt"
-    rdd := sc.TextFile(filePath)
+    counts := make(map[string]int)
+    scanner := bufio.NewScanner(file)
+    scanner.Buffer(make([]byte, 1024*1024), 1024*1024) // 支持超长行
+    for scanner.Scan() {
+        for _, word := range strings.Fields(scanner.Text()) {
+            counts[strings.ToLower(word)]++
+        }
+    }
+    if err := scanner.Err(); err != nil {
+        fmt.Println("Error scanning file:", err)
+        return
+    }
 
-    wordCounts := rdd.FlatMap(func(line string) []string {
-        return strings.Fields(line)
-    }).Map(func(word string) (string, int) {
-        return word, 1
-    }).ReduceByKey(func(a, b int) int {
-        return a + b
-    })
+    words := make([]string, 0, len(counts))
+    for word := range counts {
+        words = append(words, word)
+    }
+    sort.Slice(words, func(i, j int) bool { return counts[words[i]] > counts[words[j]] })
 
-    result := wordCounts.Collect()
-    for _, wc := range result {
-        fmt.Printf("%s: %d\n", wc.Key, wc.Value)
+    for i, word := range words {
+        if i >= 10 {
+            break
+        }
+        fmt.Printf("%s: %d\n", word, counts[word])
     }
 }
 ```
@@ -124,7 +152,11 @@ func main() {
 
 实时数据流处理用于处理连续不断的数据流，常用于监控系统、实时分析和在线计算。
 
-**Go 示例代码**（使用 Apache Kafka 进行实时数据流处理）：
+**Go 示例代码**（使用 Apache Kafka 进行实时数据流处理，先安装客户端库；该库基于 CGO，需要本机安装 librdkafka）：
+
+```bash
+go get github.com/confluentinc/confluent-kafka-go/kafka
+```
 
 ```go
 package main

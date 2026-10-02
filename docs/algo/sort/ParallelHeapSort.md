@@ -34,9 +34,8 @@ import (
     "sync"
 )
 
-// 堆调整函数
-func heapify(arr []int, n, i int, wg *sync.WaitGroup) {
-    defer wg.Done()
+// 堆调整函数：把以 i 为根的子树调整成大顶堆（只会访问 i 的子树）
+func heapify(arr []int, n, i int) {
     largest := i
     left := 2*i + 1
     right := 2*i + 2
@@ -51,19 +50,44 @@ func heapify(arr []int, n, i int, wg *sync.WaitGroup) {
 
     if largest != i {
         arr[i], arr[largest] = arr[largest], arr[i]
-        heapify(arr, n, largest, wg)
+        heapify(arr, n, largest)
     }
 }
 
-// 平行构建堆
+// 平行构建堆：自底向上按层并行调整。
+// 同一层节点的子树互不重叠，同层并行调整不会产生数据竞争；
+// 深层调整完成后浅层才能开始，保证被调整的子树已是合法的堆。
 func parallelBuildHeap(arr []int) {
     n := len(arr)
-    var wg sync.WaitGroup
-    for i := n/2 - 1; i >= 0; i-- {
-        wg.Add(1)
-        go heapify(arr, n, i, &wg)
+    if n < 2 {
+        return
     }
-    wg.Wait()
+
+    // 找到最深的"拥有孩子节点"的层号
+    level := 0
+    for 2*(1<<(level+1)) <= n {
+        level++
+    }
+
+    var wg sync.WaitGroup
+    for ; level >= 0; level-- {
+        lo := 1<<level - 1     // 该层第一个节点下标
+        hi := 1<<(level+1) - 2 // 该层最后一个节点下标
+        if hi > n-1 {
+            hi = n - 1
+        }
+        for i := hi; i >= lo; i-- {
+            if i > n/2-1 { // 叶子节点无需调整
+                continue
+            }
+            wg.Add(1)
+            go func(i int) {
+                defer wg.Done()
+                heapify(arr, n, i)
+            }(i)
+        }
+        wg.Wait() // 等待本层全部完成后再调整上一层
+    }
 }
 
 // 平行排序
@@ -74,7 +98,10 @@ func parallelHeapSort(arr []int) {
         arr[0], arr[i] = arr[i], arr[0]
         var wg sync.WaitGroup
         wg.Add(1)
-        go heapify(arr[:i], i, 0, &wg)
+        go func() {
+            defer wg.Done()
+            heapify(arr[:i], i, 0)
+        }()
         wg.Wait()
     }
 }

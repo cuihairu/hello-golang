@@ -142,9 +142,12 @@ func debugLogger() gin.HandlerFunc {
     return func(c *gin.Context) {
         log.Printf("Request: %s %s", c.Request.Method, c.Request.URL.Path)
         c.Next()
-        log.Printf("Response: %d %s", c.Writer.Status(), c.Writer.Body.String())
+        log.Printf("Response: %d", c.Writer.Status())
     }
 }
+```
+
+注意：`c.Writer` 是 `gin.ResponseWriter` 接口，它只暴露 `Status()`、`Size()`、`Written()`、`Header()` 等方法，并没有 `Body` 字段，无法直接读取响应体。如果确实需要记录响应体，可以自定义一个包装了 `http.ResponseWriter` 的类型，在 `Write` 时把内容缓存下来再通过中间件输出。
 
 func main() {
     r := gin.Default()

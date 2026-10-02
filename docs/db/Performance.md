@@ -93,8 +93,9 @@ db.SetConnMaxLifetime(5 * time.Minute)
 示例：使用 Redis 进行缓存
 ```go
 import (
-    "github.com/go-redis/redis/v8"
     "context"
+
+    "github.com/redis/go-redis/v9"
 )
 
 var ctx = context.Background()

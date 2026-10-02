@@ -73,7 +73,11 @@ func Logger() gin.HandlerFunc {
         log.Print(latency)
     }
 }
-r.Use(Logger())
+
+func main() {
+    r := gin.New()
+    r.Use(Logger())
+}
 ```
 
 ##### 2.2 中间件应用
@@ -191,7 +195,11 @@ func ErrorHandler() gin.HandlerFunc {
         }
     }
 }
-r.Use(ErrorHandler())
+
+func main() {
+    r := gin.New()
+    r.Use(ErrorHandler())
+}
 ```
 
 #### 6 日志和恢复中间件

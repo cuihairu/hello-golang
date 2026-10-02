@@ -92,6 +92,13 @@ func main() {
 使用 Viper 的文件变更监听功能，可以在配置文件修改时自动重新加载配置：
 
 ```go
+import (
+    "log"
+
+    "github.com/fsnotify/fsnotify"
+    "github.com/spf13/viper"
+)
+
 func WatchConfig(config *Config) {
     viper.WatchConfig()
     viper.OnConfigChange(func(e fsnotify.Event) {
@@ -121,9 +128,11 @@ func main() {
 
 ```go
 import (
-    "github.com/coreos/etcd/clientv3"
     "context"
+    "encoding/json"
     "time"
+
+    "go.etcd.io/etcd/client/v3"
 )
 
 func LoadConfigFromEtcd() (*Config, error) {

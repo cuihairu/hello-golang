@@ -47,7 +47,7 @@ func (m *ChatMediator) Register(name string, colleague Colleague) {
 }
 
 func (m *ChatMediator) Send(message string, colleague Colleague) {
-    for name, c := range m.colleagues {
+    for _, c := range m.colleagues {
         if c != colleague {
             c.Receive(message)
         }

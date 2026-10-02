@@ -93,7 +93,9 @@ func catalanSort(arr []int) []int {
 func main() {
     arr := []int{3, 7, 1, 8, 5, 3, 0, 9}
     sortedArr := catalanSort(arr)
-    fmt.Println("Sorted array:", sortedArr)
+    // 注意：这里的"排序"指的是按卡塔兰映射值排序，
+    // 结果按个位数对应的卡塔兰数从小到大排列，并不保证按数值本身升序。
+    fmt.Println("按卡塔兰映射值排序后的数组:", sortedArr)
 }
 ```
 

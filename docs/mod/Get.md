@@ -4,13 +4,18 @@
 
 Go 包的安装通常通过以下几种方式完成：
 
-1. **使用 `go get` 命令**：
+1. **使用 `go get` 命令（管理依赖）**：
    ```sh
    go get <package-import-path>
    ```
-   例如，要安装 `golang.org/x/tools/cmd/goimports` 包，可以使用：
+   例如，要为当前模块添加 `github.com/gin-gonic/gin` 依赖，可以使用：
    ```sh
-   go get golang.org/x/tools/cmd/goimports
+   go get github.com/gin-gonic/gin
+   ```
+
+   注意：从 Go 1.17 开始，`go get` 不再构建和安装包，只负责调整 `go.mod` 中的依赖。如果要安装命令行工具（可执行程序），应使用带版本后缀的 `go install`：
+   ```sh
+   go install golang.org/x/tools/cmd/goimports@latest
    ```
 
 2. **使用 `go mod` 命令**：
@@ -42,10 +47,10 @@ Go 包的安装通常通过以下几种方式完成：
    `go get` 从解析出的包路径中提取出版本控制信息（如 Git、Mercurial 等），并获取该仓库的最新代码。
 
 3. **下载包代码**：
-   `go get` 使用对应的版本控制工具（如 Git）将包代码克隆或拉取到本地缓存目录中（默认在 `$GOPATH/pkg/mod` 或 `$GOPATH/src` 中）。
+   `go get` 使用对应的版本控制工具（如 Git）将包代码下载到本地模块缓存目录中（默认在 `$GOPATH/pkg/mod` 中）。
 
-4. **安装包**：
-   `go get` 会自动构建并安装下载的包，将其编译结果放置在 `$GOPATH/pkg` 或 Go Modules 缓存目录中。
+4. **更新依赖**：
+   在 Go 1.17 及之后的版本中，`go get` 只会下载源码并更新依赖，**不会**构建和安装包。需要安装可执行程序时，请使用 `go install <package>@<version>`。
 
 5. **更新依赖文件**：
    在 Go Modules 模式下，`go get` 会更新 `go.mod` 和 `go.sum` 文件，以确保所有依赖的版本一致。

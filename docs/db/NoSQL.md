@@ -21,13 +21,15 @@ Redis是一种高性能的键值数据库，支持多种数据结构（字符串
 
 **安装MongoDB**
 ```bash
-# Ubuntu安装MongoDB
+# Ubuntu 18.04 可以直接用 apt 安装
 sudo apt-get update
 sudo apt-get install -y mongodb
 
 # 启动MongoDB
 sudo service mongodb start
 ```
+
+注意：Ubuntu 20.04 之后的官方源已不再提供 `mongodb` 包，需要按 MongoDB 官网指引配置 `mongodb-org` 的 apt 源后再安装。
 
 **安装Redis**
 ```bash
@@ -81,11 +83,11 @@ func main() {
 ```
 
 ##### 使用Redis
-在Go中使用Redis，可以使用`go-redis/redis`库。
+在Go中使用Redis，可以使用 `redis/go-redis` 库（原 `go-redis/redis`，v9 起迁移到新路径）。
 
 **安装Redis驱动**
 ```bash
-go get github.com/go-redis/redis/v8
+go get github.com/redis/go-redis/v9
 ```
 
 **示例代码：连接Redis并进行基本操作**
@@ -95,8 +97,9 @@ package main
 import (
     "context"
     "fmt"
-    "github.com/go-redis/redis/v8"
     "log"
+
+    "github.com/redis/go-redis/v9"
 )
 
 var ctx = context.Background()

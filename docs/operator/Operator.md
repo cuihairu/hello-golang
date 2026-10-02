@@ -126,7 +126,7 @@ func main() {
 - **按位与 (`&`)**
 - **按位或 (`|`)**
 - **按位异或 (`^`)**
-- **按位取反 (`~`)**
+- **按位取反 (`^`)**
 - **左移 (`<<`)**
 - **右移 (`>>`)**
 
@@ -143,7 +143,7 @@ func main() {
     fmt.Println("a & b =", a & b) // 0001 (1 in decimal)
     fmt.Println("a | b =", a | b) // 0111 (7 in decimal)
     fmt.Println("a ^ b =", a ^ b) // 0110 (6 in decimal)
-    fmt.Println("~a =", ^a)       // 1010 (inverted bits of 5)
+    fmt.Println("^a =", ^a)       // 1010 (inverted bits of 5)
     fmt.Println("a << 1 =", a << 1) // 1010 (10 in decimal)
     fmt.Println("a >> 1 =", a >> 1) // 0010 (2 in decimal)
 }

@@ -82,9 +82,9 @@ Redis 的地理空间功能是通过 **Geohash** 编码实现的。Geohash 是�
    package main
 
    import (
-       "github.com/go-redis/redis/v8"
        "context"
-       "fmt"
+
+       "github.com/go-redis/redis/v8"
    )
 
    var ctx = context.Background()
@@ -144,11 +144,16 @@ Redis 的地理空间功能是通过 **Geohash** 编码实现的。Geohash 是�
 5. **查找半径内的地点**
    ```go
    func example(rdb *redis.Client) {
-       locations, err := rdb.GeoRadius(ctx, "locations", 15, 37, 200, "km").Result()
+       locations, err := rdb.GeoRadius(ctx, "locations", 15, 37, &redis.GeoRadiusQuery{
+           Radius: 200, // 半径
+           Unit:   "km", // 单位：m、km、ft、mi
+       }).Result()
        if err != nil {
            panic(err)
        }
-       fmt.Println("Locations within 200 km:", locations)
+       for _, loc := range locations {
+           fmt.Println("Location:", loc.Name)
+       }
    }
    ```
 

@@ -124,9 +124,9 @@ Redis 的位图操作具有高效的内存使用和性能表现，适合用于�
    package main
 
    import (
-       "github.com/go-redis/redis/v8"
        "context"
-       "fmt"
+
+       "github.com/go-redis/redis/v8"
    )
 
    var ctx = context.Background()
@@ -182,7 +182,7 @@ Redis 的位图操作具有高效的内存使用和性能表现，适合用于�
 5. **查找位**
    ```go
    func example(rdb *redis.Client) {
-       pos, err := rdb.BitPos(ctx, "bitmap", 1, nil).Result()
+       pos, err := rdb.BitPos(ctx, "bitmap", 1).Result()
        if err != nil {
            panic(err)
        }

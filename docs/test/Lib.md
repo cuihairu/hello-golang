@@ -53,7 +53,9 @@ func TestService(t *testing.T) {
 
 #### 6.2 `gomock`
 
-`gomock` 是 Go 官方支持的一个模拟库，提供了生成和控制模拟对象的功能。它与 `mockgen` 工具集成，可以从接口生成模拟代码。
+`gomock` 是 Go 官方支持的一个模拟库，提供了生成和控制模拟对象的功能。它与 `mockgen` 工具集成，可以从接口生成模拟代码（示例中的 `NewMockService` 函数即由 `mockgen` 生成）。
+
+> 注：`github.com/golang/mock` 已归档，目前维护的分支为 `go.uber.org/mock`，API 兼容，安装命令为 `go install go.uber.org/mock/mockgen@latest`，导入路径为 `go.uber.org/mock/gomock`。
 
 **主要特性**:
 - 强大的模拟功能：自动生成模拟代码，并提供灵活的预期行为设置。
@@ -163,8 +165,13 @@ func Fuzz(data []byte) int {
 
 **运行模糊测试**:
 ```sh
-go-fuzz -func Fuzz -o fuzz.zip
+# 先用 go-fuzz-build 生成模糊测试用的压缩包
+go-fuzz-build
+# 再用 go-fuzz 运行，-bin 指向上一步生成的压缩包
+go-fuzz -bin=example-fuzz.zip
 ```
+
+> 注：Go 1.18+ 已内置原生模糊测试，推荐使用 `go test -fuzz=Fuzz`，无需安装第三方工具。
 
 #### 6.5 `testcontainers-go`
 
@@ -197,7 +204,10 @@ func TestWithDocker(t *testing.T) {
         Image: "redis:latest",
         ExposedPorts: []string{"6379/tcp"},
     }
-    redisContainer, err := testcontainers.StartContainer(ctx, req)
+    redisContainer, err := testcontainers.GenericContainer(ctx, testcontainers.GenericContainerRequest{
+        ContainerRequest: req,
+        Started:          true,
+    })
     if err != nil {
         t.Fatalf("Failed to start container: %v", err)
     }

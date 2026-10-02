@@ -25,13 +25,13 @@ go mod init github.com/user/project
 go get github.com/sirupsen/logrus@v1.8.1
 ```
 
-- `go tidy`：清理模块依赖。移除 `go.mod` 文件中未使用的依赖，并下载缺失的依赖。
+- `go mod tidy`：清理模块依赖。移除 `go.mod` 文件中未使用的依赖，并下载缺失的依赖。
 
 ```sh
 go mod tidy
 ```
 
-- `go vendor`：将依赖包复制到 `vendor` 目录。可以使用 `go build` 和 `go test` 时从 `vendor` 目录中读取依赖。
+- `go mod vendor`：将依赖包复制到 `vendor` 目录。可以使用 `go build` 和 `go test` 时从 `vendor` 目录中读取依赖。
 
 ```sh
 go mod vendor

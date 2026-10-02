@@ -316,7 +316,6 @@ Recovered and continuing execution
 
 - **`recover` 返回值的类型**：`recover` 可以捕获并返回任何类型的值，这意味着 `panic` 时传递的值类型可以是 `int`、`string`、自定义结构体等。
 - **错误类型并非唯一**：虽然 `error` 类型是常用的，但 `panic` 也可以用来传递其他类型的信息。`recover` 能够处理这些不同类型的值，提供了灵活的异常处理能力。
-- 
 
 
 ### 总结

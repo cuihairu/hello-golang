@@ -61,7 +61,7 @@
      func main() {
          a := 12   // 二进制: 1100
          result := ^a
-         fmt.Println("^a:", result) // 输出: ^a: -13（二进制: 0011...0011，补码表示）
+         fmt.Println("^a:", result) // 输出: ^a: -13（按位取反后用补码表示）
      }
      ```
 
@@ -111,7 +111,7 @@ func main() {
     fmt.Println("a & b:", a & b)  // 输出: a & b: 9（二进制: 1001）
     fmt.Println("a | b:", a | b)  // 输出: a | b: 15（二进制: 1111）
     fmt.Println("a ^ b:", a ^ b)  // 输出: a ^ b: 6（二进制: 0110）
-    fmt.Println("^a:", ^a)        // 输出: ^a: -16（二进制: 0000...0000...1111，取反）
+    fmt.Println("^a:", ^a)        // 输出: ^a: -16
     fmt.Println("a << 1:", a << 1) // 输出: a << 1: 30（二进制: 11110）
     fmt.Println("a >> 2:", a >> 2) // 输出: a >> 2: 3（二进制: 0011）
 }

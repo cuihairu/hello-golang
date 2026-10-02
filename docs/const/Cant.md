@@ -14,27 +14,28 @@
    const myFunc func(int) int = func(x int) int { return x + 1 }
    ```
 
-3. **动态计算的值**：常量必须在编译时期确定其值，不能依赖于运行时计算的结果。因此，任何需要在运行时才能确定值的表达式或函数调用都不能作为常量。
+3. **动态计算的值**：常量必须在编译时期确定其值，不能依赖于运行时计算的结果。因此，任何需要在运行时才能确定值的表达式或函数调用都不能作为常量。注意 `time.Second` 本身是一个类型为 `time.Duration` 的常量，用它定义常量是合法的；不合法的是调用运行时才能求值的函数。
 
    ```go
    // 不能将动态计算的表达式定义为常量
    const maxFileSize = 1024 * 1024  // OK，编译时可确定
-   const timeout = time.Second      // 不能，time.Second 是一个函数调用
+   const timeout = time.Second      // OK，time.Second 本身是常量
+   const now = time.Now()           // 不能，time.Now() 是运行时的函数调用
    ```
 
-4. **未导出的标识符**：常量是一种全局的标识符，可以在包内外使用，但未导出的标识符只能在定义它们的包内部使用。因此，未导出的标识符不能作为常量，因为常量需要在全局范围内可见。
+4. **切片、映射等引用类型的值**：常量的类型只能是基本类型（布尔、数值、字符串）。切片、映射、结构体等需要运行时构造的复合值不能定义为常量。
 
    ```go
-   // 不能将未导出的标识符定义为常量
-   const internalConstant = 42 // internalConstant 未导出
+   // 不能将切片或映射定义为常量
+   const mySlice = []int{1, 2, 3}     // 不能，切片不是常量类型
+   const myMap = map[string]int{"a": 1} // 不能
    ```
 
-5. **类型定义**：类型定义本身也不能作为常量。常量需要具体的值而不是类型本身。
+5. **对常量取地址**：常量是编译期的值，不一定占用运行时内存，因此不能对常量取地址。
 
    ```go
-   // 不能将类型定义作为常量
-   type MyInt int
-   const myIntType MyInt = 10 // 不能这样定义
+   const count = 10
+   p := &count // 不能，invalid operation: cannot take address of count
    ```
 
 这些限制和不足确保了 Go 中常量的稳定性和编译时确定性。通过这些规则，可以确保常量的值在程序的编译阶段就能确定，而不会依赖于运行时的上下文或动态计算。

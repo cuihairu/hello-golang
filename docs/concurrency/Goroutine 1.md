@@ -231,17 +231,21 @@ import (
     "runtime"
 )
 
-func
-
- main() {
-    runtime.LockOSThread()
-    defer runtime.UnlockOSThread()
-
+func main() {
+    done := make(chan struct{})
     go func() {
-        fmt.Println("This Goroutine is running on a specific thread.")
+        runtime.LockOSThread()
+        defer runtime.UnlockOSThread()
+        // 这个 goroutine 被绑定到当前的操作系统线程上，
+        // 在 UnlockOSThread 之前不会迁移到其他线程
+        fmt.Println("This Goroutine is locked to one OS thread.")
+        close(done)
     }()
+    <-done
 }
 ```
+
+注意：`LockOSThread` 绑定的是调用它的那个 goroutine，解绑也必须在同一个 goroutine 中完成，因此一般把绑定和释放写在需要独占线程的那个 goroutine 内部。
 
 ## 2.8 Goroutine 池的实现
 

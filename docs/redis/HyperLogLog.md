@@ -98,9 +98,9 @@ Redis HyperLogLog 的实现机制可以概括如下：
    package main
 
    import (
-       "github.com/go-redis/redis/v8"
        "context"
-       "fmt"
+
+       "github.com/go-redis/redis/v8"
    )
 
    var ctx = context.Background()

@@ -5,7 +5,7 @@
 #### 1. 文本编码标准
 
 1. **ASCII (American Standard Code for Information Interchange)**
-   - **定义**：ASCII 是一种字符编码标准，使用 7 位或 8 位表示字符，支持 128 或 256 个字符，包括英文字符、数字和一些控制字符。
+   - **定义**：ASCII 是一种字符编码标准，使用 7 位表示字符，支持 128 个字符，包括英文字符、数字和一些控制字符（后来的扩展字符集用 8 位表示 256 个字符，但它们并不属于标准 ASCII）。
    - **应用**：主要用于英文文本和基本的符号表示。由于其局限性，ASCII 被更现代的编码标准所替代。
 
 2. **UTF-8 (8-bit Unicode Transformation Format)**

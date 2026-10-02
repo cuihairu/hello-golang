@@ -1,14 +1,36 @@
 /* ============================================================
    Hello Golang · 主题样式
-   品牌色空位：品牌资产（logo.svg / favicon.svg）到位后，
-   在本文件顶部新增「品牌色」区块覆写以下四个变量：
-     --vp-c-brand-1  品牌主色（亮色模式文字/图标）
+   品牌色：取自 Go 官方品牌青 #00ADD8。品牌资产文件（logo.svg / favicon.svg）仍待用户提供，
+   配置中的 logo / favicon 槽位保持注释，不生成代餐。
+   覆写 VitePress 品牌变量（对比度按 WCAG AA 校验：
+   正文链接 ≥4.5:1，实心按钮白字 ≥3:1，明暗两态）：
+     --vp-c-brand-1  品牌主色（正文链接/图标）
      --vp-c-brand-2  悬停态
-     --vp-c-brand-3  按下态
-     --vp-c-brand-soft  半透明底色（高亮块、按钮）
-   深色模式需在 .dark 下另覆写一组同色系更亮的值。
-   当前保持 VitePress 默认品牌色。
+     --vp-c-brand-3  实心按钮底色（白字）
+     --vp-c-brand-soft  半透明底色（高亮块、选中项）
    ============================================================ */
+
+:root {
+  --vp-c-brand-1: #007F9F;
+  --vp-c-brand-2: #2C798D;
+  --vp-c-brand-3: #00728F;
+  --vp-c-brand-soft: #00ADD824;
+}
+
+.dark {
+  --vp-c-brand-1: #00ADD8;
+  --vp-c-brand-2: #24B8DD;
+  --vp-c-brand-3: #009CC3;
+  --vp-c-brand-soft: #00ADD829;
+}
+
+/* 浏览器表面随品牌着色：选区与输入光标 */
+::selection {
+  background-color: #00ADD83D;
+}
+body {
+  caret-color: var(--vp-c-brand-1);
+}
 
 /* ---------- 品牌色（空位） ----------
 

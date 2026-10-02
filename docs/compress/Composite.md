@@ -16,6 +16,7 @@ import (
     "archive/tar"
     "os"
     "io"
+    "path/filepath"
 )
 
 func createTarGz(outputFile string, files []string) error {
@@ -71,23 +72,27 @@ func extractTarGz(inputFile, outputDir string) error {
             return err
         }
 
-        outputFile := outputDir + "/" + header.Name
-        err = os.MkdirAll(outputDir+"/"+header.Name, os.FileMode(header.Mode))
-        if err != nil {
-            return err
-        }
+        // 注意：目录条目不能用 os.Create 直接创建，文件条目也要先确保父目录存在
+        target := filepath.Join(outputDir, header.Name)
 
         if header.Typeflag == tar.TypeDir {
+            if err := os.MkdirAll(target, os.FileMode(header.Mode)); err != nil {
+                return err
+            }
             continue
         }
 
-        outFile, err := os.Create(outputFile)
+        if err := os.MkdirAll(filepath.Dir(target), 0755); err != nil {
+            return err
+        }
+
+        outFile, err := os.Create(target)
         if err != nil {
             return err
         }
-        defer outFile.Close()
 
         _, err = io.Copy(outFile, tarReader)
+        outFile.Close()
         if err != nil {
             return err
         }
@@ -96,6 +101,8 @@ func extractTarGz(inputFile, outputDir string) error {
     return nil
 }
 ```
+
+> 注意：上面用到了 `path/filepath` 包，请确保 import 了 `"path/filepath"`。若把文件名直接传给 `os.MkdirAll`，会导致后续 `os.Create` 因同名目录已存在而失败。
 
 ##### 4.1.3 实践案例
 

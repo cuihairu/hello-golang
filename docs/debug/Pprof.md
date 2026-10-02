@@ -110,7 +110,6 @@ go tool pprof -raw -output=cpu.pprof http://localhost:8080/debug/pprof/profile?s
 
 ```bash
 go tool pprof -raw -output=cpu.raw cpu.pprof
-pprof-to-dot -raw cpu.raw | dot -Tsvg -o cpu.svg
 ```
 
 使用 `FlameGraph` 工具生成火焰图：

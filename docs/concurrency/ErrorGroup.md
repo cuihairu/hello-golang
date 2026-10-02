@@ -5,7 +5,7 @@
 `ErrorGroup` 的基本功能包括：
 
 - **等待所有 goroutine 完成**：像 `sync.WaitGroup` 一样，`ErrorGroup` 可以等待一组 goroutine 完成。
-- **捕获第一个错误**：在并发任务中，如果任何一个任务返回错误，`ErrorGroup` 会立即捕获这个错误，并停止等待其他任务完成（可选行为）。
+- **捕获第一个错误**：在并发任务中，如果任何一个任务返回错误，`ErrorGroup` 会记录这个错误（只保留第一个），并在创建时使用了 `errgroup.WithContext` 的情况下取消关联的 context，让其它任务有机会提前退出。注意 `Wait` 仍然会等待所有 goroutine 结束。
 - **返回第一个错误**：`ErrorGroup` 会返回第一个发生的错误，允许调用者处理或报告错误。
 
 ### 2. 使用示例
@@ -16,38 +16,38 @@
 package main
 
 import (
-    "context"
-    "fmt"
-    "golang.org/x/sync/errgroup"
-    "time"
+	"context"
+	"fmt"
+	"time"
+
+	"golang.org/x/sync/errgroup"
 )
 
 func main() {
-    // Create a new ErrorGroup with a context
-    var g errgroup.Group
-    ctx := context.Background()
+	// 使用 WithContext 创建带取消能力的 ErrorGroup
+	g, ctx := errgroup.WithContext(context.Background())
 
-    // Start multiple goroutines
-    for i := 1; i <= 3; i++ {
-        i := i // Capture loop variable
-        g.Go(func() error {
-            // Simulate work
-            time.Sleep(time.Second * time.Duration(i))
-            // Simulate an error for demonstration
-            if i == 2 {
-                return fmt.Errorf("error from goroutine %d", i)
-            }
-            fmt.Printf("Goroutine %d completed successfully\n", i)
-            return nil
-        })
-    }
+	for i := 1; i <= 3; i++ {
+		i := i // Capture loop variable
+		g.Go(func() error {
+			select {
+			case <-ctx.Done(): // 其他任务出错时会触发取消
+				fmt.Printf("Goroutine %d canceled\n", i)
+				return ctx.Err()
+			case <-time.After(time.Second * time.Duration(i)):
+			}
+			if i == 2 {
+				return fmt.Errorf("error from goroutine %d", i)
+			}
+			fmt.Printf("Goroutine %d completed successfully\n", i)
+			return nil
+		})
+	}
 
-    // Wait for all goroutines to complete and check for errors
-    if err := g.Wait(); err != nil {
-        fmt.Printf("Error occurred: %v\n", err)
-    } else {
-        fmt.Println("All goroutines completed successfully")
-    }
+	// Wait 等所有 goroutine 结束后返回第一个非 nil 错误
+	if err := g.Wait(); err != nil {
+		fmt.Printf("Error occurred: %v\n", err)
+	}
 }
 ```
 
@@ -55,23 +55,19 @@ func main() {
 
 #### 3.1 `errgroup.Group` 结构
 
-`errgroup.Group` 内部使用 `sync.WaitGroup` 来同步 goroutine 的执行，使用一个错误变量来记录第一个发生的错误。以下是简化的内部结构：
+`errgroup.Group` 内部使用 `sync.WaitGroup` 来同步 goroutine 的执行，用 `sync.Once` 保证只记录第一个错误。以下是简化的内部结构（为便于阅读，省略了 `SetLimit` 用到的信号量等细节）：
 
 ```go
 package errgroup
 
-import (
-    "context"
-    "sync"
-)
+import "sync"
 
-// ErrorGroup represents a group of goroutines working on subtasks of a common goal.
+// Group 表示一组为共同目标工作的 goroutine。
 type Group struct {
-    ctx    context.Context
-    cancel context.CancelFunc
-    mu     sync.Mutex
-    err    error
-    wg     sync.WaitGroup
+    cancel func(error) // 创建 Group 时注入的取消函数，为 nil 表示不可取消
+    errOnce sync.Once  // 保证只记录第一个错误
+    err     error
+    wg      sync.WaitGroup
 }
 
 // Go starts a new goroutine and adds it to the group.
@@ -80,12 +76,12 @@ func (g *Group) Go(f func() error) {
     go func() {
         defer g.wg.Done()
         if err := f(); err != nil {
-            g.mu.Lock()
-            if g.err == nil {
+            g.errOnce.Do(func() {
                 g.err = err
-                g.cancel()
-            }
-            g.mu.Unlock()
+                if g.cancel != nil {
+                    g.cancel(err)
+                }
+            })
         }
     }()
 }
@@ -109,7 +105,7 @@ func (g *Group) Wait() error {
 
 #### 4.1 错误处理
 
-`ErrorGroup` 会在发现第一个错误后停止执行其他 goroutine。这是通过上下文的取消来实现的。需要注意的是，其他 goroutine 在上下文被取消后可能会继续执行，但不会报告错误。
+`ErrorGroup` 在发现第一个错误后并不会强制终止其他 goroutine，goroutine 无法被外部直接杀死。如果通过 `errgroup.WithContext` 创建了带取消的 context，它会取消该 context，其他 goroutine 需要自己监听 `ctx.Done()` 并尽快返回；没有监听 context 的 goroutine 会继续执行到结束。此外，`Wait` 一定会等所有 goroutine 结束后才返回。
 
 #### 4.2 并发安全
 
@@ -121,4 +117,4 @@ func (g *Group) Wait() error {
 
 ### 总结
 
-`ErrorGroup` 是一个高效的并发任务管理工具，特别适合于需要处理错误的场景。它通过 `Go` 方法启动和管理多个 goroutine，通过 `Wait` 方法汇总错误，并允许在任务出现错误时中止其他任务。`ErrorGroup` 的设计使得并发错误处理变得更加简洁和易于使用，是处理并发任务时的有力工具。
+`ErrorGroup` 是一个高效的并发任务管理工具，特别适合于需要处理错误的场景。它通过 `Go` 方法启动和管理多个 goroutine，通过 `Wait` 方法汇总错误，并可在任务出错时取消关联的 context，协调其他 goroutine 尽快退出。`ErrorGroup` 的设计使得并发错误处理变得更加简洁和易于使用，是处理并发任务时的有力工具。

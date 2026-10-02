@@ -81,8 +81,8 @@ package db
 
 import (
     "database/sql"
+
     _ "github.com/go-sql-driver/mysql"
-    "log"
 )
 
 func InitDB(dataSourceName string) (*sql.DB, error) {
@@ -220,15 +220,19 @@ func main() {
 go get -u github.com/labstack/echo/v4
 ```
 
-替换`main.go`中的Gin代码为Echo代码：
+替换`main.go`中的Gin代码为Echo代码。注意：Echo 的处理器接收 `echo.Context` 并返回 `error`，与上面 Gin 版的 `handler` 签名不兼容，因此这里直接使用 `model` 层实现处理器：
 ```go
 package main
 
 import (
-    "your_project/db"
-    "your_project/handler"
-    "github.com/labstack/echo/v4"
     "log"
+    "net/http"
+    "strconv"
+
+    "github.com/labstack/echo/v4"
+
+    "your_project/db"
+    "your_project/model"
 )
 
 func main() {
@@ -238,20 +242,54 @@ func main() {
     }
 
     e := echo.New()
+
     e.GET("/users", func(c echo.Context) error {
-        return handler.GetUsers(c, database)
-    })
-    e.POST("/users", func(c echo.Context) error {
-        return handler.CreateUser(c, database)
-    })
-    e.PUT("/users/:id", func(c echo.Context) error {
-        return handler.UpdateUser(c, database)
-    })
-    e.DELETE("/users/:id", func(c echo.Context) error {
-        return handler.DeleteUser(c, database)
+        users, err := model.GetUsers(database)
+        if err != nil {
+            return c.JSON(http.StatusInternalServerError, map[string]string{"error": err.Error()})
+        }
+        return c.JSON(http.StatusOK, users)
     })
 
-    e.Start(":8080")
+    e.POST("/users", func(c echo.Context) error {
+        var user model.User
+        if err := c.Bind(&user); err != nil {
+            return c.JSON(http.StatusBadRequest, map[string]string{"error": err.Error()})
+        }
+        if err := model.CreateUser(database, user); err != nil {
+            return c.JSON(http.StatusInternalServerError, map[string]string{"error": err.Error()})
+        }
+        return c.JSON(http.StatusCreated, user)
+    })
+
+    e.PUT("/users/:id", func(c echo.Context) error {
+        id, err := strconv.Atoi(c.Param("id"))
+        if err != nil {
+            return c.JSON(http.StatusBadRequest, map[string]string{"error": "Invalid ID"})
+        }
+        var user model.User
+        if err := c.Bind(&user); err != nil {
+            return c.JSON(http.StatusBadRequest, map[string]string{"error": err.Error()})
+        }
+        user.ID = id
+        if err := model.UpdateUser(database, user); err != nil {
+            return c.JSON(http.StatusInternalServerError, map[string]string{"error": err.Error()})
+        }
+        return c.JSON(http.StatusOK, user)
+    })
+
+    e.DELETE("/users/:id", func(c echo.Context) error {
+        id, err := strconv.Atoi(c.Param("id"))
+        if err != nil {
+            return c.JSON(http.StatusBadRequest, map[string]string{"error": "Invalid ID"})
+        }
+        if err := model.DeleteUser(database, id); err != nil {
+            return c.JSON(http.StatusInternalServerError, map[string]string{"error": err.Error()})
+        }
+        return c.JSON(http.StatusOK, map[string]string{"message": "User deleted"})
+    })
+
+    log.Fatal(e.Start(":8080"))
 }
 ```
 

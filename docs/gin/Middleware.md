@@ -77,8 +77,10 @@ Cors 中间件用于处理跨域资源共享（CORS）。
 ```go
 import "github.com/gin-contrib/cors"
 
-r := gin.New()
-r.Use(cors.Default())
+func main() {
+    r := gin.New()
+    r.Use(cors.Default())
+}
 ```
 
 #### 5.3 自定义中间件
@@ -164,8 +166,10 @@ func Middleware2() gin.HandlerFunc {
     }
 }
 
-r := gin.New()
-r.Use(Middleware1(), Middleware2())
+func main() {
+    r := gin.New()
+    r.Use(Middleware1(), Middleware2())
+}
 ```
 
 输出顺序：

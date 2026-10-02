@@ -181,7 +181,7 @@ SQL 语句通常包括以下部分：
   RIGHT JOIN orders ON users.id = orders.user_id;
   ```
 
-- **全连接**：
+- **全连接**（某些数据库支持；MySQL 不支持 `FULL JOIN`，可用 `LEFT JOIN` 与 `RIGHT JOIN` 的 `UNION` 模拟）：
   ```sql
   SELECT users.name, orders.order_id
   FROM users
@@ -262,7 +262,7 @@ SQL优化技巧帮助提高查询和操作的性能。
   ```
 
 ##### 4.6.3 分区和分表
-- **分区表**：
+- **分区表**（MySQL 语法，日期分界直接使用日期字符串字面量）：
   ```sql
   CREATE TABLE orders (
       order_id INT,
@@ -270,20 +270,20 @@ SQL优化技巧帮助提高查询和操作的性能。
       ...
   )
   PARTITION BY RANGE (order_date) (
-      PARTITION p0 VALUES LESS THAN (TO_DATE('2020-01-01')),
-      PARTITION p1 VALUES LESS THAN (TO_DATE('2021-01-01'))
+      PARTITION p0 VALUES LESS THAN ('2020-01-01'),
+      PARTITION p1 VALUES LESS THAN ('2021-01-01')
   );
   ```
 
 ##### 4.6.4 定期维护
 - **分析表和索引**：
   ```sql
-  ANALYZE TABLE users;
+  ANALYZE TABLE users;  -- MySQL
   ```
 
 - **重建索引**：
   ```sql
-  REINDEX TABLE users;
+  REINDEX TABLE users;  -- PostgreSQL（MySQL 无 REINDEX，可使用 OPTIMIZE TABLE 重建表）
   ```
 
 通过掌握这些SQL基础语法、数据定义语言（DDL）、数据操作语言（DML）、数据控制语言（DCL）、复杂查询和SQL优化技巧，读者可以高效地管理和操作数据库。

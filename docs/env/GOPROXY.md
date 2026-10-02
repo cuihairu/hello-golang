@@ -64,16 +64,16 @@ go env GOPROXY
 
 搭建一个局域网内的 Go 模块代理（GOPROXY）可以帮助团队内的开发者更快地下载和使用 Go 模块，特别是在无法访问外部网络或外部网络速度较慢的情况下。以下是搭建局域网内的 GOPROXY 的步骤：
 
-### 使用 goproxy.io 的代理服务
+### 使用 goproxy 的代理服务
 
-[goproxy.io](https://github.com/goproxyio/goproxy) 提供了一个开源的 Go 模块代理服务器，你可以在局域网内运行它。
+[goproxy](https://github.com/goproxy/goproxy) 提供了一个开源的 Go 模块代理服务器，你可以在局域网内运行它。
 
 #### 1. 安装 goproxy
 
 首先，你需要在服务器上安装 `goproxy`。确保你的 Go 环境已经安装并配置好，然后运行以下命令：
 
 ```sh
-go install github.com/goproxyio/goproxy/cmd/goproxy@latest
+go install github.com/goproxy/goproxy/cmd/goproxy@latest
 ```
 
 #### 2. 启动 goproxy
@@ -81,7 +81,7 @@ go install github.com/goproxyio/goproxy/cmd/goproxy@latest
 安装完成后，可以使用以下命令启动 `goproxy`：
 
 ```sh
-goproxy -listen=0.0.0.0:8080
+goproxy server --address 0.0.0.0:8080
 ```
 
 这会在所有网络接口上监听 `8080` 端口，你可以根据需要更改端口号。
@@ -91,7 +91,7 @@ goproxy -listen=0.0.0.0:8080
 你可以配置一个缓存目录来存储下载的模块，避免重复下载。启动命令如下：
 
 ```sh
-goproxy -listen=0.0.0.0:8080 -cache=/path/to/cache
+goproxy server --address 0.0.0.0:8080 --cacher dir --cacher-dir /path/to/cache
 ```
 
 #### 4. 设置环境变量
@@ -164,4 +164,4 @@ source ~/.bashrc
 
 ### 总结
 
-通过使用 `goproxy.io` 或 `Athens`，你可以在局域网内轻松搭建一个 Go 模块代理。选择适合你的方案，按照上述步骤进行配置和部署，就能为团队提供快速稳定的 Go 模块下载服务。
+通过使用 `goproxy` 或 `Athens`，你可以在局域网内轻松搭建一个 Go 模块代理。选择适合你的方案，按照上述步骤进行配置和部署，就能为团队提供快速稳定的 Go 模块下载服务。

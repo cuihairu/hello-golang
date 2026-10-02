@@ -49,11 +49,19 @@ use (
 
 3. **运行和构建**
 
-   使用 `go` 命令时，Go 工具链会优先使用 `go.work` 文件中定义的模块。可以使用以下命令来构建或测试工作区中的模块：
+   使用 `go` 命令时，Go 工具链会优先使用 `go.work` 文件中定义的模块。在各个模块目录内，可以照常使用 `./...` 模式构建或测试：
 
    ```bash
+   cd module1
    go build ./...
    go test ./...
+   ```
+
+   注意：在工作区根目录下直接使用 `./...` 会报错 `pattern ./...: directory prefix . does not contain modules listed in go.work`，此时需要改用模块路径模式，例如：
+
+   ```bash
+   go build example.com/module1/...
+   go test example.com/module2/...
    ```
 
 #### 示例

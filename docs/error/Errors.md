@@ -77,11 +77,13 @@ func main() {
 Go 的 `errors` 包提供了几个实用函数来创建和处理错误。`errors` 包中的一些函数包括：
 
 - `errors.New`: 创建一个基本的错误。
-- `errors.Is`: 判断错误是否匹配特定的错误类型。
+- `errors.Is`: 判断错误链中是否存在与目标错误相等的错误（通常配合哨兵错误变量使用）。
 - `errors.As`: 将错误转换为特定的错误类型。
 - `errors.Unwrap`: 获取封装的底层错误。
 
 #### 示例
+
+注意：`errors.Is` 通过比较错误值（指针相等）来判断，因此目标必须是哨兵错误变量，不能是每次新建的 `&CustomError{}`。
 
 ```go
 package main
@@ -101,14 +103,17 @@ func (e *CustomError) Error() string {
     return fmt.Sprintf("Code %d: %s", e.Code, e.Message)
 }
 
+// ErrNotFound 哨兵错误
+var ErrNotFound = &CustomError{Code: 404, Message: "Not Found"}
+
 func doSomething() error {
-    return &CustomError{Code: 404, Message: "Not Found"}
+    return ErrNotFound
 }
 
 func main() {
     err := doSomething()
 
-    if errors.Is(err, &CustomError{}) {
+    if errors.Is(err, ErrNotFound) {
         fmt.Println("CustomError detected")
     }
 
@@ -133,15 +138,18 @@ import (
     "errors"
 )
 
+// errOriginal 哨兵错误，供 errors.Is 比较
+var errOriginal = errors.New("original error")
+
 func doSomething() error {
-    return fmt.Errorf("failed to do something: %w", errors.New("original error"))
+    return fmt.Errorf("failed to do something: %w", errOriginal)
 }
 
 func main() {
     err := doSomething()
     if err != nil {
         fmt.Println("Error:", err)
-        if errors.Is(err, errors.New("original error")) {
+        if errors.Is(err, errOriginal) {
             fmt.Println("The error is the original error")
         }
     }

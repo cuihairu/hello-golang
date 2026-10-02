@@ -27,11 +27,11 @@ type State interface {
     HandleRequest(context *Context)
 }
 
-// 具体状态 - 连接中
+// 具体状态 - 已连接
 type ConnectedState struct{}
 
 func (s *ConnectedState) HandleRequest(context *Context) {
-    fmt.Println("处理连接中的请求")
+    fmt.Println("处理已连接状态下的请求")
     context.SetState(&DisconnectedState{})
 }
 

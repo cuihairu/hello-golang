@@ -100,9 +100,9 @@ Redis 会根据集合的元素类型和数量，动态选择最合适的数据�
    package main
 
    import (
-       "github.com/go-redis/redis/v8"
        "context"
-       "fmt"
+
+       "github.com/go-redis/redis/v8"
    )
 
    var ctx = context.Background()

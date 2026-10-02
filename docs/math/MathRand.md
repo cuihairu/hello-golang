@@ -14,6 +14,8 @@ Go语言的 `math/rand` 包用于生成伪随机数。伪随机数是通过算�
   使用当前时间的纳秒数作为种子可以确保每次运行程序时生成的随机数序列不同。
 
   ```go
+  package main
+
   import (
       "fmt"
       "math/rand"
@@ -27,12 +29,14 @@ Go语言的 `math/rand` 包用于生成伪随机数。伪随机数是通过算�
   }
   ```
 
+> 注：Go 1.20 起全局随机数生成器会自动随机播种，`rand.Seed` 已被标记为废弃。如需显式控制种子（例如复现结果），推荐使用 `r := rand.New(rand.NewSource(seed))` 创建独立的随机数生成器。
+
 **3.1.2 随机数生成的函数**
 
 - **`rand.Intn(n int) int`**：返回一个 [0, n) 范围内的随机整数。
 - **`rand.Float64() float64`**：返回一个 [0.0, 1.0) 范围内的随机浮点数。
 - **`rand.Perm(n int) []int`**：返回一个长度为 `n` 的随机排列的整数切片。
-- **`rand.Int() *big.Int`**：返回一个随机的大整数。
+- **`rand.Int() int`**：返回一个非负的随机整数（随机大整数应使用 `math/big` 包的 `Int.Rand` 方法）。
 
 **3.1.3 自定义随机数生成**
 
@@ -40,6 +44,8 @@ Go语言的 `math/rand` 包用于生成伪随机数。伪随机数是通过算�
 
 - **示例**：
   ```go
+  package main
+
   import (
       "fmt"
       "math/rand"
@@ -66,10 +72,13 @@ Go语言的 `math/rand` 包用于生成伪随机数。伪随机数是通过算�
 **3.2.2 概率计算**
 
 概率是事件发生的可能性。概率的计算公式是：
-\[ P(A) = \frac{\text{事件 A 的成功数}}{\text{样本空间的总数}} \]
+
+`P(A) = 事件 A 的成功数 / 样本空间的总数`
 
 - **示例**：
   ```go
+  package main
+
   import "fmt"
 
   func probability(successes, total int) float64 {
@@ -84,12 +93,16 @@ Go语言的 `math/rand` 包用于生成伪随机数。伪随机数是通过算�
 **3.2.3 条件概率和联合概率**
 
 - **条件概率**：事件 B 在事件 A 已经发生的情况下发生的概率。计算公式是：
-  \[ P(B|A) = \frac{P(A \cap B)}{P(A)} \]
-- **联合概率**：两个事件 A 和 B 同时发生的概率。计算公式是：
-  \[ P(A \cap B) = P(A) \times P(B) \]
+
+  `P(B|A) = P(A ∩ B) / P(A)`
+- **联合概率**：两个事件 A 和 B 同时发生的概率。当 A、B **相互独立**时，计算公式是：
+
+  `P(A ∩ B) = P(A) × P(B)`
 
 - **示例**：
   ```go
+  package main
+
   import "fmt"
 
   func conditionalProbability(pAB, pA float64) float64 {
@@ -109,6 +122,8 @@ Go语言的 `math/rand` 包用于生成伪随机数。伪随机数是通过算�
 
 - **示例**（通过 Box-Muller 变换）：
   ```go
+  package main
+
   import (
       "fmt"
       "math"
@@ -135,6 +150,8 @@ Go语言的 `math/rand` 包用于生成伪随机数。伪随机数是通过算�
 
 - **示例**：
   ```go
+  package main
+
   import (
       "fmt"
       "math/rand"
@@ -160,6 +177,8 @@ Go语言的 `math/rand` 包用于生成伪随机数。伪随机数是通过算�
 
 - **示例**：
   ```go
+  package main
+
   import (
       "fmt"
       "math"

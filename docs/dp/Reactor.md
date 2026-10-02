@@ -66,7 +66,6 @@ import (
 	"fmt"
 	"net"
 	"os"
-	"time"
 )
 
 type EventHandler interface {

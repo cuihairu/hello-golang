@@ -1,4 +1,4 @@
-好的，我将整合之前的回答并详细说明 `mspan`、`mcache`、`mcentral`、`mheap` 和 `heapArena` 的使用场景，以及它们与 Thread Cache、Central Cache 和 Heap 的关系。
+本节详细介绍 Go 内存分配器中 `mspan`、`mcache`、`mcentral`、`mheap` 和 `heapArena` 的职责与使用场景，以及它们与 Thread Cache、Central Cache 和 Heap 三层结构的对应关系。
 
 ### 内存分配器的分层结构
 
@@ -54,7 +54,7 @@ func allocateSmallObject(size int) {
 - 当 `mcache` 中的内存不足时，从 `mcentral` 获取新的 `mspan`。
 - 当 `mcache` 中有多余内存时，将其归还给 `mcentral`。
 
-**例子**：
+**例子**（运行时内部伪代码示意，不可直接编译运行）：
 ```go
 func allocateFromCentralCache(sizeClass int) {
     // 从中央缓存分配内存
@@ -90,7 +90,7 @@ func allocateLargeObject(size int) {
 - 管理相同大小的对象，以提高分配和释放效率。
 - 由 `mcache` 和 `mcentral` 使用，用于对象分配。
 
-**例子**：
+**例子**（运行时内部伪代码示意，不可直接编译运行）：
 ```go
 func allocateFromSpan(span *mspan, size int) {
     // 从 span 分配对象
@@ -106,7 +106,7 @@ func allocateFromSpan(span *mspan, size int) {
 - `mheap` 从操作系统获取内存时，将其分割成 `heapArena`。
 - 提供基础内存给 `mheap` 管理。
 
-**例子**：
+**例子**（运行时内部伪代码示意，不可直接编译运行）：
 ```go
 func allocateFromHeapArena(size int) {
     // 从 heapArena 分配内存

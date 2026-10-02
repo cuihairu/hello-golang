@@ -43,7 +43,7 @@ Apache Kafka 是一个开源的分布式流处理平台，专为高吞吐量、�
 
 - **Kafka Go 客户端库**
   - **`confluent-kafka-go`**：这是 Confluent 提供的官方 Kafka Go 客户端库，支持 Kafka 的核心功能，如生产和消费消息、管理 topic 和 partition。
-  - **`sarama`**：这是一个开源的 Kafka Go 客户端库，提供了丰富的 API，用于与 Kafka 进行交互。
+  - **`sarama`**：这是一个开源的 Kafka Go 客户端库，提供了丰富的 API，用于与 Kafka 进行交互。仓库已由 `github.com/Shopify/sarama` 迁移至 `github.com/IBM/sarama`（旧地址已归档），导入路径请使用新的地址。
 
 - **基本操作示例**
   - **生产者示例**：
@@ -51,7 +51,7 @@ Apache Kafka 是一个开源的分布式流处理平台，专为高吞吐量、�
     package main
 
     import (
-        "github.com/Shopify/sarama"
+        "github.com/IBM/sarama"
         "log"
     )
 
@@ -85,7 +85,7 @@ Apache Kafka 是一个开源的分布式流处理平台，专为高吞吐量、�
     package main
 
     import (
-        "github.com/Shopify/sarama"
+        "github.com/IBM/sarama"
         "log"
     )
 

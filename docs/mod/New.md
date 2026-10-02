@@ -32,7 +32,7 @@
    ```
 
 4. 创建 README 文件（可选，但推荐）：
-   ```markdown
+   ````markdown
    # mypackage
 
    This is mypackage, a simple Go package for demonstration.
@@ -54,7 +54,7 @@
        mypackage.Hello()
    }
    ```
-   ```
+   ````
 
 ### 3. 提交代码到 GitHub
 

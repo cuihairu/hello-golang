@@ -22,7 +22,6 @@ import (
 	"runtime"
 	"sync"
 	"sync/atomic"
-	"time"
 )
 
 // Spinlock 是自定义的自旋锁结构

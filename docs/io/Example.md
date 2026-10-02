@@ -90,7 +90,6 @@ package main
 import (
     "encoding/json"
     "fmt"
-    "io/ioutil"
     "os"
 )
 
@@ -123,7 +122,7 @@ func saveConfig(filePath string, config *Config) error {
         return fmt.Errorf("error marshalling config: %v", err)
     }
 
-    err = ioutil.WriteFile(filePath, data, 0644)
+    err = os.WriteFile(filePath, data, 0644)
     if err != nil {
         return fmt.Errorf("error writing config file: %v", err)
     }
@@ -170,6 +169,7 @@ import (
     "encoding/csv"
     "fmt"
     "os"
+    "strconv"
 )
 
 type Record struct {

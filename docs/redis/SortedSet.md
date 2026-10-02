@@ -60,12 +60,12 @@ Redis 有序集合的底层实现主要基于两种数据结构：`ziplist`（�
    - 当有序集合中的元素较少且每个元素的长度较短时，Redis 使用压缩列表存储有序集合。压缩列表是一种紧凑的内存结构，可以高效存储小规模数据。
    - 结构：
      ```c
-     typedef struct ziplist {
-         unsigned char *zlbytes;   // 压缩列表的字节数组
-         unsigned char *zltail;    // 压缩列表尾部指针
-         unsigned int zllen;       // 压缩列表长度
-         unsigned char *entries;   // 列表项
-     } ziplist;
+     struct {
+         unsigned int zlbytes;     // 压缩列表的总字节数
+         unsigned int zltail;      // 到达表尾的偏移量
+         unsigned int zllen;       // 压缩列表包含的节点数量
+         unsigned char entries[];  // 数据节点
+     };
      ```
    - 优点：内存占用小，适合存储小规模有序集合。
 
@@ -103,9 +103,9 @@ Redis 会根据有序集合的元素数量和每个元素的长度，动态选�
    package main
 
    import (
-       "github.com/go-redis/redis/v8"
        "context"
-       "fmt"
+
+       "github.com/go-redis/redis/v8"
    )
 
    var ctx = context.Background()

@@ -65,7 +65,6 @@ func rebuildSort(arr []int, chunkSize int) {
 	}
 
 	// 将子数组合并成一个有序数组
-	temp := make([]int, 0, n)
 	chunks := make([][]int, 0)
 
 	for start := 0; start < n; start += chunkSize {

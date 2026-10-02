@@ -28,19 +28,35 @@ func main() {
 	}
 	defer ln.Close()
 
-	fd := int(ln.(*net.TCPListener).File().Fd())
+	// 获取监听 socket 的文件描述符（File() 会返回 dup 出来的 *os.File 和错误）
+	tcpLn := ln.(*net.TCPListener)
+	file, err := tcpLn.File()
+	if err != nil {
+		fmt.Println("Error getting file:", err)
+		os.Exit(1)
+	}
+	defer file.Close()
+	fd := int(file.Fd())
 
 	for {
 		readfds := &syscall.FdSet{}
-		readfds.Set(fd)
+		// 注意：Go 在 Linux 上没有提供 FdSet.Set/IsSet 等便捷方法，
+		// 需要手动设置位图：Bits 是 [16]int64，第 fd 位为 1
+		readfds.Bits[fd/64] |= 1 << (uint(fd) % 64)
 
-		_, err := syscall.Select(fd+1, readfds, nil, nil, nil)
+		// select 的最后一个参数是超时时间（Timeval），nil 表示永久阻塞
+		timeout := &syscall.Timeval{Sec: 1, Usec: 0}
+		n, err := syscall.Select(fd+1, readfds, nil, nil, timeout)
 		if err != nil {
 			fmt.Println("Error in select:", err)
 			continue
 		}
+		if n == 0 {
+			continue // 超时，没有就绪的描述符
+		}
 
-		if readfds.IsSet(fd) {
+		// 同样手动检查位图
+		if readfds.Bits[fd/64]&(1<<(uint(fd)%64)) != 0 {
 			conn, err := ln.Accept()
 			if err != nil {
 				fmt.Println("Error accepting:", err)
@@ -72,6 +88,8 @@ func handleConnection(conn net.Conn) {
 
 **示例代码**：
 
+注意：Go 的 `syscall` 包在 Linux/amd64 上没有导出 `PollFd`、`POLLIN` 和 `Poll`，使用 poll 需要 `golang.org/x/sys/unix` 包（`go get golang.org/x/sys`）：
+
 ```go
 package main
 
@@ -79,7 +97,8 @@ import (
 	"fmt"
 	"net"
 	"os"
-	"syscall"
+
+	"golang.org/x/sys/unix"
 )
 
 func main() {
@@ -90,18 +109,28 @@ func main() {
 	}
 	defer ln.Close()
 
-	fd := int(ln.(*net.TCPListener).File().Fd())
+	tcpLn := ln.(*net.TCPListener)
+	file, err := tcpLn.File()
+	if err != nil {
+		fmt.Println("Error getting file:", err)
+		os.Exit(1)
+	}
+	defer file.Close()
+	fd := int(file.Fd())
 
-	fds := []syscall.PollFd{{Fd: int32(fd), Events: syscall.POLLIN}}
+	fds := []unix.PollFd{{Fd: int32(fd), Events: unix.POLLIN}}
 
 	for {
-		_, err := syscall.Poll(fds, -1)
+		n, err := unix.Poll(fds, -1) // -1 表示永久阻塞
 		if err != nil {
 			fmt.Println("Error in poll:", err)
 			continue
 		}
+		if n == 0 {
+			continue
+		}
 
-		if fds[0].Revents&syscall.POLLIN != 0 {
+		if fds[0].Revents&unix.POLLIN != 0 {
 			conn, err := ln.Accept()
 			if err != nil {
 				fmt.Println("Error accepting:", err)
@@ -151,7 +180,14 @@ func main() {
 	}
 	defer ln.Close()
 
-	listenFd := int(ln.(*net.TCPListener).File().Fd())
+	tcpLn := ln.(*net.TCPListener)
+	listenFile, err := tcpLn.File()
+	if err != nil {
+		fmt.Println("Error getting file:", err)
+		os.Exit(1)
+	}
+	defer listenFile.Close()
+	listenFd := int(listenFile.Fd())
 	epollFd, err := syscall.EpollCreate1(0)
 	if err != nil {
 		fmt.Println("Error creating epoll:", err)
@@ -182,7 +218,13 @@ func main() {
 					continue
 				}
 
-				connFd := int(conn.(*net.TCPConn).File().Fd())
+				connFile, err := conn.(*net.TCPConn).File()
+				if err != nil {
+					fmt.Println("Error getting conn file:", err)
+					conn.Close()
+					continue
+				}
+				connFd := int(connFile.Fd())
 				event := syscall.EpollEvent{Events: syscall.EPOLLIN, Fd: int32(connFd)}
 				err = syscall.EpollCtl(epollFd, syscall.EPOLL_CTL_ADD, connFd, &event)
 				if err != nil {

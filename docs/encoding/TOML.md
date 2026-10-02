@@ -184,9 +184,9 @@ func main() {
     // 读取节
     server := data.Get("server").(*toml.Tree)
 
-    // 读取键值对
+    // 读取键值对，注意 TOML 中的整数会被解析为 int64
     host := server.Get("host").(string)
-    port := server.Get("port").(int)
+    port := server.Get("port").(int64)
 
     fmt.Printf("Host: %s\n", host)
     fmt.Printf("Port: %d\n", port)
@@ -200,21 +200,34 @@ package main
 
 import (
     "log"
+    "os"
 
     "github.com/pelletier/go-toml"
 )
 
 func main() {
-    // 创建 TOML 数据
-    data := toml.Tree{}
-    data.Set("server.host", "localhost")
-    data.Set("server.port", 8080)
-    data.Set("database.user", "admin")
-    data.Set("database.password", "secret")
-
-    // 保存 TOML 文件
-    err := toml.WriteFile("config.toml", data)
+    // 用 TreeFromMap 从 map 构建 TOML 树
+    data, err := toml.TreeFromMap(map[string]interface{}{
+        "server": map[string]interface{}{
+            "host": "localhost",
+            "port": 8080,
+        },
+        "database": map[string]interface{}{
+            "user":     "admin",
+            "password": "secret",
+        },
+    })
     if err != nil {
+        log.Fatalf("Failed to build tree: %v", err)
+    }
+
+    // 通过 WriteTo 把 TOML 树写入文件
+    file, err := os.Create("config.toml")
+    if err != nil {
+        log.Fatalf("Failed to create file: %v", err)
+    }
+    defer file.Close()
+    if _, err := data.WriteTo(file); err != nil {
         log.Fatalf("Failed to save file: %v", err)
     }
 

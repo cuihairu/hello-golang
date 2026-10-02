@@ -66,14 +66,19 @@
     ```
   - **使用**：
     ```go
-    import "github.com/swaggo/gin-swagger"
-    
+    import (
+        "github.com/swaggo/files"
+        ginSwagger "github.com/swaggo/gin-swagger"
+    )
+
     func main() {
         r := gin.Default()
         r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
         r.Run()
     }
     ```
+
+    注意：`ginSwagger.WrapHandler` 依赖 `github.com/swaggo/files` 提供的静态资源，两处导入缺一不可；另外还需要用 `swag init` 生成文档，并在代码中以空白导入的方式引入生成的 docs 包（`_ "your-module/docs"`），否则访问 `/swagger/index.html` 会提示找不到文档。
 
 ##### 14.2.3 数据处理插件
 
@@ -85,13 +90,22 @@
   - **使用**：
     ```go
     import "github.com/go-playground/validator/v10"
-    
+
+    type MyData struct {
+        Name  string `json:"name" validate:"required"`
+        Email string `json:"email" validate:"required,email"`
+    }
+
     func main() {
         r := gin.Default()
         v := validator.New()
         r.POST("/validate", func(c *gin.Context) {
             var data MyData
             if err := c.ShouldBindJSON(&data); err != nil {
+                c.JSON(400, gin.H{"error": err.Error()})
+                return
+            }
+            if err := v.Struct(data); err != nil {
                 c.JSON(400, gin.H{"error": err.Error()})
                 return
             }

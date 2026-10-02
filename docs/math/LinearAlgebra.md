@@ -151,7 +151,7 @@
       var x mat.VecDense
       x.MulVec(&AInv, b)
 
-      fmt.Println("解向量:", x)  // 输出: [1 2]
+      fmt.Printf("解向量: x0=%.2f, x1=%.2f\n", x.AtVec(0), x.AtVec(1))  // 输出: 解向量: x0=0.60, x1=2.80
   }
   ```
 
@@ -178,11 +178,11 @@
 
       // 获取特征值
       vals := eig.Values(nil)
-      fmt.Println("特征值:", vals)
+      fmt.Println("特征值:", vals)  // 输出: 特征值: [2.381966011250105 4.618033988749895]
 
       // 获取特征向量
       var vectors mat.Dense
-      vectors.CloneFrom(eig.Vectors(nil))
+      eig.VectorsTo(&vectors)
       fmt.Println("特征向量:\n", mat.Formatted(&vectors))
   }
   ```

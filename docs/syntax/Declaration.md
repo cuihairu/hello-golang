@@ -125,23 +125,52 @@ func main() {
 
 ### 类型声明
 
-类型声明使用 `type` 关键字，定义新的类型名称（类型别名）或自定义类型。类型声明可以使代码更具可读性和可维护性。
+类型声明使用 `type` 关键字，可以基于已有类型定义新类型，也可以为已有类型创建别名。类型声明可以使代码更具可读性和可维护性。
 
-#### 1. 类型别名
+#### 1. 定义类型（非别名）
 
-类型别名为已有类型定义新的名称。
+`type MyString string` 定义了一个全新的类型 `MyString`，它的底层类型是 `string`，但它与 `string` 是两个不同的类型，互相赋值需要显式转换，并且可以为其定义自己的方法。
 
 ```go
 package main
 
 import "fmt"
 
-// 定义类型别名
+// 基于 string 定义一个新类型
 type MyString string
 
+// 新类型可以定义自己的方法
+func (m MyString) Hello() string {
+    return "Hello, " + string(m)
+}
+
 func main() {
-    var s MyString = "Hello, Go"
-    fmt.Println(s)
+    var s MyString = "Go"
+    fmt.Println(s.Hello())
+
+    // MyString 与 string 是不同类型，需要显式转换
+    var str string = string(s)
+    fmt.Println(str)
+}
+```
+
+#### 2. 类型别名
+
+类型别名使用 `=` 号，为已有类型起一个新名字，别名与原类型是完全相同的类型，可以直接互相赋值。
+
+```go
+package main
+
+import "fmt"
+
+// 为 string 定义别名，MyString2 与 string 是同一个类型
+type MyString2 = string
+
+func main() {
+    var s MyString2 = "Hello, Go"
+    // 无需转换即可赋值给 string 类型的变量
+    var str string = s
+    fmt.Println(str)
 }
 ```
 

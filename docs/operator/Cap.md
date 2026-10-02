@@ -63,10 +63,10 @@ func main() {
 
 ### 总结
 
-- **Capacity** is the maximum number of elements that can be stored in a collection without reallocating memory.
-- **Go uses the `cap` function** to get the capacity of slices, arrays, and channels:
-  - **Slices**: `cap(slice)` returns the capacity of the slice.
-  - **Arrays**: `cap(array)` returns the length and capacity of the array (same values).
-  - **Channels**: `cap(channel)` returns the buffer capacity of the channel.
+- **容量** 是集合在不重新分配内存的情况下能够存储的最大元素数量。
+- **Go 使用 `cap` 函数** 获取切片、数组和通道的容量：
+  - **切片**：`cap(slice)` 返回切片的容量。
+  - **数组**：`cap(array)` 返回数组的长度和容量（两者相同）。
+  - **通道**：`cap(channel)` 返回通道缓冲区的容量。
 
-These methods help manage and understand memory usage and performance in Go applications.
+这些方法有助于理解和管理 Go 程序中的内存使用与性能。

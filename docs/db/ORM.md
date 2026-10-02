@@ -120,10 +120,10 @@ go generate ./ent
 import (
     "context"
     "log"
-    "entgo.io/ent/dialect"
-    "entgo.io/ent/dialect/sql"
-    "github.com/go-sql-driver/mysql"
+
     "entproject/ent"
+
+    _ "github.com/go-sql-driver/mysql" // 注册 MySQL 驱动
 )
 
 func main() {
@@ -212,30 +212,30 @@ type User struct {
 ```go
 // 创建
 user := User{Name: "Alice", Age: 25, Email: "alice@example.com"}
-_, err = engine.Insert(&user)
+_, err := engine.Insert(&user)
 if err != nil {
     log.Fatal(err)
 }
 
 // 读取
-var user User
-has, err := engine.ID(1).Get(&user)
+var got User
+has, err := engine.ID(1).Get(&got)
 if err != nil {
     log.Fatal(err)
 }
 if has {
-    log.Println(user)
+    log.Println(got)
 }
 
 // 更新
-user.Age = 26
-_, err = engine.ID(user.ID).Update(&user)
+got.Age = 26
+_, err = engine.ID(got.ID).Update(&got)
 if err != nil {
     log.Fatal(err)
 }
 
 // 删除
-_, err = engine.ID(user.ID).Delete(&User{})
+_, err = engine.ID(got.ID).Delete(&User{})
 if err != nil {
     log.Fatal(err)
 }

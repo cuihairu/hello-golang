@@ -6,7 +6,12 @@
 - **用例**：在文档或日志中查找符合特定模式的文本。例如，找到所有的电子邮件地址或电话号码。
 - **示例**：
   ```go
-  import "regexp"
+  package main
+
+  import (
+      "fmt"
+      "regexp"
+  )
 
   func main() {
       re := regexp.MustCompile(`[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}`)
@@ -19,7 +24,12 @@
 - **用例**：将文本中的敏感信息或格式进行替换。例如，将所有的电话号码格式统一为国际标准。
 - **示例**：
   ```go
-  import "regexp"
+  package main
+
+  import (
+      "fmt"
+      "regexp"
+  )
 
   func main() {
       re := regexp.MustCompile(`\d{3}-\d{2}-\d{4}`)
@@ -34,7 +44,12 @@
 - **用例**：确保用户输入的电子邮件地址符合标准格式。
 - **示例**：
   ```go
-  import "regexp"
+  package main
+
+  import (
+      "fmt"
+      "regexp"
+  )
 
   func main() {
       email := "user@example.com"
@@ -48,7 +63,12 @@
 - **用例**：验证用户输入的电话号码是否符合国际格式。
 - **示例**：
   ```go
-  import "regexp"
+  package main
+
+  import (
+      "fmt"
+      "regexp"
+  )
 
   func main() {
       phone := "+1234567890"
@@ -64,7 +84,12 @@
 - **用例**：从日志文件中提取 IP 地址或 URL。
 - **示例**：
   ```go
-  import "regexp"
+  package main
+
+  import (
+      "fmt"
+      "regexp"
+  )
 
   func main() {
       re := regexp.MustCompile(`\b(\d{1,3}\.){3}\d{1,3}\b`)
@@ -77,7 +102,12 @@
 - **用例**：从文本中提取日期或其他信息。
 - **示例**：
   ```go
-  import "regexp"
+  package main
+
+  import (
+      "fmt"
+      "regexp"
+  )
 
   func main() {
       re := regexp.MustCompile(`(\d{4}-\d{2}-\d{2})`)
@@ -94,7 +124,12 @@
 - **用例**：清理文本数据中的多余空格或非打印字符。
 - **示例**：
   ```go
-  import "regexp"
+  package main
+
+  import (
+      "fmt"
+      "regexp"
+  )
 
   func main() {
       re := regexp.MustCompile(`\s+`)
@@ -107,7 +142,12 @@
 - **用例**：将日期、时间或其他格式进行标准化。
 - **示例**：
   ```go
-  import "regexp"
+  package main
+
+  import (
+      "fmt"
+      "regexp"
+  )
 
   func main() {
       re := regexp.MustCompile(`(\d{2})/(\d{2})/(\d{4})`)
@@ -122,10 +162,15 @@
 - **用例**：从服务器日志中提取请求路径和状态码。
 - **示例**：
   ```go
-  import "regexp"
+  package main
+
+  import (
+      "fmt"
+      "regexp"
+  )
 
   func main() {
-      re := regexp.MustCompile(`\[(\d{3})\] "GET (\/\S*)`)
+      re := regexp.MustCompile(`\[(\d{3})\] "GET (\/[^"\s]*)`)
       matches := re.FindAllStringSubmatch(`[200] "GET /index.html"`, -1)
       if len(matches) > 0 {
           fmt.Println("Status Code:", matches[0][1]) // Output: Status Code: 200
@@ -139,13 +184,24 @@
 **6.1 验证用户输入**
 - **用例**：在 Web 表单中验证用户输入，如密码强度检查。
 - **示例**：
+  Go 标准库的 `regexp` 使用 RE2 引擎，不支持 `(?=...)` 前瞻断言。密码强度检查应拆分为多个正则分别判断：
+
   ```go
-  import "regexp"
+  package main
+
+  import (
+      "fmt"
+      "regexp"
+  )
 
   func main() {
       password := "P@ssw0rd123"
-      re := regexp.MustCompile(`^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$`)
-      isValid := re.MatchString(password)
+      // 分别检查：含大写字母、含数字、含特殊字符、长度与字符集
+      hasUpper := regexp.MustCompile(`[A-Z]`).MatchString(password)
+      hasDigit := regexp.MustCompile(`\d`).MatchString(password)
+      hasSpecial := regexp.MustCompile(`[@$!%*?&]`).MatchString(password)
+      hasValidLength := regexp.MustCompile(`^[A-Za-z\d@$!%*?&]{8,}$`).MatchString(password)
+      isValid := hasUpper && hasDigit && hasSpecial && hasValidLength
       fmt.Println(isValid) // Output: true
   }
   ```
@@ -154,7 +210,12 @@
 - **用例**：从 URL 中提取查询参数。
 - **示例**：
   ```go
-  import "regexp"
+  package main
+
+  import (
+      "fmt"
+      "regexp"
+  )
 
   func main() {
       re := regexp.MustCompile(`[?&]param=([^&]+)`)

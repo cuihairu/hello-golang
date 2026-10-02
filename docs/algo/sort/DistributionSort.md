@@ -50,6 +50,11 @@ func bucketSort(arr []int) {
 		}
 	}
 
+	// 所有元素相等时无需排序，同时避免下面计算桶下标时除零
+	if maxVal == minVal {
+		return
+	}
+
 	// 桶的数量
 	bucketCount := len(arr)
 	buckets := make([][]int, bucketCount)

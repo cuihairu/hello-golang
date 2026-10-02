@@ -7,11 +7,11 @@ Go 语言中的接口由两个主要部分组成：
 1. **类型信息（Type Descriptor）**：描述接口实现的具体类型，包括方法表和类型信息。
 2. **值信息（Value）**：存储实现接口的实际值，即对象实例。
 
-接口的底层结构可以简化为以下结构：
+接口的底层结构可以简化为以下结构（真实实现见 `runtime` 包中的 `eface`、`iface` 和 `itab` 结构体；注意 `type` 是 Go 关键字，不能用作字段名，这里用 `typ` 表示）：
 
 ```go
 type _interface struct {
-    type  *typeDescriptor // 类型描述符
+    typ   *typeDescriptor // 类型描述符
     value unsafe.Pointer  // 指向实际值
 }
 ```

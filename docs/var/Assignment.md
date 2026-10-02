@@ -154,7 +154,7 @@ func main() {
 
     // 空白标识符
     _, g := someFunction()
-    _, h, i := someFunction(), 10, 20
+    h, i := someFunction()
     fmt.Println(g, h, i)
 
     // 指针赋值

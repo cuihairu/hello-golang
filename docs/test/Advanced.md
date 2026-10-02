@@ -26,19 +26,23 @@ func ProcessData(data int) int {
 
 // TestConcurrentProcessing 测试并发数据处理
 func TestConcurrentProcessing(t *testing.T) {
-    results := make(chan int, 10)
+    // channel 中同时携带输入和输出，避免依赖结果的接收顺序
+    type result struct {
+        input  int
+        output int
+    }
+    results := make(chan result, 10)
 
     for i := 0; i < 10; i++ {
         go func(i int) {
-            result := ProcessData(i)
-            results <- result
+            results <- result{input: i, output: ProcessData(i)}
         }(i)
     }
 
     for i := 0; i < 10; i++ {
-        result := <-results
-        if result != i*2 {
-            t.Errorf("Expected %d, got %d", i*2, result)
+        r := <-results
+        if r.output != r.input*2 {
+            t.Errorf("Expected %d, got %d", r.input*2, r.output)
         }
     }
 }
@@ -122,6 +126,7 @@ go tool pprof mem.out
 package main
 
 import (
+    "sort"
     "testing"
 )
 
@@ -149,9 +154,17 @@ import (
     "testing"
 )
 
+// 实现 A 和 B
+func runImplementationA() int {
+    return 1
+}
+
+func runImplementationB() int {
+    return 2
+}
+
 // TestABComparison 测试两个实现的性能
 func TestABComparison(t *testing.T) {
-    // 实现 A 和 B
     resultA := runImplementationA()
     resultB := runImplementationB()
 

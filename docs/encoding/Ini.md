@@ -110,7 +110,7 @@ log_path=C:\logs
 
 #### 5. INI 文件处理示例（Go 语言）
 
-在 Go 语言中，可以使用第三方库（如 `github.com/go-ini/ini`）来处理 INI 文件。以下是一个示例代码，展示了如何读取和写入 INI 文件。
+在 Go 语言中，可以使用第三方库 `gopkg.in/ini.v1`（即原 `github.com/go-ini/ini` 项目）来处理 INI 文件，安装方式为 `go get gopkg.in/ini.v1`。以下是一个示例代码，展示了如何读取和写入 INI 文件。
 
 **读取 INI 文件示例**：
 
@@ -121,7 +121,7 @@ import (
     "fmt"
     "log"
 
-    "github.com/go-ini/ini"
+    "gopkg.in/ini.v1"
 )
 
 func main() {
@@ -153,7 +153,7 @@ package main
 import (
     "log"
 
-    "github.com/go-ini/ini"
+    "gopkg.in/ini.v1"
 )
 
 func main() {

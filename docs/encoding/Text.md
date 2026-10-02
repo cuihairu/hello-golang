@@ -4,7 +4,7 @@
 
 #### 2.1 ASCII 编码
 
-**ASCII (American Standard Code for Information Interchange)** 是一种早期的字符编码标准，使用 7 位或 8 位表示字符。它包括 128 或 256 个字符，包括基本的拉丁字母、数字、标点符号以及一些控制字符。虽然 ASCII 编码简单且历史悠久，但其对非英文字符的支持有限。
+**ASCII (American Standard Code for Information Interchange)** 是一种早期的字符编码标准，使用 7 位表示字符，共定义了 128 个字符，包括基本的拉丁字母、数字、标点符号以及一些控制字符。后来出现的扩展字符集（如 Latin-1、Windows-1252）用 8 位表示 256 个字符，但它们并不属于标准 ASCII。虽然 ASCII 编码简单且历史悠久，但其对非英文字符的支持有限。
 
 **示例代码**：
 ```go
@@ -64,7 +64,6 @@ package main
 import (
     "fmt"
     "unicode/utf16"
-    "unicode/utf8"
 )
 
 func main() {
@@ -90,6 +89,6 @@ func main() {
 
 - **ASCII 编码**：最早的字符编码标准，主要用于英文文本。
 - **UTF-8 编码**：现代的变长编码方式，兼容 ASCII，支持多语言字符。
-- **UTF-16 编码**：固定长度编码方式，支持所有 Unicode 字符，常用于 Windows 和 Java 等平台。
+- **UTF-16 编码**：用 16 位（两个字节）或 32 位（四个字节，通过代理对表示）表示一个字符的编码方式，支持所有 Unicode 字符，常用于 Windows 和 Java 等平台。
 
 Go 语言通过其标准库提供了对这些编码方式的支持，使得处理文本数据变得简单而高效。了解这些编码方式以及如何在 Go 中使用它们，对于开发国际化应用和处理多语言数据至关重要。

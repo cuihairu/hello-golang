@@ -103,9 +103,9 @@ Redis 通过内存占用和访问速度的权衡，选择最合适的数据结�
    package main
 
    import (
-       "github.com/go-redis/redis/v8"
        "context"
-       "fmt"
+
+       "github.com/go-redis/redis/v8"
    )
 
    var ctx = context.Background()

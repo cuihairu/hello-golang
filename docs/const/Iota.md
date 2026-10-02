@@ -29,13 +29,16 @@ func (d Weekday) String() string {
 }
 
 func main() {
-    fmt.Println(Sunday)     // 输出: 0
-    fmt.Println(Monday)     // 输出: 1
-    fmt.Println(Tuesday)    // 输出: 2
-    fmt.Println(Wednesday)  // 输出: 3
-    fmt.Println(Thursday)   // 输出: 4
-    fmt.Println(Friday)     // 输出: 5
-    fmt.Println(Saturday)   // 输出: 6
+    fmt.Println(Sunday)     // 输出: Sunday（Weekday 实现了 String()，打印名称）
+    fmt.Println(Monday)     // 输出: Monday
+    fmt.Println(Tuesday)    // 输出: Tuesday
+    fmt.Println(Wednesday)  // 输出: Wednesday
+    fmt.Println(Thursday)   // 输出: Thursday
+    fmt.Println(Friday)     // 输出: Friday
+    fmt.Println(Saturday)   // 输出: Saturday
+
+    // 如需打印对应的整数值，可做显式转换
+    fmt.Println(int(Sunday), int(Saturday)) // 输出: 0 6
 
     // 使用枚举类型
     today := Wednesday

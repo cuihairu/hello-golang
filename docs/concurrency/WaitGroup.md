@@ -42,15 +42,15 @@ func main() {
 
 ### 2. 工作原理
 
-`sync.WaitGroup` 的内部实现基于计数器和条件变量。以下是 `WaitGroup` 的工作原理：
+`sync.WaitGroup` 的内部实现基于计数器和运行时信号量。以下是 `WaitGroup` 的工作原理：
 
 #### 2.1 计数器
 
 - `sync.WaitGroup` 使用一个计数器来跟踪当前正在等待的 goroutine 数量。`Add` 方法增加计数器，`Done` 方法减少计数器，`Wait` 方法会阻塞直到计数器变为零。
 
-#### 2.2 条件变量
+#### 2.2 信号量
 
-- 内部使用了条件变量（`sync.Cond`）来实现阻塞和通知机制。当计数器不为零时，调用 `Wait` 方法的 goroutine 会被阻塞；当计数器减少到零时，条件变量会被通知，从而解除阻塞。
+- 内部使用运行时的信号量机制（`runtime_Semacquire` / `runtime_Semrelease`）来实现阻塞和通知。当计数器不为零时，调用 `Wait` 方法的 goroutine 会被挂起；当计数器减少到零时，运行时唤醒所有等待中的 goroutine。
 
 ### 3. 注意事项和常见问题
 
@@ -58,13 +58,37 @@ func main() {
 
 每个调用 `Add` 的 goroutine 都应该对应一个 `Done` 调用，否则 `Wait` 将会永久阻塞。
 
-#### 3.2 避免在 `WaitGroup` 计数器为负时调用 `Wait`
+#### 3.2 避免让 `WaitGroup` 计数器为负
 
-如果在 `WaitGroup` 计数器已经减为负值时调用 `Wait`，会导致程序挂起。确保所有的 `Add` 和 `Done` 调用都匹配。
+如果 `Add` 传入的负数使计数器变为负值，或者 `Done` 的调用次数多于 `Add`，程序会直接 panic（`sync: negative WaitGroup counter`）。确保所有的 `Add` 和 `Done` 调用都匹配。
 
-#### 3.3 不要在 `Wait` 之前调用 `Add`
+#### 3.3 在 `Wait` 之前调用 `Add`
 
-`Add` 方法必须在调用 `Wait` 之前调用。否则，如果 `Wait` 被调用时计数器已经为零，`Wait` 会立即返回，这可能会导致不正确的行为。
+`Add` 必须在 `Wait` 之前调用。否则，如果 `Wait` 被调用时计数器还是零，`Wait` 会立即返回，后面的 goroutine 就不会被等待，这可能会导致不正确的行为。最常见的做法是在启动 goroutine 之前统一调用 `wg.Add(n)`，或在每次 `go` 之前调用 `wg.Add(1)`。
+
+#### 3.4 Go 1.21+ 新增的 `Go` 方法
+
+从 Go 1.25 开始，`sync.WaitGroup` 提供了 `Go` 方法，它内部完成计数加一、启动 goroutine 并在任务结束时调用 `Done`，可以简化样板代码：
+
+```go
+package main
+
+import (
+    "fmt"
+    "sync"
+)
+
+func main() {
+    var wg sync.WaitGroup
+    for i := 1; i <= 3; i++ {
+        wg.Go(func() {
+            fmt.Println("task", i)
+        })
+    }
+    wg.Wait()
+    fmt.Println("All tasks are done")
+}
+```
 
 ### 4. 高级用法和注意事项
 

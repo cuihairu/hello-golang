@@ -9,7 +9,7 @@ Go 语言的生态系统中有许多强大且灵活的第三方库可以用来�
 ##### 4.1.1 安装 `cobra`
 
 ```shell
-go get -u github.com/spf13/cobra/cobra
+go get github.com/spf13/cobra
 ```
 
 ##### 4.1.2 基本用法

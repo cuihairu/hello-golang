@@ -233,29 +233,22 @@ func main() {
 编译并反汇编以上代码，可以看到函数调用和栈帧的管理：
 
 ```bash
-go tool compile -S main.go
+go build -gcflags="-S" main.go
 ```
 
-生成的汇编代码（部分）如下：
+生成的汇编代码（部分，Go 1.27 / amd64，不同版本输出会有差异）如下：
 
 ```assembly
-TEXT main.add(SB) /main.go
-    0x0000 00000 (main.go:6)    TEXT    main.add(SB), ABIInternal, $0-24
-    0x0000 00000 (main.go:6)    MOVQ    (TLS), CX
-    0x0009 00009 (main.go:6)    CMPQ    SP, 16(CX)
-    0x000d 00013 (main.go:6)    PCDATA  $0, $-2
-    0x000d 00013 (main.go:6)    JLS     55
-    0x000f 00015 (main.go:6)    SUBQ    $24, SP
-    0x0013 00019 (main.go:6)    MOVQ    BP, 16(SP)
-    0x0018 00024 (main.go:6)    LEAQ    16(SP), BP
-    0x001d 00029 (main.go:7)    MOVQ    a+8(SP), AX
-    0x0022 00034 (main.go:7)    MOVQ    b+16(SP), CX
-    0x0027 00039 (main.go:7)    ADDQ    CX, AX
-    0x002a 00042 (main.go:7)    MOVQ    AX, "".~r2+24(SP)
-    0x002f 00047 (main.go:8)    MOVQ    16(SP), BP
-    0x0034 00052 (main.go:8)    ADDQ    $24, SP
-    0x0038 00056 (main.go:8)    RET
+	0x0000 00000 (main.go:5)	TEXT	main.add(SB), NOSPLIT|NOFRAME|ABIInternal, $0-16
+	0x0000 00000 (main.go:5)	FUNCDATA	$0, gclocals·g5+hNtRBP6YXNjfog7aZjQ==(SB)
+	0x0000 00000 (main.go:5)	FUNCDATA	$1, gclocals·g5+hNtRBP6YXNjfog7aZjQ==(SB)
+	0x0000 00000 (main.go:5)	FUNCDATA	$5, main.add.arginfo1(SB)
+	0x0000 00000 (main.go:5)	FUNCDATA	$6, main.add.argliveinfo(SB)
+	0x0000 00000 (main.go:6)	ADDQ	BX, AX
+	0x0003 00003 (main.go:6)	RET
 ```
+
+可以看到，自 Go 1.17 起函数参数和返回值通过寄存器（amd64 上是 `AX`、`BX` 等）传递，参数在栈上的开销为 `$0-16`，函数体只剩一条 `ADDQ BX, AX`；早期版本（Go 1.16 及之前）则会看到通过 `SP` 偏移在栈上存取参数的代码。
 
 #### 并发机制
 
@@ -269,29 +262,13 @@ go func() {
 }()
 ```
 
-编译并反汇编后，可以看到 goroutine 的创建过程：
+编译并反汇编后，可以看到 `go` 语句最终通过调用运行时的 `runtime.newproc` 创建 goroutine（用户代码侧的调用点）：
 
 ```assembly
-TEXT runtime.newproc(SB) /runtime/proc.go
-    0x0000 00000 (proc.go:3651)    TEXT    runtime.newproc(SB), ABIInternal, $48-40
-    0x0000 00000 (proc.go:3651)    MOVQ    (TLS), CX
-    0x0009 00009 (proc.go:3651)    CMPQ    SP, 16(CX)
-    0x000d 00013 (proc.go:3651)    PCDATA  $0, $-2
-    0x000d 00013 (proc.go:3651)    JLS     138
-    0x000f 00015 (proc.go:3651)    PCDATA  $0, $-1
-    0x000f 00015 (proc.go:3651)    SUBQ    $48, SP
-    0x0013 00019 (proc.go:3651)    MOVQ    BP, 40(SP)
-    0x0018 00024 (proc.go:3651)    LEAQ    40(SP), BP
-    0x001d 00029 (proc.go:3651)    MOVQ    $runtime.mainPC(SB), AX
-    0x0024 00036 (proc.go:3651)    MOVQ    AX, 32(SP)
-    0x0029 00041 (proc.go:3651)    MOVQ    $0, 40(SP)
-    0x0032 00050 (proc.go:3651)    MOVQ    $0, 48(SP)
-    0x003b 00059 (proc.go:3651)    MOVQ    $0, 56(SP)
-    0x0044 00068 (proc.go:3651)    CALL    runtime.newproc1(SB)
-    0x0049 00073 (proc.go:3651)    MOVQ    40(SP), BP
-    0x004e 00078 (proc.go:3651)    ADDQ    $48, SP
-    0x0052 00082 (proc.go:3651)    RET
+	0x0015 00021 (main.go:6)	CALL	runtime.newproc(SB)
 ```
+
+`runtime.newproc` 的实现在 `runtime/proc.go` 中，它负责分配 g 结构体、初始化栈并把它加入运行队列。可用 `go tool objdump -s 'runtime.newproc' 可执行文件` 查看其内部实现。
 
 #### 垃圾回收
 
@@ -303,25 +280,13 @@ Go 语言的垃圾回收机制是自动化的，采用的是非分代的标记-�
 runtime.GC()
 ```
 
-编译并反汇编后，可以看到垃圾回收的触发过程：
+编译并反汇编后，可以看到 `runtime.GC()` 调用最终落在运行时的 `runtime.GC` 入口上（用户代码侧的调用点）：
 
 ```assembly
-TEXT runtime.gcStart(SB) /runtime/mgc.go
-    0x0000 00000 (mgc.go:1001)    TEXT    runtime.gcStart(SB), NOSPLIT, $0-0
-    0x0000 00000 (mgc.go:1001)    MOVQ    (TLS), CX
-    0x0009 00009 (mgc.go:1001)    MOVQ    runtime.gcpercent(SB), AX
-    0x0010 00016 (mgc.go:1001)    CMPQ    AX, $-100
-    0x0014 00020 (mgc.go:1001)    JLE     99
-    0x0016 00022 (mgc.go:1001)    MOVQ    $0, runtime.gogc(SB)
-    0x001e 00030 (mgc.go:1001)    CALL    runtime.gcMarkTermination(SB)
-    0x0023 00035 (mgc.go:1001)    CALL    runtime.gcSweep(SB)
-    0x0028 00040 (mgc.go:1001)    MOVQ    runtime.workbufSpine(SB), AX
-    0x002f 00047 (mgc.go:1001)    TESTQ   AX, AX
-    0x0032 00050 (mgc.go:1001)    JZ      91
-    0x0034 00052 (mgc.go:1001)    CALL    runtime.gcResetMarkState(SB)
-    0x0039 00057 (mgc.go:1001)    MOVQ    $0, runtime.gcpercent(SB)
-    0x0041 00065 (mgc.go:1001)    RET
+	0x000a 00010 (main.go:6)	CALL	runtime.GC(SB)
 ```
+
+GC 的核心逻辑（标记调度 `gcStart`、并发标记、清除等）位于 `runtime/mgc.go` 中，可用 `go tool objdump -s 'runtime\.GC$' 可执行文件` 或阅读源码进一步查看。
 
 #### 总结
 

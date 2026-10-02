@@ -64,6 +64,12 @@ Go 语言（也称为 Golang）提供了一组强大的工具，帮助开发者�
 
 `godoc` 工具用于生成和浏览 Go 项目的文档。它可以启动一个本地的文档服务器，方便开发者查看代码的文档注释和 API 说明。
 
+- 安装 `godoc`（它不随 Go 工具链一起分发）：
+
+  ```sh
+  go install golang.org/x/tools/cmd/godoc@latest
+  ```
+
 - 启动 `godoc` 服务器：
 
   ```sh
@@ -94,7 +100,7 @@ Go 语言（也称为 Golang）提供了一组强大的工具，帮助开发者�
 
 ### 5. `golint` 工具
 
-`golint` 是一个代码风格检查工具，它检查代码是否符合 Go 的编码规范和最佳实践。需要先通过 `go get` 安装：
+`golint` 是一个代码风格检查工具，它检查代码是否符合 Go 的编码规范和最佳实践。需要先通过 `go install` 安装：
 
 - 安装 `golint`：
 

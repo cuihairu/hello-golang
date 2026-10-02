@@ -23,12 +23,13 @@ Gin 的核心组件之间通过明确的接口和数据流进行协作。例如�
 
 Gin 框架的源码目录结构如下：
 
-- `gin.go`：框架的入口文件，定义了 Gin 的核心结构。
-- `router.go`：路由相关的代码实现。
+- `gin.go`：框架的入口文件，定义了 `Engine` 等核心结构。
+- `tree.go`：路由树（基于 Radix Tree）的实现。
+- `routergroup.go`：路由分组与各类路由注册方法的实现。
 - `context.go`：请求上下文的定义和实现。
-- `middleware.go`：中间件相关的实现。
-- `render.go`：响应渲染的实现。
-- `error.go`：错误处理的实现。
+- `logger.go` / `recovery.go`：内置日志与恢复中间件的实现。
+- `errors.go`：错误处理的实现。
+- `render/`：响应渲染的实现（`json.go`、`html.go`、`xml.go` 等）。
 
 ##### 12.2.2 主要结构体和方法
 
@@ -43,12 +44,15 @@ Gin 框架的源码目录结构如下：
 路由注册功能允许开发者定义 URL 路径和处理函数的映射关系。
 
 ```go
-// router.go
-func (engine *Engine) GET(relativePath string, handlers ...HandlerFunc) {
-    engine.addRoute("GET", relativePath, handlers)
+// routergroup.go
+// GET 等方法定义在 RouterGroup 上，Engine 内嵌了 RouterGroup，
+// 因此 engine.GET(...) 实际调用的是内嵌 RouterGroup 的方法
+func (group *RouterGroup) GET(relativePath string, handlers ...HandlerFunc) IRoutes {
+    return group.handle("GET", relativePath, handlers)
 }
 
-func (engine *Engine) addRoute(method, path string, handlers []HandlerFunc) {
+// gin.go
+func (engine *Engine) addRoute(method, path string, handlers HandlersChain) {
     // 路由树结构的更新
 }
 ```
@@ -70,8 +74,8 @@ func (engine *Engine) handleHTTPRequest(c *Context) {
 路由分组功能允许将多个路由组织在一起，以便于管理和中间件应用。
 
 ```go
-// router.go
-func (group *RouterGroup) Group(relativePath string) *RouterGroup {
+// routergroup.go
+func (group *RouterGroup) Group(relativePath string, handlers ...HandlerFunc) *RouterGroup {
     // 创建新的路由组
 }
 ```
@@ -85,9 +89,10 @@ func (group *RouterGroup) Group(relativePath string) *RouterGroup {
 中间件可以用来处理请求前后的逻辑，比如日志记录、认证等。
 
 ```go
-// middleware.go
-func (engine *Engine) Use(middleware ...HandlerFunc) {
+// routergroup.go
+func (group *RouterGroup) Use(middleware ...HandlerFunc) IRoutes {
     // 将中间件添加到处理链中
+    return group
 }
 ```
 
@@ -96,9 +101,9 @@ func (engine *Engine) Use(middleware ...HandlerFunc) {
 Gin 提供了一些内置的中间件，比如日志记录和恢复中间件。
 
 ```go
-// middleware.go
+// recovery.go
 func Recovery() HandlerFunc {
-    // 恢复中间件实现
+    return RecoveryWithWriter(DefaultErrorWriter)
 }
 ```
 
@@ -107,7 +112,7 @@ func Recovery() HandlerFunc {
 开发者可以根据需要自定义中间件来实现特定的逻辑。
 
 ```go
-// middleware.go
+// 自定义中间件（应用代码）
 func CustomMiddleware() HandlerFunc {
     return func(c *Context) {
         // 自定义逻辑
@@ -121,7 +126,7 @@ func CustomMiddleware() HandlerFunc {
 中间件按照注册的顺序执行，可以通过链式调用实现复杂的处理逻辑。
 
 ```go
-// middleware.go
+// context.go
 func (c *Context) Next() {
     // 执行下一个中间件
 }
@@ -175,8 +180,10 @@ func (c *Context) Next() {
 
 ```go
 // context.go
-func (c *Context) Stream(code int, contentType string, r io.Reader) {
-    // 流式响应
+// step 每次被调用时向客户端写入一段数据，返回 false 表示停止推送
+func (c *Context) Stream(step func(w io.Writer) bool) bool {
+    // 循环调用 step，直到 step 返回 false 或客户端断开连接
+    return true
 }
 ```
 
@@ -189,13 +196,14 @@ func (c *Context) Stream(code int, contentType string, r io.Reader) {
 Gin 支持多种响应格式，包括 JSON、XML 和 HTML。
 
 ```go
-// render.go
-func JSON(code int, obj interface{}) {
-    // 返回 JSON 响应
+// render/json.go
+// c.JSON(code, obj) 内部就是调用 c.Render(code, render.JSON{Data: obj})
+type JSON struct {
+    Data any
 }
 
-func HTML(code int, html string) {
-    // 返回 HTML 响应
+func (r JSON) Render(w http.ResponseWriter) error {
+    return WriteJSON(w, r.Data)
 }
 ```
 
@@ -204,7 +212,7 @@ func HTML(code int, html string) {
 设置响应状态码来表示处理结果。
 
 ```go
-// render.go
+// context.go
 func (c *Context) Status(code int) {
     // 设置状态码
 }
@@ -215,7 +223,7 @@ func (c *Context) Status(code int) {
 返回文件响应，可以用于下载文件等场景。
 
 ```go
-// render.go
+// context.go
 func (c *Context) File(filepath string) {
     // 返回文件响应
 }
@@ -226,9 +234,12 @@ func (c *Context) File(filepath string) {
 开发者可以实现自定义的渲染器来支持特定的响应格式。
 
 ```go
-// render.go
-type Renderer interface {
-    Render(w io.Writer) error
+// render/render.go
+type Render interface {
+    // Render 写入响应数据
+    Render(http.ResponseWriter) error
+    // WriteContentType 写入 Content-Type 响应头
+    WriteContentType(w http.ResponseWriter)
 }
 ```
 
@@ -241,9 +252,11 @@ type Renderer interface {
 Gin 提供了内置的错误处理功能，包括恢复中间件和错误日志记录。
 
 ```go
-// error.go
-func Recovery() HandlerFunc {
-    // 恢复中间件的实现
+// errors.go
+// 错误处理相关的类型定义
+type Error struct {
+    Err  error
+    Type ErrorType
 }
 ```
 
@@ -252,7 +265,7 @@ func Recovery() HandlerFunc {
 开发者可以实现自定义的错误处理逻辑。
 
 ```go
-// error.go
+// 自定义错误处理（应用代码）
 func CustomErrorHandler() HandlerFunc {
     return func(c *Context) {
         // 自定义错误处理逻辑
@@ -265,7 +278,7 @@ func CustomErrorHandler() HandlerFunc {
 记录错误信息，以便于调试和监控。
 
 ```go
-// error.go
+// 自定义错误日志（应用代码）
 func LogError(err error) {
     log.Printf("Error: %v", err)
 }

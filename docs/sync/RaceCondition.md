@@ -14,7 +14,6 @@ package main
 import (
 	"fmt"
 	"sync"
-	"time"
 )
 
 var counter int

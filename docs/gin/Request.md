@@ -112,8 +112,15 @@ Gin 提供了对多文件上传的支持：
 
 ```go
 func uploadHandler(c *gin.Context) {
-    file, _ := c.FormFile("file")
-    c.SaveUploadedFile(file, "/path/to/save/"+file.Filename)
+    file, err := c.FormFile("file")
+    if err != nil {
+        c.String(400, "get form file failed: %v", err)
+        return
+    }
+    if err := c.SaveUploadedFile(file, "/path/to/save/"+file.Filename); err != nil {
+        c.String(500, "save file failed: %v", err)
+        return
+    }
     c.String(200, "File uploaded successfully")
 }
 ```

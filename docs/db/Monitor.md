@@ -153,6 +153,7 @@ func main() {
     rows, err := db.Query(query)
     if err != nil {
         logrus.WithError(err).WithField("query", query).Error("Failed to execute query")
+        return
     }
     defer rows.Close()
 

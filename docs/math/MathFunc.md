@@ -71,7 +71,7 @@
 
   func main() {
       angle := math.Pi / 4  // 45 度
-      fmt.Println("正弦:", math.Sin(angle))  // 输出: 0.7071067811865476
+      fmt.Println("正弦:", math.Sin(angle))  // 输出: 0.7071067811865475
       fmt.Println("余弦:", math.Cos(angle))  // 输出: 0.7071067811865476
       fmt.Println("正切:", math.Tan(angle))  // 输出: 1
   }
@@ -89,7 +89,7 @@
   )
 
   func main() {
-      fmt.Println("指数函数:", math.Exp(2))  // 输出: 7.3890560989306495
+      fmt.Println("指数函数:", math.Exp(2))  // 输出: 7.38905609893065
   }
   ```
 
@@ -151,9 +151,9 @@
   )
 
   func main() {
-      rand.Seed(time.Now().UnixNano())  // 初始化随机数种子
-      fmt.Println("随机整数:", rand.Intn(100))  // 生成 0 到 99 之间的随机整数
-      fmt.Println("随机浮点数:", rand.Float64())  // 生成 0.0 到 1.0 之间的随机浮点数
+      r := rand.New(rand.NewSource(time.Now().UnixNano()))  // 创建带种子的随机数生成器（Go 1.20+ 推荐写法）
+      fmt.Println("随机整数:", r.Intn(100))   // 生成 0 到 99 之间的随机整数
+      fmt.Println("随机浮点数:", r.Float64())  // 生成 0.0 到 1.0 之间的随机浮点数
   }
   ```
 

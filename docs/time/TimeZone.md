@@ -59,9 +59,9 @@ Go语言的 `time` 包自动处理夏令时的变化。你只需要正确加载�
       return
   }
 
-  // 创建一个夏令时期间的时间
-  summerTime := time.Date(2024, time.July, 1, 12, 0, time.UTC, time.UTC, location)
-  fmt.Println("夏令时期间的时间:", summerTime)
+  // 创建一个夏令时期间的时间（参数依次为：年、月、日、时、分、秒、纳秒、时区）
+  summerTime := time.Date(2024, time.July, 1, 12, 0, 0, 0, location)
+  fmt.Println("夏令时期间的时间:", summerTime) // 2024-07-01 12:00:00 -0400 EDT
   ```
 
 #### 5.5 时区字符串解析

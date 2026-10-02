@@ -140,36 +140,53 @@ go run github.com/99designs/gqlgen init
 
 ##### 18.3.4 实现Resolver
 
-在生成的代码基础上，实现Resolver逻辑：
+`gqlgen` 会在 `graph/resolver.go` 中生成 Resolver 骨架，在其中补充业务逻辑：
 ```go
 type Resolver struct{}
 
+func (r *Resolver) Query() QueryResolver {
+    return &queryResolver{r}
+}
+
+func (r *Resolver) Mutation() MutationResolver {
+    return &mutationResolver{r}
+}
+
+type queryResolver struct{ *Resolver }
+
 func (r *queryResolver) User(ctx context.Context, id string) (*model.User, error) {
     // 根据ID获取用户数据
+    return &model.User{ID: id, Name: "Alice"}, nil
 }
+
+type mutationResolver struct{ *Resolver }
 
 func (r *mutationResolver) CreateUser(ctx context.Context, input model.CreateUserInput) (*model.User, error) {
     // 创建用户数据
+    return &model.User{ID: "1", Name: input.Name, Email: input.Email}, nil
 }
 ```
 
 ##### 18.3.5 启动GraphQL服务器
 
-在main.go中启动GraphQL服务器：
+在main.go中启动GraphQL服务器（新版 `gqlgen` 的 handler 位于 `graphql/handler`，Playground 位于 `graphql/playground`，生成的代码在 `graph` 包内）：
 ```go
 package main
 
 import (
     "log"
     "net/http"
-    "github.com/99designs/gqlgen/handler"
+
+    "github.com/99designs/gqlgen/graphql/handler"
+    "github.com/99designs/gqlgen/graphql/playground"
     "github.com/myapp/graph"
-    "github.com/myapp/graph/generated"
 )
 
 func main() {
-    http.Handle("/", handler.Playground("GraphQL playground", "/query"))
-    http.Handle("/query", handler.GraphQL(generated.NewExecutableSchema(generated.Config{Resolvers: &graph.Resolver{}})))
+    srv := handler.NewDefaultServer(graph.NewExecutableSchema(graph.Config{Resolvers: &graph.Resolver{}}))
+
+    http.Handle("/", playground.Handler("GraphQL playground", "/query"))
+    http.Handle("/query", srv)
 
     log.Println("Server is running on http://localhost:8080/")
     log.Fatal(http.ListenAndServe(":8080", nil))
@@ -208,9 +225,9 @@ query {
 
 GraphQL指令用于在查询或模式中添加元数据或执行特定操作。常见的指令包括`@include`和`@skip`。
 
-示例指令：
+示例指令（`@include` 依赖变量，需要在查询中先声明变量）：
 ```graphql
-query {
+query ($includeEmail: Boolean!) {
   user(id: 1) {
     id
     name

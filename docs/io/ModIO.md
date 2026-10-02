@@ -69,7 +69,6 @@ Go 的 `io` 包提供了基本的 I/O 原语和接口，用于处理输入和输
    import (
        "fmt"
        "strings"
-       "io"
    )
 
    func main() {
@@ -103,6 +102,14 @@ Go 的 `io` 包提供了基本的 I/O 原语和接口，用于处理输入和输
 
    ```go
    package io
+
+   type Reader interface {
+       Read(p []byte) (n int, err error)
+   }
+
+   type Writer interface {
+       Write(p []byte) (n int, err error)
+   }
 
    type ReadWriter interface {
        Reader
@@ -141,7 +148,15 @@ Go 的 `io` 包提供了基本的 I/O 原语和接口，用于处理输入和输
    ```go
    package io
 
-   func Pipe() (*PipeReader, *PipeWriter) 
+   type PipeReader struct {
+       // contains filtered or unexported fields
+   }
+
+   type PipeWriter struct {
+       // contains filtered or unexported fields
+   }
+
+   func Pipe() (*PipeReader, *PipeWriter)
    ```
 
    **示例**：
@@ -152,7 +167,6 @@ Go 的 `io` 包提供了基本的 I/O 原语和接口，用于处理输入和输
    import (
        "fmt"
        "io"
-       "io/ioutil"
    )
 
    func main() {
@@ -163,7 +177,7 @@ Go 的 `io` 包提供了基本的 I/O 原语和接口，用于处理输入和输
            pw.Write([]byte("Hello, Pipe!"))
        }()
 
-       data, err := ioutil.ReadAll(pr)
+       data, err := io.ReadAll(pr)
        if err != nil {
            fmt.Println("Error reading from pipe:", err)
            return
@@ -178,6 +192,10 @@ Go 的 `io` 包提供了基本的 I/O 原语和接口，用于处理输入和输
 
    ```go
    package io
+
+   type Reader interface {
+       Read(p []byte) (n int, err error)
+   }
 
    type LimitedReader struct {
        R Reader
@@ -205,7 +223,7 @@ Go 的 `io` 包提供了基本的 I/O 原语和接口，用于处理输入和输
 
 7. **`MultiReader`**
 
-   `MultiReader` 连接多个 `Reader`，依次读取每个 `Reader` 直到第一个读取完毕。
+   `MultiReader` 连接多个 `Reader`，依次读取每个 `Reader`，前一个读完（返回 EOF）后再读下一个。
 
    ```go
    package io
@@ -267,17 +285,22 @@ Go 的 `io` 包提供了基本的 I/O 原语和接口，用于处理输入和输
    }
    ```
 
-9. **` TeeReader`**
+9. **`TeeReader`**
 
    `TeeReader` 同时将读取的数据写入另一个 `Writer` 并返回原始数据。
 
    ```go
    package io
 
-   type TeeReader struct {
-       R Reader
-       W Writer
+   type Reader interface {
+       Read(p []byte) (n int, err error)
    }
+
+   type Writer interface {
+       Write(p []byte) (n int, err error)
+   }
+
+   func TeeReader(r Reader, w Writer) Reader
    ```
 
    **示例**：
@@ -309,6 +332,14 @@ Go 的 `io` 包提供了基本的 I/O 原语和接口，用于处理输入和输
 
    ```go
    package io
+
+   type Reader interface {
+       Read(p []byte) (n int, err error)
+   }
+
+   type Writer interface {
+       Write(p []byte) (n int, err error)
+   }
 
    func Copy(dst Writer, src Reader) (written int64, err error)
    ```
@@ -343,6 +374,10 @@ Go 的 `io` 包提供了基本的 I/O 原语和接口，用于处理输入和输
    ```go
    package io
 
+   type Reader interface {
+       Read(p []byte) (n int, err error)
+   }
+
    func ReadAll(r Reader) ([]byte, error)
    ```
 
@@ -375,6 +410,10 @@ Go 的 `io` 包提供了基本的 I/O 原语和接口，用于处理输入和输
    ```go
    package io
 
+   type Reader interface {
+       Read(p []byte) (n int, err error)
+   }
+
    func ReadFull(r Reader, buf []byte) (n int, err error)
    ```
 
@@ -401,9 +440,23 @@ Go 的 `io` 包提供了基本的 I/O 原语和接口，用于处理输入和输
    }
    ```
 
-4. **`io.Seek`**
+4. **`io.Seeker` 接口与 `io.SeekStart` 等常量**
 
-   `io.Seek` 允许在 `Reader` 和 `Writer` 上设置当前位置（在实现了 `Seek` 接口的类型上使用）。
+   `io.Seeker` 接口封装了在数据流中设置当前位置的能力（如 `*os.File`），`io.SeekStart`、`io.SeekCurrent`、`io.SeekEnd` 是 `Seek` 方法使用的基准常量。
+
+   ```go
+   package io
+
+   type Seeker interface {
+       Seek(offset int64, whence int) (int64, error)
+   }
+
+   const (
+       SeekStart   = 0 // 相对于文件起点
+       SeekCurrent = 1 // 相对于当前位置
+       SeekEnd     = 2 // 相对于文件结尾
+   )
+   ```
 
    **示例**：
 
@@ -419,9 +472,7 @@ Go 的 `io` 包提供了基本的 I/O 原语和接口，用于处理输入和输
    func main() {
        file, err := os.Create("example.txt")
        if err != nil {
-           fmt.Println
-
-("Error creating file:", err)
+           fmt.Println("Error creating file:", err)
            return
        }
        defer file.Close()
@@ -435,14 +486,20 @@ Go 的 `io` 包提供了基本的 I/O 原语和接口，用于处理输入和输
    }
    ```
 
-5. **`io.StringReader`**
+5. **`strings.NewReader`**
 
-   `io.StringReader` 允许将字符串视为 `Reader`。
+   Go 的 `io` 包没有直接把字符串转为 `Reader` 的函数，通常使用 `strings` 包的 `NewReader`。
 
    ```go
-   package io
+   package strings
 
-   func StringReader(s string) *strings.Reader
+   // Reader 是标准库 strings.Reader 的简化摘录
+   type Reader struct {
+       s string
+       i int
+   }
+
+   func NewReader(s string) *Reader
    ```
 
    **示例**：
@@ -453,10 +510,11 @@ Go 的 `io` 包提供了基本的 I/O 原语和接口，用于处理输入和输
    import (
        "fmt"
        "io"
+       "strings"
    )
 
    func main() {
-       r := io.StringReader("Hello, StringReader!")
+       r := strings.NewReader("Hello, StringReader!")
        data, _ := io.ReadAll(r)
        fmt.Println("Read from StringReader:", string(data))
    }
@@ -464,7 +522,15 @@ Go 的 `io` 包提供了基本的 I/O 原语和接口，用于处理输入和输
 
 6. **`io.StringWriter`**
 
-   `io.StringWriter` 允许将 `Writer` 转换为字符串。
+   `io.StringWriter` 是一个接口，表示支持一次性写入字符串的 `Writer`（如 `*strings.Builder`）。
+
+   ```go
+   package io
+
+   type StringWriter interface {
+       WriteString(s string) (n int, err error)
+   }
+   ```
 
    **示例**：
 
@@ -473,14 +539,14 @@ Go 的 `io` 包提供了基本的 I/O 原语和接口，用于处理输入和输
 
    import (
        "fmt"
-       "strings"
        "io"
+       "strings"
    )
 
    func main() {
        var sb strings.Builder
-       w := io.StringWriter(&sb)
-       w.Write([]byte("Hello, StringWriter!"))
+       var w io.StringWriter = &sb
+       w.WriteString("Hello, StringWriter!")
        fmt.Println("Written data:", sb.String())
    }
    ```
