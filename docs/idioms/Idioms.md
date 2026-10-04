@@ -1,4 +1,4 @@
-这些术语涵盖了一系列在编程语言中常用的、习惯性的写法和设计模式，用来解决常见问题并提高代码的可读性和维护性。
+Idioms（惯用法）和 Patterns（模式）指编程语言里约定俗成的写法，用来解决常见问题。两者的边界并不严格：模式也可以泛指某种语言里反复出现的编程习惯。
 
 ### 相关术语解释
 
@@ -25,8 +25,6 @@
 - **Select statement** for multiplexing on channels.
 - **Anonymous functions and closures** for encapsulating behavior.
 
-这些惯用法和模式在 Go 语言的官方文档、教程和社区中被广泛讨论和使用，成为了学习和掌握 Go 语言的重要组成部分。
-
 ### 官方资源
 
 - [Effective Go](https://golang.org/doc/effective_go.html)：Go 官方的惯用法和最佳实践指南。
@@ -34,4 +32,4 @@
 
 ### 总结
 
-在编程语言中，"Idioms and Patterns" 是指常见的、被广泛接受的编程惯用法和模式。这些惯用法和模式帮助开发者编写更简洁、可读和维护的代码。对于 Go 语言来说，这些惯用法和模式不仅是语言特性的重要组成部分，也是编写高质量 Go 代码的关键。
+Comma ok、`:=`、空白标识符 `_`、`defer`、多返回值、type switch 这些写法在 Effective Go 和 Go Code Review Comments 里都有说明。照这些惯例写，读代码的人不用猜你为什么这么写。

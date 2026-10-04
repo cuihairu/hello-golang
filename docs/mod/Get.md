@@ -1,8 +1,8 @@
-在 Go 语言中，包的安装和 `go get` 命令是管理和下载依赖包的基本方法。下面是它们的详细解释：
+在 Go 语言中，装包和管理依赖主要靠 `go get` 这条命令。
 
 ### Go 包的安装
 
-Go 包的安装通常通过以下几种方式完成：
+装包有三条路：
 
 1. **使用 `go get` 命令（管理依赖）**：
    ```sh
@@ -79,4 +79,4 @@ github.com/gin-gonic/gin v1.7.4 h1:ZjAtzNWBc+t1OXcMGYWZzwE7Em8oUVQz1SoNQoVDhnQ=
 github.com/gin-gonic/gin v1.7.4/go.mod h1:ZZFzY1G5e/oDpUsGtcj0FJ/h4ug9Qt68N/m9uITtdlI=
 ```
 
-通过这种方式，Go 确保包的版本和依赖关系的一致性，并使得包的管理变得方便和可控。
+版本号落在 `go.mod`，校验和落在 `go.sum`，依赖出了问题就在这两个文件里查。

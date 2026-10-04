@@ -1,18 +1,18 @@
-`GOPROXY` 是 Go 语言中用于配置模块代理的环境变量。模块代理可以缓存和加速 Go 模块的下载，尤其对于中国大陆的用户，由于网络环境的限制，访问官方的 `proxy.golang.org` 可能会遇到较慢的下载速度。使用国内的 Go 模块代理可以显著提高下载和构建速度。
+`GOPROXY` 是 Go 配置模块代理的环境变量，模块代理会缓存并转发 Go 模块的下载。在中国大陆直连官方的 `proxy.golang.org` 往往较慢，改用国内代理能明显加快下载和构建。
 
 ### 常用的国内 Go 模块代理
 
 1. **GOPROXY.cn**
    - 地址: `https://goproxy.cn`
-   - 这是由七牛云提供的免费的 Go 模块代理服务，速度快且稳定。
+   - 七牛云提供的免费 Go 模块代理。
 
 2. **goproxy.io**
    - 地址: `https://goproxy.io`
-   - 这是一个由业界开发者提供的 Go 模块代理服务，主要面向全球用户，但在中国大陆也有不错的速度。
+   - 主要面向全球用户的 Go 模块代理，中国大陆访问也可用。
 
 3. **Aliyun Go 镜像**
    - 地址: `https://mirrors.aliyun.com/goproxy/`
-   - 这是由阿里云提供的 Go 模块代理服务，适合在中国大陆使用。
+   - 阿里云提供的 Go 模块代理，适合在中国大陆使用。
 
 ### 配置 GOPROXY
 
@@ -44,25 +44,25 @@ source ~/.zshrc
 export GOPROXY=https://goproxy.cn,https://proxy.golang.org,direct
 ```
 
-这将会首先尝试 `goproxy.cn`，如果失败，则尝试 `proxy.golang.org`，最后直接从源代码库获取模块。
+先试 `goproxy.cn`，失败再试 `proxy.golang.org`，最后直连源代码库。
 
 ### 验证配置
 
-你可以通过以下命令来验证你的 `GOPROXY` 配置是否生效：
+用这条命令看当前生效的配置：
 
 ```sh
 go env GOPROXY
 ```
 
-这将输出当前配置的 `GOPROXY` 值。
+输出的就是当前 `GOPROXY` 的值。
 
 ### 总结
 
-通过配置合适的 `GOPROXY`，特别是使用国内的 Go 模块代理，可以显著提高在中国大陆的 Go 模块下载和构建速度。`GOPROXY.cn`、`goproxy.io` 和 阿里云的 Go 镜像都是非常好的选择。
+中国大陆常用的三个代理是 `goproxy.cn`、`goproxy.io` 和阿里云镜像，配好几个可以按顺序回退。
 
 ### 搭建局域网代理
 
-搭建一个局域网内的 Go 模块代理（GOPROXY）可以帮助团队内的开发者更快地下载和使用 Go 模块，特别是在无法访问外部网络或外部网络速度较慢的情况下。以下是搭建局域网内的 GOPROXY 的步骤：
+在局域网内搭一个 Go 模块代理，团队成员的模块下载都走它，外网受限或太慢时也能用。下面给出两种实现：
 
 ### 使用 goproxy 的代理服务
 
@@ -70,7 +70,7 @@ go env GOPROXY
 
 #### 1. 安装 goproxy
 
-首先，你需要在服务器上安装 `goproxy`。确保你的 Go 环境已经安装并配置好，然后运行以下命令：
+先在服务器上装好 Go，然后运行：
 
 ```sh
 go install github.com/goproxy/goproxy/cmd/goproxy@latest
@@ -111,7 +111,7 @@ source ~/.bashrc
 
 ### 使用 Athens 搭建 GOPROXY
 
-[Athens](https://github.com/gomods/athens) 是另一个用于 Go 模块代理的开源项目，具有更多的功能和更强的可扩展性。
+[Athens](https://github.com/gomods/athens) 是另一个 Go 模块代理开源项目，用环境变量配置，存储方式可选（下例用磁盘）。
 
 #### 1. 安装 Athens
 
@@ -164,4 +164,4 @@ source ~/.bashrc
 
 ### 总结
 
-通过使用 `goproxy` 或 `Athens`，你可以在局域网内轻松搭建一个 Go 模块代理。选择适合你的方案，按照上述步骤进行配置和部署，就能为团队提供快速稳定的 Go 模块下载服务。
+两条路都行：想省事就用 `goproxy server` 一条命令起服务，想要更多配置项就用 Athens；客户端把 `GOPROXY` 指到那台机器即可。

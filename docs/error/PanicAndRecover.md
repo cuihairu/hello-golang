@@ -1,4 +1,4 @@
-在 Go 语言中，`panic` 和 `recover` 是用于处理程序运行时异常的机制。它们允许在发生严重错误时终止程序的正常执行，并提供了一种恢复机制来处理这些异常情况。下面详细介绍这两个机制的使用及其特点。
+`panic` 和 `recover` 是 Go 处理运行时错误的两个内建机制：`panic` 立即中断当前执行流程，`recover` 能在 `defer` 里把它接住。
 
 ### `panic`
 
@@ -40,7 +40,7 @@ exit status 2
 
 ### `recover`
 
-`recover` 是用于恢复从 `panic` 中恢复的函数。`recover` 只能在 `defer` 语句中调用，并且它会捕获到当前 goroutine 中发生的 `panic`，从而防止程序崩溃。
+`recover` 把流程从 `panic` 里捞回来。它只能在 `defer` 语句中调用，捕获的是当前 goroutine 上发生的 `panic`，程序因此不会崩掉。
 
 #### 使用 `recover`
 
@@ -96,7 +96,7 @@ Recovered and continuing execution
 
 ### 汇编示例
 
-下面是一个简化的汇编示例，展示了 `panic` 和 `recover` 的基本处理过程（这只是一个高层次的示意，实际汇编可能更复杂）：
+简化的汇编示意，只为看清三者的关系，实际汇编比这复杂得多：
 
 ```assembly
 TEXT main.main(SB), NOSPLIT, $0
@@ -136,7 +136,7 @@ TEXT main.recoverFromPanic(SB), NOSPLIT, $0
 
 #### 示例
 
-以下是一个使用 `recover` 处理不同类型 `panic` 的示例：
+把 `panic` 的参数换成整数，`recover` 拿到的就是这个整数：
 
 ```go
 package main
@@ -201,7 +201,7 @@ func getPanicValue() any {
 
 ### panic 返回其他类型
 
-在 Go 语言中，`recover` 函数可以从 `panic` 中恢复任何类型的值，而不仅仅是 `error` 类型。以下是一些示例，展示了 `recover` 返回非 `error` 类型的情况：
+`recover` 拿到的不一定是 `error`，`panic` 传什么它就返回什么。三个例子：
 
 #### 示例 1: `panic` 使用整数
 
@@ -315,7 +315,7 @@ Recovered and continuing execution
 #### 总结
 
 - **`recover` 返回值的类型**：`recover` 可以捕获并返回任何类型的值，这意味着 `panic` 时传递的值类型可以是 `int`、`string`、自定义结构体等。
-- **错误类型并非唯一**：虽然 `error` 类型是常用的，但 `panic` 也可以用来传递其他类型的信息。`recover` 能够处理这些不同类型的值，提供了灵活的异常处理能力。
+- **错误类型并非唯一**：`error` 是常见选择，但 `panic` 也可以带别的类型，`recover` 拿到什么就返回什么。
 
 
 ### 总结
@@ -324,4 +324,4 @@ Recovered and continuing execution
 - **`recover`**：用于捕获 `panic` 并恢复正常执行流程，必须在 `defer` 中调用。
 - **使用场景**：`panic` 用于严重错误，`recover` 用于捕获和处理异常，避免程序崩溃。
 
-这两个机制帮助 Go 程序处理异常情况，提供了一种机制来确保程序在遇到错误时能够适当响应。
+可预料的错误用 `error` 返回值处理，`panic`/`recover` 留给不该发生的状态。分清这两条，程序就不会既慢又难查。

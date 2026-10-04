@@ -118,4 +118,4 @@ git push origin v1.1.0
 ```
 发布新的版本到 GitHub Releases。
 
-通过这些步骤，你可以轻松地在 GitHub 上发布并管理你的 Go 包，同时确保符合语义化版本规范。
+整个流程归结为三步：`go mod init` 建模块，按语义化版本打 `vMAJOR.MINOR.PATCH` 标签，推到 GitHub Releases。用户用 `go get 包路径@版本号` 就能装到指定版本。

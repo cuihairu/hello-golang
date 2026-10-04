@@ -4,7 +4,7 @@ GraphQL是一种用于API的查询语言，也是一个用于执行查询的服�
 
 #### 18.1 GraphQL简介
 
-GraphQL由Facebook开发，旨在解决传统REST API中的一些不足之处。与REST API不同，GraphQL允许客户端指定请求的精确结构，从而减少不必要的数据传输，并能够在单个请求中获取所需的所有数据。
+GraphQL由Facebook开发，用来解决传统REST API的不足。与REST API不同，GraphQL允许客户端指定请求的精确结构，从而减少不必要的数据传输，并能够在单个请求中获取所需的所有数据。
 
 ##### 18.1.1 GraphQL的特点
 
@@ -238,7 +238,7 @@ query ($includeEmail: Boolean!) {
 
 ##### 18.4.4 自定义标量类型
 
-GraphQL允许定义自定义标量类型，如日期、时间等。通过自定义标量类型，可以扩展GraphQL的类型系统。
+GraphQL允许定义自定义标量类型，如日期、时间等，用来覆盖内置标量不支持的类型。
 
 示例自定义标量类型：
 ```graphql
@@ -251,4 +251,4 @@ type User {
 }
 ```
 
-通过本章内容，读者将全面了解GraphQL的基本概念、特性以及在Go中的使用方法，并掌握高级功能的应用，能够在实际项目中灵活运用GraphQL技术。
+GraphQL 的核心是查询、变更、订阅三种操作加一套类型系统；Go 这边用 `gqlgen` 从 schema 生成代码，在 Resolver 里补业务逻辑即可。

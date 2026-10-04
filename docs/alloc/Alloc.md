@@ -1,8 +1,8 @@
-本节详细介绍 Go 内存分配器中 `mspan`、`mcache`、`mcentral`、`mheap` 和 `heapArena` 的职责与使用场景，以及它们与 Thread Cache、Central Cache 和 Heap 三层结构的对应关系。
+本节讲 Go 内存分配器中 `mspan`、`mcache`、`mcentral`、`mheap` 和 `heapArena` 的职责与使用场景，以及它们与 Thread Cache、Central Cache 和 Heap 三层结构的对应关系。
 
 ### 内存分配器的分层结构
 
-Go 的内存分配器是一个分层的系统，包含以下主要组件：
+Go 的内存分配器分三层，从上到下是：
 
 1. **Thread Cache（线程缓存）**
 2. **Central Cache（中央缓存）**
@@ -10,11 +10,7 @@ Go 的内存分配器是一个分层的系统，包含以下主要组件：
 
 ### 关键组件及其关系
 
-1. **mspan**
-2. **mcache**
-3. **mcentral**
-4. **mheap**
-5. **heapArena**
+对应到运行时实现，三层分别落在 `mcache`、`mcentral`、`mheap` 上，加上 `mspan` 和 `heapArena` 两个基础结构，一共五个关键组件。
 
 #### 关系图示
 
@@ -48,7 +44,7 @@ func allocateSmallObject(size int) {
 ```
 
 #### 2. Central Cache（中央缓存）/ mcentral
-`mcentral` 管理每个大小类别的 `mspan`，负责从 `mheap` 获取新的 `mspan`，并将用完的 `mspan` 归还给 `mheap`。它充当 `mcache` 和 `mheap` 之间的桥梁。
+`mcentral` 管理每个大小类别的 `mspan`，负责从 `mheap` 获取新的 `mspan`，并将用完的 `mspan` 归还给 `mheap`，是 `mcache` 和 `mheap` 之间的中间层。
 
 **使用场景**：
 - 当 `mcache` 中的内存不足时，从 `mcentral` 获取新的 `mspan`。
@@ -129,7 +125,7 @@ func allocateFromHeapArena(size int) {
 
 ### 总结
 
-Go 的内存分配器通过 `mcache`、`mcentral` 和 `mheap` 分层管理内存，提高了内存分配的效率和并发性能。`mspan` 和 `heapArena` 提供了基础的内存管理结构。虽然这种分层设计可能导致内存碎片问题，但其高效的分配和释放机制非常适合 Go 语言的并发编程模型。
+Go 的内存分配器按 `mcache`、`mcentral`、`mheap` 三层分工：小对象在 P 私有的 `mcache` 上就地分配，线程之间几乎不竞争；不够了才向 `mcentral` 要 `mspan`，再不够由 `mheap` 向操作系统要内存。分层可能带来内存碎片，换来的是贴合 Go 并发模型的分配速度。
 
 下面是整合的代码示例，展示了各个组件的使用：
 
@@ -199,4 +195,4 @@ func main() {
 }
 ```
 
-在这个例子中，我们展示了如何分配小对象、大对象以及从中央缓存和 `mspan`、`heapArena` 中分配内存，体现了 Go 内存分配器的分层结构和各个组件的作用。
+这个例子串了一遍小对象、大对象和中央缓存三条分配路径；真正的分配逻辑都在 Go 运行时内部，应用代码看到的只是 `make` 这类调用。

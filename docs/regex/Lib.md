@@ -1,6 +1,6 @@
 ### 2. Go 的正则表达式库
 
-Go 语言中的正则表达式功能由 `regexp` 包提供。这个包实现了正则表达式的匹配、搜索、替换和分割等功能。以下是 `regexp` 包的详细介绍，包括主要功能和函数的使用。
+Go 语言中的正则表达式功能由 `regexp` 包提供，覆盖编译、匹配、搜索、替换和分割。
 
 #### 2.1 `regexp` 包介绍
 
@@ -145,4 +145,4 @@ parts := re.Split("test string", -1)
 index := re.FindStringIndex("test string")
 ```
 
-通过这些函数，你可以在 Go 中灵活地使用正则表达式进行文本处理。
+日常用得最多的是这几条：`MustCompile` 编译、`MatchString` 判断是否匹配、`FindAllString` 取全部结果、`ReplaceAllString` 替换。模式来自运行期才确定的来源（如用户输入）时，改用 `Compile` 并处理返回的错误。

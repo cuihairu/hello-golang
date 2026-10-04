@@ -1,4 +1,4 @@
-`ErrorGroup` 是 Go 语言中的一个同步原语，提供了类似于 `sync.WaitGroup` 的功能，但专注于错误处理和任务的错误汇总。`ErrorGroup` 由 Google 的 `golang.org/x/sync` 包中的 `errgroup` 包提供。它使得管理并发任务时更方便地处理和汇总错误变得更加简洁。
+`ErrorGroup` 是 Go 的一个同步原语，行为类似 `sync.WaitGroup`，但多了错误汇总：它由 `golang.org/x/sync` 包中的 `errgroup` 提供，在等待一组 goroutine 的同时记下并返回第一个出错的结果。
 
 ### 1. 基本功能
 
@@ -113,8 +113,8 @@ func (g *Group) Wait() error {
 
 #### 4.3 `context` 的使用
 
-`ErrorGroup` 可以与 `context.Context` 一起使用，以便在出现错误时可以取消所有正在运行的 goroutine。确保创建和传递正确的上下文，以便正确处理 goroutine 的生命周期。
+`ErrorGroup` 可以与 `context.Context` 搭配，出错时取消正在运行的 goroutine。创建时传对 context，goroutine 的生命周期才管得住。
 
 ### 总结
 
-`ErrorGroup` 是一个高效的并发任务管理工具，特别适合于需要处理错误的场景。它通过 `Go` 方法启动和管理多个 goroutine，通过 `Wait` 方法汇总错误，并可在任务出错时取消关联的 context，协调其他 goroutine 尽快退出。`ErrorGroup` 的设计使得并发错误处理变得更加简洁和易于使用，是处理并发任务时的有力工具。
+`ErrorGroup` 把「等待一组 goroutine」和「汇总第一个错误」合成一步：`Go` 提交任务，`Wait` 返回第一个非 `nil` 错误。配上 `errgroup.WithContext`，第一个出错的任务会取消关联的 context，其余监听 `ctx.Done()` 的任务可以提前退出。比起用 `sync.WaitGroup` 等待、再自己加锁记错误的写法，这套 API 少写不少模板代码。

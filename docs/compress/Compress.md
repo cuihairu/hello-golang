@@ -1,6 +1,6 @@
 ### 2. compress 包
 
-在本节中，我们将详细介绍 Go 语言标准库中的 `compress` 包，包括 `compress/gzip`、`compress/zlib` 和 `compress/bzip2`。我们将展示如何使用这些包进行压缩和解压操作，并提供实际的代码示例。
+Go 标准库的 `compress` 包下有 `compress/gzip`、`compress/zlib` 和 `compress/bzip2` 三个子包，本节分别给出压缩和解压的代码示例。
 
 #### 2.1 `compress/gzip`
 
@@ -8,7 +8,7 @@
 
 ##### 2.1.1 基本使用
 
-要使用 `compress/gzip` 包，需要导入该包并创建 `gzip.Writer` 或 `gzip.Reader` 来进行压缩和解压操作。
+压缩用 `gzip.Writer`，解压用 `gzip.Reader`。
 
 ```go
 import (
@@ -88,7 +88,7 @@ Hello, Gopher!
 This is a test file for gzip compression.
 ```
 
-我们可以使用上面的函数将其压缩成 `example.txt.gz`，然后再解压回来。
+用上面的函数把 `example.txt` 压缩成 `example.txt.gz`，再解压回来。
 
 ```go
 func main() {
@@ -112,7 +112,7 @@ func main() {
 }
 ```
 
-运行此代码后，我们会看到控制台输出：
+输出：
 
 ```plaintext
 File compressed successfully
@@ -127,7 +127,7 @@ File decompressed successfully
 
 ##### 2.2.1 基本使用
 
-要使用 `compress/zlib` 包，需要导入该包并创建 `zlib.Writer` 或 `zlib.Reader` 来进行压缩和解压操作。
+压缩用 `zlib.Writer`，解压用 `zlib.Reader`。
 
 ```go
 import (
@@ -192,7 +192,7 @@ func decompressZlibFromFile(inputFile, outputFile string) error {
 
 ##### 2.2.3 实践案例
 
-我们可以使用上面的函数将 `example.txt` 压缩成 `example.txt.zlib`，然后再解压回来。
+用上面的函数把 `example.txt` 压缩成 `example.txt.zlib`，再解压回来。
 
 ```go
 func main() {
@@ -214,7 +214,7 @@ func main() {
 }
 ```
 
-运行此代码后，我们会看到控制台输出：
+输出：
 
 ```plaintext
 File compressed successfully
@@ -229,7 +229,7 @@ File decompressed successfully
 
 ##### 2.3.1 基本使用
 
-要使用 `compress/bzip2` 包，需要导入该包并创建 `bzip2.Reader` 来进行解压操作。
+`compress/bzip2` 只提供读取，解压用 `bzip2.Reader`。
 
 ```go
 import (
@@ -264,7 +264,7 @@ func decompressBzip2FromFile(inputFile, outputFile string) error {
 }
 ```
 
-运行此代码后，我们会看到控制台输出：
+输出：
 
 ```plaintext
 File decompressed successfully
@@ -274,4 +274,4 @@ File decompressed successfully
 
 ---
 
-以上是 `compress` 包的基本使用方法，包括 `compress/gzip`、`compress/zlib` 和 `compress/bzip2` 的详细介绍和实际代码示例。接下来，我们将介绍 `archive` 包，探讨如何在 Go 中进行归档操作。
+`compress` 包的三个子包用法都在这里：gzip 和 zlib 读写对称，bzip2 只能读。

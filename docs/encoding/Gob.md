@@ -159,4 +159,4 @@ func main() {
 
 ## 总结
 
-`encoding/gob` 为 Go 程序提供了高效的自描述二进制序列化能力：普通场景直接 `Encode` / `Decode`，涉及接口时用 `gob.Register` 注册具体类型。它适合 Go 服务之间的内部通信与本地持久化；跨语言场景则应改用 JSON、XML 或 Protobuf。
+`encoding/gob` 是自描述的二进制序列化格式：普通场景直接 `Encode` / `Decode`，涉及接口时用 `gob.Register` 注册具体类型。它适合 Go 服务之间的内部通信与本地持久化；跨语言场景则应改用 JSON、XML 或 Protobuf。

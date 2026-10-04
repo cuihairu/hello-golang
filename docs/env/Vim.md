@@ -1,9 +1,9 @@
 # Vim
-为了在Vim中高效地编写Go代码，你可以按照以下步骤进行环境搭建：
+在Vim里写Go，先把环境搭起来：
 
 ### 安装Vim
 
-首先，确保你已经安装了Vim。如果还没有安装，可以通过以下命令来安装：
+没装Vim的先装：
 
 **在Ubuntu/Debian系统上:**
 ```sh
@@ -18,13 +18,13 @@ brew install vim
 
 ### 安装Go
 
-确保你已经安装了Go。如果还没有安装，可以从[Go的官网](https://golang.org/dl/)下载并安装最新版本。
+Go还没装的话，从[Go的官网](https://golang.org/dl/)下载最新版本安装。
 
 ### 配置Vim
 
 1. **安装插件管理器**
 
-   我们推荐使用[vim-plug](https://github.com/junegunn/vim-plug)来管理Vim插件。你可以通过以下命令来安装vim-plug：
+   插件管理用[vim-plug](https://github.com/junegunn/vim-plug)，安装命令：
 
    ```sh
    curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
@@ -116,4 +116,4 @@ let g:go_info_mode = 'gopls'
        \}
    ```
 
-完成以上步骤后，你的Vim应该已经配置好了Go语言开发环境。你可以在Vim中编写Go代码，并享受代码补全、跳转、重构等功能。如果有任何问题或需要进一步的帮助，请随时告诉我。
+走完这几步，Vim 就能写 Go 了：补全、跳转、重构靠 gopls，格式化交给 goimports，实时检查交给 ale。

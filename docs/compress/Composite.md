@@ -1,14 +1,14 @@
 ### 4. 综合应用
 
-在本节中，我们将展示如何将前面介绍的 `compress` 包和 `archive` 包结合使用，以实现更复杂的归档和压缩操作。我们将具体讲解 `tar.gz` 和 `zip` 的创建和解压方法，并提供实际的代码示例。
+把前面介绍的 `compress` 包和 `archive` 包结合使用，就能做"先归档、再压缩"这类组合操作。这一节讲 `tar.gz` 和 `zip` 的创建与解压。
 
 #### 4.1 tar.gz 归档和压缩
 
-`tar.gz` 文件是通过先使用 tar 将多个文件归档成一个 tar 文件，然后使用 gzip 对 tar 文件进行压缩而生成的。
+`tar.gz` 是先用 tar 把多个文件归档成一个 tar 文件，再用 gzip 压缩得到的。
 
 ##### 4.1.1 创建 tar.gz 文件
 
-要创建 `tar.gz` 文件，我们需要将文件先归档成 tar 文件，然后压缩成 gzip 文件。
+创建时分两步：先把文件归档成 tar，再套一层 gzip。
 
 ```go
 import (
@@ -106,7 +106,7 @@ func extractTarGz(inputFile, outputDir string) error {
 
 ##### 4.1.3 实践案例
 
-我们可以使用上面的函数将 `file1.txt` 和 `file2.txt` 打包成 `archive.tar.gz`，然后再解压到 `output` 目录。
+用上面的函数把 `file1.txt` 和 `file2.txt` 打包成 `archive.tar.gz`，再解压到 `output` 目录：
 
 ```go
 func main() {
@@ -130,7 +130,7 @@ func main() {
 }
 ```
 
-运行此代码后，我们会看到控制台输出：
+运行输出：
 
 ```plaintext
 Tar.gz file created successfully
@@ -141,7 +141,7 @@ Tar.gz file extracted successfully
 
 #### 4.2 zip 压缩多个文件
 
-我们将展示如何将多个文件压缩成一个 zip 文件，并解压该 zip 文件。
+把多个文件压进一个 zip 并解压，用的是 `archive/zip`。
 
 ##### 4.2.1 压缩多个文件到一个 zip 文件
 
@@ -249,7 +249,7 @@ func extractZip(inputFile, outputDir string) error {
 
 ##### 4.2.3 实践案例
 
-我们可以使用上面的函数将 `file1.txt` 和 `file2.txt` 打包成 `archive.zip`，然后再解压到 `output` 目录。
+用上面的函数把 `file1.txt` 和 `file2.txt` 打包成 `archive.zip`，再解压到 `output` 目录：
 
 ```go
 func main() {
@@ -273,7 +273,7 @@ func main() {
 }
 ```
 
-运行此代码后，我们会看到控制台输出：
+运行输出：
 
 ```plaintext
 Zip file created successfully

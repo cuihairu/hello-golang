@@ -125,4 +125,4 @@ func customRenderResponse(c *gin.Context) {
 
 ### 总结
 
-本章介绍了 Gin 的响应处理机制，包括 JSON、XML 和 HTML 响应，响应状态码设置，文件响应以及自定义渲染器。掌握这些技术，可以帮助开发者灵活地处理和返回不同格式的响应，提高 Web 应用的用户体验和功能多样性。
+这些出口都是 `gin.Context` 上的方法：返回 JSON 用 `c.JSON`，XML 用 `c.XML`，HTML 用 `c.HTML`，文件下载用 `c.File` 和 `c.FileAttachment`，要自定义格式就实现 `render.Render` 接口再交给 `c.Render`。

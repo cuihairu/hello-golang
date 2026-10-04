@@ -1,5 +1,5 @@
 # Html模板
-在 Go 语言中，`html/template` 包提供了创建和执行 HTML 模板的功能。它与 `text/template` 包类似，但增加了一些针对 HTML 安全的功能，防止跨站脚本（XSS）攻击。`html/template` 包通过自动转义特殊字符来确保生成的 HTML 内容是安全的。下面是对 Go 中 `html/template` 包的详细介绍，包括基本用法、模板语法、自定义函数和常见的使用场景。
+在 Go 语言中，`html/template` 包创建和执行 HTML 模板。它与 `text/template` 包类似，多出来的是针对 HTML 安全的功能：插值前自动转义特殊字符，防止跨站脚本（XSS）攻击。处理 HTML 就用这个包。
 
 ### 1. 基本用法
 
@@ -257,7 +257,7 @@ func main() {
 
 ### 示例代码
 
-下面是一个完整的示例代码，展示了 HTML 模板的创建、数据绑定和自定义函数：
+把前面几节合起来：创建模板、绑定数据、调用自定义函数，一次跑完。
 
 ```go
 package main
@@ -322,4 +322,4 @@ func main() {
 
 ### 总结
 
-Go 语言中的 `html/template` 包提供了强大且安全的 HTML 模板功能，可以通过简单的语法将动态数据嵌入到静态 HTML 中。通过理解基本用法、模板语法、内置和自定义函数以及常见的使用场景，可以有效地在 Go 程序中生成各种动态 HTML 内容。
+`html/template` 的几个语法点：<code v-pre>{{.Field}}</code> 取数据，`if`、`range` 管分支和循环，`|` 把左边结果传给下一个函数，<code v-pre>{{define}}</code> 加 <code v-pre>{{template}}</code> 拆模块。安全上记住一条：输出自动转义，`text/template` 不做这层，HTML 场景别用它。

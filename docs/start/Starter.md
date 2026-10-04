@@ -1,9 +1,9 @@
 # 入门
-在Go环境搭建好之后，你可以通过以下步骤来创建一个Go项目。假设你已经安装并配置好了Go以及相关的工具。
+Go 环境装好之后，按下面 7 步建起一个项目。
 
 ### 1. 设置GOPATH和项目目录
 
-首先，确保你已经设置好了`GOPATH`环境变量，这是Go工作空间的根目录。你可以在你的shell配置文件（如`.bashrc`或`.zshrc`）中添加以下行来设置`GOPATH`：
+`GOPATH` 是 Go 工作空间的根目录。在 shell 配置文件（如`.bashrc`或`.zshrc`）里加上：
 
 ```sh
 export GOPATH=$HOME/go
@@ -19,7 +19,7 @@ cd $GOPATH/src/github.com/yourusername/myproject
 
 ### 2. 初始化Go模块
 
-Go模块是Go 1.11引入的一种依赖管理方式。通过模块，你可以轻松管理项目的依赖关系。在项目目录下运行以下命令来初始化一个新的Go模块：
+Go 模块是 Go 1.11 引入的依赖管理方式，依赖关系记录在`go.mod`里。在项目目录下初始化一个新的 Go 模块：
 
 ```sh
 go mod init github.com/yourusername/myproject
@@ -143,4 +143,4 @@ go get -u github.com/gin-gonic/gin
 go mod tidy
 ```
 
-通过以上步骤，你应该能够创建并运行一个基本的Go项目。你可以根据自己的需要进一步扩展和完善项目。
+走完这 7 步，`bin/myproject` 会打印出 `Hello, World!`。后面加依赖用 `go get`，清理用 `go mod tidy`。

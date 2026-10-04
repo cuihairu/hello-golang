@@ -81,4 +81,4 @@ go version
    go version
    ```
 
-通过以上步骤，您可以在 Windows、Linux 和 macOS 上成功安装 Go 语言并设置环境变量，使其在系统中可用。
+装完跑一次 `go version`，有版本号输出就说明安装和 `PATH` 都配好了。

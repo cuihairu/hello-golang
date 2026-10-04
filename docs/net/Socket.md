@@ -19,13 +19,13 @@
 
 ##### 3.1.2 套接字 API
 
-套接字编程主要通过各种系统提供的 API 实现。在 Go 语言中，使用标准库 `net` 包进行套接字编程。`net` 包提供了丰富的函数和类型，用于创建和操作套接字。
+套接字编程走系统提供的 API。在 Go 里用标准库 `net` 包，创建和操作套接字的函数、类型都在里面。
 
 #### 3.2 TCP 套接字编程
 
 ##### 3.2.1 创建 TCP 套接字
 
-在 Go 中，创建 TCP 套接字非常简单，使用 `net.Listen` 函数即可：
+在 Go 中，`net.Listen` 一步就能建 TCP 套接字：
 
 ```go
 package main
@@ -193,7 +193,7 @@ func main() {
 
 ##### 3.4.1 套接字超时
 
-套接字编程中，处理超时是确保程序稳定性的重要部分：
+读写可能一直阻塞，用 `SetDeadline` 给连接设个死线：
 
 ```go
 package main
@@ -242,4 +242,4 @@ func handleConnection(conn net.Conn) {
 
 在网络通信中，数据丢失与重复是常见问题。使用 TCP 协议可以避免大部分数据丢失和重复的问题，因为 TCP 提供了可靠的数据传输。但在 UDP 中，这些问题则需要通过应用层协议来处理。
 
-通过本章的学习，读者应能够理解和掌握套接字编程的基础知识，包括套接字类型、API 使用、TCP 和 UDP 套接字编程，以及常见问题的处理方法。这些知识是网络编程的重要基础，为后续高级主题的学习奠定了基础。
+TCP 走 `net.Listen` 加 `Accept` 收连接，`conn.Read`、`conn.Write` 读写；UDP 走 `ListenUDP` 配 `ReadFromUDP`、`WriteToUDP`。超时用 `SetDeadline`，丢包和重复交给 TCP，用 UDP 就得在应用层自己处理。

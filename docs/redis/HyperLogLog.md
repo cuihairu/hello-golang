@@ -1,6 +1,6 @@
 ### Redis HyperLogLog
 
-Redis HyperLogLog 是一种用于基数估算的数据结构。它在存储和计算上非常高效，适合于处理大规模的唯一元素统计，例如计数用户访问、唯一用户数等。HyperLogLog 采用了概率算法，能够在近似估算的同时大幅减少内存占用。
+Redis HyperLogLog 是做基数估算的结构：往里塞元素，用 `PFCOUNT` 拿一个近似值，统计独立访客、唯一 IP 这类"到底有多少个不同元素"的问题。它用概率算法换内存，默认 12KB 存一份。
 
 #### 场景示例
 
@@ -53,7 +53,7 @@ Redis HyperLogLog 是一种用于基数估算的数据结构。它在存储和�
 
 #### 底层实现
 
-Redis 的 HyperLogLog 实现基于以下几个核心概念：
+Redis 的 HyperLogLog 拆开看是四件事：
 
 1. **概率算法**
    - HyperLogLog 使用概率算法来估算唯一元素的数量。这种算法的核心是通过随机哈希函数将元素映射到一定范围的桶中，然后利用统计学中的“最大前导零位”估算基数。
@@ -63,7 +63,7 @@ Redis 的 HyperLogLog 实现基于以下几个核心概念：
    - **哈希函数**：将元素通过哈希函数映射到桶中，计算哈希值的前导零长度，用于估算唯一元素数。
 
 3. **内存占用**
-   - HyperLogLog 设计的内存占用通常是 O(log log N)，即非常小，即使在大规模的数据集下。默认情况下，Redis 使用 12KB 的内存来存储 HyperLogLog 数据结构，这可以提供足够高的准确度。
+   - HyperLogLog 的内存占用是 O(log log N)。Redis 默认用 12KB 内存存储一个 HyperLogLog。
 
 4. **操作命令**
    - **PFADD**：添加元素到 HyperLogLog。
@@ -91,7 +91,7 @@ Redis HyperLogLog 的实现机制可以概括如下：
 
 #### Go 中使用 Redis HyperLogLog
 
-在 Go 语言中，可以使用 `go-redis` 库来操作 Redis 的 HyperLogLog 数据结构。以下是一些基本操作示例。
+Go 里用 `go-redis` 操作它：`PFAdd`、`PFCount`、`PFMerge` 三个方法对应三条命令。
 
 1. **连接 Redis**
    ```go
@@ -152,4 +152,4 @@ Redis HyperLogLog 的实现机制可以概括如下：
    }
    ```
 
-Redis 的 HyperLogLog 数据结构在处理大规模唯一元素统计时具有非常高效的性能和内存利用率。它是进行基数估算的理想选择，特别适用于需要高性能统计和内存优化的场景。
+用法就三个方法：`PFAdd` 加元素，`PFCount` 出估算值，`PFMerge` 合并多个 key，每个都返回 error 交给调用方处理。

@@ -1,5 +1,5 @@
 # VsCode
-使用Visual Studio Code (VS Code) 搭建Go开发环境相对简单，只需几个步骤即可完成。以下是详细的设置教程：
+用VS Code搭建Go开发环境，要装好VS Code和Go、把Go的bin目录加进环境变量、再装上Go扩展和工具：
 
 ### 1. 安装VS Code
 - 访问[VS Code官网](https://code.visualstudio.com/)，下载并安装适合您操作系统的版本。
@@ -60,10 +60,10 @@
   - 或者按快捷键`Shift+Alt+F`。
 
 ### 10. 代码补全与linting
-- VS Code的Go扩展提供了丰富的代码补全和linting功能，在编写代码时会自动提示和检测错误。
+- VS Code的Go扩展自带代码补全和linting，编写代码时会自动提示和检测错误。
 
 ### 常见问题与解决
 - 如果遇到工具安装失败，可以在命令面板中搜索并执行`Go: Install/Update Tools`，选择需要的工具重新安装。
 - 如果代码提示和补全功能异常，可以尝试重新加载VS Code（按`Ctrl+Shift+P`，输入`Reload Window`并回车）。
 
-通过以上步骤，您可以在VS Code中轻松搭建并使用Go开发环境。如果有更多问题或需求，可以访问[VS Code的Go扩展文档](https://github.com/golang/vscode-go)获取更多信息。
+工具装完后，Go扩展的更多用法见[VS Code的Go扩展文档](https://github.com/golang/vscode-go)。

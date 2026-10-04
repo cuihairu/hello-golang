@@ -1,6 +1,6 @@
 ### 第三方测试库
 
-在 Go 语言中，除了内置的 `testing` 包，还有许多第三方测试库可以帮助开发者编写更高效、灵活的测试代码。这些库提供了增强的功能，如模拟（mocking）、断言（assertions）、覆盖率分析等。以下是一些常用的第三方测试库及其简介：
+`testing` 包够用但朴素：断言要手写 `if` + `t.Errorf`，打桩、BDD、模糊测试这些它都没有。下面五个第三方库各补一块短板，按需挑选。
 
 #### 6.1 `testify`
 
@@ -58,7 +58,7 @@ func TestService(t *testing.T) {
 > 注：`github.com/golang/mock` 已归档，目前维护的分支为 `go.uber.org/mock`，API 兼容，安装命令为 `go install go.uber.org/mock/mockgen@latest`，导入路径为 `go.uber.org/mock/gomock`。
 
 **主要特性**:
-- 强大的模拟功能：自动生成模拟代码，并提供灵活的预期行为设置。
+- 模拟代码由 `mockgen` 从接口生成，预期行为用 `EXPECT()` 逐条声明。
 - 与 `go test` 集成良好。
 
 **安装**:
@@ -101,8 +101,8 @@ func TestService(t *testing.T) {
 `goconvey` 是一个测试框架，提供了增强的断言和 BDD（行为驱动开发）风格的语法，使测试代码更加易读和组织良好。
 
 **主要特性**:
-- BDD 风格：支持使用 BDD 风格编写测试，使测试更具可读性。
-- 强大的断言功能：支持丰富的断言方法和条件。
+- BDD 风格：`Convey` 嵌套块对应"给定/当/那么"，测试结构一眼可读。
+- 断言：`So(result, ShouldEqual, 5)` 这类声明式写法，失败时输出实际值与期望值。
 
 **安装**:
 ```sh
@@ -219,4 +219,4 @@ func TestWithDocker(t *testing.T) {
 
 ### 总结
 
-第三方测试库为 Go 开发者提供了更多的工具和功能，以便编写更复杂和高效的测试。通过使用如 `testify`、`gomock`、`goconvey`、`go-fuzz` 和 `testcontainers-go` 等库，可以提高测试的覆盖范围、增强测试的灵活性和可读性，并确保代码的高质量和稳定性。选择合适的测试库和工具，将帮助开发者更有效地进行单元测试、集成测试和性能测试。
+五个库各管一段：`testify` 补断言和 mock，`gomock` 从接口生成打桩代码，`goconvey` 提供 BDD 写法，`go-fuzz` 做模糊测试（Go 1.18 起用内置的 `go test -fuzz` 即可），`testcontainers-go` 在 Docker 里起真实依赖跑集成测试。从 `testify` 开始最省事，其余按项目需要再加。

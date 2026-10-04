@@ -110,4 +110,4 @@ func main() {
 
 ## 总结
 
-Hex 是最简单直接的二进制文本表示方式，`encoding/hex` 提供的 `EncodeToString` / `DecodeString` 和流式的 `NewEncoder` / `NewDecoder` 覆盖了绝大多数场景。需要展示或调试二进制内容时优先使用 Hex；需要在文本协议中传输大块二进制数据时，可以改用 Base64 以减小体积。
+Hex 是最省事的二进制文本表示方式，`encoding/hex` 的 `EncodeToString` / `DecodeString` 管一次性转换，流式的 `NewEncoder` / `NewDecoder` 管边读边转。需要展示或调试二进制内容时优先使用 Hex；需要在文本协议中传输大块二进制数据时，可以改用 Base64 以减小体积。

@@ -1,6 +1,6 @@
 ### 3. archive 包
 
-在本节中，我们将详细介绍 Go 语言标准库中的 `archive` 包，包括 `archive/tar` 和 `archive/zip`。我们将展示如何使用这些包进行归档和解压操作，并提供实际的代码示例。
+`archive` 包下的 `archive/tar` 和 `archive/zip` 分别负责 tar 和 zip 的读写，下面给出打包和解压的代码。
 
 #### 3.1 `archive/tar`
 
@@ -137,7 +137,7 @@ file2.txt:
 Hello, this is file2.
 ```
 
-我们可以使用上面的函数将它们打包成 `archive.tar`，然后再解压到 `output` 目录。
+用上面的函数把它们打包成 `archive.tar`，然后再解压到 `output` 目录。
 
 ```go
 func main() {
@@ -161,7 +161,7 @@ func main() {
 }
 ```
 
-运行此代码后，我们会看到控制台输出：
+运行输出：
 
 ```plaintext
 Tar file created successfully
@@ -288,7 +288,7 @@ func extractZip(inputFile, outputDir string) error {
 
 ##### 3.2.3 实践案例
 
-我们可以使用上面的函数将 `file1.txt` 和 `file2.txt` 打包成 `archive.zip`，然后再解压到 `output` 目录。
+用上面的函数把 `file1.txt` 和 `file2.txt` 打包成 `archive.zip`，然后再解压到 `output` 目录。
 
 ```go
 func main() {
@@ -312,7 +312,7 @@ func main() {
 }
 ```
 
-运行此代码后，我们会看到控制台输出：
+运行输出：
 
 ```plaintext
 Zip file created successfully

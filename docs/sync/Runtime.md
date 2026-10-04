@@ -1,6 +1,6 @@
 ### Go 并发同步中的 runtime 相关知识
 
-在 Go 语言中，runtime 包负责管理 goroutine 的调度、内存分配、垃圾回收等底层功能。了解 Go 运行时中的一些关键概念和机制，有助于编写高效的并发程序，并深入理解 Go 的并发模型。
+在 Go 语言中，runtime 包负责管理 goroutine 的调度、内存分配、垃圾回收等底层功能。goroutine 怎么被调度、共享内存怎么同步，答案都在 runtime 里。
 
 #### 1. Goroutine 调度
 
@@ -44,7 +44,7 @@ Go 提供了多种原语来进行内存同步，保证多 goroutine 间的内存
 
 ### 示例代码
 
-以下是一些示例代码，演示如何使用上述同步原语和 runtime 相关函数：
+三个例子分别对应 GOMAXPROCS、互斥锁和原子操作：
 
 #### Goroutine 调度和 GOMAXPROCS 示例
 
@@ -146,4 +146,4 @@ func main() {
 
 ### 总结
 
-理解 Go runtime 中的并发和同步机制是编写高效并发程序的关键。Goroutine 调度、GMP 模型、内存同步原语和 runtime 相关函数是 Go 并发编程的重要组成部分。通过合理使用这些工具，可以实现高效、安全的并发程序。
+runtime 层面要记的就三件事：并行度上限由 `GOMAXPROCS` 决定，它控制的是 P 的数量；共享变量要么加锁（`sync.Mutex`）要么走 `sync/atomic`；等一组 goroutine 收尾用 `sync.WaitGroup`。这三条选对了，绝大多数并发问题就不会出现。

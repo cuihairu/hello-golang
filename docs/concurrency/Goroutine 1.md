@@ -8,7 +8,7 @@ Goroutine 是 Go 语言中的一种轻量级线程。Go 语言通过 Goroutine �
 
 ### 2.1.2 Goroutine 的声明与启动
 
-启动一个新的 Goroutine 非常简单，只需在函数调用前加上 `go` 关键字：
+在函数调用前加上 `go` 关键字，就启动了一个新的 Goroutine：
 
 ```go
 package main
@@ -41,7 +41,7 @@ Goroutine 是轻量级的，启动一个新的 Goroutine 只需很少的内存�
 
 ### 2.2.2 独立栈
 
-每个 Goroutine 都有自己的栈空间，栈的大小可以动态增大或减小。初始栈空间很小，可以根据需要自动增长，因此 Goroutine 比传统线程更加高效。Goroutine 的栈最大可以达到 1GB，但通常不会达到这个大小，因为 Go 运行时会在栈空间不够时进行调整。
+每个 Goroutine 都有自己的栈空间，栈的大小可以动态增大或减小。初始栈空间很小，按需自动增长，这正是 Goroutine 比传统线程轻的原因。Goroutine 的栈最大可以达到 1GB，但通常不会达到这个大小，因为 Go 运行时会在栈空间不够时进行调整。
 
 ### 2.2.3 并发调度
 
@@ -49,7 +49,7 @@ Go 运行时包含一个调度器，用于管理所有的 Goroutine。调度器�
 
 ### 2.2.4 主 Goroutine 退出问题
 
-需要注意的是，如果主 Goroutine 退出，所有其他的 Goroutine 都会被立即终止。因此，在启动其他 Goroutine 时，主 Goroutine 通常需要等待它们完成。例如，可以使用通道（Channel）或者 `sync.WaitGroup` 来实现这种等待机制。
+主 Goroutine 退出时，其他 Goroutine 会被立即终止。所以启动别的 Goroutine 后，主 Goroutine 要等它们跑完，用通道（Channel）或 `sync.WaitGroup` 都能实现这个等待。
 
 ## 2.3 Goroutine 与通道的配合
 
@@ -187,7 +187,7 @@ func main() {
 
 ### 2.5.1 轻量级与高效
 
-Goroutine 相比传统的线程更加轻量级和高效。Goroutine 的栈空间初始很小，并且可以根据需要动态增长。创建和销毁 Goroutine 的开销也比线程更小，这使得在 Go 中可以轻松管理大量的并发任务。
+Goroutine 比传统线程轻量：栈初始很小、按需增长，启动一个大约只占 2KB 内存，创建和销毁的开销也比线程小，所以在一个 Go 程序里管成千上万个并发任务不算负担。
 
 ### 2.5.2 调度机制
 
@@ -249,7 +249,7 @@ func main() {
 
 ## 2.8 Goroutine 池的实现
 
-在某些情况下，控制 Goroutine 的数量是必要的，例如为了限制资源使用或防止 Goroutine 过多导致的调度开销。可以使用 Goroutine 池来管理 Goroutine 的数量。
+有些场景要控制 Goroutine 的数量：限制资源占用，或者避免 Goroutine 太多带来额外的调度开销。做法是用 Goroutine 池统一管数量。
 
 ### 2.8.1 示例：简单的 Goroutine 池
 
@@ -294,7 +294,7 @@ func main() {
 
 ### 2.8.2 Goroutine 的退出与让渡调度
 
-在某些情况下，可能需要手动控制 Goroutine 的退出和调度。可以使用 `runtime.Goexit` 退出当前 Goroutine，使用 `runtime.Gosched` 让当前 Goroutine 让出 CPU 时间片：
+需要手动控制退出和调度时，用 `runtime.Goexit` 退出当前 Goroutine，用 `runtime.Gosched` 让它让出 CPU 时间片：
 
 ```go
 package main
@@ -321,5 +321,3 @@ func main() {
 ```
 
 在这个示例中，`worker` Goroutine 每次循环都让出 CPU 时间片，主 Goroutine 等待 `worker` 完成后退出。
-
-通过以上内容，我们详细介绍了 Goroutine 的基本概念、特性、与通道的配合使用、应用场景、与线程及其他语言协程的对比、线程绑定、Goroutine 池的实现，以及 Goroutine 的退出和调度控制。这些知识将帮助读者更好地理解和使用 Goroutine 进行高效的并发编程。

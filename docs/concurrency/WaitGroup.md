@@ -1,4 +1,4 @@
-`sync.WaitGroup` 是 Go 语言标准库中 `sync` 包提供的一个同步原语，用于等待一组 goroutine 完成。它通过计数器机制来协调多个 goroutine 的执行，使得主程序或其他 goroutine 能够在所有的 goroutine 完成其任务后再继续执行。以下是对 `sync.WaitGroup` 的详细讲解，包括其基本用法、工作原理以及使用示例。
+`sync.WaitGroup` 是 Go 语言标准库中 `sync` 包提供的一个同步原语，用于等待一组 goroutine 完成。它靠一个计数器协调多个 goroutine：计数归零，`Wait` 才返回，主程序由此等到所有 goroutine 干完活。
 
 ### 1. 基本用法
 
@@ -9,8 +9,6 @@
 - **`Wait()`**: 阻塞当前 goroutine，直到计数器的值变为零，即所有 goroutine 都调用了 `Done`。
 
 #### 1.2 示例代码
-
-以下是一个使用 `sync.WaitGroup` 的基本示例：
 
 ```go
 package main
@@ -42,7 +40,7 @@ func main() {
 
 ### 2. 工作原理
 
-`sync.WaitGroup` 的内部实现基于计数器和运行时信号量。以下是 `WaitGroup` 的工作原理：
+`sync.WaitGroup` 的内部实现基于计数器和运行时信号量。
 
 #### 2.1 计数器
 
@@ -134,8 +132,6 @@ func main() {
 }
 ```
 
-在这个示例中，使用 `context` 来控制 `goroutine` 的取消，这可以与 `sync.WaitGroup` 结合使用来处理复杂的同步问题。
-
 ### 总结
 
-`sync.WaitGroup` 是 Go 语言中用于同步等待多个 goroutine 完成的强大工具。它通过简单的计数器和条件变量机制，实现了高效的 goroutine 协调。正确使用 `sync.WaitGroup` 可以有效地管理并发任务，避免常见的同步问题。
+`sync.WaitGroup` 只有三个方法：`Add` 加计数，`Done` 减计数，计数归零时 `Wait` 返回。用的时候 `Add` 要在 `Wait` 之前，`Add` 和 `Done` 的次数要对齐。对不上，`Wait` 要么永久阻塞，要么直接 panic（`sync: negative WaitGroup counter`）。

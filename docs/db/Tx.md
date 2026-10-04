@@ -11,7 +11,7 @@
 
 #### 9.2 使用`database/sql`进行事务管理
 
-在 Go 中，可以使用 `database/sql` 包进行事务管理。以下是一些基本操作：
+在 Go 中，`database/sql` 的事务是 `db.Begin()` 拿到 `tx`，在 `tx` 上执行语句，出错 `Rollback()`、正常 `Commit()`：
 
 ##### 9.2.1 开始一个事务
 使用 `db.Begin` 方法开始一个事务：
@@ -78,7 +78,7 @@ if err != nil {
 
 #### 9.3 ORM框架中的事务管理
 
-不同的 ORM 框架提供了不同的事务管理方式。以下是使用 GORM、Ent 和 XORM 进行事务管理的示例。
+不同的 ORM 框架提供了不同的事务管理方式。
 
 ##### 9.3.1 GORM 中的事务管理
 在 GORM 中使用 `Transaction` 方法：
@@ -204,5 +204,3 @@ UPDATE users SET name = 'Bob' WHERE id = 1;
 ```sql
 SELECT * FROM users WHERE id = 1;
 ```
-
-通过学习和掌握事务处理的知识，读者可以确保数据库操作的一致性和完整性，有效管理并发操作和数据一致性问题。同时，通过了解 MySQL 的 MVCC 实现原理，可以更好地优化数据库性能，处理高并发场景。

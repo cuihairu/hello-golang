@@ -185,4 +185,4 @@ Redis 会根据集合的元素类型和数量，动态选择最合适的数据�
    }
    ```
 
-通过这些示例，可以在 Go 语言中方便地操作 Redis 集合，实现各种常见场景的需求。
+`go-redis` 的集合 API 和 Redis 命令一一对应：`SAdd`/`SMembers`/`SIsMember`/`SRem`/`SRandMember` 分别对应 `SADD`/`SMEMBERS`/`SISMEMBER`/`SREM`/`SRANDMEMBER`，命令名记住了，库也就顺手上手了。
