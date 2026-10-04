@@ -1498,7 +1498,7 @@
     "items": [
       {
         "text": "数组",
-        "link": "/algo/arrary/array",
+        "link": "/algo/array/Array",
         "collapsed": true,
         "items": [
           {
@@ -1537,10 +1537,6 @@
             "link": "/algo/list/SinglyLinkedList"
           },
           {
-            "text": "双端队列",
-            "link": "/algo/list/DoubleEndedQueue"
-          },
-          {
             "text": "栈",
             "link": "/algo/list/Stack"
           },
@@ -1553,16 +1549,8 @@
             "link": "/algo/list/SkipList"
           },
           {
-            "text": "静态链表",
-            "link": "/algo/list/StaticLinkedList"
-          },
-          {
             "text": "动态数组",
             "link": "/algo/list/DynamicArray"
-          },
-          {
-            "text": "环形缓冲区",
-            "link": "/algo/list/CircularBuffer"
           },
           {
             "text": "哈希链表",
@@ -1604,10 +1592,6 @@
             "link": "/algo/tree/BinarySearchTree"
           },
           {
-            "text": "平衡二叉树",
-            "link": "/algo/tree/BalancedBinaryTree"
-          },
-          {
             "text": "AVL",
             "link": "/algo/tree/AVLTree"
           },
@@ -1628,20 +1612,12 @@
             "link": "/algo/tree/PrefixTree"
           },
           {
-            "text": "后缀树",
-            "link": "/algo/tree/SuffixTree"
-          },
-          {
             "text": "霍夫曼树",
             "link": "/algo/tree/HuffmanTree"
           },
           {
             "text": "最小生成树",
             "link": "/algo/tree/MinimumSpanningTree"
-          },
-          {
-            "text": "最大生成树",
-            "link": "/algo/tree/MaximumSpanningTree"
           },
           {
             "text": "堆",
@@ -1652,72 +1628,12 @@
             "link": "/algo/tree/SegmentTree"
           },
           {
-            "text": "树堆",
-            "link": "/algo/tree/TreeHeap"
-          },
-          {
-            "text": "表达式树",
-            "link": "/algo/tree/ExpressionTree"
-          },
-          {
-            "text": "四叉树",
-            "link": "/algo/tree/Quadtree"
-          },
-          {
-            "text": "八叉树",
-            "link": "/algo/tree/Octree"
-          },
-          {
-            "text": "K-D树",
-            "link": "/algo/tree/K-DimensionalTree"
-          },
-          {
             "text": "二叉堆",
             "link": "/algo/tree/BinaryHeap"
           },
           {
-            "text": "二叉搜索堆",
-            "link": "/algo/tree/BinarySearchHeap"
-          },
-          {
-            "text": "伸展树",
-            "link": "/algo/tree/SplayTree"
-          },
-          {
             "text": "树状数组",
             "link": "/algo/tree/FenwickTree"
-          },
-          {
-            "text": "Link/Cut Tree",
-            "link": "/algo/tree/LinkTree"
-          },
-          {
-            "text": "FibonacciHeap",
-            "link": "/algo/tree/FibonacciHeap"
-          },
-          {
-            "text": "Treap",
-            "link": "/algo/tree/Treap"
-          },
-          {
-            "text": "后缀数组",
-            "link": "/algo/tree/SuffixArray"
-          },
-          {
-            "text": "动态树",
-            "link": "/algo/tree/DynamicTree"
-          },
-          {
-            "text": "区间树",
-            "link": "/algo/tree/RangeTree"
-          },
-          {
-            "text": "隐式线段树",
-            "link": "/algo/tree/ImplicitSegmentTree"
-          },
-          {
-            "text": "笛卡尔树",
-            "link": "/algo/tree/CartesianTree"
           }
         ]
       },
@@ -1777,148 +1693,12 @@
             "link": "/algo/sort/BucketSort"
           },
           {
-            "text": "比特位排序",
-            "link": "/algo/sort/BitwiseSort"
-          },
-          {
             "text": "蒂姆排序",
             "link": "/algo/sort/TimSort"
           },
           {
             "text": "鸡尾酒排序",
             "link": "/algo/sort/CocktailSort"
-          },
-          {
-            "text": "葛尼玛排序",
-            "link": "/algo/sort/GnomeSort"
-          },
-          {
-            "text": "梳排序",
-            "link": "/algo/sort/CombSort"
-          },
-          {
-            "text": "循环排序",
-            "link": "/algo/sort/CycleSort"
-          },
-          {
-            "text": "鸽巢排序",
-            "link": "/algo/sort/PigeonholeSort"
-          },
-          {
-            "text": "博戈排序",
-            "link": "/algo/sort/BogoSort"
-          },
-          {
-            "text": "树排序",
-            "link": "/algo/sort/TreeSort"
-          },
-          {
-            "text": "平滑排序",
-            "link": "/algo/sort/SmoothSort"
-          },
-          {
-            "text": "双基快速排序",
-            "link": "/algo/sort/DualPivotQuickSort"
-          },
-          {
-            "text": "奇偶排序",
-            "link": "/algo/sort/OddEvenSort"
-          },
-          {
-            "text": "闪排序",
-            "link": "/algo/sort/FlashSort"
-          },
-          {
-            "text": "分配排序",
-            "link": "/algo/sort/DistributionSort"
-          },
-          {
-            "text": "双向冒泡排序",
-            "link": "/algo/sort/BidirectionalBubbleSort"
-          },
-          {
-            "text": "重建排序",
-            "link": "/algo/sort/RebuildSort"
-          },
-          {
-            "text": "图书馆排序",
-            "link": "/algo/sort/LibrarySort"
-          },
-          {
-            "text": "猴子排序",
-            "link": "/algo/sort/MonkeySort"
-          },
-          {
-            "text": "奇奇排序",
-            "link": "/algo/sort/BozoSort"
-          },
-          {
-            "text": "班尼奥排序",
-            "link": "/algo/sort/BeadSort"
-          },
-          {
-            "text": "睡眠排序",
-            "link": "/algo/sort/SleepSort"
-          },
-          {
-            "text": "波纹排序",
-            "link": "/algo/sort/RippleSort"
-          },
-          {
-            "text": "二叉插入排序",
-            "link": "/algo/sort/BinaryInsertionSort"
-          },
-          {
-            "text": "裸基数排序",
-            "link": "/algo/sort/StrandSort"
-          },
-          {
-            "text": "平滑排序",
-            "link": "/algo/sort/SmoothSort"
-          },
-          {
-            "text": "潘卡克排序",
-            "link": "/algo/sort/PancakeSort"
-          },
-          {
-            "text": "桥接排序",
-            "link": "/algo/sort/BridgeSort"
-          },
-          {
-            "text": "平行堆排序",
-            "link": "/algo/sort/ParallelHeapSort"
-          },
-          {
-            "text": "组排序",
-            "link": "/algo/sort/GroupSort"
-          },
-          {
-            "text": "奇偶奇归并排序",
-            "link": "/algo/sort/OddEvenMergeSort"
-          },
-          {
-            "text": "位图排序",
-            "link": "/algo/sort/BitmapSort"
-          },
-          {
-            "text": "区间树排序",
-            "link": "/algo/sort/IntervalTreeSort"
-          },
-          {
-            "text": "抛物线排序",
-            "link": "/algo/sort/ParabolicSort"
-          },
-          {
-            "text": "卡塔兰排序",
-            "link": "/algo/sort/CatalanSort"
-          },
-          {
-            "text": "顺序树排序",
-            "link": "/algo/sort/OrderTreeSort"
-          },
-          {
-            "text": "分层快速排序",
-            "link": "/algo/sort/LayeredQuickSort"
           }
         ]
       },
@@ -1933,6 +1713,10 @@
       },
       {
         "text": "贪心"
+      },
+      {
+        "text": "算法篇去留清单",
+        "link": "/algo/Inventory"
       }
     ]
   },
@@ -2148,72 +1932,118 @@
     "collapsed": true,
     "items": [
       {
-        "text": "Batcher's Odd Even Merge Sort",
-        "link": "/algo/sort/Batcher'sOddEvenMergeSort"
+        "text": "alloc",
+        "collapsed": true,
+        "items": [
+          {
+            "text": "GC",
+            "link": "/alloc/GC"
+          }
+        ]
       },
       {
-        "text": "Stooge Sort",
-        "link": "/algo/sort/StoogeSort"
+        "text": "cmd",
+        "collapsed": true,
+        "items": [
+          {
+            "text": "Parse",
+            "link": "/cmd/Parse"
+          }
+        ]
       },
       {
-        "text": "GC",
-        "link": "/alloc/GC"
+        "text": "concurrency",
+        "collapsed": true,
+        "items": [
+          {
+            "text": "Chan 1",
+            "link": "/concurrency/Chan 1"
+          },
+          {
+            "text": "Goroutine 1",
+            "link": "/concurrency/Goroutine 1"
+          }
+        ]
       },
       {
-        "text": "Parse",
-        "link": "/cmd/Parse"
+        "text": "dp",
+        "collapsed": true,
+        "items": [
+          {
+            "text": "Object Pool",
+            "link": "/dp/ObjectPool"
+          }
+        ]
       },
       {
-        "text": "Chan 1",
-        "link": "/concurrency/Chan 1"
+        "text": "encoding",
+        "collapsed": true,
+        "items": [
+          {
+            "text": "Gob",
+            "link": "/encoding/Gob"
+          },
+          {
+            "text": "Hex",
+            "link": "/encoding/Hex"
+          }
+        ]
       },
       {
-        "text": "Goroutine 1",
-        "link": "/concurrency/Goroutine 1"
+        "text": "net",
+        "collapsed": true,
+        "items": [
+          {
+            "text": "Concurrence",
+            "link": "/net/Concurrence"
+          },
+          {
+            "text": "Socket",
+            "link": "/net/Socket"
+          }
+        ]
       },
       {
-        "text": "Object Pool",
-        "link": "/dp/ObjectPool"
+        "text": "redis",
+        "collapsed": true,
+        "items": [
+          {
+            "text": "Install",
+            "link": "/redis/Install"
+          }
+        ]
       },
       {
-        "text": "Gob",
-        "link": "/encoding/Gob"
+        "text": "sync",
+        "collapsed": true,
+        "items": [
+          {
+            "text": "Mutual Exclusion",
+            "link": "/sync/MutualExclusion"
+          },
+          {
+            "text": "Mutual Lock",
+            "link": "/sync/MutualLock"
+          },
+          {
+            "text": "REMutex",
+            "link": "/sync/REMutex"
+          }
+        ]
       },
       {
-        "text": "Hex",
-        "link": "/encoding/Hex"
-      },
-      {
-        "text": "Concurrence",
-        "link": "/net/Concurrence"
-      },
-      {
-        "text": "Socket",
-        "link": "/net/Socket"
-      },
-      {
-        "text": "Install",
-        "link": "/redis/Install"
-      },
-      {
-        "text": "Mutual Exclusion",
-        "link": "/sync/MutualExclusion"
-      },
-      {
-        "text": "Mutual Lock",
-        "link": "/sync/MutualLock"
-      },
-      {
-        "text": "REMutex",
-        "link": "/sync/REMutex"
-      },
-      {
-        "text": "Declaration",
-        "link": "/syntax/Declaration"
-      },
-      {
-        "text": "Variable",
-        "link": "/syntax/Variable"
+        "text": "syntax",
+        "collapsed": true,
+        "items": [
+          {
+            "text": "Declaration",
+            "link": "/syntax/Declaration"
+          },
+          {
+            "text": "Variable",
+            "link": "/syntax/Variable"
+          }
+        ]
       }
     ]
   }
