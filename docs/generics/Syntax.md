@@ -104,8 +104,10 @@ func PrintSlice[T any](s []T) {
     }
 }
 
-intSlice := []int{1, 2, 3}
-PrintSlice(intSlice) // 编译器自动推断T为int
+func main() {
+    intSlice := []int{1, 2, 3}
+    PrintSlice(intSlice) // 编译器自动推断T为int
+}
 ```
 
 调用处没写类型，编译器从`intSlice`推出`T`是`int`。

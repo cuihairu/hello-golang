@@ -113,8 +113,8 @@ func Recovery() HandlerFunc {
 
 ```go
 // 自定义中间件（应用代码）
-func CustomMiddleware() HandlerFunc {
-    return func(c *Context) {
+func CustomMiddleware() gin.HandlerFunc {
+    return func(c *gin.Context) {
         // 自定义逻辑
         c.Next()
     }
@@ -142,6 +142,8 @@ func (c *Context) Next() {
 
 ```go
 // context.go
+import "net/http"
+
 type Context struct {
     Request *http.Request
     ResponseWriter http.ResponseWriter
@@ -205,6 +207,16 @@ type JSON struct {
 func (r JSON) Render(w http.ResponseWriter) error {
     return WriteJSON(w, r.Data)
 }
+
+// WriteJSON 是同文件中的辅助函数，此处为节选实现（省略 Content-Type 头设置）
+func WriteJSON(w http.ResponseWriter, obj any) error {
+    jsonBytes, err := json.Marshal(obj)
+    if err != nil {
+        return err
+    }
+    _, err = w.Write(jsonBytes)
+    return err
+}
 ```
 
 ##### 12.6.2 响应状态码设置
@@ -266,8 +278,8 @@ type Error struct {
 
 ```go
 // 自定义错误处理（应用代码）
-func CustomErrorHandler() HandlerFunc {
-    return func(c *Context) {
+func CustomErrorHandler() gin.HandlerFunc {
+    return func(c *gin.Context) {
         // 自定义错误处理逻辑
     }
 }

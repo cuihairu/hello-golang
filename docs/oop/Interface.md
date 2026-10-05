@@ -55,6 +55,10 @@ type Speaker interface {
 **示例：接口实现**
 
 ```go
+type Speaker interface {
+    Speak() string
+}
+
 type Person struct {
     Name string
 }

@@ -42,10 +42,16 @@
 
 - **示例**：
   ```go
+  package main
+
   import (
       "fmt"
       "math"
   )
+
+  type Vector2D struct {
+      X, Y float64
+  }
 
   func (v Vector2D) Length() float64 {
       return math.Sqrt(v.X*v.X + v.Y*v.Y)
@@ -92,8 +98,8 @@
   func main() {
       m1 := Matrix2x2{1, 2, 3, 4}
       m2 := Matrix2x2{5, 6, 7, 8}
-      fmt.Println("矩阵加法:", m1.Add(m2))  // 输出: {{6 8} {10 12}}
-      fmt.Println("矩阵乘法:", m1.Multiply(m2)) // 输出: {{19 22} {43 50}}
+      fmt.Println("矩阵加法:", m1.Add(m2))  // 输出: {6 8 10 12}
+      fmt.Println("矩阵乘法:", m1.Multiply(m2)) // 输出: {19 22 43 50}
   }
   ```
 
@@ -120,7 +126,7 @@
 
   func main() {
       m := Matrix2x2{1, 2, 3, 4}
-      fmt.Println("矩阵转置:", m.Transpose())  // 输出: {{1 3} {2 4}}
+      fmt.Println("矩阵转置:", m.Transpose())  // 输出: {1 3 2 4}
   }
   ```
 
@@ -132,6 +138,8 @@
 
 - **示例**（使用第三方库 `gonum` 解线性方程组）：
   ```go
+  package main
+
   import (
       "fmt"
       "gonum.org/v1/gonum/mat"
@@ -163,6 +171,8 @@
 
 - **示例**（使用 `gonum` 求特征值和特征向量）：
   ```go
+  package main
+
   import (
       "fmt"
       "gonum.org/v1/gonum/mat"

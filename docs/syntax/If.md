@@ -92,6 +92,10 @@ if x := 10; x > 5 {
 这种写法特别适用于一些需要临时变量的场景，例如：
 
 ```go
+someFunction := func() error {
+    return errors.New("something went wrong")
+}
+
 if err := someFunction(); err != nil {
     fmt.Println("Error:", err)
 }
@@ -168,6 +172,10 @@ if x > 10 {
 - **错误处理**：
 
     ```go
+    someFunction := func() error {
+        return errors.New("something went wrong")
+    }
+
     if err := someFunction(); err != nil {
         fmt.Println("Error:", err)
     }
@@ -176,6 +184,7 @@ if x > 10 {
 - **注意事项**：在复杂的条件判断中，建议使用括号明确表达式的优先级，增强代码的可读性。
 
     ```go
+    x, y, z := 7, 3, 3
     if (x > 5 && y < 10) || (z == 3) {
         fmt.Println("Complex condition met")
     }

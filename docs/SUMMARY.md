@@ -48,7 +48,6 @@
 	 - [Big类型](type/Big.md)
 	 - [链表](type/LinkedList.md)
 	 - [ring](type/Ring.md)
-	 - [栈](type/Heap.md)
 	 - [Json](type/Json.md)
 	 - [文本模板](type/Template.md)
 	 - [Html模板](type/HtmlTemplate.md)

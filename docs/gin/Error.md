@@ -10,6 +10,11 @@ Gin 提供了内置的错误处理机制，方便开发者捕获和处理请求�
 使用 `c.Error` 方法可以在处理函数中记录错误：
 
 ```go
+// someFunction 代表任一可能出错的业务调用
+func someFunction() error {
+    return errors.New("something went wrong")
+}
+
 func handler(c *gin.Context) {
     err := someFunction()
     if err != nil {
@@ -84,6 +89,20 @@ func customErrorHandler() gin.HandlerFunc {
 根据错误类型进行特定处理：
 
 ```go
+// ValidationError 业务自定义的校验错误类型
+type ValidationError struct {
+    Field string
+}
+
+func (e ValidationError) Error() string {
+    return "invalid field: " + e.Field
+}
+
+// someFunction 返回一个业务错误，这里以校验错误为例
+func someFunction() error {
+    return ValidationError{Field: "age"}
+}
+
 func handler(c *gin.Context) {
     err := someFunction()
     if err != nil {

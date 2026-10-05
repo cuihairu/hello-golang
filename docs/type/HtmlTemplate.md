@@ -44,7 +44,25 @@ func main() {
 使用 <code v-pre>{{.}}</code> 访问传入的数据。可以通过 <code v-pre>{{.Field}}</code> 访问结构体字段。
 
 ```go
-tmpl, err := template.New("example").Parse("<p>Name: {{.Name}}, Age: {{.Age}}</p>")
+package main
+
+import (
+    "html/template"
+    "os"
+)
+
+func main() {
+    data := struct {
+        Name string
+        Age  int
+    }{Name: "Tom", Age: 18}
+
+    tmpl, err := template.New("example").Parse("<p>Name: {{.Name}}, Age: {{.Age}}</p>")
+    if err != nil {
+        panic(err)
+    }
+    tmpl.Execute(os.Stdout, data)
+}
 ```
 
 #### 条件语句
@@ -52,7 +70,22 @@ tmpl, err := template.New("example").Parse("<p>Name: {{.Name}}, Age: {{.Age}}</p
 使用 `if` 语句进行条件判断。
 
 ```go
-tmpl, err := template.New("example").Parse(`{{if .Active}}<p>User is active</p>{{else}}<p>User is inactive</p>{{end}}`)
+package main
+
+import (
+    "html/template"
+    "os"
+)
+
+func main() {
+    data := struct{ Active bool }{Active: true}
+
+    tmpl, err := template.New("example").Parse(`{{if .Active}}<p>User is active</p>{{else}}<p>User is inactive</p>{{end}}`)
+    if err != nil {
+        panic(err)
+    }
+    tmpl.Execute(os.Stdout, data)
+}
 ```
 
 #### 循环语句
@@ -60,7 +93,22 @@ tmpl, err := template.New("example").Parse(`{{if .Active}}<p>User is active</p>{
 使用 `range` 语句进行循环。
 
 ```go
-tmpl, err := template.New("example").Parse(`<ul>{{range .Items}}<li>{{.}}</li>{{end}}</ul>`)
+package main
+
+import (
+    "html/template"
+    "os"
+)
+
+func main() {
+    data := struct{ Items []string }{Items: []string{"Go", "Rust", "Python"}}
+
+    tmpl, err := template.New("example").Parse(`<ul>{{range .Items}}<li>{{.}}</li>{{end}}</ul>`)
+    if err != nil {
+        panic(err)
+    }
+    tmpl.Execute(os.Stdout, data)
+}
 ```
 
 #### 管道（Pipe）
@@ -68,7 +116,22 @@ tmpl, err := template.New("example").Parse(`<ul>{{range .Items}}<li>{{.}}</li>{{
 管道用于将一个命令的输出作为下一个命令的输入。
 
 ```go
-tmpl, err := template.New("example").Parse(`<p>{{.Name | printf "Hello, %s!"}}</p>`)
+package main
+
+import (
+    "html/template"
+    "os"
+)
+
+func main() {
+    data := struct{ Name string }{Name: "World"}
+
+    tmpl, err := template.New("example").Parse(`<p>{{.Name | printf "Hello, %s!"}}</p>`)
+    if err != nil {
+        panic(err)
+    }
+    tmpl.Execute(os.Stdout, data)
+}
 ```
 
 ### 3. 自定义函数

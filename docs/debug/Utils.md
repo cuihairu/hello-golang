@@ -36,6 +36,7 @@ func TestExample(t *testing.T) {
 
 ```go
 import (
+    "log"
     "net/http"
     _ "net/http/pprof"
 )

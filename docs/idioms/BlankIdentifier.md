@@ -35,6 +35,7 @@ func main() {
 当不需要某个迭代值时，使用 `_` 代替：
 
 ```go
+numbers := []int{1, 2, 3}
 sum := 0
 for _, v := range numbers { // 忽略下标，只取值
 	sum += v
@@ -70,7 +71,7 @@ func main() {
 在 `switch` 或类型断言中，用 `_` 表示不关心具体值：
 
 ```go
-var v interface{} = "hello"
+v := interface{}("hello")
 
 // 断言成功与否，但不使用具体值
 if _, ok := v.(string); ok {

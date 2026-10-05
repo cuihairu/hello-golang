@@ -21,6 +21,11 @@ import (
 `expvar` 提供了 `Int`, `Float`, `String`, 和 `Map` 类型的变量，你可以用来记录各种统计数据。例如：
 
 ```go
+import (
+    "expvar"
+    "net/http"
+)
+
 var (
     requestCount = expvar.NewInt("request_count")
     errorCount   = expvar.NewInt("error_count")
@@ -45,6 +50,11 @@ func main() {
 `Map` 把多个相关的指标放在一起，创建后同样以 JSON 导出。例如：
 
 ```go
+import (
+    "expvar"
+    "net/http"
+)
+
 var metrics = expvar.NewMap("metrics")
 
 func main() {

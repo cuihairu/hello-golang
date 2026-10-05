@@ -150,6 +150,14 @@ TOML 最常见的用途是应用程序配置，用来定义程序的参数和选
 
 **读取 TOML 文件示例**：
 
+读取要求当前目录已有 `config.toml`，可以先运行下面的写入示例生成，也可以手写一份，例如：
+
+```toml
+[server]
+host = "localhost"
+port = 8080
+```
+
 ```go
 package main
 
@@ -177,6 +185,13 @@ func main() {
     fmt.Printf("Host: %s\n", host)
     fmt.Printf("Port: %d\n", port)
 }
+```
+
+输出：
+
+```plaintext
+Host: localhost
+Port: 8080
 ```
 
 **写入 TOML 文件示例**：

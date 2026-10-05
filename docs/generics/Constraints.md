@@ -64,6 +64,10 @@ func PrintStrings[T Stringer](s []T) {
 
 示例：
 ```go
+type Stringer interface {
+    String() string
+}
+
 type Box[T Stringer] struct {
     content T
 }

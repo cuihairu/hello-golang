@@ -11,6 +11,8 @@ import (
     "database/sql"
     _ "github.com/go-sql-driver/mysql"  // 导入 MySQL 驱动程序
 )
+
+var db *sql.DB // 导入后即可声明 *sql.DB 连接句柄
 ```
 
 #### 5.2 SQL驱动程序（MySQL、PostgreSQL、SQLite等）
@@ -40,14 +42,27 @@ import _ "github.com/mattn/go-sqlite3"
 和数据库交互前要先建立连接，操作完再关闭：
 
 ##### 5.3.1 建立连接
-使用 `sql.Open` 函数建立数据库连接：
+使用 `sql.Open` 函数建立数据库连接。驱动要用空白导入注册，否则运行时报 `unknown driver "mysql"`；`sql.Open` 只校验 DSN 格式，不真正连接，所以占位 DSN 也能构造成功：
 ```go
-db, err := sql.Open("mysql", "user:password@/dbname")
-if err != nil {
-    log.Fatal(err)
+package main
+
+import (
+    "database/sql"
+    "log"
+
+    _ "github.com/go-sql-driver/mysql" // 注册 mysql 驱动，必须空白导入
+)
+
+func main() {
+    db, err := sql.Open("mysql", "user:password@/dbname")
+    if err != nil {
+        log.Fatal(err)
+    }
+    defer db.Close()
 }
-defer db.Close()
 ```
+
+`user:password@/dbname` 是占位写法，换成真实的账号、密码和库名之后，下一步的 `db.Ping` 才能通过。
 
 ##### 5.3.2 测试连接
 可以使用 `db.Ping` 方法测试连接是否成功：
@@ -60,7 +75,7 @@ if err != nil {
 
 #### 5.4 执行基本的SQL操作（查询、插入、更新、删除）
 
-通过 `database/sql` 包，可以执行基本的 SQL 操作，如查询、插入、更新和删除。
+通过 `database/sql` 包，可以执行基本的 SQL 操作，如查询、插入、更新和删除。以下片段沿用 5.3.1 建立的 `db` 连接。
 
 ##### 5.4.1 查询数据
 使用 `db.Query` 方法执行查询操作：

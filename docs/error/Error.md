@@ -88,7 +88,7 @@ C++ 使用异常处理机制来管理错误，但也允许使用返回值或错�
 
 - **异常类型**：所有异常都可以是 `std::exception` 或其派生类。
 - **创建异常**：使用 `throw` 语句抛出异常。
-- **捕获异常**：使用 `try`、`catch` 和 `finally` 块来捕获和处理异常。
+- **捕获异常**：使用 `try`、`catch` 块来捕获和处理异常。C++ 没有 `finally` 块，清理资源的惯用法是 RAII（析构函数释放资源）。
 
 **示例：**
 
@@ -177,6 +177,6 @@ int main() {
 - **Go**：使用 `error` 接口，通过返回值处理错误。
 - **Python**：使用异常机制，`try`、`except`、`else` 和 `finally` 块。
 - **Java**：使用异常机制，`try`、`catch` 和 `finally` 块，分为受检查异常和未检查异常。
-- **C++**：使用异常机制，`try`、`catch` 和 `finally` 块，异常基于 `std::exception`。
+- **C++**：使用异常机制，`try`、`catch` 块，异常基于 `std::exception`；资源清理靠 RAII，没有 `finally` 块。
 - **JavaScript**：使用异常机制，`try`、`catch` 和 `finally` 块。
 - **C**：使用返回值或 `errno` 进行错误处理，没有内建的异常机制。

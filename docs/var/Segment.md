@@ -80,6 +80,7 @@ func main() {
 ```go
 func exampleFunction() {
     initializedLocalVar := 42
+    _ = initializedLocalVar // 使用一下，避免编译报错
 }
 ```
 
@@ -91,6 +92,7 @@ func exampleFunction() {
 ```go
 func exampleFunction() {
     var uninitializedLocalVar int
+    _ = uninitializedLocalVar // 使用一下，避免编译报错
 }
 ```
 

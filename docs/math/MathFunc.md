@@ -12,6 +12,8 @@ Go 语言的 `math` 包提供了常用的数学函数，覆盖绝对值、幂运
 
 - **用法**：
   ```go
+  package main
+
   import (
       "fmt"
       "math"
@@ -28,6 +30,8 @@ Go 语言的 `math` 包提供了常用的数学函数，覆盖绝对值、幂运
 
 - **用法**：
   ```go
+  package main
+
   import (
       "fmt"
       "math"
@@ -44,6 +48,8 @@ Go 语言的 `math` 包提供了常用的数学函数，覆盖绝对值、幂运
 
 - **用法**：
   ```go
+  package main
+
   import (
       "fmt"
       "math"
@@ -64,6 +70,8 @@ Go 语言的 `math` 包提供了常用的数学函数，覆盖绝对值、幂运
 
 - **用法**：
   ```go
+  package main
+
   import (
       "fmt"
       "math"
@@ -83,6 +91,8 @@ Go 语言的 `math` 包提供了常用的数学函数，覆盖绝对值、幂运
 
 - **用法**：
   ```go
+  package main
+
   import (
       "fmt"
       "math"
@@ -100,6 +110,8 @@ Go 语言的 `math` 包提供了常用的数学函数，覆盖绝对值、幂运
 
 - **用法**：
   ```go
+  package main
+
   import (
       "fmt"
       "math"
@@ -119,6 +131,8 @@ Go 语言的 `math` 包提供了常用的数学函数，覆盖绝对值、幂运
 
 - **用法**：
   ```go
+  package main
+
   import (
       "fmt"
       "math"
@@ -140,6 +154,8 @@ Go 语言的 `math` 包提供了常用的数学函数，覆盖绝对值、幂运
 
 - **用法**：
   ```go
+  package main
+
   import (
       "fmt"
       "math/rand"
@@ -153,9 +169,9 @@ Go 语言的 `math` 包提供了常用的数学函数，覆盖绝对值、幂运
   }
   ```
 
-**2.2.2 统计函数（`math/gamma` 包）**
+**2.2.2 特殊函数（`math` 包）**
 
-Go 标准库中并没有直接提供统计函数，如 Gamma 函数、贝塔函数等。这些函数通常需要使用第三方库，如 `gonum`，或自己实现。
+标准库 `math` 包自带一部分特殊函数：`Gamma`、`Lgamma`、`Erf`、`Erfc` 等；贝塔函数这类统计上常用的没有收录，要用 `gonum` 这类第三方库或自己实现。
 
 #### 2.3 常用数学公式
 

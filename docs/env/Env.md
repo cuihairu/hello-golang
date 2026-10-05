@@ -75,15 +75,15 @@ package main
 
 import (
     "fmt"
-    "io/ioutil"
     "log"
+    "os"
     "path/filepath"
 )
 
 func main() {
     // 使用相对路径读取文件
     path := filepath.Join("data", "file.txt")
-    content, err := ioutil.ReadFile(path)
+    content, err := os.ReadFile(path)
     if err != nil {
         log.Fatal(err)
     }
@@ -127,10 +127,9 @@ package main
 
 import (
     "fmt"
-    "io/ioutil"
     "log"
-    "path/filepath"
     "os"
+    "path/filepath"
 )
 
 func main() {
@@ -143,7 +142,7 @@ func main() {
 
     // 使用相对路径读取文件
     path := filepath.Join("data", "file.txt")
-    content, err := ioutil.ReadFile(path)
+    content, err := os.ReadFile(path)
     if err != nil {
         log.Fatal(err)
     }

@@ -104,6 +104,10 @@ package main
 
 import "fmt"
 
+type Speaker interface {
+    Speak() string
+}
+
 type Animal interface {
     Speaker
     Move() string

@@ -32,8 +32,11 @@ Gin 的扩展有两条路：装社区现成的插件，或者按需求写自己�
     ```
   - **使用**：
     ```go
-    import "github.com/gin-contrib/cors"
-    
+    import (
+        "github.com/gin-contrib/cors"
+        "github.com/gin-gonic/gin"
+    )
+
     func main() {
         r := gin.Default()
         r.Use(cors.Default())
@@ -48,8 +51,11 @@ Gin 的扩展有两条路：装社区现成的插件，或者按需求写自己�
     ```
   - **使用**：
     ```go
-    import "github.com/gin-contrib/logger"
-    
+    import (
+        "github.com/gin-contrib/logger"
+        "github.com/gin-gonic/gin"
+    )
+
     func main() {
         r := gin.Default()
         r.Use(logger.SetLogger())
@@ -67,6 +73,7 @@ Gin 的扩展有两条路：装社区现成的插件，或者按需求写自己�
   - **使用**：
     ```go
     import (
+        "github.com/gin-gonic/gin"
         "github.com/swaggo/files"
         ginSwagger "github.com/swaggo/gin-swagger"
     )
@@ -89,7 +96,10 @@ Gin 的扩展有两条路：装社区现成的插件，或者按需求写自己�
     ```
   - **使用**：
     ```go
-    import "github.com/go-playground/validator/v10"
+    import (
+        "github.com/gin-gonic/gin"
+        "github.com/go-playground/validator/v10"
+    )
 
     type MyData struct {
         Name  string `json:"name" validate:"required"`

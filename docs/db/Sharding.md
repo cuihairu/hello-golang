@@ -33,6 +33,10 @@
 在应用层，可以使用分片键（如用户ID）来决定数据存储的分片。例如，在插入用户数据时，根据用户ID计算应该存储的分片：
 
 ```go
+type User struct {
+    ID int
+}
+
 func getShard(userID int) int {
     if userID <= 1000 {
         return 1

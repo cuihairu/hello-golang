@@ -103,7 +103,7 @@ func main() {
 
 ## 注册接口的具体类型
 
-当被编码的字段是接口类型时，gob 传输的是具体的动态类型，编码前必须用 `gob.Register` 注册所有可能出现的具体类型，否则解码时会报 `gob: name not registered for interface`：
+当被编码的值是接口类型时，gob 传输的是具体的动态类型，编码前必须用 `gob.Register` 注册所有可能出现的具体类型，否则解码时会报 `gob: name not registered for interface`。注意编码侧要把接口变量以指针传入（`Encode(&m)`），直接传具体值收不到接口信封，解码端会报 `local interface type ... can only be decoded from remote interface type`：
 
 ```go
 package main
@@ -131,10 +131,12 @@ func main() {
 
 	var buf bytes.Buffer
 	enc := gob.NewEncoder(&buf)
-	if err := enc.Encode(Text{Content: "hello"}); err != nil {
+	var m1 Message = Text{Content: "hello"}
+	if err := enc.Encode(&m1); err != nil {
 		log.Fatal(err)
 	}
-	if err := enc.Encode(Image{URL: "https://example.com/a.png"}); err != nil {
+	var m2 Message = Image{URL: "https://example.com/a.png"}
+	if err := enc.Encode(&m2); err != nil {
 		log.Fatal(err)
 	}
 
@@ -147,6 +149,13 @@ func main() {
 		fmt.Println(m.Body())
 	}
 }
+```
+
+运行输出：
+
+```text
+hello
+image: https://example.com/a.png
 ```
 
 ## 使用注意事项

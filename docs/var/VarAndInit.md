@@ -11,6 +11,8 @@ Go 定义变量有四种写法：`var` 显式声明、`var` 带初始化、`:=` 
    var age int
    var name string
    var isActive bool
+
+   fmt.Println(age, name, isActive)
    ```
 
 2. **使用 `var` 关键字声明并初始化**：
@@ -22,6 +24,8 @@ Go 定义变量有四种写法：`var` 显式声明、`var` 带初始化、`:=` 
    var age int = 30
    var name string = "Alice"
    var isActive bool = true
+
+   fmt.Println(age, name, isActive)
    ```
 
 3. **简短变量声明（`:=`）**：
@@ -34,6 +38,8 @@ Go 定义变量有四种写法：`var` 显式声明、`var` 带初始化、`:=` 
    age := 30
    name := "Alice"
    isActive := true
+
+   fmt.Println(age, name, isActive)
    ```
 
 4. **批量声明**：
@@ -42,11 +48,19 @@ Go 定义变量有四种写法：`var` 显式声明、`var` 带初始化、`:=` 
 
    例如：
    ```go
-   var (
-       age      int    = 30
-       name     string = "Alice"
-       isActive bool   = true
-   )
+   package main
+
+   import "fmt"
+
+   func main() {
+       var (
+           age      int    = 30
+           name     string = "Alice"
+           isActive bool   = true
+       )
+
+       fmt.Println(age, name, isActive)
+   }
    ```
 
 ### 变量的初始化
@@ -67,6 +81,8 @@ Go 定义变量有四种写法：`var` 显式声明、`var` 带初始化、`:=` 
    var name string      // 零值为 ""
    var isActive bool    // 零值为 false
    var pointer *int     // 零值为 nil
+
+   fmt.Println(age, name, isActive, pointer)
    ```
 
 2. **显式初始化**：
@@ -78,6 +94,8 @@ Go 定义变量有四种写法：`var` 显式声明、`var` 带初始化、`:=` 
    var name string = "Alice"
    var isActive bool = true
    var pointer *int = nil
+
+   fmt.Println(age, name, isActive, pointer)
    ```
 
 3. **简短变量声明初始化**：
@@ -88,6 +106,8 @@ Go 定义变量有四种写法：`var` 显式声明、`var` 带初始化、`:=` 
    age := 30
    name := "Alice"
    isActive := true
+
+   fmt.Println(age, name, isActive)
    ```
 
 ### 示例代码

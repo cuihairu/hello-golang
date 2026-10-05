@@ -240,6 +240,13 @@ func main() {
 }
 ```
 
+运行输出（`defer` 的清理函数先执行，随后程序带着非零退出码终止，栈跟踪部分随运行环境变化）：
+
+```text
+Defer executed
+panic: Something went wrong
+```
+
 ### 10. `recover`
 
 **功能**：从 `panic` 中恢复，允许程序继续执行。
@@ -270,7 +277,7 @@ func safeDivision(a, b int) (result int) {
 
 func main() {
     fmt.Println(safeDivision(10, 2)) // 输出： 5
-    fmt.Println(safeDivision(10, 0)) // 输出： Recovered from panic: Division by zero
+    fmt.Println(safeDivision(10, 0)) // 先打印 Recovered from panic: Division by zero，再打印返回值 0
 }
 ```
 

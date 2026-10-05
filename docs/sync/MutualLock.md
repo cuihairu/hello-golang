@@ -83,6 +83,8 @@ func main() {
 1. **加锁与解锁必须成对出现**：重复 `Unlock` 或解锁未加锁的锁都会 panic。分支多的函数建议写法固定为：
 
    ```go
+   var mu sync.Mutex
+
    mu.Lock()
    defer mu.Unlock()
    ```

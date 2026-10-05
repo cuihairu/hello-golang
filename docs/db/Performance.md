@@ -62,19 +62,32 @@ id | select_type | table | type  | possible_keys  | key      | key_len | ref  | 
 
 在 Go 中，可以使用 `database/sql` 包中的连接池功能：
 ```go
-db, err := sql.Open("mysql", "user:password@/dbname")
-if err != nil {
-    log.Fatal(err)
+package main
+
+import (
+    "database/sql"
+    "log"
+    "time"
+
+    _ "github.com/go-sql-driver/mysql"
+)
+
+func main() {
+    db, err := sql.Open("mysql", "user:password@/dbname")
+    if err != nil {
+        log.Fatal(err)
+    }
+    defer db.Close()
+
+    // 设置最大打开连接数
+    db.SetMaxOpenConns(25)
+
+    // 设置最大空闲连接数
+    db.SetMaxIdleConns(25)
+
+    // 设置连接最大生存时间
+    db.SetConnMaxLifetime(5 * time.Minute)
 }
-
-// 设置最大打开连接数
-db.SetMaxOpenConns(25)
-
-// 设置最大空闲连接数
-db.SetMaxIdleConns(25)
-
-// 设置连接最大生存时间
-db.SetConnMaxLifetime(5 * time.Minute)
 ```
 
 ##### 10.5.2 缓存机制

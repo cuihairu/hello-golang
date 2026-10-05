@@ -125,6 +125,7 @@ Redis 位图实际上是对字符串的位操作，底层利用了 Redis 字符�
 
    import (
        "context"
+       "fmt"
 
        "github.com/go-redis/redis/v8"
    )

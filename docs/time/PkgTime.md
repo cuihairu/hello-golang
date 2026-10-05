@@ -61,7 +61,7 @@ func main() {
     fmt.Println("当前时间:", now)
 
     // 创建指定时间
-    date := time.Date(2024, time.July, 27, 15, 30, 0, time.UTC, time.UTC)
+    date := time.Date(2024, time.July, 27, 15, 30, 0, 0, time.UTC)
     fmt.Println("指定日期时间:", date)
 
     // 时间格式化

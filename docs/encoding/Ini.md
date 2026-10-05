@@ -78,6 +78,15 @@ log_path=C:\logs
 
 **读取 INI 文件示例**：
 
+读取要求当前目录已有 `config.ini`，可以先运行下面的写入示例生成，也可以手写一份，例如：
+
+```ini
+[General]
+name = John Doe
+age = 30
+city = New York
+```
+
 ```go
 package main
 
@@ -107,6 +116,14 @@ func main() {
     fmt.Printf("Age: %d\n", age)
     fmt.Printf("City: %s\n", city)
 }
+```
+
+输出：
+
+```plaintext
+Name: John Doe
+Age: 30
+City: New York
 ```
 
 **写入 INI 文件示例**：

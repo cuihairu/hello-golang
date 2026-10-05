@@ -181,11 +181,23 @@ type Person struct {
 使用 `interface{}` 可以处理任意类型的数据，但需要进行类型断言。
 
 ```go
-var data map[string]interface{}
-json.Unmarshal([]byte(jsonString), &data)
+package main
 
-name := data["Name"].(string)
-age := data["Age"].(float64) // JSON 中的数字默认解析为 float64
+import (
+    "encoding/json"
+    "fmt"
+)
+
+func main() {
+    jsonString := `{"Name":"Alice","Age":30}`
+
+    var data map[string]interface{}
+    json.Unmarshal([]byte(jsonString), &data)
+
+    name := data["Name"].(string)
+    age := data["Age"].(float64) // JSON 中的数字默认解析为 float64
+    fmt.Println(name, age)
+}
 ```
 
 #### 避免循环引用

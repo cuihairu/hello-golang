@@ -78,11 +78,15 @@ HeapAlloc(KB): 307 NumGC: 37
 2. **GOMEMLIMIT / debug.SetMemoryLimit**：Go 1.19 引入的软内存上限。运行时会在逼近上限时更频繁地 GC，适合内存受限的容器环境：
 
    ```go
+   package main
+
    import "runtime/debug"
 
    func init() {
        debug.SetMemoryLimit(512 << 20) // 512 MiB
    }
+
+   func main() {}
    ```
 
 3. **GOGC 与 GOMEMLIMIT 的配合**：Go 会同时考虑两者，取更先满足的条件触发 GC。推荐容器内同时设置两者，兼顾 CPU 开销与内存水位。
@@ -100,6 +104,7 @@ import (
 	"fmt"
 	"runtime"
 	"runtime/debug"
+	"sync"
 )
 
 func main() {

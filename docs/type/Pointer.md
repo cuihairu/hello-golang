@@ -13,9 +13,15 @@ var p *int
 使用 `&` 符号可以获取变量的地址。
 
 ```go
-var x int = 10
-p := &x
-fmt.Println(p) // 输出: 变量 x 的内存地址，例如 0xc0000140a0
+package main
+
+import "fmt"
+
+func main() {
+    var x int = 10
+    p := &x
+    fmt.Println(p) // 输出: 变量 x 的内存地址，例如 0xc0000140a0
+}
 ```
 
 ### 3. 通过指针访问和修改变量的值
@@ -23,15 +29,21 @@ fmt.Println(p) // 输出: 变量 x 的内存地址，例如 0xc0000140a0
 使用 `*` 符号可以访问指针指向的变量的值，也可以通过指针修改变量的值。
 
 ```go
-var x int = 10
-p := &x
+package main
 
-// 访问指针指向的值
-fmt.Println(*p) // 输出: 10
+import "fmt"
 
-// 通过指针修改值
-*p = 20
-fmt.Println(x) // 输出: 20
+func main() {
+    var x int = 10
+    p := &x
+
+    // 访问指针指向的值
+    fmt.Println(*p) // 输出: 10
+
+    // 通过指针修改值
+    *p = 20
+    fmt.Println(x) // 输出: 20
+}
 ```
 
 ### 4. 指针的使用场景

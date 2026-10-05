@@ -5,11 +5,13 @@
 你可以像其他基本类型一样声明和初始化 `byte` 类型的变量：
 
 ```go
-var b byte = 255
-fmt.Println(b)  // 输出: 255
+func main() {
+    var b byte = 255
+    fmt.Println(b)  // 输出: 255
 
-b2 := byte(100)
-fmt.Println(b2) // 输出: 100
+    b2 := byte(100)
+    fmt.Println(b2) // 输出: 100
+}
 ```
 
 ### `byte` 类型的数组和切片
@@ -45,6 +47,7 @@ fmt.Println(s2) // 输出: Hello
 
 ```go
 import (
+    "fmt"
     "io/ioutil"
     "log"
 )
@@ -72,6 +75,7 @@ func main() {
 
 ```go
 import (
+    "fmt"
     "net"
     "log"
 )

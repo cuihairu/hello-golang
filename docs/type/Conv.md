@@ -10,6 +10,7 @@
    var b int32 = int32(a)
    var c int64 = int64(a)
    var d uint = uint(a)
+   fmt.Println(b, c, d) // 100 100 100
    ```
 
 2. **整数和浮点数之间的转换**：
@@ -19,19 +20,20 @@
    var a int = 42
    var b float64 = float64(a)
    var c int = int(b)
+   fmt.Println(b, c) // 42 42
    ```
 
 3. **字符串和其他基本类型之间的转换**：
    Go 提供了 `strconv` 包来处理字符串和其他基本类型之间的转换，如将字符串转换为整数、浮点数或布尔值，反之亦然。
 
    ```go
-   import "strconv"
-   
    var s string = "123"
    n, err := strconv.Atoi(s)
+   fmt.Println(n, err) // 123 <nil>
 
    var f float64 = 3.14
    var str string = strconv.FormatFloat(f, 'f', -1, 64)
+   fmt.Println(str) // 3.14
    ```
 
 4. **布尔类型和字符串之间的转换**：
@@ -40,9 +42,11 @@
    ```go
    var s string = "true"
    b, err := strconv.ParseBool(s)
+   fmt.Println(b, err) // true <nil>
    
    var boolVal bool = true
    var strBool string = strconv.FormatBool(boolVal)
+   fmt.Println(strBool) // true
    ```
 
 ### 类型转换的注意事项

@@ -45,9 +45,19 @@ func main() {
 - **指针**: 使用 `unsafe.Pointer` 进行指针转换。
 
 ```go
-str := "Hello"
-cstr := C.CString(str)
-defer C.free(unsafe.Pointer(cstr))
+package main
+
+/*
+#include <stdlib.h>
+*/
+import "C"
+import "unsafe"
+
+func main() {
+    str := "Hello"
+    cstr := C.CString(str)
+    defer C.free(unsafe.Pointer(cstr))
+}
 ```
 
 ##### C 类型转换为 Go 类型
@@ -56,9 +66,21 @@ defer C.free(unsafe.Pointer(cstr))
 - **指针**: 使用 `unsafe.Pointer` 和类型转换。
 
 ```go
-cstr := C.CString("Hello")
-defer C.free(unsafe.Pointer(cstr))
-gostr := C.GoString(cstr)
+package main
+
+/*
+#include <stdlib.h>
+*/
+import "C"
+import "unsafe"
+import "fmt"
+
+func main() {
+    cstr := C.CString("Hello")
+    defer C.free(unsafe.Pointer(cstr))
+    gostr := C.GoString(cstr)
+    fmt.Println(gostr)
+}
 ```
 
 ### 3. 结构体访问
@@ -189,20 +211,17 @@ go build -o myprogram
 
 在函数声明上加一行 `//export`，这个 Go 函数就会被导出成 C 函数，C 代码可以直接调。
 
+注意一条规则：带 `//export` 的文件里，`import "C"` 的前置注释只能放声明、不能放函数定义——cgo 会把前置注释复制进多个编译单元，定义放这里会在链接期报 `multiple definition`。所以 C 侧的包装函数放到同目录的 `caller.c` 里，`go build` 会自动一起编译。
+
 **Go 代码**:
 
 ```go
 package main
 
 /*
-#include <stdio.h>
-
-// 声明一个C函数，稍后将由Go实现
+// 声明C函数，定义在 caller.c 中
 extern void goHello();
-
-void callGoHello() {
-    goHello();
-}
+extern void callGoHello();
 */
 import "C"
 
@@ -216,12 +235,26 @@ func main() {
 }
 ```
 
+**caller.c**（与上面的 .go 文件同目录）:
+
+```c
+#include <stdio.h>
+
+extern void goHello();
+
+void callGoHello() {
+    goHello();
+}
+```
+
 编译命令：
 
 ```sh
 go build -o myprogram
 ./myprogram
 ```
+
+运行输出 `Hello from Go!`。
 
 ### 7. 内存管理
 

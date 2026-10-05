@@ -5,9 +5,16 @@ Go 语言的 `bool` 类型是一个基本数据类型，用于表示布尔值，
 你可以这样声明和初始化一个 `bool` 类型的变量：
 
 ```go
-var a bool       // 声明但未初始化，默认值为 false
-var b bool = true  // 声明并初始化为 true
-c := false        // 简短声明并初始化为 false
+package main
+
+import "fmt"
+
+func main() {
+    var a bool       // 声明但未初始化，默认值为 false
+    var b bool = true  // 声明并初始化为 true
+    c := false        // 简短声明并初始化为 false
+    fmt.Println(a, b, c) // false true false
+}
 ```
 
 ### 使用场景
@@ -15,6 +22,9 @@ c := false        // 简短声明并初始化为 false
 `bool` 类型通常用于条件判断，比如 `if` 语句和循环控制：
 
 ```go
+a := false
+b := true
+
 if a {
     fmt.Println("a is true")
 } else {

@@ -239,11 +239,17 @@ import (
 )
 ```
 
-##### 2.3.2 读取和写入 bzip2 文件
+##### 2.3.2 解压 bzip2 文件
 
 **从 bzip2 文件解压数据：**
 
 ```go
+import (
+    "compress/bzip2"
+    "io"
+    "os"
+)
+
 func decompressBzip2FromFile(inputFile, outputFile string) error {
     inFile, err := os.Open(inputFile)
     if err != nil {
@@ -264,13 +270,42 @@ func decompressBzip2FromFile(inputFile, outputFile string) error {
 }
 ```
 
+**实践案例：**标准库没有 bzip2 的写入端，这里预置一段压缩数据（原始内容是 `hello bzip2`），和上面的函数放进同一个包里编译：
+
+```go
+func main() {
+    // 压缩后的数据，原始内容为 "hello bzip2\n"
+    data := []byte{
+        66, 90, 104, 57, 49, 65, 89, 38, 83, 89, 171, 107, 161, 241,
+        0, 0, 2, 217, 128, 0, 16, 64, 0, 16, 0, 18, 100, 192, 16, 32,
+        0, 49, 0, 211, 77, 4, 0, 30, 163, 239, 78, 81, 162, 7, 139, 185,
+        34, 156, 40, 72, 85, 181, 208, 248, 128,
+    }
+    if err := os.WriteFile("example.bz2", data, 0644); err != nil {
+        log.Fatal(err)
+    }
+
+    if err := decompressBzip2FromFile("example.bz2", "example_decompressed_bz2.txt"); err != nil {
+        log.Fatal(err)
+    }
+    fmt.Println("File decompressed successfully")
+
+    content, err := os.ReadFile("example_decompressed_bz2.txt")
+    if err != nil {
+        log.Fatal(err)
+    }
+    fmt.Printf("解压内容: %s", content)
+}
+```
+
 输出：
 
 ```plaintext
 File decompressed successfully
+解压内容: hello bzip2
 ```
 
-并且在当前目录下生成 `example_decompressed_bz2.txt` 文件。
+并且在当前目录下生成 `example_decompressed_bz2.txt` 文件，内容为 `hello bzip2`。
 
 ---
 

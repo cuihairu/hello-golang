@@ -106,7 +106,15 @@ func main() {
 ##### 2.2 性能优化
 
 ```go
-logger, _ := zap.NewProduction(zap.WithCaller(false))
+package main
+
+import "go.uber.org/zap"
+
+func main() {
+	logger, _ := zap.NewProduction(zap.WithCaller(false))
+	defer logger.Sync()
+	logger.Info("This is an info message")
+}
 ```
 
 ##### 2.3 结构化日志
@@ -120,11 +128,17 @@ logger.Info("This is a structured log message",
 ##### 2.4 配置与示例
 
 ```go
-config := zap.NewProductionConfig()
-config.OutputPaths = []string{"stdout", "app.log"}
-logger, _ := config.Build()
+package main
 
-logger.Info("This is an info message with custom configuration")
+import "go.uber.org/zap"
+
+func main() {
+	config := zap.NewProductionConfig()
+	config.OutputPaths = []string{"stdout", "app.log"}
+	logger, _ := config.Build()
+
+	logger.Info("This is an info message with custom configuration")
+}
 ```
 
 ##### 2.5 实践案例
@@ -176,14 +190,30 @@ func main() {
 ##### 3.2 最小开销和高效日志
 
 ```go
-log.Info().Str("key1", "value1").Int("key2", 123).Msg("This is a structured log message")
+package main
+
+import "github.com/rs/zerolog/log"
+
+func main() {
+	log.Info().Str("key1", "value1").Int("key2", 123).Msg("This is a structured log message")
+}
 ```
 
 ##### 3.3 使用 JSON 格式记录日志
 
 ```go
-log.Logger = log.Output(os.Stdout)
-log.Info().Msg("This is a log message in JSON format")
+package main
+
+import (
+	"os"
+
+	"github.com/rs/zerolog/log"
+)
+
+func main() {
+	log.Logger = log.Output(os.Stdout)
+	log.Info().Msg("This is a log message in JSON format")
+}
 ```
 
 ##### 3.4 实践案例

@@ -41,6 +41,31 @@ func createTarGz(outputFile string, files []string) error {
 
     return nil
 }
+
+func addFileToTar(tw *tar.Writer, filePath string) error {
+    file, err := os.Open(filePath)
+    if err != nil {
+        return err
+    }
+    defer file.Close()
+
+    stat, err := file.Stat()
+    if err != nil {
+        return err
+    }
+
+    header, err := tar.FileInfoHeader(stat, stat.Name())
+    if err != nil {
+        return err
+    }
+    header.Name = filepath.Base(filePath)
+
+    if err := tw.WriteHeader(header); err != nil {
+        return err
+    }
+    _, err = io.Copy(tw, file)
+    return err
+}
 ```
 
 ##### 4.1.2 解压 tar.gz 文件
@@ -106,10 +131,18 @@ func extractTarGz(inputFile, outputDir string) error {
 
 ##### 4.1.3 实践案例
 
-用上面的函数把 `file1.txt` 和 `file2.txt` 打包成 `archive.tar.gz`，再解压到 `output` 目录：
+把 4.1.1 与 4.1.2 的函数和本块的 `main` 放在同一个包里编译。`main` 先自己造出两个输入文件，再把它们打包成 `archive.tar.gz`，解压到 `output` 目录：
 
 ```go
 func main() {
+    // 准备输入文件
+    if err := os.WriteFile("file1.txt", []byte("hello tar.gz\n"), 0644); err != nil {
+        log.Fatal(err)
+    }
+    if err := os.WriteFile("file2.txt", []byte("hello tar.gz again\n"), 0644); err != nil {
+        log.Fatal(err)
+    }
+
     files := []string{"file1.txt", "file2.txt"}
     tarGzFile := "archive.tar.gz"
     outputDir := "output"
@@ -249,10 +282,18 @@ func extractZip(inputFile, outputDir string) error {
 
 ##### 4.2.3 实践案例
 
-用上面的函数把 `file1.txt` 和 `file2.txt` 打包成 `archive.zip`，再解压到 `output` 目录：
+把 4.2.1 与 4.2.2 的函数和本块的 `main` 放在同一个包里编译。`main` 先造出两个输入文件，再把它们打进 `archive.zip`，解压到 `output` 目录：
 
 ```go
 func main() {
+    // 准备输入文件
+    if err := os.WriteFile("file1.txt", []byte("hello zip\n"), 0644); err != nil {
+        log.Fatal(err)
+    }
+    if err := os.WriteFile("file2.txt", []byte("hello zip again\n"), 0644); err != nil {
+        log.Fatal(err)
+    }
+
     files := []string{"file1.txt", "file2.txt"}
     zipFile := "archive.zip"
     outputDir := "output"

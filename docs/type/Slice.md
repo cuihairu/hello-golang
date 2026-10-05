@@ -7,15 +7,23 @@
 #### 声明和初始化
 
 ```go
-// 声明一个空的整型切片
-var s []int
+package main
 
-// 使用字面量初始化
-s := []int{1, 2, 3, 4, 5}
+import "fmt"
 
-// 使用 make 函数创建一个指定长度和容量的切片
-s := make([]int, 5)          // 长度和容量都是 5
-s := make([]int, 3, 5)       // 长度是 3，容量是 5
+func main() {
+    // 声明一个空的整型切片
+    var s []int
+
+    // 使用字面量初始化
+    s2 := []int{1, 2, 3, 4, 5}
+
+    // 使用 make 函数创建一个指定长度和容量的切片
+    s3 := make([]int, 5)    // 长度和容量都是 5
+    s4 := make([]int, 3, 5) // 长度是 3，容量是 5
+
+    fmt.Println(s, s2, s3, s4)
+}
 ```
 
 #### 操作切片
@@ -95,14 +103,20 @@ s = append(s, 1, 2, 3, 4)  // 第四个元素会导致底层数组扩容
 未初始化的切片默认为 nil，与空切片不同。使用 `make` 函数可以确保切片不是 nil。
 
 ```go
-var s []int       // s == nil
-if s == nil {
-    fmt.Println("s is nil")
-}
+package main
 
-s = make([]int, 0)  // s != nil
-if s != nil {
-    fmt.Println("s is not nil")
+import "fmt"
+
+func main() {
+    var s []int // s == nil
+    if s == nil {
+        fmt.Println("s is nil")
+    }
+
+    s = make([]int, 0) // s != nil
+    if s != nil {
+        fmt.Println("s is not nil")
+    }
 }
 ```
 

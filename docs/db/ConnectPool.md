@@ -75,55 +75,62 @@ func main() {
 ##### 6.3.2 使用连接池执行数据库操作
 使用连接池执行数据库操作与普通的数据库操作没有区别，可以直接使用 `db.Query`、`db.Exec` 等方法：
 ```go
-// 查询数据
-rows, err := db.Query("SELECT id, name FROM users WHERE age > ?", 30)
-if err != nil {
-    log.Fatal(err)
-}
-defer rows.Close()
+import (
+    "database/sql"
+    "log"
+)
 
-for rows.Next() {
-    var id int
-    var name string
-    err = rows.Scan(&id, &name)
+func usePool(db *sql.DB) {
+    // 查询数据
+    rows, err := db.Query("SELECT id, name FROM users WHERE age > ?", 30)
     if err != nil {
         log.Fatal(err)
     }
-    log.Println(id, name)
-}
+    defer rows.Close()
 
-// 插入数据
-result, err := db.Exec("INSERT INTO users (name, age) VALUES (?, ?)", "Bob", 29)
-if err != nil {
-    log.Fatal(err)
-}
-lastInsertID, err := result.LastInsertId()
-if err != nil {
-    log.Fatal(err)
-}
-log.Println("Last Insert ID:", lastInsertID)
+    for rows.Next() {
+        var id int
+        var name string
+        err = rows.Scan(&id, &name)
+        if err != nil {
+            log.Fatal(err)
+        }
+        log.Println(id, name)
+    }
 
-// 更新数据
-result, err = db.Exec("UPDATE users SET age = ? WHERE name = ?", 30, "Bob")
-if err != nil {
-    log.Fatal(err)
-}
-rowsAffected, err := result.RowsAffected()
-if err != nil {
-    log.Fatal(err)
-}
-log.Println("Rows Affected:", rowsAffected)
+    // 插入数据
+    result, err := db.Exec("INSERT INTO users (name, age) VALUES (?, ?)", "Bob", 29)
+    if err != nil {
+        log.Fatal(err)
+    }
+    lastInsertID, err := result.LastInsertId()
+    if err != nil {
+        log.Fatal(err)
+    }
+    log.Println("Last Insert ID:", lastInsertID)
 
-// 删除数据
-result, err = db.Exec("DELETE FROM users WHERE name = ?", "Bob")
-if err != nil {
-    log.Fatal(err)
+    // 更新数据
+    result, err = db.Exec("UPDATE users SET age = ? WHERE name = ?", 30, "Bob")
+    if err != nil {
+        log.Fatal(err)
+    }
+    rowsAffected, err := result.RowsAffected()
+    if err != nil {
+        log.Fatal(err)
+    }
+    log.Println("Rows Affected:", rowsAffected)
+
+    // 删除数据
+    result, err = db.Exec("DELETE FROM users WHERE name = ?", "Bob")
+    if err != nil {
+        log.Fatal(err)
+    }
+    rowsAffected, err = result.RowsAffected()
+    if err != nil {
+        log.Fatal(err)
+    }
+    log.Println("Rows Affected:", rowsAffected)
 }
-rowsAffected, err = result.RowsAffected()
-if err != nil {
-    log.Fatal(err)
-}
-log.Println("Rows Affected:", rowsAffected)
 ```
 
 三个参数配好，连接的复用和上限就都有了：`SetMaxOpenConns` 卡住同时打开的总量，`SetMaxIdleConns` 留住热连接，`SetConnMaxLifetime` 防止连接被长期占用。之后的增删改查照常写，连接池在下面自动换进换出。

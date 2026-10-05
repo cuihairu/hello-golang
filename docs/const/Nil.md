@@ -5,8 +5,10 @@
 在 Go 中，指针类型的零值是 `nil`。`nil` 表示指针不指向任何有效的内存地址。
 
 ```go
-var ptr *int
-fmt.Println(ptr) // 输出: <nil>
+func main() {
+    var ptr *int
+    fmt.Println(ptr) // 输出: <nil>
+}
 ```
 
 ### 2. 切片、映射、通道
@@ -14,13 +16,15 @@ fmt.Println(ptr) // 输出: <nil>
 对于切片、映射和通道，它们的零值也是 `nil`。这意味着它们未初始化时都会被赋予 `nil` 值，表示它们还没有分配底层的数据结构。
 
 ```go
-var slice []int
-var m map[string]int
-var ch chan string
+func main() {
+    var slice []int
+    var m map[string]int
+    var ch chan string
 
-fmt.Println(slice) // 输出: []
-fmt.Println(m)     // 输出: map[]
-fmt.Println(ch)    // 输出: <nil>
+    fmt.Println(slice) // 输出: []
+    fmt.Println(m)     // 输出: map[]
+    fmt.Println(ch)    // 输出: <nil>
+}
 ```
 
 ### 3. 接口类型
@@ -28,8 +32,10 @@ fmt.Println(ch)    // 输出: <nil>
 对于接口变量，当其未被初始化或赋值时，默认值也是 `nil`。一个 `nil` 接口值既不持有值也不具备具体的类型。
 
 ```go
-var i interface{}
-fmt.Println(i) // 输出: <nil>
+func main() {
+    var i interface{}
+    fmt.Println(i) // 输出: <nil>
+}
 ```
 
 ### 4. 函数
@@ -37,8 +43,10 @@ fmt.Println(i) // 输出: <nil>
 在 Go 中，函数类型的零值也是 `nil`。这表示一个未初始化的函数变量。
 
 ```go
-var f func()
-fmt.Println(f) // 输出: <nil>
+func main() {
+    var f func()
+    fmt.Println(f) // 输出: <nil>
+}
 ```
 
 ### 使用场景

@@ -5,9 +5,16 @@ Go 语言的 `string` 类型是用于表示文本的基本数据类型。它不�
 你可以通过多种方式来声明和初始化字符串：
 
 ```go
-var s1 string           // 声明但未初始化，默认值为空字符串 ""
-var s2 string = "Hello" // 声明并初始化
-s3 := "World"           // 简短声明并初始化
+package main
+
+import "fmt"
+
+func main() {
+    var s1 string           // 声明但未初始化，默认值为空字符串 ""
+    var s2 string = "Hello" // 声明并初始化
+    s3 := "World"           // 简短声明并初始化
+    fmt.Printf("s1: %q, s2: %s, s3: %s\n", s1, s2, s3) // s1: "", s2: Hello, s3: World
+}
 ```
 
 ### 字符串连接
@@ -15,6 +22,8 @@ s3 := "World"           // 简短声明并初始化
 可以使用加号（`+`）操作符连接两个字符串：
 
 ```go
+s2 := "Hello"
+s3 := "World"
 greeting := s2 + ", " + s3 + "!"
 fmt.Println(greeting)  // 输出: Hello, World!
 ```
@@ -35,6 +44,7 @@ fmt.Println(multiLine)
 使用 `len` 函数可以获取字符串的长度，长度指的是字节数而不是字符数：
 
 ```go
+greeting := "Hello, World!"
 length := len(greeting)
 fmt.Println("Length of greeting:", length)  // 输出: Length of greeting: 13
 ```
@@ -44,6 +54,7 @@ fmt.Println("Length of greeting:", length)  // 输出: Length of greeting: 13
 可以通过索引访问字符串中的字节（注意是字节而不是字符）：
 
 ```go
+greeting := "Hello, World!"
 char := greeting[0]
 fmt.Println("First character:", string(char))  // 输出: First character: H
 ```
@@ -51,6 +62,7 @@ fmt.Println("First character:", string(char))  // 输出: First character: H
 可以通过切片操作符获取字符串的子串：
 
 ```go
+greeting := "Hello, World!"
 substring := greeting[0:5]
 fmt.Println("Substring:", substring)  // 输出: Substring: Hello
 ```
@@ -60,6 +72,7 @@ fmt.Println("Substring:", substring)  // 输出: Substring: Hello
 可以使用比较操作符（`==`, `!=`, `<`, `>`, `<=`, `>=`）来比较字符串：
 
 ```go
+s2 := "Hello"
 if s2 == "Hello" {
     fmt.Println("s2 is Hello")
 }
@@ -90,6 +103,7 @@ func main() {
 可以使用 `range` 关键字遍历字符串中的字符：
 
 ```go
+s := "Hello"
 for i, c := range s {
     fmt.Printf("Index: %d, Character: %c\n", i, c)
 }
@@ -114,6 +128,7 @@ import (
 
 func main() {
     var s1 string
+    fmt.Printf("s1: %q\n", s1) // 输出: s1: ""
     s2 := "Hello"
     s3 := "World"
 

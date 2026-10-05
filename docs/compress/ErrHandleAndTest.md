@@ -96,6 +96,12 @@ func TestCompressFile(t *testing.T) {
 示例性能测试：
 
 ```go
+import (
+    "testing"
+    "os"
+    "io/ioutil"
+)
+
 func BenchmarkCompressFile(b *testing.B) {
     inputFile := "benchmark_input.txt"
     outputFile := "benchmark_output.gz"
@@ -121,6 +127,52 @@ func BenchmarkCompressFile(b *testing.B) {
 解压函数同样要测：先生成压缩过的测试文件，再解压，最后对比文件内容。
 
 ```go
+import (
+    "bytes"
+    "compress/gzip"
+    "io"
+    "io/ioutil"
+    "os"
+    "testing"
+)
+
+// compressData 用 gzip 压缩数据，用来生成测试所需的压缩文件内容
+func compressData(data []byte) []byte {
+    var buf bytes.Buffer
+    w := gzip.NewWriter(&buf)
+    if _, err := w.Write(data); err != nil {
+        panic(err)
+    }
+    if err := w.Close(); err != nil {
+        panic(err)
+    }
+    return buf.Bytes()
+}
+
+// decompressFile 解压 gzip 文件
+func decompressFile(inputFile, outputFile string) error {
+    inFile, err := os.Open(inputFile)
+    if err != nil {
+        return err
+    }
+    defer inFile.Close()
+
+    gzipReader, err := gzip.NewReader(inFile)
+    if err != nil {
+        return err
+    }
+    defer gzipReader.Close()
+
+    outFile, err := os.Create(outputFile)
+    if err != nil {
+        return err
+    }
+    defer outFile.Close()
+
+    _, err = io.Copy(outFile, gzipReader)
+    return err
+}
+
 func TestDecompressFile(t *testing.T) {
     inputFile := "test_input.gz"
     outputFile := "test_output.txt"

@@ -54,6 +54,22 @@ func createZipParallel(outputFile string, files []string) error {
 
     return nil
 }
+
+func addFileToZip(zipWriter *zip.Writer, filePath string) error {
+    f, err := os.Open(filePath)
+    if err != nil {
+        return err
+    }
+    defer f.Close()
+
+    w, err := zipWriter.Create(filepath.Base(filePath))
+    if err != nil {
+        return err
+    }
+
+    _, err = io.Copy(w, f)
+    return err
+}
 ```
 
 > 注意：`zip.Writer` 本身不是并发安全的，多个 goroutine 直接并发调用会产生数据竞争（可用 `go run -race` 验证）。上面的实现通过互斥锁保证同一时刻只有一个 goroutine 在写入；如需真正并行的压缩计算，可以先并行读取并压缩到内存，再串行写入 `zip.Writer`。

@@ -75,7 +75,10 @@ Cors 中间件用于处理跨域资源共享（CORS）。
 示例：
 
 ```go
-import "github.com/gin-contrib/cors"
+import (
+    "github.com/gin-contrib/cors"
+    "github.com/gin-gonic/gin"
+)
 
 func main() {
     r := gin.New()
@@ -150,25 +153,43 @@ group.Use(GroupMiddleware())
 示例：
 
 ```go
+package main
+
+import (
+    "fmt"
+    "net/http/httptest"
+
+    "github.com/gin-gonic/gin"
+)
+
 func Middleware1() gin.HandlerFunc {
     return func(c *gin.Context) {
-        log.Println("Middleware1 before")
+        fmt.Println("Middleware1 before")
         c.Next()
-        log.Println("Middleware1 after")
+        fmt.Println("Middleware1 after")
     }
 }
 
 func Middleware2() gin.HandlerFunc {
     return func(c *gin.Context) {
-        log.Println("Middleware2 before")
+        fmt.Println("Middleware2 before")
         c.Next()
-        log.Println("Middleware2 after")
+        fmt.Println("Middleware2 after")
     }
 }
 
 func main() {
     r := gin.New()
     r.Use(Middleware1(), Middleware2())
+    r.GET("/", func(c *gin.Context) {
+        fmt.Println("Handler execution")
+        c.String(200, "ok")
+    })
+
+    // 发起一次请求，观察中间件与处理函数的执行顺序
+    w := httptest.NewRecorder()
+    req := httptest.NewRequest("GET", "/", nil)
+    r.ServeHTTP(w, req)
 }
 ```
 

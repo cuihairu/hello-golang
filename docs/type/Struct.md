@@ -27,6 +27,8 @@ func main() {
     // 访问和修改字段
     p1.Name = "Charlie"
     fmt.Println(p1.Name, p1.Age)
+    fmt.Println(p2) // 输出 {Bob 25}
+    fmt.Println(p3) // 输出 { 0}（零值）
 }
 ```
 
@@ -452,9 +454,13 @@ func main() {
 
 提升与同名字段
 
-在Go中，当嵌套结构体有同名字段时，访问时会优先访问第一个嵌套结构体中的字段。
+嵌套结构体的字段会被提升到外层：外层没有同名成员时，直接访问 `b.Name` 等价于访问 `b.A.Name`。
 
 ```go
+package main
+
+import "fmt"
+
 type A struct {
     Name string
 }
@@ -464,24 +470,14 @@ type B struct {
     Age int
 }
 
-type C struct {
-    A
-    Email string
-}
-
-type D struct {
-    B
-    C
-}
-
 func main() {
-    d := D{}
-    d.B.Name = "Alice"
-    d.C.Name = "Bob"
-
-    fmt.Println(d.Name) // 输出 "Alice"，访问的是 d.B.A.Name
+    b := B{}
+    b.Name = "Alice" // 等价于 b.A.Name = "Alice"，Name 由 A 提升到 B
+    fmt.Println(b.Name) // 输出 "Alice"
 }
 ```
+
+两个嵌套结构体带同名成员时不再提升：比如 `D` 同时嵌 `B` 和 `C`、两者都有 `A.Name`，`d.Name` 会编译报错 `ambiguous selector`，必须写全 `d.B.Name` 或 `d.C.Name`（第 13 节就是这个场景）。
 
 ### 13. 嵌套与菱形继承
 

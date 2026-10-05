@@ -8,6 +8,8 @@
 
 Gin 使用类似 HTTP 方法的函数来注册路由：
 ```go
+r := gin.Default()
+handler := func(c *gin.Context) {}
 r.GET("/path", handler)
 r.POST("/path", handler)
 r.PUT("/path", handler)
@@ -19,6 +21,7 @@ r.DELETE("/path", handler)
 
 处理函数签名为 `func(*gin.Context)`，示例：
 ```go
+r := gin.Default()
 r.GET("/ping", func(c *gin.Context) {
     c.JSON(200, gin.H{
         "message": "pong",
@@ -30,6 +33,7 @@ r.GET("/ping", func(c *gin.Context) {
 
 支持路径参数：
 ```go
+r := gin.Default()
 r.GET("/user/:name", func(c *gin.Context) {
     name := c.Param("name")
     c.String(200, "Hello %s", name)
@@ -40,6 +44,7 @@ r.GET("/user/:name", func(c *gin.Context) {
 
 通过 `c.Query` 获取查询参数：
 ```go
+r := gin.Default()
 r.GET("/welcome", func(c *gin.Context) {
     firstname := c.DefaultQuery("firstname", "Guest")
     lastname := c.Query("lastname")
@@ -56,6 +61,7 @@ r.GET("/welcome", func(c *gin.Context) {
 内置中间件：
 ```go
 r := gin.Default() // 包含 Logger 和 Recovery 中间件
+r.GET("/ping", func(c *gin.Context) {})
 ```
 
 自定义中间件：
@@ -84,10 +90,19 @@ func main() {
 
 中间件可以应用于路由组：
 ```go
-authorized := r.Group("/", AuthRequired())
-{
-    authorized.POST("/login", loginEndpoint)
-    authorized.POST("/submit", submitEndpoint)
+func AuthRequired() gin.HandlerFunc {
+    return func(c *gin.Context) {}
+}
+
+func main() {
+    r := gin.New()
+    loginEndpoint := func(c *gin.Context) {}
+    submitEndpoint := func(c *gin.Context) {}
+    authorized := r.Group("/", AuthRequired())
+    {
+        authorized.POST("/login", loginEndpoint)
+        authorized.POST("/submit", submitEndpoint)
+    }
 }
 ```
 
@@ -99,6 +114,7 @@ Gin 提供了多种方式解析请求参数，包括路径参数、查询参数�
 
 通过 `c.PostForm` 获取表单参数：
 ```go
+r := gin.Default()
 r.POST("/form", func(c *gin.Context) {
     name := c.PostForm("name")
     message := c.PostForm("message")
@@ -112,25 +128,32 @@ r.POST("/form", func(c *gin.Context) {
 
 ##### 3.2 JSON 参数
 
-通过 `c.BindJSON` 解析 JSON 参数：
+通过 `c.ShouldBindJSON` 解析 JSON 参数：
 ```go
+package main
+
+import "github.com/gin-gonic/gin"
+
 type Login struct {
     User     string `json:"user"`
     Password string `json:"password"`
 }
 
-r.POST("/login", func(c *gin.Context) {
-    var json Login
-    if err := c.ShouldBindJSON(&json); err != nil {
-        c.JSON(400, gin.H{"error": err.Error()})
-        return
-    }
-    if json.User == "admin" && json.Password == "admin" {
-        c.JSON(200, gin.H{"status": "you are logged in"})
-    } else {
-        c.JSON(401, gin.H{"status": "unauthorized"})
-    }
-})
+func main() {
+    r := gin.Default()
+    r.POST("/login", func(c *gin.Context) {
+        var json Login
+        if err := c.ShouldBindJSON(&json); err != nil {
+            c.JSON(400, gin.H{"error": err.Error()})
+            return
+        }
+        if json.User == "admin" && json.Password == "admin" {
+            c.JSON(200, gin.H{"status": "you are logged in"})
+        } else {
+            c.JSON(401, gin.H{"status": "unauthorized"})
+        }
+    })
+}
 ```
 
 #### 4 返回响应
@@ -141,6 +164,7 @@ Gin 提供了多种方式返回响应，包括字符串、JSON、XML等格式。
 
 通过 `c.String` 返回字符串：
 ```go
+r := gin.Default()
 r.GET("/string", func(c *gin.Context) {
     c.String(200, "Hello, %s", "Gin")
 })
@@ -150,6 +174,7 @@ r.GET("/string", func(c *gin.Context) {
 
 通过 `c.JSON` 返回 JSON：
 ```go
+r := gin.Default()
 r.GET("/json", func(c *gin.Context) {
     c.JSON(200, gin.H{
         "message": "hello world",
@@ -162,6 +187,7 @@ r.GET("/json", func(c *gin.Context) {
 
 通过 `c.XML` 返回 XML：
 ```go
+r := gin.Default()
 r.GET("/xml", func(c *gin.Context) {
     c.XML(200, gin.H{
         "message": "hello world",
@@ -178,6 +204,7 @@ r.GET("/xml", func(c *gin.Context) {
 
 通过 `c.AbortWithStatus` 或 `c.AbortWithStatusJSON` 返回错误状态码：
 ```go
+r := gin.Default()
 r.GET("/abort", func(c *gin.Context) {
     c.AbortWithStatusJSON(401, gin.H{"status": "unauthorized"})
 })
@@ -211,6 +238,7 @@ Gin 提供了 `Logger` 和 `Recovery` 中间件，用于日志记录和异常恢
 默认启用日志中间件：
 ```go
 r := gin.Default() // 包含 Logger 中间件
+r.GET("/ping", func(c *gin.Context) {})
 ```
 
 ##### 6.2 恢复中间件
@@ -218,10 +246,12 @@ r := gin.Default() // 包含 Logger 中间件
 默认启用恢复中间件，处理未捕获的异常：
 ```go
 r := gin.Default() // 包含 Recovery 中间件
+r.GET("/ping", func(c *gin.Context) {})
 ```
 
 也可以单独使用：
 ```go
+r := gin.New()
 r.Use(gin.Recovery())
 ```
 

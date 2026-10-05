@@ -11,14 +11,22 @@
 通道用 `make` 初始化：
 
 ```go
-// 声明一个整型通道
-var c chan int
+package main
 
-// 使用 make 函数初始化通道
-c = make(chan int)
+import "fmt"
 
-// 也可以直接声明并初始化通道
-c := make(chan int)
+func main() {
+    // 声明一个整型通道
+    var c chan int
+
+    // 使用 make 函数初始化通道
+    c = make(chan int)
+
+    // 也可以直接声明并初始化通道
+    d := make(chan int)
+
+    fmt.Println(c, d)
+}
 ```
 
 ### 1.1.3 发送和接收数据
@@ -26,11 +34,20 @@ c := make(chan int)
 通道使用操作符 `<-` 进行数据的发送和接收：
 
 ```go
-// 发送数据到通道
-c <- 42
+package main
 
-// 从通道接收数据
-value := <-c
+import "fmt"
+
+func main() {
+    c := make(chan int, 1)
+
+    // 发送数据到通道
+    c <- 42
+
+    // 从通道接收数据
+    value := <-c
+    fmt.Println(value)
+}
 ```
 
 放到 goroutine 里跑一遍：
@@ -119,7 +136,7 @@ func main() {
 
 ### 1.3.2 死锁示例
 
-把发送放在主 goroutine、又没有第二个 goroutine 来接收，程序会卡死在 `c <- 1`：
+把发送放在主 goroutine、又没有第二个 goroutine 来接收，主 goroutine 会永远阻塞在 `c <- 1`。Go 运行时检测到所有 goroutine 都在等待，会直接报 fatal error 退出：
 
 ```go
 package main
@@ -129,6 +146,17 @@ func main() {
     c <- 1 // 死锁：主 Goroutine 阻塞在发送操作，没有其他 Goroutine 接收数据
 }
 ```
+
+运行输出：
+
+```plaintext
+fatal error: all goroutines are asleep - deadlock!
+
+goroutine 1 [chan send]:
+main.main()
+```
+
+（完整输出还带有 goroutine 堆栈的文件路径与行号。）
 
 ### 1.3.3 解决死锁的方法
 

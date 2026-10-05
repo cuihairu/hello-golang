@@ -30,12 +30,18 @@ re, err := regexp.Compile(`(abc`)
 if err != nil {
     fmt.Println("Regex compilation error:", err)
 }
+_ = re // 编译失败时 re 为 nil，此处仅占位
 ```
 
 **3.2 使用测试用例验证正则表达式**
 - 编写测试用例来验证正则表达式的行为是否符合预期。包括匹配正确的输入和处理不匹配的输入。
 
 ```go
+import (
+    "regexp"
+    "testing"
+)
+
 func TestRegex(t *testing.T) {
     re := regexp.MustCompile(`\d+`)
     matches := re.FindString("123abc")

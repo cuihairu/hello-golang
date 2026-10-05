@@ -85,6 +85,7 @@ Redis 流（Streams）的底层实现是基于一个链表结构和散列结构�
 
    import (
        "context"
+       "fmt"
 
        "github.com/go-redis/redis/v8"
    )

@@ -217,10 +217,6 @@
         "link": "/type/Ring"
       },
       {
-        "text": "栈",
-        "link": "/type/Heap"
-      },
-      {
         "text": "Json",
         "link": "/type/Json"
       },

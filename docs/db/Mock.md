@@ -86,6 +86,11 @@ type User struct {
 
 1. 创建测试数据库并重置状态：
 ```go
+import (
+    "database/sql"
+    "testing"
+)
+
 func setupTestDB(t *testing.T) *sql.DB {
     db, err := sql.Open("mysql", "user:password@tcp(localhost:3306)/testdb")
     if err != nil {
@@ -103,6 +108,22 @@ func setupTestDB(t *testing.T) *sql.DB {
 
 2. 编写测试用例：
 ```go
+import (
+    "database/sql"
+    "testing"
+)
+
+func InsertUser(db *sql.DB, user *User) error {
+    result, err := db.Exec("INSERT INTO users (name, email) VALUES (?, ?)", user.Name, user.Email)
+    if err != nil {
+        return err
+    }
+    if id, err := result.LastInsertId(); err == nil {
+        user.ID = int(id)
+    }
+    return nil
+}
+
 func TestInsertUser(t *testing.T) {
     db := setupTestDB(t)
     defer db.Close()
@@ -146,6 +167,16 @@ func prepareTestData(db *sql.DB) error {
 
 2. 执行集成测试：
 ```go
+import (
+    "database/sql"
+    "testing"
+)
+
+func UpdateUser(db *sql.DB, user *User) error {
+    _, err := db.Exec("UPDATE users SET name = ?, email = ? WHERE id = ?", user.Name, user.Email, user.ID)
+    return err
+}
+
 func TestUpdateUser(t *testing.T) {
     db := setupTestDB(t)
     defer db.Close()

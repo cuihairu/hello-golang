@@ -15,12 +15,11 @@ package main
 
 import (
 	"log"
-	"os"
 )
 
 func main() {
 	log.Println("This is a log message")
-	
+
 	// 自定义配置
 	log.SetPrefix("INFO: ")
 	log.SetFlags(log.Ldate | log.Ltime | log.Lshortfile)
@@ -39,7 +38,7 @@ import (
 )
 
 func main() {
-	logger := slog.New(slog.NewJSONHandler(os.Stdout))
+	logger := slog.New(slog.NewJSONHandler(os.Stdout, nil))
 	logger.Info("This is a log message")
 }
 ```
@@ -49,18 +48,40 @@ func main() {
 ###### `log` 包
 
 ```go
-log.Println("This is a log message")
-log.Printf("This is a formatted log message: %d", 42)
-log.Fatal("This is a fatal log message") // 会调用 os.Exit(1)
-log.Panic("This is a panic log message") // 会调用 panic()
+package main
+
+import "log"
+
+func main() {
+	log.Println("This is a log message")
+	log.Printf("This is a formatted log message: %d", 42)
+
+	// log.Fatal / log.Panic 会调用 os.Exit(1) / panic() 终止程序，
+	// 这里注释掉，避免示例运行中途退出。
+	// log.Fatal("This is a fatal log message")
+	// log.Panic("This is a panic log message")
+}
 ```
 
 ###### `slog` 包
 
 ```go
-logger.Info("This is an info message")
-logger.Warn("This is a warning message")
-logger.Error("This is an error message", slog.Any("error", err))
+package main
+
+import (
+	"errors"
+	"log/slog"
+	"os"
+)
+
+func main() {
+	err := errors.New("example failure")
+	logger := slog.New(slog.NewJSONHandler(os.Stdout, nil))
+
+	logger.Info("This is an info message")
+	logger.Warn("This is a warning message")
+	logger.Error("This is an error message", slog.Any("error", err))
+}
 ```
 
 ##### 2.3 日志输出格式
@@ -75,8 +96,17 @@ log.Println("This is a log message with custom format")
 ###### `slog` 包
 
 ```go
-logger := slog.New(slog.NewJSONHandler(os.Stdout))
-logger.Info("This is a log message in JSON format")
+package main
+
+import (
+	"log/slog"
+	"os"
+)
+
+func main() {
+	logger := slog.New(slog.NewJSONHandler(os.Stdout, nil))
+	logger.Info("This is a log message in JSON format")
+}
 ```
 
 #### 3. 日志级别
@@ -89,9 +119,7 @@ logger.Info("This is a log message in JSON format")
 package main
 
 import (
-	"fmt"
 	"log"
-	"os"
 )
 
 type Level int
@@ -122,9 +150,20 @@ func main() {
 `slog` 包支持内置的日志级别。
 
 ```go
-logger.Info("This is an info message")
-logger.Warn("This is a warning message")
-logger.Error("This is an error message")
+package main
+
+import (
+	"log/slog"
+	"os"
+)
+
+func main() {
+	logger := slog.New(slog.NewJSONHandler(os.Stdout, nil))
+
+	logger.Info("This is an info message")
+	logger.Warn("This is a warning message")
+	logger.Error("This is an error message")
+}
 ```
 
 #### 4. 输出重定向
@@ -145,14 +184,24 @@ log.Println("This message is written to the log file")
 ###### `slog` 包
 
 ```go
-logFile, err := os.OpenFile("app.log", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0666)
-if err != nil {
-	log.Fatal(err)
-}
-defer logFile.Close()
+package main
 
-logger := slog.New(slog.NewJSONHandler(logFile))
-logger.Info("This message is written to the log file")
+import (
+	"log"
+	"log/slog"
+	"os"
+)
+
+func main() {
+	logFile, err := os.OpenFile("app.log", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0666)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer logFile.Close()
+
+	logger := slog.New(slog.NewJSONHandler(logFile, nil))
+	logger.Info("This message is written to the log file")
+}
 ```
 
 #### 5. 日志前缀和标志
@@ -170,8 +219,17 @@ log.Println("This is a log message with prefix and flags")
 `slog` 包没有前缀的概念，但可以通过添加字段实现类似功能。
 
 ```go
-logger := slog.New(slog.NewJSONHandler(os.Stdout))
-logger.Info("This is a log message", slog.String("prefix", "INFO"))
+package main
+
+import (
+	"log/slog"
+	"os"
+)
+
+func main() {
+	logger := slog.New(slog.NewJSONHandler(os.Stdout, nil))
+	logger.Info("This is a log message", slog.String("prefix", "INFO"))
+}
 ```
 
 #### 6. 日志轮转
@@ -217,7 +275,7 @@ func main() {
 		MaxSize:    10, // megabytes
 		MaxBackups: 3,
 		MaxAge:     28, //days
-	}))
+	}, nil))
 	logger.Info("This is a log message with log rotation")
 }
 ```
@@ -263,7 +321,7 @@ import (
 )
 
 func main() {
-	logger := slog.New(slog.NewJSONHandler(os.Stdout))
+	logger := slog.New(slog.NewJSONHandler(os.Stdout, nil))
 
 	var wg sync.WaitGroup
 	for i := 0; i < 10; i++ {
@@ -286,7 +344,6 @@ package logutil
 
 import (
 	"log"
-	"os"
 	"gopkg.in/natefinch/lumberjack.v2"
 )
 

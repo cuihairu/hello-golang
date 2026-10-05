@@ -20,16 +20,19 @@
      ```go
      arr := [5]int{1, 2, 3, 4, 5}
      slice := arr[1:4] // 创建一个从数组中切出的切片
+     fmt.Println(slice) // [2 3 4]
      ```
    - **使用 `make` 函数创建**：
      ```go
      slice := make([]int, 3) // 创建一个长度为 3 的切片，容量默认为 3
      slice = make([]int, 3, 5) // 创建一个长度为 3，容量为 5 的切片
+     fmt.Println(slice, len(slice), cap(slice)) // [0 0 0] 3 5
      ```
    - **从已有切片创建**：
      ```go
      s1 := []int{1, 2, 3}
      s2 := s1[1:3] // 创建一个从已有切片中切出的切片
+     fmt.Println(s2) // [2 3]
      ```
 
 ### 切片的操作
@@ -67,6 +70,7 @@
      ```go
      slice := []int{1, 2, 3, 4, 5}
      subSlice := slice[1:4] // 从索引 1 到 3（不包括 4）
+     fmt.Println(subSlice) // [2 3 4]
      ```
 
 ### 切片的性能

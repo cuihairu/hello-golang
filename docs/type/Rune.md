@@ -5,9 +5,12 @@
 你可以通过以下方式声明和初始化一个 `rune` 类型的变量：
 
 ```go
-var r rune           // 声明但未初始化，默认值为 0
-var r1 rune = 'A'    // 声明并初始化为字符 'A'
-r2 := '世'           // 简短声明并初始化为字符 '世'
+func main() {
+    var r rune           // 声明但未初始化，默认值为 0
+    var r1 rune = 'A'    // 声明并初始化为字符 'A'
+    r2 := '世'           // 简短声明并初始化为字符 '世'
+    fmt.Println(r, r1, r2)
+}
 ```
 
 ### 用途和示例
@@ -17,13 +20,15 @@ r2 := '世'           // 简短声明并初始化为字符 '世'
 `rune` 类型常用于表示字符，包括 ASCII 字符和非 ASCII 字符：
 
 ```go
-var char rune = 'A'
-fmt.Println(char)          // 输出: 65 (字符 'A' 的 Unicode 码点)
-fmt.Printf("%c\n", char)   // 输出: A
+func main() {
+    var char rune = 'A'
+    fmt.Println(char)          // 输出: 65 (字符 'A' 的 Unicode 码点)
+    fmt.Printf("%c\n", char)   // 输出: A
 
-var chineseChar rune = '世'
-fmt.Println(chineseChar)          // 输出: 19990 (字符 '世' 的 Unicode 码点)
-fmt.Printf("%c\n", chineseChar)   // 输出: 世
+    var chineseChar rune = '世'
+    fmt.Println(chineseChar)          // 输出: 19990 (字符 '世' 的 Unicode 码点)
+    fmt.Printf("%c\n", chineseChar)   // 输出: 世
+}
 ```
 
 #### 字符串中的 Unicode 字符
@@ -66,6 +71,7 @@ for _, r := range runes {
 也可以将 `[]rune` 转换回字符串：
 
 ```go
+runes := []rune("Hello, 世界")
 s2 := string(runes)
 fmt.Println(s2)  // 输出: Hello, 世界
 ```

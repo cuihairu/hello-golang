@@ -33,6 +33,12 @@ func GetUserByEmail(db *sql.DB, email string) (*User, error) {
     }
     return user, nil
 }
+
+type User struct {
+    ID    int
+    Name  string
+    Email string
+}
 ```
 
 - **输入验证**：对用户输入的数据进行严格验证，确保数据符合预期的格式和范围。
@@ -57,14 +63,28 @@ func validateEmail(email string) error {
 
 ##### 示例：配置MySQL SSL连接
 ```go
-dsn := "user:password@tcp(localhost:3306)/dbname?tls=custom"
-mysql.RegisterTLSConfig("custom", &tls.Config{
-    InsecureSkipVerify: true,
-    ServerName:         "localhost",
-})
-db, err := sql.Open("mysql", dsn)
-if err != nil {
-    log.Fatal(err)
+package main
+
+import (
+    "crypto/tls"
+    "database/sql"
+    "log"
+
+    "github.com/go-sql-driver/mysql"
+)
+
+func main() {
+    dsn := "user:password@tcp(localhost:3306)/dbname?tls=custom"
+    mysql.RegisterTLSConfig("custom", &tls.Config{
+        InsecureSkipVerify: true,
+        ServerName:         "localhost",
+    })
+
+    db, err := sql.Open("mysql", dsn)
+    if err != nil {
+        log.Fatal(err)
+    }
+    defer db.Close()
 }
 ```
 

@@ -63,6 +63,8 @@ func (p *Pool[T]) Put(item T) {
 
 示例：
 ```go
+import "testing"
+
 func BenchmarkGeneric(b *testing.B) {
     for i := 0; i < b.N; i++ {
         // 执行泛型操作

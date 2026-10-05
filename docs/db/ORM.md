@@ -36,10 +36,15 @@ import (
 
 func main() {
     dsn := "user:password@tcp(127.0.0.1:3306)/dbname?charset=utf8mb4&parseTime=True&loc=Local"
-    db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
+    // SkipInitializeWithVersion 跳过建连时的 SELECT VERSION()，DisableAutomaticPing 让连接推迟到首次使用
+    db, err := gorm.Open(mysql.New(mysql.Config{
+        DSN:                       dsn,
+        SkipInitializeWithVersion: true,
+    }), &gorm.Config{DisableAutomaticPing: true})
     if err != nil {
         log.Fatal(err)
     }
+    _ = db
 }
 ```
 

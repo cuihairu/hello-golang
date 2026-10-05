@@ -25,6 +25,7 @@
 
    ```go
    var count int = 100
+   fmt.Println(count)
    ```
 
 2. **需要特定大小整数 (`int8`, `int16` 等)**：
@@ -33,6 +34,7 @@
 
    ```go
    var buffer [1024]uint8
+   fmt.Println(len(buffer))
    ```
 
 3. **无符号整数 (`uint` 系列)**：
@@ -41,6 +43,7 @@
 
    ```go
    var packetSize uint32 = 1024
+   fmt.Println(packetSize)
    ```
 
 4. **大整数 (`int64` 和 `uint64`)**：
@@ -49,6 +52,7 @@
 
    ```go
    var fileSize int64 = 2147483648
+   fmt.Println(fileSize)
    ```
 
 ### 注意事项
@@ -72,8 +76,15 @@ var y int64 = int64(x)
 对于有符号整数类型（如 `int8`, `int16`, `int32`, `int64` 和 `int`），溢出会导致结果超出该类型的取值范围，这可能会导致意料之外的结果。
 
 ```go
-var x int8 = 127
-x = x + 1  // 溢出，结果为 -128
+package main
+
+import "fmt"
+
+func main() {
+    var x int8 = 127
+    x = x + 1 // 溢出，结果为 -128
+    fmt.Println(x)
+}
 ```
 
 在上面的例子中，`int8` 类型的范围是 `-128` 到 `127`，当 `x` 值为 `127` 时，再加 `1` 将导致溢出，`x` 的值变为 `-128`。
@@ -83,8 +94,15 @@ x = x + 1  // 溢出，结果为 -128
 对于无符号整数类型（如 `uint8`, `uint16`, `uint32`, `uint64` 和 `uint`），溢出会导致结果超出该类型的取值范围，这种情况下结果会回环（wrap around）到该类型的最小值。
 
 ```go
-var y uint8 = 255
-y = y + 1  // 溢出，结果为 0
+package main
+
+import "fmt"
+
+func main() {
+    var y uint8 = 255
+    y = y + 1 // 溢出，结果为 0
+    fmt.Println(y)
+}
 ```
 
 在上面的例子中，`uint8` 类型的范围是 `0` 到 `255`，当 `y` 值为 `255` 时，再加 `1` 将导致溢出，`y` 的值变为 `0`。
@@ -99,15 +117,23 @@ y = y + 1  // 溢出，结果为 0
 
 3. **使用额外的逻辑处理**：在处理可能导致溢出的场景时，考虑使用条件语句或其他逻辑来确保操作安全。
 
-4. **显式处理溢出**：某些情况下可以使用标准库中的函数（如 `math` 包中的函数）来处理可能的溢出情况，或者考虑使用 `math` 包中的 `IntAdd`、`IntSub` 等函数来进行整数运算，它们提供了溢出检查和处理。
+4. **显式处理溢出**：无符号整数的加减可以用标准库 `math/bits` 包的 `Add`、`Add32`、`Add64` 等函数，它们通过额外的进位/借位返回值标出溢出；有符号整数没有对应的库函数，需要在运算前后比较数值或估算边界来判断。
 
 ```go
-import "math"
+package main
 
-var x int8 = 127
-x, overflow := math.IntAdd(int64(x), 1)
-if overflow {
-    // 处理溢出情况
+import (
+    "fmt"
+    "math/bits"
+)
+
+func main() {
+    var x uint32 = 4294967295 // 2^32 - 1
+    sum, carry := bits.Add32(x, 1, 0)
+    if carry == 1 {
+        // 处理溢出情况
+    }
+    fmt.Println("sum:", sum, "carry:", carry)
 }
 ```
 

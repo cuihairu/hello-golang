@@ -109,6 +109,8 @@ $$
 
 - **示例**：
   ```go
+  package main
+
   import (
       "fmt"
       "math"

@@ -44,7 +44,15 @@ Hello, World!
 使用 <code v-pre>{{.}}</code> 访问传入的数据。可以通过 <code v-pre>{{.Field}}</code> 访问结构体字段。
 
 ```go
-tmpl, err := template.New("example").Parse("Name: {{.Name}}, Age: {{.Age}}")
+package main
+
+import "text/template"
+
+func main() {
+    tmpl, err := template.New("example").Parse("Name: {{.Name}}, Age: {{.Age}}")
+    _ = tmpl
+    _ = err
+}
 ```
 
 #### 条件语句
@@ -52,7 +60,15 @@ tmpl, err := template.New("example").Parse("Name: {{.Name}}, Age: {{.Age}}")
 使用 `if` 语句进行条件判断。
 
 ```go
-tmpl, err := template.New("example").Parse(`{{if .Active}}User is active{{else}}User is inactive{{end}}`)
+package main
+
+import "text/template"
+
+func main() {
+    tmpl, err := template.New("example").Parse(`{{if .Active}}User is active{{else}}User is inactive{{end}}`)
+    _ = tmpl
+    _ = err
+}
 ```
 
 #### 循环语句
@@ -60,7 +76,15 @@ tmpl, err := template.New("example").Parse(`{{if .Active}}User is active{{else}}
 使用 `range` 语句进行循环。
 
 ```go
-tmpl, err := template.New("example").Parse(`{{range .Items}}{{.}}, {{end}}`)
+package main
+
+import "text/template"
+
+func main() {
+    tmpl, err := template.New("example").Parse(`{{range .Items}}{{.}}, {{end}}`)
+    _ = tmpl
+    _ = err
+}
 ```
 
 #### 管道（Pipe）
@@ -68,7 +92,15 @@ tmpl, err := template.New("example").Parse(`{{range .Items}}{{.}}, {{end}}`)
 管道用于将一个命令的输出作为下一个命令的输入。
 
 ```go
-tmpl, err := template.New("example").Parse(`{{.Name | printf "Hello, %s!"}}`)
+package main
+
+import "text/template"
+
+func main() {
+    tmpl, err := template.New("example").Parse(`{{.Name | printf "Hello, %s!"}}`)
+    _ = tmpl
+    _ = err
+}
 ```
 
 ### 3. 模板函数
@@ -78,7 +110,15 @@ tmpl, err := template.New("example").Parse(`{{.Name | printf "Hello, %s!"}}`)
 #### 使用内置函数
 
 ```go
-tmpl, err := template.New("example").Parse(`{{printf "Hello, %s!" .Name}}`)
+package main
+
+import "text/template"
+
+func main() {
+    tmpl, err := template.New("example").Parse(`{{printf "Hello, %s!" .Name}}`)
+    _ = tmpl
+    _ = err
+}
 ```
 
 ### 4. 自定义函数
@@ -92,6 +132,7 @@ package main
 
 import (
     "os"
+    "strings"
     "text/template"
 )
 

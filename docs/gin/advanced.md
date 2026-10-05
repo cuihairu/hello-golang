@@ -19,7 +19,7 @@ GORM 把数据库表映射成 Go 结构体（模型），`gorm.Open` 建立连�
       "gorm.io/driver/mysql"
       "gorm.io/gorm"
   )
-  
+
   func SetupDatabase() *gorm.DB {
       dsn := "user:password@tcp(127.0.0.1:3306)/dbname"
       db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
@@ -82,6 +82,8 @@ JWT（JSON Web Token）是一种常用的认证机制：服务端签发 token，
 
 - **解析 JWT**：
   ```go
+  import "github.com/golang-jwt/jwt/v5"
+
   func ParseToken(tokenStr string) (*jwt.Token, error) {
       return jwt.Parse(tokenStr, func(token *jwt.Token) (interface{}, error) {
           return []byte("secret"), nil
@@ -103,7 +105,7 @@ JWT（JSON Web Token）是一种常用的认证机制：服务端签发 token，
           c.Next()
       }
   }
-  
+
   func main() {
       r := gin.Default()
       r.Use(AuthMiddleware())
@@ -144,7 +146,7 @@ WebSocket 用于实时通信：先通过 HTTP 完成协议升级，之后双方�
           return true
       },
   }
-  
+
   func WebSocketHandler(c *gin.Context) {
       conn, err := upgrader.Upgrade(c.Writer, c.Request, nil)
       if err != nil {
@@ -160,7 +162,7 @@ WebSocket 用于实时通信：先通过 HTTP 完成协议升级，之后双方�
           conn.WriteMessage(msgType, msg)
       }
   }
-  
+
   func main() {
       r := gin.Default()
       r.GET("/ws", WebSocketHandler)

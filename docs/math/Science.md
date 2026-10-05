@@ -119,6 +119,8 @@
 
 - **示例**（Go中使用线性代数）：
   ```go
+  package main
+
   import (
       "fmt"
       "gonum.org/v1/gonum/mat"
@@ -148,6 +150,8 @@
 
 - **示例**（Go中使用哈希函数）：
   ```go
+  package main
+
   import (
       "crypto/sha256"
       "fmt"
