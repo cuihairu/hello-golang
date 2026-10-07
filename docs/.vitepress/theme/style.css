@@ -142,3 +142,10 @@ body {
   font-size: 0.875rem;
   line-height: 1.7;
 }
+
+/* hero 名用纯品牌色,不用 VitePress 默认渐变名 */
+:root {
+  --vp-home-hero-name-color: var(--vp-c-brand-1);
+  --vp-home-hero-name-background: transparent;
+}
+
