@@ -1,10 +1,15 @@
 <div align="center">
 
-<p align="center"><img src="docs/public/logo.svg" width="64" height="64" alt="logo" /> <img src="docs/public/badges/langs.svg" alt="languages" /></p>
+<p align="center"><img src="docs/public/logo.svg" width="64" height="64" alt="logo" /> </p>
 
 # Hello Golang
-<p align="center"><img src="docs/public/badges/topic.svg" alt="topic" /> <img src="docs/public/badges/docs.svg" alt="docs" />
- <img src="docs/public/badges/license.svg" alt="CC BY 4.0" /></p>
+
+<p align="center">
+  <img src="docs/public/badges/topic.svg" alt="topic" />
+  <img src="docs/public/badges/docs.svg" alt="docs" />
+  <img src="docs/public/badges/license.svg" alt="license" />
+  <img src="docs/public/badges/langs.svg" alt="langs" />
+</p>
 
 Go 语言知识体系 · [在线阅读](https://cuihairu.github.io/hello-golang/)
 
