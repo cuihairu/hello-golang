@@ -1564,10 +1564,8 @@
         ]
       },
       {
-        "text": "图"
-      },
-      {
-        "text": "搜索"
+        "text": "图",
+        "link": "/algo/Graph"
       },
       {
         "text": "排序",
@@ -1627,18 +1625,6 @@
             "link": "/algo/sort/CocktailSort"
           }
         ]
-      },
-      {
-        "text": "分治"
-      },
-      {
-        "text": "回溯"
-      },
-      {
-        "text": "动态规划"
-      },
-      {
-        "text": "贪心"
       },
       {
         "text": "算法篇去留清单",
