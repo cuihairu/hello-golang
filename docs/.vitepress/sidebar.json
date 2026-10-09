@@ -1279,10 +1279,16 @@
     "collapsed": true,
     "items": [
       {
-        "text": "syscall"
+        "text": "syscall",
+        "link": "/sys/Syscall"
       },
       {
-        "text": "unsafe"
+        "text": "unsafe",
+        "link": "/sys/Unsafe"
+      },
+      {
+        "text": "plugin",
+        "link": "/sys/Plugin"
       }
     ]
   },
@@ -1324,10 +1330,8 @@
         "link": "/net/Concurrence"
       },
       {
-        "text": "网络安全"
-      },
-      {
-        "text": "网络编程工具与库"
+        "text": "网络安全",
+        "link": "/security/Security"
       },
       {
         "text": "滑动窗口",
@@ -1374,7 +1378,8 @@
     "collapsed": true,
     "items": [
       {
-        "text": "plugin"
+        "text": "plugin",
+        "link": "/sys/Plugin"
       }
     ]
   },
@@ -1771,7 +1776,8 @@
     ]
   },
   {
-    "text": "web开发"
+    "text": "web开发",
+    "link": "/gin/Gin"
   },
   {
     "text": "Gin框架",
