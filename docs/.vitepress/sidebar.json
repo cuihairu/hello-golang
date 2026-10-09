@@ -1356,54 +1356,16 @@
     "collapsed": true,
     "items": [
       {
-        "text": "Go内存管理概述"
-      },
-      {
-        "text": "arena"
-      },
-      {
-        "text": "Go内存分配机制"
-      },
-      {
-        "text": "Go的内存分配器架构"
-      },
-      {
-        "text": "mcache: Go的本地内存缓存"
-      },
-      {
-        "text": "中心缓存"
-      },
-      {
-        "text": "堆内存分配"
-      },
-      {
         "text": "GC",
         "link": "/gc/GC"
       },
       {
+        "text": "诊断与实践",
+        "link": "/alloc/Practice"
+      },
+      {
         "text": "Go内存模型",
         "link": "/gc/MemoryModel"
-      },
-      {
-        "text": "GC对内存分配的影响"
-      },
-      {
-        "text": "GC与内存分配器的协同"
-      },
-      {
-        "text": "内存分配的性能优化"
-      },
-      {
-        "text": "内存分配问题的诊断和解决"
-      },
-      {
-        "text": "自定义内存分配器"
-      },
-      {
-        "text": "内存分配器与系统资源管理"
-      },
-      {
-        "text": "内存分配的安全性"
       }
     ]
   },
