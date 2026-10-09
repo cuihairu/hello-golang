@@ -782,28 +782,12 @@
     "collapsed": true,
     "items": [
       {
-        "text": "bytes"
+        "text": "regexp",
+        "link": "/regex/Readme"
       },
       {
-        "text": "strings 字符串操作"
-      },
-      {
-        "text": "strconv"
-      },
-      {
-        "text": "text 文本处理工具"
-      },
-      {
-        "text": "regexp"
-      },
-      {
-        "text": "unicode 字符操作"
-      },
-      {
-        "text": "bufio"
-      },
-      {
-        "text": "image"
+        "text": "bufio",
+        "link": "/io/IO"
       }
     ]
   },
@@ -1297,12 +1281,6 @@
     "collapsed": true,
     "items": [
       {
-        "text": "crypto 加密原语"
-      },
-      {
-        "text": "tls TLS协议"
-      },
-      {
         "text": "官方安全口径与crypto库",
         "link": "/security/Security"
       }
@@ -1686,90 +1664,6 @@
           {
             "text": "Apache Kafka",
             "link": "/middleware/ApacheKafka"
-          },
-          {
-            "text": "RabbitMQ"
-          },
-          {
-            "text": "Apache ActiveMQ"
-          },
-          {
-            "text": "Amazon SQS"
-          }
-        ]
-      },
-      {
-        "text": "流处理平台",
-        "collapsed": true,
-        "items": [
-          {
-            "text": "流处理平台概述"
-          },
-          {
-            "text": "Apache Flink"
-          },
-          {
-            "text": "Apache Storm"
-          },
-          {
-            "text": "Apache Samza"
-          },
-          {
-            "text": "Google Dataflow"
-          }
-        ]
-      },
-      {
-        "text": "数据库和数据存储系统",
-        "collapsed": true,
-        "items": [
-          {
-            "text": "数据库和数据存储系统概述"
-          },
-          {
-            "text": "Apache Pulsar"
-          },
-          {
-            "text": "Redis Streams"
-          },
-          {
-            "text": "Amazon Kinesis"
-          },
-          {
-            "text": "Apache HBase"
-          }
-        ]
-      },
-      {
-        "text": "日志处理系统",
-        "collapsed": true,
-        "items": [
-          {
-            "text": "日志处理系统概述"
-          },
-          {
-            "text": "Elasticsearch"
-          },
-          {
-            "text": "Logstash"
-          },
-          {
-            "text": "Fluentd"
-          }
-        ]
-      },
-      {
-        "text": "事件流平台",
-        "collapsed": true,
-        "items": [
-          {
-            "text": "事件流平台概述"
-          },
-          {
-            "text": "NATS"
-          },
-          {
-            "text": "Apache Kafka Streams"
           }
         ]
       }
