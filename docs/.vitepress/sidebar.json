@@ -1402,19 +1402,8 @@
     "collapsed": true,
     "items": [
       {
-        "text": "Plan9 汇编基础"
-      },
-      {
-        "text": "Plan9 汇编语法"
-      },
-      {
-        "text": "Plan9的系统架构与汇编"
-      },
-      {
-        "text": "编写Plan9程序"
-      },
-      {
-        "text": "Plan9汇编中的数据处理"
+        "text": "编写 Plan9 程序",
+        "link": "/asm/Program"
       }
     ]
   },
