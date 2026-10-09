@@ -11,10 +11,27 @@ Go 语言中的通道（channel）是 goroutine 之间传递数据的机制，�
 - 无缓冲通道：`ch := make(chan int)`
 - 有缓冲通道：`ch := make(chan int, 10)`  // 容量为 10
 
+只声明不初始化的通道是零值 `nil`。对 nil 通道发送和接收都会永久阻塞，`close` 它会 panic（见下文关闭一节）。
+
 ### 发送和接收
 
 - 发送：`ch <- value`
 - 接收：`value := <-ch`
+
+### 阻塞行为
+
+无缓冲通道的发送要等接收方就位，接收要等发送方就位；带缓冲通道在缓冲区有空位时不阻塞发送，有数据时不阻塞接收。逐条列出来：
+
+| 通道类型 | 操作 | 对端状态 | 是否阻塞 |
+| --- | --- | --- | --- |
+| 无缓冲 | 发送 | 有接收方 | 不阻塞 |
+| 无缓冲 | 发送 | 无接收方 | 阻塞 |
+| 无缓冲 | 接收 | 有发送方 | 不阻塞 |
+| 无缓冲 | 接收 | 无发送方 | 阻塞 |
+| 带缓冲 | 发送 | 缓冲区未满 | 不阻塞 |
+| 带缓冲 | 发送 | 缓冲区已满 | 阻塞 |
+| 带缓冲 | 接收 | 缓冲区非空 | 不阻塞 |
+| 带缓冲 | 接收 | 缓冲区为空 | 阻塞 |
 
 ### 关闭通道
 
@@ -120,6 +137,32 @@ func main() {
 在这个示例中，`safeClose` 函数通过 `recover` 捕获 `panic` 并返回一个布尔值，表示通道是否已经关闭。
 
 
+### 死锁
+
+发送和接收没有配对时，等待的一方会被永远挂住。主 goroutine 发了一个没人收的值，运行时检测到所有 goroutine 都在睡眠，直接报 fatal error 退出：
+
+```go
+package main
+
+func main() {
+    c := make(chan int)
+    c <- 1 // 阻塞在发送上，没有其他 goroutine 来接收
+}
+```
+
+运行输出：
+
+```plaintext
+fatal error: all goroutines are asleep - deadlock!
+
+goroutine 1 [chan send]:
+main.main()
+```
+
+（完整输出还带 goroutine 堆栈的文件路径与行号。）
+
+解法就是让收发配对：把发送放进另一个 goroutine，或者给通道加缓冲，或者用 `select` 在多个操作之间换道，或者用 `range` 消费完再退出。这些写法上文各节都有。
+
 ### 通道操作示例
 
 ```go
@@ -203,6 +246,32 @@ func main() {
 }
 ```
 
+### 单向通道
+
+类型写成 `chan<- int` 的通道只能发送，写成 `<-chan int` 的只能接收。函数参数用单向类型，可以限定调用方只能收或只能发：
+
+```go
+package main
+
+import "fmt"
+
+func sendOnly(c chan<- int) {
+    c <- 1
+}
+
+func receiveOnly(c <-chan int) {
+    fmt.Println(<-c)
+}
+
+func main() {
+    c := make(chan int)
+    go sendOnly(c)
+    receiveOnly(c)
+}
+```
+
+双向通道可以隐式转成单向，反过来不行。
+
 ### 范例：生产者-消费者模式
 
 ```go
@@ -241,6 +310,48 @@ func main() {
     wg.Wait()
 }
 ```
+
+### 范例：工作池
+
+固定数量的 worker 从同一个 `jobs` 通道领任务，结果写进 `results` 通道，主 goroutine 收结果：
+
+```go
+package main
+
+import (
+    "fmt"
+    "time"
+)
+
+func worker(id int, jobs <-chan int, results chan<- int) {
+    for j := range jobs {
+        fmt.Printf("Worker %d started job %d\n", id, j)
+        time.Sleep(time.Second)
+        fmt.Printf("Worker %d finished job %d\n", id, j)
+        results <- j * 2
+    }
+}
+
+func main() {
+    jobs := make(chan int, 100)
+    results := make(chan int, 100)
+
+    for w := 1; w <= 3; w++ {
+        go worker(w, jobs, results)
+    }
+
+    for j := 1; j <= 5; j++ {
+        jobs <- j
+    }
+    close(jobs)
+
+    for a := 1; a <= 5; a++ {
+        fmt.Println(<-results)
+    }
+}
+```
+
+`close(jobs)` 之后，worker 的 `range` 循环在任务取完时自动结束。
 
 ### 底层实现原理
 

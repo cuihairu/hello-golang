@@ -66,6 +66,149 @@ func main() {
 3. **竞态条件**：共享资源没有同步保护就会出现，用 `go test -race` 检测。
 4. **调度问题**：高负载下调度和上下文切换会拖慢程序，用性能分析工具定位。
 
+### 5. 栈与调度
+
+goroutine 的栈初始很小（约 2KB），按需增长，上限量级是 1GB，绝大多数程序用不满，这是它比操作系统线程轻的主要原因。运行时调度器把大量 goroutine 复用到少量线程上，映射关系对使用者透明。
+
+有一个必须记住的行为：主 goroutine 退出时，其余 goroutine 会被立即终止，不管它们跑没跑完。所以启动后台 goroutine 后，主 goroutine 要等它们，用通道或 `sync.WaitGroup` 都能实现。
+
+### 6. 用通道等待 goroutine
+
+```go
+package main
+
+import "fmt"
+
+func worker(done chan bool) {
+    fmt.Println("Working...")
+    done <- true
+}
+
+func main() {
+    done := make(chan bool, 1)
+    go worker(done)
+    <-done
+    fmt.Println("Done")
+}
+```
+
+主 goroutine 停在 `<-done`，直到 worker 发来完成信号。
+
+### 7. 并行计算与网络服务
+
+把数据切开，每段一个 goroutine 算，再用通道把结果汇总：
+
+```go
+package main
+
+import (
+    "fmt"
+    "sync"
+)
+
+func sum(array []int, result chan<- int, wg *sync.WaitGroup) {
+    defer wg.Done()
+    total := 0
+    for _, v := range array {
+        total += v
+    }
+    result <- total
+}
+
+func main() {
+    array := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+    result := make(chan int, 2)
+    var wg sync.WaitGroup
+
+    wg.Add(2)
+    go sum(array[:len(array)/2], result, &wg)
+    go sum(array[len(array)/2:], result, &wg)
+    wg.Wait()
+    close(result)
+
+    total := 0
+    for r := range result {
+        total += r
+    }
+    fmt.Println("Total:", total)
+}
+```
+
+网络服务里 goroutine 同样是默认形态：`net/http` 服务器对每个请求都起一个独立的 goroutine 跑 handler，业务代码不用自己管并发接待。
+
+### 8. 绑定到操作系统线程
+
+`runtime.LockOSThread` 把当前 goroutine 绑在它正在跑的线程上，`UnlockOSThread` 解绑：
+
+```go
+package main
+
+import (
+    "fmt"
+    "runtime"
+)
+
+func main() {
+    done := make(chan struct{})
+    go func() {
+        runtime.LockOSThread()
+        defer runtime.UnlockOSThread()
+        // 绑定后这个 goroutine 不会迁移到其他线程，
+        // 需要独占线程的资源（如 GUI 线程）在这里操作
+        fmt.Println("locked to one OS thread")
+        close(done)
+    }()
+    <-done
+}
+```
+
+绑定和解绑必须发生在同一个 goroutine 里，所以这两行一般写在需要独占线程的那个 goroutine 内部。
+
+### 9. 控制数量与让出调度
+
+goroutine 虽轻，数量失控照样吃内存和调度开销。要限流就用池：固定几个 worker 从通道领任务。
+
+```go
+package main
+
+import (
+    "fmt"
+    "sync"
+)
+
+func worker(id int, jobs <-chan int, wg *sync.WaitGroup) {
+    defer wg.Done()
+    for j := range jobs {
+        fmt.Printf("Worker %d: job %d\n", id, j)
+    }
+}
+
+func main() {
+    const numJobs = 5
+    jobs := make(chan int, numJobs)
+    var wg sync.WaitGroup
+
+    for w := 1; w <= 3; w++ {
+        wg.Add(1)
+        go worker(w, jobs, &wg)
+    }
+
+    for j := 1; j <= numJobs; j++ {
+        jobs <- j
+    }
+    close(jobs)
+
+    wg.Wait()
+    fmt.Println("All jobs completed.")
+}
+```
+
+`runtime.Gosched` 让当前 goroutine 主动让出 CPU 时间片给别的 goroutine；`runtime.Goexit` 终止当前 goroutine，终止前会先跑完它的 defer。
+
+### 10. 和其他语言的协程比
+
+Python 的协程靠 `async` 和 `await` 加事件循环，主要服务 I/O 密集场景，CPU 密集任务不会自动并发；Lua 的协程要手动切换；C++20 的协程（`co_await`、`co_yield`）把调度和资源管理留给开发者；C# 的 `async`/`await` 服务于异步 I/O；Kotlin 的协程支持结构化并发，形态上与 goroutine 最接近。goroutine 的差异点在运行时：栈管理、调度、阻塞时的切换都由运行时兜住，使用者只管 `go` 一个函数。
+
 ### 总结
 
 `goroutine` 让并发程序的写法接近普通函数调用，同步靠 `channel` 和 `sync` 包配合。用好它的关键是让每个 `goroutine` 都能退出、共享数据有同步保护，出问题时用 `go test -race` 和性能分析工具排查。

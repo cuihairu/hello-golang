@@ -2030,20 +2030,6 @@
         ]
       },
       {
-        "text": "concurrency",
-        "collapsed": true,
-        "items": [
-          {
-            "text": "Chan 1",
-            "link": "/concurrency/Chan 1"
-          },
-          {
-            "text": "Goroutine 1",
-            "link": "/concurrency/Goroutine 1"
-          }
-        ]
-      },
-      {
         "text": "dp",
         "collapsed": true,
         "items": [
@@ -2102,10 +2088,6 @@
           {
             "text": "Mutual Lock",
             "link": "/sync/MutualLock"
-          },
-          {
-            "text": "REMutex",
-            "link": "/sync/REMutex"
           }
         ]
       },
