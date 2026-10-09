@@ -1374,43 +1374,8 @@
     "collapsed": true,
     "items": [
       {
-        "text": "CGO工作原理"
-      },
-      {
-        "text": "go 调用c函数"
-      },
-      {
-        "text": "c 调用go函数"
-      },
-      {
-        "text": "CGO的数据类型"
-      },
-      {
-        "text": "CGO中的字符串处理"
-      },
-      {
-        "text": "CGO的错误处理"
-      },
-      {
-        "text": "CGO的并发"
-      },
-      {
-        "text": "CGO的性能考量"
-      },
-      {
-        "text": "CGO的安全和限制"
-      },
-      {
-        "text": "CGO的调试和测试"
-      },
-      {
-        "text": "CGO与模块"
-      },
-      {
-        "text": "CGO与泛型"
-      },
-      {
-        "text": "FFI"
+        "text": "工作原理与性能",
+        "link": "/cgo/Internals"
       }
     ]
   },
