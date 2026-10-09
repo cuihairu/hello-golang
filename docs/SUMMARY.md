@@ -474,6 +474,7 @@
 	- [DevOps与SRE](applications/DevOps.md)
 	- [Web开发场景](applications/Web.md)
 - [调研](research/README.md)
+	- [知识点主文档](knowledge.md)
 	- [同类经典书籍](research/Books.md)
 	- [官方文档](research/OfficialDocs.md)
 	- [应用场景调研](research/Scenarios.md)

@@ -1984,6 +1984,10 @@
     "link": "/research/README",
     "items": [
       {
+        "text": "知识点主文档",
+        "link": "/knowledge"
+      },
+      {
         "text": "同类经典书籍",
         "link": "/research/Books"
       },
