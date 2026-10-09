@@ -30,8 +30,17 @@ uid: 1000 gid: 1000
 所有调用最终都走 `syscall.Syscall`：传系统调用号和参数，返回结果和 errno：
 
 ```go
-r1, _, errno := syscall.Syscall(syscall.SYS_GETPID, 0, 0, 0)
-fmt.Println("raw pid:", r1, "errno:", errno) // 输出：raw pid: 2801914 errno: errno 0
+package main
+
+import (
+	"fmt"
+	"syscall"
+)
+
+func main() {
+	r1, _, errno := syscall.Syscall(syscall.SYS_GETPID, 0, 0, 0)
+	fmt.Println("raw pid:", r1, "errno:", errno) // 输出：raw pid: 2801914 errno: errno 0
+}
 ```
 
 `Getpid` 这类包装函数就是在这个基础上加了错误处理。需要平台特有调用（比如 Linux 的 `epoll`、`inotify`）时，直接查 `syscall` 包对应平台的源码文件。

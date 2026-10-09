@@ -986,3 +986,23 @@
 ---
 
 合计登记 517 块：已修 196，非错误 319，页面级 2。
+## algo/Graph.md
+
+- [x] `algo_Graph_1` [片段] 非错误 — BFS/DFS 定义引用第 9 行块（`algo_Graph_0`）的 Graph 类型与 NewGraph，页面按「表示→遍历」分节；验证：不适用(同页第 0 块定义类型，实测 PASS)
+
+## asm/Program.md
+
+- [x] `asm_Program_0` [片段] 非错误 — Go 侧函数声明无函数体（func Add(a, b int64) int64），实现见 add.s，页面已明示声明与汇编侧配对；验证：不适用(本地实测 Add(2,3)=5)
+
+## start/Embed.md
+
+- [x] `start_Embed_0` [资源文件依赖] 非错误 — embed 示例依赖同目录的 hello.txt 与 static/config.json，验证器单块抽取无文件可嵌；验证：不适用(需按页面说明准备资源文件)
+- [x] `start_Embed_1` [片段] 非错误 — http 片段引用第 7 行块定义的 static 变量，页面已明示「片段，static 为上面定义的变量」；验证：不适用(片段)
+
+## sys/Plugin.md
+
+- [x] `sys_Plugin_1` [外部依赖] 非错误 — 宿主侧示例需先 go build -buildmode=plugin 生成 greet.so 并设 PLUGDIR 路径，验证器环境无 .so；验证：不适用(需预编译产物，本地实测输出 Hello, Go)
+
+## sys/Syscall.md
+
+- [x] `sys_Syscall_1` [缺 import] 已修 — 底层 syscall.Syscall 调用示例缺 package 与 import，补全为完整程序；验证：PASS(输出 raw pid 与 errno 0)
