@@ -243,6 +243,35 @@ func main() {
 }
 ```
 
+### 反射与泛型
+
+Go 1.18 引入泛型后，两者分工变清楚了：类型集合能用约束表达的，写泛型——编译期实例化，无运行时开销；只有类型集合开放、要到运行时才知道类型时才用反射。泛型函数实例化后就是普通函数，反射照样能拿到它的类型：
+
+```go
+package main
+
+import (
+	"fmt"
+	"reflect"
+)
+
+func Sum[T int | float64](vals []T) T {
+	var total T
+	for _, v := range vals {
+		total += v
+	}
+	return total
+}
+
+func main() {
+	fmt.Println(Sum([]int{1, 2, 3}))        // 输出：6
+	fmt.Println(Sum([]float64{1.5, 2.5}))   // 输出：4
+	fmt.Println(reflect.TypeOf(Sum[int]))   // 输出：func([]int) int
+}
+```
+
+同一件事两条路都通时（比如求和、比较、拷贝），优先泛型；反射留给序列化、标签处理这类真正的动态场景。
+
 ### 结论
 
 反射的入口是 `TypeOf` 和 `ValueOf`；改值要先拿到指针再 `Elem`，用 `SetXxx` 写入；调用方法和函数都走 `Call`。代价是丢掉编译期检查、多一层运行时开销，序列化、校验、深拷贝这类场景才值得用。

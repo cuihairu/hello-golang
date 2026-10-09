@@ -1210,37 +1210,8 @@
     "collapsed": true,
     "items": [
       {
-        "text": "反射基础"
-      },
-      {
-        "text": "reflect.TypeOf和reflect.ValueOf"
-      },
-      {
-        "text": "动态访问和修改变量"
-      },
-      {
-        "text": "方法集和接口的动态调用"
-      },
-      {
-        "text": "发射与错误处理"
-      },
-      {
-        "text": "发射在测试和调试中的应用"
-      },
-      {
-        "text": "动态创建类型"
-      },
-      {
-        "text": "反射与泛型"
-      },
-      {
-        "text": "反射与并发"
-      },
-      {
-        "text": "反射的性能"
-      },
-      {
-        "text": "反射的安全和限制"
+        "text": "错误处理、性能与并发",
+        "link": "/reflection/Advanced"
       }
     ]
   },
