@@ -27,7 +27,7 @@ Idioms（惯用法）和 Patterns（模式）指编程语言里约定俗成的�
 
 ### 官方资源
 
-- [Effective Go](https://golang.org/doc/effective_go.html)：Go 官方的惯用法和最佳实践指南。
+- [Effective Go](https://go.dev/doc/effective_go)：Go 官方的惯用法和最佳实践指南。
 - [Go Code Review Comments](https://github.com/golang/go/wiki/CodeReviewComments)：Go 代码审查评论，涵盖了许多惯用法和建议。
 
 ### 总结

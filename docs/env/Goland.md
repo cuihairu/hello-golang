@@ -15,7 +15,7 @@ Goland 是由 JetBrains 开发的一款专门用于 Go 语言开发的集成开�
 ### 2. 配置 Go 环境
 
 1. **安装 Go：**
-   - 访问 [Go 官方网站](https://golang.org/dl/)，下载并安装适用于你操作系统的 Go 语言 SDK。
+   - 访问 [Go 官方网站](https://go.dev/dl/)，下载并安装适用于你操作系统的 Go 语言 SDK。
 
 2. **配置 Go 环境变量：**
    - 根据 Go 安装指南，配置 `GOPATH` 和 `GOROOT` 环境变量。

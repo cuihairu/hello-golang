@@ -18,7 +18,7 @@ brew install vim
 
 ### 安装Go
 
-Go还没装的话，从[Go的官网](https://golang.org/dl/)下载最新版本安装。
+Go还没装的话，从[Go的官网](https://go.dev/dl/)下载最新版本安装。
 
 ### 配置Vim
 

@@ -4,12 +4,12 @@
 ### 1. 从官网下载并安装 Go 语言
 
 #### Windows
-1. 打开 [Go 语言下载页面](https://golang.org/dl/)。
+1. 打开 [Go 语言下载页面](https://go.dev/dl/)。
 2. 选择适用于 Windows 的安装包并下载（例如：`go1.22.5.windows-amd64.msi`）。
 3. 双击下载的 MSI 文件，按照安装向导完成安装。
 
 #### Linux
-1. 打开 [Go 语言下载页面](https://golang.org/dl/)。
+1. 打开 [Go 语言下载页面](https://go.dev/dl/)。
 2. 选择适用于 Linux 的安装包并下载（例如：`go1.22.5.linux-amd64.tar.gz`）。
 3. 打开终端，运行以下命令解压并安装 Go：
    ```sh
@@ -17,7 +17,7 @@
    ```
 
 #### macOS
-1. 打开 [Go 语言下载页面](https://golang.org/dl/)。
+1. 打开 [Go 语言下载页面](https://go.dev/dl/)。
 2. 选择适用于 macOS 的安装包并下载（例如：`go1.22.5.darwin-amd64.pkg`）。
 3. 双击下载的 PKG 文件，按照安装向导完成安装。
 
