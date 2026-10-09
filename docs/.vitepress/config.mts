@@ -36,7 +36,7 @@ export default defineConfig({
     ],
 
     // 由 mdbook SUMMARY.md 结构映射而来（scripts: parse_summary.py），
-    // 49 个顶层章节、未入目录的散页归入「附录 · 未入目录」
+    // 51 个顶层分组（含「附录 · 未入目录」），未入目录的散页归入该组
     sidebar: sidebar as never,
 
     socialLinks: [

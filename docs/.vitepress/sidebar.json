@@ -11,6 +11,10 @@
       {
         "text": "特色",
         "link": "/introduction/Feature"
+      },
+      {
+        "text": "版本发布与支持策略",
+        "link": "/introduction/ReleaseNotes"
       }
     ]
   },
@@ -68,6 +72,10 @@
       {
         "text": "编译",
         "link": "/start/Build"
+      },
+      {
+        "text": "构建约束",
+        "link": "/start/BuildConstraint"
       },
       {
         "text": "运行与参数",
@@ -396,6 +404,10 @@
       {
         "text": "结构体标签",
         "link": "/idioms/StructTags"
+      },
+      {
+        "text": "Effective Go 导读",
+        "link": "/idioms/EffectiveGo"
       }
     ]
   },
@@ -821,6 +833,10 @@
         "link": "/encoding/JSON"
       },
       {
+        "text": "json/v2",
+        "link": "/encoding/JsonV2"
+      },
+      {
         "text": "xml",
         "link": "/encoding/XML"
       },
@@ -1177,6 +1193,10 @@
       {
         "text": "测试最佳实践",
         "link": "/test/Practice"
+      },
+      {
+        "text": "模糊测试",
+        "link": "/test/Fuzz"
       }
     ]
   },
@@ -1244,6 +1264,10 @@
       {
         "text": "pprof",
         "link": "/debug/Pprof"
+      },
+      {
+        "text": "PGO 配置文件引导优化",
+        "link": "/debug/PGO"
       }
     ]
   },
@@ -1296,6 +1320,10 @@
       },
       {
         "text": "tls TLS协议"
+      },
+      {
+        "text": "官方安全口径与crypto库",
+        "link": "/security/Security"
       }
     ]
   },
@@ -1406,6 +1434,10 @@
       {
         "text": "GC",
         "link": "/gc/GC"
+      },
+      {
+        "text": "Go内存模型",
+        "link": "/gc/MemoryModel"
       },
       {
         "text": "GC对内存分配的影响"
@@ -1920,6 +1952,52 @@
       {
         "text": "扩展",
         "link": "/gin/Extend"
+      }
+    ]
+  },
+  {
+    "text": "应用场景",
+    "collapsed": true,
+    "link": "/applications/Applications",
+    "items": [
+      {
+        "text": "云与网络服务",
+        "link": "/applications/CloudNative"
+      },
+      {
+        "text": "命令行工具",
+        "link": "/applications/CLI"
+      },
+      {
+        "text": "DevOps与SRE",
+        "link": "/applications/DevOps"
+      },
+      {
+        "text": "Web开发场景",
+        "link": "/applications/Web"
+      }
+    ]
+  },
+  {
+    "text": "调研",
+    "collapsed": true,
+    "link": "/research/README",
+    "items": [
+      {
+        "text": "同类经典书籍",
+        "link": "/research/Books"
+      },
+      {
+        "text": "官方文档",
+        "link": "/research/OfficialDocs"
+      },
+      {
+        "text": "应用场景调研",
+        "link": "/research/Scenarios"
+      },
+      {
+        "text": "覆盖核对差异表",
+        "link": "/research/Coverage"
       }
     ]
   },
