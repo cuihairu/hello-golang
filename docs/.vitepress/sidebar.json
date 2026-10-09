@@ -1383,25 +1383,16 @@
     "collapsed": true,
     "items": [
       {
-        "text": "编译与构建"
+        "text": "编译与构建",
+        "link": "/start/Build"
       },
       {
-        "text": "混淆"
+        "text": "embed 包嵌入",
+        "link": "/start/Embed"
       },
       {
-        "text": "embed 包嵌入"
-      },
-      {
-        "text": "容器化分化"
-      },
-      {
-        "text": "压缩和归档"
-      },
-      {
-        "text": "签名和验证"
-      },
-      {
-        "text": "软件仓库"
+        "text": "压缩和归档",
+        "link": "/compress/Readme"
       }
     ]
   },
