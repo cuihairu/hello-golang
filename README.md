@@ -21,6 +21,8 @@ A Go knowledge site · [Read online](https://cuihairu.github.io/hello-golang/)
 
 A Go knowledge site covering everything from syntax basics to engineering practice: the type system, concurrency, design patterns, data structures and algorithms, network programming, and day-to-day engineering.
 
+Knowledge map: [docs/knowledge.md](docs/knowledge.md) — the points from the 2026-10-08 books, official docs, and use-case survey collected into one page.
+
 ## Local development
 
 ```bash

@@ -21,6 +21,8 @@ Go 语言知识体系 · [在线阅读](https://cuihairu.github.io/hello-golang/
 
 从语法入门到工程实战的 Go 知识站点，覆盖类型系统、并发编程、设计模式、数据结构与算法、网络编程与工程实践。
 
+知识点主文档：[docs/knowledge.md](docs/knowledge.md)——把 2026-10-08 的书籍、官方文档、应用场景三类调研收拢成一页。
+
 ## 本地开发
 
 ```bash
