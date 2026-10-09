@@ -549,7 +549,7 @@
         "link": "/sync/CriticalSection"
       },
       {
-        "text": "互拆锁",
+        "text": "互斥锁",
         "link": "/sync/Mutex"
       },
       {
@@ -1156,6 +1156,10 @@
         "link": "/cmd/Lib"
       },
       {
+        "text": "高级命令行参数解析",
+        "link": "/cmd/Parse"
+      },
+      {
         "text": "命令行工具的设计与实现",
         "link": "/cmd/Design"
       }
@@ -1337,11 +1341,16 @@
         "link": "/net/Proto"
       },
       {
+        "text": "套接字编程基础",
+        "link": "/net/Socket"
+      },
+      {
         "text": "高级网络编程",
         "link": "/net/Advanced"
       },
       {
-        "text": "并发网络编程"
+        "text": "并发网络编程",
+        "link": "/net/Concurrence"
       },
       {
         "text": "网络安全"
@@ -2020,16 +2029,6 @@
         ]
       },
       {
-        "text": "cmd",
-        "collapsed": true,
-        "items": [
-          {
-            "text": "Parse",
-            "link": "/cmd/Parse"
-          }
-        ]
-      },
-      {
         "text": "dp",
         "collapsed": true,
         "items": [
@@ -2054,20 +2053,6 @@
         ]
       },
       {
-        "text": "net",
-        "collapsed": true,
-        "items": [
-          {
-            "text": "Concurrence",
-            "link": "/net/Concurrence"
-          },
-          {
-            "text": "Socket",
-            "link": "/net/Socket"
-          }
-        ]
-      },
-      {
         "text": "redis",
         "collapsed": true,
         "items": [
@@ -2084,24 +2069,6 @@
           {
             "text": "Mutual Exclusion",
             "link": "/sync/MutualExclusion"
-          },
-          {
-            "text": "Mutual Lock",
-            "link": "/sync/MutualLock"
-          }
-        ]
-      },
-      {
-        "text": "syntax",
-        "collapsed": true,
-        "items": [
-          {
-            "text": "Declaration",
-            "link": "/syntax/Declaration"
-          },
-          {
-            "text": "Variable",
-            "link": "/syntax/Variable"
           }
         ]
       }

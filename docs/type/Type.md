@@ -38,6 +38,50 @@
   y = 3.14
   ```
 
+### 用 type 声明类型：定义与别名
+
+`type` 关键字有两种写法，区别在于有没有 `=`。
+
+`type MyString string` 定义一个新类型，底层类型是 `string`，但两者是不同类型，互相赋值要显式转换，新类型还可以挂自己的方法：
+
+```go
+package main
+
+import "fmt"
+
+type MyString string
+
+func (m MyString) Hello() string {
+    return "Hello, " + string(m)
+}
+
+func main() {
+    var s MyString = "Go"
+    fmt.Println(s.Hello())
+
+    var str string = string(s) // 需要显式转换
+    fmt.Println(str)
+}
+```
+
+`type MyString2 = string` 是类型别名，`MyString2` 与 `string` 是同一个类型，直接赋值，不需要转换：
+
+```go
+package main
+
+import "fmt"
+
+type MyString2 = string
+
+func main() {
+    var s MyString2 = "Hello, Go"
+    var str string = s // 同一个类型，无需转换
+    fmt.Println(str)
+}
+```
+
+用 `type` 还能声明结构体、接口和函数类型，分别对应 `type Person struct{...}`、`type Describer interface{...}`、`type MathOperation func(int, int) int`，具体写法见结构体、接口与函数各章。
+
 ### 总结
 
 程序类型定义了数据的结构和操作，是编程语言的基础。静态还是动态、强还是弱，不同的组合决定了错误在编译期还是运行期暴露，也影响写代码的方式。
