@@ -1,6 +1,6 @@
 ### 图
 
-图（Graph）由顶点和边组成，描述"多对多"的关系：社交网络的好友关系、依赖任务的先后顺序、网络路由，都是图的形态。同目录的 [最小生成树](MinimumSpanningTree.md) 讲加权图上的经典算法，这一页讲图的表示和两种遍历。
+图（Graph）由顶点和边组成，描述"多对多"的关系：社交网络的好友关系、依赖任务的先后顺序、网络路由，都是图的形态。tree 分区的 [最小生成树](tree/MinimumSpanningTree.md) 讲加权图上的经典算法，这一页讲图的表示和两种遍历。
 
 ### 邻接表表示
 
@@ -90,4 +90,4 @@ func main() {
 
 ### 小结
 
-邻接表配 map 是 Go 里表示图的基本盘；BFS 队列、DFS 栈，visited 集合是防环的关键。加权图上的最短路径与最小生成树见 [最小生成树](MinimumSpanningTree.md) 与 [堆](Heap.md)。
+邻接表配 map 是 Go 里表示图的基本盘；BFS 队列、DFS 栈，visited 集合是防环的关键。加权图上的最短路径与最小生成树见 [最小生成树](tree/MinimumSpanningTree.md) 与 [堆](tree/Heap.md)。
