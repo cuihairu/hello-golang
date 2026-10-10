@@ -809,6 +809,14 @@
         "link": "/encoding/Binary"
       },
       {
+        "text": "Gob",
+        "link": "/encoding/Gob"
+      },
+      {
+        "text": "Hex",
+        "link": "/encoding/Hex"
+      },
+      {
         "text": "图像和音频编码",
         "link": "/encoding/Voice"
       },
@@ -939,6 +947,10 @@
             "link": "/dp/Singleton"
           }
         ]
+      },
+      {
+        "text": "对象池模式",
+        "link": "/dp/ObjectPool"
       },
       {
         "text": "结构型模式",
@@ -1342,6 +1354,10 @@
         "link": "/gc/GC"
       },
       {
+        "text": "GC 调优",
+        "link": "/alloc/GC"
+      },
+      {
         "text": "诊断与实践",
         "link": "/alloc/Practice"
       },
@@ -1610,6 +1626,10 @@
     "collapsed": true,
     "items": [
       {
+        "text": "安装与配置",
+        "link": "/redis/Install"
+      },
+      {
         "text": "字符串",
         "link": "/redis/String"
       },
@@ -1775,66 +1795,6 @@
       {
         "text": "覆盖核对差异表",
         "link": "/research/Coverage"
-      }
-    ]
-  },
-  {
-    "text": "附录 · 未入目录",
-    "collapsed": true,
-    "items": [
-      {
-        "text": "alloc",
-        "collapsed": true,
-        "items": [
-          {
-            "text": "GC",
-            "link": "/alloc/GC"
-          }
-        ]
-      },
-      {
-        "text": "dp",
-        "collapsed": true,
-        "items": [
-          {
-            "text": "Object Pool",
-            "link": "/dp/ObjectPool"
-          }
-        ]
-      },
-      {
-        "text": "encoding",
-        "collapsed": true,
-        "items": [
-          {
-            "text": "Gob",
-            "link": "/encoding/Gob"
-          },
-          {
-            "text": "Hex",
-            "link": "/encoding/Hex"
-          }
-        ]
-      },
-      {
-        "text": "redis",
-        "collapsed": true,
-        "items": [
-          {
-            "text": "Install",
-            "link": "/redis/Install"
-          }
-        ]
-      },
-      {
-        "text": "sync",
-        "collapsed": true,
-        "items": [
-          {
-            "text": "Mutual Exclusion",
-            "link": "/sync/MutualExclusion"
-          }
-        ]
       }
     ]
   }
