@@ -127,3 +127,22 @@ GOOS=windows GOARCH=amd64 go build -o myapp.exe
 ### 总结
 
 这七条特色各有事实支撑：25 个关键字、2 KB 的初始栈、亚毫秒级的 GC 停顿、秒级构建、单个静态二进制。Docker、Kubernetes 这些大型基础软件用 Go 编写，与上述特性直接相关。
+
+## 参考资料
+
+- [官方文档总览](https://go.dev/doc/)
+- [发布历史与支持策略](https://go.dev/doc/devel/release)
+- [官方 FAQ](https://go.dev/doc/faq)
+- [Effective Go（官方）](https://go.dev/doc/effective_go)
+
+## 同层页面
+
+- [ReleaseNotes](/introduction/ReleaseNotes.md)
+- [Introduction](/introduction/Introduction.md)
+- [Lineage](/introduction/Lineage.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Introduction](Introduction.md)
+- [Lineage](Lineage.md)

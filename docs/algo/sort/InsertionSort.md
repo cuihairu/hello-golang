@@ -76,3 +76,22 @@ func main() {
 ### 总结
 
 插入排序把每个新元素插到已排序部分的正确位置。数组已有序时是 $O(n)$，完全逆序时是 $O(n^2)$，原地排序不占额外空间。它实现简单，小规模或近乎有序的数据上够用，数据一多就不合适了。
+
+## 参考资料
+
+- [插入排序 · Wikipedia](https://en.wikipedia.org/wiki/Insertion_sort)
+
+
+## 同层页面
+
+- [BubbleSort](/algo/sort/BubbleSort.md)
+- [BucketSort](/algo/sort/BucketSort.md)
+- [CocktailSort](/algo/sort/CocktailSort.md)
+- [HeapSort](/algo/sort/HeapSort.md)
+- [MergeSort](/algo/sort/MergeSort.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [HeapSort](HeapSort.md)
+- [MergeSort](MergeSort.md)

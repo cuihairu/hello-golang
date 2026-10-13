@@ -104,3 +104,17 @@ dequeue: 50
 ### 总结
 
 队列的关键是"两端操作、首出尾进"。环形数组实现以取模换来了固定内存下的 $O(1)$ 出入队，是标准库 `container/ring`、channel 内部缓冲等机制的共同思想。
+
+## 参考资料
+
+- [队列（抽象数据类型）· Wikipedia](https://en.wikipedia.org/wiki/Queue_(abstract_data_type))
+
+## 同层页面
+
+- [Graph](/algo/Graph.md)
+- [Inventory](/algo/Inventory.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Graph](/algo/Graph.md)

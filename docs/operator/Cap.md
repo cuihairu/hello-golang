@@ -70,3 +70,22 @@ func main() {
   - **通道**：`cap(channel)` 返回通道缓冲区的容量。
 
 判断切片会不会触发扩容时，`len` 和 `cap` 要一起看：`len` 是已存元素个数，`cap` 是不重新分配内存就能装下的数量。
+
+## 参考资料
+
+- [语言规范 · 运算符](https://go.dev/ref/spec#Operators)
+- [builtin 标准库 · cap/len](https://pkg.go.dev/builtin)
+
+
+## 同层页面
+
+- [Arithmetic](/operator/Arithmetic.md)
+- [Assignment](/operator/Assignment.md)
+- [BitLen](/operator/BitLen.md)
+- [Bitwise](/operator/Bitwise.md)
+- [Logical](/operator/Logical.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Logical](Logical.md)

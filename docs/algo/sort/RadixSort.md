@@ -92,3 +92,22 @@ func main() {
 ### 总结
 
 基数排序按位分组、逐位用计数排序，$n$ 个元素 $k$ 位就是 $O(n \cdot k)$，输入怎么分布都不变。稳定和轮数固定这两个特点让它适合整数、字符串这类数据；换来的是 $O(n + k)$ 的额外空间，以及排不了浮点数的限制。
+
+## 参考资料
+
+- [基数排序 · Wikipedia](https://en.wikipedia.org/wiki/Radix_sort)
+
+
+## 同层页面
+
+- [BubbleSort](/algo/sort/BubbleSort.md)
+- [BucketSort](/algo/sort/BucketSort.md)
+- [CocktailSort](/algo/sort/CocktailSort.md)
+- [QuickSort](/algo/sort/QuickSort.md)
+- [SelectionSort](/algo/sort/SelectionSort.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [QuickSort](QuickSort.md)
+- [SelectionSort](SelectionSort.md)

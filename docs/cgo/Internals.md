@@ -33,3 +33,13 @@ CGO 调用期间 goroutine 阻塞在系统调用上，P 会让给其他 goroutin
 - 排查指针违规先跑 `GODEBUG=cgocheck=2` 的测试，边界上的问题清了再调性能或并发。
 
 交叉阅读：[使用指南](CGO.md) 讲调用步骤、类型转换和常见坑；[命令文档](https://golang.google.cn/cmd/cgo/) 有指针规则的原文。
+
+## 参考资料
+
+- [cgo 命令文档](https://pkg.go.dev/cmd/cgo)
+- [官方 · A Quick Guide to Go's Assembler](https://go.dev/doc/asm)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Unsafe](/sys/Unsafe.md)

@@ -88,3 +88,19 @@ func main() {
 - **常量**用 `const` 声明，运行期间不可修改，程序里不会变的值都该放这里，读代码的人一眼就知道它不会动。
 - **字面量**是代码里直接写出的值，像 `42`、`3.14`、`"Hello, World!"` 这样，不需要先声明。
 - 常量的值必须在编译期就能算出来，算不出来的写法编译器直接报错，错误不会拖到运行时。
+
+## 参考资料
+
+- [语言规范 · 常量声明](https://go.dev/ref/spec#Constant_declarations)
+- [官方博客 · Constants](https://go.dev/blog/constants)
+
+## 同层页面
+
+- [Cant](/const/Cant.md)
+- [Iota](/const/Iota.md)
+- [Nil](/const/Nil.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Cant](Cant.md)

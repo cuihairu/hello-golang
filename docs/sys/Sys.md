@@ -59,3 +59,21 @@
 - **macOS**：适合苹果硬件用户，配套 Xcode 这套开发工具。
 
 选型看用途：桌面和商业软件看 Windows，服务器和开发环境看 Linux，苹果硬件上开发应用看 macOS。
+
+## 参考资料
+
+- [syscall 标准库](https://pkg.go.dev/syscall)
+- [os 标准库](https://pkg.go.dev/os)
+
+## 同层页面
+
+- [Plugin](/sys/Plugin.md)
+- [Syscall](/sys/Syscall.md)
+- [Unsafe](/sys/Unsafe.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Plugin](Plugin.md)
+- [Syscall](Syscall.md)
+- [Unsafe](Unsafe.md)

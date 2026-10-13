@@ -125,3 +125,13 @@ SUMMARY 里的图、搜索、分治、回溯、动态规划、贪心六节是空
 
 保留篇的验收标准:每个代码块单独 `go build` + `go run` 通过,含可运行示例与复杂度说明。盘点实测 47 页 49 个代码块全部通过。过程中修了两处编不过的示例:`hash/Hash` 的取值演示声明了未使用的变量,改成 comma-ok 惯用法;`sort/HeapSort` 把拆成两块的函数片段合并为一块。给缺复杂度说明的 5 篇补了复杂度一节:`array/DoubleEndedQueue`、`array/DynamicArray`、`array/MultidimensionalArray`、`array/PriorityQueue`、`tree/BinaryTree`。
 
+## 同层页面
+
+- [Graph](/algo/Graph.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Graph](Graph.md)
+- [Queue](/algo/queue/Queue.md)
+- [Stack](/algo/stack/Stack.md)

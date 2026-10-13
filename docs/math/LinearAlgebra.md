@@ -214,3 +214,25 @@
 ### 总结
 
 向量和矩阵的基本运算用标准库 `math` 就够，求解方程组、算特征值则要上 `gonum`。
+
+## 参考资料
+
+- [math 标准库](https://pkg.go.dev/math)
+- [math/rand 标准库](https://pkg.go.dev/math/rand)
+
+## 同层页面
+
+- [Calc](/math/Calc.md)
+- [Math](/math/Math.md)
+- [MathFunc](/math/MathFunc.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Calc](Calc.md)
+- [Math](Math.md)
+- [MathFunc](MathFunc.md)
+- [MathRand](MathRand.md)
+- [Optimize](Optimize.md)
+- [Science](Science.md)
+- [Statistics](Statistics.md)

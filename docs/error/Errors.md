@@ -189,3 +189,16 @@ func main() {
 - **最佳实践**：使用提前返回和错误封装来简化错误处理和提高代码的可维护性。
 
 选哪一种取决于调用方要不要拿到错误细节：只是判等用 `errors.Is`，要取字段用 `errors.As`，要给排错加线索就用 `%w` 包装。
+
+## 参考资料
+
+- [官方博客 · Error handling and Go](https://go.dev/blog/error-handling-and-go)
+- [官方博客 · Errors are values](https://go.dev/blog/errors-are-values)
+- [errors 标准库](https://pkg.go.dev/errors)
+- [Effective Go · Errors](https://go.dev/doc/effective_go#errors)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [ErrorType](ErrorType.md)
+- [glossary](/glossary.md)

@@ -372,3 +372,23 @@ func main() {
 ```
 
 选哪种看数据形态：文本按行读用 `bufio.Scanner`，二进制按块读用 `file.Read`；嫌读写次数太多就套一层 `bufio`；定长数值用 `binary.Read` / `binary.Write`，Go 结构体原样存取用 `gob`。
+
+## 参考资料
+
+- [io 标准库](https://pkg.go.dev/io)
+- [os 标准库](https://pkg.go.dev/os)
+
+
+## 同层页面
+
+- [Advanced](/io/Advanced.md)
+- [CommonFormats](/io/CommonFormats.md)
+- [EfficientIO](/io/EfficientIO.md)
+- [IO](/io/IO.md)
+- [ModIO](/io/ModIO.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [IO](IO.md)
+- [ModIO](ModIO.md)

@@ -27,3 +27,20 @@ Go 的日志方案分三层：标准库、第三方库、集中式工具。
    - **`fluentd`** 和 **`logstash`**：把分散在各机器上的日志收集到一处统一检索。
    - **云日志服务**：如 AWS CloudWatch 和 Google Stackdriver，负责收集、存储和分析，适合大规模分布式系统。
 
+## 参考资料
+
+- [log 标准库](https://pkg.go.dev/log)
+- [官方博客 · Structured Logging with slog](https://go.dev/blog/slog)
+
+## 同层页面
+
+- [Aggregation](/log/Aggregation.md)
+- [LibLog](/log/LibLog.md)
+- [ModLog](/log/ModLog.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Aggregation](Aggregation.md)
+- [LibLog](LibLog.md)
+- [ModLog](ModLog.md)

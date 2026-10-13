@@ -72,3 +72,21 @@
 3. https://golang.google.cn/doc/ — 文档总览中 Commands 板块入口
 
 以上抓取于 2026-10-08。
+
+## 参考资料
+
+- [官方教程 · 入门](https://go.dev/doc/tutorial/getting-started)
+- [官方教程 · 创建模块](https://go.dev/doc/tutorial/create-module)
+- [go/build · Build constraints](https://pkg.go.dev/go/build)
+- [go/build/constraint](https://pkg.go.dev/go/build/constraint)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [knowledge](/knowledge.md)
+- [Build](Build.md)
+- [Embed](Embed.md)
+- [Hello](Hello.md)
+- [Run](Run.md)
+- [Starter](Starter.md)
+- [Structure](Structure.md)

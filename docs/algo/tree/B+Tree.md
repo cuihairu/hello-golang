@@ -170,3 +170,22 @@ func main() {
 ### 总结
 
 B+树把数据全部下沉到叶子层，再用叶子链把它们连起来，范围查询就从逐层回溯变成顺序扫描。数据库索引普遍选它而不是 B树，原因就在这。
+
+## 参考资料
+
+- [B+ 树 · Wikipedia](https://en.wikipedia.org/wiki/B%2B_tree)
+
+
+## 同层页面
+
+- [Heap](/algo/tree/Heap.md)
+- [MinimumSpanningTree](/algo/tree/MinimumSpanningTree.md)
+- [RedBlackTree](/algo/tree/RedBlackTree.md)
+- [AVLTree](/algo/tree/AVLTree.md)
+- [BTree](/algo/tree/BTree.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [AVLTree](AVLTree.md)
+- [BTree](BTree.md)

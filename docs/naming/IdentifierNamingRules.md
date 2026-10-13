@@ -259,3 +259,20 @@ func (u User) String() string {
 ```
 
 上面这些规则可以压成一句：Go 的惯例是名字越短越好，作用域越大、生命周期越长的名字越要写得具体。团队里把规则写成一份约定并让 lint 工具把关，新代码就不会出现两种风格。
+
+## 参考资料
+
+- [Effective Go · Names](https://go.dev/doc/effective_go#names)
+- [官方 · CodeReviewComments](https://go.dev/wiki/CodeReviewComments)
+- [Effective Go · MixedCaps](https://go.dev/doc/effective_go#mixed-caps)
+
+## 同层页面
+
+- [KeywordsAndReservedWords](/naming/KeywordsAndReservedWords.md)
+- [Naming](/naming/Naming.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [KeywordsAndReservedWords](KeywordsAndReservedWords.md)
+- [Naming](Naming.md)

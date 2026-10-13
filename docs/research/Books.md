@@ -72,3 +72,9 @@
 6. 搜狗搜索聚合的当当网条目（《Go程序设计语言》作者艾伦 A. A. 多诺万、机械工业出版社）
 7. 360 搜索聚合的豆瓣条目（《Go语言高级编程》评分 7.6、《Go程序设计语言》8.6）
 8. 360 搜索聚合的 CSDN 条目（《Concurrency in Go》O'Reilly 2017 年 8 月、229 页）
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [knowledge](/knowledge.md)
+- [README](README.md)

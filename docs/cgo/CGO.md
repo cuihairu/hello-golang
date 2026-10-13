@@ -378,3 +378,13 @@ LD_LIBRARY_PATH=. ./myprogram
 6. **错误处理**: 在 Go 和 C 之间传递错误信息可能会比较复杂。
 
 这几条里内存管理和并发最容易出事：`C.CString` 这类分配要配 `C.free`，用 `defer` 挂在同个函数里；Go 的并发模型和 C 的线程模型不同，回调进来的代码要小心处理共享状态。
+
+## 参考资料
+
+- [cgo 命令文档](https://pkg.go.dev/cmd/cgo)
+- [官方 · A Quick Guide to Go's Assembler](https://go.dev/doc/asm)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Internals](Internals.md)

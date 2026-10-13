@@ -107,3 +107,24 @@ func main() {
 - **策略模式与状态模式（State Pattern）**：状态模式用于管理对象的状态并改变其行为，而策略模式用于将算法封装在不同的策略对象中。两者可以结合使用，例如在状态模式中使用策略模式来定义不同状态下的行为。
 - **策略模式与工厂模式（Factory Pattern）**：工厂模式用于创建对象，而策略模式用于封装算法并使其可以互换。可以结合使用，例如使用工厂模式创建策略对象并在策略模式中使用。
 - **策略模式与命令模式（Command Pattern）**：命令模式用于封装请求的操作，而策略模式用于封装不同的算法。可以结合使用，例如在策略模式中使用命令模式来执行策略操作。
+
+## 参考资料
+
+- [GoF《设计模式》概览（Wikipedia）](https://en.wikipedia.org/wiki/Design_Patterns)
+- [Refactoring.Guru 设计模式目录](https://refactoring.guru/design-patterns)
+- [Effective Go（官方）](https://go.dev/doc/effective_go)
+
+
+## 同层页面
+
+- [AbstractFactory](/dp/AbstractFactory.md)
+- [Adapter](/dp/Adapter.md)
+- [Behavioral](/dp/Behavioral.md)
+- [State](/dp/State.md)
+- [Structural](/dp/Structural.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [State](State.md)
+- [Structural](Structural.md)

@@ -164,3 +164,47 @@ func main() {
 - **工厂方法模式（Factory Method Pattern）**：抽象工厂模式通常与工厂方法模式一起使用，具体工厂类可以使用工厂方法来创建具体产品对象。
 - **单例模式（Singleton Pattern）**：具体工厂类可以使用单例模式来确保每个具体工厂只有一个实例。
 - **依赖注入（Dependency Injection）**：抽象工厂模式可以与依赖注入一起使用，将具体工厂对象注入到客户端代码中。
+
+## 参考资料
+
+- [GoF《设计模式》概览（Wikipedia）](https://en.wikipedia.org/wiki/Design_Patterns)
+- [Refactoring.Guru 设计模式目录](https://refactoring.guru/design-patterns)
+- [Effective Go（官方）](https://go.dev/doc/effective_go)
+
+## 同层页面
+
+- [Adapter](/dp/Adapter.md)
+- [Behavioral](/dp/Behavioral.md)
+- [Bridge](/dp/Bridge.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Adapter](Adapter.md)
+- [Behavioral](Behavioral.md)
+- [Bridge](Bridge.md)
+- [Builder](Builder.md)
+- [ChainofResponsibility](ChainofResponsibility.md)
+- [Command](Command.md)
+- [Composite](Composite.md)
+- [Creational](Creational.md)
+- [Decorator](Decorator.md)
+- [DesignPatterns](DesignPatterns.md)
+- [Facade](Facade.md)
+- [FactoryMethod](FactoryMethod.md)
+- [Flyweight](Flyweight.md)
+- [Iterator](Iterator.md)
+- [Mediator](Mediator.md)
+- [Memento](Memento.md)
+- [ObjectPool](ObjectPool.md)
+- [Observer](Observer.md)
+- [Proactor](Proactor.md)
+- [Prototype](Prototype.md)
+- [Proxy](Proxy.md)
+- [Reactor](Reactor.md)
+- [Singleton](Singleton.md)
+- [State](State.md)
+- [Strategy](Strategy.md)
+- [Structural](Structural.md)
+- [TemplateMethod](TemplateMethod.md)
+- [Visitor](Visitor.md)

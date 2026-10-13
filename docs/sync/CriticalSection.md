@@ -79,3 +79,18 @@ func main() {
 ### 小结
 
 在访问共享资源的代码块（即临界区）前后加锁，同一时刻就只有一个线程或Goroutine在临界区里，数据不一致和竞态条件由此避免。
+
+## 参考资料
+
+- [sync 标准库](https://pkg.go.dev/sync)
+- [Go 内存模型](https://go.dev/ref/mem)
+- [官方博客 · Introducing the Go Race Detector](https://go.dev/blog/race-detector)
+- [Go 内存模型 · 锁](https://go.dev/ref/mem#locks)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [glossary](/glossary.md)
+- [Primitives](Primitives.md)
+- [Spinlock](Spinlock.md)
+- [Sync](Sync.md)

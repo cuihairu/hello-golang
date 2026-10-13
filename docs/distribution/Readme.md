@@ -182,3 +182,18 @@ func retry(attempts int, base time.Duration, f func() error) error {
 ### 总结
 
 分布式系统的每次设计都要先认下三件事：网络会延迟丢包、节点会宕机、时钟不同步，心跳检测、重试幂等、共识协议都是冲着它们去的。Go 这边，goroutine 加 channel 写并发服务逻辑，`net`、`net/rpc`、`gRPC` 提供通信基础，etcd、Kubernetes 的源码里能看到这些做法的完整落地。
+
+## 参考资料
+
+- [官方博客 · Perfectly Reproducible, Verified Go Toolchains](https://go.dev/blog/rebuild)
+- [官方 · Go Modules 使用指南](https://go.dev/doc/modules/)
+
+## 同层页面
+
+- [Mod](/mod/Mod.md)
+- [Work](/mod/Work.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Mod](/mod/Mod.md)

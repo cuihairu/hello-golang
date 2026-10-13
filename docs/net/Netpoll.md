@@ -184,3 +184,23 @@ func netpollready(toRun *gList, pd *pollDesc, mode int32) int32 {
 4. **资源开销小**：线程数量和上下文切换都省下来，I/O 密集型任务里用更少的资源扛住更多连接。
 
 回到代码：`netpoll` 只做三件事，把 fd 挂到 `epoll` 上、等事件、把等着的 goroutine 塞回运行队列。阻塞的活交给调度器，它自己一个线程就够。
+
+## 参考资料
+
+- [net 标准库](https://pkg.go.dev/net)
+- [net/http 标准库](https://pkg.go.dev/net/http)
+- [runtime 源码 · netpoll.go](https://go.dev/src/runtime/netpoll.go)
+
+## 同层页面
+
+- [Advanced](/net/Advanced.md)
+- [Concurrence](/net/Concurrence.md)
+- [Intro](/net/Intro.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Advanced](Advanced.md)
+- [Concurrence](Concurrence.md)
+- [Intro](Intro.md)
+- [Proto](Proto.md)

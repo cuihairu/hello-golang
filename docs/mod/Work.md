@@ -148,3 +148,22 @@ func Greet() string {
 ### 总结
 
 `go.work` 把几个本地模块圈进一个工作区，构建和测试时工具链优先用工作区里列出的模块；生产环境的依赖仍然由各模块自己的 `go.mod` 管。文件用 `go work init` 生成，之后增删模块用 `go work edit`。
+
+## 参考资料
+
+- [官方 · Go Modules 使用指南](https://go.dev/doc/modules/)
+- [Go Modules Reference](https://go.dev/ref/mod)
+- [官方博客 · Using Go Modules](https://go.dev/blog/using-go-modules)
+- [官方教程 · 多模块工作区](https://go.dev/doc/tutorial/workspaces)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Readme](/distribution/Readme.md)
+- [glossary](/glossary.md)
+- [Get](Get.md)
+- [Import](Import.md)
+- [New](New.md)
+- [Package](Package.md)
+- [Pkg](Pkg.md)
+- [Vendor](Vendor.md)

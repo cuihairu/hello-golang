@@ -279,3 +279,23 @@ Large file decompressed successfully
 ```
 
 并且在当前目录下生成 `largefile.gz` 文件和 `decompressed_largefile.txt` 文件。
+
+## 参考资料
+
+- [compress/gzip 标准库](https://pkg.go.dev/compress/gzip)
+- [compress/flate 标准库](https://pkg.go.dev/compress/flate)
+
+## 同层页面
+
+- [Archive](/compress/Archive.md)
+- [Composite](/compress/Composite.md)
+- [Compress](/compress/Compress.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Archive](Archive.md)
+- [Composite](Composite.md)
+- [Compress](Compress.md)
+- [ErrHandleAndTest](ErrHandleAndTest.md)
+- [Readme](Readme.md)

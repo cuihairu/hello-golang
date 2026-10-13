@@ -611,3 +611,24 @@ func main() {
 ### 结论
 
 select、poll、epoll 解决的是"一个线程盯多个连接"，事件循环和回调解决的是"事件到了由谁来接"，IOCP 和 io_uring 属于异步提交加完成通知的路子，协议解析则决定字节流里怎么切出一条条消息。Go 的 `net` 和 `net/http` 已经把这些封装在标准库里，这些底层写法是为了看懂它们为什么这么设计。
+
+## 参考资料
+
+- [net 标准库](https://pkg.go.dev/net)
+- [net/http 标准库](https://pkg.go.dev/net/http)
+
+## 同层页面
+
+- [Concurrence](/net/Concurrence.md)
+- [Intro](/net/Intro.md)
+- [Netpoll](/net/Netpoll.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Concurrence](Concurrence.md)
+- [Intro](Intro.md)
+- [Netpoll](Netpoll.md)
+- [Proto](Proto.md)
+- [SlidingWindow](SlidingWindow.md)
+- [Socket](Socket.md)

@@ -201,3 +201,23 @@
   ```
 
 这些语法里，Go `regexp` 支持非捕获组、命名捕获组、贪婪/非贪婪量词、捕获引用和动态构建；先行/后行断言不支持，得按第 1 节的方式改写成等价模式。
+
+## 参考资料
+
+- [regexp 标准库](https://pkg.go.dev/regexp)
+- [regexp/syntax 语法文档](https://pkg.go.dev/regexp/syntax)
+
+## 同层页面
+
+- [Debug](/regex/Debug.md)
+- [Lib](/regex/Lib.md)
+- [Readme](/regex/Readme.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Debug](Debug.md)
+- [Lib](Lib.md)
+- [Readme](Readme.md)
+- [Use](Use.md)
+- [Usual](Usual.md)

@@ -55,3 +55,22 @@ chmod 644 file.txt
 #### 总结
 
 这一章理清了文件名、扩展名、元数据的分工，绝对路径与相对路径的区别，以及读、写、执行三类权限在 Owner/Group/Others 三个维度上的组合。下一章开始写实际的读写代码。
+
+## 参考资料
+
+- [io 标准库](https://pkg.go.dev/io)
+- [os 标准库](https://pkg.go.dev/os)
+
+
+## 同层页面
+
+- [Advanced](/io/Advanced.md)
+- [CommonFormats](/io/CommonFormats.md)
+- [EfficientIO](/io/EfficientIO.md)
+- [Example](/io/Example.md)
+- [FileAdvanced](/io/FileAdvanced.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [FileAdvanced](FileAdvanced.md)

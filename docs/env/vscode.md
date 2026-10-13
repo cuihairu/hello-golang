@@ -67,3 +67,22 @@
 - 如果代码提示和补全功能异常，可以尝试重新加载VS Code（按`Ctrl+Shift+P`，输入`Reload Window`并回车）。
 
 工具装完后，Go扩展的更多用法见[VS Code的Go扩展文档](https://github.com/golang/vscode-go)。
+
+## 参考资料
+
+- [官方 · 安装与管理 Go 工具链](https://go.dev/doc/manage-install)
+- [官方教程 · 入门](https://go.dev/doc/tutorial/getting-started)
+- [官方 · Go Modules 使用指南](https://go.dev/doc/modules/)
+
+
+## 同层页面
+
+- [Env](/env/Env.md)
+- [Install](/env/Install.md)
+- [GOPROXY](/env/GOPROXY.md)
+- [ide](/env/ide.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [ide](ide.md)

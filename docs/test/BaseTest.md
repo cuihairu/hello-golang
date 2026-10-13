@@ -127,3 +127,20 @@ func TestDivide(t *testing.T) {
 ### 总结
 
 `_test.go` 放测试函数，`go test` 跑它们，`-v` 看 `t.Log` 的输出，`-cover` 出覆盖率，失败时 `t.Errorf` 把期望值和实际值一起打出来。
+
+## 参考资料
+
+- [testing 标准库](https://pkg.go.dev/testing)
+- [官方教程 · 添加测试](https://go.dev/doc/tutorial/add-a-test)
+
+## 同层页面
+
+- [Fuzz](/test/Fuzz.md)
+- [Test](/test/Test.md)
+- [Advanced](/test/Advanced.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Advanced](Advanced.md)
+- [Benchmark](Benchmark.md)

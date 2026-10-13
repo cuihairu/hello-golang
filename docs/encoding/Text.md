@@ -92,3 +92,22 @@ func main() {
 - **UTF-16 编码**：用 16 位（两个字节）或 32 位（四个字节，通过代理对表示）表示一个字符的编码方式，支持所有 Unicode 字符，常用于 Windows 和 Java 等平台。
 
 在 Go 里这三者会同时遇到：源码和字符串字面量本身就是 UTF-8，`len` 数的是字节、`utf8.RuneCountInString` 数的才是字符，碰到 Windows API 或 Java 这类以 UTF-16 为边界的场合再换 `unicode/utf16` 转码。记住"字节和字符不是一回事"，大部分编码坑就能避开。
+
+## 参考资料
+
+- [encoding 系列标准库（json 为例）](https://pkg.go.dev/encoding/json)
+
+
+## 同层页面
+
+- [JsonV2](/encoding/JsonV2.md)
+- [Base64](/encoding/Base64.md)
+- [Binary](/encoding/Binary.md)
+- [TOML](/encoding/TOML.md)
+- [Voice](/encoding/Voice.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [TOML](TOML.md)
+- [Voice](Voice.md)

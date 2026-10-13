@@ -44,3 +44,15 @@
 2. https://golang.google.cn/doc/fuzz/ — 原生 fuzzing 起于 Go 1.18、OSS-Fuzz 支持
 3. https://golang.google.cn/doc/devel/release — 发布策略中的安全修复范围
 4. https://golang.google.cn/pkg/ — 标准库包文档入口
+
+## 参考资料
+
+- [官方 · Go Security](https://go.dev/security/)
+- [官方博客 · Vulnerability Management for Go](https://go.dev/blog/vuln)
+- [官方博客 · Govulncheck v1.0.0](https://go.dev/blog/govulncheck)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [knowledge](/knowledge.md)
+- [Plugin](/sys/Plugin.md)

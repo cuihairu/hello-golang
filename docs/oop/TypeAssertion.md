@@ -126,3 +126,18 @@ if !ok {
 - **性能**：类型断言的性能开销较小，但在性能敏感的代码中应谨慎使用。
 
 裸写 `i.(T)` 失败会 panic，`value, ok := i.(T)` 不会；不确定接口里装的是什么类型时用后者。
+
+## 参考资料
+
+- [官方 FAQ · 类型系统](https://go.dev/doc/faq)
+- [语言规范 · 接口类型](https://go.dev/ref/spec#Interface_types)
+- [Effective Go · Methods](https://go.dev/doc/effective_go#methods)
+- [Effective Go · Embedding](https://go.dev/doc/effective_go#embedding)
+- [语言规范 · 类型断言](https://go.dev/ref/spec#Type_assertions)
+- [Effective Go · interface conversions](https://go.dev/doc/effective_go#interface_conversions)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [glossary](/glossary.md)
+- [Poly](Poly.md)

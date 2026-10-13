@@ -79,3 +79,23 @@ Go 标准库的 `time` 包用来处理日期和时间，它有这几个特点：
 
 ### 总结
 这些概念在 `time` 包里都有落点：时间间隔用 `Duration`，格式化认 `2006-01-02 15:04:05` 这套固定布局，时区和夏令时包里也有内建支持。
+
+## 参考资料
+
+- [time 标准库](https://pkg.go.dev/time)
+
+## 同层页面
+
+- [Advanced](/time/Advanced.md)
+- [FormatAndParse](/time/FormatAndParse.md)
+- [PkgTime](/time/PkgTime.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Advanced](Advanced.md)
+- [FormatAndParse](FormatAndParse.md)
+- [PkgTime](PkgTime.md)
+- [Practice](Practice.md)
+- [TimeZone](TimeZone.md)
+- [TimerAndTicker](TimerAndTicker.md)

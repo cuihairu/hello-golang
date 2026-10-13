@@ -104,3 +104,26 @@ func main() {
 - **闭包**：函数值能够捕获和修改其外部作用域的变量。闭包在函数返回后仍能访问这些捕获的变量。
 
 `createCounter` 那个例子就是闭包的典型用法：函数返回了，`count` 还活着，每次调用 `counter()` 都在上一次的基础上加一。
+
+## 参考资料
+
+- [语言规范 · 函数声明](https://go.dev/ref/spec#Function_declarations)
+- [语言规范 · 调用](https://go.dev/ref/spec#Calls)
+- [Effective Go · 函数](https://go.dev/doc/effective_go#functions)
+- [语言规范 · 函数字面量](https://go.dev/ref/spec#Function_literals)
+
+## 同层页面
+
+- [Arguments](/func/Arguments.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Arguments](Arguments.md)
+- [DefineAndCall](DefineAndCall.md)
+- [FuncValue](FuncValue.md)
+- [History](History.md)
+- [InnerFunc](InnerFunc.md)
+- [MultipleReturnValues](MultipleReturnValues.md)
+- [RecursiveFunction](RecursiveFunction.md)
+- [glossary](/glossary.md)

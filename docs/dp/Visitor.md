@@ -135,3 +135,22 @@ func main() {
 - **访问者模式与模板方法模式（Template Method Pattern）**：模板方法模式定义了算法的骨架，而访问者模式允许在不改变对象的结构的情况下添加新的操作。可以结合使用，例如在模板方法中使用访问者模式来处理特定步骤。
 - **访问者模式与策略模式（Strategy Pattern）**：策略模式用于定义一系列算法并使其可以互换，而访问者模式用于将操作封装在访问者对象中。可以结合使用，例如在访问者模式中使用策略模式来定义不同的操作。
 - **访问者模式与命令模式（Command Pattern）**：命令模式用于封装请求的操作，而访问者模式用于将操作与对象的结构分离。可以结合使用，例如在访问者模式中使用命令模式来处理操作。
+
+## 参考资料
+
+- [GoF《设计模式》概览（Wikipedia）](https://en.wikipedia.org/wiki/Design_Patterns)
+- [Refactoring.Guru 设计模式目录](https://refactoring.guru/design-patterns)
+- [Effective Go（官方）](https://go.dev/doc/effective_go)
+
+
+## 同层页面
+
+- [AbstractFactory](/dp/AbstractFactory.md)
+- [Adapter](/dp/Adapter.md)
+- [Behavioral](/dp/Behavioral.md)
+- [TemplateMethod](/dp/TemplateMethod.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [TemplateMethod](TemplateMethod.md)

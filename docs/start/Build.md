@@ -128,3 +128,23 @@ go build -o myapp -v -x -race -gcflags="-N -l" -ldflags="-X 'main.version=1.0'" 
 ```
 
 这个命令会编译`main.go`文件，生成名为`myapp`的可执行文件，并启用详细输出、显示执行命令、启用数据竞争检测、禁用优化和内联、设置版本信息，以及使用`debug`标签进行编译。
+
+## 参考资料
+
+- [官方教程 · 入门](https://go.dev/doc/tutorial/getting-started)
+- [官方教程 · 创建模块](https://go.dev/doc/tutorial/create-module)
+
+## 同层页面
+
+- [BuildConstraint](/start/BuildConstraint.md)
+- [Embed](/start/Embed.md)
+- [Hello](/start/Hello.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Embed](Embed.md)
+- [Hello](Hello.md)
+- [Run](Run.md)
+- [Starter](Starter.md)
+- [Structure](Structure.md)

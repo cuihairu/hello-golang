@@ -181,3 +181,22 @@ func main() {
 #### 总结
 
 方括号分节、等号连键值、分号起注释，三样就构成了 INI 的全部语法。功能有限，换来的是任何文本编辑器都能改、几乎每种语言都有现成的库。Go 里读它用 `ini.Load`，写它用 `cfg.SaveTo`。
+
+## 参考资料
+
+- [encoding 系列标准库（json 为例）](https://pkg.go.dev/encoding/json)
+
+
+## 同层页面
+
+- [JsonV2](/encoding/JsonV2.md)
+- [Base64](/encoding/Base64.md)
+- [Binary](/encoding/Binary.md)
+- [Hex](/encoding/Hex.md)
+- [JSON](/encoding/JSON.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Hex](Hex.md)
+- [JSON](JSON.md)

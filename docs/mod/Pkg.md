@@ -112,3 +112,24 @@ func main() {
 - **模块（Module）**：包的集合，`go.mod` 记模块名、依赖和版本。
 
 两者各管一段：目录内的组织和导出归包，依赖版本归模块。`go mod init` 建模块，`go get` 加依赖，`go mod tidy` 清理多余的。
+
+## 参考资料
+
+- [官方 · Go Modules 使用指南](https://go.dev/doc/modules/)
+- [Go Modules Reference](https://go.dev/ref/mod)
+- [官方博客 · Using Go Modules](https://go.dev/blog/using-go-modules)
+
+
+## 同层页面
+
+- [Init](/mod/Init.md)
+- [Mod](/mod/Mod.md)
+- [Work](/mod/Work.md)
+- [Package](/mod/Package.md)
+- [Vendor](/mod/Vendor.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Package](Package.md)
+- [Vendor](Vendor.md)

@@ -12,3 +12,17 @@
 
 **流处理平台**（如 Apache Flink、Apache Storm）处理的是持续不断的数据流，数据一到就能处理，这与批处理攒一批再算不同。事件驱动的应用、实时看板都建立在这种"边到边算"的能力上。
 
+## 参考资料
+
+- [Apache Kafka 官方文档](https://kafka.apache.org/documentation/)
+
+## 同层页面
+
+- [ApacheKafka](/middleware/ApacheKafka.md)
+- [MessageQueue](/middleware/MessageQueue.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [ApacheKafka](ApacheKafka.md)
+- [MessageQueue](MessageQueue.md)

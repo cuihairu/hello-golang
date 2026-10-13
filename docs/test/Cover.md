@@ -104,3 +104,25 @@ total:        15     15     75.0%   +40.0%
 ### 总结
 
 Go 的覆盖率就三个命令：`go test -coverprofile` 出数据，`go tool cover -html` 看哪几行没跑到，`go tool cover -func` 看每个函数的百分比。覆盖率数字高不等于测试好，边界值和分支还得单独补用例。
+
+## 参考资料
+
+- [testing 标准库](https://pkg.go.dev/testing)
+- [官方教程 · 添加测试](https://go.dev/doc/tutorial/add-a-test)
+- [官方 · 覆盖率（build-cover）](https://go.dev/doc/build-cover)
+- [官方博客 · The cover story](https://go.dev/blog/cover)
+
+
+## 同层页面
+
+- [Fuzz](/test/Fuzz.md)
+- [Test](/test/Test.md)
+- [Advanced](/test/Advanced.md)
+- [Benchmark](/test/Benchmark.md)
+- [Example](/test/Example.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Benchmark](Benchmark.md)
+- [Example](Example.md)

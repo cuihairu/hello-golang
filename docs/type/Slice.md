@@ -157,3 +157,17 @@ func main() {
 ```
 
 用切片记住三条：改子切片会动到底层数组，扩容会让切片改指向，nil 切片和空切片不等价。
+
+## 参考资料
+
+- [语言规范 · 类型](https://go.dev/ref/spec#Types)
+- [语言规范 · 切片类型](https://go.dev/ref/spec#Slice_types)
+- [官方博客 · Go Slices: usage and internals](https://go.dev/blog/slices-intro)
+- [官方博客 · append 的机制](https://go.dev/blog/slices)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [glossary](/glossary.md)
+- [Rune](Rune.md)
+- [String](String.md)

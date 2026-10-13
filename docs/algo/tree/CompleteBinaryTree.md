@@ -96,3 +96,23 @@ tree2 complete: false
 ### 总结
 
 完全二叉树的全部要点是"没有空洞"，因此能无损地映射为数组，父子关系只用下标运算即可表达。判断完全性的关键是发现"空节点之后不能再有非空节点"。
+
+## 参考资料
+
+- [二叉树 · Wikipedia](https://en.wikipedia.org/wiki/Binary_tree)
+- [二叉堆 · Wikipedia](https://en.wikipedia.org/wiki/Binary_heap)
+
+
+## 同层页面
+
+- [Heap](/algo/tree/Heap.md)
+- [MinimumSpanningTree](/algo/tree/MinimumSpanningTree.md)
+- [RedBlackTree](/algo/tree/RedBlackTree.md)
+- [BinaryTree](/algo/tree/BinaryTree.md)
+- [FenwickTree](/algo/tree/FenwickTree.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [BinaryTree](BinaryTree.md)
+- [FenwickTree](FenwickTree.md)

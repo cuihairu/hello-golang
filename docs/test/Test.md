@@ -20,3 +20,19 @@ Go 的测试能力都在标准库 `testing` 包里，`go test` 一条命令跑�
 - **示例测试**：展示代码的使用示例，并验证示例的正确性。
 - **测试覆盖率**：评估测试对代码的覆盖程度。
 
+## 参考资料
+
+- [testing 标准库](https://pkg.go.dev/testing)
+- [官方教程 · 添加测试](https://go.dev/doc/tutorial/add-a-test)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [glossary](/glossary.md)
+- [Advanced](Advanced.md)
+- [BaseTest](BaseTest.md)
+- [Benchmark](Benchmark.md)
+- [Cover](Cover.md)
+- [Example](Example.md)
+- [Lib](Lib.md)
+- [Practice](Practice.md)

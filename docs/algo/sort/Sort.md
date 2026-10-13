@@ -73,3 +73,23 @@
 | 堆排序        | O(n log n)         | O(n log n)         | O(n log n)         | O(1)       | 不稳定 |
 
 没有全场景最优的选择。数据基本有序时，插入排序接近 O(n)；要稳定且不在乎额外内存，用归并排序；内存紧张就选堆排序这类原地算法。
+
+## 参考资料
+
+- [排序算法 · Wikipedia](https://en.wikipedia.org/wiki/Sorting_algorithm)
+- [sort 标准库](https://pkg.go.dev/sort)
+
+
+## 同层页面
+
+- [BubbleSort](/algo/sort/BubbleSort.md)
+- [BucketSort](/algo/sort/BucketSort.md)
+- [CocktailSort](/algo/sort/CocktailSort.md)
+- [ShellSort](/algo/sort/ShellSort.md)
+- [StableSort](/algo/sort/StableSort.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [ShellSort](ShellSort.md)
+- [StableSort](StableSort.md)

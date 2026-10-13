@@ -134,3 +134,23 @@ order: [1 3]
 ### 总结
 
 哈希链表的精髓是两种结构互补：哈希表解决了链表查找慢的问题，双向链表解决了哈希表无法维护顺序的问题，两者合在一起就能在 $O(1)$ 时间内完成 LRU 的全部操作。
+
+## 参考资料
+
+- [链表 · Wikipedia](https://en.wikipedia.org/wiki/Linked_list)
+- [哈希表 · Wikipedia](https://en.wikipedia.org/wiki/Hash_table)
+
+## 同层页面
+
+- [SkipList](/algo/list/SkipList.md)
+- [DynamicArray](/algo/list/DynamicArray.md)
+- [Queue](/algo/list/Queue.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [DynamicArray](DynamicArray.md)
+- [Queue](Queue.md)
+- [SinglyLinkedList](SinglyLinkedList.md)
+- [Stack](Stack.md)
+- [list](list.md)

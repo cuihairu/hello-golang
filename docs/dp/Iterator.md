@@ -105,3 +105,24 @@ func main() {
 - **迭代器模式与组合模式（Composite Pattern）**：组合模式用于将对象组合成树形结构以表示“部分-整体”的层次结构，而迭代器模式用于遍历集合中的元素。迭代器模式可以与组合模式结合使用，以遍历组合模式中的树形结构。
 - **迭代器模式与观察者模式（Observer Pattern）**：观察者模式用于在对象状态改变时通知观察者，而迭代器模式用于遍历集合中的元素。两者可以结合使用，例如在遍历过程中对元素状态的变化进行观察和处理。
 - **迭代器模式与责任链模式（Chain of Responsibility Pattern）**：责任链模式用于将请求沿着链传递，而迭代器模式用于遍历集合中的元素。可以结合使用，例如在迭代过程中将请求沿着责任链传递。
+
+## 参考资料
+
+- [GoF《设计模式》概览（Wikipedia）](https://en.wikipedia.org/wiki/Design_Patterns)
+- [Refactoring.Guru 设计模式目录](https://refactoring.guru/design-patterns)
+- [Effective Go（官方）](https://go.dev/doc/effective_go)
+
+
+## 同层页面
+
+- [AbstractFactory](/dp/AbstractFactory.md)
+- [Adapter](/dp/Adapter.md)
+- [Behavioral](/dp/Behavioral.md)
+- [Flyweight](/dp/Flyweight.md)
+- [Mediator](/dp/Mediator.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Flyweight](Flyweight.md)
+- [Mediator](Mediator.md)

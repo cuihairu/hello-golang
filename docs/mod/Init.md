@@ -87,3 +87,21 @@ This is the main function
 - `init` 函数用于包级初始化操作，`main` 函数用于程序的整体逻辑控制。
 
 记住执行顺序：先按导入关系初始化各个包的 `init`，全部跑完才进入 `main`。
+
+## 参考资料
+
+- [官方 · Go Modules 使用指南](https://go.dev/doc/modules/)
+- [Go Modules Reference](https://go.dev/ref/mod)
+- [官方博客 · Using Go Modules](https://go.dev/blog/using-go-modules)
+- [官方教程 · 创建模块](https://go.dev/doc/tutorial/create-module)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [glossary](/glossary.md)
+- [Get](Get.md)
+- [Import](Import.md)
+- [New](New.md)
+- [Package](Package.md)
+- [Pkg](Pkg.md)
+- [Vendor](Vendor.md)

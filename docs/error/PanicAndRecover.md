@@ -325,3 +325,19 @@ Recovered and continuing execution
 - **使用场景**：`panic` 用于严重错误，`recover` 用于捕获和处理异常，避免程序崩溃。
 
 可预料的错误用 `error` 返回值处理，`panic`/`recover` 留给不该发生的状态。分清这两条，程序就不会既慢又难查。
+
+## 参考资料
+
+- [官方博客 · Error handling and Go](https://go.dev/blog/error-handling-and-go)
+- [官方博客 · Errors are values](https://go.dev/blog/errors-are-values)
+- [errors 标准库](https://pkg.go.dev/errors)
+- [Effective Go · Errors](https://go.dev/doc/effective_go#errors)
+- [官方博客 · Defer, Panic, and Recover](https://go.dev/blog/defer-panic-and-recover)
+- [语言规范 · Defer 语句（含 panic/recover 处理）](https://go.dev/ref/spec#Handling_panics)
+- [Effective Go · Panic/Recover](https://go.dev/doc/effective_go#panic)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [ErrorType](ErrorType.md)
+- [glossary](/glossary.md)

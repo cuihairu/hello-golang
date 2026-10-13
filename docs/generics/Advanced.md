@@ -239,3 +239,24 @@ func main() {
 #### 8.5 小结
 
 本章把泛型用在工厂、适配器、策略三个模式上，演示了自定义约束和接口组合两种写约束的方式，最后用反射取类型信息、用 `var zero T` 拿零值。下一章进入实际案例。
+
+## 参考资料
+
+- [官方教程 · 泛型入门](https://go.dev/doc/tutorial/generics)
+- [官方博客 · An Introduction To Generics](https://go.dev/blog/intro-generics)
+- [官方博客 · When To Use Generics](https://go.dev/blog/when-generics)
+- [语言规范 · 类型参数声明](https://go.dev/ref/spec#Type_parameter_declarations)
+
+## 同层页面
+
+- [Constraints](/generics/Constraints.md)
+- [Generics](/generics/Generics.md)
+- [Pattern](/generics/Pattern.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Pattern](Pattern.md)
+- [Performance](Performance.md)
+- [Structure](Structure.md)
+- [Syntax](Syntax.md)

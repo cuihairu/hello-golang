@@ -89,3 +89,18 @@ func main() {
 #### 8. 结论
 
 CSP 把并发单位和通信媒介拆成两样东西，Go 用 goroutine 和 channel 实现了它。写并发程序时，先把数据流画成"谁发、谁收"，再决定开几个 goroutine。
+
+## 参考资料
+
+- [Effective Go · 并发](https://go.dev/doc/effective_go#concurrency)
+- [Go 内存模型](https://go.dev/ref/mem)
+- [sync 标准库](https://pkg.go.dev/sync)
+- [Hoare 1978 · Communicating Sequential Processes（CACM 原论文 DOI）](https://dl.acm.org/doi/10.1145/359576.359585)
+- [CSP 概览（Wikipedia）](https://en.wikipedia.org/wiki/Communicating_sequential_processes)
+- [官方博客 · Go Concurrency Patterns: Pipelines](https://go.dev/blog/pipelines)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Concurrency](Concurrency.md)
+- [glossary](/glossary.md)

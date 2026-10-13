@@ -219,3 +219,24 @@ func main() {
 ### 总结
 
 嵌入把内层结构体的字段和方法提升到外层结构体的命名空间：`e.Name` 不用写成 `e.Person.Name`；名字冲突时外层覆盖内层，想调内层的就用 `d.Base.Do()` 这样的完整写法。
+
+## 参考资料
+
+- [官方 FAQ · 类型系统](https://go.dev/doc/faq)
+- [语言规范 · 接口类型](https://go.dev/ref/spec#Interface_types)
+- [Effective Go · Methods](https://go.dev/doc/effective_go#methods)
+- [Effective Go · Embedding](https://go.dev/doc/effective_go#embedding)
+- [语言规范 · 结构体类型（嵌入字段）](https://go.dev/ref/spec#Struct_types)
+
+## 同层页面
+
+- [Poly](/oop/Poly.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [glossary](/glossary.md)
+- [InterfaceImpl](InterfaceImpl.md)
+- [Methods](Methods.md)
+- [OOP](OOP.md)
+- [Poly](Poly.md)

@@ -44,3 +44,26 @@ v2 的包文档在标准库 `encoding/json/v2` 分组下，`golang.google.cn/pkg
 1. https://golang.google.cn/doc/jsonv2-migration — 迁移指南：不必迁的三条理由、v1/v2 兼容、四个 API 与默认值差异、Go 1.27 新标签两边都支持（2026-10-08 抓取）
 2. https://golang.google.cn/pkg/encoding/json/v2 — 包文档入口
 3. https://golang.google.cn/doc/ — 文档总览 References 板块列出的 json/v2 迁移指南条目
+
+## 参考资料
+
+- [encoding 系列标准库（json 为例）](https://pkg.go.dev/encoding/json)
+- [官方 · json/v2 迁移指南](https://go.dev/doc/jsonv2-migration)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Base64](Base64.md)
+- [Binary](Binary.md)
+- [CSV](CSV.md)
+- [Encoding](Encoding.md)
+- [Formats](Formats.md)
+- [Gob](Gob.md)
+- [Hex](Hex.md)
+- [Ini](Ini.md)
+- [JSON](JSON.md)
+- [TOML](TOML.md)
+- [Text](Text.md)
+- [Voice](Voice.md)
+- [XML](XML.md)
+- [knowledge](/knowledge.md)

@@ -252,3 +252,24 @@ type User {
 ```
 
 GraphQL 的核心是查询、变更、订阅三种操作加一套类型系统；Go 这边用 `gqlgen` 从 schema 生成代码，在 Resolver 里补业务逻辑即可。
+
+## 参考资料
+
+- [官方 · 数据库访问指南](https://go.dev/doc/database/)
+- [官方教程 · 数据库访问](https://go.dev/doc/tutorial/database-access)
+- [database/sql 标准库](https://pkg.go.dev/database/sql)
+- [GraphQL 官方 · Learn](https://graphql.org/learn/)
+
+## 同层页面
+
+- [Availability](/db/Availability.md)
+- [Base](/db/Base.md)
+- [ConnectPool](/db/ConnectPool.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Availability](Availability.md)
+- [Base](Base.md)
+- [ConnectPool](ConnectPool.md)
+- [Install](Install.md)

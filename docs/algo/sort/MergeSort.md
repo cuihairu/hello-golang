@@ -107,3 +107,22 @@ func main() {
 ### 总结
 
 归并排序把数组分解成更小的子数组递归排序，再合并回一个有序数组。代价是 $O(n)$ 的额外空间，换来的是稳定不受输入影响的 $O(n \log n)$，适合大规模数据以及需要保持元素相对位置的场景。
+
+## 参考资料
+
+- [归并排序 · Wikipedia](https://en.wikipedia.org/wiki/Merge_sort)
+
+
+## 同层页面
+
+- [BubbleSort](/algo/sort/BubbleSort.md)
+- [BucketSort](/algo/sort/BucketSort.md)
+- [CocktailSort](/algo/sort/CocktailSort.md)
+- [InsertionSort](/algo/sort/InsertionSort.md)
+- [QuickSort](/algo/sort/QuickSort.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [InsertionSort](InsertionSort.md)
+- [QuickSort](QuickSort.md)

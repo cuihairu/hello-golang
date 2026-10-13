@@ -181,3 +181,23 @@
 ### 总结
 
 六个方向各有落点：哈希表靠哈希函数定位键，动态规划靠子问题递推，图形学靠矩阵和几何计算，机器学习靠线性代数和概率统计，密码学靠对称/非对称加密和哈希函数，数值计算靠矩阵分解和优化算法。本页给出的五段 Go 代码（`map`、斐波那契、`svgo`、`gonum/mat`、`sha256`）可以直接跑。
+
+## 参考资料
+
+- [math 标准库](https://pkg.go.dev/math)
+- [math/rand 标准库](https://pkg.go.dev/math/rand)
+
+
+## 同层页面
+
+- [Calc](/math/Calc.md)
+- [LinearAlgebra](/math/LinearAlgebra.md)
+- [Math](/math/Math.md)
+- [Optimize](/math/Optimize.md)
+- [Statistics](/math/Statistics.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Optimize](Optimize.md)
+- [Statistics](Statistics.md)

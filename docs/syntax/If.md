@@ -189,3 +189,15 @@ if x > 10 {
         fmt.Println("Complex condition met")
     }
     ```
+
+## 参考资料
+
+- [语言规范 · 语句](https://go.dev/ref/spec#Statements)
+- [Effective Go · 控制结构](https://go.dev/doc/effective_go#control-structures)
+- [语言规范 · If 语句](https://go.dev/ref/spec#If_statements)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Conditional](Conditional.md)
+- [Jump](Jump.md)

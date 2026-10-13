@@ -64,3 +64,16 @@ func main() {
 ### 小结
 
 伪寄存器（`SB`/`FP`/`SP`/`PC`）是链接器的语言，`TEXT` 声明里帧大小带出参数布局；Go 侧声明签名、汇编侧给实现，同目录即链接。真要动手前先看编译器生成的汇编，多数热点它已经排得不错。
+
+## 参考资料
+
+- [官方 · A Quick Guide to Go's Assembler](https://go.dev/doc/asm)
+
+## 同层页面
+
+- [Assembly](/asm/Assembly.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Assembly](Assembly.md)

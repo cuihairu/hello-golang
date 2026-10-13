@@ -105,3 +105,24 @@ func main() {
 - **模板方法模式与策略模式（Strategy Pattern）**：策略模式用于定义一系列算法并使其可以互换，而模板方法模式用于在基类中定义算法的骨架，并将某些步骤推迟到子类中实现。可以结合使用，例如在模板方法中使用策略模式来处理具体的步骤。
 - **模板方法模式与工厂方法模式（Factory Method Pattern）**：工厂方法模式用于创建对象，而模板方法模式用于定义算法的骨架。可以结合使用，例如在模板方法中使用工厂方法模式来创建不同的对象。
 - **模板方法模式与状态模式（State Pattern）**：状态模式用于根据对象的状态改变其行为，而模板方法模式用于在基类中定义算法的骨架。可以结合使用，例如在模板方法中使用状态模式来管理算法的步骤。
+
+## 参考资料
+
+- [GoF《设计模式》概览（Wikipedia）](https://en.wikipedia.org/wiki/Design_Patterns)
+- [Refactoring.Guru 设计模式目录](https://refactoring.guru/design-patterns)
+- [Effective Go（官方）](https://go.dev/doc/effective_go)
+
+
+## 同层页面
+
+- [AbstractFactory](/dp/AbstractFactory.md)
+- [Adapter](/dp/Adapter.md)
+- [Behavioral](/dp/Behavioral.md)
+- [Structural](/dp/Structural.md)
+- [Visitor](/dp/Visitor.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Structural](Structural.md)
+- [Visitor](Visitor.md)

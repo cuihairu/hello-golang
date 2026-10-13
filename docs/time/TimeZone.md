@@ -100,3 +100,22 @@ Go语言使用系统的时区数据库（如 IANA 时区数据库），这些数
 ### 总结
 
 时区三件事：`time.LoadLocation` 按 IANA 名字加载，`t.In(loc)` 换显示时区，夏令时由时区数据库带着走。跨时区计算先把时间统一转成 UTC；时区名用 `America/New_York` 这种而不是 `-08:00`，夏令时切换时才不会算错。
+
+## 参考资料
+
+- [time 标准库](https://pkg.go.dev/time)
+
+
+## 同层页面
+
+- [Advanced](/time/Advanced.md)
+- [ConceptTime](/time/ConceptTime.md)
+- [FormatAndParse](/time/FormatAndParse.md)
+- [Practice](/time/Practice.md)
+- [TimerAndTicker](/time/TimerAndTicker.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Practice](Practice.md)
+- [TimerAndTicker](TimerAndTicker.md)

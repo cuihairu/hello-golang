@@ -95,3 +95,20 @@ Field: Email, Tag: json:"email,omitempty"
 ### 总结
 
 结构体标签把字段的元信息挂在反引号字符串里，`encoding/json`、`encoding/xml` 和 gorm 都靠它决定怎么处理字段。标签本身只是字符串，想自己读取就得走 `reflect`。
+
+## 参考资料
+
+- [Effective Go（官方）](https://go.dev/doc/effective_go)
+- [encoding/json · 结构体标签](https://pkg.go.dev/encoding/json)
+- [官方博客 · JSON and Go](https://go.dev/blog/json)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [glossary](/glossary.md)
+- [BlankIdentifier](BlankIdentifier.md)
+- [CommaOk](CommaOk.md)
+- [Idioms](Idioms.md)
+- [Labels](Labels.md)
+- [Range](Range.md)
+- [ShortVarDecl](ShortVarDecl.md)

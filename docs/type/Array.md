@@ -88,3 +88,21 @@ func modifySlice(slice []int) {
 - **切片**是动态长度的引用类型，支持动态增长和切片操作，适合于灵活的数据处理需求。
 
 数组长度写进类型，`[3]int` 和 `[5]int` 是两种类型，互不兼容；长度会变的场景直接用切片。
+
+## 参考资料
+
+- [语言规范 · 类型](https://go.dev/ref/spec#Types)
+- [语言规范 · 数组类型](https://go.dev/ref/spec#Array_types)
+
+
+## 同层页面
+
+- [Assertion](/type/Assertion.md)
+- [Interface](/type/Interface.md)
+- [Map](/type/Map.md)
+- [TypeInference](/type/TypeInference.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Assertion](Assertion.md)

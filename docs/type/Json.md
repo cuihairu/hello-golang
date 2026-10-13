@@ -262,3 +262,22 @@ func main() {
 ### 总结
 
 四件事记住就够了：字段名靠 `json:"..."` 标签对齐，不写标签就用字段名原样；`omitempty` 让零值字段在输出里消失；结构不确定时用 `map[string]interface{}` 兜底，但要记得 JSON 里的数字到 Go 这边统一变成 `float64`；循环引用的结构体会让编码报错。
+
+## 参考资料
+
+- [语言规范 · 类型](https://go.dev/ref/spec#Types)
+- [encoding/json 标准库](https://pkg.go.dev/encoding/json)
+- [官方博客 · JSON and Go](https://go.dev/blog/json)
+
+
+## 同层页面
+
+- [Assertion](/type/Assertion.md)
+- [Interface](/type/Interface.md)
+- [Map](/type/Map.md)
+- [LinkedList](/type/LinkedList.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [LinkedList](LinkedList.md)

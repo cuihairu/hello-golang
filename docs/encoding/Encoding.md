@@ -20,3 +20,21 @@ Go 标准库覆盖了大部分编码和解码需求，常用的包有：
 - **`encoding/json`** 和 **`encoding/xml`**：用于将数据编码为 JSON 或 XML 格式，以便于存储和传输结构化数据。
 
 本章介绍 Go 中的文本编码、二进制编码，以及如何选择编码方式。
+
+## 参考资料
+
+- [encoding 系列标准库（json 为例）](https://pkg.go.dev/encoding/json)
+
+
+## 同层页面
+
+- [JsonV2](/encoding/JsonV2.md)
+- [Base64](/encoding/Base64.md)
+- [Binary](/encoding/Binary.md)
+- [CSV](/encoding/CSV.md)
+- [Formats](/encoding/Formats.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Formats](Formats.md)

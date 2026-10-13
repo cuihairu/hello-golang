@@ -157,3 +157,23 @@ outer:
 ```
 
 详细说明见 [for](For.md)、[break](Break.md) 和 [continue](Continue.md)。
+
+## 参考资料
+
+- [语言规范 · 语句](https://go.dev/ref/spec#Statements)
+- [Effective Go · 控制结构](https://go.dev/doc/effective_go#control-structures)
+- [语言规范 · For 语句](https://go.dev/ref/spec#For_statements)
+
+
+## 同层页面
+
+- [Break](/syntax/Break.md)
+- [Continue](/syntax/Continue.md)
+- [For](/syntax/For.md)
+- [Jump](/syntax/Jump.md)
+- [Switch](/syntax/Switch.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Jump](Jump.md)

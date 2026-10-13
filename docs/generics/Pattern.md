@@ -122,3 +122,22 @@ var _ Container[int] = &IntContainer{}
 #### 4.5 小结
 
 用泛型记住三条：类型参数别堆多，性能敏感处实测，约束写到刚好够用。
+
+## 参考资料
+
+- [官方教程 · 泛型入门](https://go.dev/doc/tutorial/generics)
+- [官方博客 · An Introduction To Generics](https://go.dev/blog/intro-generics)
+- [官方博客 · When To Use Generics](https://go.dev/blog/when-generics)
+- [语言规范 · 类型参数声明](https://go.dev/ref/spec#Type_parameter_declarations)
+
+## 同层页面
+
+- [Constraints](/generics/Constraints.md)
+- [Generics](/generics/Generics.md)
+- [Advanced](/generics/Advanced.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Advanced](Advanced.md)
+- [Performance](Performance.md)

@@ -204,3 +204,23 @@ UPDATE users SET name = 'Bob' WHERE id = 1;
 ```sql
 SELECT * FROM users WHERE id = 1;
 ```
+
+## 参考资料
+
+- [官方 · 数据库访问指南](https://go.dev/doc/database/)
+- [官方教程 · 数据库访问](https://go.dev/doc/tutorial/database-access)
+- [database/sql 标准库](https://pkg.go.dev/database/sql)
+- [官方 · 数据库事务](https://go.dev/doc/database/execute-transactions)
+
+
+## 同层页面
+
+- [Availability](/db/Availability.md)
+- [Base](/db/Base.md)
+- [ConnectPool](/db/ConnectPool.md)
+- [Sharding](/db/Sharding.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Sharding](Sharding.md)

@@ -152,3 +152,23 @@ func (r *router) getStaticRoute(method, path string) HandlersChain {
 ### 总结
 
 Gin 的路由匹配走前缀树：先做路径规范化，静态段优先比较，命中缓存就跳过整棵树。子节点多时用二分查找，静态路由多时用哈希表，都是把比较次数降下来的手段。
+
+## 参考资料
+
+- [Gin 官方文档](https://gin-gonic.com/en/docs/)
+- [Gin · pkg.go.dev](https://pkg.go.dev/github.com/gin-gonic/gin)
+
+
+## 同层页面
+
+- [Config](/gin/Config.md)
+- [Debug](/gin/Debug.md)
+- [Error](/gin/Error.md)
+- [Middleware](/gin/Middleware.md)
+- [Request](/gin/Request.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Middleware](Middleware.md)
+- [Request](Request.md)

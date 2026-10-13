@@ -82,3 +82,22 @@ func main() {
 ### 总结
 
 选择排序有三个确定的性质：时间复杂度固定 $O(n^2)$，与初始排列无关；空间 $O(1)$，只用到交换的变量；实现短，读代码时一眼能看懂排序是怎么进行的。大规模数据别用它，拿它入门排序思想正合适。
+
+## 参考资料
+
+- [选择排序 · Wikipedia](https://en.wikipedia.org/wiki/Selection_sort)
+
+
+## 同层页面
+
+- [BubbleSort](/algo/sort/BubbleSort.md)
+- [BucketSort](/algo/sort/BucketSort.md)
+- [CocktailSort](/algo/sort/CocktailSort.md)
+- [RadixSort](/algo/sort/RadixSort.md)
+- [ShellSort](/algo/sort/ShellSort.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [RadixSort](RadixSort.md)
+- [ShellSort](ShellSort.md)

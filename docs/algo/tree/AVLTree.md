@@ -241,3 +241,22 @@ func main() {
 ### 5. 小结
 
 AVL 树把平衡因子限制在 -1、0、1，树的高度始终是 \(O(\log n)\)，查找、插入、删除在最坏情况下也都是 \(O(\log n)\)。上面这份 Go 实现覆盖了插入、删除、查找和前序遍历，旋转逻辑集中在 `insert` 和 `deleteNode` 里。
+
+## 参考资料
+
+- [AVL 树 · Wikipedia](https://en.wikipedia.org/wiki/AVL_tree)
+
+
+## 同层页面
+
+- [Heap](/algo/tree/Heap.md)
+- [MinimumSpanningTree](/algo/tree/MinimumSpanningTree.md)
+- [RedBlackTree](/algo/tree/RedBlackTree.md)
+- [Tree](/algo/tree/Tree.md)
+- [B+Tree](/algo/tree/B+Tree.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [B+Tree](B+Tree.md)
+- [Tree](Tree.md)

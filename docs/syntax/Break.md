@@ -165,3 +165,22 @@ OuterLoop:
 - **标签**：`break` 与标签一起使用，可以跳出多层嵌套的循环。
 
 最常见的坑是 `select` 写在循环里：不带标签的 `break` 只跳出 `select`，`for` 还在转。
+
+## 参考资料
+
+- [语言规范 · 语句](https://go.dev/ref/spec#Statements)
+- [Effective Go · 控制结构](https://go.dev/doc/effective_go#control-structures)
+- [语言规范 · Break 语句](https://go.dev/ref/spec#Break_statements)
+
+## 同层页面
+
+- [Conditional](/syntax/Conditional.md)
+- [ControlFlow](/syntax/ControlFlow.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Conditional](Conditional.md)
+- [ControlFlow](ControlFlow.md)
+- [Jump](Jump.md)
+- [Loop](Loop.md)

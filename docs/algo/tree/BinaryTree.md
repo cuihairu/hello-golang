@@ -148,3 +148,22 @@ func main() {
 ### 复杂度
 
 三种遍历都把每个节点恰好访问一次，时间 O(n)，递归深度等于树高 h，栈空间 O(h)。插入沿一条从根到叶的路径走，O(h)。普通二叉树对形状没有约束，h 最坏退到 n-1（节点连成一条链），插入和查找随之变成 O(n)；要把 h 稳定在 O(log n)，得靠 AVL、红黑树这类自平衡结构。
+
+## 参考资料
+
+- [二叉树 · Wikipedia](https://en.wikipedia.org/wiki/Binary_tree)
+
+
+## 同层页面
+
+- [Heap](/algo/tree/Heap.md)
+- [MinimumSpanningTree](/algo/tree/MinimumSpanningTree.md)
+- [RedBlackTree](/algo/tree/RedBlackTree.md)
+- [BinarySearchTree](/algo/tree/BinarySearchTree.md)
+- [CompleteBinaryTree](/algo/tree/CompleteBinaryTree.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [BinarySearchTree](BinarySearchTree.md)
+- [CompleteBinaryTree](CompleteBinaryTree.md)

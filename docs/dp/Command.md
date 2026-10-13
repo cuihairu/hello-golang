@@ -113,3 +113,24 @@ func main() {
 - **命令模式与责任链模式（Chain of Responsibility Pattern）**：责任链把请求沿处理链往下传，命令则把请求封成对象；把命令对象交给责任链，链上各环节就能逐个处理它。
 - **命令模式与策略模式（Strategy Pattern）**：策略管选哪个算法，命令管执行哪个动作，两者能嵌套：命令对象里持一个策略来决定具体动作。
 - **命令模式与模板方法模式（Template Method Pattern）**：模板方法定算法骨架、由子类填步骤，命令只管封装调用，可以在命令对象里用模板方法固定操作的步骤。
+
+## 参考资料
+
+- [GoF《设计模式》概览（Wikipedia）](https://en.wikipedia.org/wiki/Design_Patterns)
+- [Refactoring.Guru 设计模式目录](https://refactoring.guru/design-patterns)
+- [Effective Go（官方）](https://go.dev/doc/effective_go)
+
+
+## 同层页面
+
+- [AbstractFactory](/dp/AbstractFactory.md)
+- [Adapter](/dp/Adapter.md)
+- [Behavioral](/dp/Behavioral.md)
+- [ChainofResponsibility](/dp/ChainofResponsibility.md)
+- [Composite](/dp/Composite.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [ChainofResponsibility](ChainofResponsibility.md)
+- [Composite](Composite.md)

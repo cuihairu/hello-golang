@@ -129,3 +129,20 @@ func main() {
 ### 总结
 
 多维数组是嵌套数组，长度固定，适合行列已知的数据。行列要变就用二维切片，每行得单独分配。定义、取值、赋值和嵌套 `for` 遍历，两者写法一样。
+
+## 参考资料
+
+- [数组（数据结构）· Wikipedia](https://en.wikipedia.org/wiki/Array_data_structure)
+
+
+## 同层页面
+
+- [DynamicArray](/algo/array/DynamicArray.md)
+- [Array](/algo/array/Array.md)
+- [CircularBuffer](/algo/array/CircularBuffer.md)
+- [PriorityQueue](/algo/array/PriorityQueue.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [PriorityQueue](PriorityQueue.md)

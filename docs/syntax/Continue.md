@@ -178,3 +178,17 @@ endLoop:
 - `continue` 跳过本次迭代剩下的语句，`break` 直接结束整个循环。
 - 内层循环里的 `continue` 只影响内层，要跳外层迭代得写 `continue OuterLoop`。
 - 底层就是把程序计数器（PC）拨回循环条件检查的位置。
+
+## 参考资料
+
+- [语言规范 · 语句](https://go.dev/ref/spec#Statements)
+- [Effective Go · 控制结构](https://go.dev/doc/effective_go#control-structures)
+- [语言规范 · Continue 语句](https://go.dev/ref/spec#Continue_statements)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Conditional](Conditional.md)
+- [ControlFlow](ControlFlow.md)
+- [Jump](Jump.md)
+- [Loop](Loop.md)

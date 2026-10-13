@@ -167,3 +167,25 @@ Redis 流（Streams）的底层实现是基于一个链表结构和散列结构�
    ```
 
 `go-redis` 把上面几个命令都封成了 `XAdd`、`XRange`、`XReadGroup` 方法，生产者发消息、消费者组收消息各几行代码就能跑通。
+
+## 参考资料
+
+- [Redis 官方命令手册](https://redis.io/commands/)
+- [go-redis 官方客户端](https://github.com/redis/go-redis)
+- [go-redis · pkg.go.dev](https://pkg.go.dev/github.com/redis/go-redis/v9)
+- [Redis 官方 · Streams 教程](https://redis.io/docs/latest/develop/data-types/streams/)
+
+
+## 同层页面
+
+- [Bitmap](/redis/Bitmap.md)
+- [Geospatial](/redis/Geospatial.md)
+- [Hash](/redis/Hash.md)
+- [SortedSet](/redis/SortedSet.md)
+- [String](/redis/String.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [SortedSet](SortedSet.md)
+- [String](String.md)

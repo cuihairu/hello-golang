@@ -108,3 +108,24 @@ func main() {
 
 ### 单例模式的扩展
 一个实例不够用的时候（例如数据库连接池），可以用多例模式（Multiton Pattern）：每个关键字对应一个唯一实例。
+
+## 参考资料
+
+- [GoF《设计模式》概览（Wikipedia）](https://en.wikipedia.org/wiki/Design_Patterns)
+- [Refactoring.Guru 设计模式目录](https://refactoring.guru/design-patterns)
+- [Effective Go（官方）](https://go.dev/doc/effective_go)
+
+
+## 同层页面
+
+- [AbstractFactory](/dp/AbstractFactory.md)
+- [Adapter](/dp/Adapter.md)
+- [Behavioral](/dp/Behavioral.md)
+- [Reactor](/dp/Reactor.md)
+- [State](/dp/State.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Reactor](Reactor.md)
+- [State](State.md)

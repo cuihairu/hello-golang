@@ -114,3 +114,20 @@ func main() {
 ### 总结
 
 稀疏数组用"坐标 + 值"的三元组记录少量有效数据，用 $O(k)$ 的空间换掉 $O(mn)$ 的存储，棋盘存档和稀疏矩阵存储是它的典型场景。
+
+## 参考资料
+
+- [稀疏矩阵 · Wikipedia](https://en.wikipedia.org/wiki/Sparse_matrix)
+
+
+## 同层页面
+
+- [DynamicArray](/algo/array/DynamicArray.md)
+- [Array](/algo/array/Array.md)
+- [CircularBuffer](/algo/array/CircularBuffer.md)
+- [PriorityQueue](/algo/array/PriorityQueue.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [PriorityQueue](PriorityQueue.md)

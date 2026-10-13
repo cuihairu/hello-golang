@@ -80,3 +80,22 @@ github.com/gin-gonic/gin v1.7.4/go.mod h1:ZZFzY1G5e/oDpUsGtcj0FJ/h4ug9Qt68N/m9uI
 ```
 
 版本号落在 `go.mod`，校验和落在 `go.sum`，依赖出了问题就在这两个文件里查。
+
+## 参考资料
+
+- [官方 · Go Modules 使用指南](https://go.dev/doc/modules/)
+- [Go Modules Reference](https://go.dev/ref/mod)
+- [官方博客 · Using Go Modules](https://go.dev/blog/using-go-modules)
+
+
+## 同层页面
+
+- [Init](/mod/Init.md)
+- [Mod](/mod/Mod.md)
+- [Work](/mod/Work.md)
+- [Import](/mod/Import.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Import](Import.md)

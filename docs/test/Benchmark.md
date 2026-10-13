@@ -107,3 +107,23 @@ go tool pprof mem.out
 ### 总结
 
 基准测试的产出是每次操作的平均耗时（如 `1.00 ns/op`），数字比感觉可靠。写法上三件事：函数名以 `Benchmark` 开头、循环跑 `b.N` 次、用 `go test -bench` 执行；要继续定位热点，加 `-cpuprofile` 或 `-memprofile` 生成 pprof 报告。
+
+## 参考资料
+
+- [testing 标准库](https://pkg.go.dev/testing)
+- [官方教程 · 添加测试](https://go.dev/doc/tutorial/add-a-test)
+- [官方博客 · testing.B.Loop](https://go.dev/blog/testing-b-loop)
+
+
+## 同层页面
+
+- [Fuzz](/test/Fuzz.md)
+- [Test](/test/Test.md)
+- [Advanced](/test/Advanced.md)
+- [BaseTest](/test/BaseTest.md)
+- [Cover](/test/Cover.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Cover](Cover.md)

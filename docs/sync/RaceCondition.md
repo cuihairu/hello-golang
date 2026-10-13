@@ -92,3 +92,14 @@ go run -race main.go
 ```
 
 启用后，只要运行路径上真的发生了并发冲突访问，`-race` 就会把两个冲突的读写位置打印出来。并发代码合入前建议都过一遍 `-race`。
+
+## 参考资料
+
+- [sync 标准库](https://pkg.go.dev/sync)
+- [Go 内存模型](https://go.dev/ref/mem)
+- [官方博客 · Introducing the Go Race Detector](https://go.dev/blog/race-detector)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [glossary](/glossary.md)

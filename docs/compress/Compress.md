@@ -310,3 +310,22 @@ File decompressed successfully
 ---
 
 `compress` 包的三个子包用法都在这里：gzip 和 zlib 读写对称，bzip2 只能读。
+
+## 参考资料
+
+- [compress/gzip 标准库](https://pkg.go.dev/compress/gzip)
+- [compress/flate 标准库](https://pkg.go.dev/compress/flate)
+
+## 同层页面
+
+- [Advanced](/compress/Advanced.md)
+- [Archive](/compress/Archive.md)
+- [Composite](/compress/Composite.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Advanced](Advanced.md)
+- [Archive](Archive.md)
+- [Composite](Composite.md)
+- [ErrHandleAndTest](ErrHandleAndTest.md)

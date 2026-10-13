@@ -100,3 +100,23 @@ func main() {
 - **性能**：适合低频统计；更新频率很高时换更专用的监控工具。
 
 想给程序快速加几个运行时计数器，`expvar` 是标准库自带的现成方案，不用引第三方依赖。
+
+## 参考资料
+
+- [官方 · 诊断（Diagnostics）](https://go.dev/doc/diagnostics)
+- [runtime/pprof 标准库](https://pkg.go.dev/runtime/pprof)
+- [expvar 标准库](https://pkg.go.dev/expvar)
+
+
+## 同层页面
+
+- [PGO](/debug/PGO.md)
+- [Pprof](/debug/Pprof.md)
+- [Debug](/debug/Debug.md)
+- [Delve](/debug/Delve.md)
+- [GDB](/debug/GDB.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [GDB](GDB.md)

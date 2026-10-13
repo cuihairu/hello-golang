@@ -38,3 +38,13 @@ CLI 是官方四类场景之一。官方 CLI 页给的理由集中在三条：�
 
 1. https://golang.google.cn/solutions/clis/ — Go for CLIs（单二进制、几秒跨架构构建、Cobra 与 Viper、Comcast/GitHub/Hugo 案例，2026-10-08 抓取）
 2. https://golang.google.cn/solutions/use-cases — 四类场景索引
+
+## 参考资料
+
+- [官方教程 · Web 应用（wiki）](https://go.dev/doc/articles/wiki/)
+- [net/http 标准库](https://pkg.go.dev/net/http)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [knowledge](/knowledge.md)

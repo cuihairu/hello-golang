@@ -128,3 +128,24 @@ func getCache(key string) (string, error) {
 ```
 
 本节覆盖了索引类型与创建、`EXPLAIN` 执行计划分析、连接池参数设置和 Redis 缓存用法。动手优化前，先用 `EXPLAIN` 确认瓶颈出在哪一步。
+
+## 参考资料
+
+- [官方 · 数据库访问指南](https://go.dev/doc/database/)
+- [官方教程 · 数据库访问](https://go.dev/doc/tutorial/database-access)
+- [database/sql 标准库](https://pkg.go.dev/database/sql)
+
+
+## 同层页面
+
+- [Availability](/db/Availability.md)
+- [Base](/db/Base.md)
+- [ConnectPool](/db/ConnectPool.md)
+- [ORM](/db/ORM.md)
+- [Project](/db/Project.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [ORM](ORM.md)
+- [Project](Project.md)

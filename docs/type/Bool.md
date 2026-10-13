@@ -92,3 +92,23 @@ func main() {
 ```
 
 把上面的用法归一下：`bool` 只有两个值，声明不初始化就是 `false`，不能和整数互相转换，条件判断里直接写变量名就行，不用再写 `flag == true`。
+
+## 参考资料
+
+- [语言规范 · 类型](https://go.dev/ref/spec#Types)
+- [语言规范 · 布尔类型](https://go.dev/ref/spec#Boolean_types)
+
+
+## 同层页面
+
+- [Assertion](/type/Assertion.md)
+- [Interface](/type/Interface.md)
+- [Map](/type/Map.md)
+- [Big](/type/Big.md)
+- [Byte](/type/Byte.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Big](Big.md)
+- [Byte](Byte.md)

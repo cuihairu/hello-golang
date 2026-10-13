@@ -121,3 +121,25 @@ func main() {
 ### 总结
 
 多返回值让函数不必为了带回错误信息而另定义结构体，`(值, error)` 是最常见的组合。命名返回值把含义写进函数签名，读签名就知道每个返回值是什么；不需要的值用 `_` 丢弃。
+
+## 参考资料
+
+- [语言规范 · 函数声明](https://go.dev/ref/spec#Function_declarations)
+- [语言规范 · 调用](https://go.dev/ref/spec#Calls)
+- [Effective Go · 函数](https://go.dev/doc/effective_go#functions)
+- [Effective Go · multiple returns](https://go.dev/doc/effective_go#multiple-returns)
+
+
+## 同层页面
+
+- [AnonymousFunc](/func/AnonymousFunc.md)
+- [Defer](/func/Defer.md)
+- [VariadicParameters](/func/VariadicParameters.md)
+- [InnerFunc](/func/InnerFunc.md)
+- [RecursiveFunction](/func/RecursiveFunction.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [InnerFunc](InnerFunc.md)
+- [RecursiveFunction](RecursiveFunction.md)

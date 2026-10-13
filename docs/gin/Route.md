@@ -144,3 +144,23 @@ r.GET("/static/*filepath", func(c *gin.Context) {
 ### 总结
 
 Gin 的路由由四块组成：注册（HTTP 方法 + 路径 + 处理函数）、匹配（精确、`:param` 参数、`*wildcard` 通配符）、分组（共享前缀和中间件）、静态与动态路径。按这四块组织路由，路由多了也不乱。
+
+## 参考资料
+
+- [Gin 官方文档](https://gin-gonic.com/en/docs/)
+- [Gin · pkg.go.dev](https://pkg.go.dev/github.com/gin-gonic/gin)
+
+
+## 同层页面
+
+- [Config](/gin/Config.md)
+- [Debug](/gin/Debug.md)
+- [Error](/gin/Error.md)
+- [Response](/gin/Response.md)
+- [Source](/gin/Source.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Response](Response.md)
+- [Source](Source.md)

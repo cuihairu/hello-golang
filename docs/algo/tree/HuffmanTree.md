@@ -112,3 +112,18 @@ b -> 111
 ### 总结
 
 霍夫曼树用贪心策略证明了"频率越高离根越近"能使带权路径长度最小，其编码是可即时解码的前缀码。它是最优前缀编码的经典构造，也是理解贪心算法正确性证明的范例。
+
+## 参考资料
+
+- [霍夫曼编码 · Wikipedia](https://en.wikipedia.org/wiki/Huffman_coding)
+
+## 同层页面
+
+- [Heap](/algo/tree/Heap.md)
+- [MinimumSpanningTree](/algo/tree/MinimumSpanningTree.md)
+- [RedBlackTree](/algo/tree/RedBlackTree.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Heap](Heap.md)

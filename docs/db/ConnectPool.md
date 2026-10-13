@@ -134,3 +134,37 @@ func usePool(db *sql.DB) {
 ```
 
 三个参数配好，连接的复用和上限就都有了：`SetMaxOpenConns` 卡住同时打开的总量，`SetMaxIdleConns` 留住热连接，`SetConnMaxLifetime` 防止连接被长期占用。之后的增删改查照常写，连接池在下面自动换进换出。
+
+## 参考资料
+
+- [官方 · 数据库访问指南](https://go.dev/doc/database/)
+- [官方教程 · 数据库访问](https://go.dev/doc/tutorial/database-access)
+- [database/sql 标准库](https://pkg.go.dev/database/sql)
+
+## 同层页面
+
+- [Availability](/db/Availability.md)
+- [Base](/db/Base.md)
+- [GraphQL](/db/GraphQL.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Availability](Availability.md)
+- [Base](Base.md)
+- [GraphQL](GraphQL.md)
+- [Install](Install.md)
+- [Lib](Lib.md)
+- [Migrate](Migrate.md)
+- [Mock](Mock.md)
+- [Monitor](Monitor.md)
+- [NoSQL](NoSQL.md)
+- [Normalization](Normalization.md)
+- [ORM](ORM.md)
+- [Performance](Performance.md)
+- [Project](Project.md)
+- [Readme](Readme.md)
+- [SQL](SQL.md)
+- [Security](Security.md)
+- [Sharding](Sharding.md)
+- [Tx](Tx.md)

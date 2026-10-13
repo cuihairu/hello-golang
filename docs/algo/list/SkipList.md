@@ -161,3 +161,22 @@ delete 2: true
 ### 总结
 
 跳表用"空间 + 随机化"换取了接近平衡树的性能，实现却简单得多，且天然支持有序遍历与范围查询，是链表与平衡树之间的经典折中方案。
+
+## 参考资料
+
+- [跳表 · Wikipedia](https://en.wikipedia.org/wiki/Skip_list)
+
+## 同层页面
+
+- [SinglyLinkedList](/algo/list/SinglyLinkedList.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [DynamicArray](DynamicArray.md)
+- [HashLinkedList](HashLinkedList.md)
+- [Queue](Queue.md)
+- [SinglyLinkedList](SinglyLinkedList.md)
+- [Stack](Stack.md)
+- [list](list.md)
+- [glossary](/glossary.md)

@@ -164,3 +164,30 @@ func LoadConfigFromEtcd() (*Config, error) {
 ### 总结
 
 配置项集中定义在一个结构体里，`LoadConfig` 启动时读入；要热更新就挂上 `viper.WatchConfig`，多实例部署则把配置挪进 etcd 这类配置中心。
+
+## 参考资料
+
+- [Gin 官方文档](https://gin-gonic.com/en/docs/)
+- [Gin · pkg.go.dev](https://pkg.go.dev/github.com/gin-gonic/gin)
+
+## 同层页面
+
+- [Debug](/gin/Debug.md)
+- [Error](/gin/Error.md)
+- [Extend](/gin/Extend.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Debug](Debug.md)
+- [Error](Error.md)
+- [Extend](Extend.md)
+- [Gin](Gin.md)
+- [Middleware](Middleware.md)
+- [Optimize](Optimize.md)
+- [Request](Request.md)
+- [Response](Response.md)
+- [Route](Route.md)
+- [Source](Source.md)
+- [Use](Use.md)
+- [advanced](advanced.md)

@@ -83,3 +83,20 @@ Go 语言中有 25 个关键字，它们用于定义程序的结构和控制流�
     - **println**: 打印输出并换行。
     - **real**: 返回复数的实部。
     - **recover**: 恢复 panic。
+
+## 参考资料
+
+- [Effective Go · Names](https://go.dev/doc/effective_go#names)
+- [官方 · CodeReviewComments](https://go.dev/wiki/CodeReviewComments)
+- [语言规范 · 关键字](https://go.dev/ref/spec#Keywords)
+
+## 同层页面
+
+- [IdentifierNamingRules](/naming/IdentifierNamingRules.md)
+- [Naming](/naming/Naming.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [IdentifierNamingRules](IdentifierNamingRules.md)
+- [Naming](Naming.md)

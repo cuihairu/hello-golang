@@ -154,3 +154,22 @@ func main() {
 - 函数类型可以用作函数参数或返回值。
 
 函数当参数、当返回值传来传去，回调和策略选择就不必另起一套接口。示例里的 `IntOperation` 同时用在参数和返回值两处，写法是一样的。
+
+## 参考资料
+
+- [语言规范 · 函数声明](https://go.dev/ref/spec#Function_declarations)
+- [语言规范 · 调用](https://go.dev/ref/spec#Calls)
+- [Effective Go · 函数](https://go.dev/doc/effective_go#functions)
+
+
+## 同层页面
+
+- [AnonymousFunc](/func/AnonymousFunc.md)
+- [Defer](/func/Defer.md)
+- [VariadicParameters](/func/VariadicParameters.md)
+- [FuncValue](/func/FuncValue.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [FuncValue](FuncValue.md)

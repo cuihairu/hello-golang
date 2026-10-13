@@ -93,3 +93,24 @@ func main() {
 - **享元模式与装饰器模式（Decorator Pattern）**：装饰器模式用于动态地为对象添加职责，而享元模式用于共享对象以减少内存占用。它们可以结合使用，例如在享元对象中应用装饰器来增强其功能。
 - **享元模式与代理模式（Proxy Pattern）**：代理模式用于控制对对象的访问，而享元模式用于共享对象以减少内存消耗。两者可以结合使用，例如通过代理模式访问享元对象。
 - **享元模式与组合模式（Composite Pattern）**：组合模式用于将对象组合成树形结构以表示部分-整体的层次结构，而享元模式用于减少大量相似对象的内存占用。在组合模式中，可以使用享元模式来管理和共享相似的叶子对象。
+
+## 参考资料
+
+- [GoF《设计模式》概览（Wikipedia）](https://en.wikipedia.org/wiki/Design_Patterns)
+- [Refactoring.Guru 设计模式目录](https://refactoring.guru/design-patterns)
+- [Effective Go（官方）](https://go.dev/doc/effective_go)
+
+
+## 同层页面
+
+- [AbstractFactory](/dp/AbstractFactory.md)
+- [Adapter](/dp/Adapter.md)
+- [Behavioral](/dp/Behavioral.md)
+- [FactoryMethod](/dp/FactoryMethod.md)
+- [Iterator](/dp/Iterator.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [FactoryMethod](FactoryMethod.md)
+- [Iterator](Iterator.md)

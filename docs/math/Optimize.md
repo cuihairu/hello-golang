@@ -160,3 +160,23 @@ $$
 ### 总结
 
 本节从目标函数、约束条件讲到线性、非线性、整数、动态规划四类问题，解法给了三种：线性问题用单纯形法，非线性用牛顿法，组合优化可以试遗传算法。前两个例子用 `gonum/optimize` 就能直接跑。
+
+## 参考资料
+
+- [math 标准库](https://pkg.go.dev/math)
+- [math/rand 标准库](https://pkg.go.dev/math/rand)
+
+
+## 同层页面
+
+- [Calc](/math/Calc.md)
+- [LinearAlgebra](/math/LinearAlgebra.md)
+- [Math](/math/Math.md)
+- [MathRand](/math/MathRand.md)
+- [Science](/math/Science.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [MathRand](MathRand.md)
+- [Science](Science.md)

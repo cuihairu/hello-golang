@@ -190,3 +190,22 @@ func main() {
 ```
 
 main 里先写入 5 字节把缓冲区填满，`IsFull` 返回 true；读出后再写入 `world`，`IsEmpty` 返回 false。
+
+## 参考资料
+
+- [环形缓冲区 · Wikipedia](https://en.wikipedia.org/wiki/Circular_buffer)
+
+## 同层页面
+
+- [DynamicArray](/algo/array/DynamicArray.md)
+- [Array](/algo/array/Array.md)
+- [DoubleEndedQueue](/algo/array/DoubleEndedQueue.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Array](Array.md)
+- [DoubleEndedQueue](DoubleEndedQueue.md)
+- [MultidimensionalArray](MultidimensionalArray.md)
+- [PriorityQueue](PriorityQueue.md)
+- [SparseArray](SparseArray.md)

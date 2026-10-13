@@ -385,3 +385,19 @@ type hchan struct {
 ```
 
 `hchan` 由一把互斥锁保护，待发送的 goroutine 挂在 `sendq`、待接收的挂在 `recvq`，阻塞和唤醒都围绕这两条队列发生。
+
+## 参考资料
+
+- [Effective Go · 并发](https://go.dev/doc/effective_go#concurrency)
+- [Go 内存模型](https://go.dev/ref/mem)
+- [sync 标准库](https://pkg.go.dev/sync)
+- [语言规范 · 通道类型](https://go.dev/ref/spec#Channel_types)
+- [语言规范 · 接收运算符](https://go.dev/ref/spec#Receive_operator)
+- [Go 内存模型 · 通道同步](https://go.dev/ref/mem#chan)
+- [Effective Go · Channels](https://go.dev/doc/effective_go#channels)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Concurrency](Concurrency.md)
+- [glossary](/glossary.md)

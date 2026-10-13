@@ -295,3 +295,22 @@ func main() {
     readLargeFile(filePath)
 }
 ```
+
+## 参考资料
+
+- [io 标准库](https://pkg.go.dev/io)
+- [os 标准库](https://pkg.go.dev/os)
+
+## 同层页面
+
+- [Advanced](/io/Advanced.md)
+- [CommonFormats](/io/CommonFormats.md)
+- [EfficientIO](/io/EfficientIO.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Advanced](Advanced.md)
+- [CommonFormats](CommonFormats.md)
+- [EfficientIO](EfficientIO.md)
+- [File](File.md)

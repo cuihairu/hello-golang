@@ -45,3 +45,18 @@ Effective Go 是官方文档里被标成「任何新的 Go 程序员必读」的
 1. https://golang.google.cn/doc/effective_go — 16 个一级小节与 40 个二级小节目录，以及「a must read for any new Go programmer」的定位（2026-10-08 抓取）
 2. https://golang.google.cn/doc/ — 文档总览中 Effective Go 的排序说明（先读 tour 与 spec）
 3. https://golang.google.cn/tour/ — Tour 四段式结构
+
+## 参考资料
+
+- [Effective Go（官方）](https://go.dev/doc/effective_go)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [BlankIdentifier](BlankIdentifier.md)
+- [CommaOk](CommaOk.md)
+- [Idioms](Idioms.md)
+- [Labels](Labels.md)
+- [Range](Range.md)
+- [ShortVarDecl](ShortVarDecl.md)
+- [knowledge](/knowledge.md)

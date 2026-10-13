@@ -261,3 +261,23 @@ Usage: main.go <input> <output>
 ### 总结
 
 `flag` 包的用法可以归成几步：`flag.Bool`/`flag.String`/`flag.Int` 这类函数声明选项，`flag.Parse` 解析，取指针变量拿值；浮点和时间用 `flag.Float64`、`flag.Duration`，特殊类型实现 `flag.Value` 接口，位置参数留在 `flag.Args()` 里，未定义的选项会报错并打印帮助。
+
+## 参考资料
+
+- [flag 标准库](https://pkg.go.dev/flag)
+- [os/exec 标准库](https://pkg.go.dev/os/exec)
+
+## 同层页面
+
+- [Design](/cmd/Design.md)
+- [Lib](/cmd/Lib.md)
+- [Parse](/cmd/Parse.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Design](Design.md)
+- [Lib](Lib.md)
+- [Parse](Parse.md)
+- [Readme](Readme.md)
+- [Syntax](Syntax.md)

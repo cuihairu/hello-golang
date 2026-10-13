@@ -205,3 +205,25 @@ func TestUpdateUser(t *testing.T) {
 ```
 
 单元测试用 `go-sqlmock` 隔离数据库，跑得快、不依赖环境；集成测试连真实数据库，验证建表、约束和 SQL 语句本身。两类测试配合使用。
+
+## 参考资料
+
+- [官方 · 数据库访问指南](https://go.dev/doc/database/)
+- [官方教程 · 数据库访问](https://go.dev/doc/tutorial/database-access)
+- [database/sql 标准库](https://pkg.go.dev/database/sql)
+- [go-sqlmock](https://github.com/DATA-DOG/go-sqlmock)
+
+
+## 同层页面
+
+- [Availability](/db/Availability.md)
+- [Base](/db/Base.md)
+- [ConnectPool](/db/ConnectPool.md)
+- [Migrate](/db/Migrate.md)
+- [Monitor](/db/Monitor.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Migrate](Migrate.md)
+- [Monitor](Monitor.md)

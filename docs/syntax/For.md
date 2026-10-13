@@ -162,3 +162,18 @@ for i := 0; i < 3; i++ {
     ```
 
 标签只在 `break`、`continue` 和 `goto` 三处使用，别的位置写了编译不过。
+
+## 参考资料
+
+- [语言规范 · 语句](https://go.dev/ref/spec#Statements)
+- [Effective Go · 控制结构](https://go.dev/doc/effective_go#control-structures)
+- [语言规范 · For 语句（含 range）](https://go.dev/ref/spec#For_statements)
+- [官方博客 · Fixing For Loops in Go 1.22](https://go.dev/blog/loopvar-preview)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Conditional](Conditional.md)
+- [ControlFlow](ControlFlow.md)
+- [Jump](Jump.md)
+- [Loop](Loop.md)

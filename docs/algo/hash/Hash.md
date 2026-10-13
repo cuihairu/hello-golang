@@ -130,3 +130,13 @@ func main() {
 ### 总结
 
 哈希表用空间换时间，通过哈希函数实现"一步定位"。工程上通常直接使用 Go 内置的 `map`；理解冲突处理与扩容机制有助于写出更高效的哈希相关代码。
+
+## 参考资料
+
+- [哈希函数 · Wikipedia](https://en.wikipedia.org/wiki/Hash_function)
+- [哈希表 · Wikipedia](https://en.wikipedia.org/wiki/Hash_table)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [glossary](/glossary.md)

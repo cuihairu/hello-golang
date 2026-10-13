@@ -46,3 +46,25 @@ PGO 对 profile 版本与构建版本之间的错位是稳健的，也允许拿�
 
 1. https://golang.google.cn/doc/pgo — Profile-guided optimization：2%-14% 收益、profile 来源、`default.pgo` 与 `-pgo` 三个取值、生产采集流程、微基准的反例（2026-10-08 抓取）
 2. https://golang.google.cn/doc/ — References 板块下的 PGO 入口
+
+## 参考资料
+
+- [官方 · 诊断（Diagnostics）](https://go.dev/doc/diagnostics)
+- [runtime/pprof 标准库](https://pkg.go.dev/runtime/pprof)
+- [官方 · Profile-guided optimization](https://go.dev/doc/pgo)
+- [官方博客 · PGO in Go 1.21](https://go.dev/blog/pgo)
+
+## 同层页面
+
+- [Utils](/debug/Utils.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Debug](Debug.md)
+- [Delve](Delve.md)
+- [Expvar](Expvar.md)
+- [GDB](GDB.md)
+- [Utils](Utils.md)
+- [glossary](/glossary.md)
+- [knowledge](/knowledge.md)

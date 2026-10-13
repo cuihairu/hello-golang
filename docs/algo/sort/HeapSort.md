@@ -148,3 +148,22 @@ func main() {
 堆排序的空间复杂度为 $O(1)$，因为它只需要常数级别的额外空间来进行元素交换和堆调整操作。
 
 堆排序是原地排序，时间复杂度稳定在 $O(n \log n)$，不受输入数据分布影响。
+
+## 参考资料
+
+- [堆排序 · Wikipedia](https://en.wikipedia.org/wiki/Heapsort)
+- [container/heap 标准库](https://pkg.go.dev/container/heap)
+
+
+## 同层页面
+
+- [BubbleSort](/algo/sort/BubbleSort.md)
+- [BucketSort](/algo/sort/BucketSort.md)
+- [CocktailSort](/algo/sort/CocktailSort.md)
+- [CountingSort](/algo/sort/CountingSort.md)
+- [InsertionSort](/algo/sort/InsertionSort.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [InsertionSort](InsertionSort.md)

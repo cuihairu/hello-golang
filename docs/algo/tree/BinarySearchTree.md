@@ -138,3 +138,22 @@ search 45: false
 ### 总结
 
 二叉搜索树用"左小右大"的顺序约束把二分查找搬进了动态结构。它简单直观，是理解 AVL、红黑树等平衡树的基础；一旦插入顺序不利就会退化，这也是平衡树存在的意义。
+
+## 参考资料
+
+- [二叉搜索树 · Wikipedia](https://en.wikipedia.org/wiki/Binary_search_tree)
+
+
+## 同层页面
+
+- [Heap](/algo/tree/Heap.md)
+- [MinimumSpanningTree](/algo/tree/MinimumSpanningTree.md)
+- [RedBlackTree](/algo/tree/RedBlackTree.md)
+- [BinaryHeap](/algo/tree/BinaryHeap.md)
+- [BinaryTree](/algo/tree/BinaryTree.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [BinaryHeap](BinaryHeap.md)
+- [BinaryTree](BinaryTree.md)

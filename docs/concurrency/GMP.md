@@ -197,3 +197,17 @@ runtime.GOMAXPROCS(4) // 设置同时执行 Go 代码的逻辑处理器 P 的数
 ### 总结
 
 调度器的骨架是 G、M、P 三层：`G` 是 `goroutine`，`M` 是操作系统线程，`P` 挂着运行队列。`GOMAXPROCS` 定的是同时执行 Go 代码的 `P` 有多少个，`M` 的数量不受它管。工作窃取和抢占分别解决负载不均和独占 CPU 两个问题。
+
+## 参考资料
+
+- [Effective Go · 并发](https://go.dev/doc/effective_go#concurrency)
+- [Go 内存模型](https://go.dev/ref/mem)
+- [sync 标准库](https://pkg.go.dev/sync)
+- [官方 · Go 调度器设计文档（golang.org/s/go11sched）](https://golang.org/s/go11sched)
+- [runtime 标准库](https://pkg.go.dev/runtime)
+- [官方博客 · Go runtime: 4 years later](https://go.dev/blog/go119runtime)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [glossary](/glossary.md)

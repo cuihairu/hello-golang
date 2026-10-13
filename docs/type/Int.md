@@ -138,3 +138,21 @@ func main() {
 ```
 
 加减乘之前先估边界：`int8` 过 127 会回绕成 -128，`uint8` 过 255 会回绕成 0，这两种回绕都是 Go 定义的确定行为。
+
+## 参考资料
+
+- [语言规范 · 类型](https://go.dev/ref/spec#Types)
+- [语言规范 · 数值类型](https://go.dev/ref/spec#Numeric_types)
+
+
+## 同层页面
+
+- [Assertion](/type/Assertion.md)
+- [Interface](/type/Interface.md)
+- [Map](/type/Map.md)
+- [HtmlTemplate](/type/HtmlTemplate.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [HtmlTemplate](HtmlTemplate.md)

@@ -151,3 +151,23 @@ func main() {
 - 关系运算符返回布尔值 (`true` 或 `false`)，表示比较的结果。
 
 `if`、`for` 的条件表达式几乎都由这 6 个运算符构成，配合 `&&`、`||` 可以拼出任意判断。
+
+## 参考资料
+
+- [语言规范 · 运算符](https://go.dev/ref/spec#Operators)
+- [语言规范 · 比较运算符](https://go.dev/ref/spec#Comparison_operators)
+
+
+## 同层页面
+
+- [Arithmetic](/operator/Arithmetic.md)
+- [Assignment](/operator/Assignment.md)
+- [BitLen](/operator/BitLen.md)
+- [Receiver](/operator/Receiver.md)
+- [TypeAssertion](/operator/TypeAssertion.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Receiver](Receiver.md)
+- [TypeAssertion](TypeAssertion.md)

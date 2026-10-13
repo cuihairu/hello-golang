@@ -124,3 +124,20 @@
 ### 总结
 
 选哪个看节奏：等一次的用 `Timer`，到点从 `<-timer.C` 取信号，不想要了就 `Stop()`；按固定间隔重复的用 `Ticker`，用完同样要 `Stop()`，否则事件会一直发。超时重试归 `Timer`，定时轮询、状态刷新归 `Ticker`。
+
+## 参考资料
+
+- [time 标准库](https://pkg.go.dev/time)
+
+
+## 同层页面
+
+- [Advanced](/time/Advanced.md)
+- [ConceptTime](/time/ConceptTime.md)
+- [FormatAndParse](/time/FormatAndParse.md)
+- [TimeZone](/time/TimeZone.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [TimeZone](TimeZone.md)

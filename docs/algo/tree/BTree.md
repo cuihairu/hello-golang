@@ -163,3 +163,22 @@ func main() {
 ### 总结
 
 B树把"一个节点装很多关键字"和"所有叶子同层"结合起来，用提前分裂换来从不退化的平衡形态。插入时的分裂与上移，也是 B+树、B*树共用的机制。
+
+## 参考资料
+
+- [B 树 · Wikipedia](https://en.wikipedia.org/wiki/B-tree)
+
+
+## 同层页面
+
+- [Heap](/algo/tree/Heap.md)
+- [MinimumSpanningTree](/algo/tree/MinimumSpanningTree.md)
+- [RedBlackTree](/algo/tree/RedBlackTree.md)
+- [B+Tree](/algo/tree/B+Tree.md)
+- [BinaryHeap](/algo/tree/BinaryHeap.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [B+Tree](B+Tree.md)
+- [BinaryHeap](BinaryHeap.md)

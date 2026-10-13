@@ -88,3 +88,22 @@ go get github.com/sirupsen/logrus@v1.7.0
 ### 总结
 
 `go mod` 是 Go 的依赖管理入口：`go mod init` 创建模块，`go get` 增删依赖，`go mod tidy` 清理未用到的条目，`go mod vendor` 把依赖复制进 `vendor` 目录。这几条命令配合 `go.mod` 记录的版本，让同一份代码在不同机器上构建时拉到同一套依赖。
+
+## 参考资料
+
+- [官方 · 安装与管理 Go 工具链](https://go.dev/doc/manage-install)
+- [官方教程 · 入门](https://go.dev/doc/tutorial/getting-started)
+- [官方 · Go Modules 使用指南](https://go.dev/doc/modules/)
+
+
+## 同层页面
+
+- [Env](/env/Env.md)
+- [Install](/env/Install.md)
+- [GOPROXY](/env/GOPROXY.md)
+- [Tools](/env/Tools.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Tools](Tools.md)

@@ -139,3 +139,19 @@ golangci-lint run
 ### 总结
 
 Go 命名的核心原则是：**简短、准确、一致**。可见性由大小写决定，包名短小且不驼峰，变量随作用域调整长度，接口以 "er" 结尾，错误用 `Err` 前缀的哨兵变量。遵守这些惯例，代码就能自然融入 Go 生态，让协作者"一眼看懂"。
+
+## 参考资料
+
+- [Effective Go · Names](https://go.dev/doc/effective_go#names)
+- [官方 · CodeReviewComments](https://go.dev/wiki/CodeReviewComments)
+
+## 同层页面
+
+- [IdentifierNamingRules](/naming/IdentifierNamingRules.md)
+- [KeywordsAndReservedWords](/naming/KeywordsAndReservedWords.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [IdentifierNamingRules](IdentifierNamingRules.md)
+- [KeywordsAndReservedWords](KeywordsAndReservedWords.md)

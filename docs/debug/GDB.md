@@ -172,3 +172,22 @@ GDB 主要为 C 和 C++ 设计，对 Go 的支持不足。调试较复杂的 Go 
 #### 5. 小结
 
 调试 Go 程序前，先用 `go build -gcflags "all=-N -l"` 关闭优化和内联，再用 `break` 设断点、`next`/`step` 单步、`print` 看变量。GDB 对 Go 的支持有限，结构体和 goroutine 信息可能显示不全，调试并发程序时尤其明显。
+
+## 参考资料
+
+- [官方 · 诊断（Diagnostics）](https://go.dev/doc/diagnostics)
+- [runtime/pprof 标准库](https://pkg.go.dev/runtime/pprof)
+- [官方 · Debugging Go Code with GDB](https://go.dev/doc/gdb)
+
+
+## 同层页面
+
+- [PGO](/debug/PGO.md)
+- [Pprof](/debug/Pprof.md)
+- [Debug](/debug/Debug.md)
+- [Expvar](/debug/Expvar.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Expvar](Expvar.md)

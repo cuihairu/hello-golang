@@ -244,3 +244,25 @@ func main() {
 ### 总结
 
 红黑树用染色规则代替严格的身高差，把"不会退化成链表"这件事变成了五条可验证的性质。插入修复的三种情形（叔叔红、三角形、直线）看似琐碎，实则每一步都在同时维护有序性与黑高平衡。
+
+## 参考资料
+
+- [红黑树 · Wikipedia](https://en.wikipedia.org/wiki/Red%E2%80%93black_tree)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [AVLTree](AVLTree.md)
+- [B+Tree](B+Tree.md)
+- [BTree](BTree.md)
+- [BinaryHeap](BinaryHeap.md)
+- [BinarySearchTree](BinarySearchTree.md)
+- [BinaryTree](BinaryTree.md)
+- [CompleteBinaryTree](CompleteBinaryTree.md)
+- [FenwickTree](FenwickTree.md)
+- [FullBinaryTree](FullBinaryTree.md)
+- [HuffmanTree](HuffmanTree.md)
+- [PrefixTree](PrefixTree.md)
+- [SegmentTree](SegmentTree.md)
+- [Tree](Tree.md)
+- [glossary](/glossary.md)

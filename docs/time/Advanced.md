@@ -212,3 +212,23 @@ Go的 `time` 包提供了高精度的时间测量功能，适用于性能分析�
 ### 总结
 
 这些操作落在几组函数上：`time.Now()` 和 `time.Since()` 管计时，`time.LoadLocation` 和 `In` 管时区，`Parse` 和 `Format` 管字符串转换，`Timer`/`Ticker` 管定时，`Unix` 系列管时间戳，`Duration` 管间隔计算。按需求对着挑就行。
+
+## 参考资料
+
+- [time 标准库](https://pkg.go.dev/time)
+
+## 同层页面
+
+- [ConceptTime](/time/ConceptTime.md)
+- [FormatAndParse](/time/FormatAndParse.md)
+- [PkgTime](/time/PkgTime.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [ConceptTime](ConceptTime.md)
+- [FormatAndParse](FormatAndParse.md)
+- [PkgTime](PkgTime.md)
+- [Practice](Practice.md)
+- [TimeZone](TimeZone.md)
+- [TimerAndTicker](TimerAndTicker.md)

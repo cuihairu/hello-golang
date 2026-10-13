@@ -52,3 +52,21 @@ func main() {
 ### 小结
 
 `syscall` 是操作系统接口的直连层：简单调用用包装函数，特殊需求用 `Syscall` 原始形式，跨平台交给 `golang.org/x/sys`。
+
+## 参考资料
+
+- [syscall 标准库](https://pkg.go.dev/syscall)
+- [os 标准库](https://pkg.go.dev/os)
+
+## 同层页面
+
+- [Plugin](/sys/Plugin.md)
+- [Sys](/sys/Sys.md)
+- [Unsafe](/sys/Unsafe.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Plugin](Plugin.md)
+- [Sys](Sys.md)
+- [Unsafe](Unsafe.md)

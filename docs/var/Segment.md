@@ -158,3 +158,23 @@ func foo() *int {
 - **代码段**：存储程序的机器码，是只读的。
 
 变量声明位置和初始化与否，决定它落在数据段、BSS 段还是栈上；函数体内的变量跟着栈走，进出函数就分配回收，这也是局部变量生命周期短的原因。
+
+## 参考资料
+
+- [语言规范 · 变量声明](https://go.dev/ref/spec#Variable_declarations)
+- [Effective Go · 变量](https://go.dev/doc/effective_go#variables)
+- [官方 GC 指南 · 逃逸分析](https://go.dev/doc/gc-guide#Escape_analysis)
+- [官方博客 · Allocating on the Stack](https://go.dev/blog/allocation-optimizations)
+
+## 同层页面
+
+- [Variable](/var/Variable.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Practice](/alloc/Practice.md)
+- [glossary](/glossary.md)
+- [Assignment](Assignment.md)
+- [ScopeAndLifetime](ScopeAndLifetime.md)
+- [Variable](Variable.md)

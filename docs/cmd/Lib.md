@@ -340,3 +340,23 @@ Hello, World!
 ### 总结
 
 `cobra` 和 `urfave/cli` 都能搭出带子命令、选项参数和自动帮助的命令行程序，两者能力相当。`urfave/cli` 用一个 `App` 结构体配齐字段，小程序写起来更省事；`cobra` 的命令树组织在子命令层级多时更清楚，按自己的场景选一个即可。
+
+## 参考资料
+
+- [flag 标准库](https://pkg.go.dev/flag)
+- [os/exec 标准库](https://pkg.go.dev/os/exec)
+
+## 同层页面
+
+- [Design](/cmd/Design.md)
+- [Flag](/cmd/Flag.md)
+- [Parse](/cmd/Parse.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Design](Design.md)
+- [Flag](Flag.md)
+- [Parse](Parse.md)
+- [Readme](Readme.md)
+- [Syntax](Syntax.md)

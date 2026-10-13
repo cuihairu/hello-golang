@@ -50,3 +50,23 @@ Go 语言适合做数据库编程：编译成机器码执行效率高，内置�
 - `database/sql`包提供了统一的数据库操作接口。
 - 丰富的第三方库支持，如GORM、Ent等。
 
+## 参考资料
+
+- [官方 · 数据库访问指南](https://go.dev/doc/database/)
+- [官方教程 · 数据库访问](https://go.dev/doc/tutorial/database-access)
+- [database/sql 标准库](https://pkg.go.dev/database/sql)
+
+
+## 同层页面
+
+- [Availability](/db/Availability.md)
+- [Base](/db/Base.md)
+- [ConnectPool](/db/ConnectPool.md)
+- [Project](/db/Project.md)
+- [SQL](/db/SQL.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Project](Project.md)
+- [SQL](SQL.md)

@@ -62,3 +62,17 @@ func main() {
 ### 小结
 
 反射的写操作先查 `CanSet`，参数类型自己保证，panic 用 `recover` 兜住；热路径优先类型 switch、泛型、代码生成；并发场景只读不写，写就加锁。基础用法见 [反射基础](Reflection.md)。
+
+## 参考资料
+
+- [reflect 标准库](https://pkg.go.dev/reflect)
+- [unsafe 标准库](https://pkg.go.dev/unsafe)
+
+## 同层页面
+
+- [Reflection](/reflection/Reflection.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Reflection](Reflection.md)

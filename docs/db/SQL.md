@@ -281,3 +281,24 @@ SQL 语句通常包括以下部分：
   ```sql
   REINDEX TABLE users;  -- PostgreSQL（MySQL 无 REINDEX，可使用 OPTIMIZE TABLE 重建表）
   ```
+
+## 参考资料
+
+- [官方 · 数据库访问指南](https://go.dev/doc/database/)
+- [官方教程 · 数据库访问](https://go.dev/doc/tutorial/database-access)
+- [database/sql 标准库](https://pkg.go.dev/database/sql)
+
+
+## 同层页面
+
+- [Availability](/db/Availability.md)
+- [Base](/db/Base.md)
+- [ConnectPool](/db/ConnectPool.md)
+- [Readme](/db/Readme.md)
+- [Security](/db/Security.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Readme](Readme.md)
+- [Security](Security.md)

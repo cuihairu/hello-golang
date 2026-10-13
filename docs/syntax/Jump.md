@@ -112,3 +112,23 @@ done:
     }
 }
 ```
+
+## 参考资料
+
+- [语言规范 · 语句](https://go.dev/ref/spec#Statements)
+- [Effective Go · 控制结构](https://go.dev/doc/effective_go#control-structures)
+- [语言规范 · Break/Continue/Goto](https://go.dev/ref/spec#Break_statements)
+
+
+## 同层页面
+
+- [Break](/syntax/Break.md)
+- [Continue](/syntax/Continue.md)
+- [For](/syntax/For.md)
+- [If](/syntax/If.md)
+- [Loop](/syntax/Loop.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Loop](Loop.md)

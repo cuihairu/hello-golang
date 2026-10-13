@@ -90,3 +90,30 @@ func main() {
 ### 总结
 
 鸡尾酒排序是双向的冒泡排序：一轮从左到右把大值沉下去，再从右到左把小值浮上来。已有序的数组一次前后扫描就能确认，复杂度 $O(n)$；排不好的数据仍是 $O(n^2)$，与冒泡排序打平。
+
+## 参考资料
+
+- [调酒器排序 · Wikipedia](https://en.wikipedia.org/wiki/Cocktail_shaker_sort)
+
+## 同层页面
+
+- [BubbleSort](/algo/sort/BubbleSort.md)
+- [BucketSort](/algo/sort/BucketSort.md)
+- [CountingSort](/algo/sort/CountingSort.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [BubbleSort](BubbleSort.md)
+- [BucketSort](BucketSort.md)
+- [CountingSort](CountingSort.md)
+- [HeapSort](HeapSort.md)
+- [InsertionSort](InsertionSort.md)
+- [MergeSort](MergeSort.md)
+- [QuickSort](QuickSort.md)
+- [RadixSort](RadixSort.md)
+- [SelectionSort](SelectionSort.md)
+- [ShellSort](ShellSort.md)
+- [Sort](Sort.md)
+- [StableSort](StableSort.md)
+- [TimSort](TimSort.md)

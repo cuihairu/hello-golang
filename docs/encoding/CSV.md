@@ -151,3 +151,21 @@ func main() {
 #### 总结
 
 Go 处理 CSV 用 `encoding/csv` 包：读取走 `Reader` 的 `ReadAll`，写入走 `Writer` 的 `WriteAll`；文件大时改用流式读取，避免整个文件进内存。
+
+## 参考资料
+
+- [encoding 系列标准库（json 为例）](https://pkg.go.dev/encoding/json)
+- [encoding/csv 标准库](https://pkg.go.dev/encoding/csv)
+
+## 同层页面
+
+- [JsonV2](/encoding/JsonV2.md)
+- [Base64](/encoding/Base64.md)
+- [Binary](/encoding/Binary.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Base64](Base64.md)
+- [Binary](Binary.md)
+- [Encoding](Encoding.md)

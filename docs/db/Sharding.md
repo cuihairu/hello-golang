@@ -260,3 +260,24 @@ func (s *Saga) compensate(executedSteps []SagaStep) {
 ```
 
 一句话收尾：分片决定数据放在哪，CAP 划定了设计上限，2PC/3PC、TCC、Saga 则是按一致性强度和实现成本排序的几条路，选哪条取决于业务能接受多长的中间状态。
+
+## 参考资料
+
+- [官方 · 数据库访问指南](https://go.dev/doc/database/)
+- [官方教程 · 数据库访问](https://go.dev/doc/tutorial/database-access)
+- [database/sql 标准库](https://pkg.go.dev/database/sql)
+
+
+## 同层页面
+
+- [Availability](/db/Availability.md)
+- [Base](/db/Base.md)
+- [ConnectPool](/db/ConnectPool.md)
+- [Security](/db/Security.md)
+- [Tx](/db/Tx.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Security](Security.md)
+- [Tx](Tx.md)

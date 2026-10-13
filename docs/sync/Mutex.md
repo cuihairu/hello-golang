@@ -161,3 +161,16 @@ func main() {
 ### 小结
 
 `sync.Mutex` 的 `Lock`/`Unlock` 把临界区夹住，锁被占着时，别的 goroutine 会阻塞在 `Lock` 上。上例 10 个 goroutine 各加 1000 次，`counter` 最终是 10000；去掉 `Lock`/`Unlock`，结果就不一定是这个数了。拿不到锁不想干等用 `TryLock`；锁不可重入、不可拷贝这两条约定要记牢，能避开互斥锁的常见 bug。
+
+## 参考资料
+
+- [sync 标准库](https://pkg.go.dev/sync)
+- [Go 内存模型](https://go.dev/ref/mem)
+- [官方博客 · Introducing the Go Race Detector](https://go.dev/blog/race-detector)
+- [Go 内存模型 · 锁](https://go.dev/ref/mem#locks)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [glossary](/glossary.md)
+- [Primitives](Primitives.md)

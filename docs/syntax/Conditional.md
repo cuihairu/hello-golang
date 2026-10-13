@@ -101,3 +101,21 @@ func main() {
 ## 与 `select` 的区别
 
 `switch` 用于一般条件的多路分支，`select` 则专门用于通道通信的多路选择，语法上与 `switch` 相似，但 `case` 中只能出现通道操作，且由运行时选择就绪的分支。两者的详细对比见 [switch](Switch.md)。
+
+## 参考资料
+
+- [语言规范 · 语句](https://go.dev/ref/spec#Statements)
+- [Effective Go · 控制结构](https://go.dev/doc/effective_go#control-structures)
+- [语言规范 · If 语句](https://go.dev/ref/spec#If_statements)
+- [语言规范 · Switch 语句](https://go.dev/ref/spec#Switch_statements)
+
+## 同层页面
+
+- [Break](/syntax/Break.md)
+- [Continue](/syntax/Continue.md)
+- [For](/syntax/For.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Break](Break.md)

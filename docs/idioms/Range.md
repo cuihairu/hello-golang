@@ -139,3 +139,24 @@ Received: 2
 - 数组和切片给索引和值；映射给键和值；字符串给字节下标和 rune；通道一直收到被 close 为止。
 
 循环体不用按数据类型各写一套，这是 `range` 带来的直接好处。
+
+## 参考资料
+
+- [Effective Go（官方）](https://go.dev/doc/effective_go)
+- [语言规范 · For 语句（range 子句）](https://go.dev/ref/spec#For_statements)
+- [官方博客 · Range Over Function Types](https://go.dev/blog/range-functions)
+
+
+## 同层页面
+
+- [EffectiveGo](/idioms/EffectiveGo.md)
+- [StructTags](/idioms/StructTags.md)
+- [BlankIdentifier](/idioms/BlankIdentifier.md)
+- [Labels](/idioms/Labels.md)
+- [ShortVarDecl](/idioms/ShortVarDecl.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Labels](Labels.md)
+- [ShortVarDecl](ShortVarDecl.md)

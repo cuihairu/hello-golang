@@ -120,3 +120,23 @@
      ```
 
 到这里，Redis 已经能装、能配、能启动能停止。下一站是它的数据类型，以及在 Go 语言里怎么用。
+
+## 参考资料
+
+- [Redis 官方命令手册](https://redis.io/commands/)
+- [go-redis 官方客户端](https://github.com/redis/go-redis)
+- [go-redis · pkg.go.dev](https://pkg.go.dev/github.com/redis/go-redis/v9)
+
+
+## 同层页面
+
+- [Bitmap](/redis/Bitmap.md)
+- [Geospatial](/redis/Geospatial.md)
+- [Hash](/redis/Hash.md)
+- [HyperLogLog](/redis/HyperLogLog.md)
+- [List](/redis/List.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [List](List.md)

@@ -170,3 +170,21 @@ func BenchmarkAdd(b *testing.B) {
 ### 总结
 
 表驱动测试、基准测试和 `t.Parallel()` 都是标准库 `testing` 自带的能力，覆盖率靠内置工具查，mock 和断言用 `gomock`、`testify`。把这些挂到 CI 上，每次提交自动跑一遍。
+
+## 参考资料
+
+- [testing 标准库](https://pkg.go.dev/testing)
+- [官方教程 · 添加测试](https://go.dev/doc/tutorial/add-a-test)
+
+
+## 同层页面
+
+- [Fuzz](/test/Fuzz.md)
+- [Test](/test/Test.md)
+- [Advanced](/test/Advanced.md)
+- [Lib](/test/Lib.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Lib](Lib.md)

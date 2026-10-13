@@ -181,3 +181,16 @@ func chanrecv(c *hchan, ep unsafe.Pointer, block bool) (selected, received bool)
 ### 总结
 
 channel 的收发走的是同一把锁：先查对端等待队列里有没有人在等，有就把数据交给它并唤醒；没有就把自己挂进队列，让出当前 goroutine。无缓冲通道只有队列交接这一步，有缓冲通道先写环形缓冲区，放满了才挂队列。
+
+## 参考资料
+
+- [Effective Go · 并发](https://go.dev/doc/effective_go#concurrency)
+- [Go 内存模型](https://go.dev/ref/mem)
+- [sync 标准库](https://pkg.go.dev/sync)
+- [runtime 源码 · chan.go](https://go.dev/src/runtime/chan.go)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Concurrency](Concurrency.md)
+- [glossary](/glossary.md)

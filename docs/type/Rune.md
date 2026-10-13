@@ -136,3 +136,23 @@ func main() {
 ```
 
 `rune` 是 `int32`，既能按字符打印（`%c`），也能按整数参与运算。按字节索引字符串会切断多字节字符，逐字符处理要先转 `[]rune`。
+
+## 参考资料
+
+- [语言规范 · 类型](https://go.dev/ref/spec#Types)
+- [官方博客 · Strings, bytes, runes and characters in Go](https://go.dev/blog/strings)
+- [unicode/utf8 标准库](https://pkg.go.dev/unicode/utf8)
+
+
+## 同层页面
+
+- [Assertion](/type/Assertion.md)
+- [Interface](/type/Interface.md)
+- [Map](/type/Map.md)
+- [Ring](/type/Ring.md)
+- [Slice](/type/Slice.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Ring](Ring.md)

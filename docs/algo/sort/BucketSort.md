@@ -97,3 +97,30 @@ func main() {
 ### 总结
 
 桶排序不比较元素，靠值域划分桶来完成排序。数据均匀分布时是 $O(n + k)$，分布不均时退化到 $O(n^2)$，并且要付出 $O(n + k)$ 的额外空间。适合值域已知、分布大致均匀的数据。
+
+## 参考资料
+
+- [桶排序 · Wikipedia](https://en.wikipedia.org/wiki/Bucket_sort)
+
+## 同层页面
+
+- [BubbleSort](/algo/sort/BubbleSort.md)
+- [CocktailSort](/algo/sort/CocktailSort.md)
+- [CountingSort](/algo/sort/CountingSort.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [BubbleSort](BubbleSort.md)
+- [CocktailSort](CocktailSort.md)
+- [CountingSort](CountingSort.md)
+- [HeapSort](HeapSort.md)
+- [InsertionSort](InsertionSort.md)
+- [MergeSort](MergeSort.md)
+- [QuickSort](QuickSort.md)
+- [RadixSort](RadixSort.md)
+- [SelectionSort](SelectionSort.md)
+- [ShellSort](ShellSort.md)
+- [Sort](Sort.md)
+- [StableSort](StableSort.md)
+- [TimSort](TimSort.md)

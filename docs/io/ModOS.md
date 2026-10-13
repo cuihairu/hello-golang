@@ -442,3 +442,23 @@ Go 的 `os` 包提供了与操作系统交互的功能，包括文件系统操�
 #### 总结
 
 `os` 包按三块分工：文件用 `File` 的 `Read`、`Write`、`Close` 加 `os.Create`、`os.OpenFile` 这组函数；环境变量是 `Getenv`、`Setenv`、`Unsetenv`；进程是 `exec.Command` 和 `os.Getpid`。路径拼接归 `path` 和 `path/filepath` 管。
+
+## 参考资料
+
+- [io 标准库](https://pkg.go.dev/io)
+- [os 标准库](https://pkg.go.dev/os)
+
+
+## 同层页面
+
+- [Advanced](/io/Advanced.md)
+- [CommonFormats](/io/CommonFormats.md)
+- [EfficientIO](/io/EfficientIO.md)
+- [ModIO](/io/ModIO.md)
+- [ModPath](/io/ModPath.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [ModIO](ModIO.md)
+- [ModPath](ModPath.md)

@@ -120,3 +120,24 @@ func main() {
 - **观察者模式与中介者模式（Mediator Pattern）**：中介者负责协调对象之间的交互，观察者负责状态变化后的通知；在中介者内部用观察者来派发通知，两者可以叠着用。
 - **观察者模式与策略模式（Strategy Pattern）**：策略管算法可互换，观察者管状态变化的广播；策略变了要通知使用方时，正好用观察者发出去。
 - **观察者模式与事件驱动模型**：观察者模式是事件驱动模型的实现方式之一，事件的发布和订阅就落在它身上。
+
+## 参考资料
+
+- [GoF《设计模式》概览（Wikipedia）](https://en.wikipedia.org/wiki/Design_Patterns)
+- [Refactoring.Guru 设计模式目录](https://refactoring.guru/design-patterns)
+- [Effective Go（官方）](https://go.dev/doc/effective_go)
+
+
+## 同层页面
+
+- [AbstractFactory](/dp/AbstractFactory.md)
+- [Adapter](/dp/Adapter.md)
+- [Behavioral](/dp/Behavioral.md)
+- [ObjectPool](/dp/ObjectPool.md)
+- [Proactor](/dp/Proactor.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [ObjectPool](ObjectPool.md)
+- [Proactor](Proactor.md)

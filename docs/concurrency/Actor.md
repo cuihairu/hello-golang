@@ -123,3 +123,20 @@ func main() {
 #### 8. 结论
 
 Actor 模型用消息传递代替共享状态和锁：每个 Actor 串行处理自己邮箱里的消息，因此不存在共享内存的竞争。代价也来自消息。传递有开销，异步通信让并发问题更难排查（见第 4 节的优缺点）。
+
+## 参考资料
+
+- [Effective Go · 并发](https://go.dev/doc/effective_go#concurrency)
+- [Go 内存模型](https://go.dev/ref/mem)
+- [sync 标准库](https://pkg.go.dev/sync)
+- [官方 codelab · Share Memory By Communicating](https://go.dev/blog/codelab-share)
+
+## 同层页面
+
+- [Concurrency](/concurrency/Concurrency.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Concurrency](Concurrency.md)
+- [glossary](/glossary.md)

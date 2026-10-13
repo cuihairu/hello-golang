@@ -127,3 +127,25 @@ func main() {
 ### 总结
 
 函数值的三种去向，三个例子各占一个：`addFunc = add` 赋给变量，`compute(3, 4, add)` 当参数传，`getOperation("add")` 当返回值抛。函数类型可以自己声明，`IntOperation` 就是 `func(int, int) int` 起的别名，专用来当参数类型。
+
+## 参考资料
+
+- [语言规范 · 函数声明](https://go.dev/ref/spec#Function_declarations)
+- [语言规范 · 调用](https://go.dev/ref/spec#Calls)
+- [Effective Go · 函数](https://go.dev/doc/effective_go#functions)
+- [语言规范 · 函数字面量](https://go.dev/ref/spec#Function_literals)
+
+
+## 同层页面
+
+- [AnonymousFunc](/func/AnonymousFunc.md)
+- [Defer](/func/Defer.md)
+- [VariadicParameters](/func/VariadicParameters.md)
+- [DefineAndCall](/func/DefineAndCall.md)
+- [History](/func/History.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [DefineAndCall](DefineAndCall.md)
+- [History](History.md)

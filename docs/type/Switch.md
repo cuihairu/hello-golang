@@ -129,3 +129,15 @@ func main() {
 ### 总结
 
 类型 `switch` 解决一件事：接口值到手却不知道动态类型，用 `switch v := i.(type)` 按类型分派，`v` 在每个 `case` 里就是该类型的值。与普通 `switch` 的差别只在分支条件，一个看值，一个看类型。
+
+## 参考资料
+
+- [语言规范 · 类型](https://go.dev/ref/spec#Types)
+- [语言规范 · 类型开关](https://go.dev/ref/spec#Type_switches)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [glossary](/glossary.md)
+- [Struct](Struct.md)
+- [Template](Template.md)

@@ -552,3 +552,23 @@ Go 的 `io` 包提供 I/O 的基本原语和接口：`Reader`、`Writer` 这类�
    ```
 
 `Reader` 和 `Writer` 是 Go I/O 体系里被引用最多的两个接口，`Copy`、`ReadAll`、`ReadFull` 覆盖了大多数数据搬运场景。函数写成接收 `io.Reader` 的形式，就能同时接住文件和内存中的数据。
+
+## 参考资料
+
+- [io 标准库](https://pkg.go.dev/io)
+- [os 标准库](https://pkg.go.dev/os)
+
+
+## 同层页面
+
+- [Advanced](/io/Advanced.md)
+- [CommonFormats](/io/CommonFormats.md)
+- [EfficientIO](/io/EfficientIO.md)
+- [InputOutput](/io/InputOutput.md)
+- [ModOS](/io/ModOS.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [InputOutput](InputOutput.md)
+- [ModOS](ModOS.md)

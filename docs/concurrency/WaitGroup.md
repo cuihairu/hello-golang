@@ -135,3 +135,14 @@ func main() {
 ### 总结
 
 `sync.WaitGroup` 只有三个方法：`Add` 加计数，`Done` 减计数，计数归零时 `Wait` 返回。用的时候 `Add` 要在 `Wait` 之前，`Add` 和 `Done` 的次数要对齐。对不上，`Wait` 要么永久阻塞，要么直接 panic（`sync: negative WaitGroup counter`）。
+
+## 参考资料
+
+- [Effective Go · 并发](https://go.dev/doc/effective_go#concurrency)
+- [Go 内存模型](https://go.dev/ref/mem)
+- [sync 标准库](https://pkg.go.dev/sync)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [glossary](/glossary.md)

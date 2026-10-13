@@ -98,3 +98,16 @@ func (s *Scheduler) schedule() {
 ### 总结
 
 goroutine 便宜在两处：初始栈只有几 KB，创建成本低；调度在用户态完成，切换不陷入操作系统。M:N 模型再把大量 goroutine 压到少量系统线程上，多核也能负载均衡。
+
+## 参考资料
+
+- [Effective Go · 并发](https://go.dev/doc/effective_go#concurrency)
+- [Go 内存模型](https://go.dev/ref/mem)
+- [sync 标准库](https://pkg.go.dev/sync)
+- [官方 · Go 调度器设计文档（golang.org/s/go11sched）](https://golang.org/s/go11sched)
+- [runtime 标准库](https://pkg.go.dev/runtime)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [glossary](/glossary.md)

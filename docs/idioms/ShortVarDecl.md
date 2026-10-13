@@ -101,3 +101,21 @@ func main() {
 ### 总结
 
 `:=` 把声明和初始化并成一步。两条限制要记住：只能写在函数内部；对已有变量重新声明时，左边至少要有一个新变量。
+
+## 参考资料
+
+- [Effective Go（官方）](https://go.dev/doc/effective_go)
+- [语言规范 · 短变量声明](https://go.dev/ref/spec#Short_variable_declarations)
+
+
+## 同层页面
+
+- [EffectiveGo](/idioms/EffectiveGo.md)
+- [StructTags](/idioms/StructTags.md)
+- [BlankIdentifier](/idioms/BlankIdentifier.md)
+- [Range](/idioms/Range.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Range](Range.md)

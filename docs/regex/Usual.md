@@ -142,3 +142,21 @@
 - **描述**：匹配尽可能少的字符，直到遇到 "b"。
 
 Go 的 `regexp` 用的是 RE2 引擎，第 5、6 节的反向引用和断言在 Go 里编译会报错，写 Go 正则前先对照 RE2 支持的语法。
+
+## 参考资料
+
+- [regexp 标准库](https://pkg.go.dev/regexp)
+- [regexp/syntax 语法文档](https://pkg.go.dev/regexp/syntax)
+
+
+## 同层页面
+
+- [Advanced](/regex/Advanced.md)
+- [Debug](/regex/Debug.md)
+- [Lib](/regex/Lib.md)
+- [Use](/regex/Use.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Use](Use.md)

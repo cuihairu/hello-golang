@@ -174,3 +174,21 @@ go run main.go
 ### 总结
 
 `GOROOT` 指向安装目录，`GOPATH` 管工作区，`GOBIN` 管可执行文件的落点，`GO111MODULE` 决定模块模式开不开。导入包只认 `go.mod` 里的模块路径，读文件只认运行时的工作目录——程序启动前先 `cd` 到预期的目录，再跑 `go run`。
+
+## 参考资料
+
+- [官方 · 安装与管理 Go 工具链](https://go.dev/doc/manage-install)
+- [官方教程 · 入门](https://go.dev/doc/tutorial/getting-started)
+- [官方 · Go Modules 使用指南](https://go.dev/doc/modules/)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [GOPROXY](GOPROXY.md)
+- [Goland](Goland.md)
+- [Modules](Modules.md)
+- [Tools](Tools.md)
+- [Vim](Vim.md)
+- [ide](ide.md)
+- [vscode](vscode.md)
+- [glossary](/glossary.md)

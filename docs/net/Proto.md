@@ -57,3 +57,22 @@ TCP/IP 模型是互联网的实际应用模型，它将网络通信分为四个�
 - **重组**（Reassembly）：接收端将分组的小包重新组合成完整的数据包。
 
 本章有几个数字值得记住：IPv4 是 32 位地址（约 43 亿个），IPv6 是 128 位；端口是 16 位整数，范围 0 到 65535。OSI 七层与 TCP/IP 四层的对应关系见上文列表，写网络代码时这些概念会反复出现。
+
+## 参考资料
+
+- [net 标准库](https://pkg.go.dev/net)
+- [net/http 标准库](https://pkg.go.dev/net/http)
+
+
+## 同层页面
+
+- [Advanced](/net/Advanced.md)
+- [Concurrence](/net/Concurrence.md)
+- [Intro](/net/Intro.md)
+- [Netpoll](/net/Netpoll.md)
+- [SlidingWindow](/net/SlidingWindow.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [SlidingWindow](SlidingWindow.md)

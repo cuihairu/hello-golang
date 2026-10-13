@@ -131,3 +131,21 @@ func main() {
 - **容器化**：使用 Docker 容器化应用程序，简化部署和环境管理。
 
 `afero` 抽象掉文件系统后，测试可以跑在内存里；`bufio` 把小读写攒批再提交；`pprof` 起的 `/debug/pprof/` 端点直接给出 CPU 和内存采样。
+
+## 参考资料
+
+- [io 标准库](https://pkg.go.dev/io)
+- [os 标准库](https://pkg.go.dev/os)
+
+
+## 同层页面
+
+- [Advanced](/io/Advanced.md)
+- [CommonFormats](/io/CommonFormats.md)
+- [EfficientIO](/io/EfficientIO.md)
+- [Security](/io/Security.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Security](Security.md)

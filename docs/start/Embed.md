@@ -51,3 +51,24 @@ http.ListenAndServe(":8080", mux)
 ### 小结
 
 嵌入的口诀：注释声明模式、变量决定类型、`embed.FS` 承接文件树。资源进二进制后，发布物就只有一个可执行文件，换来的是改资源要重新编译。
+
+## 参考资料
+
+- [官方教程 · 入门](https://go.dev/doc/tutorial/getting-started)
+- [官方教程 · 创建模块](https://go.dev/doc/tutorial/create-module)
+- [embed 标准库](https://pkg.go.dev/embed)
+
+## 同层页面
+
+- [BuildConstraint](/start/BuildConstraint.md)
+- [Build](/start/Build.md)
+- [Hello](/start/Hello.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Build](Build.md)
+- [Hello](Hello.md)
+- [Run](Run.md)
+- [Starter](Starter.md)
+- [Structure](Structure.md)

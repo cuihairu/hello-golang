@@ -186,3 +186,24 @@ Redis 会根据集合的元素类型和数量，动态选择最合适的数据�
    ```
 
 `go-redis` 的集合 API 和 Redis 命令一一对应：`SAdd`/`SMembers`/`SIsMember`/`SRem`/`SRandMember` 分别对应 `SADD`/`SMEMBERS`/`SISMEMBER`/`SREM`/`SRANDMEMBER`，命令名记住了，库也就顺手上手了。
+
+## 参考资料
+
+- [Redis 官方命令手册](https://redis.io/commands/)
+- [go-redis 官方客户端](https://github.com/redis/go-redis)
+- [go-redis · pkg.go.dev](https://pkg.go.dev/github.com/redis/go-redis/v9)
+
+
+## 同层页面
+
+- [Bitmap](/redis/Bitmap.md)
+- [Geospatial](/redis/Geospatial.md)
+- [Hash](/redis/Hash.md)
+- [Readme](/redis/Readme.md)
+- [SortedSet](/redis/SortedSet.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Readme](Readme.md)
+- [SortedSet](SortedSet.md)

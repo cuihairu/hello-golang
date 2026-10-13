@@ -203,3 +203,23 @@ Redis 会根据有序集合的元素数量和每个元素的长度，动态选�
    }
    ```
 
+## 参考资料
+
+- [Redis 官方命令手册](https://redis.io/commands/)
+- [go-redis 官方客户端](https://github.com/redis/go-redis)
+- [go-redis · pkg.go.dev](https://pkg.go.dev/github.com/redis/go-redis/v9)
+
+
+## 同层页面
+
+- [Bitmap](/redis/Bitmap.md)
+- [Geospatial](/redis/Geospatial.md)
+- [Hash](/redis/Hash.md)
+- [Set](/redis/Set.md)
+- [Streams](/redis/Streams.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Set](Set.md)
+- [Streams](Streams.md)

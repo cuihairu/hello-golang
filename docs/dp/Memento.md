@@ -111,3 +111,24 @@ func main() {
 - **备忘录模式与命令模式（Command Pattern）**：命令封装请求的操作，备忘录保存状态；命令模式借备忘录实现撤销和重做。
 - **备忘录模式与状态模式（State Pattern）**：状态模式按当前状态切换行为，备忘录用来保存状态的历史记录。
 - **备忘录模式与观察者模式（Observer Pattern）**：观察者模式在状态变化时通知观察者，备忘录负责存下可恢复的那份状态，两者可以配合实现撤销。
+
+## 参考资料
+
+- [GoF《设计模式》概览（Wikipedia）](https://en.wikipedia.org/wiki/Design_Patterns)
+- [Refactoring.Guru 设计模式目录](https://refactoring.guru/design-patterns)
+- [Effective Go（官方）](https://go.dev/doc/effective_go)
+
+
+## 同层页面
+
+- [AbstractFactory](/dp/AbstractFactory.md)
+- [Adapter](/dp/Adapter.md)
+- [Behavioral](/dp/Behavioral.md)
+- [Mediator](/dp/Mediator.md)
+- [ObjectPool](/dp/ObjectPool.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Mediator](Mediator.md)
+- [ObjectPool](ObjectPool.md)

@@ -65,3 +65,22 @@
 #### 总结
 
 选编码看用途：跨语言的文本用 UTF-8，二进制数据要进文本通道用 Base64 或 Hex，Go 程序之间传结构体用 GOB；图像要压得小用 JPEG，要无损和透明用 PNG。Go 标准库对这些编码都有直接支持。
+
+## 参考资料
+
+- [encoding 系列标准库（json 为例）](https://pkg.go.dev/encoding/json)
+
+
+## 同层页面
+
+- [JsonV2](/encoding/JsonV2.md)
+- [Base64](/encoding/Base64.md)
+- [Binary](/encoding/Binary.md)
+- [Encoding](/encoding/Encoding.md)
+- [Gob](/encoding/Gob.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Encoding](Encoding.md)
+- [Gob](Gob.md)

@@ -120,3 +120,24 @@ func main() {
 - **抽象工厂模式（Abstract Factory Pattern）**：工厂方法模式通常与抽象工厂模式一起使用，通过在抽象工厂中定义工厂方法来创建产品对象。
 - **模板方法模式（Template Method Pattern）**：工厂方法可以与模板方法模式结合使用，以在创建对象时执行通用行为。
 - **策略模式（Strategy Pattern）**：工厂方法模式可以与策略模式结合使用，动态选择和创建策略对象。
+
+## 参考资料
+
+- [GoF《设计模式》概览（Wikipedia）](https://en.wikipedia.org/wiki/Design_Patterns)
+- [Refactoring.Guru 设计模式目录](https://refactoring.guru/design-patterns)
+- [Effective Go（官方）](https://go.dev/doc/effective_go)
+
+
+## 同层页面
+
+- [AbstractFactory](/dp/AbstractFactory.md)
+- [Adapter](/dp/Adapter.md)
+- [Behavioral](/dp/Behavioral.md)
+- [Facade](/dp/Facade.md)
+- [Flyweight](/dp/Flyweight.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Facade](Facade.md)
+- [Flyweight](Flyweight.md)

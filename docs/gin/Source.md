@@ -299,3 +299,24 @@ func LogError(err error) {
 ### 总结
 
 源码的落点：路由注册进 `tree.go` 的路由树，中间件按注册顺序挂在 `Context.Next` 的链上逐个执行，响应统一走 `render.Render` 接口，错误由 `errors.go` 的 `Error` 类型收口。Engine 内嵌 `RouterGroup`，所以 `engine.GET` 实际调的是 `RouterGroup` 的方法。
+
+## 参考资料
+
+- [Gin 官方文档](https://gin-gonic.com/en/docs/)
+- [Gin · pkg.go.dev](https://pkg.go.dev/github.com/gin-gonic/gin)
+- [Gin 源码仓库](https://github.com/gin-gonic/gin)
+
+
+## 同层页面
+
+- [Config](/gin/Config.md)
+- [Debug](/gin/Debug.md)
+- [Error](/gin/Error.md)
+- [Route](/gin/Route.md)
+- [Use](/gin/Use.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Route](Route.md)
+- [Use](Use.md)

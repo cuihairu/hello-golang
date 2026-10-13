@@ -89,3 +89,20 @@ func main() {
 ### 总结
 
 链表用指针换来灵活的插入和删除，代价是失去随机访问。掌握单向链表的反转、快慢指针等基础套路，是学习跳表、LRU 缓存等复合结构的前提。
+
+## 参考资料
+
+- [链表 · Wikipedia](https://en.wikipedia.org/wiki/Linked_list)
+
+
+## 同层页面
+
+- [SkipList](/algo/list/SkipList.md)
+- [DynamicArray](/algo/list/DynamicArray.md)
+- [HashLinkedList](/algo/list/HashLinkedList.md)
+- [Stack](/algo/list/Stack.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Stack](Stack.md)

@@ -133,3 +133,23 @@ func main() {
 ### 小结
 
 标准库没有现成的自旋锁，用`sync/atomic`的 CAS 加`runtime.Gosched()`就能拼一个：拿不到锁就让出 CPU 再试。等锁时间长的场景别用它，会白烧 CPU。
+
+## 参考资料
+
+- [sync 标准库](https://pkg.go.dev/sync)
+- [Go 内存模型](https://go.dev/ref/mem)
+- [官方博客 · Introducing the Go Race Detector](https://go.dev/blog/race-detector)
+
+
+## 同层页面
+
+- [Atomic](/sync/Atomic.md)
+- [Context](/sync/Context.md)
+- [CriticalSection](/sync/CriticalSection.md)
+- [Runtime](/sync/Runtime.md)
+- [Sync](/sync/Sync.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Sync](Sync.md)

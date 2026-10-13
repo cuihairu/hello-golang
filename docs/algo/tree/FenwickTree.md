@@ -98,3 +98,22 @@ func main() {
 ### 总结
 
 树状数组把"前缀和的增量"与"下标的二进制结构"绑定在一起，用 `lowbit` 达到线段树同级的 $O(\log n)$ 复杂度，代码只有十来行。小规模的区间统计用它就够，比线段树省事。
+
+## 参考资料
+
+- [二叉索引树 · Wikipedia](https://en.wikipedia.org/wiki/Fenwick_tree)
+
+
+## 同层页面
+
+- [Heap](/algo/tree/Heap.md)
+- [MinimumSpanningTree](/algo/tree/MinimumSpanningTree.md)
+- [RedBlackTree](/algo/tree/RedBlackTree.md)
+- [CompleteBinaryTree](/algo/tree/CompleteBinaryTree.md)
+- [FullBinaryTree](/algo/tree/FullBinaryTree.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [CompleteBinaryTree](CompleteBinaryTree.md)
+- [FullBinaryTree](FullBinaryTree.md)

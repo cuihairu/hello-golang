@@ -20,3 +20,20 @@
 - **tar**：Unix 常用，把多个文件和目录打包成一个文件。Go 包：`archive/tar`
 - **zip**：既打包又压缩，一套操作完成。Go 包：`archive/zip`
 
+## 参考资料
+
+- [compress/gzip 标准库](https://pkg.go.dev/compress/gzip)
+- [compress/flate 标准库](https://pkg.go.dev/compress/flate)
+
+
+## 同层页面
+
+- [Advanced](/compress/Advanced.md)
+- [Archive](/compress/Archive.md)
+- [Composite](/compress/Composite.md)
+- [ErrHandleAndTest](/compress/ErrHandleAndTest.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [ErrHandleAndTest](ErrHandleAndTest.md)

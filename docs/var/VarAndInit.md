@@ -167,3 +167,17 @@ func main() {
 ### 总结
 
 四种写法差别在使用位置：`var` 能用在包级，`:=` 只能在函数内部，批量声明把一组相关变量放在一起。零值机制保证变量一声明就有确定值，不会出现"未初始化"这种坑。
+
+## 参考资料
+
+- [语言规范 · 变量声明](https://go.dev/ref/spec#Variable_declarations)
+- [Effective Go · 变量](https://go.dev/doc/effective_go#variables)
+- [Effective Go · 初始化](https://go.dev/doc/effective_go#initialization)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [glossary](/glossary.md)
+- [Assignment](Assignment.md)
+- [ScopeAndLifetime](ScopeAndLifetime.md)
+- [Variable](Variable.md)

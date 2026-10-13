@@ -122,3 +122,23 @@ func main() {
 ### 总结
 
 标准库没有提供现成的优先队列类型：`container/heap` 只有接口和几个操作函数，队列本身要自己定义。实现 `heap.Interface` 的五个方法，再用 `heap.Init`、`heap.Push`、`heap.Pop` 操作它。`Less` 里写小于号得到最小堆，改成大于号就是最大堆。
+
+## 参考资料
+
+- [优先队列 · Wikipedia](https://en.wikipedia.org/wiki/Priority_queue)
+- [container/heap 标准库](https://pkg.go.dev/container/heap)
+
+
+## 同层页面
+
+- [DynamicArray](/algo/array/DynamicArray.md)
+- [Array](/algo/array/Array.md)
+- [CircularBuffer](/algo/array/CircularBuffer.md)
+- [MultidimensionalArray](/algo/array/MultidimensionalArray.md)
+- [SparseArray](/algo/array/SparseArray.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [MultidimensionalArray](MultidimensionalArray.md)
+- [SparseArray](SparseArray.md)

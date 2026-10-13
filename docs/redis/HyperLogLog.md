@@ -153,3 +153,23 @@ Go 里用 `go-redis` 操作它：`PFAdd`、`PFCount`、`PFMerge` 三个方法对
    ```
 
 用法就三个方法：`PFAdd` 加元素，`PFCount` 出估算值，`PFMerge` 合并多个 key，每个都返回 error 交给调用方处理。
+
+## 参考资料
+
+- [Redis 官方命令手册](https://redis.io/commands/)
+- [go-redis 官方客户端](https://github.com/redis/go-redis)
+- [go-redis · pkg.go.dev](https://pkg.go.dev/github.com/redis/go-redis/v9)
+
+## 同层页面
+
+- [Bitmap](/redis/Bitmap.md)
+- [Geospatial](/redis/Geospatial.md)
+- [Hash](/redis/Hash.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Bitmap](Bitmap.md)
+- [Geospatial](Geospatial.md)
+- [Hash](Hash.md)
+- [Install](Install.md)

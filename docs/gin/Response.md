@@ -126,3 +126,23 @@ func customRenderResponse(c *gin.Context) {
 ### 总结
 
 这些出口都是 `gin.Context` 上的方法：返回 JSON 用 `c.JSON`，XML 用 `c.XML`，HTML 用 `c.HTML`，文件下载用 `c.File` 和 `c.FileAttachment`，要自定义格式就实现 `render.Render` 接口再交给 `c.Render`。
+
+## 参考资料
+
+- [Gin 官方文档](https://gin-gonic.com/en/docs/)
+- [Gin · pkg.go.dev](https://pkg.go.dev/github.com/gin-gonic/gin)
+
+
+## 同层页面
+
+- [Config](/gin/Config.md)
+- [Debug](/gin/Debug.md)
+- [Error](/gin/Error.md)
+- [Request](/gin/Request.md)
+- [Route](/gin/Route.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Request](Request.md)
+- [Route](Route.md)

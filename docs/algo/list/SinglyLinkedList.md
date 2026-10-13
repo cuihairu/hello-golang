@@ -131,3 +131,20 @@ func main() {
 ### 总结
 
 单向链表结构简单、头部操作高效，适合作为栈、哈希桶拉链等结构的底层实现；由于不支持回退，删除节点时需要先找到前驱，这是它与双向链表的主要差距。
+
+## 参考资料
+
+- [链表 · Wikipedia](https://en.wikipedia.org/wiki/Linked_list)
+
+
+## 同层页面
+
+- [SkipList](/algo/list/SkipList.md)
+- [DynamicArray](/algo/list/DynamicArray.md)
+- [HashLinkedList](/algo/list/HashLinkedList.md)
+- [Queue](/algo/list/Queue.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [SkipList](SkipList.md)

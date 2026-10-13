@@ -164,3 +164,22 @@ func main() {
 ### 总结
 
 上面七类里，Go 与其他语言差别最明显的是两处：整数除法 `/` 直接截断小数（`10 / 3` 得 `3`），以及没有三元运算符，条件取值只能写 `if`。自增自减只能单独成句，这也是为什么 `for i := 0; i < n; i++` 里它们放在后置位置。
+
+## 参考资料
+
+- [语言规范 · 运算符](https://go.dev/ref/spec#Operators)
+
+
+## 同层页面
+
+- [Arithmetic](/operator/Arithmetic.md)
+- [Assignment](/operator/Assignment.md)
+- [BitLen](/operator/BitLen.md)
+- [Logical](/operator/Logical.md)
+- [Receiver](/operator/Receiver.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Logical](Logical.md)
+- [Receiver](Receiver.md)

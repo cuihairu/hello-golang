@@ -222,3 +222,21 @@ func main() {
 #### 总结
 
 XML 用自定义标签表达结构化的数据，跨平台传递，代价是标记冗长、解析要花内存。需要人可读、可扩展的文本格式时选 XML，只在程序内部来回传数据时 JSON 更省事。Go 解析用 `xml.Unmarshal`，生成用 `xml.MarshalIndent`。
+
+## 参考资料
+
+- [encoding 系列标准库（json 为例）](https://pkg.go.dev/encoding/json)
+- [encoding/xml 标准库](https://pkg.go.dev/encoding/xml)
+
+
+## 同层页面
+
+- [JsonV2](/encoding/JsonV2.md)
+- [Base64](/encoding/Base64.md)
+- [Binary](/encoding/Binary.md)
+- [Voice](/encoding/Voice.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Voice](Voice.md)

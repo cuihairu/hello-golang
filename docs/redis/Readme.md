@@ -11,3 +11,24 @@ Redis，全称 Remote Dictionary Server，由 Salvatore Sanfilippo 开发，是�
 2. **易用**：Go 语法简单，Redis 的命令接口也简单，开发和维护的成本都不高。
 3. **扩展性**：Redis 支持集群模式和分片，Go 能承载大量并发连接，数据量或流量涨上去之后，两边都有现成的扩展手段。
 4. **第三方库**：Redis 的 Go 客户端库和社区资源都比较成熟，接入新功能的成本低，能缩短开发周期。
+
+## 参考资料
+
+- [Redis 官方命令手册](https://redis.io/commands/)
+- [go-redis 官方客户端](https://github.com/redis/go-redis)
+- [go-redis · pkg.go.dev](https://pkg.go.dev/github.com/redis/go-redis/v9)
+
+
+## 同层页面
+
+- [Bitmap](/redis/Bitmap.md)
+- [Geospatial](/redis/Geospatial.md)
+- [Hash](/redis/Hash.md)
+- [List](/redis/List.md)
+- [Set](/redis/Set.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [List](List.md)
+- [Set](Set.md)

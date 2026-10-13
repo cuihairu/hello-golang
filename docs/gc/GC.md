@@ -125,3 +125,15 @@ STW 停顿从 Go 1.3 的几百毫秒降到 Go 1.8 的半个毫秒，这条曲线
 ### 总结
 
 Go 的 GC 用三色标记完成并发标记，标记一致后统一清除白色对象。`GOGC` 控制触发频率，默认 100；`debug.SetMemoryLimit` 给堆目标加了第二道限制，两者取小作为 HeapGoal。
+
+## 参考资料
+
+- [官方 · A Guide to the Go Garbage Collector](https://go.dev/doc/gc-guide)
+- [官方博客 · Go GC: Prioritizing low latency and simplicity](https://go.dev/blog/go15gc)
+- [官方博客 · Getting to Go（GC 演进）](https://go.dev/blog/ismmkeynote)
+- [官方博客 · The Green Tea Garbage Collector](https://go.dev/blog/greenteagc)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [glossary](/glossary.md)

@@ -39,3 +39,20 @@
    ```
 
 这些限制指向同一件事：常量的值必须在编译期确定，不能依赖运行时上下文或动态计算。
+
+## 参考资料
+
+- [语言规范 · 常量声明](https://go.dev/ref/spec#Constant_declarations)
+- [官方博客 · Constants](https://go.dev/blog/constants)
+
+## 同层页面
+
+- [Const](/const/Const.md)
+- [TrueAndFalse](/const/TrueAndFalse.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Const](Const.md)
+- [TrueAndFalse](TrueAndFalse.md)
+- [glossary](/glossary.md)

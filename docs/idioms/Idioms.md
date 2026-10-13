@@ -33,3 +33,20 @@ Idioms（惯用法）和 Patterns（模式）指编程语言里约定俗成的�
 ### 总结
 
 Comma ok、`:=`、空白标识符 `_`、`defer`、多返回值、type switch 这些写法在 Effective Go 和 Go Code Review Comments 里都有说明。照这些惯例写，读代码的人不用猜你为什么这么写。
+
+## 参考资料
+
+- [Effective Go（官方）](https://go.dev/doc/effective_go)
+
+
+## 同层页面
+
+- [EffectiveGo](/idioms/EffectiveGo.md)
+- [StructTags](/idioms/StructTags.md)
+- [BlankIdentifier](/idioms/BlankIdentifier.md)
+- [Labels](/idioms/Labels.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Labels](Labels.md)

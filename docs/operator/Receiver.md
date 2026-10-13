@@ -93,3 +93,23 @@ func main() {
 - **值接收者** 拿到的是副本，改不了原值，也就不会产生副作用。
 
 方法靠接受者运算符挂到类型上，实例才能以 `p.Greet()` 这样的写法调用。
+
+## 参考资料
+
+- [语言规范 · 运算符](https://go.dev/ref/spec#Operators)
+- [语言规范 · 地址运算符](https://go.dev/ref/spec#Address_operators)
+
+
+## 同层页面
+
+- [Arithmetic](/operator/Arithmetic.md)
+- [Assignment](/operator/Assignment.md)
+- [BitLen](/operator/BitLen.md)
+- [Operator](/operator/Operator.md)
+- [Relational](/operator/Relational.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Operator](Operator.md)
+- [Relational](Relational.md)

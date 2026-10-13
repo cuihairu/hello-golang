@@ -47,3 +47,23 @@ func main() {
 ### 总结
 
 `float32` 占 4 字节、约 6 位小数精度，`float64` 占 8 字节、约 15-16 位。判断两个浮点数是否相等不要直接用 `==`，改用近似比较；`1.0 / 3.0` 这类除法在两种类型下小数位数不同，选哪个取决于需要的精度。
+
+## 参考资料
+
+- [语言规范 · 类型](https://go.dev/ref/spec#Types)
+- [语言规范 · 数值类型](https://go.dev/ref/spec#Numeric_types)
+
+
+## 同层页面
+
+- [Assertion](/type/Assertion.md)
+- [Interface](/type/Interface.md)
+- [Map](/type/Map.md)
+- [Conv](/type/Conv.md)
+- [HtmlTemplate](/type/HtmlTemplate.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Conv](Conv.md)
+- [HtmlTemplate](HtmlTemplate.md)

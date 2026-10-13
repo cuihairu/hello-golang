@@ -115,3 +115,22 @@ func main() {
 ### 总结
 
 可变参数解决的是参数个数不定的问题：定义时在类型前加 `...`，调用时可以直接传值，也可以用 `slice...` 把切片展开传入；函数内部拿到的就是一个切片。限制只有一条：它必须是参数列表的最后一项。
+
+## 参考资料
+
+- [语言规范 · 函数声明](https://go.dev/ref/spec#Function_declarations)
+- [语言规范 · 调用](https://go.dev/ref/spec#Calls)
+- [Effective Go · 函数](https://go.dev/doc/effective_go#functions)
+- [语言规范 · 函数类型（变参）](https://go.dev/ref/spec#Function_types)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Arguments](Arguments.md)
+- [DefineAndCall](DefineAndCall.md)
+- [FuncValue](FuncValue.md)
+- [History](History.md)
+- [InnerFunc](InnerFunc.md)
+- [MultipleReturnValues](MultipleReturnValues.md)
+- [RecursiveFunction](RecursiveFunction.md)
+- [glossary](/glossary.md)

@@ -58,3 +58,22 @@ func main() {
 用 plugin 做热更新，流程是"改代码 → 重编 `.so` → 换路径 `Open`"。因为不能卸载，旧版本的代码和数据会一直留在内存里，长期热更的进程要按"每版一个文件名"管理，避免重复加载同一文件。多数场景更稳的路子是把变化的部分放进子进程或用数据驱动（配置、规则引擎），plugin 留给真正的原生扩展点。
 
 交叉阅读：加载外部代码的安全边界见 [官方安全口径](../security/Security.md)。
+
+## 参考资料
+
+- [syscall 标准库](https://pkg.go.dev/syscall)
+- [os 标准库](https://pkg.go.dev/os)
+- [plugin 标准库](https://pkg.go.dev/plugin)
+
+## 同层页面
+
+- [Sys](/sys/Sys.md)
+- [Syscall](/sys/Syscall.md)
+- [Unsafe](/sys/Unsafe.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Sys](Sys.md)
+- [Syscall](Syscall.md)
+- [Unsafe](Unsafe.md)

@@ -170,3 +170,20 @@ func main() {
 ### 总结
 
 context 做三件事：`WithCancel` 停掉多个 goroutine，`WithTimeout` 到点自动取消，`WithValue` 携带请求级数据；需要等待时再配合 `sync.WaitGroup`。
+
+## 参考资料
+
+- [sync 标准库](https://pkg.go.dev/sync)
+- [Go 内存模型](https://go.dev/ref/mem)
+- [官方博客 · Introducing the Go Race Detector](https://go.dev/blog/race-detector)
+- [context 标准库](https://pkg.go.dev/context)
+- [官方博客 · Go Concurrency Patterns: Context](https://go.dev/blog/context)
+- [官方博客 · Contexts and structs](https://go.dev/blog/context-and-structs)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [glossary](/glossary.md)
+- [Primitives](Primitives.md)
+- [Spinlock](Spinlock.md)
+- [Sync](Sync.md)

@@ -182,3 +182,21 @@ func main() {
 5. **一致性**：在同一类型的相关函数中保持一致的传递方式
 
 拿不准用哪种时看两点：要不要在函数内改原值，结构体大不大。要改或很大就用指针，其余传值即可。
+
+## 参考资料
+
+- [语言规范 · 函数声明](https://go.dev/ref/spec#Function_declarations)
+- [语言规范 · 调用](https://go.dev/ref/spec#Calls)
+- [Effective Go · 函数](https://go.dev/doc/effective_go#functions)
+- [语言规范 · 求值顺序](https://go.dev/ref/spec#Order_of_evaluation)
+
+## 同层页面
+
+- [AnonymousFunc](/func/AnonymousFunc.md)
+- [Defer](/func/Defer.md)
+- [VariadicParameters](/func/VariadicParameters.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [AnonymousFunc](AnonymousFunc.md)

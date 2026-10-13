@@ -91,3 +91,15 @@ func main() {
 ### 小结
 
 `sync.RWMutex` 通过"读共享、写独占"提升了读多写少场景下的并发性能：读用 `RLock`/`RUnlock`，写用 `Lock`/`Unlock`，必要时用 `TryLock`/`TryRLock` 做非阻塞尝试。使用时注意锁不可升级、不可拷贝，并在读写比例合适时选择它，才能发挥其优势。
+
+## 参考资料
+
+- [sync 标准库](https://pkg.go.dev/sync)
+- [Go 内存模型](https://go.dev/ref/mem)
+- [官方博客 · Introducing the Go Race Detector](https://go.dev/blog/race-detector)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [glossary](/glossary.md)
+- [Primitives](Primitives.md)

@@ -86,3 +86,24 @@ func main() {
 - **装饰器模式（Decorator Pattern）**：结构相似，装饰器加职责，代理控访问。两者可以叠加，比如代理负责延迟加载，装饰器负责加功能。
 - **享元模式（Flyweight Pattern）**：享元共享大量相似对象以省内存，代理管的是对单个对象的访问，可以隔着代理去拿享元对象。
 - **外观模式（Facade Pattern）**：外观给整个子系统一个统一入口，代理只管一个真实对象的访问。
+
+## 参考资料
+
+- [GoF《设计模式》概览（Wikipedia）](https://en.wikipedia.org/wiki/Design_Patterns)
+- [Refactoring.Guru 设计模式目录](https://refactoring.guru/design-patterns)
+- [Effective Go（官方）](https://go.dev/doc/effective_go)
+
+
+## 同层页面
+
+- [AbstractFactory](/dp/AbstractFactory.md)
+- [Adapter](/dp/Adapter.md)
+- [Behavioral](/dp/Behavioral.md)
+- [Prototype](/dp/Prototype.md)
+- [Reactor](/dp/Reactor.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Prototype](Prototype.md)
+- [Reactor](Reactor.md)

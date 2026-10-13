@@ -97,3 +97,21 @@ func ExampleAddZero() {
 ### 总结
 
 示例测试一身两用：既是测试，`go test` 会对比实际输出和 `// Output:` 注释，不匹配就失败；又是文档，函数旁边的示例直接告诉调用者怎么用。代码改了而文档例子没跟上，测试会先红。
+
+## 参考资料
+
+- [testing 标准库](https://pkg.go.dev/testing)
+- [官方教程 · 添加测试](https://go.dev/doc/tutorial/add-a-test)
+
+
+## 同层页面
+
+- [Fuzz](/test/Fuzz.md)
+- [Test](/test/Test.md)
+- [Advanced](/test/Advanced.md)
+- [Cover](/test/Cover.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Cover](Cover.md)

@@ -112,3 +112,23 @@ func main() {
 - **空接口** 可以持有任何类型的值，类型断言在处理空接口时尤其有用。
 
 三种写法各管一段：知道类型一定对就直接断言，拿不准就带 `ok` 判断，多个类型挨个分支则用 `switch v := v.(type)`。
+
+## 参考资料
+
+- [语言规范 · 运算符](https://go.dev/ref/spec#Operators)
+- [语言规范 · 类型断言](https://go.dev/ref/spec#Type_assertions)
+
+
+## 同层页面
+
+- [Arithmetic](/operator/Arithmetic.md)
+- [Assignment](/operator/Assignment.md)
+- [BitLen](/operator/BitLen.md)
+- [Relational](/operator/Relational.md)
+- [Unary](/operator/Unary.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Relational](Relational.md)
+- [Unary](Unary.md)

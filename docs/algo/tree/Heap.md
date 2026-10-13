@@ -128,3 +128,31 @@ pop: 9
 ### 总结
 
 堆用"完全二叉树 + 父子有序"两组约束换来 $O(1)$ 取堆顶、$O(\log n)$ 插入删除，是介于"完全无序的数组"与"完全有序的 BST"之间的折中。堆的全部操作只有上浮与下沉两个动作。
+
+## 参考资料
+
+- [堆（数据结构）· Wikipedia](https://en.wikipedia.org/wiki/Heap_(data_structure))
+- [container/heap 标准库](https://pkg.go.dev/container/heap)
+
+## 同层页面
+
+- [HuffmanTree](/algo/tree/HuffmanTree.md)
+- [PrefixTree](/algo/tree/PrefixTree.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Graph](/algo/Graph.md)
+- [AVLTree](AVLTree.md)
+- [B+Tree](B+Tree.md)
+- [BTree](BTree.md)
+- [BinaryHeap](BinaryHeap.md)
+- [BinarySearchTree](BinarySearchTree.md)
+- [BinaryTree](BinaryTree.md)
+- [CompleteBinaryTree](CompleteBinaryTree.md)
+- [FenwickTree](FenwickTree.md)
+- [FullBinaryTree](FullBinaryTree.md)
+- [HuffmanTree](HuffmanTree.md)
+- [PrefixTree](PrefixTree.md)
+- [SegmentTree](SegmentTree.md)
+- [Tree](Tree.md)

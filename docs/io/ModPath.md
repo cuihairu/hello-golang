@@ -260,3 +260,24 @@ func main() {
 #### 总结
 
 `path` 包一共上面六个函数：`Join` 连接、`Base` 取文件名、`Dir` 取目录、`Split` 一拆二、`Clean` 规范化、`IsAbs` 判绝对路径，全部按 Unix 风格处理。路径里可能出现 `\` 或盘符时，换 `path/filepath`。
+
+## 参考资料
+
+- [io 标准库](https://pkg.go.dev/io)
+- [os 标准库](https://pkg.go.dev/os)
+- [path/filepath 标准库](https://pkg.go.dev/path/filepath)
+
+
+## 同层页面
+
+- [Advanced](/io/Advanced.md)
+- [CommonFormats](/io/CommonFormats.md)
+- [EfficientIO](/io/EfficientIO.md)
+- [ModOS](/io/ModOS.md)
+- [Security](/io/Security.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [ModOS](ModOS.md)
+- [Security](Security.md)

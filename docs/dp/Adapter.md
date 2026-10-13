@@ -126,3 +126,47 @@ func main() {
 - **装饰器模式（Decorator Pattern）**：装饰器模式用于增强对象的功能，而适配器模式用于改变对象的接口。
 - **桥接模式（Bridge Pattern）**：桥接模式分离抽象部分和实现部分，使它们可以独立变化。适配器模式用于将现有类的接口转换为客户希望的接口。
 - **外观模式（Facade Pattern）**：外观模式为子系统中的一组接口提供一个统一的接口，适配器模式则是使不兼容的接口能够协同工作。
+
+## 参考资料
+
+- [GoF《设计模式》概览（Wikipedia）](https://en.wikipedia.org/wiki/Design_Patterns)
+- [Refactoring.Guru 设计模式目录](https://refactoring.guru/design-patterns)
+- [Effective Go（官方）](https://go.dev/doc/effective_go)
+
+## 同层页面
+
+- [AbstractFactory](/dp/AbstractFactory.md)
+- [Behavioral](/dp/Behavioral.md)
+- [Bridge](/dp/Bridge.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [AbstractFactory](AbstractFactory.md)
+- [Behavioral](Behavioral.md)
+- [Bridge](Bridge.md)
+- [Builder](Builder.md)
+- [ChainofResponsibility](ChainofResponsibility.md)
+- [Command](Command.md)
+- [Composite](Composite.md)
+- [Creational](Creational.md)
+- [Decorator](Decorator.md)
+- [DesignPatterns](DesignPatterns.md)
+- [Facade](Facade.md)
+- [FactoryMethod](FactoryMethod.md)
+- [Flyweight](Flyweight.md)
+- [Iterator](Iterator.md)
+- [Mediator](Mediator.md)
+- [Memento](Memento.md)
+- [ObjectPool](ObjectPool.md)
+- [Observer](Observer.md)
+- [Proactor](Proactor.md)
+- [Prototype](Prototype.md)
+- [Proxy](Proxy.md)
+- [Reactor](Reactor.md)
+- [Singleton](Singleton.md)
+- [State](State.md)
+- [Strategy](Strategy.md)
+- [Structural](Structural.md)
+- [TemplateMethod](TemplateMethod.md)
+- [Visitor](Visitor.md)

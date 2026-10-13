@@ -98,3 +98,19 @@ func main() {
 ```
 
 日志、测试、剖析、断点各管一段：加日志缩小问题范围，测试不过用 `delve` 断点跟进，性能问题交给 `pprof` 的剖析数据。
+
+## 参考资料
+
+- [官方 · 诊断（Diagnostics）](https://go.dev/doc/diagnostics)
+- [runtime/pprof 标准库](https://pkg.go.dev/runtime/pprof)
+
+## 同层页面
+
+- [PGO](/debug/PGO.md)
+- [Pprof](/debug/Pprof.md)
+- [Debug](/debug/Debug.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [PGO](PGO.md)

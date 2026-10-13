@@ -103,3 +103,24 @@ func main() {
 - **状态模式与策略模式（Strategy Pattern）**：策略模式用于定义一系列算法并使其可以互换，而状态模式用于根据对象的状态改变其行为。两者可以结合使用，例如在状态模式中使用策略模式来定义不同状态下的行为。
 - **状态模式与责任链模式（Chain of Responsibility Pattern）**：责任链模式用于将请求沿着处理链传递，而状态模式用于管理对象的状态并改变行为。可以结合使用，例如在状态模式中使用责任链模式来处理状态下的请求。
 - **状态模式与命令模式（Command Pattern）**：命令模式用于封装请求的操作，而状态模式用于管理对象的状态。可以结合使用，例如在状态模式中使用命令模式来执行状态下的操作。
+
+## 参考资料
+
+- [GoF《设计模式》概览（Wikipedia）](https://en.wikipedia.org/wiki/Design_Patterns)
+- [Refactoring.Guru 设计模式目录](https://refactoring.guru/design-patterns)
+- [Effective Go（官方）](https://go.dev/doc/effective_go)
+
+
+## 同层页面
+
+- [AbstractFactory](/dp/AbstractFactory.md)
+- [Adapter](/dp/Adapter.md)
+- [Behavioral](/dp/Behavioral.md)
+- [Singleton](/dp/Singleton.md)
+- [Strategy](/dp/Strategy.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Singleton](Singleton.md)
+- [Strategy](Strategy.md)

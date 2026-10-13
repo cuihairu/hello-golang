@@ -112,3 +112,23 @@ func main() {
 - 逻辑运算符具有短路行为，即在某些情况下避免计算第二个操作数，从而提高效率或避免错误。
 
 `&&` 和 `||` 的短路行为是有语言保证的：右侧表达式只有需要时才会求值，依赖这一点写的保护判断是安全的。
+
+## 参考资料
+
+- [语言规范 · 运算符](https://go.dev/ref/spec#Operators)
+- [语言规范 · 逻辑运算符](https://go.dev/ref/spec#Logical_operators)
+
+
+## 同层页面
+
+- [Arithmetic](/operator/Arithmetic.md)
+- [Assignment](/operator/Assignment.md)
+- [BitLen](/operator/BitLen.md)
+- [Cap](/operator/Cap.md)
+- [Operator](/operator/Operator.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Cap](Cap.md)
+- [Operator](Operator.md)

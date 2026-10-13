@@ -113,3 +113,10 @@
 
 - 应用场景：[Applications.md](applications/Applications.md)、[CloudNative.md](applications/CloudNative.md)、[CLI.md](applications/CLI.md)、[DevOps.md](applications/DevOps.md)、[Web.md](applications/Web.md)
 - 官方文档入口类：[MemoryModel.md](gc/MemoryModel.md)、[PGO.md](debug/PGO.md)、[Fuzz.md](test/Fuzz.md)、[BuildConstraint.md](start/BuildConstraint.md)、[JsonV2.md](encoding/JsonV2.md)、[ReleaseNotes.md](introduction/ReleaseNotes.md)、[EffectiveGo.md](idioms/EffectiveGo.md)、[Security.md](security/Security.md)
+
+术语速查：[术语表](glossary.md)（中英对照、一句话定义、权威出处与相关页）。
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [glossary](glossary.md)

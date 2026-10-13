@@ -164,3 +164,23 @@ string.`
 ```
 
 跑一遍这个例子能看清三件事：`len` 数的是字节，`range` 遍历取的是字符，切片 `[0:5]` 按字节切。碰到多字节字符时，这三个结果各不相同。
+
+## 参考资料
+
+- [语言规范 · 类型](https://go.dev/ref/spec#Types)
+- [语言规范 · 字符串类型](https://go.dev/ref/spec#String_types)
+- [官方博客 · Strings, bytes, runes and characters in Go](https://go.dev/blog/strings)
+
+
+## 同层页面
+
+- [Assertion](/type/Assertion.md)
+- [Interface](/type/Interface.md)
+- [Map](/type/Map.md)
+- [Slice](/type/Slice.md)
+- [Struct](/type/Struct.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Struct](Struct.md)

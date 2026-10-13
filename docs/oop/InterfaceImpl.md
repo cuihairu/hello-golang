@@ -148,3 +148,24 @@ func main() {
 - **接口的零值和空接口**：接口的零值是 `nil`，空接口可以接受任何类型的数据。
 
 理解了"接口值 = 类型指针 + 数据指针"，两个问题就有了答案：为什么 `nil` 接口调用方法会 panic（类型指针为空，方法表无从查起）；为什么往接口里存一个值为 `nil` 的指针再判 `== nil` 得到 `false`（类型指针不为空）。
+
+## 参考资料
+
+- [官方 FAQ · 类型系统](https://go.dev/doc/faq)
+- [语言规范 · 接口类型](https://go.dev/ref/spec#Interface_types)
+- [Effective Go · Methods](https://go.dev/doc/effective_go#methods)
+- [Effective Go · Embedding](https://go.dev/doc/effective_go#embedding)
+- [语言规范 · 方法集](https://go.dev/ref/spec#Method_sets)
+
+
+## 同层页面
+
+- [Embedding](/oop/Embedding.md)
+- [Interface](/oop/Interface.md)
+- [PointerReceiver](/oop/PointerReceiver.md)
+- [Methods](/oop/Methods.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Methods](Methods.md)

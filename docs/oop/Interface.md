@@ -139,3 +139,19 @@ func main() {
 - **接口（Interface）**：定义一组方法签名，描述行为规范。
 
 类型实现了接口的全部方法，就能赋给接口变量；函数参数写成接口，就能接受任何实现了这些方法的类型，这是 Go 实现多态的方式。
+
+## 参考资料
+
+- [官方 FAQ · 类型系统](https://go.dev/doc/faq)
+- [语言规范 · 接口类型](https://go.dev/ref/spec#Interface_types)
+- [Effective Go · Methods](https://go.dev/doc/effective_go#methods)
+- [Effective Go · Embedding](https://go.dev/doc/effective_go#embedding)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [glossary](/glossary.md)
+- [InterfaceImpl](InterfaceImpl.md)
+- [Methods](Methods.md)
+- [OOP](OOP.md)
+- [Poly](Poly.md)

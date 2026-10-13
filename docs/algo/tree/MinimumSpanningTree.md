@@ -111,3 +111,25 @@ func main() {
 ### 总结
 
 最小生成树的贪心正确性由"切割性质"保证：任何时刻，横跨已选/未选两个集合的最小边一定属于某棵最小生成树。Kruskal 的实现大半在并查集：判环靠 `Union` 返回 `false`，选边靠它把两个集合合并，选满 $n-1$ 条边就停。
+
+## 参考资料
+
+- [最小生成树 · Wikipedia](https://en.wikipedia.org/wiki/Minimum_spanning_tree)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Graph](/algo/Graph.md)
+- [AVLTree](AVLTree.md)
+- [B+Tree](B+Tree.md)
+- [BTree](BTree.md)
+- [BinaryHeap](BinaryHeap.md)
+- [BinarySearchTree](BinarySearchTree.md)
+- [BinaryTree](BinaryTree.md)
+- [CompleteBinaryTree](CompleteBinaryTree.md)
+- [FenwickTree](FenwickTree.md)
+- [FullBinaryTree](FullBinaryTree.md)
+- [HuffmanTree](HuffmanTree.md)
+- [PrefixTree](PrefixTree.md)
+- [SegmentTree](SegmentTree.md)
+- [Tree](Tree.md)

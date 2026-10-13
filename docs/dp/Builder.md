@@ -139,3 +139,23 @@ func main() {
 #### 其他模式的关系
 - **抽象工厂模式（Abstract Factory Pattern）**：生成器模式与抽象工厂模式的目的类似，都是创建复杂对象。不同之处在于，生成器模式更加关注一步一步创建对象的过程，而抽象工厂模式侧重于创建一系列相关对象。
 - **工厂方法模式（Factory Method Pattern）**：工厂方法模式通常与生成器模式结合使用，以便于创建复杂对象的部分组件。
+
+## 参考资料
+
+- [GoF《设计模式》概览（Wikipedia）](https://en.wikipedia.org/wiki/Design_Patterns)
+- [Refactoring.Guru 设计模式目录](https://refactoring.guru/design-patterns)
+- [Effective Go（官方）](https://go.dev/doc/effective_go)
+
+
+## 同层页面
+
+- [AbstractFactory](/dp/AbstractFactory.md)
+- [Adapter](/dp/Adapter.md)
+- [Behavioral](/dp/Behavioral.md)
+- [Bridge](/dp/Bridge.md)
+- [ChainofResponsibility](/dp/ChainofResponsibility.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [ChainofResponsibility](ChainofResponsibility.md)

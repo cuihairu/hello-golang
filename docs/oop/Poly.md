@@ -168,3 +168,23 @@ notMatch:
 - **底层实现**：通过类型描述符和方法表实现。接口内部包含类型描述符和实际值指针。
 - **调用流程**：获取类型描述符，查找方法表，调用对应的方法实现。
 - **比较**：Go 不用显式声明实现关系，C++ 要写抽象类和虚函数，Java 要声明实现关系，Python 靠鸭子类型。
+
+## 参考资料
+
+- [官方 FAQ · 类型系统](https://go.dev/doc/faq)
+- [语言规范 · 接口类型](https://go.dev/ref/spec#Interface_types)
+- [Effective Go · Methods](https://go.dev/doc/effective_go#methods)
+- [Effective Go · Embedding](https://go.dev/doc/effective_go#embedding)
+
+
+## 同层页面
+
+- [Embedding](/oop/Embedding.md)
+- [Interface](/oop/Interface.md)
+- [PointerReceiver](/oop/PointerReceiver.md)
+- [TypeAssertion](/oop/TypeAssertion.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Embedding](Embedding.md)

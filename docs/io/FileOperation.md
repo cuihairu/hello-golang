@@ -274,3 +274,23 @@ func main() {
 #### 总结
 
 Go 的文件操作都在 `os` 包里：`Open`/`Create`/`OpenFile` 打开，`Read`/`WriteString` 读写，`Seek` 移动指针，每一步都检查返回的 `err`。文件锁定、复制、移动属于进阶操作，后面章节会讲。
+
+## 参考资料
+
+- [io 标准库](https://pkg.go.dev/io)
+- [os 标准库](https://pkg.go.dev/os)
+
+
+## 同层页面
+
+- [Advanced](/io/Advanced.md)
+- [CommonFormats](/io/CommonFormats.md)
+- [EfficientIO](/io/EfficientIO.md)
+- [FileAdvanced](/io/FileAdvanced.md)
+- [IO](/io/IO.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [FileAdvanced](FileAdvanced.md)
+- [IO](IO.md)

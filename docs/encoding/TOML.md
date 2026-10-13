@@ -257,3 +257,20 @@ func main() {
 #### 总结
 
 TOML 的语法规则明确，节、数组、日期这些结构都能表达，Go 侧用 `github.com/pelletier/go-toml` 这类库即可读写。工具和库的支持不如 JSON、YAML 普遍，但在配置文件这个场景里够用。
+
+## 参考资料
+
+- [encoding 系列标准库（json 为例）](https://pkg.go.dev/encoding/json)
+
+
+## 同层页面
+
+- [JsonV2](/encoding/JsonV2.md)
+- [Base64](/encoding/Base64.md)
+- [Binary](/encoding/Binary.md)
+- [Text](/encoding/Text.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Text](Text.md)

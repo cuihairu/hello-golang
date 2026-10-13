@@ -43,3 +43,13 @@ SRE 这套做法起源于 Google，目标是让大规模站点更可靠、更高
 
 1. https://golang.google.cn/solutions/devops/ — Go for DevOps & Site Reliability Engineering（三段论、Docker/Drone/etcd/IBM/Netflix/Microsoft、SRE 起源，2026-10-08 抓取）
 2. https://golang.google.cn/solutions/use-cases — 四类场景索引
+
+## 参考资料
+
+- [官方教程 · Web 应用（wiki）](https://go.dev/doc/articles/wiki/)
+- [net/http 标准库](https://pkg.go.dev/net/http)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [knowledge](/knowledge.md)

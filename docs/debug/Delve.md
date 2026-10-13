@@ -222,3 +222,21 @@ func add(a, b int) int {
 ### 总结
 
 断点、单步、变量查看、条件断点、goroutine 列表，`delve` 的命令覆盖了调试 Go 程序的主要动作。装好以后 `dlv debug` 进去，剩下的就是命令行交互。
+
+## 参考资料
+
+- [官方 · 诊断（Diagnostics）](https://go.dev/doc/diagnostics)
+- [runtime/pprof 标准库](https://pkg.go.dev/runtime/pprof)
+- [Delve 调试器（官方仓库）](https://github.com/go-delve/delve)
+
+## 同层页面
+
+- [PGO](/debug/PGO.md)
+- [Pprof](/debug/Pprof.md)
+- [Debug](/debug/Debug.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Debug](Debug.md)
+- [Expvar](Expvar.md)

@@ -185,3 +185,15 @@ func main() {
 ## 结论
 
 一句话分工：比较普通值、要显式穿透的用 `switch`，等通道消息的用 `select`。
+
+## 参考资料
+
+- [语言规范 · 语句](https://go.dev/ref/spec#Statements)
+- [Effective Go · 控制结构](https://go.dev/doc/effective_go#control-structures)
+- [语言规范 · Switch 语句](https://go.dev/ref/spec#Switch_statements)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Conditional](Conditional.md)
+- [Loop](Loop.md)

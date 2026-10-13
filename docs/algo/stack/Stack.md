@@ -118,3 +118,17 @@ pop: 1
 ### 总结
 
 栈的规则最简单，却是表达式求值、DFS、递归等机制的骨架。切片实现的栈代码量最少，配合 `len-1` 的栈顶下标即可完成全部操作。
+
+## 参考资料
+
+- [栈（抽象数据类型）· Wikipedia](https://en.wikipedia.org/wiki/Stack_(abstract_data_type))
+
+## 同层页面
+
+- [Graph](/algo/Graph.md)
+- [Inventory](/algo/Inventory.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Graph](/algo/Graph.md)

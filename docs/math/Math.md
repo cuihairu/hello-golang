@@ -181,3 +181,25 @@
 ### 总结
 
 Go 里这些概念都有直接对应：类型是 `int`、`float32`/`float64`、`complex64`/`complex128`，运算符就是 `+`、`-`、`*`、`/`、`%`，常量从 `math` 包取（`math.Pi`、`math.E`）。
+
+## 参考资料
+
+- [math 标准库](https://pkg.go.dev/math)
+- [math/rand 标准库](https://pkg.go.dev/math/rand)
+
+## 同层页面
+
+- [Calc](/math/Calc.md)
+- [LinearAlgebra](/math/LinearAlgebra.md)
+- [MathFunc](/math/MathFunc.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Calc](Calc.md)
+- [LinearAlgebra](LinearAlgebra.md)
+- [MathFunc](MathFunc.md)
+- [MathRand](MathRand.md)
+- [Optimize](Optimize.md)
+- [Science](Science.md)
+- [Statistics](Statistics.md)

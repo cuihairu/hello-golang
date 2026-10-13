@@ -206,3 +206,23 @@ Go语言的 `math/rand` 包用于生成伪随机数。伪随机数是通过算�
 ### 总结
 
 `math/rand` 出随机数：`Intn` 给整数，`Float64` 给 [0, 1) 的小数，`Perm` 给随机排列；Box-Muller 拿两个均匀随机数变换出正态分布，伯努利比较一次 `Float64` 和 p，泊松连乘到越过 `exp(-lambda)` 为止。
+
+## 参考资料
+
+- [math 标准库](https://pkg.go.dev/math)
+- [math/rand 标准库](https://pkg.go.dev/math/rand)
+- [官方博客 · math/rand/v2](https://go.dev/blog/randv2)
+
+
+## 同层页面
+
+- [Calc](/math/Calc.md)
+- [LinearAlgebra](/math/LinearAlgebra.md)
+- [Math](/math/Math.md)
+- [MathFunc](/math/MathFunc.md)
+- [Optimize](/math/Optimize.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Optimize](Optimize.md)

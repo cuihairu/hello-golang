@@ -196,3 +196,21 @@ WebSocket 用于实时通信：先通过 HTTP 完成协议升级，之后双方�
 
 - **故障排除**：按日志和监控指标排查 Gin 应用的常见问题。
 - **升级和维护**：应用的升级和维护，保证系统稳定和安全。
+
+## 参考资料
+
+- [Gin 官方文档](https://gin-gonic.com/en/docs/)
+- [Gin · pkg.go.dev](https://pkg.go.dev/github.com/gin-gonic/gin)
+
+
+## 同层页面
+
+- [Config](/gin/Config.md)
+- [Debug](/gin/Debug.md)
+- [Error](/gin/Error.md)
+- [Use](/gin/Use.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Use](Use.md)

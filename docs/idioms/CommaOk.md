@@ -124,3 +124,20 @@ Channel closed
 3. **通道接收**：判断通道是否关闭。
 
 三种场景共用一个写法：左边拿值，右边 `ok` 判成败，省掉了先查存在性再取值的两步，也避开了零值歧义。
+
+## 参考资料
+
+- [Effective Go（官方）](https://go.dev/doc/effective_go)
+- [语言规范 · 类型断言（comma-ok 形式）](https://go.dev/ref/spec#Type_assertions)
+- [语言规范 · 接收运算符](https://go.dev/ref/spec#Receive_operator)
+
+## 同层页面
+
+- [EffectiveGo](/idioms/EffectiveGo.md)
+- [StructTags](/idioms/StructTags.md)
+- [BlankIdentifier](/idioms/BlankIdentifier.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [BlankIdentifier](BlankIdentifier.md)

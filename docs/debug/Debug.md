@@ -30,3 +30,22 @@
 - **问题一出现就查**：拖到后面查，那时代码改动更多，要对照的变量也更多。
 - **保持简洁**：调试时保持代码简洁，把关键的调试信息写进注释。
 - **记录和分析**：把每一步的观察结果记下来，形成日后可查的处理过程文档。
+
+## 参考资料
+
+- [官方 · 诊断（Diagnostics）](https://go.dev/doc/diagnostics)
+- [runtime/pprof 标准库](https://pkg.go.dev/runtime/pprof)
+
+## 同层页面
+
+- [PGO](/debug/PGO.md)
+- [Pprof](/debug/Pprof.md)
+- [Delve](/debug/Delve.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Delve](Delve.md)
+- [Expvar](Expvar.md)
+- [GDB](GDB.md)
+- [Utils](Utils.md)

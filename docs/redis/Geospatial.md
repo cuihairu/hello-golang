@@ -158,3 +158,29 @@ Geohash 是把地理位置（经度和纬度）编码成短字符串的算法，
    ```
 
 常用组合就三条：`GEOADD` 存点，`GEORADIUS` 和 `GEORADIUSBYMEMBER` 按半径圈点，`GEODIST` 算两点距离。
+
+## 参考资料
+
+- [Redis 官方命令手册](https://redis.io/commands/)
+- [go-redis 官方客户端](https://github.com/redis/go-redis)
+- [go-redis · pkg.go.dev](https://pkg.go.dev/github.com/redis/go-redis/v9)
+
+## 同层页面
+
+- [Bitmap](/redis/Bitmap.md)
+- [Hash](/redis/Hash.md)
+- [HyperLogLog](/redis/HyperLogLog.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Bitmap](Bitmap.md)
+- [Hash](Hash.md)
+- [HyperLogLog](HyperLogLog.md)
+- [Install](Install.md)
+- [List](List.md)
+- [Readme](Readme.md)
+- [Set](Set.md)
+- [SortedSet](SortedSet.md)
+- [Streams](Streams.md)
+- [String](String.md)

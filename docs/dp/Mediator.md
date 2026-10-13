@@ -115,3 +115,24 @@ func main() {
 - **中介者模式与观察者模式（Observer Pattern）**：观察者模式用于在对象状态变化时通知观察者，而中介者模式用于协调对象之间的交互。中介者模式可以与观察者模式结合使用，例如在中介者中管理观察者的通知。
 - **中介者模式与责任链模式（Chain of Responsibility Pattern）**：责任链模式用于将请求沿着处理链传递，而中介者模式用于集中协调对象之间的交互。两者可以结合使用，例如在中介者中实现责任链的处理逻辑。
 - **中介者模式与命令模式（Command Pattern）**：命令模式用于封装请求的操作，而中介者模式用于协调对象之间的交互。可以结合使用，例如在中介者中使用命令对象来处理请求。
+
+## 参考资料
+
+- [GoF《设计模式》概览（Wikipedia）](https://en.wikipedia.org/wiki/Design_Patterns)
+- [Refactoring.Guru 设计模式目录](https://refactoring.guru/design-patterns)
+- [Effective Go（官方）](https://go.dev/doc/effective_go)
+
+
+## 同层页面
+
+- [AbstractFactory](/dp/AbstractFactory.md)
+- [Adapter](/dp/Adapter.md)
+- [Behavioral](/dp/Behavioral.md)
+- [Iterator](/dp/Iterator.md)
+- [Memento](/dp/Memento.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Iterator](Iterator.md)
+- [Memento](Memento.md)

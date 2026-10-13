@@ -130,3 +130,24 @@ func main() {
 - **`break`**：带标签时直接跳出多层嵌套的循环或 `switch`。
 - **`continue`**：带标签时跳过外层循环的当前迭代。
 - **`goto`**：无条件跳到指定标签，同一个函数内有效。
+
+## 参考资料
+
+- [Effective Go（官方）](https://go.dev/doc/effective_go)
+- [语言规范 · 标签语句](https://go.dev/ref/spec#Labeled_statements)
+- [语言规范 · 标签作用域](https://go.dev/ref/spec#Label_scopes)
+
+
+## 同层页面
+
+- [EffectiveGo](/idioms/EffectiveGo.md)
+- [StructTags](/idioms/StructTags.md)
+- [BlankIdentifier](/idioms/BlankIdentifier.md)
+- [Idioms](/idioms/Idioms.md)
+- [Range](/idioms/Range.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Idioms](Idioms.md)
+- [Range](Range.md)

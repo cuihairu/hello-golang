@@ -37,4 +37,20 @@ Go语言（也称为Golang）是由谷歌工程师Robert Griesemer、Rob Pike和
 4. **工具链**：
    - 编译、构建、测试、文档生成都挂在 `go` 命令下面，一条命令一件事。
 
+## 参考资料
 
+- [官方文档总览](https://go.dev/doc/)
+- [发布历史与支持策略](https://go.dev/doc/devel/release)
+- [官方 FAQ](https://go.dev/doc/faq)
+
+## 同层页面
+
+- [ReleaseNotes](/introduction/ReleaseNotes.md)
+- [Feature](/introduction/Feature.md)
+- [Lineage](/introduction/Lineage.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Feature](Feature.md)
+- [Lineage](Lineage.md)

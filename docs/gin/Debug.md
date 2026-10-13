@@ -188,3 +188,30 @@ dlv debug main.go
 ### 总结
 
 Gin 的测试用 `httptest` 就能做，单元测试、集成测试、基准测试都不需要起真实端口；调试先看日志中间件里的请求方法、路径和响应状态码，再不够就用 `dlv` 打断点查变量和调用栈。
+
+## 参考资料
+
+- [Gin 官方文档](https://gin-gonic.com/en/docs/)
+- [Gin · pkg.go.dev](https://pkg.go.dev/github.com/gin-gonic/gin)
+
+## 同层页面
+
+- [Config](/gin/Config.md)
+- [Error](/gin/Error.md)
+- [Extend](/gin/Extend.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Config](Config.md)
+- [Error](Error.md)
+- [Extend](Extend.md)
+- [Gin](Gin.md)
+- [Middleware](Middleware.md)
+- [Optimize](Optimize.md)
+- [Request](Request.md)
+- [Response](Response.md)
+- [Route](Route.md)
+- [Source](Source.md)
+- [Use](Use.md)
+- [advanced](advanced.md)

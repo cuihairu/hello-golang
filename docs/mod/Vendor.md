@@ -96,3 +96,22 @@
 - **`vendor` 目录**：存放第三方依赖的副本，构建时优先使用，版本由 `go.mod` 锁定。
 - **创建和管理**：`go mod vendor` 生成目录，`go mod tidy` 整理 `go.mod`。
 - **构建和测试**：Go 工具链优先用 `vendor` 里的包，外部依赖的更新影响不到本项目。
+
+## 参考资料
+
+- [官方 · Go Modules 使用指南](https://go.dev/doc/modules/)
+- [Go Modules Reference](https://go.dev/ref/mod)
+- [官方博客 · Using Go Modules](https://go.dev/blog/using-go-modules)
+
+
+## 同层页面
+
+- [Init](/mod/Init.md)
+- [Mod](/mod/Mod.md)
+- [Work](/mod/Work.md)
+- [Pkg](/mod/Pkg.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Pkg](Pkg.md)

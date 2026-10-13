@@ -173,3 +173,30 @@ func main() {
 #### 总结
 
 Base64 把每 3 个字节换成 4 个 6 位组再查表映射成 ASCII 字符，体积增大约 33%，换来的是二进制数据能走邮件、HTTP 这类只认文本的链路。Go 里编解码分别是 `base64.StdEncoding.EncodeToString` 和 `DecodeString`。
+
+## 参考资料
+
+- [encoding 系列标准库（json 为例）](https://pkg.go.dev/encoding/json)
+- [encoding/base64 标准库](https://pkg.go.dev/encoding/base64)
+
+## 同层页面
+
+- [JsonV2](/encoding/JsonV2.md)
+- [Binary](/encoding/Binary.md)
+- [CSV](/encoding/CSV.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Binary](Binary.md)
+- [CSV](CSV.md)
+- [Encoding](Encoding.md)
+- [Formats](Formats.md)
+- [Gob](Gob.md)
+- [Hex](Hex.md)
+- [Ini](Ini.md)
+- [JSON](JSON.md)
+- [TOML](TOML.md)
+- [Text](Text.md)
+- [Voice](Voice.md)
+- [XML](XML.md)

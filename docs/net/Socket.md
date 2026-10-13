@@ -243,3 +243,21 @@ func handleConnection(conn net.Conn) {
 在网络通信中，数据丢失与重复是常见问题。使用 TCP 协议可以避免大部分数据丢失和重复的问题，因为 TCP 提供了可靠的数据传输。但在 UDP 中，这些问题则需要通过应用层协议来处理。
 
 TCP 走 `net.Listen` 加 `Accept` 收连接，`conn.Read`、`conn.Write` 读写；UDP 走 `ListenUDP` 配 `ReadFromUDP`、`WriteToUDP`。超时用 `SetDeadline`，丢包和重复交给 TCP，用 UDP 就得在应用层自己处理。
+
+## 参考资料
+
+- [net 标准库](https://pkg.go.dev/net)
+- [net/http 标准库](https://pkg.go.dev/net/http)
+
+
+## 同层页面
+
+- [Advanced](/net/Advanced.md)
+- [Concurrence](/net/Concurrence.md)
+- [Intro](/net/Intro.md)
+- [SlidingWindow](/net/SlidingWindow.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [SlidingWindow](SlidingWindow.md)

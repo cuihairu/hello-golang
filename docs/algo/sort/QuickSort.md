@@ -80,3 +80,22 @@ func main() {
 ### 总结
 
 快速排序每一轮只做一件事：把基准换到它该在的位置。平均 $O(n \log n)$、原地排序、不稳定，已排序或完全逆序的数组会退到 $O(n^2)$。
+
+## 参考资料
+
+- [快速排序 · Wikipedia](https://en.wikipedia.org/wiki/Quicksort)
+
+
+## 同层页面
+
+- [BubbleSort](/algo/sort/BubbleSort.md)
+- [BucketSort](/algo/sort/BucketSort.md)
+- [CocktailSort](/algo/sort/CocktailSort.md)
+- [MergeSort](/algo/sort/MergeSort.md)
+- [RadixSort](/algo/sort/RadixSort.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [MergeSort](MergeSort.md)
+- [RadixSort](RadixSort.md)

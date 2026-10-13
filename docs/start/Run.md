@@ -142,3 +142,22 @@ Usage: [options]
   -name string
         你的名字
 ```
+
+## 参考资料
+
+- [官方教程 · 入门](https://go.dev/doc/tutorial/getting-started)
+- [官方教程 · 创建模块](https://go.dev/doc/tutorial/create-module)
+
+
+## 同层页面
+
+- [BuildConstraint](/start/BuildConstraint.md)
+- [Build](/start/Build.md)
+- [Embed](/start/Embed.md)
+- [Hello](/start/Hello.md)
+- [Starter](/start/Starter.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Starter](Starter.md)

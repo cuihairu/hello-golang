@@ -160,3 +160,20 @@ func Copy[T ReadWriter](src, dst T) error {
 #### 3.5 小结
 
 三类约束各管一段：`any` 和 `comparable` 是现成的，方法集用接口类型约束，具体类型集合用类型集，多个约束合起来写在类型参数上。
+
+## 参考资料
+
+- [官方教程 · 泛型入门](https://go.dev/doc/tutorial/generics)
+- [官方博客 · An Introduction To Generics](https://go.dev/blog/intro-generics)
+- [官方博客 · When To Use Generics](https://go.dev/blog/when-generics)
+- [语言规范 · 类型参数声明](https://go.dev/ref/spec#Type_parameter_declarations)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Advanced](Advanced.md)
+- [Pattern](Pattern.md)
+- [Performance](Performance.md)
+- [Structure](Structure.md)
+- [Syntax](Syntax.md)
+- [glossary](/glossary.md)

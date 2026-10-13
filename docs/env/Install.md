@@ -82,3 +82,21 @@ go version
    ```
 
 装完跑一次 `go version`，有版本号输出就说明安装和 `PATH` 都配好了。
+
+## 参考资料
+
+- [官方 · 安装与管理 Go 工具链](https://go.dev/doc/manage-install)
+- [官方教程 · 入门](https://go.dev/doc/tutorial/getting-started)
+- [官方 · Go Modules 使用指南](https://go.dev/doc/modules/)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [GOPROXY](GOPROXY.md)
+- [Goland](Goland.md)
+- [Modules](Modules.md)
+- [Tools](Tools.md)
+- [Vim](Vim.md)
+- [ide](ide.md)
+- [vscode](vscode.md)
+- [glossary](/glossary.md)

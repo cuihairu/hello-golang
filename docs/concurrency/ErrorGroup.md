@@ -118,3 +118,16 @@ func (g *Group) Wait() error {
 ### 总结
 
 `ErrorGroup` 把「等待一组 goroutine」和「汇总第一个错误」合成一步：`Go` 提交任务，`Wait` 返回第一个非 `nil` 错误。配上 `errgroup.WithContext`，第一个出错的任务会取消关联的 context，其余监听 `ctx.Done()` 的任务可以提前退出。比起用 `sync.WaitGroup` 等待、再自己加锁记错误的写法，这套 API 少写不少模板代码。
+
+## 参考资料
+
+- [Effective Go · 并发](https://go.dev/doc/effective_go#concurrency)
+- [Go 内存模型](https://go.dev/ref/mem)
+- [sync 标准库](https://pkg.go.dev/sync)
+- [golang.org/x/sync/errgroup](https://pkg.go.dev/golang.org/x/sync/errgroup)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Concurrency](Concurrency.md)
+- [glossary](/glossary.md)

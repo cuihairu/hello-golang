@@ -98,3 +98,23 @@ fmt.Println("Matches:", matches)
 - 确保特殊字符（如 `.`、`*`、`?` 等）被正确转义，以防止意外的匹配行为。
 
 排错顺序可以记成：先看编译错误，再拆模式分段试，最后用测试用例把行为钉住。
+
+## 参考资料
+
+- [regexp 标准库](https://pkg.go.dev/regexp)
+- [regexp/syntax 语法文档](https://pkg.go.dev/regexp/syntax)
+
+## 同层页面
+
+- [Advanced](/regex/Advanced.md)
+- [Lib](/regex/Lib.md)
+- [Readme](/regex/Readme.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Advanced](Advanced.md)
+- [Lib](Lib.md)
+- [Readme](Readme.md)
+- [Use](Use.md)
+- [Usual](Usual.md)

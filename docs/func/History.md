@@ -98,3 +98,25 @@ int main() {
 这个示例展示了如何在 C++ 中使用 Lambda 表达式和高阶函数，通过 `std::transform` 函数将匿名函数应用于向量中的每个元素。
 
 从 1930 年代的 Lambda 演算，到 Fortran 的子程序、LISP 的一等函数，再到今天的闭包和泛型函数，函数一路长成了现在这样。ANSI C、POSIX 这些标准则把调用方式和库函数行为固定下来，跨平台、跨语言的代码才对得上。
+
+## 参考资料
+
+- [语言规范 · 函数声明](https://go.dev/ref/spec#Function_declarations)
+- [语言规范 · 调用](https://go.dev/ref/spec#Calls)
+- [Effective Go · 函数](https://go.dev/doc/effective_go#functions)
+- [官方 FAQ](https://go.dev/doc/faq)
+
+
+## 同层页面
+
+- [AnonymousFunc](/func/AnonymousFunc.md)
+- [Defer](/func/Defer.md)
+- [VariadicParameters](/func/VariadicParameters.md)
+- [FuncValue](/func/FuncValue.md)
+- [InnerFunc](/func/InnerFunc.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [FuncValue](FuncValue.md)
+- [InnerFunc](InnerFunc.md)

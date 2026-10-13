@@ -107,3 +107,23 @@ Go标准库提供了一些常用的预定义时间布局，方便进行时间格
 ### 总结
 
 核心就一条：布局不写 `%Y-%m-%d` 这样的格式串，而是直接写基准时间 `2006-01-02 15:04:05` 各部分的形态。布局和时间字符串必须严格对齐，多出空格或字符，`time.Parse` 就返回错误；`time.Time` 的零值是 `0001-01-01 00:00:00 +0000 UTC`。
+
+## 参考资料
+
+- [time 标准库](https://pkg.go.dev/time)
+
+## 同层页面
+
+- [Advanced](/time/Advanced.md)
+- [ConceptTime](/time/ConceptTime.md)
+- [PkgTime](/time/PkgTime.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Advanced](Advanced.md)
+- [ConceptTime](ConceptTime.md)
+- [PkgTime](PkgTime.md)
+- [Practice](Practice.md)
+- [TimeZone](TimeZone.md)
+- [TimerAndTicker](TimerAndTicker.md)

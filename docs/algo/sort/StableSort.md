@@ -130,3 +130,23 @@ func main() {
 ```
 
 规模小、实现简单，插入排序就够用；数据量大且对空间不敏感时选归并排序。
+
+## 参考资料
+
+- [排序算法 · Wikipedia](https://en.wikipedia.org/wiki/Sorting_algorithm)
+- [sort 标准库](https://pkg.go.dev/sort)
+
+
+## 同层页面
+
+- [BubbleSort](/algo/sort/BubbleSort.md)
+- [BucketSort](/algo/sort/BucketSort.md)
+- [CocktailSort](/algo/sort/CocktailSort.md)
+- [Sort](/algo/sort/Sort.md)
+- [TimSort](/algo/sort/TimSort.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Sort](Sort.md)
+- [TimSort](TimSort.md)

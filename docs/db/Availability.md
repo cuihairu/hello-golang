@@ -103,3 +103,37 @@ sh.addShard("shardReplSet/localhost:27018")
 ```
 
 本节覆盖了四件事：MySQL 主从复制的配置、`mysqldump` 的全量与增量备份、从备份文件恢复数据的命令、MongoDB 分片集群的启动步骤。
+
+## 参考资料
+
+- [官方 · 数据库访问指南](https://go.dev/doc/database/)
+- [官方教程 · 数据库访问](https://go.dev/doc/tutorial/database-access)
+- [database/sql 标准库](https://pkg.go.dev/database/sql)
+
+## 同层页面
+
+- [Base](/db/Base.md)
+- [ConnectPool](/db/ConnectPool.md)
+- [GraphQL](/db/GraphQL.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Base](Base.md)
+- [ConnectPool](ConnectPool.md)
+- [GraphQL](GraphQL.md)
+- [Install](Install.md)
+- [Lib](Lib.md)
+- [Migrate](Migrate.md)
+- [Mock](Mock.md)
+- [Monitor](Monitor.md)
+- [NoSQL](NoSQL.md)
+- [Normalization](Normalization.md)
+- [ORM](ORM.md)
+- [Performance](Performance.md)
+- [Project](Project.md)
+- [Readme](Readme.md)
+- [SQL](SQL.md)
+- [Security](Security.md)
+- [Sharding](Sharding.md)
+- [Tx](Tx.md)

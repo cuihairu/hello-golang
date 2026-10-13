@@ -112,3 +112,21 @@
 ### 总结
 
 时间处理的坑集中在三类：时区、格式模板、定时器。时区用 IANA 名称交给库算，解析时对准 `"2006-01-02 15:04:05"` 这个参考格式，周期任务用 `Ticker`、单次延迟用 `Timer`。
+
+## 参考资料
+
+- [time 标准库](https://pkg.go.dev/time)
+
+
+## 同层页面
+
+- [Advanced](/time/Advanced.md)
+- [ConceptTime](/time/ConceptTime.md)
+- [FormatAndParse](/time/FormatAndParse.md)
+- [PkgTime](/time/PkgTime.md)
+- [TimeZone](/time/TimeZone.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [TimeZone](TimeZone.md)

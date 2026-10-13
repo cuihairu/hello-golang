@@ -111,3 +111,20 @@ empty dequeue ok: false
 ### 总结
 
 链表队列通过头尾双指针把入队和出队都做到 $O(1)$，且没有环形数组那样需要处理"假溢出"的问题；如果需要固定容量，可以改用环形缓冲区实现。
+
+## 参考资料
+
+- [队列（抽象数据类型）· Wikipedia](https://en.wikipedia.org/wiki/Queue_(abstract_data_type))
+
+## 同层页面
+
+- [SkipList](/algo/list/SkipList.md)
+- [DynamicArray](/algo/list/DynamicArray.md)
+- [HashLinkedList](/algo/list/HashLinkedList.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [DynamicArray](DynamicArray.md)
+- [HashLinkedList](HashLinkedList.md)
+- [SinglyLinkedList](SinglyLinkedList.md)

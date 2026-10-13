@@ -252,3 +252,23 @@ jobs:
 ### 总结
 
 这一章的顺序是：先列需求，再定命令、帮助和报错的形态，按模块组织代码，用 cobra 把命令接起来，最后交给测试和 CI 兜住回归。后续章节讨论命令行工具的优化和性能提升。
+
+## 参考资料
+
+- [flag 标准库](https://pkg.go.dev/flag)
+- [os/exec 标准库](https://pkg.go.dev/os/exec)
+
+## 同层页面
+
+- [Flag](/cmd/Flag.md)
+- [Lib](/cmd/Lib.md)
+- [Parse](/cmd/Parse.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Flag](Flag.md)
+- [Lib](Lib.md)
+- [Parse](Parse.md)
+- [Readme](Readme.md)
+- [Syntax](Syntax.md)

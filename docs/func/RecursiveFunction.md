@@ -76,3 +76,22 @@ func main() {
 - 适合用于分解问题到更简单的子问题，例如阶乘和斐波那契数列。
 
 写递归时先定基准情况再写递归步骤，两样齐全函数才停得下来；基准情况漏写，轻则死循环，重则栈溢出。
+
+## 参考资料
+
+- [语言规范 · 函数声明](https://go.dev/ref/spec#Function_declarations)
+- [语言规范 · 调用](https://go.dev/ref/spec#Calls)
+- [Effective Go · 函数](https://go.dev/doc/effective_go#functions)
+
+
+## 同层页面
+
+- [AnonymousFunc](/func/AnonymousFunc.md)
+- [Defer](/func/Defer.md)
+- [VariadicParameters](/func/VariadicParameters.md)
+- [MultipleReturnValues](/func/MultipleReturnValues.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [MultipleReturnValues](MultipleReturnValues.md)

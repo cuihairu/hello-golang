@@ -43,3 +43,13 @@
 5. https://golang.google.cn/solutions/devops/ — DevOps/SRE
 6. https://golang.google.cn/solutions/mercadolibre — MercadoLibre 案例
 7. https://golang.google.cn/solutions/paypal — PayPal 案例
+
+## 参考资料
+
+- [官方教程 · Web 应用（wiki）](https://go.dev/doc/articles/wiki/)
+- [net/http 标准库](https://pkg.go.dev/net/http)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [knowledge](/knowledge.md)

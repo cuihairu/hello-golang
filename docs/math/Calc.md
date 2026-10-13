@@ -167,3 +167,25 @@
 ### 总结
 
 本节的方法都配了可运行的例子：`gonum` 解线性方程组、有限差分求导、梯形法积分、牛顿法求根。工程设计、经济学、科研里的数据拟合和模拟，用的就是这些基础方法。
+
+## 参考资料
+
+- [math 标准库](https://pkg.go.dev/math)
+- [math/rand 标准库](https://pkg.go.dev/math/rand)
+
+## 同层页面
+
+- [LinearAlgebra](/math/LinearAlgebra.md)
+- [Math](/math/Math.md)
+- [MathFunc](/math/MathFunc.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [LinearAlgebra](LinearAlgebra.md)
+- [Math](Math.md)
+- [MathFunc](MathFunc.md)
+- [MathRand](MathRand.md)
+- [Optimize](Optimize.md)
+- [Science](Science.md)
+- [Statistics](Statistics.md)

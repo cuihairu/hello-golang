@@ -145,3 +145,21 @@ func Hello() string {
 1. `package greeting`: 定义`greeting`包，这个包提供了一个公共的`Hello`函数。
 2. `func Hello() string { ... }`: 定义`Hello`函数，它返回一个`string`类型的问候消息。
 3. `return "Hello, Go!"`: 返回"Hello, Go!"字符串作为问候消息。
+
+## 参考资料
+
+- [官方教程 · 入门](https://go.dev/doc/tutorial/getting-started)
+- [官方教程 · 创建模块](https://go.dev/doc/tutorial/create-module)
+
+## 同层页面
+
+- [BuildConstraint](/start/BuildConstraint.md)
+- [Build](/start/Build.md)
+- [Embed](/start/Embed.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Build](Build.md)
+- [Embed](Embed.md)
+- [Run](Run.md)

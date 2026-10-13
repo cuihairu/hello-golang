@@ -203,3 +203,22 @@ func TestDecompressFile(t *testing.T) {
 ```
 
 压缩的测试检查输出文件是否存在，解压的测试检查内容是否和原文一致，两条都通过才算这两个函数可用。
+
+## 参考资料
+
+- [compress/gzip 标准库](https://pkg.go.dev/compress/gzip)
+- [compress/flate 标准库](https://pkg.go.dev/compress/flate)
+
+
+## 同层页面
+
+- [Advanced](/compress/Advanced.md)
+- [Archive](/compress/Archive.md)
+- [Composite](/compress/Composite.md)
+- [Compress](/compress/Compress.md)
+- [Readme](/compress/Readme.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Readme](Readme.md)

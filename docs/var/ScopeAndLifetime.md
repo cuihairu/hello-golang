@@ -135,3 +135,20 @@ func anotherFunction() {
 ### 总结
 
 包级变量整个进程存活，局部变量随函数调用结束消失，`new`/`make` 分配的内存等没有引用时由 GC 回收。作用域和生命周期是同一件事的两面：声明在哪个块里，决定了名字在哪里可见，也决定了内存活多久。
+
+## 参考资料
+
+- [语言规范 · 变量声明](https://go.dev/ref/spec#Variable_declarations)
+- [Effective Go · 变量](https://go.dev/doc/effective_go#variables)
+- [语言规范 · 声明与作用域](https://go.dev/ref/spec#Declarations_and_scope)
+
+## 同层页面
+
+- [Segment](/var/Segment.md)
+- [VarAndInit](/var/VarAndInit.md)
+- [Assignment](/var/Assignment.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Assignment](Assignment.md)

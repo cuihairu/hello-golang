@@ -45,3 +45,47 @@
 11. **访问者模式（Visitor Pattern）**：
     - **概念**：表示一个作用于某对象结构中的各元素的操作，使得可以在不改变各元素的类的前提下定义作用于这些元素的新操作。
     - **适用范围**：需要对一个对象结构中的各元素进行操作，并且不希望改变这些元素类的定义的场景。
+
+## 参考资料
+
+- [GoF《设计模式》概览（Wikipedia）](https://en.wikipedia.org/wiki/Design_Patterns)
+- [Refactoring.Guru 设计模式目录](https://refactoring.guru/design-patterns)
+- [Effective Go（官方）](https://go.dev/doc/effective_go)
+
+## 同层页面
+
+- [AbstractFactory](/dp/AbstractFactory.md)
+- [Adapter](/dp/Adapter.md)
+- [Bridge](/dp/Bridge.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [AbstractFactory](AbstractFactory.md)
+- [Adapter](Adapter.md)
+- [Bridge](Bridge.md)
+- [Builder](Builder.md)
+- [ChainofResponsibility](ChainofResponsibility.md)
+- [Command](Command.md)
+- [Composite](Composite.md)
+- [Creational](Creational.md)
+- [Decorator](Decorator.md)
+- [DesignPatterns](DesignPatterns.md)
+- [Facade](Facade.md)
+- [FactoryMethod](FactoryMethod.md)
+- [Flyweight](Flyweight.md)
+- [Iterator](Iterator.md)
+- [Mediator](Mediator.md)
+- [Memento](Memento.md)
+- [ObjectPool](ObjectPool.md)
+- [Observer](Observer.md)
+- [Proactor](Proactor.md)
+- [Prototype](Prototype.md)
+- [Proxy](Proxy.md)
+- [Reactor](Reactor.md)
+- [Singleton](Singleton.md)
+- [State](State.md)
+- [Strategy](Strategy.md)
+- [Structural](Structural.md)
+- [TemplateMethod](TemplateMethod.md)
+- [Visitor](Visitor.md)

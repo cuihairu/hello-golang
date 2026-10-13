@@ -180,3 +180,21 @@ int main() {
 - **C++**：使用异常机制，`try`、`catch` 块，异常基于 `std::exception`；资源清理靠 RAII，没有 `finally` 块。
 - **JavaScript**：使用异常机制，`try`、`catch` 和 `finally` 块。
 - **C**：使用返回值或 `errno` 进行错误处理，没有内建的异常机制。
+
+## 参考资料
+
+- [官方博客 · Error handling and Go](https://go.dev/blog/error-handling-and-go)
+- [官方博客 · Errors are values](https://go.dev/blog/errors-are-values)
+- [errors 标准库](https://pkg.go.dev/errors)
+- [Effective Go · Errors](https://go.dev/doc/effective_go#errors)
+- [语言规范 · 错误（error 内建接口）](https://go.dev/ref/spec#Errors)
+
+## 同层页面
+
+- [ErrorType](/error/ErrorType.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [ErrorType](ErrorType.md)
+- [glossary](/glossary.md)

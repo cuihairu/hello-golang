@@ -102,3 +102,21 @@ func main() {
 ### 总结
 
 记几条常用的：格式化用固定布局 `2006-01-02 15:04:05`，前推后移用 `Add`，间隔用 `Sub`，定时一次用 `Timer`、周期用 `Ticker`。
+
+## 参考资料
+
+- [time 标准库](https://pkg.go.dev/time)
+
+## 同层页面
+
+- [Advanced](/time/Advanced.md)
+- [ConceptTime](/time/ConceptTime.md)
+- [FormatAndParse](/time/FormatAndParse.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Advanced](Advanced.md)
+- [ConceptTime](ConceptTime.md)
+- [FormatAndParse](FormatAndParse.md)
+- [Practice](Practice.md)

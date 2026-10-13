@@ -127,3 +127,23 @@ for i := 0; i < len(s); i++ {
 2. **UTF-8 编码**：`byte` 类型处理的是原始字节数据，对于多字节字符（如 UTF-8 编码的 Unicode 字符），需要特别注意字符的完整性。
 
 文件 I/O、网络 I/O、字符串按字节处理，碰到的都是 `byte`。用的时候盯住一点：它只是 8 位无符号数，字符层面的含义（UTF-8 解码）要靠 `rune` 和 `string` 的方法来补。
+
+## 参考资料
+
+- [语言规范 · 类型](https://go.dev/ref/spec#Types)
+- [语言规范 · 数值类型](https://go.dev/ref/spec#Numeric_types)
+
+
+## 同层页面
+
+- [Assertion](/type/Assertion.md)
+- [Interface](/type/Interface.md)
+- [Map](/type/Map.md)
+- [Bool](/type/Bool.md)
+- [Complex](/type/Complex.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Bool](Bool.md)
+- [Complex](Complex.md)

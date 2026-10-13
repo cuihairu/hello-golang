@@ -10,3 +10,24 @@
 - **分布式计算**：网络编程支持分布式计算，允许多个计算机协同工作，共享计算任务和数据。
 - **服务与应用**：网络编程是 Web 服务、云计算、在线游戏、社交媒体等各种网络应用的基础。
 - **数据传输**：数据在不同设备和系统之间流动，靠的就是各类传输协议。
+
+## 参考资料
+
+- [net 标准库](https://pkg.go.dev/net)
+- [net/http 标准库](https://pkg.go.dev/net/http)
+
+## 同层页面
+
+- [Advanced](/net/Advanced.md)
+- [Concurrence](/net/Concurrence.md)
+- [Netpoll](/net/Netpoll.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Advanced](Advanced.md)
+- [Concurrence](Concurrence.md)
+- [Netpoll](Netpoll.md)
+- [Proto](Proto.md)
+- [SlidingWindow](SlidingWindow.md)
+- [Socket](Socket.md)

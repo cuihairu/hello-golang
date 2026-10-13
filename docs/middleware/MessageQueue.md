@@ -33,3 +33,18 @@
 - **数据流处理**：消息队列系统可以用于实时数据流处理，将数据从生产者传递到消费者，以支持实时分析和决策。
 
 - **任务调度**：消息队列可以用于任务调度，将任务从任务生成器传递到任务执行器，实现任务的延迟处理和定时执行。
+
+## 参考资料
+
+- [Apache Kafka 官方文档](https://kafka.apache.org/documentation/)
+
+## 同层页面
+
+- [ApacheKafka](/middleware/ApacheKafka.md)
+- [Readme](/middleware/Readme.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [ApacheKafka](ApacheKafka.md)
+- [Readme](Readme.md)

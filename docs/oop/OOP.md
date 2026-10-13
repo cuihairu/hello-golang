@@ -149,3 +149,23 @@ func main() {
 - **嵌入**：Go 支持通过嵌入结构体来实现类似继承的功能，使结构体可以包含其他结构体的字段和方法。
 
 这四样合起来，Go 能做到封装（大小写控制可见性）、复用（嵌入）和多态（接口），代价是没有继承层次，类型之间的关系全靠组合来表达。
+
+## 参考资料
+
+- [官方 FAQ · 类型系统](https://go.dev/doc/faq)
+- [语言规范 · 接口类型](https://go.dev/ref/spec#Interface_types)
+- [Effective Go · Methods](https://go.dev/doc/effective_go#methods)
+- [Effective Go · Embedding](https://go.dev/doc/effective_go#embedding)
+
+
+## 同层页面
+
+- [Embedding](/oop/Embedding.md)
+- [Interface](/oop/Interface.md)
+- [PointerReceiver](/oop/PointerReceiver.md)
+- [Methods](/oop/Methods.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Methods](Methods.md)

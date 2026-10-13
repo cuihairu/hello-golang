@@ -167,3 +167,23 @@ go get -u github.com/mattn/go-sqlite3
    ```
 
 到这里，三种数据库的连接都建立好了，后续的增删改查通过对应的 `*sql.DB` 进行。
+
+## 参考资料
+
+- [官方 · 数据库访问指南](https://go.dev/doc/database/)
+- [官方教程 · 数据库访问](https://go.dev/doc/tutorial/database-access)
+- [database/sql 标准库](https://pkg.go.dev/database/sql)
+
+
+## 同层页面
+
+- [Availability](/db/Availability.md)
+- [Base](/db/Base.md)
+- [ConnectPool](/db/ConnectPool.md)
+- [GraphQL](/db/GraphQL.md)
+- [Lib](/db/Lib.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Lib](Lib.md)

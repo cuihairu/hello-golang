@@ -390,3 +390,22 @@ func main() {
 - **提高日志记录的效率与可读性**：
   - 使用结构化日志，提高日志的可解析性。
   - 选择合适的日志格式（如 JSON）以便于日志聚合和分析。
+
+## 参考资料
+
+- [log 标准库](https://pkg.go.dev/log)
+- [官方博客 · Structured Logging with slog](https://go.dev/blog/slog)
+- [log/slog 标准库](https://pkg.go.dev/log/slog)
+
+## 同层页面
+
+- [Aggregation](/log/Aggregation.md)
+- [LibLog](/log/LibLog.md)
+- [Log](/log/Log.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Aggregation](Aggregation.md)
+- [LibLog](LibLog.md)
+- [Log](Log.md)

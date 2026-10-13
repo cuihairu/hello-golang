@@ -141,3 +141,19 @@ func main() {
 ### 总结
 
 容量在创建时固定，之后不会扩容；两端插入、删除、访问都是常数次的下标运算。
+
+## 参考资料
+
+- [双端队列 · Wikipedia](https://en.wikipedia.org/wiki/Double-ended_queue)
+
+## 同层页面
+
+- [DynamicArray](/algo/array/DynamicArray.md)
+- [Array](/algo/array/Array.md)
+- [CircularBuffer](/algo/array/CircularBuffer.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Array](Array.md)
+- [CircularBuffer](CircularBuffer.md)

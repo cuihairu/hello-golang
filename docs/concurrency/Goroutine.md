@@ -212,3 +212,17 @@ Python 的协程靠 `async` 和 `await` 加事件循环，主要服务 I/O 密�
 ### 总结
 
 `goroutine` 让并发程序的写法接近普通函数调用，同步靠 `channel` 和 `sync` 包配合。用好它的关键是让每个 `goroutine` 都能退出、共享数据有同步保护，出问题时用 `go test -race` 和性能分析工具排查。
+
+## 参考资料
+
+- [Effective Go · 并发](https://go.dev/doc/effective_go#concurrency)
+- [Go 内存模型](https://go.dev/ref/mem)
+- [sync 标准库](https://pkg.go.dev/sync)
+- [语言规范 · Go 语句](https://go.dev/ref/spec#Go_statements)
+- [Effective Go · Goroutines](https://go.dev/doc/effective_go#goroutines)
+- [官方 codelab · Share Memory By Communicating](https://go.dev/blog/codelab-share)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [glossary](/glossary.md)

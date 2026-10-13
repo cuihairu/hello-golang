@@ -181,3 +181,28 @@
   - 复合赋值运算符（加法赋值 `+=`，减法赋值 `-=`，乘法赋值 `*=`, 除法赋值 `/=`, 取余赋值 `%=`，按位与赋值 `&=`, 按位或赋值 `|=`, 按位异或赋值 `^=`, 左移赋值 `<<=`, 右移赋值 `>>=`）
 
 每个复合赋值运算符都等价于一次对应运算再加赋值，示例注释里写了等价形式，例如 `a += 3` 等价于 `a = a + 3`。
+
+## 参考资料
+
+- [语言规范 · 运算符](https://go.dev/ref/spec#Operators)
+- [语言规范 · 赋值](https://go.dev/ref/spec#Assignment)
+
+## 同层页面
+
+- [Arithmetic](/operator/Arithmetic.md)
+- [BitLen](/operator/BitLen.md)
+- [Bitwise](/operator/Bitwise.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Arithmetic](Arithmetic.md)
+- [BitLen](BitLen.md)
+- [Bitwise](Bitwise.md)
+- [Cap](Cap.md)
+- [Logical](Logical.md)
+- [Operator](Operator.md)
+- [Receiver](Receiver.md)
+- [Relational](Relational.md)
+- [TypeAssertion](TypeAssertion.md)
+- [Unary](Unary.md)

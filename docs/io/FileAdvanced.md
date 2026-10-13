@@ -227,3 +227,23 @@ func main() {
 ```
 
 锁定走 `syscall.Flock`，复制用 `io.Copy` 配 `os.Create`，移动和重命名是 `os.Rename`（跨文件系统时先复制再删源文件），删除是 `os.Remove`，属性靠 `os.Stat`。这一章的例子就落在这几个调用上。
+
+## 参考资料
+
+- [io 标准库](https://pkg.go.dev/io)
+- [os 标准库](https://pkg.go.dev/os)
+
+
+## 同层页面
+
+- [Advanced](/io/Advanced.md)
+- [CommonFormats](/io/CommonFormats.md)
+- [EfficientIO](/io/EfficientIO.md)
+- [File](/io/File.md)
+- [FileOperation](/io/FileOperation.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [File](File.md)
+- [FileOperation](FileOperation.md)

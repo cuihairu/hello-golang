@@ -32,3 +32,22 @@
 3. **活锁（Livelock）**：当线程不断尝试解决冲突，但总是相互干扰无法继续执行时，就会发生活锁。合理的重试机制和随机等待时间可以减少活锁的发生。
 
 竞态条件靠锁和原子操作防，死锁靠资源分配顺序和定时锁解，饥饿靠公平锁，活锁靠合理的重试间隔——问题的解法都在对应小节里。
+
+## 参考资料
+
+- [sync 标准库](https://pkg.go.dev/sync)
+- [Go 内存模型](https://go.dev/ref/mem)
+- [官方博客 · Introducing the Go Race Detector](https://go.dev/blog/race-detector)
+
+
+## 同层页面
+
+- [Atomic](/sync/Atomic.md)
+- [Context](/sync/Context.md)
+- [CriticalSection](/sync/CriticalSection.md)
+- [Spinlock](/sync/Spinlock.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Spinlock](Spinlock.md)

@@ -234,3 +234,24 @@ func main() {
 ### 结论
 
 两个示例对应两条路：网络服务里每个连接开一个 goroutine，处理完就退出；线程池那节自己管任务队列和固定数量的工作线程。选哪条取决于任务是短命的连接还是长期复用的计算。
+
+## 参考资料
+
+- [net 标准库](https://pkg.go.dev/net)
+- [net/http 标准库](https://pkg.go.dev/net/http)
+
+## 同层页面
+
+- [Advanced](/net/Advanced.md)
+- [Intro](/net/Intro.md)
+- [Netpoll](/net/Netpoll.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Advanced](Advanced.md)
+- [Intro](Intro.md)
+- [Netpoll](Netpoll.md)
+- [Proto](Proto.md)
+- [SlidingWindow](SlidingWindow.md)
+- [Socket](Socket.md)

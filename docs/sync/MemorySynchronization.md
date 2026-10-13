@@ -182,3 +182,14 @@ func main() {
 ### 小结
 
 四个同步原语各有分工：互斥锁保护临界区，读写锁在读多写少时放行并发读，原子操作省掉单个变量的锁开销，Channel 用数据传递代替共享内存。选哪个取决于共享数据的粒度和读写比例。
+
+## 参考资料
+
+- [sync 标准库](https://pkg.go.dev/sync)
+- [Go 内存模型](https://go.dev/ref/mem)
+- [官方博客 · Introducing the Go Race Detector](https://go.dev/blog/race-detector)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [glossary](/glossary.md)

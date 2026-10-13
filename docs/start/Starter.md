@@ -144,3 +144,23 @@ go mod tidy
 ```
 
 走完这 7 步，`bin/myproject` 会打印出 `Hello, World!`。后面加依赖用 `go get`，清理用 `go mod tidy`。
+
+## 参考资料
+
+- [官方教程 · 入门](https://go.dev/doc/tutorial/getting-started)
+- [官方教程 · 创建模块](https://go.dev/doc/tutorial/create-module)
+
+
+## 同层页面
+
+- [BuildConstraint](/start/BuildConstraint.md)
+- [Build](/start/Build.md)
+- [Embed](/start/Embed.md)
+- [Run](/start/Run.md)
+- [Structure](/start/Structure.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Run](Run.md)
+- [Structure](Structure.md)

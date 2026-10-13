@@ -174,3 +174,24 @@ if errors.Is(err, sql.ErrNoRows) {
 ```
 
 `database/sql` 只提供接口，驱动按数据库各装各的；查询、写入走 `Query`/`Exec`，错误用 `errors.Is` 对着 `sql.ErrNoRows` 这类哨兵值判断。换数据库时，业务代码通常只需要改 DSN 和驱动导入那一行。
+
+## 参考资料
+
+- [官方 · 数据库访问指南](https://go.dev/doc/database/)
+- [官方教程 · 数据库访问](https://go.dev/doc/tutorial/database-access)
+- [database/sql 标准库](https://pkg.go.dev/database/sql)
+
+
+## 同层页面
+
+- [Availability](/db/Availability.md)
+- [Base](/db/Base.md)
+- [ConnectPool](/db/ConnectPool.md)
+- [Install](/db/Install.md)
+- [Migrate](/db/Migrate.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Install](Install.md)
+- [Migrate](Migrate.md)

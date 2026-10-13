@@ -163,3 +163,15 @@ func selectSelect(cases []scase, block bool) (int, bool) {
 ### 结论
 
 `select` 的行为可以归结为三条：多个 `case` 同时就绪时随机挑一个，避免总被同一路通道占住；没有就绪的就挂起当前 goroutine，等任意一个通道有动静再醒；写了 `default` 就不挂起，直接走 `default` 返回。这套逻辑在运行时里由 `runtime/select.go` 的 `selectgo` 实现，前面那段伪代码就是它的骨架。
+
+## 参考资料
+
+- [Effective Go · 并发](https://go.dev/doc/effective_go#concurrency)
+- [Go 内存模型](https://go.dev/ref/mem)
+- [sync 标准库](https://pkg.go.dev/sync)
+- [语言规范 · Select 语句](https://go.dev/ref/spec#Select_statements)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [glossary](/glossary.md)

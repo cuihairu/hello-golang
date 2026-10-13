@@ -91,3 +91,34 @@ func main() {
 ### 总结
 
 用 `map` 时最该留意的两件事：键类型必须可比较，并发写必须自己加锁。
+
+## 参考资料
+
+- [语言规范 · 类型](https://go.dev/ref/spec#Types)
+- [语言规范 · 映射类型](https://go.dev/ref/spec#Map_types)
+- [官方博客 · Go maps in action](https://go.dev/blog/maps)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [glossary](/glossary.md)
+- [Array](Array.md)
+- [BaseConv](BaseConv.md)
+- [Big](Big.md)
+- [Bool](Bool.md)
+- [Byte](Byte.md)
+- [Complex](Complex.md)
+- [CompositeType](CompositeType.md)
+- [Conv](Conv.md)
+- [Float](Float.md)
+- [HtmlTemplate](HtmlTemplate.md)
+- [Int](Int.md)
+- [Json](Json.md)
+- [LinkedList](LinkedList.md)
+- [Pointer](Pointer.md)
+- [Ring](Ring.md)
+- [Rune](Rune.md)
+- [String](String.md)
+- [Struct](Struct.md)
+- [Template](Template.md)
+- [Type](Type.md)

@@ -133,3 +133,24 @@ func main() {
 #### 8. 结论
 
 把 I/O 执行交给操作系统、应用只处理完成事件，这是 Proactor 与 Reactor 的分界线。它适合网络服务器、实时数据处理系统这类有大量异步 I/O 请求的应用。
+
+## 参考资料
+
+- [GoF《设计模式》概览（Wikipedia）](https://en.wikipedia.org/wiki/Design_Patterns)
+- [Refactoring.Guru 设计模式目录](https://refactoring.guru/design-patterns)
+- [Effective Go（官方）](https://go.dev/doc/effective_go)
+
+
+## 同层页面
+
+- [AbstractFactory](/dp/AbstractFactory.md)
+- [Adapter](/dp/Adapter.md)
+- [Behavioral](/dp/Behavioral.md)
+- [Observer](/dp/Observer.md)
+- [Prototype](/dp/Prototype.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Observer](Observer.md)
+- [Prototype](Prototype.md)

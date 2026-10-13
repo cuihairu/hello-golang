@@ -169,3 +169,23 @@ image: https://example.com/a.png
 ## 总结
 
 `encoding/gob` 是自描述的二进制序列化格式：普通场景直接 `Encode` / `Decode`，涉及接口时用 `gob.Register` 注册具体类型。它适合 Go 服务之间的内部通信与本地持久化；跨语言场景则应改用 JSON、XML 或 Protobuf。
+
+## 参考资料
+
+- [encoding 系列标准库（json 为例）](https://pkg.go.dev/encoding/json)
+- [encoding/gob 标准库](https://pkg.go.dev/encoding/gob)
+
+
+## 同层页面
+
+- [JsonV2](/encoding/JsonV2.md)
+- [Base64](/encoding/Base64.md)
+- [Binary](/encoding/Binary.md)
+- [Formats](/encoding/Formats.md)
+- [Hex](/encoding/Hex.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Formats](Formats.md)
+- [Hex](Hex.md)

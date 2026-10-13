@@ -308,3 +308,31 @@ func main() {
 ```
 
 文本文件用 `bufio`，二进制用 `encoding/binary`，JSON、XML、CSV 各有对应的 `encoding/` 包，读写都是成对的 Encoder/Decoder。
+
+## 参考资料
+
+- [io 标准库](https://pkg.go.dev/io)
+- [os 标准库](https://pkg.go.dev/os)
+
+## 同层页面
+
+- [Advanced](/io/Advanced.md)
+- [EfficientIO](/io/EfficientIO.md)
+- [Example](/io/Example.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Advanced](Advanced.md)
+- [EfficientIO](EfficientIO.md)
+- [Example](Example.md)
+- [File](File.md)
+- [FileAdvanced](FileAdvanced.md)
+- [FileOperation](FileOperation.md)
+- [IO](IO.md)
+- [InputOutput](InputOutput.md)
+- [ModIO](ModIO.md)
+- [ModOS](ModOS.md)
+- [ModPath](ModPath.md)
+- [Security](Security.md)
+- [Utils](Utils.md)

@@ -128,3 +128,21 @@ func main() {
   - 右移 (`>>`)
 
 记法上分两类：`&`、`|`、二元 `^` 逐位合并，`<<`、`>>` 移位等价于乘除 2 的幂。一元 `^` 取反后按补码解释，所以 `^12` 是 -13。
+
+## 参考资料
+
+- [语言规范 · 运算符](https://go.dev/ref/spec#Operators)
+
+## 同层页面
+
+- [Arithmetic](/operator/Arithmetic.md)
+- [Assignment](/operator/Assignment.md)
+- [BitLen](/operator/BitLen.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Arithmetic](Arithmetic.md)
+- [Assignment](Assignment.md)
+- [BitLen](BitLen.md)
+- [Cap](Cap.md)

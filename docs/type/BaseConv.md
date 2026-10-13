@@ -170,3 +170,21 @@ func main() {
 3. **错误处理**：在字符串和其他基本类型之间的转换时，可能会遇到错误，需要进行错误处理。
 
 显式转换的代价是每个转换点都要写一遍目标类型，好处是出问题好定位：浮点转整数丢掉小数部分，宽整型转窄整型可能溢出，这些都不报编译错误，只在运行时给出"错"的数。写转换时多看一眼两边的类型宽度，比事后排查省事。
+
+## 参考资料
+
+- [语言规范 · 类型](https://go.dev/ref/spec#Types)
+- [语言规范 · 转换](https://go.dev/ref/spec#Conversions)
+
+
+## 同层页面
+
+- [Assertion](/type/Assertion.md)
+- [Interface](/type/Interface.md)
+- [Map](/type/Map.md)
+- [Big](/type/Big.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Big](Big.md)

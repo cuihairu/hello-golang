@@ -68,3 +68,20 @@ graph TB
 - **影响**：
   - Go 在云计算、容器化和微服务里用得很广：Docker、Kubernetes、gRPC、etcd、Prometheus 这些项目都是 Go 写的。
 
+## 参考资料
+
+- [官方文档总览](https://go.dev/doc/)
+- [发布历史与支持策略](https://go.dev/doc/devel/release)
+- [官方 FAQ](https://go.dev/doc/faq)
+
+## 同层页面
+
+- [ReleaseNotes](/introduction/ReleaseNotes.md)
+- [Feature](/introduction/Feature.md)
+- [Introduction](/introduction/Introduction.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Feature](Feature.md)
+- [Introduction](Introduction.md)

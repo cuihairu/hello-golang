@@ -91,3 +91,21 @@ func main() {
 ### 小结
 
 邻接表配 map 是 Go 里表示图的基本盘；BFS 队列、DFS 栈，visited 集合是防环的关键。加权图上的最短路径与最小生成树见 [最小生成树](tree/MinimumSpanningTree.md) 与 [堆](tree/Heap.md)。
+
+## 参考资料
+
+- [图（抽象数据类型）· Wikipedia](https://en.wikipedia.org/wiki/Graph_(abstract_data_type))
+- [图论 · Wikipedia](https://en.wikipedia.org/wiki/Graph_theory)
+
+## 同层页面
+
+- [Inventory](/algo/Inventory.md)
+- [Queue](/algo/queue/Queue.md)
+- [Stack](/algo/stack/Stack.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Inventory](Inventory.md)
+- [Queue](/algo/queue/Queue.md)
+- [Stack](/algo/stack/Stack.md)

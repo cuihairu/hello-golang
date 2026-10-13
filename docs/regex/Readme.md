@@ -110,3 +110,22 @@ https?:\/\/[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(\/\S*)?
 - 匹配 `http` 或 `https` 的 URL。
 
 这些模式可以直接丢给 Go 的 `regexp` 包；注意 RE2 不支持反向引用，重复匹配这类需求要另想办法。
+
+## 参考资料
+
+- [regexp 标准库](https://pkg.go.dev/regexp)
+- [regexp/syntax 语法文档](https://pkg.go.dev/regexp/syntax)
+
+## 同层页面
+
+- [Advanced](/regex/Advanced.md)
+- [Debug](/regex/Debug.md)
+- [Lib](/regex/Lib.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Advanced](Advanced.md)
+- [Debug](Debug.md)
+- [Lib](Lib.md)
+- [Use](Use.md)

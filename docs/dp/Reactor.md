@@ -120,3 +120,24 @@ func main() {
 #### 8. 结论
 
 Reactor 模式的价值在于职责分得开：Event Demultiplexer 只管等事件，Reactor 只管派发，事件处理器只管业务。新增一类事件处理器，等待和派发的代码一行不用改。
+
+## 参考资料
+
+- [GoF《设计模式》概览（Wikipedia）](https://en.wikipedia.org/wiki/Design_Patterns)
+- [Refactoring.Guru 设计模式目录](https://refactoring.guru/design-patterns)
+- [Effective Go（官方）](https://go.dev/doc/effective_go)
+
+
+## 同层页面
+
+- [AbstractFactory](/dp/AbstractFactory.md)
+- [Adapter](/dp/Adapter.md)
+- [Behavioral](/dp/Behavioral.md)
+- [Proxy](/dp/Proxy.md)
+- [Singleton](/dp/Singleton.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Proxy](Proxy.md)
+- [Singleton](Singleton.md)

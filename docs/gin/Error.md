@@ -177,3 +177,30 @@ func main() {
 ### 总结
 
 Gin 的错误分三步走：`c.Error(err)` 把错误挂到当前请求上，中间件在 `c.Next()` 之后读 `c.Errors`，按 `AppError` 这类类型分派状态码，剩下的统一回 500。日志用内置的 `gin.Logger()` 起步，需要额外字段再换自定义中间件。
+
+## 参考资料
+
+- [Gin 官方文档](https://gin-gonic.com/en/docs/)
+- [Gin · pkg.go.dev](https://pkg.go.dev/github.com/gin-gonic/gin)
+
+## 同层页面
+
+- [Config](/gin/Config.md)
+- [Debug](/gin/Debug.md)
+- [Extend](/gin/Extend.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Config](Config.md)
+- [Debug](Debug.md)
+- [Extend](Extend.md)
+- [Gin](Gin.md)
+- [Middleware](Middleware.md)
+- [Optimize](Optimize.md)
+- [Request](Request.md)
+- [Response](Response.md)
+- [Route](Route.md)
+- [Source](Source.md)
+- [Use](Use.md)
+- [advanced](advanced.md)

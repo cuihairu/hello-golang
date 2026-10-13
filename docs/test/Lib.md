@@ -220,3 +220,23 @@ func TestWithDocker(t *testing.T) {
 ### 总结
 
 五个库各管一段：`testify` 补断言和 mock，`gomock` 从接口生成打桩代码，`goconvey` 提供 BDD 写法，`go-fuzz` 做模糊测试（Go 1.18 起用内置的 `go test -fuzz` 即可），`testcontainers-go` 在 Docker 里起真实依赖跑集成测试。从 `testify` 开始最省事，其余按项目需要再加。
+
+## 参考资料
+
+- [testing 标准库](https://pkg.go.dev/testing)
+- [官方教程 · 添加测试](https://go.dev/doc/tutorial/add-a-test)
+- [net/http/httptest 标准库](https://pkg.go.dev/net/http/httptest)
+- [testing/quick](https://pkg.go.dev/testing/quick)
+
+
+## 同层页面
+
+- [Fuzz](/test/Fuzz.md)
+- [Test](/test/Test.md)
+- [Advanced](/test/Advanced.md)
+- [Practice](/test/Practice.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Practice](Practice.md)

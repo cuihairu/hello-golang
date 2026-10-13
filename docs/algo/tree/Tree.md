@@ -110,3 +110,22 @@ height: 3
 ### 总结
 
 树把"一对多"的层级关系表达为孩子指针的集合；用递归描述树上的操作通常最自然。二叉树、堆、字典树等都是它的特例，后续章节将逐一展开。
+
+## 参考资料
+
+- [树（数据结构）· Wikipedia](https://en.wikipedia.org/wiki/Tree_(data_structure))
+
+
+## 同层页面
+
+- [Heap](/algo/tree/Heap.md)
+- [MinimumSpanningTree](/algo/tree/MinimumSpanningTree.md)
+- [RedBlackTree](/algo/tree/RedBlackTree.md)
+- [SegmentTree](/algo/tree/SegmentTree.md)
+- [AVLTree](/algo/tree/AVLTree.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [AVLTree](AVLTree.md)
+- [SegmentTree](SegmentTree.md)

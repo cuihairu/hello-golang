@@ -136,3 +136,20 @@ func main() {
 ### 总结
 
 蒂姆排序把插入排序和归并拼在一起：块内插入，块间归并，三种时间情况都是 $O(n \log n)$，额外空间 $O(n)$。Python 和 Java 的 `Arrays.sort()` 用的就是它。
+
+## 参考资料
+
+- [Timsort · Wikipedia](https://en.wikipedia.org/wiki/Timsort)
+
+
+## 同层页面
+
+- [BubbleSort](/algo/sort/BubbleSort.md)
+- [BucketSort](/algo/sort/BucketSort.md)
+- [CocktailSort](/algo/sort/CocktailSort.md)
+- [StableSort](/algo/sort/StableSort.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [StableSort](StableSort.md)

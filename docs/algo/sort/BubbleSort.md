@@ -82,3 +82,30 @@ func main() {
 ### 总结
 
 冒泡排序靠不断交换相邻逆序对，把元素逐步挪到正确位置。代码只有十几行，适合入门；数据规模一大，$O(n^2)$ 就撑不住了。
+
+## 参考资料
+
+- [冒泡排序 · Wikipedia](https://en.wikipedia.org/wiki/Bubble_sort)
+
+## 同层页面
+
+- [BucketSort](/algo/sort/BucketSort.md)
+- [CocktailSort](/algo/sort/CocktailSort.md)
+- [CountingSort](/algo/sort/CountingSort.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [BucketSort](BucketSort.md)
+- [CocktailSort](CocktailSort.md)
+- [CountingSort](CountingSort.md)
+- [HeapSort](HeapSort.md)
+- [InsertionSort](InsertionSort.md)
+- [MergeSort](MergeSort.md)
+- [QuickSort](QuickSort.md)
+- [RadixSort](RadixSort.md)
+- [SelectionSort](SelectionSort.md)
+- [ShellSort](ShellSort.md)
+- [Sort](Sort.md)
+- [StableSort](StableSort.md)
+- [TimSort](TimSort.md)

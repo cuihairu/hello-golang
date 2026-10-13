@@ -77,3 +77,23 @@ func main() {
 ### 总结
 
 复合类型干三件事：结构体把相关字段捆在一起，方法规定对数据的操作，切片按需扩缩容量。单个基本类型表达不了的形状，都靠它们拼出来。
+
+## 参考资料
+
+- [语言规范 · 类型](https://go.dev/ref/spec#Types)
+- [语言规范 · 组合字面量](https://go.dev/ref/spec#Composite_literals)
+
+
+## 同层页面
+
+- [Assertion](/type/Assertion.md)
+- [Interface](/type/Interface.md)
+- [Map](/type/Map.md)
+- [Complex](/type/Complex.md)
+- [Conv](/type/Conv.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Complex](Complex.md)
+- [Conv](Conv.md)

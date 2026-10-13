@@ -83,3 +83,23 @@ Empty array: []
 ### 总结
 
 二叉堆的意义在于"结构 + 下标"：完全二叉树的形态让所有指针都变成了算术，堆排序因此可以原地完成。它的不稳定与较差的缓存局部性是相比快排的短板，但 $O(n)$ 建堆与 $O(\log n)$ 的动态极值维护是快排给不了的。
+
+## 参考资料
+
+- [二叉堆 · Wikipedia](https://en.wikipedia.org/wiki/Binary_heap)
+- [container/heap 标准库](https://pkg.go.dev/container/heap)
+
+
+## 同层页面
+
+- [Heap](/algo/tree/Heap.md)
+- [MinimumSpanningTree](/algo/tree/MinimumSpanningTree.md)
+- [RedBlackTree](/algo/tree/RedBlackTree.md)
+- [BTree](/algo/tree/BTree.md)
+- [BinarySearchTree](/algo/tree/BinarySearchTree.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [BTree](BTree.md)
+- [BinarySearchTree](BinarySearchTree.md)

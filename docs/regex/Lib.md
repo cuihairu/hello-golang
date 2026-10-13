@@ -146,3 +146,23 @@ index := re.FindStringIndex("test string")
 ```
 
 日常用得最多的是这几条：`MustCompile` 编译、`MatchString` 判断是否匹配、`FindAllString` 取全部结果、`ReplaceAllString` 替换。模式来自运行期才确定的来源（如用户输入）时，改用 `Compile` 并处理返回的错误。
+
+## 参考资料
+
+- [regexp 标准库](https://pkg.go.dev/regexp)
+- [regexp/syntax 语法文档](https://pkg.go.dev/regexp/syntax)
+
+## 同层页面
+
+- [Advanced](/regex/Advanced.md)
+- [Debug](/regex/Debug.md)
+- [Readme](/regex/Readme.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Advanced](Advanced.md)
+- [Debug](Debug.md)
+- [Readme](Readme.md)
+- [Use](Use.md)
+- [Usual](Usual.md)

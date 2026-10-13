@@ -98,3 +98,22 @@ Redis 字符串的底层是 `SDS`（Simple Dynamic String，简单动态字符�
    - `SDS` 通过合理的内存管理和扩展策略，减少了内存碎片，提高了内存利用效率。
 
 `SDS` 自己记长度，C 字符串常见的缓冲区溢出和反复分配就绕开了；预分配也让追加、计数这类操作少做几次内存分配。前面八个场景——存储、计数、拼接、位操作、数值操作——都建立在这一层之上。
+
+## 参考资料
+
+- [Redis 官方命令手册](https://redis.io/commands/)
+- [go-redis 官方客户端](https://github.com/redis/go-redis)
+- [go-redis · pkg.go.dev](https://pkg.go.dev/github.com/redis/go-redis/v9)
+
+
+## 同层页面
+
+- [Bitmap](/redis/Bitmap.md)
+- [Geospatial](/redis/Geospatial.md)
+- [Hash](/redis/Hash.md)
+- [Streams](/redis/Streams.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Streams](Streams.md)

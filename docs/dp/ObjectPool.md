@@ -176,3 +176,24 @@ func main() {
 - **单例模式（Singleton Pattern）**：对象池本身通常以单例形式存在，全局只维护一个池。
 - **享元模式（Flyweight Pattern）**：两者都通过共享对象节省资源，但享元模式共享的是不可变的"状态"，而对象池中的对象借出后会被独占使用。
 - **工厂模式（Factory Pattern）**：对象池在需要新对象时依赖工厂（函数）来创建对象。
+
+## 参考资料
+
+- [GoF《设计模式》概览（Wikipedia）](https://en.wikipedia.org/wiki/Design_Patterns)
+- [Refactoring.Guru 设计模式目录](https://refactoring.guru/design-patterns)
+- [Effective Go（官方）](https://go.dev/doc/effective_go)
+
+
+## 同层页面
+
+- [AbstractFactory](/dp/AbstractFactory.md)
+- [Adapter](/dp/Adapter.md)
+- [Behavioral](/dp/Behavioral.md)
+- [Memento](/dp/Memento.md)
+- [Observer](/dp/Observer.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Memento](Memento.md)
+- [Observer](Observer.md)

@@ -183,3 +183,25 @@ func TestABComparison(t *testing.T) {
 ### 总结
 
 六种技术各管一段：并发测试暴露数据竞争，Mocking 隔离依赖，覆盖率报告显示测试没碰到的代码，内存分析找出分配大户，基准测试给出每次操作的耗时。覆盖率、内存、基准这几种由 `go test` 的标志直接支持。
+
+## 参考资料
+
+- [testing 标准库](https://pkg.go.dev/testing)
+- [官方教程 · 添加测试](https://go.dev/doc/tutorial/add-a-test)
+- [官方博客 · Subtests and Sub-benchmarks](https://go.dev/blog/subtests)
+
+## 同层页面
+
+- [Fuzz](/test/Fuzz.md)
+- [Test](/test/Test.md)
+- [BaseTest](/test/BaseTest.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [BaseTest](BaseTest.md)
+- [Benchmark](Benchmark.md)
+- [Cover](Cover.md)
+- [Example](Example.md)
+- [Lib](Lib.md)
+- [Practice](Practice.md)

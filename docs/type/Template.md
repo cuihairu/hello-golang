@@ -308,3 +308,22 @@ Price: 29.99
 ### 总结
 
 `text/template` 的语法就这几样：<code v-pre>{{.Field}}</code> 取值，<code v-pre>{{if}}</code> 和 <code v-pre>{{range}}</code> 控制流程，`|` 接管道，`Funcs` 注册自定义函数，<code v-pre>{{define}}</code> 和 <code v-pre>{{template}}</code> 拆分模板。生成配置、邮件这类重复文本，这些够用了。
+
+## 参考资料
+
+- [语言规范 · 类型](https://go.dev/ref/spec#Types)
+- [text/template 标准库](https://pkg.go.dev/text/template)
+
+
+## 同层页面
+
+- [Assertion](/type/Assertion.md)
+- [Interface](/type/Interface.md)
+- [Map](/type/Map.md)
+- [Switch](/type/Switch.md)
+- [Type](/type/Type.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Type](Type.md)

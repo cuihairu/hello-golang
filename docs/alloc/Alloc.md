@@ -196,3 +196,16 @@ func main() {
 ```
 
 这个例子串了一遍小对象、大对象和中央缓存三条分配路径；真正的分配逻辑都在 Go 运行时内部，应用代码看到的只是 `make` 这类调用。
+
+## 参考资料
+
+- [官方 GC 指南 · 逃逸分析与栈上分配](https://go.dev/doc/gc-guide#Escape_analysis)
+- [官方 GC 指南](https://go.dev/doc/gc-guide)
+- [官方博客 · Allocating on the Stack](https://go.dev/blog/allocation-optimizations)
+- [官方博客 · Size-Specialized Memory Allocation](https://go.dev/blog/size-specialized-allocations)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Practice](Practice.md)
+- [glossary](/glossary.md)

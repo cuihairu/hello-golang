@@ -275,3 +275,18 @@ func main() {
 ### 结论
 
 反射的入口是 `TypeOf` 和 `ValueOf`；改值要先拿到指针再 `Elem`，用 `SetXxx` 写入；调用方法和函数都走 `Call`。代价是丢掉编译期检查、多一层运行时开销，序列化、校验、深拷贝这类场景才值得用。
+
+## 参考资料
+
+- [官方博客 · The Laws of Reflection](https://go.dev/blog/laws-of-reflection)
+- [reflect 标准库](https://pkg.go.dev/reflect)
+
+## 同层页面
+
+- [Advanced](/reflection/Advanced.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [glossary](/glossary.md)
+- [Advanced](Advanced.md)

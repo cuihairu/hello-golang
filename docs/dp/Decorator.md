@@ -115,3 +115,24 @@ func main() {
 - **代理模式（Proxy Pattern）**：结构和装饰器类似，代理控制访问，装饰器加职责。
 - **适配器模式（Adapter Pattern）**：适配器把一个接口换成另一个，装饰器不换接口，只加职责。
 - **组合模式（Composite Pattern）**：组合把对象拼成树形结构表示“部分-整体”，装饰器是在单个对象外面层层包裹。
+
+## 参考资料
+
+- [GoF《设计模式》概览（Wikipedia）](https://en.wikipedia.org/wiki/Design_Patterns)
+- [Refactoring.Guru 设计模式目录](https://refactoring.guru/design-patterns)
+- [Effective Go（官方）](https://go.dev/doc/effective_go)
+
+
+## 同层页面
+
+- [AbstractFactory](/dp/AbstractFactory.md)
+- [Adapter](/dp/Adapter.md)
+- [Behavioral](/dp/Behavioral.md)
+- [Creational](/dp/Creational.md)
+- [DesignPatterns](/dp/DesignPatterns.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Creational](Creational.md)
+- [DesignPatterns](DesignPatterns.md)

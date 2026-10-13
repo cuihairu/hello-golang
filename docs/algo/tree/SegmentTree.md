@@ -118,3 +118,20 @@ func main() {
 ### 总结
 
 线段树把"数组"变成"可递归二分的结构"，凡是满足结合律的区间信息都可以挂在节点上。它的模板比树状数组长，但能覆盖区间更新、多信息维护等更复杂的场景。
+
+## 参考资料
+
+- [线段树 · Wikipedia](https://en.wikipedia.org/wiki/Segment_tree)
+
+
+## 同层页面
+
+- [Heap](/algo/tree/Heap.md)
+- [MinimumSpanningTree](/algo/tree/MinimumSpanningTree.md)
+- [RedBlackTree](/algo/tree/RedBlackTree.md)
+- [Tree](/algo/tree/Tree.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Tree](Tree.md)

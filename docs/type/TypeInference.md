@@ -109,3 +109,15 @@ func main() {
 ### 总结
 
 `:=` 只解决"函数里少写类型"这件事：`x := 10` 推成 `int`，`y := 3.14` 推成 `float64`，多返回值也能一次推到位。它管不到的地方是函数外部——全局变量和常量必须写明类型。日常写法是能用 `:=` 就用，需要精确控制宽度时（`int32`、`float32`）再退回 `var x int32 = 0`。
+
+## 参考资料
+
+- [语言规范 · 类型](https://go.dev/ref/spec#Types)
+- [官方博客 · Type Inference](https://go.dev/blog/type-inference)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [glossary](/glossary.md)
+- [Array](Array.md)
+- [Type](Type.md)

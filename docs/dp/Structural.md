@@ -29,3 +29,24 @@
 7. **代理模式（Proxy Pattern）**：
    - **概念**：为其他对象提供一种代理以控制对这个对象的访问。
    - **适用范围**：需要控制对对象的访问，或者在访问对象时增加一些额外操作的场景。
+
+## 参考资料
+
+- [GoF《设计模式》概览（Wikipedia）](https://en.wikipedia.org/wiki/Design_Patterns)
+- [Refactoring.Guru 设计模式目录](https://refactoring.guru/design-patterns)
+- [Effective Go（官方）](https://go.dev/doc/effective_go)
+
+
+## 同层页面
+
+- [AbstractFactory](/dp/AbstractFactory.md)
+- [Adapter](/dp/Adapter.md)
+- [Behavioral](/dp/Behavioral.md)
+- [Strategy](/dp/Strategy.md)
+- [TemplateMethod](/dp/TemplateMethod.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Strategy](Strategy.md)
+- [TemplateMethod](TemplateMethod.md)

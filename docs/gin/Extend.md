@@ -213,3 +213,22 @@ Gin 的扩展有两条路：装社区现成的插件，或者按需求写自己�
 - **插件的文档和示例**：如何为自定义插件编写文档和示例代码，帮助用户理解和使用插件。
 
 社区插件已经覆盖了常见需求：CORS、日志、Swagger 文档、参数校验。自己的逻辑写成 `gin.HandlerFunc`，用 `r.Use(...)` 挂成中间件，或者像路由那样单独注册。
+
+## 参考资料
+
+- [Gin 官方文档](https://gin-gonic.com/en/docs/)
+- [Gin · pkg.go.dev](https://pkg.go.dev/github.com/gin-gonic/gin)
+
+## 同层页面
+
+- [Config](/gin/Config.md)
+- [Debug](/gin/Debug.md)
+- [Error](/gin/Error.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Config](Config.md)
+- [Debug](Debug.md)
+- [Error](Error.md)
+- [Gin](Gin.md)

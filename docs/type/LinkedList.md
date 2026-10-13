@@ -60,3 +60,21 @@ func main() {
 ### 总结
 
 `container/list` 把双向链表做成了现成的容器，插入、删除、遍历都有对应方法。使用时注意两点：遍历要从 `Front()` 或 `Back()` 拿头尾节点开始；删除前先确认链表非空、元素存在。
+
+## 参考资料
+
+- [语言规范 · 类型](https://go.dev/ref/spec#Types)
+- [container/list 标准库](https://pkg.go.dev/container/list)
+
+
+## 同层页面
+
+- [Assertion](/type/Assertion.md)
+- [Interface](/type/Interface.md)
+- [Map](/type/Map.md)
+- [Json](/type/Json.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Json](Json.md)

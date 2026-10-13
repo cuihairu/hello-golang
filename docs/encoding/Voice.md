@@ -200,3 +200,22 @@ func main() {
 - **音频编码**：MP3 和 WAV，用于有损和无损音频压缩。
 
 Go 标准库自带 JPEG、PNG、GIF 的解码，通过匿名导入 `image/jpeg` 这类包注册；MP3 和 WAV 的编解码要靠第三方库。
+
+## 参考资料
+
+- [encoding 系列标准库（json 为例）](https://pkg.go.dev/encoding/json)
+
+
+## 同层页面
+
+- [JsonV2](/encoding/JsonV2.md)
+- [Base64](/encoding/Base64.md)
+- [Binary](/encoding/Binary.md)
+- [Text](/encoding/Text.md)
+- [XML](/encoding/XML.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Text](Text.md)
+- [XML](XML.md)

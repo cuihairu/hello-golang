@@ -144,3 +144,25 @@
 - **GOPATH 模式** 是 Go 模块出现前的包管理方式，虽然简单但存在一些限制。
 
 `go.mod` 和 `go.sum` 提交进仓库，任何人 clone 下来构建出的都是同一份依赖。
+
+## 参考资料
+
+- [官方 · Go Modules 使用指南](https://go.dev/doc/modules/)
+- [Go Modules Reference](https://go.dev/ref/mod)
+- [官方博客 · Using Go Modules](https://go.dev/blog/using-go-modules)
+
+## 同层页面
+
+- [Readme](/distribution/Readme.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Readme](/distribution/Readme.md)
+- [glossary](/glossary.md)
+- [Get](Get.md)
+- [Import](Import.md)
+- [New](New.md)
+- [Package](Package.md)
+- [Pkg](Pkg.md)
+- [Vendor](Vendor.md)

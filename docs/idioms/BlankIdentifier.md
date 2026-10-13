@@ -150,3 +150,23 @@ func main() {
 ### 总结
 
 空标识符是 Go 中表达"我知道这里有值，但我故意不用它"的标准方式：忽略多余的返回值、引入仅有副作用的包、编写编译期接口断言。合理使用可以让意图一目了然，滥用（尤其是吞掉 error）则会埋下隐患。
+
+## 参考资料
+
+- [Effective Go（官方）](https://go.dev/doc/effective_go)
+- [Effective Go · blank](https://go.dev/doc/effective_go#blank)
+
+## 同层页面
+
+- [EffectiveGo](/idioms/EffectiveGo.md)
+- [StructTags](/idioms/StructTags.md)
+- [CommaOk](/idioms/CommaOk.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [CommaOk](CommaOk.md)
+- [Idioms](Idioms.md)
+- [Labels](Labels.md)
+- [Range](Range.md)
+- [ShortVarDecl](ShortVarDecl.md)

@@ -204,3 +204,32 @@ func main() {
 ```
 
 四段代码对应四个方向：`os` 管本地文件信息和权限，`hdfs` 客户端读写分布式存储，`bufio.Scanner` 流式统计大文件，`confluent-kafka-go` 收发消息流。
+
+## 参考资料
+
+- [io 标准库](https://pkg.go.dev/io)
+- [os 标准库](https://pkg.go.dev/os)
+- [bufio 标准库](https://pkg.go.dev/bufio)
+
+## 同层页面
+
+- [CommonFormats](/io/CommonFormats.md)
+- [EfficientIO](/io/EfficientIO.md)
+- [Example](/io/Example.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [CommonFormats](CommonFormats.md)
+- [EfficientIO](EfficientIO.md)
+- [Example](Example.md)
+- [File](File.md)
+- [FileAdvanced](FileAdvanced.md)
+- [FileOperation](FileOperation.md)
+- [IO](IO.md)
+- [InputOutput](InputOutput.md)
+- [ModIO](ModIO.md)
+- [ModOS](ModOS.md)
+- [ModPath](ModPath.md)
+- [Security](Security.md)
+- [Utils](Utils.md)

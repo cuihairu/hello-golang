@@ -45,3 +45,22 @@ CGO 的边界上全靠 `unsafe.Pointer` 打通：Go 侧的指针传给 C 时转�
 ### 小结
 
 `unsafe` 的四件套各有用途：指针打通类型系统边界，布局查询服务于二进制互操作，算术和切片服务于零拷贝处理。共同前提：保证指针存活、长度不越界。
+
+## 参考资料
+
+- [syscall 标准库](https://pkg.go.dev/syscall)
+- [os 标准库](https://pkg.go.dev/os)
+- [unsafe 标准库](https://pkg.go.dev/unsafe)
+
+## 同层页面
+
+- [Plugin](/sys/Plugin.md)
+- [Sys](/sys/Sys.md)
+- [Syscall](/sys/Syscall.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Plugin](Plugin.md)
+- [Sys](Sys.md)
+- [Syscall](Syscall.md)

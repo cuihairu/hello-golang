@@ -108,3 +108,24 @@ func main() {
 - **装饰器模式（Decorator Pattern）**：装饰器动态地给单个对象加职责，组合模式组织的是对象树。
 - **享元模式（Flyweight Pattern）**：享元靠共享对象省内存，和组合模式解决的问题不同。
 - **迭代器模式（Iterator Pattern）**：组合模式可以与迭代器模式结合使用，以便遍历组合结构中的所有对象。
+
+## 参考资料
+
+- [GoF《设计模式》概览（Wikipedia）](https://en.wikipedia.org/wiki/Design_Patterns)
+- [Refactoring.Guru 设计模式目录](https://refactoring.guru/design-patterns)
+- [Effective Go（官方）](https://go.dev/doc/effective_go)
+
+
+## 同层页面
+
+- [AbstractFactory](/dp/AbstractFactory.md)
+- [Adapter](/dp/Adapter.md)
+- [Behavioral](/dp/Behavioral.md)
+- [Command](/dp/Command.md)
+- [Creational](/dp/Creational.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Command](Command.md)
+- [Creational](Creational.md)

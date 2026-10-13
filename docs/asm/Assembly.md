@@ -291,3 +291,16 @@ GC 的核心逻辑（标记调度 `gcStart`、并发标记、清除等）位于 
 #### 总结
 
 函数调用在 amd64 上编译成寄存器传参加一条 `ADDQ` 加 `RET`，`go` 语句落到 `runtime.newproc`，`runtime.GC()` 落到 `runtime.GC` 入口。想看得更深，用 `go tool objdump` 配合 `runtime/proc.go`、`runtime/mgc.go` 的源码继续往下追。
+
+## 参考资料
+
+- [官方 · A Quick Guide to Go's Assembler](https://go.dev/doc/asm)
+
+## 同层页面
+
+- [Program](/asm/Program.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Program](Program.md)

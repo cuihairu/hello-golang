@@ -122,3 +122,30 @@ func main() {
 - **GOB 编码**：Go 语言特有的二进制编码方式，用于在 Go 程序中高效地序列化和反序列化数据。
 
 选哪种看数据要去哪：过文本通道选 Base64，人眼核对字节选 Hex，Go 程序之间互传结构体选 GOB。
+
+## 参考资料
+
+- [encoding 系列标准库（json 为例）](https://pkg.go.dev/encoding/json)
+- [encoding/binary 标准库](https://pkg.go.dev/encoding/binary)
+
+## 同层页面
+
+- [JsonV2](/encoding/JsonV2.md)
+- [Base64](/encoding/Base64.md)
+- [CSV](/encoding/CSV.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Base64](Base64.md)
+- [CSV](CSV.md)
+- [Encoding](Encoding.md)
+- [Formats](Formats.md)
+- [Gob](Gob.md)
+- [Hex](Hex.md)
+- [Ini](Ini.md)
+- [JSON](JSON.md)
+- [TOML](TOML.md)
+- [Text](Text.md)
+- [Voice](Voice.md)
+- [XML](XML.md)

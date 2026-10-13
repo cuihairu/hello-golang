@@ -151,3 +151,23 @@ func sseHandler(c *gin.Context) {
 ### 总结
 
 Gin 的请求流程是：收请求、跑中间件、路由匹配、执行处理函数、发响应，`gin.Context` 从头到尾贯穿。解析数据按来源挑方法：查询参数用 `c.Query`，表单用 `c.PostForm`，JSON 用 `c.ShouldBindJSON`，路径参数用 `c.Param`。
+
+## 参考资料
+
+- [Gin 官方文档](https://gin-gonic.com/en/docs/)
+- [Gin · pkg.go.dev](https://pkg.go.dev/github.com/gin-gonic/gin)
+
+
+## 同层页面
+
+- [Config](/gin/Config.md)
+- [Debug](/gin/Debug.md)
+- [Error](/gin/Error.md)
+- [Optimize](/gin/Optimize.md)
+- [Response](/gin/Response.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Optimize](Optimize.md)
+- [Response](Response.md)

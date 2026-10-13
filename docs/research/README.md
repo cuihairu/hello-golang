@@ -57,3 +57,8 @@
 26. 搜狗搜索、360 搜索聚合的豆瓣与当当条目（《Go程序设计语言》等书目信息）
 
 注意：`go.dev`、`pkg.go.dev`、`github.com`、`grpc.io`、`kubernetes.io` 在本机网络均无法建立 TLS 连接，因此本目录所有引用都指向可复现抓取的镜像或国内站点；镜像取不到的书目信息，标注了它来自搜索引擎聚合的哪一家条目。
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [knowledge](/knowledge.md)

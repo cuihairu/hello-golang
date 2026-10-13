@@ -75,3 +75,20 @@ func main() {
 ### 总结
 
 `true` 和 `false` 是布尔类型的预定义常量，`&&`、`||`、`!` 都在它们之上运算，`if`、`for`、`switch` 的条件用的也是布尔值。
+
+## 参考资料
+
+- [语言规范 · 常量声明](https://go.dev/ref/spec#Constant_declarations)
+- [官方博客 · Constants](https://go.dev/blog/constants)
+- [语言规范 · 预定义标识符](https://go.dev/ref/spec#Predeclared_identifiers)
+
+## 同层页面
+
+- [Cant](/const/Cant.md)
+- [Iota](/const/Iota.md)
+- [Nil](/const/Nil.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Cant](Cant.md)

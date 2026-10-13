@@ -242,3 +242,24 @@ TEXT secondDeferred(SB), NOSPLIT, $0
 - **多个 `defer` 语句**：按照后进先出（LIFO）顺序执行。
 - **与 `return` 的关系**：`defer` 语句在 `return` 执行后但在函数真正返回之前执行，可以修改返回值。
 - **底层实现**：`defer` 使用栈结构来管理函数调用，确保按 LIFO 顺序执行。
+
+## 参考资料
+
+- [语言规范 · 函数声明](https://go.dev/ref/spec#Function_declarations)
+- [语言规范 · 调用](https://go.dev/ref/spec#Calls)
+- [Effective Go · 函数](https://go.dev/doc/effective_go#functions)
+- [语言规范 · Defer 语句](https://go.dev/ref/spec#Defer_statements)
+- [官方博客 · Defer, Panic, and Recover](https://go.dev/blog/defer-panic-and-recover)
+- [Effective Go · Defer](https://go.dev/doc/effective_go#defer)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Arguments](Arguments.md)
+- [DefineAndCall](DefineAndCall.md)
+- [FuncValue](FuncValue.md)
+- [History](History.md)
+- [InnerFunc](InnerFunc.md)
+- [MultipleReturnValues](MultipleReturnValues.md)
+- [RecursiveFunction](RecursiveFunction.md)
+- [glossary](/glossary.md)

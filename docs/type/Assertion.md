@@ -120,3 +120,37 @@ func main() {
 ### 总结
 
 类型断言从接口值里取出具体类型的值。带 `ok` 的写法失败时得到零值和 `false`，不带 `ok` 的写法失败会直接 panic，类型 switch 则一次分支处理多种类型。
+
+## 参考资料
+
+- [语言规范 · 类型](https://go.dev/ref/spec#Types)
+- [语言规范 · 类型断言](https://go.dev/ref/spec#Type_assertions)
+
+## 同层页面
+
+- [Array](/type/Array.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [glossary](/glossary.md)
+- [Array](Array.md)
+- [BaseConv](BaseConv.md)
+- [Big](Big.md)
+- [Bool](Bool.md)
+- [Byte](Byte.md)
+- [Complex](Complex.md)
+- [CompositeType](CompositeType.md)
+- [Conv](Conv.md)
+- [Float](Float.md)
+- [HtmlTemplate](HtmlTemplate.md)
+- [Int](Int.md)
+- [Json](Json.md)
+- [LinkedList](LinkedList.md)
+- [Pointer](Pointer.md)
+- [Ring](Ring.md)
+- [Rune](Rune.md)
+- [String](String.md)
+- [Struct](Struct.md)
+- [Template](Template.md)
+- [Type](Type.md)

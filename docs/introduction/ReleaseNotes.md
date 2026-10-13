@@ -49,3 +49,18 @@ Go 的版本节奏和支撑策略决定你该追哪个版本、什么时候升�
 2. https://golang.google.cn/dl/?mode=json — 稳定版列表，第一项 `go1.27.1`
 3. https://golang.google.cn/security/ — 「我们对最近两个大版本发布安全修复」
 4. https://golang.google.cn/doc/ — 文档总览中的 Release Notes 入口
+
+## 参考资料
+
+- [官方文档总览](https://go.dev/doc/)
+- [发布历史与支持策略](https://go.dev/doc/devel/release)
+- [官方 FAQ](https://go.dev/doc/faq)
+- [官方博客 · Go 1.27 is released](https://go.dev/blog/go1.27)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Feature](Feature.md)
+- [Introduction](Introduction.md)
+- [Lineage](Lineage.md)
+- [knowledge](/knowledge.md)

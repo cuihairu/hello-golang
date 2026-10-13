@@ -130,3 +130,22 @@ require (
 
 - **包的导入路径**：标准库直接写包名，第三方包和本地包用 `go.mod` 里声明的模块路径接目录，相对路径不支持。
 - **包的可见性**：大写开头的标识符导出到包外，小写开头的留在包内。
+
+## 参考资料
+
+- [官方 · Go Modules 使用指南](https://go.dev/doc/modules/)
+- [Go Modules Reference](https://go.dev/ref/mod)
+- [官方博客 · Using Go Modules](https://go.dev/blog/using-go-modules)
+
+
+## 同层页面
+
+- [Init](/mod/Init.md)
+- [Mod](/mod/Mod.md)
+- [Work](/mod/Work.md)
+- [Get](/mod/Get.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Get](Get.md)

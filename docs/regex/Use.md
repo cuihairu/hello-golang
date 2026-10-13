@@ -227,3 +227,22 @@
   ```
 
 上面六类场景都用了 `regexp.MustCompile`：它在程序启动时把模式编译一次，模式非法直接 panic，适合写死在代码里的正则；运行期才拿到的模式该用 `regexp.Compile` 并检查错误。
+
+## 参考资料
+
+- [regexp 标准库](https://pkg.go.dev/regexp)
+- [regexp/syntax 语法文档](https://pkg.go.dev/regexp/syntax)
+
+
+## 同层页面
+
+- [Advanced](/regex/Advanced.md)
+- [Debug](/regex/Debug.md)
+- [Lib](/regex/Lib.md)
+- [Readme](/regex/Readme.md)
+- [Usual](/regex/Usual.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Usual](Usual.md)

@@ -97,3 +97,22 @@ func main() {
 
 ### 总结
 这一章装好了 Gin，写出了 `/ping` 和带参数的 `/user/:name` 两类路由。中间件、参数绑定、分组路由这些功能在后面的章节逐个展开。
+
+## 参考资料
+
+- [Gin 官方文档](https://gin-gonic.com/en/docs/)
+- [Gin · pkg.go.dev](https://pkg.go.dev/github.com/gin-gonic/gin)
+
+
+## 同层页面
+
+- [Config](/gin/Config.md)
+- [Debug](/gin/Debug.md)
+- [Error](/gin/Error.md)
+- [Extend](/gin/Extend.md)
+- [Middleware](/gin/Middleware.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Middleware](Middleware.md)

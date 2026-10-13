@@ -139,3 +139,14 @@ func main() {
 ### 总结
 
 Go 的 GC 与分层内存分配器（`mcache`/`mcentral`/`mheap`）是一体两面：分配器决定内存从哪里来，GC 决定内存何时回到分配器手中。调优时把 `GOGC`、`GOMEMLIMIT` 和分配速率放在一起看：前两个分别控制回收时机和内存上限，第三个决定垃圾产生得多快。
+
+## 参考资料
+
+- [官方 GC 指南 · 逃逸分析与栈上分配](https://go.dev/doc/gc-guide#Escape_analysis)
+- [官方 GC 指南](https://go.dev/doc/gc-guide)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Practice](Practice.md)
+- [glossary](/glossary.md)

@@ -237,3 +237,22 @@ completion  start        stop         restart
 ### 总结
 
 本章写了多层次子命令、动态生成命令、自动完成三个功能，外加环境变量、错误处理、国际化、测试四项实践。前三个有完整代码，后四项只给了方向。
+
+## 参考资料
+
+- [flag 标准库](https://pkg.go.dev/flag)
+- [os/exec 标准库](https://pkg.go.dev/os/exec)
+
+## 同层页面
+
+- [Design](/cmd/Design.md)
+- [Flag](/cmd/Flag.md)
+- [Lib](/cmd/Lib.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Design](Design.md)
+- [Flag](Flag.md)
+- [Lib](Lib.md)
+- [Readme](Readme.md)

@@ -194,3 +194,21 @@ func main() {
 #### 总结
 
 JSON 的规则很少：键名必须是双引号字符串、不支持注释、特殊字符靠转义。Go 里配合 `encoding/json` 的 `Marshal` 和 `Unmarshal`，绝大多数 JSON 处理都能覆盖。
+
+## 参考资料
+
+- [encoding 系列标准库（json 为例）](https://pkg.go.dev/encoding/json)
+- [官方博客 · JSON and Go](https://go.dev/blog/json)
+
+
+## 同层页面
+
+- [JsonV2](/encoding/JsonV2.md)
+- [Base64](/encoding/Base64.md)
+- [Binary](/encoding/Binary.md)
+- [Ini](/encoding/Ini.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Ini](Ini.md)

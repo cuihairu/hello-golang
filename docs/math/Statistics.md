@@ -186,3 +186,21 @@ ARIMA（自回归积分滑动平均模型）用于时间序列预测，结合了
 ### 总结
 
 这节用到的 Go 工具集中在 `gonum`：`stat` 包算均值、标准差和线性回归，`distuv` 包算正态分布的概率密度。卡方检验、ANOVA、多元回归和时间序列这几类，示例里只留了注释，要另找第三方库实现。
+
+## 参考资料
+
+- [math 标准库](https://pkg.go.dev/math)
+- [math/rand 标准库](https://pkg.go.dev/math/rand)
+
+
+## 同层页面
+
+- [Calc](/math/Calc.md)
+- [LinearAlgebra](/math/LinearAlgebra.md)
+- [Math](/math/Math.md)
+- [Science](/math/Science.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Science](Science.md)

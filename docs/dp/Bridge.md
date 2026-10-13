@@ -114,3 +114,23 @@ func main() {
 - **适配器模式（Adapter Pattern）**：适配器模式用于将一个接口转换为另一个接口，使得不兼容的接口能够协同工作。桥接模式用于将抽象部分和实现部分分离，使它们可以独立变化。
 - **装饰器模式（Decorator Pattern）**：装饰器模式通过动态地给对象添加职责来增强对象的功能，而桥接模式通过分离抽象和实现来使它们独立变化。
 - **组合模式（Composite Pattern）**：组合模式用于将对象组合成树形结构以表示“部分-整体”的层次结构。桥接模式用于将抽象和实现分离，使它们可以独立变化。
+
+## 参考资料
+
+- [GoF《设计模式》概览（Wikipedia）](https://en.wikipedia.org/wiki/Design_Patterns)
+- [Refactoring.Guru 设计模式目录](https://refactoring.guru/design-patterns)
+- [Effective Go（官方）](https://go.dev/doc/effective_go)
+
+## 同层页面
+
+- [AbstractFactory](/dp/AbstractFactory.md)
+- [Adapter](/dp/Adapter.md)
+- [Behavioral](/dp/Behavioral.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [AbstractFactory](AbstractFactory.md)
+- [Adapter](Adapter.md)
+- [Behavioral](Behavioral.md)
+- [Builder](Builder.md)

@@ -68,3 +68,22 @@ func FuzzParse(f *testing.F) {
 1. https://golang.google.cn/doc/fuzz/ — Go Fuzzing：1.18 起内置、覆盖率引导、Requirements 与建议、两种运行方式、OSS-Fuzz（2026-10-08 抓取）
 2. https://golang.google.cn/doc/tutorial/fuzz.html — fuzzing 教程
 3. https://golang.google.cn/security/ — 安全页把 fuzzing 列为发现漏洞的手段
+
+## 参考资料
+
+- [testing 标准库](https://pkg.go.dev/testing)
+- [官方教程 · 添加测试](https://go.dev/doc/tutorial/add-a-test)
+- [官方 · Fuzzing（安全）](https://go.dev/doc/security/fuzz/)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [glossary](/glossary.md)
+- [knowledge](/knowledge.md)
+- [Advanced](Advanced.md)
+- [BaseTest](BaseTest.md)
+- [Benchmark](Benchmark.md)
+- [Cover](Cover.md)
+- [Example](Example.md)
+- [Lib](Lib.md)
+- [Practice](Practice.md)

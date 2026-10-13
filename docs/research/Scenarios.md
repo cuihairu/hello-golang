@@ -68,3 +68,9 @@
 7. https://golang.google.cn/solutions/paypal — PayPal 案例（六个月、30% 集群）
 8. https://golang.google.cn/solutions/mercadolibre — MercadoLibre 案例（18 国、每分钟 800 万至 1000 万请求、10 毫秒）
 9. https://golang.google.cn/security/ — 官方安全页（漏洞库、fuzzing、加密库、FIPS 140-3）
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [knowledge](/knowledge.md)
+- [README](README.md)

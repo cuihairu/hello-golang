@@ -258,3 +258,32 @@ func main() {
 ```
 
 四种手段各管一段：内存映射省掉 read/write 的来回拷贝；异步 IO 把等待让给 goroutine；`bufio` 把多次小读写攒成大块；epoll 用一个线程盯住成百上千个连接。日常程序里最先用上的通常是 `bufio`，epoll 只有在自己写网络框架、绕开标准库封装时才需要直接操作。
+
+## 参考资料
+
+- [io 标准库](https://pkg.go.dev/io)
+- [os 标准库](https://pkg.go.dev/os)
+- [bufio 标准库](https://pkg.go.dev/bufio)
+
+## 同层页面
+
+- [Advanced](/io/Advanced.md)
+- [CommonFormats](/io/CommonFormats.md)
+- [Example](/io/Example.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Advanced](Advanced.md)
+- [CommonFormats](CommonFormats.md)
+- [Example](Example.md)
+- [File](File.md)
+- [FileAdvanced](FileAdvanced.md)
+- [FileOperation](FileOperation.md)
+- [IO](IO.md)
+- [InputOutput](InputOutput.md)
+- [ModIO](ModIO.md)
+- [ModOS](ModOS.md)
+- [ModPath](ModPath.md)
+- [Security](Security.md)
+- [Utils](Utils.md)

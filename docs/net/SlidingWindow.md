@@ -123,3 +123,24 @@ func main() {
 ### 总结
 
 TCP 的滑动窗口解决了"发送多快合适"的问题，而应用层的滑动窗口限流解决的是"单位时间允许多少请求"的问题。两者的共同思想是：用一个随时间滑动的区间来度量近期的行为，而不是孤立地看待每个时刻。在 Go 服务中，滑动窗口限流器常用于 API 网关、中间件和客户端重试控制等场景。
+
+## 参考资料
+
+- [net 标准库](https://pkg.go.dev/net)
+- [net/http 标准库](https://pkg.go.dev/net/http)
+- [RFC 9293 · Transmission Control Protocol（TCP，替代 RFC 793）](https://www.rfc-editor.org/rfc/rfc9293)
+
+
+## 同层页面
+
+- [Advanced](/net/Advanced.md)
+- [Concurrence](/net/Concurrence.md)
+- [Intro](/net/Intro.md)
+- [Proto](/net/Proto.md)
+- [Socket](/net/Socket.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Proto](Proto.md)
+- [Socket](Socket.md)

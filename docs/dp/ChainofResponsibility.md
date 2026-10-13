@@ -119,3 +119,24 @@ func main() {
 
 #### 其他模式的关系
 策略模式定义一系列可互换的算法，责任链则是让请求沿链传递，链上的每一环可以各用一种策略。命令模式把请求封装成对象，这些对象正好可以作为链上传递的载荷。中介者模式把对象间的多对多交互收拢到一个中介者身上，当交互复杂到一条链排不下时，就该换成中介者。
+
+## 参考资料
+
+- [GoF《设计模式》概览（Wikipedia）](https://en.wikipedia.org/wiki/Design_Patterns)
+- [Refactoring.Guru 设计模式目录](https://refactoring.guru/design-patterns)
+- [Effective Go（官方）](https://go.dev/doc/effective_go)
+
+
+## 同层页面
+
+- [AbstractFactory](/dp/AbstractFactory.md)
+- [Adapter](/dp/Adapter.md)
+- [Behavioral](/dp/Behavioral.md)
+- [Builder](/dp/Builder.md)
+- [Command](/dp/Command.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Builder](Builder.md)
+- [Command](Command.md)

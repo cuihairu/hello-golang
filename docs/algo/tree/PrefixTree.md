@@ -118,3 +118,18 @@ startsWith z: false
 ### 总结
 
 前缀树把字符串的公共前缀共享成同一条路径，查找退化为逐字符下行。字符串索引类问题常从它入手，后缀树等结构也建立在类似思路上。
+
+## 参考资料
+
+- [前缀树（Trie）· Wikipedia](https://en.wikipedia.org/wiki/Trie)
+
+## 同层页面
+
+- [Heap](/algo/tree/Heap.md)
+- [MinimumSpanningTree](/algo/tree/MinimumSpanningTree.md)
+- [RedBlackTree](/algo/tree/RedBlackTree.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Heap](Heap.md)

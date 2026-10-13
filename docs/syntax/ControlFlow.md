@@ -108,3 +108,19 @@ outer:
 - 分支语句不使用 `fallthrough` 时会自动跳出，需要显式贯穿时再用 `fallthrough`。
 
 本章后续小节将分别展开讲解条件语句、循环语句和跳转语句的具体用法。
+
+## 参考资料
+
+- [语言规范 · 语句](https://go.dev/ref/spec#Statements)
+- [Effective Go · 控制结构](https://go.dev/doc/effective_go#control-structures)
+
+## 同层页面
+
+- [Break](/syntax/Break.md)
+- [Continue](/syntax/Continue.md)
+- [For](/syntax/For.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Break](Break.md)

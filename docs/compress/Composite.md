@@ -322,3 +322,23 @@ Zip file extracted successfully
 ```
 
 并且在当前目录下生成 `archive.zip` 文件和 `output` 目录，其中包含 `file1.txt` 和 `file2.txt` 文件。
+
+## 参考资料
+
+- [compress/gzip 标准库](https://pkg.go.dev/compress/gzip)
+- [compress/flate 标准库](https://pkg.go.dev/compress/flate)
+
+## 同层页面
+
+- [Advanced](/compress/Advanced.md)
+- [Archive](/compress/Archive.md)
+- [Compress](/compress/Compress.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Advanced](Advanced.md)
+- [Archive](Archive.md)
+- [Compress](Compress.md)
+- [ErrHandleAndTest](ErrHandleAndTest.md)
+- [Readme](Readme.md)

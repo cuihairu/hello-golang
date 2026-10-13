@@ -108,3 +108,20 @@ func main() {
 ### 总结
 
 满二叉树是形态最"整齐"的二叉树：节点数、层数、孩子位置之间都是确定的指数关系。它是分析堆、线段树等结构空间上限时使用的基准形态，也是完全二叉树、严格二叉树等概念的参照物。
+
+## 参考资料
+
+- [二叉树 · Wikipedia](https://en.wikipedia.org/wiki/Binary_tree)
+
+
+## 同层页面
+
+- [Heap](/algo/tree/Heap.md)
+- [MinimumSpanningTree](/algo/tree/MinimumSpanningTree.md)
+- [RedBlackTree](/algo/tree/RedBlackTree.md)
+- [FenwickTree](/algo/tree/FenwickTree.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [FenwickTree](FenwickTree.md)

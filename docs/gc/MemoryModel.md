@@ -55,3 +55,15 @@
 
 1. https://golang.google.cn/ref/mem — The Go Memory Model：Advice、Informal Overview、Synchronization 各小节与三条 Requirement（2026-10-08 抓取）
 2. https://golang.google.cn/ref/spec — 语言规范中的表达式求值顺序（Requirement 1 引用）
+
+## 参考资料
+
+- [官方 · A Guide to the Go Garbage Collector](https://go.dev/doc/gc-guide)
+- [官方博客 · Go GC: Prioritizing low latency and simplicity](https://go.dev/blog/go15gc)
+- [Go 内存模型（The Go Memory Model）](https://go.dev/ref/mem)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [glossary](/glossary.md)
+- [knowledge](/knowledge.md)

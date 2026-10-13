@@ -186,3 +186,21 @@ Go 模块管理文件。
 这套结构真正起作用的是两点。一是可见性：`pkg/` 里的代码别的项目能 import，`internal/` 里的只有本项目能用，Go 工具链直接强制这条线。二是找东西快：入口在 `cmd/`，脚本在 `scripts/`，部署清单在 `deployments/`，按目录名就能定位。加上它是社区常见布局，别人读你的仓库不费劲。
 
 这种结构是一个推荐的起点，可以根据项目的具体需求进行调整。
+
+## 参考资料
+
+- [官方教程 · 入门](https://go.dev/doc/tutorial/getting-started)
+- [官方教程 · 创建模块](https://go.dev/doc/tutorial/create-module)
+
+
+## 同层页面
+
+- [BuildConstraint](/start/BuildConstraint.md)
+- [Build](/start/Build.md)
+- [Embed](/start/Embed.md)
+- [Starter](/start/Starter.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Starter](Starter.md)

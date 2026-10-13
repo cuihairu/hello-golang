@@ -179,3 +179,21 @@ func main() {
 ### 总结
 
 三种风格的差别在选项前缀：POSIX 用单双破折号，Windows 用斜杠；值的写法分别是 `-o value`、`--option=value` 和 `/o:value`。POSIX 风格用 `flag` 就够，Unix 的长选项等号格式用 `pflag`，Windows 风格要在 `flag` 之外自己解析 `os.Args`。
+
+## 参考资料
+
+- [flag 标准库](https://pkg.go.dev/flag)
+- [os/exec 标准库](https://pkg.go.dev/os/exec)
+
+
+## 同层页面
+
+- [Design](/cmd/Design.md)
+- [Flag](/cmd/Flag.md)
+- [Lib](/cmd/Lib.md)
+- [Readme](/cmd/Readme.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Readme](Readme.md)

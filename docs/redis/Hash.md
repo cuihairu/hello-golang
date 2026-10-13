@@ -94,3 +94,29 @@ Redis 哈希底层实现主要基于两种数据结构：`ziplist`（压缩列�
    - 优点：高效处理大数据量和长字符串。
 
 Redis 通过内存占用和访问速度的权衡，选择最合适的数据结构来存储哈希数据。开始时，Redis 使用压缩列表存储小型哈希，当哈希增长到一定规模时，自动转换为哈希表，从而兼顾空间效率和性能。
+
+## 参考资料
+
+- [Redis 官方命令手册](https://redis.io/commands/)
+- [go-redis 官方客户端](https://github.com/redis/go-redis)
+- [go-redis · pkg.go.dev](https://pkg.go.dev/github.com/redis/go-redis/v9)
+
+## 同层页面
+
+- [Bitmap](/redis/Bitmap.md)
+- [Geospatial](/redis/Geospatial.md)
+- [HyperLogLog](/redis/HyperLogLog.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Bitmap](Bitmap.md)
+- [Geospatial](Geospatial.md)
+- [HyperLogLog](HyperLogLog.md)
+- [Install](Install.md)
+- [List](List.md)
+- [Readme](Readme.md)
+- [Set](Set.md)
+- [SortedSet](SortedSet.md)
+- [Streams](Streams.md)
+- [String](String.md)

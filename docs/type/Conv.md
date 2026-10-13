@@ -95,3 +95,23 @@ func main() {
 ```
 
 总结一下：类型之间用 `类型名(值)` 显式转换，字符串进出用 `strconv`，`Atoi`、`ParseBool` 这类函数都返回错误，得接住。
+
+## 参考资料
+
+- [语言规范 · 类型](https://go.dev/ref/spec#Types)
+- [语言规范 · 转换](https://go.dev/ref/spec#Conversions)
+
+
+## 同层页面
+
+- [Assertion](/type/Assertion.md)
+- [Interface](/type/Interface.md)
+- [Map](/type/Map.md)
+- [CompositeType](/type/CompositeType.md)
+- [Float](/type/Float.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [CompositeType](CompositeType.md)
+- [Float](Float.md)

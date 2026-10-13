@@ -247,3 +247,25 @@ if err != nil {
 ```
 
 三个框架的分工不同：GORM 用链式方法写增删改查，Ent 先定义 schema 再生成查询代码，XORM 靠 struct 标签描述映射。
+
+## 参考资料
+
+- [官方 · 数据库访问指南](https://go.dev/doc/database/)
+- [官方教程 · 数据库访问](https://go.dev/doc/tutorial/database-access)
+- [database/sql 标准库](https://pkg.go.dev/database/sql)
+- [GORM 官方文档](https://gorm.io/docs/)
+
+
+## 同层页面
+
+- [Availability](/db/Availability.md)
+- [Base](/db/Base.md)
+- [ConnectPool](/db/ConnectPool.md)
+- [Normalization](/db/Normalization.md)
+- [Performance](/db/Performance.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Normalization](Normalization.md)
+- [Performance](Performance.md)

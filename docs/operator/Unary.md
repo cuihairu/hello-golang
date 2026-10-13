@@ -99,3 +99,22 @@
 ### 总结
 
 这六个运算符都作用于单个操作数：`+`、`-`、`^`、`!` 可以出现在表达式里，`++` 和 `--` 只能单独成句，不能写在表达式中。
+
+## 参考资料
+
+- [语言规范 · 运算符](https://go.dev/ref/spec#Operators)
+- [语言规范 · 算术运算符（一元 +/-）](https://go.dev/ref/spec#Arithmetic_operators)
+- [语言规范 · 地址运算符](https://go.dev/ref/spec#Address_operators)
+
+
+## 同层页面
+
+- [Arithmetic](/operator/Arithmetic.md)
+- [Assignment](/operator/Assignment.md)
+- [BitLen](/operator/BitLen.md)
+- [TypeAssertion](/operator/TypeAssertion.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [TypeAssertion](TypeAssertion.md)

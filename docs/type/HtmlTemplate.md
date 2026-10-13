@@ -386,3 +386,23 @@ func main() {
 ### 总结
 
 `html/template` 的几个语法点：<code v-pre>{{.Field}}</code> 取数据，`if`、`range` 管分支和循环，`|` 把左边结果传给下一个函数，<code v-pre>{{define}}</code> 加 <code v-pre>{{template}}</code> 拆模块。安全上记住一条：输出自动转义，`text/template` 不做这层，HTML 场景别用它。
+
+## 参考资料
+
+- [语言规范 · 类型](https://go.dev/ref/spec#Types)
+- [html/template 标准库](https://pkg.go.dev/html/template)
+
+
+## 同层页面
+
+- [Assertion](/type/Assertion.md)
+- [Interface](/type/Interface.md)
+- [Map](/type/Map.md)
+- [Float](/type/Float.md)
+- [Int](/type/Int.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Float](Float.md)
+- [Int](Int.md)

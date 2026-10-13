@@ -119,3 +119,22 @@ git push origin v1.1.0
 发布新的版本到 GitHub Releases。
 
 整个流程归结为三步：`go mod init` 建模块，按语义化版本打 `vMAJOR.MINOR.PATCH` 标签，推到 GitHub Releases。用户用 `go get 包路径@版本号` 就能装到指定版本。
+
+## 参考资料
+
+- [官方 · Go Modules 使用指南](https://go.dev/doc/modules/)
+- [Go Modules Reference](https://go.dev/ref/mod)
+- [官方博客 · Using Go Modules](https://go.dev/blog/using-go-modules)
+
+
+## 同层页面
+
+- [Init](/mod/Init.md)
+- [Mod](/mod/Mod.md)
+- [Work](/mod/Work.md)
+- [Package](/mod/Package.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Package](Package.md)

@@ -182,3 +182,25 @@ func (m *Map[K, V]) Size() int {
 #### 5.6 小结
 
 五个结构共用一套写法：切片做容器，泛型参数定元素类型。列表、栈、队列的底层都是 `[]T`，区别只在进出的位置；集合和映射借 `map` 实现，所以 `T` 和 `K` 都要满足 `comparable`。
+
+## 参考资料
+
+- [官方教程 · 泛型入门](https://go.dev/doc/tutorial/generics)
+- [官方博客 · An Introduction To Generics](https://go.dev/blog/intro-generics)
+- [官方博客 · When To Use Generics](https://go.dev/blog/when-generics)
+- [语言规范 · 类型参数声明](https://go.dev/ref/spec#Type_parameter_declarations)
+
+
+## 同层页面
+
+- [Constraints](/generics/Constraints.md)
+- [Generics](/generics/Generics.md)
+- [Advanced](/generics/Advanced.md)
+- [Performance](/generics/Performance.md)
+- [Syntax](/generics/Syntax.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Performance](Performance.md)
+- [Syntax](Syntax.md)

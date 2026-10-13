@@ -135,3 +135,15 @@ endLoop:
 ### 总结
 
 `goto` 在编译后就是一条跳转指令，运行时没有任何额外成本。它的用处集中在少数几处：跳出深层嵌套、跳到统一的清理或错误处理位置。日常代码里 `break`/`continue` 加标签、`defer` 已经覆盖了绝大部分这类需求，需要写 `goto` 的时候，先想想是不是循环结构没设计好。
+
+## 参考资料
+
+- [语言规范 · 语句](https://go.dev/ref/spec#Statements)
+- [Effective Go · 控制结构](https://go.dev/doc/effective_go#control-structures)
+- [语言规范 · Goto 语句](https://go.dev/ref/spec#Goto_statements)
+- [语言规范 · 标签作用域](https://go.dev/ref/spec#Label_scopes)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Jump](Jump.md)

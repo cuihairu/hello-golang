@@ -21,3 +21,24 @@
 5. **原型模式（Prototype Pattern）**：
    - **概念**：通过复制现有对象来创建新对象，避免创建一个新对象的开销。
    - **适用范围**：需要大量类似对象的创建，并且希望避免使用 new 关键字直接创建对象的场景。
+
+## 参考资料
+
+- [GoF《设计模式》概览（Wikipedia）](https://en.wikipedia.org/wiki/Design_Patterns)
+- [Refactoring.Guru 设计模式目录](https://refactoring.guru/design-patterns)
+- [Effective Go（官方）](https://go.dev/doc/effective_go)
+
+
+## 同层页面
+
+- [AbstractFactory](/dp/AbstractFactory.md)
+- [Adapter](/dp/Adapter.md)
+- [Behavioral](/dp/Behavioral.md)
+- [Composite](/dp/Composite.md)
+- [Decorator](/dp/Decorator.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Composite](Composite.md)
+- [Decorator](Decorator.md)

@@ -79,3 +79,19 @@
 ### 总结
 
 变量有三个共性：一个名字、一个类型（动态语言放运行时定）、一个作用域。可变与否则是范式选择——C 和 Go 赋值后能改，Haskell 这类函数式语言赋值后不可变。
+
+## 参考资料
+
+- [语言规范 · 变量声明](https://go.dev/ref/spec#Variable_declarations)
+- [Effective Go · 变量](https://go.dev/doc/effective_go#variables)
+
+## 同层页面
+
+- [Segment](/var/Segment.md)
+- [VarAndInit](/var/VarAndInit.md)
+- [Assignment](/var/Assignment.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Segment](Segment.md)

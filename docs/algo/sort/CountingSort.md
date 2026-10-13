@@ -111,3 +111,21 @@ func main() {
 ### 总结
 
 计数排序不比较元素，靠统计出现次数完成排序，时间复杂度 $O(n + k)$，而且稳定。前提是整数、取值范围有限：$k$ 一大，$O(n + k)$ 的空间开销就成了硬伤。
+
+## 参考资料
+
+- [计数排序 · Wikipedia](https://en.wikipedia.org/wiki/Counting_sort)
+
+## 同层页面
+
+- [BubbleSort](/algo/sort/BubbleSort.md)
+- [BucketSort](/algo/sort/BucketSort.md)
+- [CocktailSort](/algo/sort/CocktailSort.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [BubbleSort](BubbleSort.md)
+- [BucketSort](BucketSort.md)
+- [CocktailSort](CocktailSort.md)
+- [HeapSort](HeapSort.md)

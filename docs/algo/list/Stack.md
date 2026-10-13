@@ -102,3 +102,20 @@ empty pop ok: false
 ### 总结
 
 链表实现的栈不需要扩容，每次操作都只涉及栈顶指针的修改；与切片实现的栈相比，它牺牲了缓存局部性，换来了稳定的 $O(1)$ 性能。
+
+## 参考资料
+
+- [栈（抽象数据类型）· Wikipedia](https://en.wikipedia.org/wiki/Stack_(abstract_data_type))
+
+
+## 同层页面
+
+- [SkipList](/algo/list/SkipList.md)
+- [DynamicArray](/algo/list/DynamicArray.md)
+- [HashLinkedList](/algo/list/HashLinkedList.md)
+- [list](/algo/list/list.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [list](list.md)

@@ -155,3 +155,24 @@ GRANT ALL PRIVILEGES ON dbname.* TO 'user'@'192.168.1.100';
 ```
 
 最要紧的一条是 SQL 注入：查询一律走参数占位符，不拼接用户输入。其余按需加：传输用 TLS，敏感字段加密存储，账号按最小权限创建，访问记录进审计日志。
+
+## 参考资料
+
+- [官方 · 数据库访问指南](https://go.dev/doc/database/)
+- [官方教程 · 数据库访问](https://go.dev/doc/tutorial/database-access)
+- [database/sql 标准库](https://pkg.go.dev/database/sql)
+
+
+## 同层页面
+
+- [Availability](/db/Availability.md)
+- [Base](/db/Base.md)
+- [ConnectPool](/db/ConnectPool.md)
+- [SQL](/db/SQL.md)
+- [Sharding](/db/Sharding.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [SQL](SQL.md)
+- [Sharding](Sharding.md)

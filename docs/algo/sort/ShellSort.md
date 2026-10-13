@@ -77,3 +77,22 @@ func main() {
 ### 总结
 
 希尔排序原地完成，代码就是外层缩小增量、内层按步长做插入排序的三层循环。最坏 $O(n^2)$，平均约 $O(n \log^2 n)$，都取决于增量序列的选择；它不稳定，相同值的元素可能改变相对位置。
+
+## 参考资料
+
+- [希尔排序 · Wikipedia](https://en.wikipedia.org/wiki/Shellsort)
+
+
+## 同层页面
+
+- [BubbleSort](/algo/sort/BubbleSort.md)
+- [BucketSort](/algo/sort/BucketSort.md)
+- [CocktailSort](/algo/sort/CocktailSort.md)
+- [SelectionSort](/algo/sort/SelectionSort.md)
+- [Sort](/algo/sort/Sort.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [SelectionSort](SelectionSort.md)
+- [Sort](Sort.md)

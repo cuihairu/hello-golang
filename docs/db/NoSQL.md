@@ -136,3 +136,24 @@ func main() {
 | 维护成本      | 需要DBA进行复杂的数据库管理              | 相对较低                                |
 
 选型看三点：数据模型对不对得上应用的访问方式、要不要事务的强一致性、扩展走垂直还是水平。
+
+## 参考资料
+
+- [官方 · 数据库访问指南](https://go.dev/doc/database/)
+- [官方教程 · 数据库访问](https://go.dev/doc/tutorial/database-access)
+- [database/sql 标准库](https://pkg.go.dev/database/sql)
+
+
+## 同层页面
+
+- [Availability](/db/Availability.md)
+- [Base](/db/Base.md)
+- [ConnectPool](/db/ConnectPool.md)
+- [Monitor](/db/Monitor.md)
+- [Normalization](/db/Normalization.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Monitor](Monitor.md)
+- [Normalization](Normalization.md)

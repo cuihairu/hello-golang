@@ -92,3 +92,24 @@ func main() {
 - **工厂方法模式（Factory Method Pattern）**：原型模式可以与工厂方法模式结合使用，工厂方法模式用于选择合适的原型对象，然后使用原型模式进行复制。
 - **生成器模式（Builder Pattern）**：生成器模式关注如何一步一步创建复杂对象，而原型模式关注如何复制现有对象。
 - **单例模式（Singleton Pattern）**：单例模式确保一个类只有一个实例，而原型模式通过复制现有实例来创建新对象。
+
+## 参考资料
+
+- [GoF《设计模式》概览（Wikipedia）](https://en.wikipedia.org/wiki/Design_Patterns)
+- [Refactoring.Guru 设计模式目录](https://refactoring.guru/design-patterns)
+- [Effective Go（官方）](https://go.dev/doc/effective_go)
+
+
+## 同层页面
+
+- [AbstractFactory](/dp/AbstractFactory.md)
+- [Adapter](/dp/Adapter.md)
+- [Behavioral](/dp/Behavioral.md)
+- [Proactor](/dp/Proactor.md)
+- [Proxy](/dp/Proxy.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Proactor](Proactor.md)
+- [Proxy](Proxy.md)

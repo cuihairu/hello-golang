@@ -49,3 +49,23 @@ func main() {
 ### 总结
 
 `math/big` 换来的是精度，代价是比原生类型慢、写起来也更啰嗦（见上文注意事项）。精度不容出错的场景（金融、科学计算）用它；日常显示和统计，`float64` 就够。
+
+## 参考资料
+
+- [语言规范 · 类型](https://go.dev/ref/spec#Types)
+- [math/big 标准库](https://pkg.go.dev/math/big)
+
+
+## 同层页面
+
+- [Assertion](/type/Assertion.md)
+- [Interface](/type/Interface.md)
+- [Map](/type/Map.md)
+- [BaseConv](/type/BaseConv.md)
+- [Bool](/type/Bool.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [BaseConv](BaseConv.md)
+- [Bool](Bool.md)

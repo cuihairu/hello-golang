@@ -190,3 +190,26 @@ func main() {
 - **方法嵌入**：通过结构体嵌入实现类似继承的功能。
 
 接收者选值还是指针，决定了方法能不能改原值，也决定每次调用要不要复制一份接收者。
+
+## 参考资料
+
+- [官方 FAQ · 类型系统](https://go.dev/doc/faq)
+- [语言规范 · 接口类型](https://go.dev/ref/spec#Interface_types)
+- [Effective Go · Methods](https://go.dev/doc/effective_go#methods)
+- [Effective Go · Embedding](https://go.dev/doc/effective_go#embedding)
+- [语言规范 · 方法声明](https://go.dev/ref/spec#Method_declarations)
+
+
+## 同层页面
+
+- [Embedding](/oop/Embedding.md)
+- [Interface](/oop/Interface.md)
+- [PointerReceiver](/oop/PointerReceiver.md)
+- [InterfaceImpl](/oop/InterfaceImpl.md)
+- [OOP](/oop/OOP.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [InterfaceImpl](InterfaceImpl.md)
+- [OOP](OOP.md)

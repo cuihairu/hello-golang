@@ -90,3 +90,9 @@
 12. https://golang.google.cn/doc/jsonv2-migration — v2 迁移口径
 13. https://golang.google.cn/gopls — 语言服务器
 14. https://golang.google.cn/tour/ — 四段式 Tour
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [knowledge](/knowledge.md)
+- [README](README.md)

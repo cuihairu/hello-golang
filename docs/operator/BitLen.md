@@ -62,3 +62,27 @@ func main() {
 - Go 语言本身没有直接的位长度运算符。
 - 你可以使用 `math/bits` 包中的 `bits.Len` 函数来计算无符号整数的位长度。
 - 也可以手动实现计算函数来获得整数的位长度，适用于各种整数类型。
+
+## 参考资料
+
+- [语言规范 · 运算符](https://go.dev/ref/spec#Operators)
+
+## 同层页面
+
+- [Arithmetic](/operator/Arithmetic.md)
+- [Assignment](/operator/Assignment.md)
+- [Bitwise](/operator/Bitwise.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Arithmetic](Arithmetic.md)
+- [Assignment](Assignment.md)
+- [Bitwise](Bitwise.md)
+- [Cap](Cap.md)
+- [Logical](Logical.md)
+- [Operator](Operator.md)
+- [Receiver](Receiver.md)
+- [Relational](Relational.md)
+- [TypeAssertion](TypeAssertion.md)
+- [Unary](Unary.md)

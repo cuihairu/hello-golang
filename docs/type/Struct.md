@@ -516,3 +516,22 @@ func main() {
 ### 小结
 
 这一章的落点：字段类型和对齐方式决定占用空间，空`struct{}`占 0 字节；值接收者和指针接收者决定方法集，也就决定能不能满足接口；组合用嵌入，聚合用指针；序列化靠标签里的字段名。
+
+## 参考资料
+
+- [语言规范 · 类型](https://go.dev/ref/spec#Types)
+- [语言规范 · 结构体类型](https://go.dev/ref/spec#Struct_types)
+
+
+## 同层页面
+
+- [Assertion](/type/Assertion.md)
+- [Interface](/type/Interface.md)
+- [Map](/type/Map.md)
+- [String](/type/String.md)
+- [Switch](/type/Switch.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [String](String.md)

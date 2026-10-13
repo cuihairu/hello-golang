@@ -62,3 +62,24 @@
 - **Vim爱好者**：配置vim-go插件，把 Vim 用成顺手的 Go 开发环境。
 
 选哪款取决于自己的需求和习惯，上手写几个程序再定。
+
+## 参考资料
+
+- [官方 · 安装与管理 Go 工具链](https://go.dev/doc/manage-install)
+- [官方教程 · 入门](https://go.dev/doc/tutorial/getting-started)
+- [官方 · Go Modules 使用指南](https://go.dev/doc/modules/)
+
+
+## 同层页面
+
+- [Env](/env/Env.md)
+- [Install](/env/Install.md)
+- [GOPROXY](/env/GOPROXY.md)
+- [Vim](/env/Vim.md)
+- [vscode](/env/vscode.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Vim](Vim.md)
+- [vscode](vscode.md)

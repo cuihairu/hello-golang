@@ -99,3 +99,15 @@ func main() {
 - 切片共享底层数组：从大切片切出一小片长期持有，会把整个大数组都留在内存里。要切断关联就 `append([]T(nil), sub...)` 拷一份。
 - map 和切片作为结构体字段是引用头，复制结构体不复制底层数据。
 - `unsafe` 绕过类型系统后，零值保证和 GC 的可达性分析都可能失效，除非维护运行时内部结构，否则不用。
+
+## 参考资料
+
+- [官方 GC 指南 · 逃逸分析与栈上分配](https://go.dev/doc/gc-guide#Escape_analysis)
+- [官方 GC 指南](https://go.dev/doc/gc-guide)
+- [官方 GC 指南 · 优化指南](https://go.dev/doc/gc-guide#Optimization_guide)
+- [官方 GC 指南 · 一般建议](https://go.dev/doc/gc-guide#General_advice)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [glossary](/glossary.md)

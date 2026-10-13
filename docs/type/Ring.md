@@ -131,3 +131,23 @@ type Ring struct {
 - 循环调度或轮询
 
 首尾相接是它最大的便利：走到尾再 `Next()` 就回到头，不用写普通链表那套边界判断。
+
+## 参考资料
+
+- [语言规范 · 类型](https://go.dev/ref/spec#Types)
+- [container/ring 标准库](https://pkg.go.dev/container/ring)
+
+
+## 同层页面
+
+- [Assertion](/type/Assertion.md)
+- [Interface](/type/Interface.md)
+- [Map](/type/Map.md)
+- [Pointer](/type/Pointer.md)
+- [Rune](/type/Rune.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Pointer](Pointer.md)
+- [Rune](Rune.md)

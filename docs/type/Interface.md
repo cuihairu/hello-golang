@@ -317,3 +317,34 @@ func main() {
 ### 小结
 
 接口变量由 `itab` 和 `data` 组成：前者是接口和具体类型的方法表，后者指向数据。类型断言和反射读的都是这套结构。写代码时接口保持小，反射留到没有别的写法时再用。
+
+## 参考资料
+
+- [语言规范 · 类型](https://go.dev/ref/spec#Types)
+- [语言规范 · 接口类型](https://go.dev/ref/spec#Interface_types)
+- [Effective Go · Interfaces](https://go.dev/doc/effective_go#interfaces)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [glossary](/glossary.md)
+- [Array](Array.md)
+- [BaseConv](BaseConv.md)
+- [Big](Big.md)
+- [Bool](Bool.md)
+- [Byte](Byte.md)
+- [Complex](Complex.md)
+- [CompositeType](CompositeType.md)
+- [Conv](Conv.md)
+- [Float](Float.md)
+- [HtmlTemplate](HtmlTemplate.md)
+- [Int](Int.md)
+- [Json](Json.md)
+- [LinkedList](LinkedList.md)
+- [Pointer](Pointer.md)
+- [Ring](Ring.md)
+- [Rune](Rune.md)
+- [String](String.md)
+- [Struct](Struct.md)
+- [Template](Template.md)
+- [Type](Type.md)

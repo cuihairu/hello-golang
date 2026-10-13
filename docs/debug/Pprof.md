@@ -202,3 +202,19 @@ list work
 ### 小结
 
 `pprof` 的工作流是三步：导入 `net/http/pprof` 暴露端点，`go tool pprof` 采数据，交互界面里用 `top`、`list`、`web` 看结果。火焰图把同一份数据画成图，矩形宽度就是耗时占比。死锁从 goroutine 堆栈查，CPU 热点从 `top` 查。
+
+## 参考资料
+
+- [官方 · 诊断（Diagnostics）](https://go.dev/doc/diagnostics)
+- [runtime/pprof 标准库](https://pkg.go.dev/runtime/pprof)
+- [官方博客 · Profiling Go Programs](https://go.dev/blog/pprof)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Debug](Debug.md)
+- [Delve](Delve.md)
+- [Expvar](Expvar.md)
+- [GDB](GDB.md)
+- [Utils](Utils.md)
+- [glossary](/glossary.md)

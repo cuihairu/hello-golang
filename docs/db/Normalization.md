@@ -137,3 +137,24 @@ BC范式是3NF的加强版，要求每个主属性完全依赖于候选键。
 | T2     | 李四     |
 
 这样，每个主属性都完全依赖于候选键，满足了BCNF。
+
+## 参考资料
+
+- [官方 · 数据库访问指南](https://go.dev/doc/database/)
+- [官方教程 · 数据库访问](https://go.dev/doc/tutorial/database-access)
+- [database/sql 标准库](https://pkg.go.dev/database/sql)
+
+
+## 同层页面
+
+- [Availability](/db/Availability.md)
+- [Base](/db/Base.md)
+- [ConnectPool](/db/ConnectPool.md)
+- [NoSQL](/db/NoSQL.md)
+- [ORM](/db/ORM.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [NoSQL](NoSQL.md)
+- [ORM](ORM.md)

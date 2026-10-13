@@ -44,3 +44,23 @@ CSP 里的进程靠消息传递通信，不共享内存；消息可以同步（�
 ### 总结
 
 Go 的并发模型来自 CSP 和 Actor 模型：`goroutine` 是并发执行单元，`channel` 负责通信和同步，调度器把多个 `goroutine` 映射到少量操作系统线程上。写并发程序时先想清楚数据在 `goroutine` 之间怎么流动：能通过 `channel` 传递就不共享内存，锁也就省了。
+
+## 参考资料
+
+- [Effective Go · 并发](https://go.dev/doc/effective_go#concurrency)
+- [Go 内存模型](https://go.dev/ref/mem)
+- [sync 标准库](https://pkg.go.dev/sync)
+
+
+## 同层页面
+
+- [Actor](/concurrency/Actor.md)
+- [CSP](/concurrency/CSP.md)
+- [Chan](/concurrency/Chan.md)
+- [ChanImpl](/concurrency/ChanImpl.md)
+- [ErrorGroup](/concurrency/ErrorGroup.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Actor](Actor.md)

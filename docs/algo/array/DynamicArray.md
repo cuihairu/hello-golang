@@ -123,3 +123,19 @@ func main() {
 ### 总结
 
 切片用指针、长度、容量三个字段描述一段底层数组，`append` 在容量不足时按双倍增长扩容，扩容可能重新分配内存。多个切片可能共享同一个底层数组，一处修改会波及其他切片，这是切片出错最常见的来源。
+
+## 参考资料
+
+- [动态数组 · Wikipedia](https://en.wikipedia.org/wiki/Dynamic_array)
+- [官方博客 · Go Slices: usage and internals](https://go.dev/blog/slices-intro)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Array](Array.md)
+- [CircularBuffer](CircularBuffer.md)
+- [DoubleEndedQueue](DoubleEndedQueue.md)
+- [MultidimensionalArray](MultidimensionalArray.md)
+- [PriorityQueue](PriorityQueue.md)
+- [SparseArray](SparseArray.md)
+- [glossary](/glossary.md)

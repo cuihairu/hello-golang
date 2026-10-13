@@ -247,3 +247,20 @@ func main() {
 - 高并发、性能敏感的场景优先 `zap` 或 `zerolog`。
 - 需要钩子和自定义格式化器时选 `logrus`，它的功能最全，代价是性能相对较低。
 
+## 参考资料
+
+- [log 标准库](https://pkg.go.dev/log)
+- [官方博客 · Structured Logging with slog](https://go.dev/blog/slog)
+
+## 同层页面
+
+- [Aggregation](/log/Aggregation.md)
+- [Log](/log/Log.md)
+- [ModLog](/log/ModLog.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Aggregation](Aggregation.md)
+- [Log](Log.md)
+- [ModLog](ModLog.md)

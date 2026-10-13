@@ -151,3 +151,21 @@ func main() {
 - **选择**：当需要修改接收者状态或对象较大时，使用指针接收者；当对象较小且方法不修改对象状态时，使用值接收者。
 
 拿不准时看方法要不要改字段：要改就用指针接收者，不改就用值接收者，同一个类型内部保持一致。
+
+## 参考资料
+
+- [官方 FAQ · 类型系统](https://go.dev/doc/faq)
+- [语言规范 · 接口类型](https://go.dev/ref/spec#Interface_types)
+- [Effective Go · Methods](https://go.dev/doc/effective_go#methods)
+- [Effective Go · Embedding](https://go.dev/doc/effective_go#embedding)
+- [语言规范 · 方法集](https://go.dev/ref/spec#Method_sets)
+- [Effective Go · 指针 vs 值](https://go.dev/doc/effective_go#pointers_vs_values)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [glossary](/glossary.md)
+- [InterfaceImpl](InterfaceImpl.md)
+- [Methods](Methods.md)
+- [OOP](OOP.md)
+- [Poly](Poly.md)

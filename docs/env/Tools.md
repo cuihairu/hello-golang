@@ -159,3 +159,24 @@ Go 工具链随安装包一起到位：编译 `go build`、运行 `go run`、测
 ### 结论
 
 一条命令对应一件事：`go build` 出二进制，`go test` 跑测试，`go vet` 做静态检查，`go tool pprof` 看 CPU 和内存，`dlv` 设断点单步。`go fmt` 和 `go vet` 适合挂在提交前的检查里。
+
+## 参考资料
+
+- [官方 · 安装与管理 Go 工具链](https://go.dev/doc/manage-install)
+- [官方教程 · 入门](https://go.dev/doc/tutorial/getting-started)
+- [官方 · Go Modules 使用指南](https://go.dev/doc/modules/)
+
+
+## 同层页面
+
+- [Env](/env/Env.md)
+- [Install](/env/Install.md)
+- [GOPROXY](/env/GOPROXY.md)
+- [Modules](/env/Modules.md)
+- [Vim](/env/Vim.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Modules](Modules.md)
+- [Vim](Vim.md)

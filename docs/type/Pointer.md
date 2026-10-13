@@ -158,3 +158,22 @@ func main() {
 ### 总结
 
 `&` 取地址，`*` 解引用，`new` 分配内存并返回指针。三个符号之外，Go 的指针还留着一条和 C 的关键差别：不支持指针算术运算，加上自动垃圾回收，悬挂指针这类问题少了一大截。
+
+## 参考资料
+
+- [语言规范 · 类型](https://go.dev/ref/spec#Types)
+- [语言规范 · 指针类型](https://go.dev/ref/spec#Pointer_types)
+- [Effective Go · 指针 vs 值](https://go.dev/doc/effective_go#pointers_vs_values)
+
+
+## 同层页面
+
+- [Assertion](/type/Assertion.md)
+- [Interface](/type/Interface.md)
+- [Map](/type/Map.md)
+- [Ring](/type/Ring.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Ring](Ring.md)

@@ -22,3 +22,22 @@
 
 - **用户交互**：读取用户输入、显示结果、保存设置都走 IO。
 
+## 参考资料
+
+- [io 标准库](https://pkg.go.dev/io)
+- [os 标准库](https://pkg.go.dev/os)
+
+
+## 同层页面
+
+- [Advanced](/io/Advanced.md)
+- [CommonFormats](/io/CommonFormats.md)
+- [EfficientIO](/io/EfficientIO.md)
+- [FileOperation](/io/FileOperation.md)
+- [InputOutput](/io/InputOutput.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [FileOperation](FileOperation.md)
+- [InputOutput](InputOutput.md)

@@ -93,3 +93,23 @@ func main() {
 - **性能考虑**：复数运算的性能可能会低于实数运算，因为复数运算涉及更多的计算步骤。
 
 实部和虚部用 `real`、`imag` 函数取，加减乘除直接用运算符，写法和实数基本一样。
+
+## 参考资料
+
+- [语言规范 · 类型](https://go.dev/ref/spec#Types)
+- [语言规范 · 数值类型](https://go.dev/ref/spec#Numeric_types)
+
+
+## 同层页面
+
+- [Assertion](/type/Assertion.md)
+- [Interface](/type/Interface.md)
+- [Map](/type/Map.md)
+- [Byte](/type/Byte.md)
+- [CompositeType](/type/CompositeType.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Byte](Byte.md)
+- [CompositeType](CompositeType.md)

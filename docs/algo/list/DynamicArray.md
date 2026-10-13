@@ -118,3 +118,22 @@ after remove: [20 55 30 40 50 60]
 ### 总结
 
 动态数组仍能按下标 $O(1)$ 访问元素，倍增扩容则让它可以一直往后追加。理解了它，就明白了 Go 切片 `len/cap` 的由来，也明白了为什么频繁 `append` 时预分配容量能减少拷贝。
+
+## 参考资料
+
+- [动态数组 · Wikipedia](https://en.wikipedia.org/wiki/Dynamic_array)
+
+## 同层页面
+
+- [SkipList](/algo/list/SkipList.md)
+- [HashLinkedList](/algo/list/HashLinkedList.md)
+- [Queue](/algo/list/Queue.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [HashLinkedList](HashLinkedList.md)
+- [Queue](Queue.md)
+- [SinglyLinkedList](SinglyLinkedList.md)
+- [Stack](Stack.md)
+- [list](list.md)

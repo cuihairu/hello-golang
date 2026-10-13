@@ -156,3 +156,21 @@ func main() {
 - **错误处理模式**：通过检查错误值（是否为 `nil`）、返回错误和处理错误来进行错误管理。
 
 错误就是一个实现了 `Error() string` 的值，和普通返回值一样传递；调用链上的每一层都可以选择处理它，或者用 `fmt.Errorf` 带上 `%w` 包住错误继续向上传递。
+
+## 参考资料
+
+- [官方博客 · Error handling and Go](https://go.dev/blog/error-handling-and-go)
+- [官方博客 · Errors are values](https://go.dev/blog/errors-are-values)
+- [errors 标准库](https://pkg.go.dev/errors)
+- [Effective Go · Errors](https://go.dev/doc/effective_go#errors)
+
+## 同层页面
+
+- [Error](/error/Error.md)
+- [Errors](/error/Errors.md)
+- [PanicAndRecover](/error/PanicAndRecover.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Error](Error.md)

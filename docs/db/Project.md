@@ -313,3 +313,24 @@ go-web-app/
 ```
 
 四个包各管一段：`db` 建连接，`model` 写 SQL，`handler` 收发 HTTP，`main` 挂路由。CRUD 读写全在 `model`，换成 Echo 时改的是 `main` 里的路由和处理器，`model` 一行不动。
+
+## 参考资料
+
+- [官方 · 数据库访问指南](https://go.dev/doc/database/)
+- [官方教程 · 数据库访问](https://go.dev/doc/tutorial/database-access)
+- [database/sql 标准库](https://pkg.go.dev/database/sql)
+
+
+## 同层页面
+
+- [Availability](/db/Availability.md)
+- [Base](/db/Base.md)
+- [ConnectPool](/db/ConnectPool.md)
+- [Performance](/db/Performance.md)
+- [Readme](/db/Readme.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Performance](Performance.md)
+- [Readme](Readme.md)

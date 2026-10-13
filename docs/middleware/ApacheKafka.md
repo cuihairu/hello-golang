@@ -114,3 +114,18 @@ Apache Kafka 是一个开源的分布式流处理平台，专为高吞吐量、�
 ### 小结
 
 上面两段代码正好对上前面的架构概念：生产者的 `RequiredAcks` 对应 3.3 节的副本与 leader 读写机制，`Retry.Max` 是持久化之外又一层可靠性保险；消费者指定 partition 和 `OffsetNewest`，对应"每个 partition 是一个有序的消息日志"这一设计。两个客户端库按需二选一，导入路径记得用 `github.com/IBM/sarama`。
+
+## 参考资料
+
+- [Apache Kafka 官方文档](https://kafka.apache.org/documentation/)
+
+## 同层页面
+
+- [MessageQueue](/middleware/MessageQueue.md)
+- [Readme](/middleware/Readme.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [MessageQueue](MessageQueue.md)
+- [Readme](Readme.md)

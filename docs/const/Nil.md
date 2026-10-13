@@ -100,3 +100,17 @@ func main() {
 ### 总结
 
 `nil` 是指针、切片、映射、通道、接口和函数的零值，含义随类型而变。对值为 `nil` 的变量做操作之前，先判空或初始化。
+
+## 参考资料
+
+- [语言规范 · 常量声明](https://go.dev/ref/spec#Constant_declarations)
+- [官方博客 · Constants](https://go.dev/blog/constants)
+- [语言规范 · 预定义标识符（nil）](https://go.dev/ref/spec#Predeclared_identifiers)
+- [语言规范 · 零值](https://go.dev/ref/spec#The_zero_value)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Const](Const.md)
+- [TrueAndFalse](TrueAndFalse.md)
+- [glossary](/glossary.md)

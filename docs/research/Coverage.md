@@ -122,3 +122,10 @@
 12. https://golang.google.cn/solutions/use-cases — 四类场景
 13. https://golang.google.cn/solutions/cloud/ 、`/clis/`、`/webdev/`、`/devops/` — 四类场景详情
 14. https://book.douban.com/tag/Go — 书籍章节对照所用书单
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [knowledge](/knowledge.md)
+- [OfficialDocs](OfficialDocs.md)
+- [README](README.md)

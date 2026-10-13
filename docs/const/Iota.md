@@ -89,3 +89,16 @@ func main() {
 ### 总结
 
 状态码、权限位这类一组相关的常量，都用 `const` 加 `iota` 来定义：常量组内自动从 0 递增，想要跳值就用 `_` 占位。
+
+## 参考资料
+
+- [语言规范 · 常量声明](https://go.dev/ref/spec#Constant_declarations)
+- [官方博客 · Constants](https://go.dev/blog/constants)
+- [语言规范 · Iota](https://go.dev/ref/spec#Iota)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Const](Const.md)
+- [TrueAndFalse](TrueAndFalse.md)
+- [glossary](/glossary.md)

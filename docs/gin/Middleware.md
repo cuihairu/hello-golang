@@ -206,3 +206,23 @@ Middleware1 after
 ### 总结
 
 中间件本体是一个 `func(*gin.Context)`：用 `Use` 挂到全局或路由组上，按注册顺序执行，`c.Next()` 之前的代码在业务处理前跑、之后的代码在后跑，`AbortWithStatusJSON` 则直接截断请求。Gin 的 `gin.Logger()`、`gin.Recovery()` 和第三方 `cors` 都是同一个壳。
+
+## 参考资料
+
+- [Gin 官方文档](https://gin-gonic.com/en/docs/)
+- [Gin · pkg.go.dev](https://pkg.go.dev/github.com/gin-gonic/gin)
+
+
+## 同层页面
+
+- [Config](/gin/Config.md)
+- [Debug](/gin/Debug.md)
+- [Error](/gin/Error.md)
+- [Gin](/gin/Gin.md)
+- [Optimize](/gin/Optimize.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Gin](Gin.md)
+- [Optimize](Optimize.md)

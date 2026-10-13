@@ -108,3 +108,24 @@ func main() {
 - **适配器模式（Adapter Pattern）**：适配器模式用于将一个接口转换为另一个接口，而外观模式用于简化子系统的使用，为子系统提供一个统一的接口。
 - **代理模式（Proxy Pattern）**：代理模式用于控制对对象的访问，而外观模式用于为子系统提供一个简单的接口。
 - **抽象工厂模式（Abstract Factory Pattern）**：抽象工厂模式可以与外观模式结合使用，为客户端提供一个创建子系统对象的高层接口。
+
+## 参考资料
+
+- [GoF《设计模式》概览（Wikipedia）](https://en.wikipedia.org/wiki/Design_Patterns)
+- [Refactoring.Guru 设计模式目录](https://refactoring.guru/design-patterns)
+- [Effective Go（官方）](https://go.dev/doc/effective_go)
+
+
+## 同层页面
+
+- [AbstractFactory](/dp/AbstractFactory.md)
+- [Adapter](/dp/Adapter.md)
+- [Behavioral](/dp/Behavioral.md)
+- [DesignPatterns](/dp/DesignPatterns.md)
+- [FactoryMethod](/dp/FactoryMethod.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [DesignPatterns](DesignPatterns.md)
+- [FactoryMethod](FactoryMethod.md)

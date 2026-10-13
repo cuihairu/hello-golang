@@ -148,3 +148,23 @@ func main() {
 ### 小结
 
 `sync/atomic` 按类型提供了加减、读、写和 CAS 四类操作，计数器这类共享变量用它们就够了，不必上锁。
+
+## 参考资料
+
+- [sync 标准库](https://pkg.go.dev/sync)
+- [Go 内存模型](https://go.dev/ref/mem)
+- [官方博客 · Introducing the Go Race Detector](https://go.dev/blog/race-detector)
+- [sync/atomic 标准库](https://pkg.go.dev/sync/atomic)
+- [Go 内存模型 · 原子操作](https://go.dev/ref/mem#atomic)
+
+## 同层页面
+
+- [Primitives](/sync/Primitives.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [glossary](/glossary.md)
+- [Primitives](Primitives.md)
+- [Spinlock](Spinlock.md)
+- [Sync](Sync.md)

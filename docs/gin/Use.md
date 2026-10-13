@@ -257,3 +257,23 @@ r.Use(gin.Recovery())
 
 ### 总结
 本章覆盖 Gin 的六块基本用法：路由与请求处理、中间件、参数解析、返回响应、错误处理，以及内置的 Logger 和 Recovery 中间件。日常的接口开发，这些就够用了。
+
+## 参考资料
+
+- [Gin 官方文档](https://gin-gonic.com/en/docs/)
+- [Gin · pkg.go.dev](https://pkg.go.dev/github.com/gin-gonic/gin)
+
+
+## 同层页面
+
+- [Config](/gin/Config.md)
+- [Debug](/gin/Debug.md)
+- [Error](/gin/Error.md)
+- [Source](/gin/Source.md)
+- [advanced](/gin/advanced.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Source](Source.md)
+- [advanced](advanced.md)

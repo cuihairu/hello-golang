@@ -311,3 +311,24 @@ func main() {
 ### 小结
 
 互斥锁和读写锁保护共享数据，WaitGroup 等一组 goroutine 收工，Cond 负责等待和唤醒，Once 保证初始化只跑一次，原子操作省掉加锁的开销，信号量则要自己拿 Cond 和 Mutex 拼。多数场景从 `sync.Mutex` 和 `sync.WaitGroup` 起步就够，遇到读多写少再换 `RWMutex`。
+
+## 参考资料
+
+- [sync 标准库](https://pkg.go.dev/sync)
+- [Go 内存模型](https://go.dev/ref/mem)
+- [官方博客 · Introducing the Go Race Detector](https://go.dev/blog/race-detector)
+- [Go 内存模型 · 同步](https://go.dev/ref/mem#synchronization)
+
+
+## 同层页面
+
+- [Atomic](/sync/Atomic.md)
+- [Context](/sync/Context.md)
+- [CriticalSection](/sync/CriticalSection.md)
+- [Mutex](/sync/Mutex.md)
+- [RWMutex](/sync/RWMutex.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Atomic](Atomic.md)

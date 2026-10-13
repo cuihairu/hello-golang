@@ -233,3 +233,22 @@ Go 语言的 `math` 包提供了常用的数学函数，覆盖绝对值、幂运
 ### 总结
 
 本节列出了 `math` 包的绝对值、幂、平方根、三角、指数、对数、双曲函数，以及 `math/rand` 的伪随机数。每个示例都标注了输出值，可以逐条对照验证。
+
+## 参考资料
+
+- [math 标准库](https://pkg.go.dev/math)
+- [math/rand 标准库](https://pkg.go.dev/math/rand)
+
+## 同层页面
+
+- [Calc](/math/Calc.md)
+- [LinearAlgebra](/math/LinearAlgebra.md)
+- [Math](/math/Math.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Calc](Calc.md)
+- [LinearAlgebra](LinearAlgebra.md)
+- [Math](Math.md)
+- [MathRand](MathRand.md)

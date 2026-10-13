@@ -295,3 +295,25 @@ func main() {
 - **`recover`**：从 `panic` 中恢复。
 
 其中 `recover` 必须写在 `defer` 的函数里才能捕获 `panic`，上面的 `safeDivision` 就是这么用的；其余函数直接调用即可。
+
+## 参考资料
+
+- [语言规范 · 函数声明](https://go.dev/ref/spec#Function_declarations)
+- [语言规范 · 调用](https://go.dev/ref/spec#Calls)
+- [Effective Go · 函数](https://go.dev/doc/effective_go#functions)
+- [语言规范 · 函数字面量](https://go.dev/ref/spec#Function_literals)
+
+
+## 同层页面
+
+- [AnonymousFunc](/func/AnonymousFunc.md)
+- [Defer](/func/Defer.md)
+- [VariadicParameters](/func/VariadicParameters.md)
+- [History](/func/History.md)
+- [MultipleReturnValues](/func/MultipleReturnValues.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [History](History.md)
+- [MultipleReturnValues](MultipleReturnValues.md)

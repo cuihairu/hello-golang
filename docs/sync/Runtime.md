@@ -147,3 +147,17 @@ func main() {
 ### 总结
 
 runtime 层面要记的就三件事：并行度上限由 `GOMAXPROCS` 决定，它控制的是 P 的数量；共享变量要么加锁（`sync.Mutex`）要么走 `sync/atomic`；等一组 goroutine 收尾用 `sync.WaitGroup`。这三条选对了，绝大多数并发问题就不会出现。
+
+## 参考资料
+
+- [sync 标准库](https://pkg.go.dev/sync)
+- [Go 内存模型](https://go.dev/ref/mem)
+- [官方博客 · Introducing the Go Race Detector](https://go.dev/blog/race-detector)
+- [runtime 标准库](https://pkg.go.dev/runtime)
+- [官方 · Go 调度器设计文档（golang.org/s/go11sched）](https://golang.org/s/go11sched)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [glossary](/glossary.md)
+- [Spinlock](Spinlock.md)

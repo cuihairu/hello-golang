@@ -129,3 +129,24 @@ func main() {
 - **导入**：使用 `import` 语句来导入包，支持基本导入和别名导入。可以导入多个包，并使用 `_` 导入包以执行其初始化函数但不直接使用它。
 
 判断一个标识符能不能被包外看到，只看首字母：大写导出，小写包内私有；`_` 导入只跑包的初始化，不占名字。
+
+## 参考资料
+
+- [官方 · Go Modules 使用指南](https://go.dev/doc/modules/)
+- [Go Modules Reference](https://go.dev/ref/mod)
+- [官方博客 · Using Go Modules](https://go.dev/blog/using-go-modules)
+
+
+## 同层页面
+
+- [Init](/mod/Init.md)
+- [Mod](/mod/Mod.md)
+- [Work](/mod/Work.md)
+- [New](/mod/New.md)
+- [Pkg](/mod/Pkg.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [New](New.md)
+- [Pkg](Pkg.md)

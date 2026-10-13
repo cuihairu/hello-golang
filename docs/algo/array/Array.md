@@ -94,3 +94,22 @@ b = [Go C Python]
 ### 总结
 
 数组以连续内存换取了最快的随机访问速度，是切片、动态数组、哈希桶等许多结构的基础。在 Go 中数组是值类型且长度属于类型，因此通常以切片的形式使用数组语义。
+
+## 参考资料
+
+- [数组（数据结构）· Wikipedia](https://en.wikipedia.org/wiki/Array_data_structure)
+
+## 同层页面
+
+- [DynamicArray](/algo/array/DynamicArray.md)
+- [CircularBuffer](/algo/array/CircularBuffer.md)
+- [DoubleEndedQueue](/algo/array/DoubleEndedQueue.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [CircularBuffer](CircularBuffer.md)
+- [DoubleEndedQueue](DoubleEndedQueue.md)
+- [MultidimensionalArray](MultidimensionalArray.md)
+- [PriorityQueue](PriorityQueue.md)
+- [SparseArray](SparseArray.md)

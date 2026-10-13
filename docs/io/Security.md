@@ -192,3 +192,23 @@ func main() {
 ```
 
 四段代码分别对应四件事：`os.Chmod` 设权限，AES-CFB 加解密，正则校验文件名，SHA-256 算校验和，都能直接跑。
+
+## 参考资料
+
+- [io 标准库](https://pkg.go.dev/io)
+- [os 标准库](https://pkg.go.dev/os)
+
+
+## 同层页面
+
+- [Advanced](/io/Advanced.md)
+- [CommonFormats](/io/CommonFormats.md)
+- [EfficientIO](/io/EfficientIO.md)
+- [ModPath](/io/ModPath.md)
+- [Utils](/io/Utils.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [ModPath](ModPath.md)
+- [Utils](Utils.md)

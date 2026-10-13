@@ -196,3 +196,21 @@ output {
 - **自动化**：使用自动化工具和脚本进行日志收集和处理，减少人工操作。
 - **安全性**：确保日志数据的安全传输和存储，保护敏感信息。
 - **性能优化**：在高并发场景下，优化日志收集和处理的性能，避免影响应用程序的正常运行。
+
+## 参考资料
+
+- [log 标准库](https://pkg.go.dev/log)
+- [官方博客 · Structured Logging with slog](https://go.dev/blog/slog)
+
+## 同层页面
+
+- [LibLog](/log/LibLog.md)
+- [Log](/log/Log.md)
+- [ModLog](/log/ModLog.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [LibLog](LibLog.md)
+- [Log](Log.md)
+- [ModLog](ModLog.md)

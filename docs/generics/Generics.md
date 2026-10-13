@@ -67,3 +67,20 @@ func (b *Box[T]) GetContent() T {
 #### 1.6 小结
 
 核心语法一条：方括号里写类型参数，约束用接口表达，编译器能推断时可以不写。后面的章节看泛型在数据结构和算法里的具体用法。
+
+## 参考资料
+
+- [官方教程 · 泛型入门](https://go.dev/doc/tutorial/generics)
+- [官方博客 · An Introduction To Generics](https://go.dev/blog/intro-generics)
+- [官方博客 · When To Use Generics](https://go.dev/blog/when-generics)
+- [语言规范 · 类型参数声明](https://go.dev/ref/spec#Type_parameter_declarations)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Advanced](Advanced.md)
+- [Pattern](Pattern.md)
+- [Performance](Performance.md)
+- [Structure](Structure.md)
+- [Syntax](Syntax.md)
+- [glossary](/glossary.md)

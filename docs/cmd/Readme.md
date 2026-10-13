@@ -20,3 +20,21 @@ Go 是静态类型、编译型的语言，编译产物是单个二进制文件�
 3. **数据处理**：日志分析、数据转换。
 4. **自动化脚本**：构建部署、自动化运维。
 
+## 参考资料
+
+- [flag 标准库](https://pkg.go.dev/flag)
+- [os/exec 标准库](https://pkg.go.dev/os/exec)
+
+
+## 同层页面
+
+- [Design](/cmd/Design.md)
+- [Flag](/cmd/Flag.md)
+- [Lib](/cmd/Lib.md)
+- [Parse](/cmd/Parse.md)
+- [Syntax](/cmd/Syntax.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Syntax](Syntax.md)

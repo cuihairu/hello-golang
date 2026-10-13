@@ -85,3 +85,21 @@ func main() {
 ### 总结
 
 程序类型定义了数据的结构和操作，是编程语言的基础。静态还是动态、强还是弱，不同的组合决定了错误在编译期还是运行期暴露，也影响写代码的方式。
+
+## 参考资料
+
+- [语言规范 · 类型](https://go.dev/ref/spec#Types)
+
+
+## 同层页面
+
+- [Assertion](/type/Assertion.md)
+- [Interface](/type/Interface.md)
+- [Map](/type/Map.md)
+- [Template](/type/Template.md)
+- [TypeInference](/type/TypeInference.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Template](Template.md)

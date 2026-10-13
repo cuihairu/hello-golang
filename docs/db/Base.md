@@ -109,3 +109,37 @@ ER 模型用实体和关系描述数据库的结构，设计时先用它把表�
 ##### 3.4.4 BC范式（BCNF）
 - **定义**：满足3NF，并且每个主属性都完全依赖于候选键。
 - **示例**：确保所有主属性的依赖关系都是通过候选键直接建立的。
+
+## 参考资料
+
+- [官方 · 数据库访问指南](https://go.dev/doc/database/)
+- [官方教程 · 数据库访问](https://go.dev/doc/tutorial/database-access)
+- [database/sql 标准库](https://pkg.go.dev/database/sql)
+
+## 同层页面
+
+- [Availability](/db/Availability.md)
+- [ConnectPool](/db/ConnectPool.md)
+- [GraphQL](/db/GraphQL.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Availability](Availability.md)
+- [ConnectPool](ConnectPool.md)
+- [GraphQL](GraphQL.md)
+- [Install](Install.md)
+- [Lib](Lib.md)
+- [Migrate](Migrate.md)
+- [Mock](Mock.md)
+- [Monitor](Monitor.md)
+- [NoSQL](NoSQL.md)
+- [Normalization](Normalization.md)
+- [ORM](ORM.md)
+- [Performance](Performance.md)
+- [Project](Project.md)
+- [Readme](Readme.md)
+- [SQL](SQL.md)
+- [Security](Security.md)
+- [Sharding](Sharding.md)
+- [Tx](Tx.md)

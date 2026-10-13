@@ -174,3 +174,24 @@ Redis 通过内存占用和访问速度的权衡，选择最合适的数据结�
    ```
 
 这几段合起来就是前面场景的 Go 写法：`LPush`/`RPush` 入队，`RPop`/`LRange` 读取，`BRPop` 阻塞等队列里来新元素。
+
+## 参考资料
+
+- [Redis 官方命令手册](https://redis.io/commands/)
+- [go-redis 官方客户端](https://github.com/redis/go-redis)
+- [go-redis · pkg.go.dev](https://pkg.go.dev/github.com/redis/go-redis/v9)
+
+
+## 同层页面
+
+- [Bitmap](/redis/Bitmap.md)
+- [Geospatial](/redis/Geospatial.md)
+- [Hash](/redis/Hash.md)
+- [Install](/redis/Install.md)
+- [Readme](/redis/Readme.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Install](Install.md)
+- [Readme](Readme.md)

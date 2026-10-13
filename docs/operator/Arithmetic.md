@@ -180,3 +180,28 @@ func main() {
 - **自增和自减** 运算符用于将变量的值增加或减少1。
 
 记两条容易踩的：整数除法向零取整，`++` 和 `--` 是语句，不是运算符。
+
+## 参考资料
+
+- [语言规范 · 运算符](https://go.dev/ref/spec#Operators)
+- [语言规范 · 算术运算符](https://go.dev/ref/spec#Arithmetic_operators)
+
+## 同层页面
+
+- [Assignment](/operator/Assignment.md)
+- [BitLen](/operator/BitLen.md)
+- [Bitwise](/operator/Bitwise.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Assignment](Assignment.md)
+- [BitLen](BitLen.md)
+- [Bitwise](Bitwise.md)
+- [Cap](Cap.md)
+- [Logical](Logical.md)
+- [Operator](Operator.md)
+- [Receiver](Receiver.md)
+- [Relational](Relational.md)
+- [TypeAssertion](TypeAssertion.md)
+- [Unary](Unary.md)

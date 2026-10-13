@@ -197,3 +197,21 @@ func main() {
 ### 总结
 
 `:=` 是函数内的简短声明，`var` 可以先声明再赋值；`_` 丢掉不需要的返回值；`a, b = b, a` 一步完成交换；结构体、切片、映射既能整体赋值，也能按字段、下标、键赋值。
+
+## 参考资料
+
+- [语言规范 · 变量声明](https://go.dev/ref/spec#Variable_declarations)
+- [Effective Go · 变量](https://go.dev/doc/effective_go#variables)
+- [语言规范 · 赋值](https://go.dev/ref/spec#Assignment)
+
+## 同层页面
+
+- [Segment](/var/Segment.md)
+- [VarAndInit](/var/VarAndInit.md)
+- [ScopeAndLifetime](/var/ScopeAndLifetime.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [ScopeAndLifetime](ScopeAndLifetime.md)
+- [Variable](Variable.md)
