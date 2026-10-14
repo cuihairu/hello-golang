@@ -18,7 +18,7 @@ export default defineConfig({
   // mdbook 遗留的目录文件保留在仓库作映射底稿，不作为页面构建
   srcExclude: ['**/SUMMARY.md'],
 
-  ignoreDeadLinks: true,
+  ignoreDeadLinks: false,
 
   themeConfig: {
     // 品牌资产空位：logo.svg 到位后启用

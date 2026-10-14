@@ -121,7 +121,7 @@ func main() {
 }
 ```
 
-启动程序后，可以通过访问 [http://localhost:6060/debug/pprof/](http://localhost:6060/debug/pprof/) 查看性能分析报告。
+启动程序后，可以通过访问 `http://localhost:6060/debug/pprof/` 查看性能分析报告。
 
 #### 11.4 常用的开发工具和环境
 
