@@ -44,7 +44,7 @@
 
 17. **DevOps 与 SRE**：SRE 起源于 Google，Amazon 与 Netflix 后来也采用；Docker（CI/CD 自动化与部署）、Drone（容器持续交付）、etcd（强一致分布式键值存储）、Netflix 缓存服务 Rend 都是 Go。标准库覆盖 HTTP、文件 I/O、时间、正则、exec、JSON，写运维脚本直接进业务逻辑。来源 [`/solutions/devops/`](https://golang.google.cn/solutions/devops/)，正文页 [DevOps.md](applications/DevOps.md)。
 
-18. **三则官方案例数字**：American Express（页面日期 2019-12-19）支付与积分两条网络用 Go，工程总监的说法是认知负担低，多数 Go 代码长得差不多；PayPal（2020-06-01）把 C++ 写的 NoSQL 数据库用 Go 重写，六个月学习加迁移，30% 的集群已切换；MercadoLibre 覆盖 18 个国家，2015 年起从 Groovy/Grails 迁来，核心用户 API 平均每分钟 800 万至 1000 万次请求，响应时间不到 10 毫秒。来源 [`/solutions/americanexpress`](https://golang.google.cn/solutions/americanexpress)、[`/paypal`](https://golang.google.cn/paypal)、[`/mercadolibre`](https://golang.google.cn/mercadolibre)。
+18. **三则官方案例数字**：American Express（页面日期 2019-12-19）支付与积分两条网络用 Go，工程总监的说法是认知负担低，多数 Go 代码长得差不多；PayPal（2020-06-01）把 C++ 写的 NoSQL 数据库用 Go 重写，六个月学习加迁移，30% 的集群已切换；MercadoLibre 覆盖 18 个国家，2015 年起从 Groovy/Grails 迁来，核心用户 API 平均每分钟 800 万至 1000 万次请求，响应时间不到 10 毫秒。来源 [`/solutions/americanexpress`](https://golang.google.cn/solutions/americanexpress)、[`/solutions/paypal`](https://golang.google.cn/solutions/paypal)、[`/solutions/mercadolibre`](https://golang.google.cn/solutions/mercadolibre)。
 
 ## 四、权威书籍要点
 

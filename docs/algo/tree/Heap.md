@@ -131,7 +131,7 @@ pop: 9
 
 ## 参考资料
 
-- [堆（数据结构）· Wikipedia](https://en.wikipedia.org/wiki/Heap_(data_structure))
+- [堆（数据结构）· Wikipedia](https://en.wikipedia.org/wiki/Heap_%28data_structure%29))
 - [container/heap 标准库](https://pkg.go.dev/container/heap)
 
 ## 同层页面

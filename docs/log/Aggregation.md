@@ -46,8 +46,8 @@ fluentd --setup ./fluent
 
 ```sh
 # 下载并安装 logstash
-wget https://artifacts.elastic.co/downloads/logstash/logstash-7.14.0.tar.gz
-tar -xzf logstash-7.14.0.tar.gz
+wget https://artifacts.elastic.co/downloads/logstash/logstash-7.14.0-linux-x86_64.tar.gz
+tar -xzf logstash-7.14.0-linux-x86_64.tar.gz
 cd logstash-7.14.0
 
 # 创建配置文件

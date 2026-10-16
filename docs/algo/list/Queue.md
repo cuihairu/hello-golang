@@ -114,7 +114,7 @@ empty dequeue ok: false
 
 ## 参考资料
 
-- [队列（抽象数据类型）· Wikipedia](https://en.wikipedia.org/wiki/Queue_(abstract_data_type))
+- [队列（抽象数据类型）· Wikipedia](https://en.wikipedia.org/wiki/Queue_%28abstract_data_type%29))
 
 ## 同层页面
 

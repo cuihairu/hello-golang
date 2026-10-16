@@ -113,7 +113,7 @@ height: 3
 
 ## 参考资料
 
-- [树（数据结构）· Wikipedia](https://en.wikipedia.org/wiki/Tree_(data_structure))
+- [树（数据结构）· Wikipedia](https://en.wikipedia.org/wiki/Tree_%28data_structure%29))
 
 
 ## 同层页面

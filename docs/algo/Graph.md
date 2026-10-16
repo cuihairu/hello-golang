@@ -94,7 +94,7 @@ func main() {
 
 ## 参考资料
 
-- [图（抽象数据类型）· Wikipedia](https://en.wikipedia.org/wiki/Graph_(abstract_data_type))
+- [图（抽象数据类型）· Wikipedia](https://en.wikipedia.org/wiki/Graph_%28abstract_data_type%29))
 - [图论 · Wikipedia](https://en.wikipedia.org/wiki/Graph_theory)
 
 ## 同层页面

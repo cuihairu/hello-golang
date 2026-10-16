@@ -121,7 +121,7 @@ pop: 1
 
 ## 参考资料
 
-- [栈（抽象数据类型）· Wikipedia](https://en.wikipedia.org/wiki/Stack_(abstract_data_type))
+- [栈（抽象数据类型）· Wikipedia](https://en.wikipedia.org/wiki/Stack_%28abstract_data_type%29))
 
 ## 同层页面
 
