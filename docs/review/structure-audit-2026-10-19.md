@@ -165,6 +165,6 @@
 
 ### 验收快照
 
-- `pnpm docs:build` 未核实：环境没有 `node_modules`，执行报 `vitepress: not found`。
-- 可复算等价检查：Markdown 本地链接扫描跳过代码围栏与行内代码，并将 `/...` 路由按 docs 根目录解析；检查 **3185** 条本地 Markdown 链接，缺失 **0**。sidebar 目标文件映射缺失 **0**；侧栏重复路由 **0**。
+- `pnpm docs:build` 通过（VitePress 1.6.4；页面构建完成）。输出含 assembly/gdb 高亮回退和大 chunk 警告，不影响构建。
+- 可复算等价检查：Markdown 本地链接扫描跳过代码围栏与行内代码，并将 `/...` 路由按 docs 根目录解析；检查 **2782** 条本地 Markdown 链接，缺失 **0**。sidebar 389 个链接目标均存在，缺失 **0**；侧栏重复路由 **0**。
 - Markdown 删除数：**0**（收口提交期间未删除任何 `.md`）。

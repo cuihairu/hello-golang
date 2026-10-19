@@ -3,8 +3,8 @@ layout: home
 
 hero:
   name: Hello Golang
-  text: Go 语言知识体系
-  tagline: 从语法入门到工程实战——类型系统、并发编程、设计模式、数据结构与算法、网络与数据库，系统掌握 Go。
+  text: Go 开发笔记与经验
+  tagline: 个人学习笔记、心得与开发经验，从游戏开发者的视角记录 Go。
   actions:
     - theme: brand
       text: 开始阅读

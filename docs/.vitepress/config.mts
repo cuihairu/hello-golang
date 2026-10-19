@@ -5,7 +5,7 @@ import sidebar from './sidebar.json'
 export default defineConfig({
   lang: 'zh-CN',
   title: 'Hello Golang',
-  description: 'Go 语言知识体系——从语法入门到并发编程、设计模式、算法与工程实践',
+  description: '个人 Go 学习笔记、心得与开发经验，以游戏开发者的视角分享。',
   base: '/hello-golang/',
   cleanUrls: true,
   lastUpdated: true,
@@ -27,7 +27,7 @@ export default defineConfig({
 
     nav: [
       { text: '首页', link: '/' },
-      { text: '入门', link: '/start/Starter' },
+      { text: '开发笔记', link: '/start/Starter' },
       { text: '数据类型', link: '/type/CompositeType' },
       { text: '并发编程', link: '/concurrency/Concurrency' },
       { text: '设计模式', link: '/dp/DesignPatterns' },
