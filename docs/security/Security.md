@@ -1,5 +1,7 @@
 # 官方安全口径与 `crypto` 标准库
 
+
+> 视角：本文汇总 Go 官方安全口径与 crypto 入口；文件/IO 和数据库场景分别见[IO 安全笔记](../io/Security.md)、[数据库安全笔记](../db/Security.md)。
 官方把安全单列成 Why Go 下的一个板块，标题是 How Go can help keep you secure by default。本仓此前没有任何 `crypto/` 相关内容，这一页把官方口径抄下来并给出后续阅读入口。抓取于 2026-10-08。
 
 ## 一、官方列的四件事

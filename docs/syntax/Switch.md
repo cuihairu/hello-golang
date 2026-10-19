@@ -1,4 +1,6 @@
 
+> 视角：本文记录表达式 switch、fallthrough 等控制流用法；按接口动态类型分支的类型 switch 见[类型断言与类型 switch 笔记](../type/Switch.md)。
+
 # Go语言中的 `switch` 语句
 
 Go 的 `switch` 默认匹配到就退出，想穿透要显式写 `fallthrough`，另外还有类型 `switch` 这种写法。下面从基本用法讲到它和 `select` 的区别。
