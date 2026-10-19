@@ -370,28 +370,24 @@
         "link": "/idioms/BlankIdentifier"
       },
       {
-        "text": "多值返回",
-        "link": "/func/MultipleReturnValues"
+        "text": "多值返回"
       },
       {
         "text": "comma ok idiom",
         "link": "/idioms/CommaOk"
       },
       {
-        "text": "defer",
-        "link": "/func/Defer"
+        "text": "defer"
       },
       {
-        "text": "switch",
-        "link": "/syntax/Switch"
+        "text": "switch"
       },
       {
         "text": "select",
         "link": "/concurrency/Select"
       },
       {
-        "text": "匿名函数和闭包",
-        "link": "/func/AnonymousFunc"
+        "text": "匿名函数和闭包"
       },
       {
         "text": "标签",
@@ -498,8 +494,7 @@
         "link": "/concurrency/ChanImpl"
       },
       {
-        "text": "select语句",
-        "link": "/concurrency/Select"
+        "text": "select语句"
       },
       {
         "text": "WaitGroup",
@@ -782,12 +777,10 @@
     "collapsed": true,
     "items": [
       {
-        "text": "regexp",
-        "link": "/regex/Readme"
+        "text": "regexp"
       },
       {
-        "text": "bufio",
-        "link": "/io/IO"
+        "text": "bufio"
       }
     ]
   },
@@ -1013,8 +1006,7 @@
             "link": "/dp/Memento"
           },
           {
-            "text": "观察者模式",
-            "link": "/dp/Observer"
+            "text": "观察者模式"
           },
           {
             "text": "状态模式",
@@ -1320,8 +1312,7 @@
         "link": "/net/Concurrence"
       },
       {
-        "text": "网络安全",
-        "link": "/security/Security"
+        "text": "网络安全"
       },
       {
         "text": "滑动窗口",
@@ -1372,8 +1363,7 @@
     "collapsed": true,
     "items": [
       {
-        "text": "plugin",
-        "link": "/sys/Plugin"
+        "text": "plugin"
       }
     ]
   },
@@ -1382,16 +1372,14 @@
     "collapsed": true,
     "items": [
       {
-        "text": "编译与构建",
-        "link": "/start/Build"
+        "text": "编译与构建"
       },
       {
         "text": "embed 包嵌入",
         "link": "/start/Embed"
       },
       {
-        "text": "压缩和归档",
-        "link": "/compress/Readme"
+        "text": "压缩和归档"
       }
     ]
   },
@@ -1695,7 +1683,6 @@
   },
   {
     "text": "Gin框架",
-    "link": "/gin/Gin",
     "collapsed": true,
     "items": [
       {
