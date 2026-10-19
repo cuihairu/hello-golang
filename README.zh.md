@@ -13,15 +13,15 @@
   <img src="docs/public/badges/langs.svg" alt="langs" />
 </p>
 
-Go 语言知识体系 · [在线阅读](https://cuihairu.github.io/hello-golang/)
+Go 开发实践记录 · [在线浏览](https://cuihairu.github.io/hello-golang/)
 
 </div>
 
 ---
 
-这里记录个人的 Go 学习笔记、心得与开发经验，以游戏开发者的视角分享类型系统、并发、算法、常用库和工程实践。不是课程或学习教程。
+这里整理我作为游戏开发者使用 Go 时的实践、取舍和踩坑记录，涉及类型系统、并发、算法、常用库与工程项目。内容来自实际开发和资料查阅，观点可能不完整，欢迎交流。
 
-知识点主文档：[docs/knowledge.md](docs/knowledge.md)——把 2026-10-08 的书籍、官方文档、应用场景三类调研收拢成一页。
+知识点索引：[docs/knowledge.md](docs/knowledge.md)——汇总 2026-10-08 对书籍、官方文档和应用场景的查阅记录。
 
 ## 本地开发
 

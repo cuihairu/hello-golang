@@ -2,7 +2,7 @@
 
 #### 2.1 安装和配置常用数据库（MySQL、PostgreSQL、SQLite等）
 
-本节将介绍如何在本地环境中安装和配置几种常用的数据库：MySQL、PostgreSQL和SQLite。
+这里记录在本地环境安装和配置几种常用数据库的做法：MySQL、PostgreSQL和SQLite。
 
 ##### 2.1.1 安装MySQL
 
@@ -80,7 +80,7 @@
 
 #### 2.2 配置数据库连接
 
-本节将介绍如何在Go中配置数据库连接，主要使用`database/sql`包，并分别连接MySQL、PostgreSQL和SQLite数据库。
+这里记录在 Go 中配置数据库连接的做法，主要使用`database/sql`包，并分别连接MySQL、PostgreSQL和SQLite数据库。
 
 ##### 2.2.1 安装依赖包
 
@@ -171,7 +171,7 @@ go get -u github.com/mattn/go-sqlite3
 ## 参考资料
 
 - [官方 · 数据库访问指南](https://go.dev/doc/database/)
-- [官方教程 · 数据库访问](https://go.dev/doc/tutorial/database-access)
+- [Go 官方文档 · Accessing a relational database（外部链接）](https://go.dev/doc/tutorial/database-access)
 - [database/sql 标准库](https://pkg.go.dev/database/sql)
 
 

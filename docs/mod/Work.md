@@ -154,7 +154,7 @@ func Greet() string {
 - [官方 · Go Modules 使用指南](https://go.dev/doc/modules/)
 - [Go Modules Reference](https://go.dev/ref/mod)
 - [官方博客 · Using Go Modules](https://go.dev/blog/using-go-modules)
-- [官方教程 · 多模块工作区](https://go.dev/doc/tutorial/workspaces)
+- [Go 官方文档 · Workspaces（外部链接）](https://go.dev/doc/tutorial/workspaces)
 
 <!-- BACKLINKS-AUTO -->
 ## 相关页面

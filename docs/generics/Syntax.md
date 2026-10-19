@@ -1,6 +1,6 @@
 ### 泛型基础
 
-这一章讲Go泛型的基础：类型参数、类型约束、泛型函数、泛型方法和泛型类型，各自怎么定义、怎么用。
+这页记录 Go 泛型的基础：类型参数、类型约束、泛型函数、泛型方法和泛型类型，各自怎么定义、怎么用。
 
 #### 2.1 类型参数与类型约束
 
@@ -121,11 +121,11 @@ func main() {
 
 #### 2.6 小结
 
-这章的内容可以收成一句话：类型参数用方括号声明、约束限定它能取的范围，编译器再推断出具体类型。函数、方法、结构体、接口都能这样参数化，同一件事不必为每个类型各写一遍。要注意的三条局限也列在 2.5，写泛型前先过一遍。
+这里的要点可以收成一句话：类型参数用方括号声明、约束限定它能取的范围，编译器再推断出具体类型。函数、方法、结构体、接口都能这样参数化，同一件事不必为每个类型各写一遍。我整理了三条局限在 2.5，写泛型时会先核对。
 
 ## 参考资料
 
-- [官方教程 · 泛型入门](https://go.dev/doc/tutorial/generics)
+- [Go 官方文档 · Getting started with generics（外部链接）](https://go.dev/doc/tutorial/generics)
 - [官方博客 · An Introduction To Generics](https://go.dev/blog/intro-generics)
 - [官方博客 · When To Use Generics](https://go.dev/blog/when-generics)
 - [语言规范 · 类型参数声明](https://go.dev/ref/spec#Type_parameter_declarations)

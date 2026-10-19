@@ -93,7 +93,7 @@ This is the main function
 - [官方 · Go Modules 使用指南](https://go.dev/doc/modules/)
 - [Go Modules Reference](https://go.dev/ref/mod)
 - [官方博客 · Using Go Modules](https://go.dev/blog/using-go-modules)
-- [官方教程 · 创建模块](https://go.dev/doc/tutorial/create-module)
+- [Go 官方文档 · Create a module（外部链接）](https://go.dev/doc/tutorial/create-module)
 
 <!-- BACKLINKS-AUTO -->
 ## 相关页面

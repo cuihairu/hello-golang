@@ -19,9 +19,9 @@ A Go knowledge site · [Read online](https://cuihairu.github.io/hello-golang/)
 
 ---
 
-Personal Go development notes and experience, shared from a game developer’s perspective. Topics range from language details and concurrency to algorithms, libraries, and engineering practice.
+Notes from my work as a game developer using Go: practical choices, edge cases, and experience with language features, concurrency, algorithms, libraries, and project work.
 
-Knowledge map: [docs/knowledge.md](docs/knowledge.md) — the points from the 2026-10-08 books, official docs, and use-case survey collected into one page.
+Knowledge index: [docs/knowledge.md](docs/knowledge.md) — the points from the 2026-10-08 books, official docs, and use-case survey collected into one page.
 
 ## Local development
 

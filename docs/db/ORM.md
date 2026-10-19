@@ -9,7 +9,7 @@
 Go 语言的 ORM 框架里，常用的是下面三个：
 
 ##### 7.2.1 GORM
-GORM 支持多种数据库，包括 MySQL、PostgreSQL、SQLite 等，本节的示例就用它。
+GORM 支持多种数据库，包括 MySQL、PostgreSQL、SQLite 等，这里的示例使用 GORM。
 
 ##### 7.2.2 Ent
 Ent 是一个基于 Graph 的 ORM 框架，提供了丰富的查询生成器和代码生成工具，适合构建复杂的数据模型。
@@ -251,7 +251,7 @@ if err != nil {
 ## 参考资料
 
 - [官方 · 数据库访问指南](https://go.dev/doc/database/)
-- [官方教程 · 数据库访问](https://go.dev/doc/tutorial/database-access)
+- [Go 官方文档 · Accessing a relational database（外部链接）](https://go.dev/doc/tutorial/database-access)
 - [database/sql 标准库](https://pkg.go.dev/database/sql)
 - [GORM 官方文档](https://gorm.io/docs/)
 

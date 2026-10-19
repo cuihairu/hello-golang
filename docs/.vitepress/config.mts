@@ -5,7 +5,7 @@ import sidebar from './sidebar.json'
 export default defineConfig({
   lang: 'zh-CN',
   title: 'Hello Golang',
-  description: '个人 Go 学习笔记、心得与开发经验，以游戏开发者的视角分享。',
+  description: '游戏开发者记录 Go 项目里的实践、取舍与踩坑经验。',
   base: '/hello-golang/',
   cleanUrls: true,
   lastUpdated: true,
@@ -27,7 +27,7 @@ export default defineConfig({
 
     nav: [
       { text: '首页', link: '/' },
-      { text: '开发笔记', link: '/start/Starter' },
+      { text: '项目记录', link: '/start/Starter' },
       { text: '数据类型', link: '/type/CompositeType' },
       { text: '并发编程', link: '/concurrency/Concurrency' },
       { text: '设计模式', link: '/dp/DesignPatterns' },

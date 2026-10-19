@@ -57,7 +57,7 @@
   - 跨平台支持（Windows、macOS、Linux）
 
 ### 选择建议
-- **初学者**：推荐使用VS Code或LiteIDE，易于上手，功能齐全。
+- **轻量编辑需求**：VS Code 或 LiteIDE 都能覆盖常见 Go 开发功能。
 - **专业开发者**：推荐使用GoLand或VS Code；GoLand 是商业软件。
 - **Vim爱好者**：配置vim-go插件，把 Vim 用成顺手的 Go 开发环境。
 
@@ -66,7 +66,7 @@
 ## 参考资料
 
 - [官方 · 安装与管理 Go 工具链](https://go.dev/doc/manage-install)
-- [官方教程 · 入门](https://go.dev/doc/tutorial/getting-started)
+- [Go 官方文档 · Getting started（外部链接）](https://go.dev/doc/tutorial/getting-started)
 - [官方 · Go Modules 使用指南](https://go.dev/doc/modules/)
 
 

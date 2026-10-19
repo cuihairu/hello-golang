@@ -169,7 +169,7 @@ source ~/.bashrc
 ## 参考资料
 
 - [官方 · 安装与管理 Go 工具链](https://go.dev/doc/manage-install)
-- [官方教程 · 入门](https://go.dev/doc/tutorial/getting-started)
+- [Go 官方文档 · Getting started（外部链接）](https://go.dev/doc/tutorial/getting-started)
 - [官方 · Go Modules 使用指南](https://go.dev/doc/modules/)
 - [Go Modules Reference · GOPROXY](https://go.dev/ref/mod)
 

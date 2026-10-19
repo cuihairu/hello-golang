@@ -7,7 +7,7 @@
 泛型（Generics）允许在定义类、接口、方法时使用类型参数，实际使用时再指定具体类型。主要优点：
 - **代码复用**：通用的数据结构和算法只写一份，减少重复代码。
 - **类型安全**：类型检查在编译时完成，避免运行时的类型转换错误。
-- **可读性**：类型写在签名里，读者不必追着类型断言看。
+- **可读性**：类型写在签名里，调用处也少了追着类型断言确认类型的负担。
 
 #### 1.2 Go 泛型的设计理念
 
@@ -70,7 +70,7 @@ func (b *Box[T]) GetContent() T {
 
 ## 参考资料
 
-- [官方教程 · 泛型入门](https://go.dev/doc/tutorial/generics)
+- [Go 官方文档 · Getting started with generics（外部链接）](https://go.dev/doc/tutorial/generics)
 - [官方博客 · An Introduction To Generics](https://go.dev/blog/intro-generics)
 - [官方博客 · When To Use Generics](https://go.dev/blog/when-generics)
 - [语言规范 · 类型参数声明](https://go.dev/ref/spec#Type_parameter_declarations)

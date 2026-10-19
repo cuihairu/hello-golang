@@ -1,6 +1,6 @@
 ### 性能与优化
 
-泛型用得不当是有性能代价的：类型实例化带来代码膨胀，滥用类型参数会拖慢编译。这一章列出泛型的性能特点、常见的性能瓶颈以及对应的优化手段。
+泛型用得不当是有性能代价的：类型实例化带来代码膨胀，滥用类型参数会拖慢编译。这里整理泛型的性能特点、常见瓶颈和相应优化手段。
 
 #### 7.1 泛型性能特点
 
@@ -114,7 +114,7 @@ func (s *Set[T]) Remove(item T) {
 
 ## 参考资料
 
-- [官方教程 · 泛型入门](https://go.dev/doc/tutorial/generics)
+- [Go 官方文档 · Getting started with generics（外部链接）](https://go.dev/doc/tutorial/generics)
 - [官方博客 · An Introduction To Generics](https://go.dev/blog/intro-generics)
 - [官方博客 · When To Use Generics](https://go.dev/blog/when-generics)
 - [语言规范 · 类型参数声明](https://go.dev/ref/spec#Type_parameter_declarations)

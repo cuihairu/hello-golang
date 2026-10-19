@@ -259,7 +259,7 @@ Go 的依赖解析算法：为每个依赖选出满足所有需求的最小（�
 
 ### Workspace（工作区）
 `go.work` 聚合多个本地模块协同开发，无需改 go.mod。
-**出处**：[官方教程 · 多模块工作区](https://go.dev/doc/tutorial/workspaces)
+**出处**：[Go 官方文档 · Workspaces（外部链接）](https://go.dev/doc/tutorial/workspaces)
 **相关页**：[Work](/mod/Work.md)
 
 ### 工具链（Toolchain）

@@ -48,11 +48,11 @@ Web 开发是官方四类场景之一。本页是官方 Web 场景页的中文�
 
 1. https://golang.google.cn/solutions/webdev/ — Go for Web Development（HTTP/2、TLS 1.3、10 倍、64%、项目清单，2026-10-08 抓取）
 2. https://golang.google.cn/solutions/use-cases — 四类场景索引
-3. https://golang.google.cn/doc/ — Getting Started 下的 Writing Web Applications 教程入口
+3. https://golang.google.cn/doc/ — Getting Started 下的 Writing Web Applications 页面入口
 
 ## 参考资料
 
-- [官方教程 · Web 应用（wiki）](https://go.dev/doc/articles/wiki/)
+- [Go 官方文档 · Writing Web Applications（外部链接）](https://go.dev/doc/articles/wiki/)
 - [net/http 标准库](https://pkg.go.dev/net/http)
 
 <!-- BACKLINKS-AUTO -->

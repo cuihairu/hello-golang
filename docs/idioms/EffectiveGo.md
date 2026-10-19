@@ -1,6 +1,6 @@
-# Effective Go 导读：16 节各对应本仓哪一页
+# Effective Go：16 节与本站页面对照
 
-Effective Go 是官方文档里被标成「任何新的 Go 程序员必读」的那一篇，官方还要求先读 Tour 和语言规范再读它。本仓 `docs/idioms/`、`docs/naming/` 里各提过一次链接，但没有一页说明这 16 节怎么对照本仓来读。抓取于 2026-10-08。
+官方将 Effective Go 称为「任何新的 Go 程序员必读」，并建议先读 Tour 和语言规范。本仓 `docs/idioms/`、`docs/naming/` 里各提过一次链接，我把 16 节与本站页面的对应关系整理在下表，资料抓取于 2026-10-08。
 
 ## 一、16 节与本仓页面对照
 
@@ -25,15 +25,15 @@ Effective Go 是官方文档里被标成「任何新的 Go 程序员必读」的
 
 40 个二级小节里，本仓有独立内容的重点是 `Defer`、`Allocation with make`、`Interfaces`、`Panic`、`Recover`、`MixedCaps`；讲得比 Effective Go 更细的是 `GMP 调度器`、`Channel 实现` 这两页，它们超出原文范围。
 
-## 二、读的顺序
+## 二、官方阅读建议与本站页面
 
-官方的建议是 Tour → 语言规范 → Effective Go。本仓对应顺序：
+官方的建议是 Tour → 语言规范 → Effective Go。按官方建议对照本站页面：
 
-1. `docs/start/Hello.md` 起步，走完 `docs/syntax/`、`docs/type/`。
-2. `docs/oop/` 的方法与接口、`docs/mod/` 的包。
-3. `docs/test/`，Effective Go 没有专章讲测试，本仓这块比它全。
-4. `docs/concurrency/`，对应 Concurrency 那一节。
-5. 最后读 Effective Go 原文对照，本页当索引用。
+1. 基础语法与数据类型：`docs/start/Hello.md`、`docs/syntax/`、`docs/type/`。
+2. 方法、接口与包：`docs/oop/`、`docs/mod/`。
+3. 测试：`docs/test/`（Effective Go 没有专章讨论测试）。
+4. 并发：`docs/concurrency/`，对应 Concurrency 一节。
+5. Effective Go 原文：本页作为对应索引。
 
 ## 三、两处官方自己的提醒
 

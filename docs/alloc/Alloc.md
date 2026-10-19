@@ -1,4 +1,4 @@
-本节讲 Go 内存分配器中 `mspan`、`mcache`、`mcentral`、`mheap` 和 `heapArena` 的职责与使用场景，以及它们与 Thread Cache、Central Cache 和 Heap 三层结构的对应关系。
+这里整理 Go 内存分配器中 `mspan`、`mcache`、`mcentral`、`mheap` 和 `heapArena` 的职责与使用场景，以及它们与 Thread Cache、Central Cache 和 Heap 三层结构的对应关系。
 
 ### 内存分配器的分层结构
 

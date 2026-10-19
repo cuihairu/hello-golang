@@ -53,7 +53,7 @@ Go 语言适合做数据库编程：编译成机器码执行效率高，内置�
 ## 参考资料
 
 - [官方 · 数据库访问指南](https://go.dev/doc/database/)
-- [官方教程 · 数据库访问](https://go.dev/doc/tutorial/database-access)
+- [Go 官方文档 · Accessing a relational database（外部链接）](https://go.dev/doc/tutorial/database-access)
 - [database/sql 标准库](https://pkg.go.dev/database/sql)
 
 

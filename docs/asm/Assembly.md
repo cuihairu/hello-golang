@@ -203,7 +203,7 @@ PCDATA $0, $-2     // 标记调试信息
 FUNCDATA $1, info  // 存储函数数据
 ```
 
-这些指令构成了 Plan 9 汇编的基础，掌握之后读 `go build -gcflags="-S"` 的输出就不费劲。
+这些指令构成了 Plan 9 汇编的基础，熟悉这些指令后，读 `go build -gcflags="-S"` 的输出会更顺手。
 
 ### 用反汇编看 Go 的内部机制
 

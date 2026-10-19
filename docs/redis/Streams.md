@@ -173,7 +173,7 @@ Redis 流（Streams）的底层实现是基于一个链表结构和散列结构�
 - [Redis 官方命令手册](https://redis.io/commands/)
 - [go-redis 官方客户端](https://github.com/redis/go-redis)
 - [go-redis · pkg.go.dev](https://pkg.go.dev/github.com/redis/go-redis/v9)
-- [Redis 官方 · Streams 教程](https://redis.io/docs/latest/develop/data-types/streams/)
+- [Redis 官方文档 · Streams（外部链接）](https://redis.io/docs/latest/develop/data-types/streams/)
 
 
 ## 同层页面

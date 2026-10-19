@@ -32,7 +32,7 @@ CGO 调用期间 goroutine 阻塞在系统调用上，P 会让给其他 goroutin
 - `go tool nm <二进制>` 可以核对 `//export` 的符号有没有生成。
 - 排查指针违规先跑 `GODEBUG=cgocheck=2` 的测试，边界上的问题清了再调性能或并发。
 
-交叉阅读：[使用指南](CGO.md) 讲调用步骤、类型转换和常见坑；[命令文档](https://golang.google.cn/cmd/cgo/) 有指针规则的原文。
+交叉阅读：[CGO 调用记录](CGO.md) 讲调用步骤、类型转换和常见坑；[命令文档](https://golang.google.cn/cmd/cgo/) 有指针规则的原文。
 
 ## 参考资料
 

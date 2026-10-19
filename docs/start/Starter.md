@@ -1,5 +1,5 @@
-# 入门
-Go 环境装好之后，按下面 7 步建起一个项目。
+# Go 项目启动记录
+我把一个最小 Go 项目的目录、模块、构建和依赖命令记在这里，方便开新仓库时查用。
 
 ### 1. 设置GOPATH和项目目录
 
@@ -143,12 +143,12 @@ go get -u github.com/gin-gonic/gin
 go mod tidy
 ```
 
-走完这 7 步，`bin/myproject` 会打印出 `Hello, World!`。后面加依赖用 `go get`，清理用 `go mod tidy`。
+照这组命令执行后，`bin/myproject` 会打印出 `Hello, World!`。后续加依赖用 `go get`，清理用 `go mod tidy`。
 
 ## 参考资料
 
-- [官方教程 · 入门](https://go.dev/doc/tutorial/getting-started)
-- [官方教程 · 创建模块](https://go.dev/doc/tutorial/create-module)
+- [Go 官方文档 · Getting started（外部链接）](https://go.dev/doc/tutorial/getting-started)
+- [Go 官方文档 · Create a module（外部链接）](https://go.dev/doc/tutorial/create-module)
 
 
 ## 同层页面

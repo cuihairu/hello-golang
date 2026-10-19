@@ -1,6 +1,6 @@
 ### 类型约束
 
-类型约束用接口定义，限定类型参数能接受哪些类型、必须有哪些方法。本章讲预定义约束、接口类型约束和类型集三块。
+类型约束用接口定义，限定类型参数能接受哪些类型、必须有哪些方法。这里整理预定义约束、接口类型约束和类型集三部分。
 
 #### 3.1 预定义约束
 
@@ -163,7 +163,7 @@ func Copy[T ReadWriter](src, dst T) error {
 
 ## 参考资料
 
-- [官方教程 · 泛型入门](https://go.dev/doc/tutorial/generics)
+- [Go 官方文档 · Getting started with generics（外部链接）](https://go.dev/doc/tutorial/generics)
 - [官方博客 · An Introduction To Generics](https://go.dev/blog/intro-generics)
 - [官方博客 · When To Use Generics](https://go.dev/blog/when-generics)
 - [语言规范 · 类型参数声明](https://go.dev/ref/spec#Type_parameter_declarations)

@@ -111,7 +111,7 @@ go tool pprof mem.out
 ## 参考资料
 
 - [testing 标准库](https://pkg.go.dev/testing)
-- [官方教程 · 添加测试](https://go.dev/doc/tutorial/add-a-test)
+- [Go 官方文档 · Add a test（外部链接）](https://go.dev/doc/tutorial/add-a-test)
 - [官方博客 · testing.B.Loop](https://go.dev/blog/testing-b-loop)
 
 

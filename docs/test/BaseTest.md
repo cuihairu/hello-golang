@@ -1,6 +1,6 @@
 ### 基本测试
 
-Go 的测试写在 `_test.go` 文件里，函数名以 `Test` 开头、参数是 `*testing.T`，一条 `go test` 跑完。下面按写、跑、看输出、处理错误四步过一遍。
+Go 的测试写在 `_test.go` 文件里，函数名以 `Test` 开头、参数是 `*testing.T`，一条 `go test` 跑完。这里按编写、运行、查看输出和处理错误四个环节整理。
 
 #### 2.1 测试文件和测试函数
 
@@ -131,7 +131,7 @@ func TestDivide(t *testing.T) {
 ## 参考资料
 
 - [testing 标准库](https://pkg.go.dev/testing)
-- [官方教程 · 添加测试](https://go.dev/doc/tutorial/add-a-test)
+- [Go 官方文档 · Add a test（外部链接）](https://go.dev/doc/tutorial/add-a-test)
 
 ## 同层页面
 

@@ -1,7 +1,7 @@
 # 高级测试技术
 
 
-这一章的测试技术超出单元测试的范围，共六种：并发测试、模拟（Mocking）、测试覆盖率分析、内存泄漏检测、性能测试和 A/B 对比。逐节给出 Go 里的做法。
+单元测试之外，我还整理了六种测试技术：并发测试、模拟（Mocking）、测试覆盖率分析、内存泄漏检测、性能测试和 A/B 对比。逐节给出 Go 里的做法。
 
 #### 5.1 并发测试
 
@@ -187,7 +187,7 @@ func TestABComparison(t *testing.T) {
 ## 参考资料
 
 - [testing 标准库](https://pkg.go.dev/testing)
-- [官方教程 · 添加测试](https://go.dev/doc/tutorial/add-a-test)
+- [Go 官方文档 · Add a test（外部链接）](https://go.dev/doc/tutorial/add-a-test)
 - [官方博客 · Subtests and Sub-benchmarks](https://go.dev/blog/subtests)
 
 ## 同层页面

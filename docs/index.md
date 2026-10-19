@@ -3,11 +3,11 @@ layout: home
 
 hero:
   name: Hello Golang
-  text: Go 开发笔记与经验
-  tagline: 个人学习笔记、心得与开发经验，从游戏开发者的视角记录 Go。
+  text: Go 开发记录
+  tagline: 游戏开发者的 Go 实践记录：踩过的坑、做过的取舍和查过的资料。
   actions:
     - theme: brand
-      text: 开始阅读
+      text: 浏览笔记
       link: /introduction/Introduction
     - theme: alt
       text: GitHub
@@ -15,7 +15,7 @@ hero:
 
 features:
   - title: 语言基础
-    details: 环境搭建、命名与变量、基本与复合数据类型、控制流、函数、接口、泛型与惯用法。
+    details: Go 环境、命名与变量、数据类型、控制流、函数、接口、泛型与惯用写法。
   - title: 并发编程
     details: Goroutine 与 Channel、CSP 与 Actor、select、sync 同步原语、GMP 调度器与内存模型。
   - title: 工程实践

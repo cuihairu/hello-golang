@@ -127,12 +127,12 @@ func getCache(key string) (string, error) {
 }
 ```
 
-本节覆盖了索引类型与创建、`EXPLAIN` 执行计划分析、连接池参数设置和 Redis 缓存用法。动手优化前，先用 `EXPLAIN` 确认瓶颈出在哪一步。
+这里记录索引类型与创建、`EXPLAIN` 执行计划分析、连接池参数设置和 Redis 缓存。我的习惯是先用 `EXPLAIN` 定位瓶颈，再动手优化。
 
 ## 参考资料
 
 - [官方 · 数据库访问指南](https://go.dev/doc/database/)
-- [官方教程 · 数据库访问](https://go.dev/doc/tutorial/database-access)
+- [Go 官方文档 · Accessing a relational database（外部链接）](https://go.dev/doc/tutorial/database-access)
 - [database/sql 标准库](https://pkg.go.dev/database/sql)
 
 

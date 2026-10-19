@@ -8,10 +8,10 @@
 
 | 官方板块 | 官方页面 | 本仓对应 |
 | --- | --- | --- |
-| Getting Started | 安装、Getting started 教程、Create a module、多模块工作区、用 Gin 写 RESTful API、泛型教程、fuzzing 教程 | `docs/env/`、`docs/start/`、`docs/mod/`、`docs/gin/`、`docs/generics/` |
-| Writing Web Applications | 一个简单 Web 应用的完整教程 | `docs/gin/`、`docs/net/` |
+| Getting Started | 安装、Getting started 页面、Create a module、多模块工作区、用 Gin 写 RESTful API、官方泛型文档、Fuzzing 页面（外部链接） | `docs/env/`、`docs/start/`、`docs/mod/`、`docs/gin/`、`docs/generics/` |
+| Writing Web Applications | 一个简单 Web 应用的完整示例 | `docs/gin/`、`docs/net/` |
 | Using and understanding Go | Effective Go、FAQ、编辑器插件与 IDE、诊断、GC 指南、依赖管理、fuzzing、覆盖率、PGO、json/v2 迁移 | 部分有、部分缺，见 [Coverage.md](Coverage.md) |
-| References | 标准库包文档、命令文档、语言规范、Go Modules 参考、go.mod 参考、内存模型、贡献指南、发布历史、数据库教程、模块开发与发布 | `docs/mod/` 有模块部分，内存模型、发布历史、贡献指南此前无页面 |
+| References | 标准库包文档、命令文档、语言规范、Go Modules 参考、go.mod 参考、内存模型、贡献指南、发布历史、数据库访问文档、模块开发与发布 | `docs/mod/` 有模块部分，内存模型、发布历史、贡献指南此前无页面 |
 
 总览页对 Go 的定义是：表达力强、简洁、干净、高效；并发机制让程序吃满多核与网络机器；类型系统支持灵活的模块化构造；编译快、带垃圾回收和运行时反射；静态类型编译型语言，写起来像动态解释型语言。这段话是官方原话的中译，可作为本仓 `docs/introduction/` 的对照口径。
 
@@ -36,7 +36,7 @@
 15. Errors
 16. A web server
 
-其中 40 个二级小节（如 `MixedCaps`、`Defer`、`Allocation with make`、`Share by communicating`、`A leaky buffer`、`Panic`、`Recover`）在本仓大多有对应页面，但没有一页把 16 节串起来说明「读哪一页」。已补 `docs/idioms/EffectiveGo.md`。
+其中 40 个二级小节（如 `MixedCaps`、`Defer`、`Allocation with make`、`Share by communicating`、`A leaky buffer`、`Panic`、`Recover`）在本仓大多有对应页面，但此前缺少 16 节与本站页面的对应索引，现已补 `docs/idioms/EffectiveGo.md`。
 
 ## 三、规范、FAQ 与 Tour
 
@@ -65,7 +65,7 @@
 | json/v2 | `/doc/jsonv2-migration`、`/pkg/encoding/json/v2` | 核对时无正文页，已补 `docs/encoding/JsonV2.md` |
 | 构建约束 | `/pkg/go/build/`、`/pkg/cmd/go/` 的 Build constraints 小节 | 核对时无正文页，已补 `docs/start/BuildConstraint.md` |
 | 编辑器 | `/gopls`、`/doc/` 的编辑器插件页 | `docs/env/vscode.md`、`docs/env/Goland.md` 覆盖工具安装 |
-| 贡献指南 | `/doc/contribute` | 不适用，本仓是教程仓不是 Go 项目仓库 |
+| 贡献指南 | `/doc/contribute` | 不适用，本站记录开发经验，不是 Go 项目仓库 |
 
 ## 六、原生 fuzzing 与 json/v2 的关键口径
 

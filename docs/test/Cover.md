@@ -108,7 +108,7 @@ Go 的覆盖率就三个命令：`go test -coverprofile` 出数据，`go tool co
 ## 参考资料
 
 - [testing 标准库](https://pkg.go.dev/testing)
-- [官方教程 · 添加测试](https://go.dev/doc/tutorial/add-a-test)
+- [Go 官方文档 · Add a test（外部链接）](https://go.dev/doc/tutorial/add-a-test)
 - [官方 · 覆盖率（build-cover）](https://go.dev/doc/build-cover)
 - [官方博客 · The cover story](https://go.dev/blog/cover)
 

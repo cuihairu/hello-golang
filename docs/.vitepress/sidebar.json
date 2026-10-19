@@ -1,6 +1,6 @@
 [
   {
-    "text": "前言",
+    "text": "背景与概览",
     "link": "/introduction/Introduction",
     "collapsed": true,
     "items": [
@@ -19,7 +19,7 @@
     ]
   },
   {
-    "text": "环境搭建",
+    "text": "工具链与环境",
     "link": "/env/Install",
     "collapsed": true,
     "items": [
@@ -61,7 +61,7 @@
     ]
   },
   {
-    "text": "入门",
+    "text": "启动与构建",
     "link": "/start/Starter",
     "collapsed": true,
     "items": [
@@ -402,7 +402,7 @@
         "link": "/idioms/StructTags"
       },
       {
-        "text": "Effective Go 导读",
+        "text": "Effective Go 对照索引",
         "link": "/idioms/EffectiveGo"
       }
     ]
@@ -673,7 +673,7 @@
         "link": "/generics/Pattern"
       },
       {
-        "text": "实战案例",
+        "text": "实践记录",
         "link": "/generics/Structure"
       },
       {
@@ -720,7 +720,7 @@
         "link": "/io/CommonFormats"
       },
       {
-        "text": "实战案例",
+        "text": "实践记录",
         "link": "/io/Example"
       },
       {

@@ -1,5 +1,5 @@
 # 你好Go
-本节用两个 module 搭一个最小的多模块程序：主模块 `hello-go` 调用库模块 `greeting` 的 `Hello()`，打印 "Hello, Go!"。
+这里记录一个由两个 module 组成的最小程序：主模块 `hello-go` 调用库模块 `greeting` 的 `Hello()`，打印 "Hello, Go!"。
 
 ### 创建项目结构
 
@@ -148,8 +148,8 @@ func Hello() string {
 
 ## 参考资料
 
-- [官方教程 · 入门](https://go.dev/doc/tutorial/getting-started)
-- [官方教程 · 创建模块](https://go.dev/doc/tutorial/create-module)
+- [Go 官方文档 · Getting started（外部链接）](https://go.dev/doc/tutorial/getting-started)
+- [Go 官方文档 · Create a module（外部链接）](https://go.dev/doc/tutorial/create-module)
 
 ## 同层页面
 

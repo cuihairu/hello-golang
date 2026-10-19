@@ -1,6 +1,6 @@
 # 原生 fuzzing：`FuzzXxx` 与 `go test -fuzz`
 
-Go 从 **1.18** 起在标准工具链里内置 fuzzing，用覆盖率引导去走人想不到的输入分支。本仓 `docs/test/Lib.md` 讲的是 go-fuzz 这套外部工具链，原生写法此前没有页面。内容取自官方 `/doc/fuzz/` 与 fuzzing 教程，抓取于 2026-10-08。
+Go 从 **1.18** 起在标准工具链里内置 fuzzing，用覆盖率引导去走人想不到的输入分支。我之前只整理过 `docs/test/Lib.md` 里的 go-fuzz 外部工具链；原生 fuzzing 的记录据官方 `/doc/fuzz/` 与 Fuzzing 页面（外部链接）补在这里，资料抓取于 2026-10-08。
 
 ## 一、它在解决什么问题
 
@@ -66,13 +66,13 @@ func FuzzParse(f *testing.F) {
 ## 来源
 
 1. https://golang.google.cn/doc/fuzz/ — Go Fuzzing：1.18 起内置、覆盖率引导、Requirements 与建议、两种运行方式、OSS-Fuzz（2026-10-08 抓取）
-2. https://golang.google.cn/doc/tutorial/fuzz.html — fuzzing 教程
+2. https://golang.google.cn/doc/tutorial/fuzz.html — Fuzzing 页面（外部链接）
 3. https://golang.google.cn/security/ — 安全页把 fuzzing 列为发现漏洞的手段
 
 ## 参考资料
 
 - [testing 标准库](https://pkg.go.dev/testing)
-- [官方教程 · 添加测试](https://go.dev/doc/tutorial/add-a-test)
+- [Go 官方文档 · Add a test（外部链接）](https://go.dev/doc/tutorial/add-a-test)
 - [官方 · Fuzzing（安全）](https://go.dev/doc/security/fuzz/)
 
 <!-- BACKLINKS-AUTO -->

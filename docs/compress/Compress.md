@@ -1,6 +1,6 @@
 ### 2. compress 包
 
-Go 标准库的 `compress` 包下有 `compress/gzip`、`compress/zlib` 和 `compress/bzip2` 三个子包，本节分别给出压缩和解压的代码示例。
+Go 标准库的 `compress` 包下有 `compress/gzip`、`compress/zlib` 和 `compress/bzip2` 三个子包，这里分别记录压缩和解压的代码示例。
 
 #### 2.1 `compress/gzip`
 

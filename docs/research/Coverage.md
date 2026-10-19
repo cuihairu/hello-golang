@@ -27,10 +27,10 @@
 | 官方主题 | 本仓位置 | 判定 |
 | --- | --- | --- |
 | Getting started / Hello World | `start/Hello.md`、`start/Build.md` | 已覆盖 |
-| Create a module 教程 | `mod/Init.md`、`mod/New.md` | 已覆盖 |
+| 官方 Create a module 页面 | `mod/Init.md`、`mod/New.md` | 已覆盖 |
 | 多模块工作区 | `mod/Work.md` | 已覆盖 |
-| 用 Gin 写 RESTful API 教程 | `gin/` 13 页 | 已覆盖（比官方教程更细） |
-| 泛型教程 | `generics/` 7 页 | 已覆盖 |
+| 官方 RESTful API 示例 | `gin/` 13 页 | 已覆盖（比 Go 官方 RESTful API 示例覆盖更细） |
+| 官方泛型文档 | `generics/` 7 页 | 已覆盖 |
 | Writing Web Applications | `gin/`、`net/` | 已覆盖 |
 | 语言规范 `/ref/spec` | `syntax/`、`type/`、`func/` | 已覆盖内容，无规范引用 |
 | Effective Go | `idioms/` 8 页 | 部分覆盖 → 缺口 10 |
@@ -40,7 +40,7 @@
 | 语言规范术语（方法、接口、嵌入） | `oop/` 8 页 | 已覆盖 |
 | 模块依赖管理 | `mod/` 9 页（含 `Vendor.md`、`Get.md`） | 已覆盖 |
 | go.mod 参考 | `mod/Mod.md` | 已覆盖 |
-| 模块发布与版本号 | `mod/Mod.md` 提了语义化版本 | 部分覆盖（教程仓不发布模块，不补） |
+| 模块发布与版本号 | `mod/Mod.md` 提了语义化版本 | 部分覆盖（本站没有模块发布相关内容，不补） |
 | 内存模型 | 首页 1 处 | 缺口 7 |
 | GC 指南 | `gc/GC.md`、`alloc/GC.md` | 已覆盖 |
 | 诊断 diagnostics | `debug/` 7 页（Delve、GDB、pprof、expvar） | 已覆盖 |
@@ -49,9 +49,9 @@
 | Fuzzing | `test/Lib.md`（go-fuzz） | 缺口 9 |
 | json/v2 迁移 | 0 命中 | 缺口 12 |
 | 构建约束 | 0 命中 | 缺口 6 |
-| 数据库教程（连接、执行、预处理、事务、取消、连接池、防注入） | `db/` 19 页（`Tx.md`、`ConnectPool.md`、`Security.md` 等） | 已覆盖 |
+| 数据库访问文档（连接、执行、预处理、事务、取消、连接池、防注入） | `db/` 19 页（`Tx.md`、`ConnectPool.md`、`Security.md` 等） | 已覆盖 |
 | 编辑器与 gopls | `env/vscode.md`、`env/Goland.md`、`env/Vim.md` | 已覆盖 |
-| 贡献指南 `/doc/contribute` | — | 不适用（本仓是教程仓，不向 Go 项目提交代码），不补 |
+| 贡献指南 `/doc/contribute` | — | 不适用（本站记录 Go 开发经验，不承担 Go 项目贡献指南的内容），不补 |
 | 发布历史与支持策略 | 1 处提及 | 缺口 11 |
 | 安全（漏洞库、fuzzing、加密库、FIPS 140-3） | 0 处 `crypto/` 内容 | 缺口 13 |
 | gopls / goimports / godoc 工具安装 | `env/Tools.md`、`mod/Get.md` | 已覆盖 |
@@ -102,7 +102,7 @@
 
 ## 六、不补的三项及理由
 
-1. **贡献指南**：面向向 Go 项目提交代码的人，本仓是教程仓，写不出有依据的内容。
+1. **贡献指南**：面向向 Go 项目提交代码的人，本站没有可据以整理的 Go 项目贡献流程。
 2. **模块发布工作流**：本仓不发布对外模块，`mod/Mod.md` 已提到语义化版本与 major 版本路径，够用。
 3. **gRPC 独立页**：`grpc.io`、`protobuf.dev` 在本机网络不可达，官方云场景页只有一句生态提及，写不出带来源的技术页。
 

@@ -1,6 +1,6 @@
 # 命名
 
-命名是影响代码可读性的第一要素。Go 社区在命名上有一套约定俗成的规则，其中一部分由编译器和工具链强制执行，另一部分则是官方文档（如 [Effective Go](https://go.dev/doc/effective_go#names) 和 [Go Code Review Comments](https://go.dev/wiki/CodeReviewComments)）中推荐的风格。本章汇总 Go 命名的核心规则与常见惯例。
+命名是影响代码可读性的第一要素。Go 社区在命名上有一套约定俗成的规则，其中一部分由编译器和工具链强制执行，另一部分则是官方文档（如 [Effective Go](https://go.dev/doc/effective_go#names) 和 [Go Code Review Comments](https://go.dev/wiki/CodeReviewComments)）中推荐的风格。这里整理 Go 命名的核心规则与常见惯例。
 
 ### 命名的基本规则
 

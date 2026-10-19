@@ -1,6 +1,6 @@
 ### 测试最佳实践
 
-测试保证改动没有把别处弄坏。Go 的测试写在 `_test.go` 文件里，用 `go test` 运行，下面按可维护性、覆盖率、策略、异常处理和 CI 五块讲。
+测试保证改动没有把别处弄坏。Go 的测试写在 `_test.go` 文件里，用 `go test` 运行，这里从可维护性、覆盖率、策略、异常处理和 CI 五方面整理实践。
 
 #### 8.1 编写可维护的测试代码
 
@@ -174,7 +174,7 @@ func BenchmarkAdd(b *testing.B) {
 ## 参考资料
 
 - [testing 标准库](https://pkg.go.dev/testing)
-- [官方教程 · 添加测试](https://go.dev/doc/tutorial/add-a-test)
+- [Go 官方文档 · Add a test（外部链接）](https://go.dev/doc/tutorial/add-a-test)
 
 
 ## 同层页面

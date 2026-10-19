@@ -1,5 +1,5 @@
 # 包管理器
-Go 用 `go mod` 管理依赖关系，`go.mod` 文件记录模块路径和依赖版本。下面按用途分组介绍常用命令：
+Go 用 `go mod` 管理依赖关系，`go.mod` 文件记录模块路径和依赖版本。这里按用途整理常用命令：
 
 ### `go mod` 的基础概念
 
@@ -92,7 +92,7 @@ go get github.com/sirupsen/logrus@v1.7.0
 ## 参考资料
 
 - [官方 · 安装与管理 Go 工具链](https://go.dev/doc/manage-install)
-- [官方教程 · 入门](https://go.dev/doc/tutorial/getting-started)
+- [Go 官方文档 · Getting started（外部链接）](https://go.dev/doc/tutorial/getting-started)
 - [官方 · Go Modules 使用指南](https://go.dev/doc/modules/)
 
 

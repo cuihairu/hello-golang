@@ -141,7 +141,7 @@ BC范式是3NF的加强版，要求每个主属性完全依赖于候选键。
 ## 参考资料
 
 - [官方 · 数据库访问指南](https://go.dev/doc/database/)
-- [官方教程 · 数据库访问](https://go.dev/doc/tutorial/database-access)
+- [Go 官方文档 · Accessing a relational database（外部链接）](https://go.dev/doc/tutorial/database-access)
 - [database/sql 标准库](https://pkg.go.dev/database/sql)
 
 

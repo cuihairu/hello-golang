@@ -189,8 +189,8 @@ Go 模块管理文件。
 
 ## 参考资料
 
-- [官方教程 · 入门](https://go.dev/doc/tutorial/getting-started)
-- [官方教程 · 创建模块](https://go.dev/doc/tutorial/create-module)
+- [Go 官方文档 · Getting started（外部链接）](https://go.dev/doc/tutorial/getting-started)
+- [Go 官方文档 · Create a module（外部链接）](https://go.dev/doc/tutorial/create-module)
 
 
 ## 同层页面

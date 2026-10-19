@@ -1,5 +1,5 @@
 # Json
-标准库 `encoding/json` 用两个函数包办 JSON：`Marshal` 把结构体编码成字节，`Unmarshal` 反过来解回结构体。本章按基本用法、结构体标签、嵌套与动态 JSON、常见陷阱四块来讲。
+标准库 `encoding/json` 用两个函数包办 JSON：`Marshal` 把结构体编码成字节，`Unmarshal` 反过来解回结构体。这里整理基本用法、结构体标签、嵌套与动态 JSON，以及常见陷阱。
 
 ### 1. 基本用法
 

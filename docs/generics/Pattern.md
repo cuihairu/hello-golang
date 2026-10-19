@@ -1,6 +1,6 @@
 ### 泛型编程模式
 
-泛型让一份代码跑在多种类型上。本章讲四个模式：代码复用、类型安全、接口结合，以及泛型的局限。
+泛型让一份代码跑在多种类型上。这里记录四种模式：代码复用、类型安全、接口结合，以及泛型的局限。
 
 #### 4.1 泛型与代码复用
 
@@ -125,7 +125,7 @@ var _ Container[int] = &IntContainer{}
 
 ## 参考资料
 
-- [官方教程 · 泛型入门](https://go.dev/doc/tutorial/generics)
+- [Go 官方文档 · Getting started with generics（外部链接）](https://go.dev/doc/tutorial/generics)
 - [官方博客 · An Introduction To Generics](https://go.dev/blog/intro-generics)
 - [官方博客 · When To Use Generics](https://go.dev/blog/when-generics)
 - [语言规范 · 类型参数声明](https://go.dev/ref/spec#Type_parameter_declarations)

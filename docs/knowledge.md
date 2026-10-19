@@ -1,6 +1,6 @@
 # Go 知识点主文档
 
-本文把 2026-10-08 的三类外部调研收拢成一篇可查的知识点总表：权威书籍、官方文档、应用场景。调研底稿与逐条出处都在 `docs/research/`，这里只留结论与导航。
+我把 2026-10-08 查阅的书籍、官方文档和应用场景整理成这份知识点索引。调研底稿与出处在 `docs/research/`，这里汇总主要发现和页面入口。
 
 来源标注规则：官方内容抓自 `golang.google.cn` 镜像（页脚标注 go.dev，正文与主站一致，抓取日 2026-10-08）；书目录自豆瓣读书与当当条目（同日抓取）；调研自己的判断标「调研结论」；截至成文日（2026-10-10），本文没有出现查无实据的条目，后续补充若无出处会就地标「来源未考」。
 
@@ -8,7 +8,7 @@
 
 1. **官方定位**：官方文档总览对 Go 的定义是，表达力强、简洁、干净、高效；并发机制让程序吃满多核与网络化机器；类型系统支持灵活的模块化构造；编译快，带垃圾回收和运行时反射；静态类型编译型语言，写起来像动态解释型语言。这段是官方原话的中译，见 [OfficialDocs.md](research/OfficialDocs.md)。
 
-2. **CSP 并发模型**：Go 的并发走 CSP 路线，核心一句是 share by communicating——不靠共享内存通信，靠通信共享内存（Effective Go §14，官方把 Effective Go 标为「任何新的 Go 程序员必读」）。goroutine 是运行时调度的轻量执行单元，channel 是类型化通信管道。本仓 `concurrency/` 13 页加 `sync/` 14 页是全仓密度最高的部分，导读见 [EffectiveGo.md](idioms/EffectiveGo.md)。
+2. **CSP 并发模型**：Go 的并发走 CSP 路线，核心一句是 share by communicating——不靠共享内存通信，靠通信共享内存（Effective Go §14，官方把 Effective Go 标为「新 Go 程序员必读」）。goroutine 是运行时调度的轻量执行单元，channel 是类型化通信管道。本仓 `concurrency/` 13 页加 `sync/` 14 页是全仓密度最高的部分，导读见 [EffectiveGo.md](idioms/EffectiveGo.md)。
 
 3. **内存模型与 happens before**：官方内存模型（The Go Memory Model）只对同步原语给保证——channel 收发、锁、`sync.Once`、goroutine 启动等按文档列出的规则成立 happens before；没有数据竞争的程序表现符合顺序一致（DRF-SC），证明路线与 Boehm 和 Adve 2008 年 PLDI 论文相同。没有同步保护的读写，编译器与处理器都可能重排。来源 [`/ref/mem`](https://golang.google.cn/ref/mem)，正文页 [MemoryModel.md](gc/MemoryModel.md)。
 
@@ -78,10 +78,10 @@
 | 《企业级Go项目开发实战》 | 孔令飞（机工 2023-1） | 企业级项目全流程 |
 | 《Go Web编程实战派》 | 廖显东（电子工业 2021-4） | Web 开发四篇结构 |
 | 《Go并发编程实战》 | 郝林（邮电 2015-1，6.2） | 并发实践，出版较早 |
-| 《Head First Go》 | Jay McGavren（O'Reilly 2018，8.6） | 入门 |
-| 《Learning Go, 2nd Edition》 | Jon Bodner（O'Reilly 2024） | 进阶入门 |
-| 《An Introduction to Programming in Go》 | Caleb Doxsey（CreateSpace 2012，7.6） | 入门 |
-| 《Go语言从入门到进阶实战》 | 徐波（机工 2018-6） | 入门到进阶 |
+| 《Head First Go》 | Jay McGavren（O'Reilly 2018，8.6） | 基础内容 |
+| 《Learning Go, 2nd Edition》 | Jon Bodner（O'Reilly 2024） | 基础与进阶内容 |
+| 《An Introduction to Programming in Go》 | Caleb Doxsey（CreateSpace 2012，7.6） | 基础内容 |
+| 《Go语言从入门到进阶实战》 | 徐波（机工 2018-6） | 基础到进阶的项目内容 |
 
 ## 五、常见坑与误区
 

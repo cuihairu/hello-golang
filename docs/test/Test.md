@@ -1,6 +1,6 @@
 # 测试
 
-Go 的测试不用装框架，标准库 `testing` 一个包就够：单元测试看功能对不对，基准测试量耗时，示例测试展示代码怎么用。本章把这三类测试的写法和覆盖率一起讲完。
+Go 的测试不用装框架，标准库 `testing` 一个包就够：单元测试看功能对不对，基准测试量耗时，示例测试展示代码怎么用。这里记录这三类测试的写法和覆盖率。
 
 #### 1.1 测试的作用
 
@@ -23,7 +23,7 @@ Go 的测试能力都在标准库 `testing` 包里，`go test` 一条命令跑�
 ## 参考资料
 
 - [testing 标准库](https://pkg.go.dev/testing)
-- [官方教程 · 添加测试](https://go.dev/doc/tutorial/add-a-test)
+- [Go 官方文档 · Add a test（外部链接）](https://go.dev/doc/tutorial/add-a-test)
 
 <!-- BACKLINKS-AUTO -->
 ## 相关页面

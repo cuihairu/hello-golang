@@ -102,12 +102,12 @@ mongos --configdb configReplSet/localhost:27019 --port 27017
 sh.addShard("shardReplSet/localhost:27018")
 ```
 
-本节覆盖了四件事：MySQL 主从复制的配置、`mysqldump` 的全量与增量备份、从备份文件恢复数据的命令、MongoDB 分片集群的启动步骤。
+这里记录四件事：MySQL 主从复制的配置、`mysqldump` 的全量与增量备份、从备份文件恢复数据的命令、MongoDB 分片集群的启动步骤。
 
 ## 参考资料
 
 - [官方 · 数据库访问指南](https://go.dev/doc/database/)
-- [官方教程 · 数据库访问](https://go.dev/doc/tutorial/database-access)
+- [Go 官方文档 · Accessing a relational database（外部链接）](https://go.dev/doc/tutorial/database-access)
 - [database/sql 标准库](https://pkg.go.dev/database/sql)
 
 ## 同层页面

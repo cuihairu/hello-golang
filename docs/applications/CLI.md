@@ -41,7 +41,7 @@ CLI 是官方四类场景之一。官方 CLI 页给的理由集中在三条：�
 
 ## 参考资料
 
-- [官方教程 · Web 应用（wiki）](https://go.dev/doc/articles/wiki/)
+- [Go 官方文档 · Writing Web Applications（外部链接）](https://go.dev/doc/articles/wiki/)
 - [net/http 标准库](https://pkg.go.dev/net/http)
 
 <!-- BACKLINKS-AUTO -->

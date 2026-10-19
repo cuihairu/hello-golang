@@ -224,7 +224,7 @@ func TestWithDocker(t *testing.T) {
 ## 参考资料
 
 - [testing 标准库](https://pkg.go.dev/testing)
-- [官方教程 · 添加测试](https://go.dev/doc/tutorial/add-a-test)
+- [Go 官方文档 · Add a test（外部链接）](https://go.dev/doc/tutorial/add-a-test)
 - [net/http/httptest 标准库](https://pkg.go.dev/net/http/httptest)
 - [testing/quick](https://pkg.go.dev/testing/quick)
 

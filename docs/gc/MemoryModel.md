@@ -9,7 +9,7 @@
 1. 同时被多个 goroutine 修改的数据必须串行访问，用 channel 操作或 `sync`、`sync/atomic` 里的同步原语保护。
 2. 如果读完这份文档才能看懂自己程序的行为，那就是想多了。原话是 If you must read the rest of this document to understand the behavior of your program, you are being too clever. Don't be clever.
 
-所以先给结论：不加同步就共享可变数据，读到什么都可能；加了同步，按下面的规则推。
+我的结论是：不加同步就共享可变数据，读到什么都可能；加了同步，再按下面的规则判断。
 
 ## 二、几个定义
 
