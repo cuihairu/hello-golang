@@ -93,13 +93,13 @@
 
 - `npm run docs:build` **未能运行**：`sh: 1: vitepress: not found`；`package.json` 有构建脚本，但当前环境没有已安装的本地 VitePress 可执行文件。完整构建级死链检查因此为 **未核实**。
 - 对 sidebar 页面引用做文件映射核对：0 个缺失。
-- 对 Markdown 内链做了简易扫描，但扫描器会把代码围栏/行内代码里的括号误识为链接，产生 18 条假阳性（如 `docs/generics/Constraints.md:14` 的代码参数）。不能据此宣称有 18 个死链。`docs/research/Coverage.md:100` 中出现 `gin/Advanced.md`，而现有文件为 `docs/gin/advanced.md`（大小写不同），是一个值得人工确认的疑似大小写死链；站点构建未跑通，状态记为 **未核实**。
+- 对 Markdown 内链做了简易扫描，但扫描器会把代码围栏/行内代码里的括号误识为链接，产生 18 条假阳性（如 `docs/generics/Constraints.md:14` 的代码参数）。不能据此宣称有 18 个死链。对照 `docs/SUMMARY.md:396` 与 `docs/gin/advanced.md`，当前 SUMMARY 的大小写引用一致；`docs/research/Coverage.md:100` 只是审计表格中保留的旧问题记录，并非链接，不能据此报当前死链。
 
 ## 问题清单与严重度
 
 | # | 问题/判断 | 严重度 | 证据与理由 |
 |---|---|---|---|
-| 1 | 构建级死链状态未知，存在疑似大小写不一致链接 | 中 | `docs/research/Coverage.md:100` 链到 `gin/Advanced.md`，磁盘文件为 `docs/gin/advanced.md`；大小写敏感部署可能失败。构建因缺少 vitepress 未核实。 |
+| 1 | 构建级死链状态未知，存在疑似大小写不一致链接 | 中 | 未能执行构建，整体死链状态未知。曾经的大小写问题当前已在 `docs/SUMMARY.md:396` 使用 `gin/advanced.md` 修正；`docs/research/Coverage.md:100` 是修复记录而非链接。 |
 | 2 | SUMMARY 与侧栏是双份维护数据，可能发生漂移 | 中 | `docs/.vitepress/config.mts:2,20-21` 导入生成后的 `sidebar.json`，注释标明由 SUMMARY 映射；SUMMARY 有 403 个链接，sidebar 389 个唯一页面。当前文件对账未发现失效引用，但映射脚本未执行，未来人工单改一份会漂移。 |
 | 3 | 文件命名大小写/词界不一致，README 变体尤其明显 | 低 | 上述 8 个 `Readme.md`/`README.md` 路径；`docs/env/ide.md` 与 `docs/env/Goland.md`、`docs/gin/advanced.md` 并列。主要影响检索、链接跨平台和维护一致性，不构成组织失效。 |
 | 4 | 相同 basename 的主题页分布多处，容易误判重复或产生检索歧义 | 低 | `docs/type/Array.md` 与 `docs/algo/array/Array.md`；`docs/gc/GC.md` 与 `docs/alloc/GC.md`；更多见“同主题/相近主题多处”。语境可能有意区分，不建议仅凭文件名合并。 |
@@ -131,6 +131,6 @@
 
 ## 最该先做的三件事
 
-1. 在装好依赖的环境运行 `npm ci && npm run docs:build`，解决并记录真实构建/死链结果；优先核实 `docs/research/Coverage.md:100` 的大小写疑点。
+1. 在装好依赖的环境运行 `npm ci && npm run docs:build`，解决并记录真实构建/死链结果；记录构建输出并处理构建实际报告的死链。
 2. 确认 SUMMARY→sidebar 的生成脚本与差异，选定唯一权威源，避免两份导航独立编辑。
 3. 先为同名/相近主题页标明范围与交叉入口，再讨论重命名或合并；暂不碰编号或大规模迁移。
