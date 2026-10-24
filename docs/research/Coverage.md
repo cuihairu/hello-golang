@@ -51,7 +51,7 @@ Verification date 2026-10-08. The search used regex over file names, titles and 
 | Build constraints | 0 hits | Gap 6 |
 | Database access docs (connection, execution, prepared statements, transactions, cancellation, connection pools, injection prevention) | `db/` 19 pages (`Tx.md`, `ConnectPool.md`, `Security.md`, etc.) | Covered |
 | Editors and gopls | `env/vscode.md`, `env/Goland.md`, `env/Vim.md` | Covered |
-| Contribution guide `/doc/contribute` | -- | Not applicable (this site records Go development experience, it does not carry Go project contribution-guide content), not filling |
+| Contribution guide `/doc/contribute` | — | Not applicable (this site records Go development experience, it does not carry Go project contribution-guide content), not filling |
 | Release history and support policy | 1 mention | Gap 11 |
 | Security (vulnerability database, fuzzing, crypto libraries, FIPS 140-3) | 0 `crypto/` content | Gap 13 |
 | gopls / goimports / godoc tool installation | `env/Tools.md`, `mod/Get.md` | Covered |
@@ -108,20 +108,20 @@ Verification date 2026-10-08. The search used regex over file names, titles and 
 
 ## Sources
 
-1. https://golang.google.cn/doc/ -- official documentation overview
-2. https://golang.google.cn/doc/effective_go -- Effective Go table of contents
-3. https://golang.google.cn/pkg/go/build/ -- build constraint definition
-4. https://golang.google.cn/pkg/cmd/go/ -- Build constraints section
-5. https://golang.google.cn/ref/mem -- memory model
-6. https://golang.google.cn/doc/pgo -- PGO
-7. https://golang.google.cn/doc/fuzz/ -- fuzzing
-8. https://golang.google.cn/doc/jsonv2-migration -- json/v2
-9. https://golang.google.cn/doc/devel/release -- release history and support policy
-10. https://golang.google.cn/dl/?mode=json -- stable release go1.27.1
-11. https://golang.google.cn/security/ -- official security page
-12. https://golang.google.cn/solutions/use-cases -- the four scenarios
-13. https://golang.google.cn/solutions/cloud/, `/clis/`, `/webdev/`, `/devops/` -- the four scenarios in detail
-14. https://book.douban.com/tag/Go -- the reading list used for the book chapter mapping
+1. https://golang.google.cn/doc/ — official documentation overview
+2. https://golang.google.cn/doc/effective_go — Effective Go table of contents
+3. https://golang.google.cn/pkg/go/build/ — build constraint definition
+4. https://golang.google.cn/pkg/cmd/go/ — Build constraints section
+5. https://golang.google.cn/ref/mem — memory model
+6. https://golang.google.cn/doc/pgo — PGO
+7. https://golang.google.cn/doc/fuzz/ — fuzzing
+8. https://golang.google.cn/doc/jsonv2-migration — json/v2
+9. https://golang.google.cn/doc/devel/release — release history and support policy
+10. https://golang.google.cn/dl/?mode=json — stable release go1.27.1
+11. https://golang.google.cn/security/ — official security page
+12. https://golang.google.cn/solutions/use-cases — the four scenarios
+13. https://golang.google.cn/solutions/cloud/, `/clis/`, `/webdev/`, `/devops/` — the four scenarios in detail
+14. https://book.douban.com/tag/Go — the reading list used for the book chapter mapping
 
 <!-- BACKLINKS-AUTO -->
 ## Related pages

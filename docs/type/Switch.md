@@ -140,6 +140,6 @@ A type `switch` solves one thing: you have an interface value but don't know its
 <!-- BACKLINKS-AUTO -->
 ## Related pages
 
-- [glossary](/zh/glossary.md)
+- [glossary](/glossary.md)
 - [Struct](/type/Struct.md)
 - [Template](/type/Template.md)

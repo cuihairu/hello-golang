@@ -106,7 +106,7 @@ An example test does double duty: it is a test, because `go test` compares the a
 
 ## Sibling pages
 
-- [Fuzz](/zh/test/Fuzz.md)
+- [Fuzz](/test/Fuzz.md)
 - [Test](/test/Test.md)
 - [Advanced](/test/Advanced.md)
 - [Cover](/test/Cover.md)

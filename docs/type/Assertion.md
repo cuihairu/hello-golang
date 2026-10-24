@@ -133,7 +133,7 @@ A type assertion pulls the concrete value out of an interface value. The form wi
 <!-- BACKLINKS-AUTO -->
 ## Related pages
 
-- [glossary](/zh/glossary.md)
+- [glossary](/glossary.md)
 - [Array](/type/Array.md)
 - [BaseConv](/type/BaseConv.md)
 - [Big](/type/Big.md)

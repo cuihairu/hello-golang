@@ -36,13 +36,13 @@ Beyond the four categories there is one implicit thread: Go projects usually sta
 
 ## Sources
 
-1. https://golang.google.cn/solutions/use-cases -- the four-scenario index (fetched 2026-10-08)
-2. https://golang.google.cn/solutions/cloud/ -- cloud and network services
-3. https://golang.google.cn/solutions/clis/ -- command-line interfaces
-4. https://golang.google.cn/solutions/webdev/ -- web development
-5. https://golang.google.cn/solutions/devops/ -- DevOps/SRE
-6. https://golang.google.cn/solutions/mercadolibre -- MercadoLibre case study
-7. https://golang.google.cn/solutions/paypal -- PayPal case study
+1. https://golang.google.cn/solutions/use-cases — the four-scenario index (fetched 2026-10-08)
+2. https://golang.google.cn/solutions/cloud/ — cloud and network services
+3. https://golang.google.cn/solutions/clis/ — command-line interfaces
+4. https://golang.google.cn/solutions/webdev/ — web development
+5. https://golang.google.cn/solutions/devops/ — DevOps/SRE
+6. https://golang.google.cn/solutions/mercadolibre — MercadoLibre case study
+7. https://golang.google.cn/solutions/paypal — PayPal case study
 
 ## References
 

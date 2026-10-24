@@ -1,5 +1,5 @@
 
-> Perspective: this page collects assignment patterns by variable-usage scenario; for the operator taxonomy (`=`, `+=`, etc.) see [assignment operator notes](/zh/operator/Assignment.md).
+> Perspective: this page collects assignment patterns by variable-usage scenario; for the operator taxonomy (`=`, `+=`, etc.) see [assignment operator notes](/operator/Assignment.md).
 In Go, assignment hands a value to a variable. There are ten common forms.
 
 ### 1. Simple assignment

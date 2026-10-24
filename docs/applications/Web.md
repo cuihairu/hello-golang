@@ -46,9 +46,9 @@ Where the standard library's `net/http` needs to stop and a framework begin was 
 
 ## Sources
 
-1. https://golang.google.cn/solutions/webdev/ -- Go for Web Development (HTTP/2, TLS 1.3, the 10x and 64% numbers, the project list, fetched 2026-10-08)
-2. https://golang.google.cn/solutions/use-cases -- the four-scenario index
-3. https://golang.google.cn/doc/ -- the Writing Web Applications page entry under Getting Started
+1. https://golang.google.cn/solutions/webdev/ — Go for Web Development (HTTP/2, TLS 1.3, the 10x and 64% numbers, the project list, fetched 2026-10-08)
+2. https://golang.google.cn/solutions/use-cases — the four-scenario index
+3. https://golang.google.cn/doc/ — the Writing Web Applications page entry under Getting Started
 
 ## References
 

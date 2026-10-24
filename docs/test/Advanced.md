@@ -1,5 +1,6 @@
 # Advanced testing techniques
 
+
 Alongside unit tests I've put together six more testing techniques: concurrent testing, mocking, coverage analysis, memory-leak detection, performance testing, and A/B comparison. Each section gives the Go approach.
 
 #### 5.1 Concurrent testing
@@ -191,7 +192,7 @@ The six techniques each cover one angle: concurrent testing exposes data races, 
 
 ## Sibling pages
 
-- [Fuzz](/zh/test/Fuzz.md)
+- [Fuzz](/test/Fuzz.md)
 - [Test](/test/Test.md)
 - [BaseTest](/test/BaseTest.md)
 
@@ -202,5 +203,5 @@ The six techniques each cover one angle: concurrent testing exposes data races, 
 - [Benchmark](/test/Benchmark.md)
 - [Cover](/test/Cover.md)
 - [Example](/test/Example.md)
-- [Lib](/zh/test/Lib.md)
-- [Practice](/zh/test/Practice.md)
+- [Lib](/test/Lib.md)
+- [Practice](/test/Practice.md)

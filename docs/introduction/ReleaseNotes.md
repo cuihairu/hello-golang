@@ -63,4 +63,4 @@ This check went through the versions mentioned in this repo against the official
 - [Feature](/introduction/Feature.md)
 - [Introduction](/introduction/Introduction.md)
 - [Lineage](/introduction/Lineage.md)
-- [knowledge](/zh/knowledge.md)
+- [knowledge](/knowledge.md)

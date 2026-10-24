@@ -117,7 +117,7 @@ What a benchmark gives you is the average time per operation (such as `1.00 ns/o
 
 ## Sibling pages
 
-- [Fuzz](/zh/test/Fuzz.md)
+- [Fuzz](/test/Fuzz.md)
 - [Test](/test/Test.md)
 - [Advanced](/test/Advanced.md)
 - [BaseTest](/test/BaseTest.md)

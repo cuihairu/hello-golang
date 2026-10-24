@@ -1,6 +1,6 @@
 # Survey of comparable classic books
 
-Conclusion first: this repo's knowledge organization is basically isomorphic with the chapter spine of *The Go Programming Language* (syntax -> types -> methods and interfaces -> packages -> testing -> concurrency -> reflection); what really doesn't line up is the low-level and engineering halves of *Go: Advanced Programming* (cgo, assembly, syntax trees, unsafe, RPC and cloud native), plus the "discipline of writing concurrency correctly" that concurrency books keep hammering -- this repo has pages for it but lacks one page that consolidates the methodology. All bibliographic data comes from Douban and Dangdang entries fetched on 2026-10-08.
+Conclusion first: this repo's knowledge organization is basically isomorphic with the chapter spine of *The Go Programming Language* (syntax -> types -> methods and interfaces -> packages -> testing -> concurrency -> reflection); what really doesn't line up is the low-level and engineering halves of *Go: Advanced Programming* (cgo, assembly, syntax trees, unsafe, RPC and cloud native), plus the "discipline of writing concurrency correctly" that concurrency books keep hammering — this repo has pages for it but lacks one page that consolidates the methodology. All bibliographic data comes from Douban and Dangdang entries fetched on 2026-10-08.
 
 ## 1. Language bibles
 
@@ -20,9 +20,9 @@ The Douban entry for *The Go Programming Language* comes from a Sogou search agg
 | *Go Expert Programming* | Ren Hongcai | Publishing House of Electronics Industry · 2020-7 | 8.9 (151 ratings) | Much content drawn from source-code analysis, covering internal implementation of common features |
 | *Deep Dive into Go: Object Model and the Principles, Features and Applications of the Runtime* | Feng Youlin | Tsinghua University Press · 2022-8 | 8.5 (11 ratings) | Object model and runtime implementation |
 | *The Path to Go Mastery: From Beginner to Expert* (vol. 1 and 2) | Bai Ming | China Machine Press · 2021-12 | Vol. 1: 8.7 (168 ratings), vol. 2: 8.2 (55 ratings) | Programming mindset and practical techniques, two dimensions, on writing code that follows Go conventions |
-| *A Guide to Customizing Go* | Chai Shushan, Shi Bin, Ding Ernan | Posts & Telecom Press · 2022-2 | -- (10 ratings) | How syntax trees, `go fmt`, `go doc` and similar tools are built |
+| *A Guide to Customizing Go* | Chai Shushan, Shi Bin, Ding Ernan | Posts & Telecom Press · 2022-2 | — (10 ratings) | How syntax trees, `go fmt`, `go doc` and similar tools are built |
 
-The low-level layer maps to this repo's `docs/zh/alloc/`, `docs/zh/gc/`, `docs/zh/asm/`, `docs/zh/cgo/`, `docs/zh/reflection/`, each with only 1-2 pages -- the thinnest areas of this repo.
+The low-level layer maps to this repo's `docs/zh/alloc/`, `docs/zh/gc/`, `docs/zh/asm/`, `docs/zh/cgo/`, `docs/zh/reflection/`, each with only 1-2 pages — the thinnest areas of this repo.
 
 ## 3. Concurrency
 
@@ -32,7 +32,7 @@ The low-level layer maps to this repo's `docs/zh/alloc/`, `docs/zh/gc/`, `docs/z
 | *Concurrency in Go* | Katherine Cox-Buday | O'Reilly · 2017-08, 229 pages (English edition) | Chinese translation *The Way of Go Concurrency*, China Electric Power Press · 2018-12, 5.0 (83 ratings) | goroutine, synchronization primitives, pipeline patterns, data races, context |
 | *Go Concurrent Programming in Practice* | Hao Lin | Posts & Telecom Press · 2015-1 | 6.2 (86 ratings) | Concurrent programming practice, published earlier |
 
-The concurrency layer has 13 pages in this repo (CSP, Actor, goroutine implementation, channel implementation, select, WaitGroup, ErrorGroup, GMP scheduler) -- density is enough; what's missing is decision content that converges "when to use which primitive" into one page, already logged in the gap table.
+The concurrency layer has 13 pages in this repo (CSP, Actor, goroutine implementation, channel implementation, select, WaitGroup, ErrorGroup, GMP scheduler) — density is enough; what's missing is decision content that converges "when to use which primitive" into one page, already logged in the gap table.
 
 ## 4. Scenarios and project practice
 

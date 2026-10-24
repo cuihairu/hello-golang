@@ -8,7 +8,7 @@ CLI is one of the official four scenarios. The official CLI page's rationale com
 - The artifact is a single self-contained binary; installing the program means copying one file, with no dependency on existing libraries, runtimes or dependencies.
 - Startup happens immediately, at a scale close to C/C++.
 
-Cloud and infrastructure applications are naturally CLI-first, because scripting and remote operation are both convenient -- that is why the official pages single CLI out as its own category.
+Cloud and infrastructure applications are naturally CLI-first, because scripting and remote operation are both convenient — that is why the official pages single CLI out as its own category.
 
 ## 2. The division between Cobra and Viper
 
@@ -17,7 +17,7 @@ Cloud and infrastructure applications are naturally CLI-first, because scripting
 | Cobra | Commands, subcommands, argument parsing, help and auto-completion; both a library and a code generator | CoreOS, Delve, Docker, Dropbox, Git LFS, Hugo, Kubernetes |
 | Viper | Configuration: nested structures, files, environment variables; used with Cobra to form a complete solution | The scenario the official page gives is that sensitive data goes through environment variables, not into command-line history |
 
-The official positioning of Cobra quotes Francesc Campoy of DGraph Labs: it is more of a framework than a library -- invoking the generated binary gives you a skeleton, and the rest is filling in code. Hugo author Bjørn Erik Pedersen's reason is that single-binary makes installation extremely simple.
+The official positioning of Cobra quotes Francesc Campoy of DGraph Labs: it is more of a framework than a library — invoking the generated binary gives you a skeleton, and the rest is filling in code. Hugo author Bjørn Erik Pedersen's reason is that single-binary makes installation extremely simple.
 
 This repo's `docs/zh/cmd/` covers the design and parsing of the standard-library `flag` package, enough for small-to-medium tools; move to Cobra once the command tree gets large, and `docs/zh/gin/Config.md` introduces Viper.
 
@@ -36,8 +36,8 @@ This repo's `docs/zh/cmd/` covers the design and parsing of the standard-library
 
 ## Sources
 
-1. https://golang.google.cn/solutions/clis/ -- Go for CLIs (single binary, cross-architecture builds in seconds, Cobra and Viper, Comcast/GitHub/Hugo case studies, fetched 2026-10-08)
-2. https://golang.google.cn/solutions/use-cases -- the four-scenario index
+1. https://golang.google.cn/solutions/clis/ — Go for CLIs (single binary, cross-architecture builds in seconds, Cobra and Viper, Comcast/GitHub/Hugo case studies, fetched 2026-10-08)
+2. https://golang.google.cn/solutions/use-cases — the four-scenario index
 
 ## References
 

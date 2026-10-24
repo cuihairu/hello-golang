@@ -173,8 +173,8 @@ Where a variable is declared and whether it is initialized determine whether it 
 <!-- BACKLINKS-AUTO -->
 ## Related pages
 
-- [Practice](/zh/alloc/Practice.md)
-- [glossary](/zh/glossary.md)
+- [Practice](/alloc/Practice.md)
+- [glossary](/glossary.md)
 - [Assignment](/var/Assignment.md)
 - [ScopeAndLifetime](/var/ScopeAndLifetime.md)
 - [Variable](/var/Variable.md)

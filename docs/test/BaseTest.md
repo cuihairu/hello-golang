@@ -135,7 +135,7 @@ Put test functions in `_test.go`, run them with `go test`, use `-v` to see `t.Lo
 
 ## Sibling pages
 
-- [Fuzz](/zh/test/Fuzz.md)
+- [Fuzz](/test/Fuzz.md)
 - [Test](/test/Test.md)
 - [Advanced](/test/Advanced.md)
 

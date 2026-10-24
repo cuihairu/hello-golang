@@ -83,7 +83,7 @@ All fetched 2026-10-08.
 <!-- BACKLINKS-AUTO -->
 ## Related pages
 
-- [knowledge](/zh/knowledge.md)
+- [knowledge](/knowledge.md)
 - [Build](/start/Build.md)
 - [Embed](/start/Embed.md)
 - [Hello](/start/Hello.md)

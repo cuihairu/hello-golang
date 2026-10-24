@@ -8,9 +8,9 @@ Source-labelling rule: official content was fetched from the `golang.google.cn` 
 
 1. **Official positioning**: the official documentation overview defines Go as expressive, concise, clean and efficient; its concurrency mechanism lets programs saturate multicore and networked machines; its type system supports flexible modular construction; it compiles fast, with garbage collection and runtime reflection; a statically typed compiled language that reads like a dynamic interpreted language. This is a Chinese translation of the official wording; see [OfficialDocs.md](/research/OfficialDocs.md).
 
-2. **CSP concurrency model**: Go's concurrency follows CSP; the core line is share by communicating -- not communicating through shared memory, but sharing memory through communication (Effective Go section 14; the official page labels Effective Go "required reading for new Go programmers"). A goroutine is a lightweight unit of execution scheduled by the runtime, and a channel is a typed communication pipe. This repo's `concurrency/` 13 pages plus `sync/` 14 pages are the densest part of the whole repo; see [EffectiveGo.md](/idioms/EffectiveGo.md) for the guide.
+2. **CSP concurrency model**: Go's concurrency follows CSP; the core line is share by communicating — not communicating through shared memory, but sharing memory through communication (Effective Go section 14; the official page labels Effective Go "required reading for new Go programmers"). A goroutine is a lightweight unit of execution scheduled by the runtime, and a channel is a typed communication pipe. This repo's `concurrency/` 13 pages plus `sync/` 14 pages are the densest part of the whole repo; see [EffectiveGo.md](/idioms/EffectiveGo.md) for the guide.
 
-3. **Memory model and happens before**: the official memory model (The Go Memory Model) only guarantees for synchronization primitives -- channel send/receive, locks, `sync.Once`, goroutine launch and the other rules listed in the documentation establish happens before; a program with no data race behaves sequentially consistently (DRF-SC), and the proof route is the same as Boehm and Adve's 2008 PLDI paper. Reads and writes without synchronization protection may be reordered by both compiler and processor. Source [`/ref/mem`](https://golang.google.cn/ref/mem); body page [MemoryModel.md](/gc/MemoryModel.md).
+3. **Memory model and happens before**: the official memory model (The Go Memory Model) only guarantees for synchronization primitives — channel send/receive, locks, `sync.Once`, goroutine launch and the other rules listed in the documentation establish happens before; a program with no data race behaves sequentially consistently (DRF-SC), and the proof route is the same as Boehm and Adve's 2008 PLDI paper. Reads and writes without synchronization protection may be reordered by both compiler and processor. Source [`/ref/mem`](https://golang.google.cn/ref/mem); body page [MemoryModel.md](/gc/MemoryModel.md).
 
 4. **Type system**: interfaces are implicitly implemented, so a type need not declare what it implements; composition goes through embedding; generics (type parameters) are now part of the language. The language specification ([`/ref/spec`](https://golang.google.cn/ref/spec), 341 KB fetched) is the sole grammatical authority; this repo's `syntax/`, `type/` and `func/` have corresponding content but do not cite the specification text, so the gap table records it as "content present, no citations"; see table 2 in [Coverage.md](/research/Coverage.md).
 
@@ -20,7 +20,7 @@ Source-labelling rule: official content was fetched from the `golang.google.cn` 
 
 6. **Build constraints**: `//go:build` is the recommended syntax from Go 1.17 onward; the old `// +build` form is kept in sync automatically by gofmt. From Go 1.21 build constraints can reference a language version (for example `go1.21`). File-name suffixes (`_linux`, `_amd64`) are implicit constraints. Sources [`/pkg/go/build/`](https://golang.google.cn/pkg/go/build/) and [`/pkg/cmd/go/`](https://golang.google.cn/pkg/cmd/go/); body page [BuildConstraint.md](/start/BuildConstraint.md).
 
-7. **Native fuzzing**: built in from Go 1.18, using coverage guidance to explore inputs. Test functions are written as `FuzzXxx(*testing.F)`; they run as unit tests by default, and add `-fuzz=FuzzTestName` to actually fuzz. Parameter types are restricted to `string`, `[]byte`, integers, floating point and `bool`. Supported by OSS-Fuzz. Seed corpora use `f.Add` or go in `testdata/fuzz/`. Source [`/doc/fuzz/`](https://golang.google.cn/doc/fuzz/); body page [Fuzz.md](/zh/test/Fuzz.md).
+7. **Native fuzzing**: built in from Go 1.18, using coverage guidance to explore inputs. Test functions are written as `FuzzXxx(*testing.F)`; they run as unit tests by default, and add `-fuzz=FuzzTestName` to actually fuzz. Parameter types are restricted to `string`, `[]byte`, integers, floating point and `bool`. Supported by OSS-Fuzz. Seed corpora use `f.Add` or go in `testdata/fuzz/`. Source [`/doc/fuzz/`](https://golang.google.cn/doc/fuzz/); body page [Fuzz.md](/test/Fuzz.md).
 
 8. **PGO**: profile-guided optimization has been available since Go 1.20; the official benchmarks say CPU-bound programs gain 2%-14% (data from Go 1.22 onward). The official page also states plainly: microbenchmarks are usually a bad profiling source; only a pprof profile taken under real traffic is representative. Source [`/doc/pgo`](https://golang.google.cn/doc/pgo); body page [PGO.md](/debug/PGO.md).
 
@@ -34,7 +34,7 @@ Source-labelling rule: official content was fetched from the `golang.google.cn` 
 
 ## 3. Application scenarios
 
-13. **Four-scenario overview**: the official page groups Go's uses into four categories -- cloud and network services, command-line interfaces (CLI), web development, DevOps and SRE, index page [`/solutions/use-cases`](https://golang.google.cn/solutions/use-cases). This repo previously had not one scenario page; after the survey, five pages were built under `docs/zh/applications/`, overview at [Applications.md](/applications/Applications.md), drafts at [Scenarios.md](/research/Scenarios.md).
+13. **Four-scenario overview**: the official page groups Go's uses into four categories — cloud and network services, command-line interfaces (CLI), web development, DevOps and SRE, index page [`/solutions/use-cases`](https://golang.google.cn/solutions/use-cases). This repo previously had not one scenario page; after the survey, five pages were built under `docs/zh/applications/`, overview at [Applications.md](/applications/Applications.md), drafts at [Scenarios.md](/research/Scenarios.md).
 
 14. **Cloud and network services**: the hardest citable number is that over 75% of CNCF projects are written in Go (the official page is dated 2019-10-04, so cite it with the date). Both Docker and Kubernetes are Go projects; Dropbox began migrating performance-critical backends from Python to Go in 2013, and most of its infrastructure is Go today; Uber has the real-time analytics engine AresDB, the geofencing service Geofence and the resource scheduler Peloton. The standard ecosystem is Swagger, protocol buffers, gRPC. Source [`/solutions/cloud/`](https://golang.google.cn/solutions/cloud/); body page [CloudNative.md](/applications/CloudNative.md).
 
@@ -103,16 +103,16 @@ All bibliographic data comes from Douban and Dangdang entries fetched on 2026-10
 
 Survey drafts (fetch methods, per-item sources, full comparison tables):
 
-- [research/README.md](/research/README.md) -- survey overview and the three facts stated up front
-- [research/Books.md](/research/Books.md) -- full reading list and fetch sources
-- [research/OfficialDocs.md](/research/OfficialDocs.md) -- official documentation section structure and links
-- [research/Scenarios.md](/research/Scenarios.md) -- the four scenarios and case numbers
-- [research/Coverage.md](/research/Coverage.md) -- coverage reconciliation gap table and fix record
+- [research/README.md](/research/README.md) — survey overview and the three facts stated up front
+- [research/Books.md](/research/Books.md) — full reading list and fetch sources
+- [research/OfficialDocs.md](/research/OfficialDocs.md) — official documentation section structure and links
+- [research/Scenarios.md](/research/Scenarios.md) — the four scenarios and case numbers
+- [research/Coverage.md](/research/Coverage.md) — coverage reconciliation gap table and fix record
 
 Body pages produced from the survey gaps (13 in all):
 
 - Application scenarios: [Applications.md](/applications/Applications.md), [CloudNative.md](/applications/CloudNative.md), [CLI.md](/applications/CLI.md), [DevOps.md](/applications/DevOps.md), [Web.md](/applications/Web.md)
-- Official documentation entry points: [MemoryModel.md](/gc/MemoryModel.md), [PGO.md](/debug/PGO.md), [Fuzz.md](/zh/test/Fuzz.md), [BuildConstraint.md](/start/BuildConstraint.md), [JsonV2.md](/encoding/JsonV2.md), [ReleaseNotes.md](/introduction/ReleaseNotes.md), [EffectiveGo.md](/idioms/EffectiveGo.md), [Security.md](/security/Security.md)
+- Official documentation entry points: [MemoryModel.md](/gc/MemoryModel.md), [PGO.md](/debug/PGO.md), [Fuzz.md](/test/Fuzz.md), [BuildConstraint.md](/start/BuildConstraint.md), [JsonV2.md](/encoding/JsonV2.md), [ReleaseNotes.md](/introduction/ReleaseNotes.md), [EffectiveGo.md](/idioms/EffectiveGo.md), [Security.md](/security/Security.md)
 
 Term lookup: [glossary](/glossary.md) (Chinese-English pairs, one-sentence definitions, authoritative sources and related pages).
 

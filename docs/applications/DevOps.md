@@ -41,8 +41,8 @@ Whether an operations script should be Go depends on whether the script will liv
 
 ## Sources
 
-1. https://golang.google.cn/solutions/devops/ -- Go for DevOps & Site Reliability Engineering (the three-part argument, Docker/Drone/etcd/IBM/Netflix/Microsoft, the SRE origin, fetched 2026-10-08)
-2. https://golang.google.cn/solutions/use-cases -- the four-scenario index
+1. https://golang.google.cn/solutions/devops/ — Go for DevOps & Site Reliability Engineering (the three-part argument, Docker/Drone/etcd/IBM/Netflix/Microsoft, the SRE origin, fetched 2026-10-08)
+2. https://golang.google.cn/solutions/use-cases — the four-scenario index
 
 ## References
 

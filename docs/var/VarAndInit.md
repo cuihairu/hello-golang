@@ -177,7 +177,7 @@ The four forms differ in where they can be used: `var` works at package level, `
 <!-- BACKLINKS-AUTO -->
 ## Related pages
 
-- [glossary](/zh/glossary.md)
+- [glossary](/glossary.md)
 - [Assignment](/var/Assignment.md)
 - [ScopeAndLifetime](/var/ScopeAndLifetime.md)
 - [Variable](/var/Variable.md)

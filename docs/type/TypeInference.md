@@ -118,6 +118,6 @@ func main() {
 <!-- BACKLINKS-AUTO -->
 ## Related pages
 
-- [glossary](/zh/glossary.md)
+- [glossary](/glossary.md)
 - [Array](/type/Array.md)
 - [Type](/type/Type.md)

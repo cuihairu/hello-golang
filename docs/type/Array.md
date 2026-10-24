@@ -1,5 +1,5 @@
 
-> Perspective: this page records the semantics of arrays and slices in Go; for contiguous storage, random access, and complexity analysis of the array data structure, see the [array data structure notes](/zh/algo/array/Array.md).
+> Perspective: this page records the semantics of arrays and slices in Go; for contiguous storage, random access, and complexity analysis of the array data structure, see the [array data structure notes](/algo/array/Array.md).
 In Go, an array has a fixed length and a single element type, while a slice can grow in length; the two differ in behavior in several respects.
 
 ### Array

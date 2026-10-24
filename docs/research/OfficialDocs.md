@@ -70,26 +70,26 @@ The first entry in the stable-release list returned by `/dl/?mode=json` is `go1.
 ## 6. Key points on native fuzzing and json/v2
 
 - fuzzing: Go has built-in fuzzing in the standard toolchain since **1.18**, using coverage guidance to explore inputs. Test functions are written as `FuzzXxx(*testing.F)`; the invocation is run by default as a unit test, and add `-fuzz=FuzzTestName` when you want to actually fuzz. Parameter types are restricted to `string`, `[]byte`, integers, floating point and `bool`. Native fuzz tests are supported by OSS-Fuzz.
-- json/v2: `encoding/json` is not going away, it is protected by the Go 1 compatibility commitment, and v1 and v2 are mutually compatible. v2 is stricter by default -- for example invalid UTF-8 is silently replaced with the replacement character in v1, but reports an error outright in v2. The new struct tags introduced together with `encoding/json/v2` in Go 1.27 are supported by `encoding/json` as well.
+- json/v2: `encoding/json` is not going away, it is protected by the Go 1 compatibility commitment, and v1 and v2 are mutually compatible. v2 is stricter by default — for example invalid UTF-8 is silently replaced with the replacement character in v1, but reports an error outright in v2. The new struct tags introduced together with `encoding/json/v2` in Go 1.27 are supported by `encoding/json` as well.
 
 Both points have been written verbatim into `docs/zh/test/Fuzz.md` and `docs/zh/encoding/JsonV2.md`.
 
 ## Sources
 
-1. https://golang.google.cn/doc/ -- documentation overview (Getting Started, Writing Web Applications, Using and understanding Go, References)
-2. https://golang.google.cn/doc/effective_go -- 16 top-level and 40 second-level sections
-3. https://golang.google.cn/ref/spec -- language specification (341 KB)
-4. https://golang.google.cn/doc/faq -- official FAQ
-5. https://golang.google.cn/doc/devel/release -- support policy and the 1.26/1.27 release dates
-6. https://golang.google.cn/dl/?mode=json -- stable release go1.27.1
-7. https://golang.google.cn/doc/pgo -- PGO definition and the 2%-14% benchmark improvement from Go 1.22
-8. https://golang.google.cn/doc/fuzz/ -- fuzzing requirements and invocation
-9. https://golang.google.cn/ref/mem -- memory model, DRF-SC wording
-10. https://golang.google.cn/pkg/go/build/ -- `//go:build` and file-name constraints
-11. https://golang.google.cn/pkg/cmd/go/ -- the full Build constraints section
-12. https://golang.google.cn/doc/jsonv2-migration -- v2 migration position
-13. https://golang.google.cn/gopls -- language server
-14. https://golang.google.cn/tour/ -- the four-part Tour
+1. https://golang.google.cn/doc/ — documentation overview (Getting Started, Writing Web Applications, Using and understanding Go, References)
+2. https://golang.google.cn/doc/effective_go — 16 top-level and 40 second-level sections
+3. https://golang.google.cn/ref/spec — language specification (341 KB)
+4. https://golang.google.cn/doc/faq — official FAQ
+5. https://golang.google.cn/doc/devel/release — support policy and the 1.26/1.27 release dates
+6. https://golang.google.cn/dl/?mode=json — stable release go1.27.1
+7. https://golang.google.cn/doc/pgo — PGO definition and the 2%-14% benchmark improvement from Go 1.22
+8. https://golang.google.cn/doc/fuzz/ — fuzzing requirements and invocation
+9. https://golang.google.cn/ref/mem — memory model, DRF-SC wording
+10. https://golang.google.cn/pkg/go/build/ — `//go:build` and file-name constraints
+11. https://golang.google.cn/pkg/cmd/go/ — the full Build constraints section
+12. https://golang.google.cn/doc/jsonv2-migration — v2 migration position
+13. https://golang.google.cn/gopls — language server
+14. https://golang.google.cn/tour/ — the four-part Tour
 
 <!-- BACKLINKS-AUTO -->
 ## Related pages

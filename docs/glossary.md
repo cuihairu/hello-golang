@@ -30,7 +30,7 @@ The concurrency model proposed by Tony Hoare, the philosophical origin of Go's c
 **Related page**: [CSP](/concurrency/CSP.md), [Actor](/concurrency/Actor.md)
 
 ### Data race
-Two goroutines concurrently access the same memory location, at least one is a write, and there is no synchronization between them -- the behavior is undefined.
+Two goroutines concurrently access the same memory location, at least one is a write, and there is no synchronization between them — the behavior is undefined.
 **Source**: [Go memory model](https://go.dev/ref/mem), [Official blog · Introducing the Go Race Detector](https://go.dev/blog/race-detector)
 **Related page**: [RaceCondition](/sync/RaceCondition.md)
 
@@ -280,7 +280,7 @@ An optimization that feeds a production profile back into the compiler's inlinin
 ### Fuzzing
 Coverage-guided randomized testing, `FuzzXxx(*testing.F)`, built in from Go 1.18.
 **Source**: [Official · Fuzzing](https://go.dev/doc/security/fuzz/)
-**Related page**: [Fuzz](/zh/test/Fuzz.md)
+**Related page**: [Fuzz](/test/Fuzz.md)
 
 ### Deadlock
 Multiple execution flows block forever, each waiting for a resource held by another. No authoritative single-page official source was found (to be verified); the runtime reports `fatal error: all goroutines are asleep` when all goroutines are unschedulable. The relevant standard-library position is in [sync standard library](https://pkg.go.dev/sync).
@@ -291,22 +291,22 @@ Multiple execution flows block forever, each waiting for a resource held by anot
 ### Dynamic array
 A variable-length array whose capacity doubles on demand; Go slices are its engineering form.
 **Source**: [Dynamic array · Wikipedia](https://en.wikipedia.org/wiki/Dynamic_array), [Official blog · Go Slices](https://go.dev/blog/slices-intro)
-**Related page**: [DynamicArray](/zh/algo/array/DynamicArray.md)
+**Related page**: [DynamicArray](/algo/array/DynamicArray.md)
 
 ### Hash table
 A key-value container with O(1) average access, whose performance shape depends on how collisions are handled.
 **Source**: [Hash table · Wikipedia](https://en.wikipedia.org/wiki/Hash_table)
-**Related page**: [Hash](/zh/algo/hash/Hash.md), [Map](/type/Map.md)
+**Related page**: [Hash](/algo/hash/Hash.md), [Map](/type/Map.md)
 
 ### Red-black tree
 A self-balancing binary search tree with O(log n) insert/delete/lookup, one of the underlying structures of Go maps.
 **Source**: [Red-black tree · Wikipedia](https://en.wikipedia.org/wiki/Red%E2%80%93black_tree)
-**Related page**: [RedBlackTree](/zh/algo/tree/RedBlackTree.md)
+**Related page**: [RedBlackTree](/algo/tree/RedBlackTree.md)
 
 ### Skip list
 A multi-level linked list giving logarithmic lookup, the underlying implementation of Redis sorted sets.
 **Source**: [Skip list · Wikipedia](https://en.wikipedia.org/wiki/Skip_list)
-**Related page**: [SkipList](/zh/algo/list/SkipList.md)
+**Related page**: [SkipList](/algo/list/SkipList.md)
 
 ---
 
@@ -315,10 +315,10 @@ A multi-level linked list giving logarithmic lookup, the underlying implementati
 <!-- BACKLINKS-AUTO -->
 ## Related pages
 
-- [DynamicArray](/zh/algo/array/DynamicArray.md)
-- [Hash](/zh/algo/hash/Hash.md)
-- [SkipList](/zh/algo/list/SkipList.md)
-- [RedBlackTree](/zh/algo/tree/RedBlackTree.md)
+- [DynamicArray](/algo/array/DynamicArray.md)
+- [Hash](/algo/hash/Hash.md)
+- [SkipList](/algo/list/SkipList.md)
+- [RedBlackTree](/algo/tree/RedBlackTree.md)
 - [Alloc](/alloc/Alloc.md)
 - [GC](/alloc/GC.md)
 - [Practice](/alloc/Practice.md)
@@ -367,7 +367,7 @@ A multi-level linked list giving logarithmic lookup, the underlying implementati
 - [RWMutex](/sync/RWMutex.md)
 - [RaceCondition](/sync/RaceCondition.md)
 - [Runtime](/sync/Runtime.md)
-- [Fuzz](/zh/test/Fuzz.md)
+- [Fuzz](/test/Fuzz.md)
 - [Test](/test/Test.md)
 - [Assertion](/type/Assertion.md)
 - [Interface](/type/Interface.md)

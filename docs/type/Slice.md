@@ -168,6 +168,6 @@ Three things to remember about slices: modifying a sub-slice changes the underly
 <!-- BACKLINKS-AUTO -->
 ## Related pages
 
-- [glossary](/zh/glossary.md)
+- [glossary](/glossary.md)
 - [Rune](/type/Rune.md)
 - [String](/type/String.md)

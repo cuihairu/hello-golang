@@ -1,7 +1,7 @@
 ### Interfaces and reflection in Go, explained
 
 
-> Perspective: this article focuses on an interface's runtime representation and its relationship with reflection; for interface definitions and how to implement them, see [OOP notes](/zh/oop/Interface.md).
+> Perspective: this article focuses on an interface's runtime representation and its relationship with reflection; for interface definitions and how to implement them, see [OOP notes](/oop/Interface.md).
 Go interfaces hold any concrete type that implements the interface's methods at runtime, using two underlying fields, `itab` and `data`. Reflection lets a program inspect and manipulate an interface's type and value at runtime. Below I go from the basic syntax to the structure of `iface` and `itab`, then cover polymorphism, duck typing, and how reflection ties in.
 
 ### Basic interface syntax
@@ -329,7 +329,7 @@ An interface variable is made of `itab` and `data`: the former is the method tab
 <!-- BACKLINKS-AUTO -->
 ## Related pages
 
-- [glossary](/zh/glossary.md)
+- [glossary](/glossary.md)
 - [Array](/type/Array.md)
 - [BaseConv](/type/BaseConv.md)
 - [Big](/type/Big.md)

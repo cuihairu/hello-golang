@@ -1,6 +1,6 @@
 # Application scenario survey
 
-The official page groups Go's uses into four categories; the index page is `/solutions/use-cases`: **cloud and network services, command-line interfaces (CLI), web development, DevOps and SRE**. This repo previously had no page at all covering these four scenarios -- only scattered technical content (`docs/zh/gin/` for web frameworks, `docs/zh/cmd/` for flag, `docs/zh/middleware/` for message queues). This page records the official position and numbers for the four scenarios; the gaps have been filled as five pages under `docs/zh/applications/`.
+The official page groups Go's uses into four categories; the index page is `/solutions/use-cases`: **cloud and network services, command-line interfaces (CLI), web development, DevOps and SRE**. This repo previously had no page at all covering these four scenarios — only scattered technical content (`docs/zh/gin/` for web frameworks, `docs/zh/cmd/` for flag, `docs/zh/middleware/` for message queues). This page records the official position and numbers for the four scenarios; the gaps have been filled as five pages under `docs/zh/applications/`.
 
 Fetched 2026-10-08, all from the `golang.google.cn` mirror.
 
@@ -48,26 +48,26 @@ The official page is titled Go for DevOps & Site Reliability Engineering. Key po
 | --- | --- | --- |
 | American Express | 2019-12-19 | Payments and rewards networks both in Go; the engineering director's point is the low cognitive load, fast ramp-up on new codebases, and most Go code looking much the same |
 | PayPal | 2020-06-01 | Rewrote a C++ NoSQL database in Go; the team spent six months learning Go and rewriting, and **30 percent of clusters have moved to the new database**; the reason given is that goroutines and channels rein in multithreading complexity |
-| MercadoLibre | -- | The largest e-commerce ecosystem in Latin America, spanning 18 countries; migrated from Groovy/Grails to Go starting in 2015; the core user API averages **8 to 10 million requests per minute**, with response times **under 10 milliseconds** |
+| MercadoLibre | — | The largest e-commerce ecosystem in Latin America, spanning 18 countries; migrated from Groovy/Grails to Go starting in 2015; the core user API averages **8 to 10 million requests per minute**, with response times **under 10 milliseconds** |
 
 ## 6. What the four scenarios mean for this repo
 
-1. Cloud and network services map to `docs/zh/concurrency/`, `docs/zh/net/`, `docs/zh/middleware/`; one page was missing to connect the background -- Docker, Kubernetes, the CNCF share -- and that has been filled as `docs/zh/applications/CloudNative.md`.
+1. Cloud and network services map to `docs/zh/concurrency/`, `docs/zh/net/`, `docs/zh/middleware/`; one page was missing to connect the background — Docker, Kubernetes, the CNCF share — and that has been filled as `docs/zh/applications/CloudNative.md`.
 2. CLI maps to `docs/zh/cmd/` (flag and command-line design); what was missing was a scenario account of the Cobra/Viper split and single-binary traits, now filled as `docs/zh/applications/CLI.md`.
 3. Web maps to `docs/zh/gin/`, `docs/zh/net/`; filled as `docs/zh/applications/Web.md`.
 4. DevOps/SRE had no corresponding directory; filled as `docs/zh/applications/DevOps.md`.
 
 ## Sources
 
-1. https://golang.google.cn/solutions/use-cases -- the four-scenario index
-2. https://golang.google.cn/solutions/cloud/ -- cloud and network services (incl. CNCF 75%, Docker, Kubernetes, Dropbox, Uber)
-3. https://golang.google.cn/solutions/clis/ -- CLI scenario (single binary, Cobra, Viper, Hugo, GitHub CLI)
-4. https://golang.google.cn/solutions/webdev/ -- web development (HTTP/2, TLS 1.3, the 10x and 64% numbers)
-5. https://golang.google.cn/solutions/devops/ -- DevOps/SRE (Docker, Drone, etcd, Netflix Rend)
-6. https://golang.google.cn/solutions/americanexpress -- American Express case study
-7. https://golang.google.cn/solutions/paypal -- PayPal case study (six months, 30% of clusters)
-8. https://golang.google.cn/solutions/mercadolibre -- MercadoLibre case study (18 countries, 8-10 million requests per minute, 10 milliseconds)
-9. https://golang.google.cn/security/ -- official security page (vulnerability database, fuzzing, crypto libraries, FIPS 140-3)
+1. https://golang.google.cn/solutions/use-cases — the four-scenario index
+2. https://golang.google.cn/solutions/cloud/ — cloud and network services (incl. CNCF 75%, Docker, Kubernetes, Dropbox, Uber)
+3. https://golang.google.cn/solutions/clis/ — CLI scenario (single binary, Cobra, Viper, Hugo, GitHub CLI)
+4. https://golang.google.cn/solutions/webdev/ — web development (HTTP/2, TLS 1.3, the 10x and 64% numbers)
+5. https://golang.google.cn/solutions/devops/ — DevOps/SRE (Docker, Drone, etcd, Netflix Rend)
+6. https://golang.google.cn/solutions/americanexpress — American Express case study
+7. https://golang.google.cn/solutions/paypal — PayPal case study (six months, 30% of clusters)
+8. https://golang.google.cn/solutions/mercadolibre — MercadoLibre case study (18 countries, 8-10 million requests per minute, 10 milliseconds)
+9. https://golang.google.cn/security/ — official security page (vulnerability database, fuzzing, crypto libraries, FIPS 140-3)
 
 <!-- BACKLINKS-AUTO -->
 ## Related pages

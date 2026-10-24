@@ -1,6 +1,6 @@
 # Cloud and network services: over 75% of CNCF projects are Go
 
-This page records the position of the official cloud scenario page, dated 2019-10-04, fetched 2026-10-08. When citing that 75% number, carry the page date with it -- it is the official page's own wording, not this repo's estimate.
+This page records the position of the official cloud scenario page, dated 2019-10-04, fetched 2026-10-08. When citing that 75% number, carry the page date with it — it is the official page's own wording, not this repo's estimate.
 
 ## 1. The three reasons the official page gives
 
@@ -55,10 +55,10 @@ When writing cloud services, these pages in this repo are the direct prerequisit
 
 ## Sources
 
-1. https://golang.google.cn/solutions/cloud/ -- Go for Cloud & Network Services, page date 2019-10-04, including the 75% share, Docker, Kubernetes and the company list (fetched 2026-10-08)
-2. https://golang.google.cn/solutions/use-cases -- the four-scenario index
-3. https://golang.google.cn/solutions/paypal -- PayPal migration and the 30% cluster number
-4. https://golang.google.cn/solutions/mercadolibre -- MercadoLibre request volume and response time
+1. https://golang.google.cn/solutions/cloud/ — Go for Cloud & Network Services, page date 2019-10-04, including the 75% share, Docker, Kubernetes and the company list (fetched 2026-10-08)
+2. https://golang.google.cn/solutions/use-cases — the four-scenario index
+3. https://golang.google.cn/solutions/paypal — PayPal migration and the 30% cluster number
+4. https://golang.google.cn/solutions/mercadolibre — MercadoLibre request volume and response time
 
 ## References
 

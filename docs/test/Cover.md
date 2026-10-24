@@ -115,7 +115,7 @@ Go coverage is three commands: `go test -coverprofile` produces the data, `go to
 
 ## Sibling pages
 
-- [Fuzz](/zh/test/Fuzz.md)
+- [Fuzz](/test/Fuzz.md)
 - [Test](/test/Test.md)
 - [Advanced](/test/Advanced.md)
 - [Benchmark](/test/Benchmark.md)

@@ -34,5 +34,5 @@ All of Go's testing capability lives in the standard library `testing` package, 
 - [Benchmark](/test/Benchmark.md)
 - [Cover](/test/Cover.md)
 - [Example](/test/Example.md)
-- [Lib](/zh/test/Lib.md)
-- [Practice](/zh/test/Practice.md)
+- [Lib](/test/Lib.md)
+- [Practice](/test/Practice.md)
