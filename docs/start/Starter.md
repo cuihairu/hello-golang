@@ -153,14 +153,14 @@ After running this set of commands, `bin/myproject` prints `Hello, World!`. Use 
 
 ## Sibling pages
 
-- [BuildConstraint](/zh/start/BuildConstraint.md)
-- [Build](/zh/start/Build.md)
-- [Embed](/zh/start/Embed.md)
-- [Run](/zh/start/Run.md)
-- [Structure](/zh/start/Structure.md)
+- [BuildConstraint](/start/BuildConstraint.md)
+- [Build](/start/Build.md)
+- [Embed](/start/Embed.md)
+- [Run](/start/Run.md)
+- [Structure](/start/Structure.md)
 
 <!-- BACKLINKS-AUTO -->
 ## Related pages
 
-- [Run](/zh/start/Run.md)
-- [Structure](/zh/start/Structure.md)
+- [Run](/start/Run.md)
+- [Structure](/start/Structure.md)

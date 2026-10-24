@@ -184,7 +184,7 @@ def main() -> int:
                 new_lines.append(line)
             else:
                 new_lines.append(rewrite_line(line, page, problems))
-            if CJK.search(line) and "docs/zh/" not in line:
+            if not in_fence and CJK.search(line) and "docs/zh/" not in line:
                 cjk_lines.append(f"{page.relative_to(REPO)}:{line.strip()[:60]}")
         new = "\n".join(new_lines)
         if new != src:
@@ -198,7 +198,7 @@ def main() -> int:
         print(f"CJK   {line}")
     print(f"\n{len(pages)} pages scanned, {len(changed)} rewritten, "
           f"{len(problems)} dead targets, {len(cjk_lines)} CJK lines")
-    return 1 if (problems or cjk_lines) and not args.check else 0
+    return 1 if problems or cjk_lines else 0
 
 
 if __name__ == "__main__":

@@ -12,7 +12,7 @@
 import { existsSync, readFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import enGroupLabels from './sidebar.en-labels.json'
+import enGroupLabels from './sidebar.en-labels.ts'
 
 export interface NavItem {
   text: string

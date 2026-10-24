@@ -86,14 +86,14 @@ Composite types do three things: structs bundle related fields together, methods
 
 ## Sibling pages
 
-- [Assertion](/zh/type/Assertion.md)
-- [Interface](/zh/type/Interface.md)
-- [Map](/zh/type/Map.md)
-- [Complex](/zh/type/Complex.md)
-- [Conv](/zh/type/Conv.md)
+- [Assertion](/type/Assertion.md)
+- [Interface](/type/Interface.md)
+- [Map](/type/Map.md)
+- [Complex](/type/Complex.md)
+- [Conv](/type/Conv.md)
 
 <!-- BACKLINKS-AUTO -->
 ## Related pages
 
-- [Complex](/zh/type/Complex.md)
-- [Conv](/zh/type/Conv.md)
+- [Complex](/type/Complex.md)
+- [Conv](/type/Conv.md)

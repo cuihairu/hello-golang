@@ -1,4 +1,6 @@
-{
+// English labels for the sidebar groups written in sidebar.json (zh).
+// Only top-level group titles live here; page titles come from each page.
+export default {
   "背景与概览": "Background & Overview",
   "工具链与环境": "Toolchain & Environment",
   "启动与构建": "Start & Build",
@@ -48,5 +50,5 @@
   "web开发": "Web Development",
   "Gin框架": "Gin Framework",
   "应用场景": "Applications",
-  "调研": "Research"
-}
+  "调研": "Research",
+} as const

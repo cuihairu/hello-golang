@@ -45,12 +45,12 @@ The Go programming language (also known as Golang) was developed internally at G
 
 ## Sibling pages
 
-- [ReleaseNotes](/zh/introduction/ReleaseNotes.md)
-- [Feature](/zh/introduction/Feature.md)
-- [Lineage](/zh/introduction/Lineage.md)
+- [ReleaseNotes](/introduction/ReleaseNotes.md)
+- [Feature](/introduction/Feature.md)
+- [Lineage](/introduction/Lineage.md)
 
 <!-- BACKLINKS-AUTO -->
 ## Related pages
 
-- [Feature](/zh/introduction/Feature.md)
-- [Lineage](/zh/introduction/Lineage.md)
+- [Feature](/introduction/Feature.md)
+- [Lineage](/introduction/Lineage.md)
