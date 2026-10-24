@@ -1,0 +1,129 @@
+### 基准测试
+
+基准测试（Benchmark Testing）测的是一段代码跑得有多快。Go 自带基准测试框架，写法和普通测试差不多，只是函数签名和运行方式不同。
+
+#### 3.1 基准测试的概念
+
+基准测试测量代码块的执行时间，用数字评估性能。与普通测试不同，它关注速度而非功能正确性，测出来的耗时用来找性能瓶颈。
+
+#### 3.2 编写基准测试函数
+
+基准测试函数的签名应为 `func BenchmarkXxx(b *testing.B)`，其中 `Xxx` 是测试名称，`b` 是一个 `*testing.B` 类型的参数，用于管理基准测试的状态和记录结果。
+
+**示例**:
+```go
+// math.go
+package math
+
+// Add 返回两个整数的和
+func Add(a, b int) int {
+    return a + b
+}
+
+// math_test.go
+package math
+
+import "testing"
+
+// BenchmarkAdd 测试 Add 函数的性能
+func BenchmarkAdd(b *testing.B) {
+    for i := 0; i < b.N; i++ {
+        Add(2, 3)
+    }
+}
+```
+
+在上述代码中：
+- `BenchmarkAdd` 是基准测试函数，用于测量 `Add` 函数的性能。
+- `b.N` 是基准测试框架提供的一个动态调整的循环次数，确保测试能够在足够的迭代次数下运行。
+
+#### 3.3 运行基准测试
+
+使用 `go test -bench` 命令可以运行基准测试。此命令将编译基准测试代码和被测试的代码，并执行所有基准测试函数。
+
+**基本命令**:
+```sh
+go test -bench .
+```
+
+- `-bench` 标志用于指定基准测试模式。`.` 表示运行所有基准测试函数。
+
+**查看基准测试详细输出**:
+```sh
+go test -bench . -v
+```
+
+- `-v` 标志用于启用详细模式，显示每个基准测试的详细结果。
+
+**运行特定基准测试**:
+```sh
+go test -bench BenchmarkAdd
+```
+
+- 通过 `-bench` 标志可以指定运行特定的基准测试函数。
+
+#### 3.4 分析基准测试结果
+
+基准测试的输出包括每次测试迭代的平均耗时、每秒操作次数等信息。通过这些数据，可以评估代码的性能和效率。
+
+**示例输出**:
+```sh
+go test -bench . -v
+```
+```
+BenchmarkAdd-8    1000000000               1.00 ns/op
+```
+
+- `BenchmarkAdd-8` 表示基准测试名称和并发度。
+- `1000000000` 是执行的迭代次数。
+- `1.00 ns/op` 是每次操作的平均耗时。
+
+#### 3.5 基准测试优化技巧
+
+1. **避免过多的日志**：在基准测试中，避免使用过多的日志输出，这会影响测试性能。
+2. **避免不必要的计算**：确保基准测试函数只包含需要测量的代码，减少干扰。
+3. **使用正确的测试数据**：使用代表性的数据集进行基准测试，以获得真实的性能结果。
+
+#### 3.6 基准测试与性能分析
+
+基准测试和 Go 的性能分析工具可以接着配合：`-bench` 找到慢的函数，`pprof` 再看时间具体花在哪一行。
+
+**生成 CPU 性能报告**:
+```sh
+go test -bench . -cpuprofile cpu.out
+go tool pprof cpu.out
+```
+
+- `-cpuprofile` 标志用于生成 CPU 性能分析文件。
+
+**生成内存性能报告**:
+```sh
+go test -bench . -memprofile mem.out
+go tool pprof mem.out
+```
+
+- `-memprofile` 标志用于生成内存性能分析文件。
+
+### 总结
+
+基准测试的产出是每次操作的平均耗时（如 `1.00 ns/op`），数字比感觉可靠。写法上三件事：函数名以 `Benchmark` 开头、循环跑 `b.N` 次、用 `go test -bench` 执行；要继续定位热点，加 `-cpuprofile` 或 `-memprofile` 生成 pprof 报告。
+
+## 参考资料
+
+- [testing 标准库](https://pkg.go.dev/testing)
+- [Go 官方文档 · Add a test（外部链接）](https://go.dev/doc/tutorial/add-a-test)
+- [官方博客 · testing.B.Loop](https://go.dev/blog/testing-b-loop)
+
+
+## 同层页面
+
+- [Fuzz](/zh/test/Fuzz.md)
+- [Test](/zh/test/Test.md)
+- [Advanced](/zh/test/Advanced.md)
+- [BaseTest](/zh/test/BaseTest.md)
+- [Cover](/zh/test/Cover.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Cover](Cover.md)

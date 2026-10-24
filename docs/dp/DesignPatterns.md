@@ -1,83 +1,83 @@
-### 面向对象软件设计SOLID原则
+### Object-oriented software design: the SOLID principles
 
-#### 1、单一职责原则（Single responsibility principle，缩写为：SRP）
+#### 1. Single Responsibility Principle (SRP)
 
-说明：一个类或者模块只负责完成一个职责（A class or module should have a single responsibility）。通俗来说就是，一个模块、类、方法不要承担过多的任务。
+Description: A class or module should have only one responsibility. Put simply, a module, class, or method shouldn't take on too many tasks.
 
-原则上来说，我们设计一个类的时候不应该设计成大而全的类，要设计粒度小，功能单一的类，如果一个类包含两个或者两个以上不相干的功能，那我们就说它违背了单一职责原则，应该将它拆分成多个功能单一、粒度更细的类。
+As a rule, when you design a class you shouldn't make it a big catch-all. Design small-grained classes with a single function. If a class contains two or more unrelated responsibilities, it violates the Single Responsibility Principle and should be split into several classes that each do one thing at finer granularity.
 
-实际软件开发工作中，不必严格遵守原则，可以设计一个粗粒度的类，随着业务的发展再进行重构。
+In real software work you don't have to follow the principle strictly. It's fine to design a coarse-grained class first and refactor later as the business grows.
 
-实际开发中可以按照以下参考意见，进行代码的重构或者设计：
+In practice, use the following guidelines to guide refactoring or design:
 
-- 类依赖过多的其他类，或者代码直接依赖关系过于复杂时，不符合高内聚低耦合的设计思想时，就可以考虑对代码进行拆分。
-- 类的名称和实际的功能关系不大或者没有任何关联性的时候，可以更加细粒度的拆分，把无关的功能独立出去。
-- 类的代码函数过多影响可读性和代码维护时，可以对代码进行方法级别的拆分。
+- When a class depends on too many other classes, or the direct dependency graph gets overly complex — in other words, when it no longer fits the high-cohesion, low-coupling idea — consider splitting the code.
+- When a class name has little or no relation to what it actually does, split it at a finer grain and move the unrelated functionality out on its own.
+- When a class has too many functions and readability or maintainability suffers, split at the method level.
 
-#### 2、开闭原则（Open-closed principle，缩写为：OCP）
+#### 2. Open/Closed Principle (OCP)
 
-说明：软件实体（模块、类、方法等）应该对扩展开放、对修改关闭（software entities （modules、classes、functions，etc.）should be open for extension,but closed for modification）。通俗来讲就是添加一个功能应该是在已有的代码基础上进行扩展，而不是修改已有代码。
+Description: Software entities (modules, classes, methods, etc.) should be open for extension but closed for modification. Put plainly, adding a feature should mean extending existing code, not modifying it.
 
-开闭原则的目的是为了代码的可扩展，并且避免了对现有代码的修改给软件带来风险。可扩展的前提是需要了解到未来的扩展点，那实际软件开发中如何找到所有的可扩展点呢？以下提供了几种参考方案：
+The point of OCP is extensibility, while avoiding the risk that changes to existing code bring to the software. Extensibility assumes you already know the future extension points. So how do you find all of them in real development? A few approaches:
 
-- 如果是业务驱动的系统，需要在充分了解了业务需求的前提下，才能找到对应的扩展点，如果不确定因素过多，需求变化过快，则可以对一些比较确定的、短期内就可能扩展、通过设计扩展点能明显提升代码稳定性和开发效率的地方进行设计。
-- 如果是通用型的技术开发，比如开发通用的框架，组件，类库，你需要考虑技术框架将如何被用户使用，考虑功能的升级需要预留的扩展点以及版本之间的兼容问题。
-- 即使对系统的业务或者技术框架有足够的了解，也不一定要设计所有的扩展点。为未来可能发生变化的每个地方都预留扩展点，只会徒增复杂度，实现起来工作量也不小。需要综合开发成本，影响范围，实际收益（包括时间和人员成本）等因素进行考虑。
+- For business-driven systems, you need a solid grasp of the requirements before you can locate the extension points. If there are too many unknowns or requirements churn too fast, focus your design on the spots that are fairly certain, likely to be extended soon, and where adding an extension point clearly improves code stability and development speed.
+- For general-purpose technical work — frameworks, components, libraries — you need to think about how users will consume the framework, what extension points to leave for feature upgrades, and how to keep versions compatible.
+- Even with a good understanding of the system's business or technical framework, you don't have to design every extension point. Leaving an extension point everywhere something might change in the future only adds complexity, and the implementation effort is no small thing. Weigh development cost, blast radius, and actual benefit (including time and staffing cost).
 
-#### 3、里氏替换原则（Liskov substitution principle，缩写为：LSP）
+#### 3. Liskov Substitution Principle (LSP)
 
-说明：子类对象能够替换程序中父类对象的任何地方，并且保证原来的程序的逻辑行为不变及正确性不被破坏。
+Description: A subclass object can be substituted for a superclass object anywhere in the program, and the original program's behavior stays correct and unchanged.
 
-可以利用面向对象编程的多态性来实现，多态和里氏替换原则优点类似，但是他们的关注角度是不一样的，多态是面向对象编程的特性，而里氏替换是一种原则，用来指导继承关系中子类该如何设计，子类的设计要确保在替换父类的时候，不改变原有的程序的逻辑以及不破坏原有的程序的正确性。
+Polymorphism in OOP can be used to achieve this. Polymorphism and LSP share a similar goal, but they come from different angles: polymorphism is a feature of OOP, while Liskov substitution is a principle that guides how to design a subclass in an inheritance hierarchy. A subclass must guarantee that substituting it for the superclass doesn't change the original program's logic or break its correctness.
 
-具体的实现方式可以理解为，子类在设计的时候，要遵循父类的行为约定。父类定义了方法的行为，子类可以改变方法的内部实现逻辑，但不能改变方法原有的行为约定，如：接口、方法声明要实现的功能，对参数值、返回值、异常的约定，甚至包括注释中所罗列的任何特殊的说明。
+Concretely, when designing a subclass, follow the superclass's behavioral contract. The superclass defines what a method does; a subclass may change the internal implementation, but not the method's original contract — the interface, the functionality the method declaration promises, the conventions around argument values, return values, and exceptions, and even any special notes listed in the comments.
 
-#### 4、接口隔离原则（Interface segregation principle，缩写为：ISP）
+#### 4. Interface Segregation Principle (ISP)
 
-说明：客户端不应该强迫依赖它不需要的接口。
+Description: Clients shouldn't be forced to depend on interfaces they don't use.
 
-接口隔离原则的实现可以参考如下方法：
+Here are a few ways to apply it:
 
-1. 对于接口来说，如果某个接口承担了与它无关的接口定义，则说明接口违反了接口隔离原则。可以把无关的接口剥离出去。对胖而杂的接口瘦身。
-2. 对于共通的功能来说，应该细分功能点，按需添加，而不是定义一个大而全的接口，让子类去被迫实现。
+1. For interfaces, if one carries definitions unrelated to its purpose, it violates ISP. Strip the unrelated parts off. Slim down fat, miscellaneous interfaces.
+2. For shared functionality, break it into fine-grained points and add them as needed, rather than defining one big catch-all interface that subclasses are forced to implement.
 
-#### 5、依赖倒置原则（Dependency inversion principle，缩写为：DIP）
+#### 5. Dependency Inversion Principle (DIP)
 
-说明：高层模块不要依赖底层模块。高层模块和底层模块应该通过抽象来互相依赖。除此之外，抽象不要依赖具体实现细节，具体实现细节依赖抽象。
+Description: High-level modules shouldn't depend on low-level modules. Both should depend on abstractions. Moreover, abstractions shouldn't depend on concrete implementation details — concrete details depend on abstractions.
 
-这个的高层模块，从代码的角度来说就是调用者，底层模块就是被调用者。即调用者不要依赖于具体的实现，而应该依赖抽象，如Spring中的各个Aware,框架依赖于Aware接口具体的实现增加功能，具体的实现通过实现接口来获得功能。而具体的实现与框架并没有直接耦合。
+In this context, a high-level module is a caller and a low-level module is a callee. So callers shouldn't depend on concrete implementations but on abstractions. Take Spring's `*Aware` callbacks: the framework depends on the concrete implementation of an `Aware` interface to gain functionality, and the implementation gains functionality by implementing that interface. The implementation and the framework aren't directly coupled.
 
-#### 6、迪米特法则（Law Of Demeter）
+#### 6. Law of Demeter
 
-迪米特法则又称为 最少知道原则，它表示一个对象应该对其它对象保持最少的了解。通俗来说就是，只与直接的朋友通信。
+Also known as the Least Knowledge Principle, it says an object should know as little as possible about other objects. Put simply, only talk to your immediate friends.
 
-首先来解释一下什么是直接的朋友：每个对象都会与其他对象有耦合关系，只要两个对象之间有耦合关系，我们就说这两个对象之间是朋友关系。耦合的方式很多，依赖、关联、组合、聚合等。其中，我们称出现成员变量、方法参数、方法返回值中的类为直接的朋友，而出现在局部变量中的类则不是直接的朋友。也就是说，陌生的类最好不要作为局部变量的形式出现在类的内部。
+First, what counts as an immediate friend? Every object has coupling relationships with others; whenever two objects are coupled, we call them friends. Coupling takes many forms — dependency, association, composition, aggregation, and so on. A class counts as an immediate friend when it appears as a member variable, a method parameter, or a method return type. A class that appears only as a local variable is not an immediate friend. In other words, avoid surfacing unfamiliar classes as local variables inside a class.
 
-对于被依赖的类来说，无论逻辑多么复杂，都尽量的将逻辑封装在类的内部，对外提供 public 方法，不对外泄漏任何信息。
+For the depended-upon class, no matter how complex the logic, keep it encapsulated inside the class, expose `public` methods, and leak nothing to the outside.
 
-#### 7、组合/聚合复用原则 (Composite/Aggregate Reuse Principle)
+#### 7. Composite/Aggregate Reuse Principle
 
-组合/聚合复用原则就是在一个新的对象里面使用一些已有的对象，使之成为新对象的一部分; 新的对象通过向这些对象的委派达到复用已有功能的目的。
+The Composite/Aggregate Reuse Principle means using existing objects inside a new one so they become part of it; the new object reuses their functionality by delegating to them.
 
-在面向对象的设计中，如果直接继承基类，会破坏封装，因为继承将基类的实现细节暴露给子类；如果基类的实现发生了改变，则子类的实现也不得不改变；从基类继承而来的实现是静态的，不可能在运行时发生改变，没有足够的灵活性。于是就提出了组合/聚合复用原则，也就是在实际开发设计中，尽量使用组合/聚合，不要使用类继承。
+In OOP design, inheriting from a base class directly breaks encapsulation, because inheritance exposes the base class's implementation details to the subclass; if the base implementation changes, the subclass has to change too; and what's inherited is static, fixed at compile time and unable to change at runtime, so it lacks enough flexibility. That's why the Composite/Aggregate Reuse Principle exists: in real development and design, prefer composition/aggregation over class inheritance.
 
-## 参考资料
+## References
 
-- [GoF《设计模式》概览（Wikipedia）](https://en.wikipedia.org/wiki/Design_Patterns)
-- [Refactoring.Guru 设计模式目录](https://refactoring.guru/design-patterns)
-- [Effective Go（官方）](https://go.dev/doc/effective_go)
+- [GoF Design Patterns overview (Wikipedia)](https://en.wikipedia.org/wiki/Design_Patterns)
+- [Refactoring.Guru design patterns catalog](https://refactoring.guru/design-patterns)
+- [Effective Go (official)](https://go.dev/doc/effective_go)
 
 
-## 同层页面
+## Sibling pages
 
-- [AbstractFactory](/dp/AbstractFactory.md)
-- [Adapter](/dp/Adapter.md)
-- [Behavioral](/dp/Behavioral.md)
-- [Decorator](/dp/Decorator.md)
-- [Facade](/dp/Facade.md)
+- [AbstractFactory](/zh/dp/AbstractFactory.md)
+- [Adapter](/zh/dp/Adapter.md)
+- [Behavioral](/zh/dp/Behavioral.md)
+- [Decorator](/zh/dp/Decorator.md)
+- [Facade](/zh/dp/Facade.md)
 
 <!-- BACKLINKS-AUTO -->
-## 相关页面
+## Related pages
 
-- [Decorator](Decorator.md)
-- [Facade](Facade.md)
+- [Decorator](/zh/dp/Decorator.md)
+- [Facade](/zh/dp/Facade.md)

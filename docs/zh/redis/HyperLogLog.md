@@ -1,0 +1,175 @@
+### Redis HyperLogLog
+
+Redis HyperLogLog 是做基数估算的结构：往里塞元素，用 `PFCOUNT` 拿一个近似值，统计独立访客、唯一 IP 这类"到底有多少个不同元素"的问题。它用概率算法换内存，默认 12KB 存一份。
+
+#### 场景示例
+
+1. **网站用户访问统计**
+   - 示例：统计网站的独立访问用户数量。
+     ```bash
+     PFADD page_views "user123"
+     PFADD page_views "user456"
+     PFADD page_views "user123"  # 再次添加相同用户
+     PFCOUNT page_views
+     ```
+   - 说明：使用 `PFADD` 命令添加用户，`PFCOUNT` 获取唯一用户数量。
+
+2. **社交媒体平台粉丝计数**
+   - 示例：统计某个账号的唯一粉丝数。
+     ```bash
+     PFADD twitter_followers "user789"
+     PFADD twitter_followers "user101"
+     PFCOUNT twitter_followers
+     ```
+   - 说明：使用 `PFADD` 添加粉丝，`PFCOUNT` 获取粉丝总数。
+
+3. **唯一事件统计**
+   - 示例：统计某个事件的唯一发生次数。
+     ```bash
+     PFADD unique_events "event1"
+     PFADD unique_events "event2"
+     PFADD unique_events "event1"  # 再次添加相同事件
+     PFCOUNT unique_events
+     ```
+   - 说明：使用 `PFADD` 记录事件，`PFCOUNT` 获取事件的唯一发生次数。
+
+4. **日志分析**
+   - 示例：统计日志中的唯一 IP 地址数。
+     ```bash
+     PFADD log_ips "192.168.1.1"
+     PFADD log_ips "192.168.1.2"
+     PFCOUNT log_ips
+     ```
+   - 说明：使用 `PFADD` 添加 IP 地址，`PFCOUNT` 获取唯一 IP 数量。
+
+5. **广告点击统计**
+   - 示例：统计广告的唯一点击次数。
+     ```bash
+     PFADD ad_clicks "click1"
+     PFADD ad_clicks "click2"
+     PFCOUNT ad_clicks
+     ```
+   - 说明：使用 `PFADD` 添加点击记录，`PFCOUNT` 获取唯一点击数。
+
+#### 底层实现
+
+Redis 的 HyperLogLog 拆开看是四件事：
+
+1. **概率算法**
+   - HyperLogLog 使用概率算法来估算唯一元素的数量。这种算法的核心是通过随机哈希函数将元素映射到一定范围的桶中，然后利用统计学中的“最大前导零位”估算基数。
+
+2. **数据结构**
+   - **桶（Bucket）**：HyperLogLog 使用一个固定数量的桶，每个桶中保存的是该桶中元素的前导零的最大长度。
+   - **哈希函数**：将元素通过哈希函数映射到桶中，计算哈希值的前导零长度，用于估算唯一元素数。
+
+3. **内存占用**
+   - HyperLogLog 的内存占用是 O(log log N)。Redis 默认用 12KB 内存存储一个 HyperLogLog。
+
+4. **操作命令**
+   - **PFADD**：添加元素到 HyperLogLog。
+     ```bash
+     PFADD key element [element ...]
+     ```
+   - **PFCOUNT**：获取 HyperLogLog 的基数估算值。
+     ```bash
+     PFCOUNT key [key ...]
+     ```
+   - **PFMERGE**：合并多个 HyperLogLog 数据结构。
+     ```bash
+     PFMERGE destkey sourcekey [sourcekey ...]
+     ```
+
+Redis HyperLogLog 的实现机制可以概括如下：
+1. **初始化**：HyperLogLog 使用一定数量的桶来存储数据，每个桶初始值为零。
+2. **添加元素**：
+   - 将元素哈希到桶中。
+   - 更新相应桶的值，保存哈希值前导零的最大长度。
+3. **估算基数**：
+   - 根据桶中的值计算唯一元素数量的估算值。
+4. **合并数据**：
+   - 通过 `PFMERGE` 命令合并多个 HyperLogLog 数据结构。
+
+#### Go 中使用 Redis HyperLogLog
+
+Go 里用 `go-redis` 操作它：`PFAdd`、`PFCount`、`PFMerge` 三个方法对应三条命令。
+
+1. **连接 Redis**
+   ```go
+   package main
+
+   import (
+       "context"
+
+       "github.com/go-redis/redis/v8"
+   )
+
+   var ctx = context.Background()
+
+   func main() {
+       rdb := redis.NewClient(&redis.Options{
+           Addr:     "localhost:6379",
+           Password: "", // no password set
+           DB:       0,  // use default DB
+       })
+
+       // 示例代码调用
+       example(rdb)
+   }
+
+   func example(rdb *redis.Client) {
+       // 示例操作
+   }
+   ```
+
+2. **添加元素**
+   ```go
+   func example(rdb *redis.Client) {
+       err := rdb.PFAdd(ctx, "hyperloglog", "element1", "element2").Err()
+       if err != nil {
+           panic(err)
+       }
+   }
+   ```
+
+3. **获取基数**
+   ```go
+   func example(rdb *redis.Client) {
+       count, err := rdb.PFCount(ctx, "hyperloglog").Result()
+       if err != nil {
+           panic(err)
+       }
+       fmt.Println("Unique count:", count)
+   }
+   ```
+
+4. **合并 HyperLogLog**
+   ```go
+   func example(rdb *redis.Client) {
+       err := rdb.PFMerge(ctx, "merged_hyperloglog", "hyperloglog1", "hyperloglog2").Err()
+       if err != nil {
+           panic(err)
+       }
+   }
+   ```
+
+用法就三个方法：`PFAdd` 加元素，`PFCount` 出估算值，`PFMerge` 合并多个 key，每个都返回 error 交给调用方处理。
+
+## 参考资料
+
+- [Redis 官方命令手册](https://redis.io/commands/)
+- [go-redis 官方客户端](https://github.com/redis/go-redis)
+- [go-redis · pkg.go.dev](https://pkg.go.dev/github.com/redis/go-redis/v9)
+
+## 同层页面
+
+- [Bitmap](/zh/redis/Bitmap.md)
+- [Geospatial](/zh/redis/Geospatial.md)
+- [Hash](/zh/redis/Hash.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Bitmap](Bitmap.md)
+- [Geospatial](Geospatial.md)
+- [Hash](Hash.md)
+- [Install](Install.md)

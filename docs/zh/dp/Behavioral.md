@@ -1,0 +1,91 @@
+### 行为模式
+
+行为模式关注对象之间的职责分配，通过消息传递组织控制流，目的是让职责划分更清楚，系统更容易维护。以下是十一种常见的行为模式的概念和适用范围：
+
+1. **责任链模式（Chain of Responsibility Pattern）**：
+   - **概念**：将请求沿着处理者链传递，直到有一个处理者处理它。
+   - **适用范围**：多个对象可以处理请求，但处理者未确定的场景。
+
+2. **命令模式（Command Pattern）**：
+   - **概念**：将请求封装成对象，从而使用户可用不同的请求进行参数化。
+   - **适用范围**：需要将请求封装成对象以支持可撤销操作的场景。
+
+3. **解释器模式（Interpreter Pattern）**：
+   - **概念**：为给定语言定义文法，并建立一个解释器来解释语言中的句子。
+   - **适用范围**：需要解释执行特定语言的场景。
+
+4. **迭代器模式（Iterator Pattern）**：
+   - **概念**：提供一种方法顺序访问聚合对象中的各个元素，而不暴露其内部表示。
+   - **适用范围**：需要顺序访问聚合对象的场景。
+
+5. **中介者模式（Mediator Pattern）**：
+   - **概念**：用一个中介对象来封装一系列对象的交互，使得这些对象不需要显式相互引用。
+   - **适用范围**：对象之间存在复杂交互，且希望通过中介者来简化依赖关系的场景。
+
+6. **备忘录模式（Memento Pattern）**：
+   - **概念**：在不破坏封装性的前提下，捕获对象的内部状态，并在对象之外保存这个状态，以便以后恢复对象。
+   - **适用范围**：需要保存和恢复对象状态的场景。
+
+7. **观察者模式（Observer Pattern）**：
+   - **概念**：定义对象间的一种一对多的依赖关系，使得每当一个对象改变状态，则所有依赖于它的对象都会得到通知并自动更新。
+   - **适用范围**：一个对象状态改变需要通知其他对象的场景。
+
+8. **状态模式（State Pattern）**：
+   - **概念**：允许对象在内部状态改变时改变它的行为。
+   - **适用范围**：一个对象在不同状态下表现不同行为的场景。
+
+9. **策略模式（Strategy Pattern）**：
+   - **概念**：定义一系列算法，把它们一个个封装起来，并且使它们可以相互替换。
+   - **适用范围**：需要动态选择算法的场景。
+
+10. **模板方法模式（Template Method Pattern）**：
+    - **概念**：定义一个操作中的算法的骨架，而将一些步骤延迟到子类中。使得子类可以在不改变算法结构的情况下重新定义算法的某些步骤。
+    - **适用范围**：算法骨架确定，但某些步骤需要在子类中实现的场景。
+
+11. **访问者模式（Visitor Pattern）**：
+    - **概念**：表示一个作用于某对象结构中的各元素的操作，使得可以在不改变各元素的类的前提下定义作用于这些元素的新操作。
+    - **适用范围**：需要对一个对象结构中的各元素进行操作，并且不希望改变这些元素类的定义的场景。
+
+## 参考资料
+
+- [GoF《设计模式》概览（Wikipedia）](https://en.wikipedia.org/wiki/Design_Patterns)
+- [Refactoring.Guru 设计模式目录](https://refactoring.guru/design-patterns)
+- [Effective Go（官方）](https://go.dev/doc/effective_go)
+
+## 同层页面
+
+- [AbstractFactory](/zh/dp/AbstractFactory.md)
+- [Adapter](/zh/dp/Adapter.md)
+- [Bridge](/zh/dp/Bridge.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [AbstractFactory](AbstractFactory.md)
+- [Adapter](Adapter.md)
+- [Bridge](Bridge.md)
+- [Builder](Builder.md)
+- [ChainofResponsibility](ChainofResponsibility.md)
+- [Command](Command.md)
+- [Composite](Composite.md)
+- [Creational](Creational.md)
+- [Decorator](Decorator.md)
+- [DesignPatterns](DesignPatterns.md)
+- [Facade](Facade.md)
+- [FactoryMethod](FactoryMethod.md)
+- [Flyweight](Flyweight.md)
+- [Iterator](Iterator.md)
+- [Mediator](Mediator.md)
+- [Memento](Memento.md)
+- [ObjectPool](ObjectPool.md)
+- [Observer](Observer.md)
+- [Proactor](Proactor.md)
+- [Prototype](Prototype.md)
+- [Proxy](Proxy.md)
+- [Reactor](Reactor.md)
+- [Singleton](Singleton.md)
+- [State](State.md)
+- [Strategy](Strategy.md)
+- [Structural](Structural.md)
+- [TemplateMethod](TemplateMethod.md)
+- [Visitor](Visitor.md)

@@ -1,0 +1,150 @@
+# 编译
+在Go中，编译是将Go源码转换为可执行文件的过程，整体上分编译、汇编、链接几个阶段。
+
+### 1. Go程序编译的步骤
+
+#### 1.1 词法分析（Lexical Analysis）
+
+Go编译器首先对源代码进行词法分析，将代码拆分成标记（tokens），这些标记是编程语言的最小单位，如关键字、变量名、操作符等。
+
+**作用**：生成标记流，为后续的语法分析做准备。
+
+#### 1.2 语法分析（Syntax Analysis）
+
+在语法分析阶段，编译器将标记流转换为抽象语法树（AST），这棵树表示程序的语法结构。
+
+**作用**：验证语法的正确性，并生成便于进一步处理的结构。
+
+#### 1.3 语义分析（Semantic Analysis）
+
+语义分析阶段，编译器检查AST中的语义规则，例如类型检查、变量声明和作用域检查。
+
+**作用**：确保程序的逻辑正确性，并收集类型信息。
+
+#### 1.4 中间代码生成（Intermediate Code Generation）
+
+编译器将AST转换为中间代码，这种代码是一种较低级的表示形式，便于优化和生成目标代码。
+
+**作用**：生成更接近机器语言的中间形式，为优化做准备。
+
+#### 1.5 优化（Optimization）
+
+在优化阶段，编译器对中间代码进行优化，例如删除死代码、常量折叠、循环优化等。
+
+**作用**：提高生成代码的效率和性能。
+
+#### 1.6 目标代码生成（Target Code Generation）
+
+编译器将优化后的中间代码转换为汇编代码。
+
+**作用**：生成特定平台的汇编代码。
+
+#### 1.7 汇编（Assembly）
+
+汇编器将汇编代码转换为目标机器码。
+
+**作用**：生成二进制机器码。
+
+#### 1.8 链接（Linking）
+
+链接器将不同的目标文件和库文件合并成一个可执行文件。
+
+**作用**：生成最终的可执行文件，并解决外部符号引用。
+
+### 2. Go编译的参数
+
+在Go中，`go build`命令用于编译程序。以下是一些常用的编译参数及其作用：
+
+#### 2.1 `-o` 
+
+指定输出文件的名称。
+
+```sh
+go build -o myapp main.go
+```
+
+#### 2.2 `-v`
+
+显示编译过程中详细的信息。
+
+```sh
+go build -v
+```
+
+#### 2.3 `-x`
+
+显示编译过程中执行的命令。
+
+```sh
+go build -x
+```
+
+#### 2.4 `-race`
+
+启用数据竞争检测（race condition detection）。
+
+```sh
+go build -race
+```
+
+#### 2.5 `-gcflags`
+
+传递给Go编译器的额外编译选项，通常用于调试和优化。例如，禁用内联优化：
+
+```sh
+go build -gcflags="-l"
+```
+
+#### 2.6 `-ldflags`
+
+传递给链接器的选项。例如，设置可执行文件的版本信息：
+
+```sh
+go build -ldflags="-X 'main.version=1.0'"
+```
+
+#### 2.7 `-tags`
+
+设置编译标签（build tags），用于选择性编译。
+
+```sh
+go build -tags="debug"
+```
+
+#### 2.8 `-mod`
+
+设置如何处理依赖模块，可以是`readonly`、`vendor`等。
+
+```sh
+go build -mod=readonly
+```
+
+### 示例
+
+以下是一个综合使用多个参数的示例：
+
+```sh
+go build -o myapp -v -x -race -gcflags="-N -l" -ldflags="-X 'main.version=1.0'" -tags="debug"
+```
+
+这个命令会编译`main.go`文件，生成名为`myapp`的可执行文件，并启用详细输出、显示执行命令、启用数据竞争检测、禁用优化和内联、设置版本信息，以及使用`debug`标签进行编译。
+
+## 参考资料
+
+- [Go 官方文档 · Getting started（外部链接）](https://go.dev/doc/tutorial/getting-started)
+- [Go 官方文档 · Create a module（外部链接）](https://go.dev/doc/tutorial/create-module)
+
+## 同层页面
+
+- [BuildConstraint](/zh/start/BuildConstraint.md)
+- [Embed](/zh/start/Embed.md)
+- [Hello](/zh/start/Hello.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Embed](Embed.md)
+- [Hello](Hello.md)
+- [Run](Run.md)
+- [Starter](Starter.md)
+- [Structure](Structure.md)

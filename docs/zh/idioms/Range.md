@@ -1,0 +1,162 @@
+# range
+在 Go 语言中，`range` 是用来迭代数据结构的关键字，能遍历数组、切片、映射（map）、字符串以及通道（channel），写法统一。
+
+### 基本用法
+
+`range` 关键字用于 `for` 循环中，可以迭代各种类型的数据结构。每次迭代，`range` 返回一个或多个值，具体取决于数据结构的类型。
+
+#### 示例：迭代数组和切片
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+    // 迭代数组
+    arr := [3]int{1, 2, 3}
+    for index, value := range arr {
+        fmt.Printf("Index: %d, Value: %d\n", index, value)
+    }
+
+    // 迭代切片
+    slice := []int{4, 5, 6}
+    for index, value := range slice {
+        fmt.Printf("Index: %d, Value: %d\n", index, value)
+    }
+}
+```
+
+**输出：**
+
+```
+Index: 0, Value: 1
+Index: 1, Value: 2
+Index: 2, Value: 3
+Index: 0, Value: 4
+Index: 1, Value: 5
+Index: 2, Value: 6
+```
+
+#### 示例：迭代映射（Map）
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+    // 迭代映射
+    m := map[string]int{"a": 1, "b": 2, "c": 3}
+    for key, value := range m {
+        fmt.Printf("Key: %s, Value: %d\n", key, value)
+    }
+}
+```
+
+**输出：**
+
+```
+Key: a, Value: 1
+Key: b, Value: 2
+Key: c, Value: 3
+```
+
+> 注意：Go 刻意将 map 的遍历顺序随机化，每次运行键值对出现的顺序都可能不同（上面的输出只是其中一种可能），程序逻辑不应依赖 map 的遍历顺序。
+
+#### 示例：迭代字符串
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+    // 迭代字符串
+    s := "hello"
+    for index, char := range s {
+        fmt.Printf("Index: %d, Rune: %c\n", index, char)
+    }
+}
+```
+
+**输出：**
+
+```
+Index: 0, Rune: h
+Index: 1, Rune: e
+Index: 2, Rune: l
+Index: 3, Rune: l
+Index: 4, Rune: o
+```
+
+#### 示例：迭代通道（Channel）
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+    ch := make(chan int)
+
+    // 启动一个 goroutine 发送数据到通道
+    go func() {
+        for i := 0; i < 3; i++ {
+            ch <- i
+        }
+        close(ch)
+    }()
+
+    // 迭代通道
+    for value := range ch {
+        fmt.Println("Received:", value)
+    }
+}
+```
+
+**输出：**
+
+```
+Received: 0
+Received: 1
+Received: 2
+```
+
+### `range` 的工作机制
+
+- **数组和切片**：`range` 返回两个值：索引和对应的元素值。迭代时，`range` 会复制数组或切片的元素，所以如果需要修改元素值，通常需要直接操作索引。
+  
+- **映射（Map）**：`range` 返回两个值：键和对应的值。键值对的遍历顺序是无序的，因为映射本身是无序的。
+
+- **字符串**：`range` 返回两个值：索引和字符（rune）。字符是 Unicode 码点，`range` 会按字符遍历字符串，即使字符是多个字节。
+
+- **通道（Channel）**：`range` 从通道中接收数据直到通道被关闭。关闭通道时，`range` 循环会终止。
+
+### 总结
+
+- `range` 一套写法遍历五种结构：数组、切片、映射、字符串、通道。
+- 数组和切片给索引和值；映射给键和值；字符串给字节下标和 rune；通道一直收到被 close 为止。
+
+循环体不用按数据类型各写一套，这是 `range` 带来的直接好处。
+
+## 参考资料
+
+- [Effective Go（官方）](https://go.dev/doc/effective_go)
+- [语言规范 · For 语句（range 子句）](https://go.dev/ref/spec#For_statements)
+- [官方博客 · Range Over Function Types](https://go.dev/blog/range-functions)
+
+
+## 同层页面
+
+- [EffectiveGo](/zh/idioms/EffectiveGo.md)
+- [StructTags](/zh/idioms/StructTags.md)
+- [BlankIdentifier](/zh/idioms/BlankIdentifier.md)
+- [Labels](/zh/idioms/Labels.md)
+- [ShortVarDecl](/zh/idioms/ShortVarDecl.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Labels](Labels.md)
+- [ShortVarDecl](ShortVarDecl.md)

@@ -1,56 +1,56 @@
-Go语言（也称为Golang）是由谷歌工程师Robert Griesemer、Rob Pike和Ken Thompson于2007年在谷歌内部开发的一种编程语言。它的设计目标是解决现有编程语言在大规模软件开发中的一些问题，尤其是在服务器和系统编程方面。
+The Go programming language (also known as Golang) was developed internally at Google in 2007 by Google engineers Robert Griesemer, Rob Pike, and Ken Thompson. It was designed to solve some of the problems existing programming languages had in large-scale software development, especially in server and system programming.
 
-### Go 语言的起源
-1. **背景**：
-   - 在2000年代初期，随着互联网的快速发展，谷歌面临着处理大量并发请求和大规模分布式系统的问题。现有的编程语言如C++和Java在处理这些问题时显得笨重，编译时间长，部署复杂，并且不易于进行高效并发编程。
-   - 此外，脚本语言如Python虽然易于使用，但在性能和类型安全性方面存在不足。
+### The origins of Go
+1. **Background**:
+   - In the early 2000s, as the internet grew rapidly, Google faced problems handling large volumes of concurrent requests and large-scale distributed systems. Existing programming languages such as C++ and Java felt unwieldy for these problems — slow to compile, complex to deploy, and not well suited to efficient concurrent programming.
+   - In addition, scripting languages such as Python were easy to use but fell short on performance and type safety.
 
-2. **动机**：
-   - 开发团队希望创建一种兼具高效编译、静态类型安全和内存安全的编程语言。
-   - 他们的目标是使语言在开发和部署大规模系统时既高效又可靠。
+2. **Motivation**:
+   - The development team wanted to create a programming language that combined fast compilation, static type safety, and memory safety.
+   - Their goal was to make the language both efficient and reliable for developing and deploying large-scale systems.
 
-### Go 语言的发展历程
-1. **早期开发（2007-2009）**：
-   - Go语言的设计和实现开始于2007年，最初由Griesemer、Pike和Thompson在谷歌内部进行开发。
-   - 2009年11月10日，谷歌正式宣布Go语言并将其开源，从而吸引了大量开发者的关注和参与。
+### The development history of Go
+1. **Early development (2007-2009)**:
+   - The design and implementation of Go began in 2007, originally developed internally at Google by Griesemer, Pike, and Thompson.
+   - On November 10, 2009, Google officially announced Go and open-sourced it, attracting widespread attention and participation from developers.
 
-2. **版本发布**：
-   - **Go 1.0（2012年3月）**：第一个稳定版本。从1.0起语法和标准库保持向后兼容，老代码不用跟着新版本改。
-   - **后续版本**：Go 1.5 引入完全自托管的编译器和运行时系统，Go 1.11 引入模块化管理（Go Modules）。
+2. **Version releases**:
+   - **Go 1.0 (March 2012)**: the first stable release. From 1.0 onward, the syntax and standard library stayed backward compatible, so old code didn't need to be rewritten for each new version.
+   - **Later versions**: Go 1.5 introduced a fully self-hosting compiler and runtime, and Go 1.11 introduced module-based management (Go Modules).
 
-3. **社区和生态系统**：
-   - 随着时间的推移，Go语言的社区和生态系统迅速发展。许多知名公司如Docker、Kubernetes、HashiCorp和Uber等都在使用Go语言开发其核心系统和工具。
-   - 包管理、文档生成、测试、构建都由 `go` 命令的子命令提供，装完 Go 就能用。
+3. **Community and ecosystem**:
+   - Over time, the Go community and ecosystem grew quickly. Many well-known companies such as Docker, Kubernetes, HashiCorp, and Uber use Go to build their core systems and tools.
+   - Package management, documentation generation, testing, and building are all provided by subcommands of the `go` command, so everything is available right after you install Go.
 
-### Go 语言的特点
-1. **语法与并发**：
-   - 语法条目不多，编译出来是单个可执行文件。
-   - 并发支持是内置的：goroutine 和 channel 直接用，不用引第三方线程库。
+### Features of Go
+1. **Syntax and concurrency**:
+   - The syntax has few constructs, and it compiles down to a single executable file.
+   - Concurrency support is built in: goroutines and channels are used directly, with no need for a third-party threading library.
 
-2. **静态类型和内存安全**：
-   - Go是一种静态类型语言，在编译时进行类型检查，减少了运行时错误的可能性。
-   - 自动垃圾回收机制：Go语言的内存管理采用自动垃圾回收机制，减少了手动内存管理的负担。
+2. **Static typing and memory safety**:
+   - Go is a statically typed language that performs type checking at compile time, reducing the likelihood of runtime errors.
+   - Automatic garbage collection: Go's memory management uses an automatic garbage collector, reducing the burden of manual memory management.
 
-3. **标准库**：
-   - 网络、文件系统、编码解码、并发控制都有现成的包，直接 import 就行。
+3. **Standard library**:
+   - There are ready-made packages for networking, file systems, encoding and decoding, and concurrency control — just import them.
 
-4. **工具链**：
-   - 编译、构建、测试、文档生成都挂在 `go` 命令下面，一条命令一件事。
+4. **Toolchain**:
+   - Compiling, building, testing, and documentation generation all hang off the `go` command — one command per task.
 
-## 参考资料
+## References
 
-- [官方文档总览](https://go.dev/doc/)
-- [发布历史与支持策略](https://go.dev/doc/devel/release)
-- [官方 FAQ](https://go.dev/doc/faq)
+- [Official documentation overview](https://go.dev/doc/)
+- [Release history and support policy](https://go.dev/doc/devel/release)
+- [Official FAQ](https://go.dev/doc/faq)
 
-## 同层页面
+## Sibling pages
 
-- [ReleaseNotes](/introduction/ReleaseNotes.md)
-- [Feature](/introduction/Feature.md)
-- [Lineage](/introduction/Lineage.md)
+- [ReleaseNotes](/zh/introduction/ReleaseNotes.md)
+- [Feature](/zh/introduction/Feature.md)
+- [Lineage](/zh/introduction/Lineage.md)
 
 <!-- BACKLINKS-AUTO -->
-## 相关页面
+## Related pages
 
-- [Feature](Feature.md)
-- [Lineage](Lineage.md)
+- [Feature](/zh/introduction/Feature.md)
+- [Lineage](/zh/introduction/Lineage.md)

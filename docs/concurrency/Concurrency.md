@@ -1,66 +1,66 @@
-# 并发编程
-Go 的并发模型受 Erlang、Actor 模型和 CSP（Communicating Sequential Processes）影响演化而来。
+# Concurrent Programming
+Go's concurrency model evolved under the influence of Erlang, the Actor model, and CSP (Communicating Sequential Processes).
 
-### 1. 并发模型的演化历史
+### 1. The evolution of concurrency models
 
-#### 1.1 Erlang 和 Actor 模型
+#### 1.1 Erlang and the Actor model
 
-Erlang 是函数式语言，最初为电信系统设计，它的并发建立在 Actor 模型上，强调隔离和消息传递。Actor 模型由 Carl Hewitt 提出，把计算看作一组独立的 Actor：每个 Actor 持有自己的状态和行为，通过异步消息互相通信，而不直接共享内存，由此避开了共享状态导致的竞态条件和复杂的同步问题。这种模型适合高并发和分布式系统。
+Erlang is a functional language, originally designed for telecom systems. Its concurrency is built on the Actor model, which emphasizes isolation and message passing. The Actor model was proposed by Carl Hewitt and treats computation as a set of independent actors: each actor holds its own state and behavior, and they talk to each other through asynchronous messages instead of directly sharing memory. That sidesteps the race conditions and complex synchronization problems that shared state causes. This model suits high-concurrency and distributed systems.
 
-#### 1.2 CSP（Communicating Sequential Processes）
+#### 1.2 CSP (Communicating Sequential Processes)
 
-CSP 由 Tony Hoare 提出，强调进程之间用消息传递通信，而不是共享内存。进程是顺序执行的计算单元，通过在管道（channels）上收发消息来交互；交互和同步的方式因此有明确定义，绕开了内存共享和锁的复杂性。
+CSP was proposed by Tony Hoare and emphasizes that processes communicate through message passing rather than shared memory. A process is a sequentially executing unit of computation; processes interact by sending and receiving messages over pipes (channels). The way interaction and synchronization happen is therefore clearly defined, which avoids the complexity of memory sharing and locks.
 
-### 2. Go 的并发模型
+### 2. Go's concurrency model
 
-Go 的并发模型主要来自 CSP，也结合了 Actor 模型的思想，落点是 `goroutine` 和 `channel` 两个原语。
+Go's concurrency model comes mainly from CSP, with ideas from the Actor model folded in too, and it lands on two primitives: `goroutine` and `channel`.
 
 #### 2.1 Goroutine
 
-`goroutine` 是 Go 的并发执行单元，一种轻量级的线程。调度器把它映射到少量操作系统线程上，`go` 关键字一写就能启动。它的栈从很小的初始值开始，按需自动扩展，单个 `goroutine` 的内存开销因此很小。
+A `goroutine` is Go's unit of concurrent execution, a kind of lightweight thread. The scheduler maps it onto a small number of OS threads, and a single `go` keyword starts one. Its stack starts at a very small initial size and grows automatically on demand, so the memory cost of a single `goroutine` is small.
 
 #### 2.2 Channel
 
-`channel` 是 `goroutine` 之间通信和同步的机制：在它上面安全地收发数据，就省掉了显式的锁和共享内存问题。它分缓冲和非缓冲两种模式；两边没同时准备好时，发送和接收互相阻塞，这就是 `channel` 的同步语义。
+A `channel` is the mechanism for communication and synchronization between `goroutine`s: sending and receiving data safely over it removes the need for explicit locks and the problems of shared memory. It comes in two modes, buffered and unbuffered; when both sides aren't ready at the same time, the send and the receive block each other. That is the synchronization semantics of a `channel`.
 
-#### 2.3 Select 语句
+#### 2.3 The select statement
 
-`select` 让 `goroutine` 同时等多个 `channel` 操作，多个都就绪时随机挑一个执行，多路复用和超时都靠它。
+`select` lets a `goroutine` wait on multiple `channel` operations at once. When several are ready, it picks one at random to execute. Both multiplexing and timeouts rely on it.
 
-#### 2.4 调度器
+#### 2.4 The scheduler
 
-Go 的调度器是 M:N 模型：M 代表操作系统线程，N 代表 `goroutine`。调度器把多个 `goroutine` 映射到少量操作系统线程上，用工作窃取与抢占（含基于信号的异步抢占）等策略调度，同时管 `goroutine` 的创建、销毁和上下文切换。
+Go's scheduler is an M:N model: M stands for OS threads, N stands for `goroutine`s. The scheduler maps many `goroutine`s onto a small number of OS threads, dispatching them with strategies like work stealing and preemption (including signal-based asynchronous preemption), and it also manages `goroutine` creation, destruction, and context switching.
 
-### 3. CSP 模型和 Go 的并发模型
+### 3. The CSP model and Go's concurrency model
 
-#### 3.1 CSP 模型的核心思想
+#### 3.1 Core ideas of the CSP model
 
-CSP 里的进程靠消息传递通信，不共享内存；消息可以同步（收发同时发生），也可以异步（发送不等接收完成）。进程是顺序执行的计算单元，按定义好的协议经由管道（channels）收发消息。
+In CSP, processes communicate through message passing and don't share memory; messages can be synchronous (send and receive happen at the same time) or asynchronous (the send doesn't wait for the receive to complete). A process is a sequentially executing unit of computation, sending and receiving messages over pipes (channels) according to a defined protocol.
 
-#### 3.2 Go 的并发模型与 CSP 的关系
+#### 3.2 How Go's concurrency model relates to CSP
 
-对应关系是：`channel` 实现 CSP 的消息传递，`goroutine` 与 CSP 的进程类似（都是顺序执行的并发单元），`select` 对应 CSP 的选择操作。这些 `goroutine` 的执行由 Go 的调度器管理，CSP 中的进程调度机制在调度器内部实现。
+The correspondence is: `channel` implements CSP's message passing, `goroutine` is analogous to a CSP process (both are sequentially executing units of concurrency), and `select` corresponds to CSP's choice operation. The execution of these `goroutine`s is managed by Go's scheduler, and the process-scheduling mechanism of CSP is implemented inside the scheduler.
 
-### 总结
+### Summary
 
-Go 的并发模型来自 CSP 和 Actor 模型：`goroutine` 是并发执行单元，`channel` 负责通信和同步，调度器把多个 `goroutine` 映射到少量操作系统线程上。写并发程序时先想清楚数据在 `goroutine` 之间怎么流动：能通过 `channel` 传递就不共享内存，锁也就省了。
+Go's concurrency model comes from CSP and the Actor model: `goroutine` is the unit of concurrent execution, `channel` handles communication and synchronization, and the scheduler maps many `goroutine`s onto a small number of OS threads. When you write concurrent code, think first about how data flows between `goroutine`s: if you can pass it through a `channel`, don't share memory, and you save the lock too.
 
-## 参考资料
+## References
 
-- [Effective Go · 并发](https://go.dev/doc/effective_go#concurrency)
-- [Go 内存模型](https://go.dev/ref/mem)
-- [sync 标准库](https://pkg.go.dev/sync)
+- [Effective Go · Concurrency](https://go.dev/doc/effective_go#concurrency)
+- [Go Memory Model](https://go.dev/ref/mem)
+- [sync standard library](https://pkg.go.dev/sync)
 
 
-## 同层页面
+## Sibling pages
 
-- [Actor](/concurrency/Actor.md)
-- [CSP](/concurrency/CSP.md)
-- [Chan](/concurrency/Chan.md)
-- [ChanImpl](/concurrency/ChanImpl.md)
-- [ErrorGroup](/concurrency/ErrorGroup.md)
+- [Actor](/zh/concurrency/Actor.md)
+- [CSP](/zh/concurrency/CSP.md)
+- [Chan](/zh/concurrency/Chan.md)
+- [ChanImpl](/zh/concurrency/ChanImpl.md)
+- [ErrorGroup](/zh/concurrency/ErrorGroup.md)
 
 <!-- BACKLINKS-AUTO -->
-## 相关页面
+## Related pages
 
-- [Actor](Actor.md)
+- [Actor](/zh/concurrency/Actor.md)

@@ -1,0 +1,266 @@
+### 第三方日志库
+
+除了 Go 标准库的 `log` 和 `slog`，常用的第三方日志库有 `logrus`、`zap`、`zerolog`，它们支持结构化字段、日志级别和钩子。
+
+#### 1. `logrus`
+
+##### 1.1 安装与基本使用
+
+```sh
+go get github.com/sirupsen/logrus
+```
+
+```go
+package main
+
+import (
+	"github.com/sirupsen/logrus"
+)
+
+func main() {
+	logger := logrus.New()
+	logger.Info("This is an info message")
+	logger.Warn("This is a warning message")
+	logger.Error("This is an error message")
+}
+```
+
+##### 1.2 日志级别和钩子
+
+```go
+logger.SetLevel(logrus.WarnLevel)
+
+logger.Info("This will not be logged")
+logger.Warn("This will be logged")
+
+logger.AddHook(&CustomHook{})
+```
+
+##### 1.3 自定义格式化器和输出
+
+```go
+logger.SetFormatter(&logrus.JSONFormatter{})
+
+file, err := os.OpenFile("app.log", os.O_CREATE|os.O_WRONLY, 0666)
+if err == nil {
+	logger.SetOutput(file)
+} else {
+	logger.Info("Failed to log to file, using default stderr")
+}
+```
+
+##### 1.4 实践案例
+
+```go
+package main
+
+import (
+	"github.com/sirupsen/logrus"
+	"os"
+)
+
+func main() {
+	logger := logrus.New()
+
+	logger.SetFormatter(&logrus.JSONFormatter{})
+	file, err := os.OpenFile("app.log", os.O_CREATE|os.O_WRONLY, 0666)
+	if err == nil {
+		logger.SetOutput(file)
+	} else {
+		logger.Info("Failed to log to file, using default stderr")
+	}
+
+	logger.WithFields(logrus.Fields{
+		"event": "event",
+		"topic": "topic",
+		"key":   "value",
+	}).Info("This is a structured log message")
+}
+```
+
+#### 2. `zap`
+
+##### 2.1 安装与基本使用
+
+```sh
+go get go.uber.org/zap
+```
+
+```go
+package main
+
+import (
+	"go.uber.org/zap"
+)
+
+func main() {
+	logger, _ := zap.NewProduction()
+	defer logger.Sync()
+
+	logger.Info("This is an info message")
+	logger.Warn("This is a warning message")
+	logger.Error("This is an error message")
+}
+```
+
+##### 2.2 性能优化
+
+```go
+package main
+
+import "go.uber.org/zap"
+
+func main() {
+	logger, _ := zap.NewProduction(zap.WithCaller(false))
+	defer logger.Sync()
+	logger.Info("This is an info message")
+}
+```
+
+##### 2.3 结构化日志
+
+```go
+logger.Info("This is a structured log message",
+	zap.String("key1", "value1"),
+	zap.Int("key2", 123))
+```
+
+##### 2.4 配置与示例
+
+```go
+package main
+
+import "go.uber.org/zap"
+
+func main() {
+	config := zap.NewProductionConfig()
+	config.OutputPaths = []string{"stdout", "app.log"}
+	logger, _ := config.Build()
+
+	logger.Info("This is an info message with custom configuration")
+}
+```
+
+##### 2.5 实践案例
+
+```go
+package main
+
+import (
+	"go.uber.org/zap"
+)
+
+func main() {
+	logger, _ := zap.NewProduction()
+	defer logger.Sync()
+
+	sugar := logger.Sugar()
+	sugar.Infow("This is a structured log message",
+		"key1", "value1",
+		"key2", 123)
+}
+```
+
+#### 3. `zerolog`
+
+##### 3.1 安装与基本使用
+
+```sh
+go get github.com/rs/zerolog/log
+```
+
+```go
+package main
+
+import (
+	"github.com/rs/zerolog"
+	"github.com/rs/zerolog/log"
+	"os"
+)
+
+func main() {
+	log.Logger = log.Output(zerolog.ConsoleWriter{Out: os.Stderr})
+
+	log.Info().Msg("This is an info message")
+	log.Warn().Msg("This is a warning message")
+	log.Error().Msg("This is an error message")
+}
+```
+
+##### 3.2 最小开销和高效日志
+
+```go
+package main
+
+import "github.com/rs/zerolog/log"
+
+func main() {
+	log.Info().Str("key1", "value1").Int("key2", 123).Msg("This is a structured log message")
+}
+```
+
+##### 3.3 使用 JSON 格式记录日志
+
+```go
+package main
+
+import (
+	"os"
+
+	"github.com/rs/zerolog/log"
+)
+
+func main() {
+	log.Logger = log.Output(os.Stdout)
+	log.Info().Msg("This is a log message in JSON format")
+}
+```
+
+##### 3.4 实践案例
+
+```go
+package main
+
+import (
+	"github.com/rs/zerolog"
+	"github.com/rs/zerolog/log"
+	"os"
+)
+
+func main() {
+	log.Logger = log.Output(zerolog.ConsoleWriter{Out: os.Stderr})
+
+	log.Info().Str("key1", "value1").Int("key2", 123).Msg("This is a structured log message")
+}
+```
+
+#### 4. 比较与选择
+
+##### 4.1 不同日志库的比较
+
+- **`logrus`**：功能全面，支持钩子、自定义格式化器和输出，但性能相对较低。
+- **`zap`**：高性能，支持结构化日志，适合需要高效日志记录的应用。
+- **`zerolog`**：最小开销，高效日志，采用 JSON 格式，适合需要高性能和低开销的场景。
+
+##### 4.2 选择合适的日志库
+
+- 高并发、性能敏感的场景优先 `zap` 或 `zerolog`。
+- 需要钩子和自定义格式化器时选 `logrus`，它的功能最全，代价是性能相对较低。
+
+## 参考资料
+
+- [log 标准库](https://pkg.go.dev/log)
+- [官方博客 · Structured Logging with slog](https://go.dev/blog/slog)
+
+## 同层页面
+
+- [Aggregation](/zh/log/Aggregation.md)
+- [Log](/zh/log/Log.md)
+- [ModLog](/zh/log/ModLog.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Aggregation](Aggregation.md)
+- [Log](Log.md)
+- [ModLog](ModLog.md)

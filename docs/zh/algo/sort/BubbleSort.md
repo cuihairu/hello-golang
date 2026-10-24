@@ -1,0 +1,111 @@
+### 冒泡排序（Bubble Sort）
+
+冒泡排序反复遍历列表，逐步把最大（或最小）的元素“冒泡”到末尾。时间复杂度 $O(n^2)$，多用于教学和小规模数据。
+
+#### 1. 冒泡排序的基本概念
+
+冒泡排序的过程如下：
+
+1. **遍历并比较**:
+   - 从列表的起始位置开始，依次比较相邻的元素。
+   - 如果前一个元素大于后一个元素，则交换这两个元素。
+
+2. **调整排序范围**:
+   - 每轮遍历结束后，最大的元素被放到列表的末尾。
+   - 随着排序的进行，未排序的范围逐渐缩小。
+
+3. **提前退出优化**:
+   - 如果在某次遍历中没有发生任何交换，说明列表已经排序好，可以提前退出，避免不必要的遍历。
+
+#### 2. 冒泡排序的算法步骤
+
+1. **外层循环**: 从列表的起始位置到倒数第二个元素。
+   - **内层循环**: 从列表的起始位置到倒数第 i 个元素，比较相邻元素。
+   - 如果前一个元素大于后一个元素，则交换它们。
+
+2. **提前退出**:
+   - 如果在内层循环中没有发生交换，说明列表已经排序好，可以退出外层循环。
+
+#### 3. 冒泡排序的时间复杂度和空间复杂度
+
+- **时间复杂度**:
+  - **最坏情况**: $O(n^2)$，当数组完全逆序时，需要进行最多 $n(n-1)/2$ 次比较和交换。
+  - **最佳情况**: $O(n)$，当数组已经排序好时，仅需进行一次遍历且没有交换。
+  - **平均情况**: $O(n^2)$，对随机排序的数组进行排序时，平均时间复杂度为 $O(n^2)$。
+
+- **空间复杂度**: $O(1)$，冒泡排序是就地排序，只额外用到临时交换的变量。
+
+#### 4. 冒泡排序的代码示例
+
+```go
+package main
+
+import "fmt"
+
+// BubbleSort 对整数切片进行冒泡排序
+func BubbleSort(arr []int) {
+    n := len(arr)
+    for i := 0; i < n-1; i++ {
+        swapped := false
+        for j := 0; j < n-i-1; j++ {
+            if arr[j] > arr[j+1] {
+                // 交换元素
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+                swapped = true
+            }
+        }
+        // 如果没有交换，说明已排序好，提前退出
+        if !swapped {
+            break
+        }
+    }
+}
+
+func main() {
+    arr := []int{64, 34, 25, 12, 22, 11, 90}
+    fmt.Println("Original array:", arr)
+    BubbleSort(arr)
+    fmt.Println("Sorted array:", arr)
+}
+```
+
+#### 5. 冒泡排序的优缺点
+
+**优点**:
+- 实现简单，易于理解和编写。
+- 适用于小规模数据集。
+
+**缺点**:
+- 对大规模数据集效率低，时间复杂度为 $O(n^2)$。
+- 不适合对性能要求较高的场景。
+
+### 总结
+
+冒泡排序靠不断交换相邻逆序对，把元素逐步挪到正确位置。代码只有十几行，便于读代码；数据规模一大，$O(n^2)$ 就撑不住了。
+
+## 参考资料
+
+- [冒泡排序 · Wikipedia](https://en.wikipedia.org/wiki/Bubble_sort)
+
+## 同层页面
+
+- [BucketSort](/zh/algo/sort/BucketSort.md)
+- [CocktailSort](/zh/algo/sort/CocktailSort.md)
+- [CountingSort](/zh/algo/sort/CountingSort.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [BucketSort](BucketSort.md)
+- [CocktailSort](CocktailSort.md)
+- [CountingSort](CountingSort.md)
+- [HeapSort](HeapSort.md)
+- [InsertionSort](InsertionSort.md)
+- [MergeSort](MergeSort.md)
+- [QuickSort](QuickSort.md)
+- [RadixSort](RadixSort.md)
+- [SelectionSort](SelectionSort.md)
+- [ShellSort](ShellSort.md)
+- [Sort](Sort.md)
+- [StableSort](StableSort.md)
+- [TimSort](TimSort.md)

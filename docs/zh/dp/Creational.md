@@ -1,0 +1,44 @@
+### 创建型模式
+
+创建型模式关注对象的创建过程，把创建和使用分开。五种常见模式的概念和适用范围：
+
+1. **单例模式（Singleton Pattern）**：
+   - **概念**：确保一个类只有一个实例，并提供一个全局访问点。
+   - **适用范围**：需要控制实例数量的场景，如配置对象、日志对象等。
+
+2. **工厂方法模式（Factory Method Pattern）**：
+   - **概念**：定义一个创建对象的接口，但由子类决定实例化哪一个类。工厂方法使得类的实例化延迟到子类。
+   - **适用范围**：需要将对象的创建和使用分离，并且实例化过程复杂的场景。
+
+3. **抽象工厂模式（Abstract Factory Pattern）**：
+   - **概念**：提供一个创建一系列相关或相互依赖对象的接口，而无需指定具体的类。
+   - **适用范围**：需要创建一系列相关或依赖对象的场景，如 GUI 工具包、数据库相关对象等。
+
+4. **生成器模式（Builder Pattern）**：
+   - **概念**：将一个复杂对象的构建与它的表示分离，使得同样的构建过程可以创建不同的表示。
+   - **适用范围**：需要创建复杂对象，并且构建过程稳定，但表示方式可以灵活变化的场景。
+
+5. **原型模式（Prototype Pattern）**：
+   - **概念**：通过复制现有对象来创建新对象，避免创建一个新对象的开销。
+   - **适用范围**：需要大量类似对象的创建，并且希望避免使用 new 关键字直接创建对象的场景。
+
+## 参考资料
+
+- [GoF《设计模式》概览（Wikipedia）](https://en.wikipedia.org/wiki/Design_Patterns)
+- [Refactoring.Guru 设计模式目录](https://refactoring.guru/design-patterns)
+- [Effective Go（官方）](https://go.dev/doc/effective_go)
+
+
+## 同层页面
+
+- [AbstractFactory](/zh/dp/AbstractFactory.md)
+- [Adapter](/zh/dp/Adapter.md)
+- [Behavioral](/zh/dp/Behavioral.md)
+- [Composite](/zh/dp/Composite.md)
+- [Decorator](/zh/dp/Decorator.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Composite](Composite.md)
+- [Decorator](Decorator.md)

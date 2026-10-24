@@ -1,35 +1,35 @@
-# Go 项目启动记录
-我把一个最小 Go 项目的目录、模块、构建和依赖命令记在这里，方便开新仓库时查用。
+# Go Project Startup Notes
+I've written down the directory, module, build, and dependency commands for a minimal Go project here, handy for looking up when starting a new repo.
 
-### 1. 设置GOPATH和项目目录
+### 1. Setting up GOPATH and the project directory
 
-`GOPATH` 是 Go 工作空间的根目录。在 shell 配置文件（如`.bashrc`或`.zshrc`）里加上：
+`GOPATH` is the root directory of the Go workspace. Add the following to your shell config file (such as `.bashrc` or `.zshrc`):
 
 ```sh
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 ```
 
-然后，创建项目目录。假设你要创建一个名为`myproject`的项目：
+Then create the project directory. Assume you want to create a project named `myproject`:
 
 ```sh
 mkdir -p $GOPATH/src/github.com/yourusername/myproject
 cd $GOPATH/src/github.com/yourusername/myproject
 ```
 
-### 2. 初始化Go模块
+### 2. Initializing a Go module
 
-Go 模块是 Go 1.11 引入的依赖管理方式，依赖关系记录在`go.mod`里。在项目目录下初始化一个新的 Go 模块：
+Go modules are the dependency management system introduced in Go 1.11, with dependencies recorded in `go.mod`. Initialize a new Go module in the project directory:
 
 ```sh
 go mod init github.com/yourusername/myproject
 ```
 
-这将创建一个`go.mod`文件，记录项目的模块路径和依赖项。
+This creates a `go.mod` file recording the project's module path and dependencies.
 
-### 3. 创建项目结构
+### 3. Creating the project structure
 
-一个典型的Go项目结构可能如下：
+A typical Go project structure might look like this:
 
 ```
 myproject/
@@ -44,11 +44,11 @@ myproject/
     └── ...
 ```
 
-- `cmd/`：存放项目的主应用程序入口。
-- `pkg/`：存放可以被其他项目使用的库代码。
-- `internal/`：存放只能被本项目使用的包。
+- `cmd/`: holds the project's main application entry points.
+- `pkg/`: holds library code that other projects can use.
+- `internal/`: holds packages that only this project can use.
 
-创建这些目录和文件：
+Create these directories and files:
 
 ```sh
 mkdir -p cmd/myproject
@@ -57,9 +57,9 @@ mkdir -p pkg
 mkdir -p internal
 ```
 
-### 4. 编写代码
+### 4. Writing the code
 
-在`cmd/myproject/main.go`中编写你的Go代码，例如一个简单的"Hello, World!"程序：
+Write your Go code in `cmd/myproject/main.go`, for example a simple "Hello, World!" program:
 
 ```go
 package main
@@ -71,56 +71,56 @@ func main() {
 }
 ```
 
-### 5. 构建和运行项目
+### 5. Building and running the project
 
-你可以使用以下命令来构建和运行你的项目：
+You can use the following commands to build and run your project:
 
 ```sh
 go build -o bin/myproject ./cmd/myproject
 ./bin/myproject
 ```
 
-或者直接运行：
+Or run it directly:
 
 ```sh
 go run ./cmd/myproject
 ```
 
-### 6. 添加依赖
+### 6. Adding dependencies
 
-如果你的项目需要使用外部包，可以使用`go get`命令。例如，要使用`gin`框架，你可以运行：
+If your project needs external packages, you can use the `go get` command. For example, to use the `gin` framework, you can run:
 
 ```sh
 go get -u github.com/gin-gonic/gin
 ```
 
-这将自动更新你的`go.mod`和`go.sum`文件以包含新的依赖项。
+This automatically updates your `go.mod` and `go.sum` files to include the new dependency.
 
-### 7. 管理依赖
+### 7. Managing dependencies
 
-当你添加或更新依赖时，`go mod tidy`命令可以帮助你清理和整理`go.mod`和`go.sum`文件：
+When you add or update dependencies, the `go mod tidy` command helps you clean up and tidy the `go.mod` and `go.sum` files:
 
 ```sh
 go mod tidy
 ```
 
-### 完整示例
+### Full example
 
 ```sh
-# 设置项目目录
+# set up the project directory
 mkdir -p $GOPATH/src/github.com/yourusername/myproject
 cd $GOPATH/src/github.com/yourusername/myproject
 
-# 初始化Go模块
+# initialize the Go module
 go mod init github.com/yourusername/myproject
 
-# 创建项目结构
+# create the project structure
 mkdir -p cmd/myproject
 touch cmd/myproject/main.go
 mkdir -p pkg
 mkdir -p internal
 
-# 编写代码
+# write the code
 echo 'package main
 
 import "fmt"
@@ -129,38 +129,38 @@ func main() {
     fmt.Println("Hello, World!")
 }' > cmd/myproject/main.go
 
-# 构建和运行项目
+# build and run the project
 go build -o bin/myproject ./cmd/myproject
 ./bin/myproject
 
-# 或者直接运行
+# or run it directly
 go run ./cmd/myproject
 
-# 添加依赖
+# add dependencies
 go get -u github.com/gin-gonic/gin
 
-# 管理依赖
+# manage dependencies
 go mod tidy
 ```
 
-照这组命令执行后，`bin/myproject` 会打印出 `Hello, World!`。后续加依赖用 `go get`，清理用 `go mod tidy`。
+After running this set of commands, `bin/myproject` prints `Hello, World!`. Use `go get` to add dependencies later, and `go mod tidy` to clean up.
 
-## 参考资料
+## References
 
-- [Go 官方文档 · Getting started（外部链接）](https://go.dev/doc/tutorial/getting-started)
-- [Go 官方文档 · Create a module（外部链接）](https://go.dev/doc/tutorial/create-module)
+- [Go official docs · Getting started (external link)](https://go.dev/doc/tutorial/getting-started)
+- [Go official docs · Create a module (external link)](https://go.dev/doc/tutorial/create-module)
 
 
-## 同层页面
+## Sibling pages
 
-- [BuildConstraint](/start/BuildConstraint.md)
-- [Build](/start/Build.md)
-- [Embed](/start/Embed.md)
-- [Run](/start/Run.md)
-- [Structure](/start/Structure.md)
+- [BuildConstraint](/zh/start/BuildConstraint.md)
+- [Build](/zh/start/Build.md)
+- [Embed](/zh/start/Embed.md)
+- [Run](/zh/start/Run.md)
+- [Structure](/zh/start/Structure.md)
 
 <!-- BACKLINKS-AUTO -->
-## 相关页面
+## Related pages
 
-- [Run](Run.md)
-- [Structure](Structure.md)
+- [Run](/zh/start/Run.md)
+- [Structure](/zh/start/Structure.md)

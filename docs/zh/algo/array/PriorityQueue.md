@@ -1,0 +1,144 @@
+# 优先队列
+在 Go 语言中，优先队列（Priority Queue）是一种特殊的队列，其中每个元素都有一个优先级，队列中的元素按照优先级的顺序进行出队。优先队列的常见实现是基于堆（Heap）数据结构，特别是二叉堆（Binary Heap）。Go 的标准库 `container/heap` 包提供了对优先队列的支持。
+
+### 优先队列的基本概念
+
+1. **优先队列**：
+   - **插入操作**：将元素插入队列，同时保持队列的优先级顺序。
+   - **删除操作**：移除优先级最高的元素（通常是最小或最大值）。
+
+2. **堆**：
+   - **最大堆**：堆顶元素是所有元素中最大值的堆。
+   - **最小堆**：堆顶元素是所有元素中最小值的堆。
+   - 在 Go 中，`container/heap` 包实现的是最小堆（即堆顶是最小值）。
+
+### Go 中的优先队列实现
+
+Go 的 `container/heap` 包提供了一个堆接口，你可以在它之上实现自己的优先级队列。做法分两步：
+
+1. **定义一个优先队列类型**：
+   需要实现 `heap.Interface` 接口，该接口包括 `Len`、`Less`、`Swap`、`Push` 和 `Pop` 方法。
+
+2. **实现优先队列**：
+   实现 `heap.Interface` 接口的方法，并使用 `heap` 包提供的功能来管理优先队列。
+
+
+### 数组作为底层数据结构
+
+1. **数组基础**：
+    
+    - 在 Go 的 `container/heap` 包中，优先队列通常是基于一个数组实现的。这个数组表示一个堆数据结构，其中堆的每个节点都存储在数组的一个位置。
+2. **堆的性质**：
+    
+    - 堆是一种完全二叉树，它可以用数组有效地表示。对于一个堆中的元素，若其在数组中的索引是 `i`，则：
+        - **左子节点** 的索引是 `2*i + 1`
+        - **右子节点** 的索引是 `2*i + 2`
+        - **父节点** 的索引是 `(i - 1) / 2`
+    - 有了这三个关系，任取一个下标就能直接算出父子节点的位置，不用遍历。
+
+### 实现细节
+
+1. **数据存储**：
+    
+    - 在优先队列的实现中，底层数据存储在一个切片（`slice`）中，切片的行为与数组类似，但具有动态调整大小的能力。
+2. **插入操作**：
+    
+    - 插入新元素时，将其添加到数组的末尾，并进行“上浮”操作以保持堆的性质。
+3. **删除操作**：
+    
+    - 删除操作通常是删除堆顶元素，将堆中的最后一个元素移动到堆顶，然后进行“下沉”操作以恢复堆的性质。
+
+### 示例代码
+
+以下是一个简单的优先队列示例，演示如何在 Go 中使用 `container/heap` 包来实现一个优先队列：
+
+```go
+package main
+
+import (
+    "container/heap"
+    "fmt"
+)
+
+// IntHeap 实现了 heap.Interface 接口
+type IntHeap []int
+
+func (h IntHeap) Len() int           { return len(h) }
+func (h IntHeap) Less(i, j int) bool { return h[i] < h[j] } // 最小堆
+func (h IntHeap) Swap(i, j int)      { h[i], h[j] = h[j], h[i] }
+
+func (h *IntHeap) Push(x interface{}) {
+    *h = append(*h, x.(int))
+}
+
+func (h *IntHeap) Pop() interface{} {
+    old := *h
+    n := len(old)
+    x := old[n-1]
+    *h = old[0 : n-1]
+    return x
+}
+
+func main() {
+    // 创建一个 IntHeap 实例
+    h := &IntHeap{2, 1, 5}
+    heap.Init(h)
+
+    // 插入元素
+    heap.Push(h, 3)
+    fmt.Printf("Minimum: %d\n", (*h)[0])
+
+    // 移除元素
+    for h.Len() > 0 {
+        fmt.Printf("%d ", heap.Pop(h))
+    }
+}
+```
+
+### 代码解析
+
+1. **定义优先队列**：`IntHeap` 实现了 `heap.Interface` 接口，是一个整数最小堆。`Len` 和 `Swap` 就是常规的切片操作；优先级规则定在 `Less` 里，`h[i] < h[j]` 即堆顶最小；`Push` 把元素追加到切片尾，`Pop` 取出末尾元素并缩容。
+
+2. **使用优先队列**：
+   - 创建 `IntHeap` 实例并初始化。
+   - 使用 `heap.Push` 插入新元素。
+   - 使用 `heap.Pop` 移除并返回优先级最高的元素。
+
+### 应用场景
+
+1. **任务调度**：
+   - 用于调度具有不同优先级的任务，确保高优先级任务优先执行。
+
+2. **A* 搜索算法**：
+   - 在路径搜索算法中用于选择最优路径。
+
+3. **实时数据处理**：
+   - 用于处理和维护流数据中的优先级信息。
+
+### 复杂度
+
+`heap.Push` 和 `heap.Pop` 都是 O(log n)，代价是一次上浮或下沉。取队首（下标 0 的元素）是 O(1)。`heap.Init` 把 n 个元素整理成堆是 O(n)。底层切片按需扩容，`heap.Fix` 在修改某个元素后恢复堆序，也是 O(log n)。
+
+### 总结
+
+标准库没有提供现成的优先队列类型：`container/heap` 只有接口和几个操作函数，队列本身要自己定义。实现 `heap.Interface` 的五个方法，再用 `heap.Init`、`heap.Push`、`heap.Pop` 操作它。`Less` 里写小于号得到最小堆，改成大于号就是最大堆。
+
+## 参考资料
+
+- [优先队列 · Wikipedia](https://en.wikipedia.org/wiki/Priority_queue)
+- [container/heap 标准库](https://pkg.go.dev/container/heap)
+
+
+## 同层页面
+
+- [DynamicArray](/zh/algo/array/DynamicArray.md)
+- [Array](/zh/algo/array/Array.md)
+- [CircularBuffer](/zh/algo/array/CircularBuffer.md)
+- [MultidimensionalArray](/zh/algo/array/MultidimensionalArray.md)
+- [SparseArray](/zh/algo/array/SparseArray.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [MultidimensionalArray](MultidimensionalArray.md)
+- [SparseArray](SparseArray.md)

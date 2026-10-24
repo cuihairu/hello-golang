@@ -1,0 +1,114 @@
+Go 语言的 `bool` 类型是一个基本数据类型，用于表示布尔值，即 `true` 和 `false`。它常用于条件判断和逻辑操作。在 Go 中，`bool` 类型的变量可以通过关键字 `true` 和 `false` 进行赋值。
+
+### 声明和初始化
+
+你可以这样声明和初始化一个 `bool` 类型的变量：
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+    var a bool       // 声明但未初始化，默认值为 false
+    var b bool = true  // 声明并初始化为 true
+    c := false        // 简短声明并初始化为 false
+    fmt.Println(a, b, c) // false true false
+}
+```
+
+### 使用场景
+
+`bool` 类型通常用于条件判断，比如 `if` 语句和循环控制：
+
+```go
+a := false
+b := true
+
+if a {
+    fmt.Println("a is true")
+} else {
+    fmt.Println("a is false")
+}
+
+for b {
+    fmt.Println("This will print once because b is true")
+    b = false
+}
+```
+
+### 逻辑操作
+
+Go 提供了基本的逻辑操作符来处理 `bool` 类型：
+
+- `&&`：逻辑与操作符
+- `||`：逻辑或操作符
+- `!`：逻辑非操作符
+
+示例：
+
+```go
+x := true
+y := false
+
+fmt.Println(x && y)  // 输出 false
+fmt.Println(x || y)  // 输出 true
+fmt.Println(!x)      // 输出 false
+```
+
+### 注意事项
+
+1. **类型转换**：Go 中不允许其他类型与 `bool` 类型进行隐式转换。例如，不能将整数 `0` 或 `1` 直接转换为 `false` 或 `true`。
+2. **默认值**：`bool` 类型的默认值是 `false`。如果一个布尔变量未被显式初始化，它的值将是 `false`。
+
+### 示例代码
+
+声明、初始化、逻辑操作放在一起跑一遍：
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+    var flag bool
+    fmt.Println("flag:", flag) // 输出 flag: false
+
+    flag = true
+    if flag {
+        fmt.Println("flag is true")
+    }
+
+    var isReady bool = false
+    if !isReady {
+        fmt.Println("isReady is false")
+    }
+
+    x, y := true, false
+    fmt.Println("x && y:", x && y) // 输出 x && y: false
+    fmt.Println("x || y:", x || y) // 输出 x || y: true
+    fmt.Println("!x:", !x)         // 输出 !x: false
+}
+```
+
+把上面的用法归一下：`bool` 只有两个值，声明不初始化就是 `false`，不能和整数互相转换，条件判断里直接写变量名就行，不用再写 `flag == true`。
+
+## 参考资料
+
+- [语言规范 · 类型](https://go.dev/ref/spec#Types)
+- [语言规范 · 布尔类型](https://go.dev/ref/spec#Boolean_types)
+
+
+## 同层页面
+
+- [Assertion](/zh/type/Assertion.md)
+- [Interface](/zh/type/Interface.md)
+- [Map](/zh/type/Map.md)
+- [Big](/zh/type/Big.md)
+- [Byte](/zh/type/Byte.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Big](Big.md)
+- [Byte](Byte.md)

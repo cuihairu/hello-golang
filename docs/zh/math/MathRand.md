@@ -1,0 +1,228 @@
+### 3. 随机数生成与概率计算
+
+`math/rand` 负责出伪随机数，概率模型靠几行公式套在它上面。这一节先看随机数怎么生成，再看事件、条件概率和正态、伯努利、泊松三个分布的算法。
+
+---
+
+#### 3.1 随机数生成
+
+**3.1.1 伪随机数生成（`math/rand` 包）**
+
+Go语言的 `math/rand` 包用于生成伪随机数。伪随机数是通过算法生成的看似随机的数字序列。初始化随机数生成器的种子是产生不同随机数序列的关键。
+
+- **初始化种子**：
+  使用当前时间的纳秒数作为种子可以确保每次运行程序时生成的随机数序列不同。
+
+  ```go
+  package main
+
+  import (
+      "fmt"
+      "math/rand"
+      "time"
+  )
+
+  func main() {
+      rand.Seed(time.Now().UnixNano())  // 初始化随机数种子
+      fmt.Println("随机整数:", rand.Intn(100))  // 生成 0 到 99 之间的随机整数
+      fmt.Println("随机浮点数:", rand.Float64())  // 生成 0.0 到 1.0 之间的随机浮点数
+  }
+  ```
+
+> 注：Go 1.20 起全局随机数生成器会自动随机播种，`rand.Seed` 已被标记为废弃。如需显式控制种子（例如复现结果），推荐使用 `r := rand.New(rand.NewSource(seed))` 创建独立的随机数生成器。
+
+**3.1.2 随机数生成的函数**
+
+- **`rand.Intn(n int) int`**：返回一个 [0, n) 范围内的随机整数。
+- **`rand.Float64() float64`**：返回一个 [0.0, 1.0) 范围内的随机浮点数。
+- **`rand.Perm(n int) []int`**：返回一个长度为 `n` 的随机排列的整数切片。
+- **`rand.Int() int`**：返回一个非负的随机整数（随机大整数应使用 `math/big` 包的 `Int.Rand` 方法）。
+
+**3.1.3 自定义随机数生成**
+
+你可以自定义生成的随机数类型，例如生成在特定范围内的随机浮点数或整数。
+
+- **示例**：
+  ```go
+  package main
+
+  import (
+      "fmt"
+      "math/rand"
+      "time"
+  )
+
+  func randomInRange(min, max int) int {
+      return rand.Intn(max-min+1) + min
+  }
+
+  func main() {
+      rand.Seed(time.Now().UnixNano())
+      fmt.Println("自定义随机整数:", randomInRange(10, 50))  // 生成 10 到 50 之间的随机整数
+  }
+  ```
+
+#### 3.2 概率基础
+
+**3.2.1 事件和样本空间**
+
+- **事件**：一个事件是样本空间中的一个子集。比如，抛掷一枚硬币的事件可以是“正面朝上”。
+- **样本空间**：样本空间是所有可能事件的集合。在抛掷硬币的例子中，样本空间是 `{正面, 反面}`。
+
+**3.2.2 概率计算**
+
+概率是事件发生的可能性。概率的计算公式是：
+
+`P(A) = 事件 A 的成功数 / 样本空间的总数`
+
+- **示例**：
+  ```go
+  package main
+
+  import "fmt"
+
+  func probability(successes, total int) float64 {
+      return float64(successes) / float64(total)
+  }
+
+  func main() {
+      fmt.Println("事件 A 的概率:", probability(3, 10))  // 输出: 0.3
+  }
+  ```
+
+**3.2.3 条件概率和联合概率**
+
+- **条件概率**：事件 B 在事件 A 已经发生的情况下发生的概率。计算公式是：
+
+  `P(B|A) = P(A ∩ B) / P(A)`
+- **联合概率**：两个事件 A 和 B 同时发生的概率。当 A、B **相互独立**时，计算公式是：
+
+  `P(A ∩ B) = P(A) × P(B)`
+
+- **示例**：
+  ```go
+  package main
+
+  import "fmt"
+
+  func conditionalProbability(pAB, pA float64) float64 {
+      return pAB / pA
+  }
+
+  func main() {
+      fmt.Println("条件概率:", conditionalProbability(0.2, 0.5))  // 输出: 0.4
+  }
+  ```
+
+#### 3.3 常见概率分布
+
+**3.3.1 正态分布**
+
+正态分布是一种对称的钟形曲线，表示大多数数据集中在均值附近，远离均值的数据点较少。Go语言中的 `math/rand` 包并没有直接提供正态分布函数，但可以通过算法进行实现。
+
+- **示例**（通过 Box-Muller 变换）：
+  ```go
+  package main
+
+  import (
+      "fmt"
+      "math"
+      "math/rand"
+      "time"
+  )
+
+  func normalRandom(mu, sigma float64) float64 {
+      u1 := rand.Float64()
+      u2 := rand.Float64()
+      z0 := math.Sqrt(-2.0 * math.Log(u1)) * math.Cos(2.0 * math.Pi * u2)
+      return mu + z0*sigma
+  }
+
+  func main() {
+      rand.Seed(time.Now().UnixNano())
+      fmt.Println("正态分布随机数:", normalRandom(0, 1))  // 均值为 0，标准差为 1
+  }
+  ```
+
+**3.3.2 伯努利分布**
+
+伯努利分布是一种离散概率分布，只有两个可能的结果：成功（通常表示为 1）和失败（通常表示为 0）。它用于模拟两种可能结果的事件。
+
+- **示例**：
+  ```go
+  package main
+
+  import (
+      "fmt"
+      "math/rand"
+      "time"
+  )
+
+  func bernoulli(p float64) int {
+      if rand.Float64() < p {
+          return 1
+      }
+      return 0
+  }
+
+  func main() {
+      rand.Seed(time.Now().UnixNano())
+      fmt.Println("伯努利分布随机结果:", bernoulli(0.7))  // 成功概率为 70%
+  }
+  ```
+
+**3.3.3 泊松分布**
+
+泊松分布用于模拟单位时间内事件发生的次数。适用于稀有事件的统计，如每小时到达的顾客数量。
+
+- **示例**：
+  ```go
+  package main
+
+  import (
+      "fmt"
+      "math"
+      "math/rand"
+      "time"
+  )
+
+  func poisson(lambda float64) int {
+      L := math.Exp(-lambda)
+      k := 0
+      p := 1.0
+      for p > L {
+          k++
+          p *= rand.Float64()
+      }
+      return k - 1
+  }
+
+  func main() {
+      rand.Seed(time.Now().UnixNano())
+      fmt.Println("泊松分布随机结果:", poisson(3.0))  // 参数 lambda 为 3.0
+  }
+  ```
+
+### 总结
+
+`math/rand` 出随机数：`Intn` 给整数，`Float64` 给 [0, 1) 的小数，`Perm` 给随机排列；Box-Muller 拿两个均匀随机数变换出正态分布，伯努利比较一次 `Float64` 和 p，泊松连乘到越过 `exp(-lambda)` 为止。
+
+## 参考资料
+
+- [math 标准库](https://pkg.go.dev/math)
+- [math/rand 标准库](https://pkg.go.dev/math/rand)
+- [官方博客 · math/rand/v2](https://go.dev/blog/randv2)
+
+
+## 同层页面
+
+- [Calc](/zh/math/Calc.md)
+- [LinearAlgebra](/zh/math/LinearAlgebra.md)
+- [Math](/zh/math/Math.md)
+- [MathFunc](/zh/math/MathFunc.md)
+- [Optimize](/zh/math/Optimize.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Optimize](Optimize.md)

@@ -1,0 +1,97 @@
+在 Go 语言中，**递归函数**（Recursive Function）是一个函数在其定义中调用自身。递归是一种编程技术，通常用于解决可以被分解成相同问题的子问题的情况。递归函数通常包括两个主要部分：
+
+1. **基准情况**（Base Case）：递归的终止条件，防止无限递归。
+2. **递归步骤**（Recursive Step）：将问题分解为一个或多个子问题，并在递归中调用自身。
+
+### 基本用法
+
+递归函数的关键是确保每次递归都在接近基准情况，从而避免无限循环。通常，递归函数会在每次调用时解决更小的子问题，最终达到基准情况。
+
+#### 示例：计算阶乘
+
+阶乘是一个经典的递归问题，定义为 \( n! = n \times (n-1) \times (n-2) \times \ldots \times 1 \)，且 \( 0! = 1 \)。
+
+**Go 语言中的阶乘递归函数示例：**
+
+```go
+package main
+
+import "fmt"
+
+// 计算阶乘的递归函数
+func factorial(n int) int {
+    // 基准情况
+    if n <= 1 {
+        return 1
+    }
+    // 递归步骤
+    return n * factorial(n-1)
+}
+
+func main() {
+    fmt.Println(factorial(5)) // 输出：120
+}
+```
+
+在这个示例中，`factorial` 函数调用自身来计算阶乘。基准情况是 `n <= 1`，此时函数返回 1。递归步骤是将 `n` 乘以 `factorial(n-1)`。
+
+#### 示例：斐波那契数列
+
+斐波那契数列是另一个经典的递归问题，每个数都是前两个数的和。定义为：\( F(n) = F(n-1) + F(n-2) \)，且 \( F(0) = 0 \) 和 \( F(1) = 1 \)。
+
+**Go 语言中的斐波那契数列递归函数示例：**
+
+```go
+package main
+
+import "fmt"
+
+// 计算斐波那契数列的递归函数
+func fibonacci(n int) int {
+    // 基准情况
+    if n <= 1 {
+        return n
+    }
+    // 递归步骤
+    return fibonacci(n-1) + fibonacci(n-2)
+}
+
+func main() {
+    fmt.Println(fibonacci(6)) // 输出：8
+}
+```
+
+在这个示例中，`fibonacci` 函数通过递归调用自身来计算第 `n` 个斐波那契数。基准情况是 `n <= 1`，此时函数返回 `n`。
+
+### 递归函数的特点
+
+- **基准情况**：所有递归函数必须有一个基准情况，用于终止递归。
+- **递归步骤**：递归函数需要调用自身来逐步解决问题。
+- **堆栈使用**：每次递归调用都会压入一个新的栈帧，递归深度一大就会栈溢出。
+
+### 总结
+
+- **递归函数**（Recursive Function）：是一个在其定义中调用自身的函数。
+- 递归包括**基准情况**和**递归步骤**。
+- 适合用于分解问题到更简单的子问题，例如阶乘和斐波那契数列。
+
+写递归时先定基准情况再写递归步骤，两样齐全函数才停得下来；基准情况漏写，轻则死循环，重则栈溢出。
+
+## 参考资料
+
+- [语言规范 · 函数声明](https://go.dev/ref/spec#Function_declarations)
+- [语言规范 · 调用](https://go.dev/ref/spec#Calls)
+- [Effective Go · 函数](https://go.dev/doc/effective_go#functions)
+
+
+## 同层页面
+
+- [AnonymousFunc](/zh/func/AnonymousFunc.md)
+- [Defer](/zh/func/Defer.md)
+- [VariadicParameters](/zh/func/VariadicParameters.md)
+- [MultipleReturnValues](/zh/func/MultipleReturnValues.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [MultipleReturnValues](MultipleReturnValues.md)

@@ -1,72 +1,72 @@
-### 数据库与持久化
+### Databases and Persistence
 
-#### 1.1 什么是数据库
-数据库是有组织的数据集合，用来存数据、改数据、按条件把数据找出来。数据库系统（DBMS）给这些操作提供统一的接口，增删改查走的都是同一套方式。
+#### 1.1 What is a database
+A database is an organized collection of data, used to store data, modify data, and retrieve data by condition. A database system (DBMS) provides a unified interface for these operations: insert, delete, update, and query all go through the same route.
 
-##### 1.1.1 数据库的基本概念
-- **数据**：原始事实和数字，可以是文字、图像、声音等。
-- **数据库管理系统（DBMS）**：一种软件，用于创建、管理和操作数据库，如MySQL、PostgreSQL、SQLite等。
-- **表**：数据库中用于存储数据的结构化方式，由行和列组成。
-- **记录**：表中的一行，代表一个具体的数据项。
-- **字段**：表中的一列，代表数据项的一个属性。
+##### 1.1.1 Basic concepts of a database
+- **Data**: raw facts and figures, which can be text, images, sound, and so on.
+- **Database Management System (DBMS)**: software used to create, manage, and operate databases, such as MySQL, PostgreSQL, and SQLite.
+- **Table**: the structured way to store data in a database, made up of rows and columns.
+- **Record**: a row in a table, representing one specific data item.
+- **Field**: a column in a table, representing one attribute of a data item.
 
-##### 1.1.2 数据库的功能
-- **数据存储**：把数据存住，不丢不错。
-- **数据检索**：按条件把数据找出来。
-- **数据管理**：组织和维护这些数据。
-- **数据安全**：挡住未经授权的访问和篡改。
+##### 1.1.2 Functions of a database
+- **Data storage**: keep the data stored, without losing it or getting it wrong.
+- **Data retrieval**: find the data by condition.
+- **Data management**: organize and maintain the data.
+- **Data security**: block unauthorized access and tampering.
 
-#### 1.2 数据库的类型
-数据库根据其结构和功能可分为不同类型，常见的类型有：
+#### 1.2 Types of databases
+Databases can be divided into different types by structure and function. The common ones are:
 
-##### 1.2.1 关系型数据库
-- 基于关系模型的数据管理系统，数据以表格形式存储。
-- 例子：MySQL、PostgreSQL、SQLite、Oracle。
+##### 1.2.1 Relational databases
+- A data management system based on the relational model, where data is stored in tables.
+- Examples: MySQL, PostgreSQL, SQLite, Oracle.
 
-##### 1.2.2 非关系型数据库（NoSQL）
-- 主要用于处理大规模数据和高并发应用，数据存储方式多样化。
-- 例子：MongoDB（文档型）、Redis（键值型）、Cassandra（列存储型）、Neo4j（图数据库）。
+##### 1.2.2 Non-relational databases (NoSQL)
+- Mainly used for large-scale data and high-concurrency applications, with diverse storage approaches.
+- Examples: MongoDB (document), Redis (key-value), Cassandra (column-store), Neo4j (graph database).
 
-##### 1.2.3 内存数据库
-- 数据主要存储在内存中，读写速度快，常用作缓存。
-- 例子：Redis、Memcached。
+##### 1.2.3 In-memory databases
+- Data is stored mainly in memory, so reads and writes are fast; often used as a cache.
+- Examples: Redis, Memcached.
 
-##### 1.2.4 分布式数据库
-- 数据分布在多个节点上，以提供高可用性和可扩展性。
-- 例子：CockroachDB、Cassandra。
+##### 1.2.4 Distributed databases
+- Data is spread across multiple nodes, to provide high availability and scalability.
+- Examples: CockroachDB, Cassandra.
 
-#### 1.3 Go语言和数据库编程的优势
-Go 语言适合做数据库编程：编译成机器码执行效率高，内置并发支持，标准库 `database/sql` 又给了统一的数据库操作接口。
+#### 1.3 Advantages of Go for database programming
+Go suits database programming: it compiles to machine code and runs efficiently, it has built-in concurrency support, and the standard library `database/sql` provides a unified interface for database operations.
 
-##### 1.3.1 高性能
-- Go语言编译为机器码，执行效率高。
-- 内置并发支持，适合高并发数据库操作。
+##### 1.3.1 High performance
+- Go compiles to machine code and runs efficiently.
+- Built-in concurrency support suits high-concurrency database operations.
 
-##### 1.3.2 简洁易用
-- 语法简洁，易于上手。
-- 强类型系统，减少运行时错误。
+##### 1.3.2 Concise and easy to use
+- The syntax is concise and easy to pick up.
+- A strong type system cuts down on runtime errors.
 
-##### 1.3.3 丰富的标准库
-- `database/sql`包提供了统一的数据库操作接口。
-- 丰富的第三方库支持，如GORM、Ent等。
+##### 1.3.3 Rich standard library
+- The `database/sql` package provides a unified interface for database operations.
+- Rich third-party library support, such as GORM and Ent.
 
-## 参考资料
+## References
 
-- [官方 · 数据库访问指南](https://go.dev/doc/database/)
-- [Go 官方文档 · Accessing a relational database（外部链接）](https://go.dev/doc/tutorial/database-access)
-- [database/sql 标准库](https://pkg.go.dev/database/sql)
+- [Official · Database Access Guide](https://go.dev/doc/database/)
+- [Go Official Documentation · Accessing a relational database (external link)](https://go.dev/doc/tutorial/database-access)
+- [database/sql standard library](https://pkg.go.dev/database/sql)
 
 
-## 同层页面
+## Sibling pages
 
-- [Availability](/db/Availability.md)
-- [Base](/db/Base.md)
-- [ConnectPool](/db/ConnectPool.md)
-- [Project](/db/Project.md)
-- [SQL](/db/SQL.md)
+- [Availability](/zh/db/Availability.md)
+- [Base](/zh/db/Base.md)
+- [ConnectPool](/zh/db/ConnectPool.md)
+- [Project](/zh/db/Project.md)
+- [SQL](/zh/db/SQL.md)
 
 <!-- BACKLINKS-AUTO -->
-## 相关页面
+## Related pages
 
-- [Project](Project.md)
-- [SQL](SQL.md)
+- [Project](/zh/db/Project.md)
+- [SQL](/zh/db/SQL.md)

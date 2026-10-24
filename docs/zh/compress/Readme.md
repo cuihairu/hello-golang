@@ -1,0 +1,39 @@
+# 压缩与归档
+### 1. 概述
+
+**压缩**和**归档**做的是两件事。压缩靠算法去掉数据里的冗余，让文件变小，常见的是 `gzip`、`zlib`、`bzip2`，用在传大文件、省磁盘这类场合。归档是把多个文件连同元数据打进一个文件，方便管理和分发，代表格式是 `tar` 和 `zip`，备份、批量传输、发软件包都靠它。
+
+两者经常接力用：`tar` 只打包不压缩，`tar.gz` 则是在 `tar` 归档的基础上再跑一遍 `gzip`，归档和压缩一步到位。
+
+#### 1.2 常见的压缩算法和归档格式
+
+这些格式在 Go 标准库里都有现成的包，按格式挑一个用就行：
+
+**压缩算法**：
+
+- **gzip**：压缩率高、解压快，用得最广。Go 包：`compress/gzip`
+- **zlib**：基于 DEFLATE 的无损压缩库。Go 包：`compress/zlib`
+- **bzip2**：压缩率比 `gzip` 高，代价是压得慢。Go 包：`compress/bzip2`
+
+**归档格式**：
+
+- **tar**：Unix 常用，把多个文件和目录打包成一个文件。Go 包：`archive/tar`
+- **zip**：既打包又压缩，一套操作完成。Go 包：`archive/zip`
+
+## 参考资料
+
+- [compress/gzip 标准库](https://pkg.go.dev/compress/gzip)
+- [compress/flate 标准库](https://pkg.go.dev/compress/flate)
+
+
+## 同层页面
+
+- [Advanced](/zh/compress/Advanced.md)
+- [Archive](/zh/compress/Archive.md)
+- [Composite](/zh/compress/Composite.md)
+- [ErrHandleAndTest](/zh/compress/ErrHandleAndTest.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [ErrHandleAndTest](ErrHandleAndTest.md)

@@ -1,0 +1,102 @@
+# 关键字和保留字
+在 Go 语言中，关键字（keywords）和保留字（reserved words）是具有特殊含义的词汇，用于定义程序结构和控制流。以下是 Go 语言中的关键字和保留字：
+
+### 关键字
+
+Go 语言中有 25 个关键字，它们用于定义程序的结构和控制流：
+
+1. **break**: 终止循环或跳出 switch 语句。
+2. **case**: 用于 switch 语句中的一个分支。
+3. **chan**: 用于声明通道（channel）。
+4. **const**: 用于声明常量。
+5. **continue**: 跳过当前循环的剩余部分，并继续执行下一次循环。
+6. **default**: 用于 switch 语句中的默认分支。
+7. **defer**: 推迟执行一个函数直到周围的函数返回。
+8. **else**: 在 if 语句中提供一个备选的分支。
+9. **fallthrough**: 在 switch 语句中，强制执行下一个 case 语句。
+10. **for**: 用于声明一个循环。
+11. **func**: 用于声明一个函数。
+12. **go**: 启动一个新的 goroutine。
+13. **goto**: 跳转到一个指定的标签。
+14. **if**: 用于条件分支语句。
+15. **import**: 导入包。
+16. **interface**: 用于声明一个接口。
+17. **map**: 用于声明一个映射（哈希表）。
+18. **package**: 声明包级别的代码。
+19. **range**: 迭代一个集合的元素。
+20. **return**: 从一个函数返回。
+21. **select**: 用于选择多个通信操作中的一个。
+22. **struct**: 用于声明一个结构体。
+23. **switch**: 用于选择一个多路分支。
+24. **type**: 用于声明一个新类型。
+25. **var**: 用于声明一个变量。
+
+### 保留字
+
+保留字是目前未在 Go 语言中使用，但保留给未来使用的词汇。这些词在 Go 语言中不能作为标识符使用。Go 语言没有像其他一些语言那样的保留字，但有一些特殊的预定义标识符和常量。
+
+### 预定义标识符
+
+预定义标识符是 Go 语言中预先定义的标识符，主要用于内置函数和类型。虽然这些标识符可以被重新定义，但这样做通常是不推荐的。
+
+1. **内置常量**:
+    - **true**: 布尔类型的真值。
+    - **false**: 布尔类型的假值。
+    - **iota**: 常量生成器，用于枚举。
+    - **nil**: 表示零值或空值，适用于指针、通道、函数、接口、映射和切片类型。
+
+2. **内置类型**:
+    - **int**: 整数类型。
+    - **int8**: 8 位整数类型。
+    - **int16**: 16 位整数类型。
+    - **int32**: 32 位整数类型。
+    - **int64**: 64 位整数类型。
+    - **uint**: 无符号整数类型。
+    - **uint8**: 8 位无符号整数类型。
+    - **uint16**: 16 位无符号整数类型。
+    - **uint32**: 32 位无符号整数类型。
+    - **uint64**: 64 位无符号整数类型。
+    - **uintptr**: 无符号整数类型，用于指针运算。
+    - **float32**: 32 位浮点类型。
+    - **float64**: 64 位浮点类型。
+    - **complex64**: 64 位复数类型。
+    - **complex128**: 128 位复数类型。
+    - **bool**: 布尔类型。
+    - **byte**: 等同于 uint8 类型。
+    - **rune**: 等同于 int32 类型，表示一个 Unicode 码点。
+    - **string**: 字符串类型。
+    - **error**: 内置错误接口类型。
+
+3. **内置函数**:
+    - **append**: 用于追加切片。
+    - **cap**: 返回容量。
+    - **close**: 关闭通道。
+    - **complex**: 构造复数。
+    - **copy**: 复制切片。
+    - **delete**: 删除映射中的元素。
+    - **imag**: 返回复数的虚部。
+    - **len**: 返回长度。
+    - **make**: 用于分配和初始化对象。
+    - **new**: 分配内存。
+    - **panic**: 触发运行时错误。
+    - **print**: 打印输出。
+    - **println**: 打印输出并换行。
+    - **real**: 返回复数的实部。
+    - **recover**: 恢复 panic。
+
+## 参考资料
+
+- [Effective Go · Names](https://go.dev/doc/effective_go#names)
+- [官方 · CodeReviewComments](https://go.dev/wiki/CodeReviewComments)
+- [语言规范 · 关键字](https://go.dev/ref/spec#Keywords)
+
+## 同层页面
+
+- [IdentifierNamingRules](/zh/naming/IdentifierNamingRules.md)
+- [Naming](/zh/naming/Naming.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [IdentifierNamingRules](IdentifierNamingRules.md)
+- [Naming](Naming.md)

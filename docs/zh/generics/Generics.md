@@ -1,0 +1,86 @@
+### Go 泛型简介
+
+泛型在多种编程语言中早已是常规特性，Go 却直到 Go 1.18 才提供原生支持。在此之前，写通用的数据结构和算法只能靠 `interface{}` 加类型断言，类型检查被推迟到运行时。
+
+#### 1.1 泛型的基本概念
+
+泛型（Generics）允许在定义类、接口、方法时使用类型参数，实际使用时再指定具体类型。主要优点：
+- **代码复用**：通用的数据结构和算法只写一份，减少重复代码。
+- **类型安全**：类型检查在编译时完成，避免运行时的类型转换错误。
+- **可读性**：类型写在签名里，调用处也少了追着类型断言确认类型的负担。
+
+#### 1.2 Go 泛型的设计理念
+
+Go 的设计哲学强调简洁和明确，引入泛型时也守着这条线。设计原则有三条：
+- **最小惊讶原则**：泛型的引入应尽量符合开发者的预期，不引入复杂的语法和概念。
+- **类型推断**：尽量减少显式类型参数的声明，通过类型推断简化代码。
+- **性能和效率**：确保泛型代码在性能上不逊色于非泛型代码，避免不必要的运行时开销。
+
+#### 1.3 Go 1.18 引入泛型的动机与历史
+
+泛型的讨论从 Go 早期就开始了，中间在多个版本中被搁置，Go 团队最终在 Go 1.18 正式引入。
+
+Go 1.18 的泛型特性包括：
+- **类型参数**：允许函数和类型接受一个或多个类型参数。
+- **类型约束**：通过接口定义类型参数的约束条件。
+- **类型推断**：编译器能够自动推断类型参数，减少显式类型声明。
+
+有了这三点，同一个函数或类型就能服务多种类型，类型检查在编译期完成。
+
+#### 1.4 泛型的基本语法
+
+在Go中，类型参数使用方括号`[]`括起来，置于函数名或类型名之后。以下是泛型函数和泛型类型的基本语法示例：
+
+**泛型函数**：
+```go
+func PrintSlice[T any](s []T) {
+    for _, v := range s {
+        fmt.Println(v)
+    }
+}
+```
+
+**泛型类型**：
+```go
+type Box[T any] struct {
+    content T
+}
+
+func (b *Box[T]) SetContent(content T) {
+    b.content = content
+}
+
+func (b *Box[T]) GetContent() T {
+    return b.content
+}
+```
+
+在以上示例中，`T`是一个类型参数，`any`是一个预定义的类型约束，表示任意类型。
+
+#### 1.5 Go 泛型的应用场景
+
+常见的应用场景：
+- **数据结构**：如列表、栈、队列、字典等。
+- **算法**：如排序、搜索、树和图算法等。
+- **实用工具**：如缓存系统、事件处理系统等。
+
+#### 1.6 小结
+
+核心语法一条：方括号里写类型参数，约束用接口表达，编译器能推断时可以不写。后面的章节看泛型在数据结构和算法里的具体用法。
+
+## 参考资料
+
+- [Go 官方文档 · Getting started with generics（外部链接）](https://go.dev/doc/tutorial/generics)
+- [官方博客 · An Introduction To Generics](https://go.dev/blog/intro-generics)
+- [官方博客 · When To Use Generics](https://go.dev/blog/when-generics)
+- [语言规范 · 类型参数声明](https://go.dev/ref/spec#Type_parameter_declarations)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Advanced](Advanced.md)
+- [Pattern](Pattern.md)
+- [Performance](Performance.md)
+- [Structure](Structure.md)
+- [Syntax](Syntax.md)
+- [glossary](/zh/glossary.md)

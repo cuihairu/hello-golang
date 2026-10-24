@@ -1,0 +1,40 @@
+### 数据编码
+
+#### 1.1 数据编码的概述
+
+数据编码是把数据转换成特定格式，以便存储、传输和处理。选哪种编码方式，直接影响处理效率和存储成本。
+
+数据编码的类型包括文本编码、二进制编码、图像和音频编码等：
+
+- **文本编码**：用于将字符转换为字节序列。常见的文本编码有 ASCII、UTF-8、UTF-16 等。
+- **二进制编码**：用于将二进制数据转换为其他格式的表示，例如 Base64 和 Hex。
+- **图像和音频编码**：用于压缩和编码图像和音频数据，以便于存储和传输。例如 JPEG、PNG、MP3、WAV 等。
+
+#### 1.2 Go 语言中的数据编码概述
+
+Go 标准库覆盖了大部分编码和解码需求，常用的包有：
+
+- **`encoding/base64`**：用于将二进制数据编码为 Base64 格式，以便于在文本环境中进行传输和存储。
+- **`encoding/hex`**：用于将二进制数据编码为十六进制字符串，常用于调试和数据表示。
+- **`unicode/utf8`**：用于处理 UTF-8 编码的文本数据，包括编码和解码 UTF-8 字符。
+- **`encoding/json`** 和 **`encoding/xml`**：用于将数据编码为 JSON 或 XML 格式，以便于存储和传输结构化数据。
+
+这里整理 Go 中的文本编码、二进制编码和各自的适用场景。
+
+## 参考资料
+
+- [encoding 系列标准库（json 为例）](https://pkg.go.dev/encoding/json)
+
+
+## 同层页面
+
+- [JsonV2](/zh/encoding/JsonV2.md)
+- [Base64](/zh/encoding/Base64.md)
+- [Binary](/zh/encoding/Binary.md)
+- [CSV](/zh/encoding/CSV.md)
+- [Formats](/zh/encoding/Formats.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [Formats](Formats.md)

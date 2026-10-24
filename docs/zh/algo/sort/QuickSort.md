@@ -1,0 +1,101 @@
+### 快速排序（Quick Sort）
+
+快速排序由 Tony Hoare 在 1960 年提出，做法是选一个基准元素把数组分成两半，两半各自再排，属于分治法。平均时间复杂度 $O(n \log n)$，是通用排序里最常用的一种。
+
+#### 1. 快速排序的基本概念
+
+快速排序的基本思想是：
+1. **选择基准元素（Pivot）**: 从待排序的数组中选择一个元素作为基准元素。
+2. **分区操作（Partition）**: 重新排列数组，使得所有比基准元素小的元素位于基准元素的左侧，所有比基准元素大的元素位于基准元素的右侧。
+3. **递归排序**: 递归地对基准元素左侧和右侧的子数组进行快速排序。
+
+#### 2. 快速排序的算法步骤
+
+落到代码上，一轮分区是这样的：
+
+1. **选择基准元素**: 代码取数组最后一个元素（`arr[high]`），取第一个、随机取也常见。
+2. **分区操作**: 用下标 `i` 划出"小于等于基准"的区域，遍历时把命中的元素换进这个区域，最后把基准换到区域末尾，它的位置就此确定。
+3. **递归排序**: 对基准两侧的子数组递归，子数组长度小于等于 1 时停下。
+
+#### 3. 快速排序的时间复杂度和空间复杂度
+
+- **时间复杂度**:
+  - **最坏情况**: $O(n^2)$，当数组已经排序好或完全逆序时，分区操作可能导致不均衡分区，导致时间复杂度达到 $O(n^2)$。
+  - **最佳情况**: $O(n \log n)$，当每次分区都能将数组均匀分割时，时间复杂度为 $O(n \log n)$。
+  - **平均情况**: $O(n \log n)$，对随机排序的数组进行排序时，平均时间复杂度为 $O(n \log n)$。
+
+- **空间复杂度**: $O(\log n)$，来自递归调用栈；排序在原数组上完成，不占额外存储。
+
+#### 4. 快速排序的代码示例
+
+下面是 Go 实现：
+
+```go
+package main
+
+import "fmt"
+
+// Partition 函数用于分区操作，将数组分成两部分
+func Partition(arr []int, low, high int) int {
+    pivot := arr[high] // 选择最后一个元素作为基准元素
+    i := low - 1      // 小于基准元素的区域的末尾索引
+
+    for j := low; j < high; j++ {
+        if arr[j] <= pivot {
+            i++
+            arr[i], arr[j] = arr[j], arr[i]
+        }
+    }
+
+    arr[i+1], arr[high] = arr[high], arr[i+1]
+    return i + 1
+}
+
+// QuickSort 对整数切片进行快速排序
+func QuickSort(arr []int, low, high int) {
+    if low < high {
+        pi := Partition(arr, low, high)
+        QuickSort(arr, low, pi-1)
+        QuickSort(arr, pi+1, high)
+    }
+}
+
+func main() {
+    arr := []int{64, 34, 25, 12, 22, 11, 90}
+    fmt.Println("Original array:", arr)
+    QuickSort(arr, 0, len(arr)-1)
+    fmt.Println("Sorted array:", arr)
+}
+```
+
+#### 5. 快速排序的优缺点
+
+**优点**:
+- 平均 $O(n \log n)$，元素在原数组内交换，不额外占存储。
+
+**缺点**:
+- 数组已排序或完全逆序时，分区一条条退化，时间复杂度掉到 $O(n^2)$。
+- 不稳定，相同值的元素可能换位。
+
+### 总结
+
+快速排序每一轮只做一件事：把基准换到它该在的位置。平均 $O(n \log n)$、原地排序、不稳定，已排序或完全逆序的数组会退到 $O(n^2)$。
+
+## 参考资料
+
+- [快速排序 · Wikipedia](https://en.wikipedia.org/wiki/Quicksort)
+
+
+## 同层页面
+
+- [BubbleSort](/zh/algo/sort/BubbleSort.md)
+- [BucketSort](/zh/algo/sort/BucketSort.md)
+- [CocktailSort](/zh/algo/sort/CocktailSort.md)
+- [MergeSort](/zh/algo/sort/MergeSort.md)
+- [RadixSort](/zh/algo/sort/RadixSort.md)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [MergeSort](MergeSort.md)
+- [RadixSort](RadixSort.md)

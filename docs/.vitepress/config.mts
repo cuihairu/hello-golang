@@ -1,11 +1,44 @@
 import { defineConfig } from 'vitepress'
+import { enSidebar, pageExists, zhSidebar, type NavList } from './i18n.mts'
 import sidebar from './sidebar.json'
 
 // https://vitepress.dev/reference/site-config
+//
+// Bilingual layout via VitePress locales: English lives at the docs root,
+// Simplified Chinese under /zh/. sidebar.json stays the single source of the
+// navigation structure; i18n.mts derives each locale's sidebar from it.
+
+// [en label, zh label, root-relative page path]
+const NAV: [string, string, string][] = [
+  ['Home', '首页', '/'],
+  ['Getting Started', '项目记录', '/start/Starter'],
+  ['Data Types', '数据类型', '/type/CompositeType'],
+  ['Concurrency', '并发编程', '/concurrency/Concurrency'],
+  ['Design Patterns', '设计模式', '/dp/DesignPatterns'],
+  ['Databases', '数据库', '/db/Readme'],
+  ['Gin', 'Gin 框架', '/gin/Gin']
+]
+
+// Fail the build when a nav entry has no page behind it in either locale.
+for (const [, , link] of NAV) {
+  for (const locale of ['', 'zh'] as const) {
+    if (!pageExists(link, locale)) {
+      throw new Error(`nav link ${link} has no page in locale "${locale || 'root'}"`)
+    }
+  }
+}
+
+const enNav: NavList = NAV.map(([en, , link]) => ({ text: en, link }))
+const zhNav: NavList = NAV.map(([, zh, link]) => ({
+  text: zh,
+  link: link === '/' ? '/zh/' : '/zh' + link
+}))
+
 export default defineConfig({
-  lang: 'zh-CN',
+  lang: 'en-US',
   title: 'Hello Golang',
-  description: '游戏开发者记录 Go 项目里的实践、取舍与踩坑经验。',
+  description:
+    'A game developer taking notes on Go: the practices, the trade-offs and the pitfalls.',
   base: '/hello-golang/',
   cleanUrls: true,
   lastUpdated: true,
@@ -20,24 +53,60 @@ export default defineConfig({
 
   ignoreDeadLinks: false,
 
+  locales: {
+    root: {
+      label: 'English',
+      lang: 'en-US',
+      themeConfig: {
+        nav: enNav,
+        sidebar: enSidebar(sidebar),
+        search: { provider: 'local' },
+        outline: { label: 'On this page', level: [2, 3] },
+        docFooter: { prev: 'Previous', next: 'Next' },
+        lastUpdated: { text: 'Last updated' },
+        returnToTopLabel: 'Back to top',
+        sidebarMenuLabel: 'Menu',
+        darkModeSwitchLabel: 'Appearance',
+        lightModeSwitchTitle: 'Switch to light theme',
+        darkModeSwitchTitle: 'Switch to dark theme'
+      }
+    },
+    zh: {
+      label: '简体中文',
+      lang: 'zh-CN',
+      link: '/zh/',
+      themeConfig: {
+        nav: zhNav,
+        sidebar: zhSidebar(sidebar),
+        search: {
+          provider: 'local',
+          options: {
+            translations: {
+              button: { buttonText: '搜索文档', buttonAriaLabel: '搜索' },
+              modal: {
+                noResultsText: '没有找到结果',
+                resetButtonTitle: '清除查询条件',
+                footer: { selectText: '选择', navigateText: '切换', closeText: '关闭' }
+              }
+            }
+          }
+        },
+        outline: { label: '页面导航', level: [2, 3] },
+        docFooter: { prev: '上一篇', next: '下一篇' },
+        lastUpdated: { text: '最后更新' },
+        returnToTopLabel: '回到顶部',
+        sidebarMenuLabel: '菜单',
+        darkModeSwitchLabel: '外观',
+        lightModeSwitchTitle: '切换到浅色模式',
+        darkModeSwitchTitle: '切换到深色模式'
+      }
+    }
+  },
+
   themeConfig: {
     // 品牌资产空位：logo.svg 到位后启用
     // logo: '/logo.svg',
     siteTitle: 'Hello Golang',
-
-    nav: [
-      { text: '首页', link: '/' },
-      { text: '项目记录', link: '/start/Starter' },
-      { text: '数据类型', link: '/type/CompositeType' },
-      { text: '并发编程', link: '/concurrency/Concurrency' },
-      { text: '设计模式', link: '/dp/DesignPatterns' },
-      { text: '数据库', link: '/db/Readme' },
-      { text: 'Gin 框架', link: '/gin/Gin' }
-    ],
-
-    // 由 mdbook SUMMARY.md 结构映射而来（scripts: parse_summary.py），
-    // 50 个顶层分组
-    sidebar: sidebar as never,
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/cuihairu/hello-golang' }
@@ -46,41 +115,7 @@ export default defineConfig({
     footer: {
       message: 'Hello Golang',
       copyright: '© 2025 cuihairu'
-    },
-
-    search: {
-      provider: 'local',
-      options: {
-        translations: {
-          button: { buttonText: '搜索文档', buttonAriaLabel: '搜索' },
-          modal: {
-            noResultsText: '没有找到结果',
-            resetButtonTitle: '清除查询条件',
-            footer: { selectText: '选择', navigateText: '切换', closeText: '关闭' }
-          }
-        }
-      }
-    },
-
-    outline: {
-      label: '页面导航',
-      level: [2, 3]
-    },
-
-    docFooter: {
-      prev: '上一篇',
-      next: '下一篇'
-    },
-
-    lastUpdated: {
-      text: '最后更新'
-    },
-
-    returnToTopLabel: '回到顶部',
-    sidebarMenuLabel: '菜单',
-    darkModeSwitchLabel: '外观',
-    lightModeSwitchTitle: '切换到浅色模式',
-    darkModeSwitchTitle: '切换到深色模式'
+    }
   },
 
   markdown: {

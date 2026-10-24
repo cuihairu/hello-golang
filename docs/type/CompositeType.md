@@ -1,10 +1,10 @@
-复合类型在编程中是指由多个基本类型或者其他复合类型组合而成的数据结构。它们的出现主要为了解决以下几个问题：
+Composite types in programming are data structures built by combining multiple primitive types or other composite types. They exist mainly to solve the following problems:
 
-### 1. 数据组织和管理
+### 1. Data organization and management
 
-复合类型把多个相关联的数据组合在一起，让数据结构贴近实际问题中的关系。
+Composite types bundle related pieces of data together, so the structure mirrors the relationships in the actual problem.
 
-例如，在一个社交网络应用中，一个用户的资料可能包括用户名、年龄、朋友列表等信息。用结构体（struct）把它们放在一起，读代码的人一眼就能看到用户数据有哪些字段。
+For example, in a social network app, a user's profile might include a username, age, and a friends list. Putting them together in a struct lets anyone reading the code see at a glance which fields the user data has.
 
 ```go
 type User struct {
@@ -14,12 +14,12 @@ type User struct {
 }
 ```
 
-### 2. 数据访问和操作
+### 2. Data access and operations
 
-复合类型除了数据，还定义了对数据的访问和操作方法。通过方法（结构体方法、接口方法）把增、删、改、查的写法固定下来，调用方不用关心内部结构。
+Composite types define more than data — they also define how you access and manipulate that data. Methods (struct methods, interface methods) pin down the create/update/delete/read conventions, so callers don't have to worry about the internal structure.
 
 ```go
-// 定义结构体及方法
+// define the struct and its methods
 type User struct {
     Username string
     Age      int
@@ -39,7 +39,7 @@ func (u *User) RemoveFriend(friend string) {
     }
 }
 
-// 使用示例
+// usage example
 func main() {
     user := User{
         Username: "Alice",
@@ -48,52 +48,52 @@ func main() {
     }
 
     user.AddFriend("David")
-    fmt.Println(user.Friends)  // 输出: [Bob Charlie David]
+    fmt.Println(user.Friends)  // prints: [Bob Charlie David]
 
     user.RemoveFriend("Charlie")
-    fmt.Println(user.Friends)  // 输出: [Bob David]
+    fmt.Println(user.Friends)  // prints: [Bob David]
 }
 ```
 
-### 3. 内存分配和性能优化
+### 3. Memory allocation and performance optimization
 
-在底层实现上，复合类型的不同组成部分可能会被分配在内存的不同区域。切片（slice）作为动态数组的一种实现，能够自动调整长度和容量，不受固定长度数组的限制。
+At the implementation level, different parts of a composite type can be placed in different regions of memory. A slice, as an implementation of a dynamic array, adjusts its length and capacity automatically, without the fixed-length constraint of a regular array.
 
 ```go
-// 切片作为动态数组的示例
+// a slice as a dynamic array
 func main() {
-    // 初始创建一个空的整型切片
+    // start with an empty int slice
     var numbers []int
 
-    // 添加元素
+    // add elements
     numbers = append(numbers, 1)
     numbers = append(numbers, 2, 3, 4)
 
-    // 打印切片内容
-    fmt.Println(numbers)  // 输出: [1 2 3 4]
+    // print the slice contents
+    fmt.Println(numbers)  // prints: [1 2 3 4]
 }
 ```
 
-### 总结
+### Summary
 
-复合类型干三件事：结构体把相关字段捆在一起，方法规定对数据的操作，切片按需扩缩容量。单个基本类型表达不了的形状，都靠它们拼出来。
+Composite types do three things: structs bundle related fields together, methods specify how data is operated on, and slices grow or shrink capacity on demand. Any shape a single primitive type can't express, they piece together.
 
-## 参考资料
+## References
 
-- [语言规范 · 类型](https://go.dev/ref/spec#Types)
-- [语言规范 · 组合字面量](https://go.dev/ref/spec#Composite_literals)
+- [Language spec · Types](https://go.dev/ref/spec#Types)
+- [Language spec · Composite literals](https://go.dev/ref/spec#Composite_literals)
 
 
-## 同层页面
+## Sibling pages
 
-- [Assertion](/type/Assertion.md)
-- [Interface](/type/Interface.md)
-- [Map](/type/Map.md)
-- [Complex](/type/Complex.md)
-- [Conv](/type/Conv.md)
+- [Assertion](/zh/type/Assertion.md)
+- [Interface](/zh/type/Interface.md)
+- [Map](/zh/type/Map.md)
+- [Complex](/zh/type/Complex.md)
+- [Conv](/zh/type/Conv.md)
 
 <!-- BACKLINKS-AUTO -->
-## 相关页面
+## Related pages
 
-- [Complex](Complex.md)
-- [Conv](Conv.md)
+- [Complex](/zh/type/Complex.md)
+- [Conv](/zh/type/Conv.md)
