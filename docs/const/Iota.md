@@ -101,4 +101,4 @@ For a group of related constants like status codes or permission bits, define th
 
 - [Const](/const/Const.md)
 - [TrueAndFalse](/const/TrueAndFalse.md)
-- [glossary](/zh/glossary.md)
+- [glossary](/glossary.md)

@@ -66,4 +66,4 @@ The v2 package docs live under the `encoding/json/v2` group in the standard libr
 - [Text](/encoding/Text.md)
 - [Voice](/encoding/Voice.md)
 - [XML](/encoding/XML.md)
-- [knowledge](/zh/knowledge.md)
+- [knowledge](/knowledge.md)

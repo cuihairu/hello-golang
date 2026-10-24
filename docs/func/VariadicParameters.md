@@ -133,4 +133,4 @@ Variadic parameters solve the problem of an indefinite number of arguments: at d
 - [InnerFunc](/func/InnerFunc.md)
 - [MultipleReturnValues](/func/MultipleReturnValues.md)
 - [RecursiveFunction](/func/RecursiveFunction.md)
-- [glossary](/zh/glossary.md)
+- [glossary](/glossary.md)

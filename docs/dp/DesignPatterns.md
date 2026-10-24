@@ -70,14 +70,14 @@ In OOP design, inheriting from a base class directly breaks encapsulation, becau
 
 ## Sibling pages
 
-- [AbstractFactory](/zh/dp/AbstractFactory.md)
-- [Adapter](/zh/dp/Adapter.md)
-- [Behavioral](/zh/dp/Behavioral.md)
-- [Decorator](/zh/dp/Decorator.md)
-- [Facade](/zh/dp/Facade.md)
+- [AbstractFactory](/dp/AbstractFactory.md)
+- [Adapter](/dp/Adapter.md)
+- [Behavioral](/dp/Behavioral.md)
+- [Decorator](/dp/Decorator.md)
+- [Facade](/dp/Facade.md)
 
 <!-- BACKLINKS-AUTO -->
 ## Related pages
 
-- [Decorator](/zh/dp/Decorator.md)
-- [Facade](/zh/dp/Facade.md)
+- [Decorator](/dp/Decorator.md)
+- [Facade](/dp/Facade.md)

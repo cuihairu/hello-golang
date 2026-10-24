@@ -113,4 +113,4 @@ func main() {
 
 - [Const](/const/Const.md)
 - [TrueAndFalse](/const/TrueAndFalse.md)
-- [glossary](/zh/glossary.md)
+- [glossary](/glossary.md)

@@ -126,4 +126,4 @@ The `createCounter` example is a textbook closure: the function returns, `count`
 - [InnerFunc](/func/InnerFunc.md)
 - [MultipleReturnValues](/func/MultipleReturnValues.md)
 - [RecursiveFunction](/func/RecursiveFunction.md)
-- [glossary](/zh/glossary.md)
+- [glossary](/glossary.md)

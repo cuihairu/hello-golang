@@ -191,4 +191,4 @@ go run main.go
 - [Vim](/env/Vim.md)
 - [ide](/env/ide.md)
 - [vscode](/env/vscode.md)
-- [glossary](/zh/glossary.md)
+- [glossary](/glossary.md)

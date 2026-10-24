@@ -262,4 +262,4 @@ TEXT secondDeferred(SB), NOSPLIT, $0
 - [InnerFunc](/func/InnerFunc.md)
 - [MultipleReturnValues](/func/MultipleReturnValues.md)
 - [RecursiveFunction](/func/RecursiveFunction.md)
-- [glossary](/zh/glossary.md)
+- [glossary](/glossary.md)

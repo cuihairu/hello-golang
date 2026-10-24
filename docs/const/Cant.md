@@ -55,4 +55,4 @@ All of these restrictions point to the same thing: a constant's value must be de
 
 - [Const](/const/Const.md)
 - [TrueAndFalse](/const/TrueAndFalse.md)
-- [glossary](/zh/glossary.md)
+- [glossary](/glossary.md)

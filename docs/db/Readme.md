@@ -1,52 +1,52 @@
 ### Databases and Persistence
 
-#### 1.1 What is a database
-A database is an organized collection of data, used to store data, modify data, and retrieve data by condition. A database system (DBMS) provides a unified interface for these operations: insert, delete, update, and query all go through the same route.
+#### 1.1 What is a Database
+A database is a collection of organized data, used to store data, change data, and find data back by condition. A database system (DBMS) provides a unified interface for these operations; inserts, deletes, updates and queries all go through the same mechanism.
 
-##### 1.1.1 Basic concepts of a database
-- **Data**: raw facts and figures, which can be text, images, sound, and so on.
-- **Database Management System (DBMS)**: software used to create, manage, and operate databases, such as MySQL, PostgreSQL, and SQLite.
-- **Table**: the structured way to store data in a database, made up of rows and columns.
-- **Record**: a row in a table, representing one specific data item.
-- **Field**: a column in a table, representing one attribute of a data item.
+##### 1.1.1 Basic Concepts of a Database
+- **Data**: raw facts and numbers, which can be text, images, sound, etc.
+- **Database Management System (DBMS)**: a kind of software used to create, manage and operate a database, such as MySQL, PostgreSQL, SQLite, etc.
+- **Table**: a structured way of storing data in a database, composed of rows and columns.
+- **Record**: a single row in a table, representing one concrete data item.
+- **Field**: a single column in a table, representing one attribute of a data item.
 
-##### 1.1.2 Functions of a database
-- **Data storage**: keep the data stored, without losing it or getting it wrong.
-- **Data retrieval**: find the data by condition.
+##### 1.1.2 Functions of a Database
+- **Data storage**: keep the data stored, without loss or corruption.
+- **Data retrieval**: find data back by condition.
 - **Data management**: organize and maintain the data.
 - **Data security**: block unauthorized access and tampering.
 
-#### 1.2 Types of databases
-Databases can be divided into different types by structure and function. The common ones are:
+#### 1.2 Types of Databases
+Databases fall into different types by their structure and function. Common types are:
 
-##### 1.2.1 Relational databases
-- A data management system based on the relational model, where data is stored in tables.
+##### 1.2.1 Relational Databases
+- A database management system based on the relational model; data is stored in table form.
 - Examples: MySQL, PostgreSQL, SQLite, Oracle.
 
-##### 1.2.2 Non-relational databases (NoSQL)
-- Mainly used for large-scale data and high-concurrency applications, with diverse storage approaches.
-- Examples: MongoDB (document), Redis (key-value), Cassandra (column-store), Neo4j (graph database).
+##### 1.2.2 Non-relational Databases (NoSQL)
+- Mainly used to handle large-scale data and high-concurrency applications, with varied storage formats.
+- Examples: MongoDB (document), Redis (key-value), Cassandra (columnar), Neo4j (graph).
 
-##### 1.2.3 In-memory databases
-- Data is stored mainly in memory, so reads and writes are fast; often used as a cache.
+##### 1.2.3 In-memory Databases
+- Data is stored primarily in memory; reads and writes are fast, often used as a cache.
 - Examples: Redis, Memcached.
 
-##### 1.2.4 Distributed databases
+##### 1.2.4 Distributed Databases
 - Data is spread across multiple nodes, to provide high availability and scalability.
 - Examples: CockroachDB, Cassandra.
 
-#### 1.3 Advantages of Go for database programming
-Go suits database programming: it compiles to machine code and runs efficiently, it has built-in concurrency support, and the standard library `database/sql` provides a unified interface for database operations.
+#### 1.3 Advantages of Go for Database Programming
+Go is well suited to database programming: it compiles to machine code for high execution efficiency, has built-in concurrency support, and the standard library `database/sql` gives a unified interface for database operations.
 
-##### 1.3.1 High performance
-- Go compiles to machine code and runs efficiently.
-- Built-in concurrency support suits high-concurrency database operations.
+##### 1.3.1 High Performance
+- Go compiles to machine code, so execution is efficient.
+- Built-in concurrency support makes it suitable for high-concurrency database operations.
 
-##### 1.3.2 Concise and easy to use
-- The syntax is concise and easy to pick up.
-- A strong type system cuts down on runtime errors.
+##### 1.3.2 Concise and Easy to Use
+- Concise syntax, easy to get started with.
+- Strong type system reduces runtime errors.
 
-##### 1.3.3 Rich standard library
+##### 1.3.3 Rich Standard Library
 - The `database/sql` package provides a unified interface for database operations.
 - Rich third-party library support, such as GORM and Ent.
 
@@ -59,14 +59,14 @@ Go suits database programming: it compiles to machine code and runs efficiently,
 
 ## Sibling pages
 
-- [Availability](/zh/db/Availability.md)
-- [Base](/zh/db/Base.md)
-- [ConnectPool](/zh/db/ConnectPool.md)
-- [Project](/zh/db/Project.md)
-- [SQL](/zh/db/SQL.md)
+- [Availability](/db/Availability.md)
+- [Base](/db/Base.md)
+- [ConnectPool](/db/ConnectPool.md)
+- [Project](/db/Project.md)
+- [SQL](/db/SQL.md)
 
 <!-- BACKLINKS-AUTO -->
 ## Related pages
 
-- [Project](/zh/db/Project.md)
-- [SQL](/zh/db/SQL.md)
+- [Project](/db/Project.md)
+- [SQL](/db/SQL.md)

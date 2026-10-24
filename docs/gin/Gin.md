@@ -1,29 +1,29 @@
-### Overview of the Gin Framework
+### Gin Framework Overview
 
-#### 1 What Gin is
-Gin is a lightweight web framework written in Go. It has a short API and fast routing, and it is commonly used to write RESTful APIs and the HTTP layer of microservices.
+#### 1 What is Gin
+Gin is a lightweight web framework written in Go. Its API is concise and its routing is fast, so it is commonly used for RESTful APIs and the HTTP layer of microservices.
 
 #### 2 Features of Gin
-- **Fast routing**: routing is built on an HTTP route tree, matching the path segment by segment.
-- **Short API**: registering routes, reading parameters, and writing responses all hang off `*gin.Context`, so there isn't much code to write.
-- **Middleware**: custom middleware can be inserted into the request handling chain.
-- **Built-in middleware**: logging and recovery come included (a panic returns 500 instead of crashing the process).
-- **Error responses**: methods like `c.JSON`/`c.String` control the status code and response body directly.
+- **Fast routing**: routing is built on an HTTP route tree that matches path segments one at a time.
+- **Concise API**: registering routes, reading parameters, and returning a response all live on `*gin.Context`, so the code stays small.
+- **Middleware**: custom middleware can be inserted into the request-handling chain.
+- **Built-in middleware**: logging and recovery come standard (after a panic it returns 500 instead of crashing the process).
+- **Error responses**: methods like `c.JSON`/`c.String` directly control the status code and response body.
 
-#### 3 Where Gin fits
+#### 3 Use Cases for Gin
 - RESTful API services: routing plus middleware already covers most needs.
-- Microservice architectures: every service's HTTP layer uses the same Gin approach.
-- Rapid prototyping: a few routes get the endpoints running, which suits MVP validation.
+- Microservice architecture: every service's HTTP layer uses the same Gin style.
+- Rapid prototyping: a few routes get an API up and running, which suits MVP validation.
 
-#### 4 Installing Gin and a minimal example
+#### 4 Installing Gin and a Minimal Example
 
 ##### 4.1 Installing Gin
-In your Go environment, you can install Gin with:
+In your Go environment, you can install Gin with the following command:
 ```sh
 go get -u github.com/gin-gonic/gin
 ```
 
-##### 4.2 Minimal routing example
+##### 4.2 Minimal Route Example
 A minimal HTTP server:
 
 ```go
@@ -49,15 +49,15 @@ func main() {
 }
 ```
 
-After it runs, visit `http://localhost:8080/ping`; the response is:
+After running it, visit `http://localhost:8080/ping`; the response is:
 ```json
 {
     "message": "pong"
 }
 ```
 
-##### 4.3 Routing and request handling
-Route matching goes through the HTTP route tree. Add a few more routes to see how parameters are read:
+##### 4.3 Routing and Request Handling
+Route matching goes through the HTTP route tree; add a few more routes to see parameter extraction:
 
 ```go
 package main
@@ -80,7 +80,7 @@ func main() {
         })
     })
 
-    // define a GET route with a parameter
+    // define a GET route with a path parameter
     r.GET("/user/:name", func(c *gin.Context) {
         name := c.Param("name")
         c.JSON(200, gin.H{
@@ -93,26 +93,26 @@ func main() {
 }
 ```
 
-In this example, the `/hello` route returns a JSON response that takes a `name` parameter, while the `/user/:name` route returns a JSON response that takes a URL parameter `name`.
+In this example, the `/hello` route returns a JSON response with the `name` query parameter, while the `/user/:name` route returns a JSON response with the URL parameter `name`.
 
 ### Summary
-This page covers installing Gin, plus two kinds of routes: `/ping` and the parameterized `/user/:name`. Middleware, parameter binding, and grouped routes are each unpacked in later sections.
+This page records how to install Gin, plus two kinds of routes: `/ping` and the parameterized `/user/:name`. Middleware, parameter binding, and grouped routing are each expanded in the later chapters.
 
 ## References
 
-- [Gin official documentation](https://gin-gonic.com/en/docs/)
+- [Gin Official Documentation](https://gin-gonic.com/en/docs/)
 - [Gin · pkg.go.dev](https://pkg.go.dev/github.com/gin-gonic/gin)
 
 
 ## Sibling pages
 
-- [Config](/zh/gin/Config.md)
-- [Debug](/zh/gin/Debug.md)
-- [Error](/zh/gin/Error.md)
-- [Extend](/zh/gin/Extend.md)
-- [Middleware](/zh/gin/Middleware.md)
+- [Config](/gin/Config.md)
+- [Debug](/gin/Debug.md)
+- [Error](/gin/Error.md)
+- [Extend](/gin/Extend.md)
+- [Middleware](/gin/Middleware.md)
 
 <!-- BACKLINKS-AUTO -->
 ## Related pages
 
-- [Middleware](/zh/gin/Middleware.md)
+- [Middleware](/gin/Middleware.md)

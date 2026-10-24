@@ -1,7 +1,7 @@
 ### File and IO Security
 
 
-> Perspective: this page discusses file permissions and IO input/output risks; for the official Go security line see the [security and crypto notes](/zh/security/Security.md), and for database risks see the [database security notes](/db/Security.md).
+> Perspective: this page discusses file permissions and IO input/output risks; for the official Go security line see the [security and crypto notes](/security/Security.md), and for database risks see the [database security notes](/db/Security.md).
 File and IO security comes down to two things: keeping data away from unauthorized readers, and keeping data from being tampered with in transit or storage. Four sections follow: file permissions, encryption and decryption, injection and tampering prevention, and integrity verification.
 
 #### 7.1 File Permissions and Security

@@ -99,4 +99,4 @@ Run `go version` once after installing — if it prints a version number, the in
 - [Vim](/env/Vim.md)
 - [ide](/env/ide.md)
 - [vscode](/env/vscode.md)
-- [glossary](/zh/glossary.md)
+- [glossary](/glossary.md)
