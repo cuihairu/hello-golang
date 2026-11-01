@@ -1,12 +1,26 @@
 [English](README.md) | [中文](README.zh.md)
 
-<div align="center"><img src="docs/public/logo.svg" width="64" height="64" alt="logo" /> <img src="docs/public/badges/topic.svg" alt="topic" /> <img src="docs/public/badges/docs.svg" alt="docs" /> <img src="docs/public/badges/license.svg" alt="license" /> <img src="docs/public/badges/langs.svg" alt="langs" /> <a href="https://cuihairu.github.io/hello-golang/zh/"><img src="https://img.shields.io/badge/docs-文档-blue" alt="docs"></a></div>
+<div align="center">
+
+<p align="center"><img src="docs/public/logo.svg" width="64" height="64" alt="logo" /> </p>
+
+# Hello Golang
+
+<p align="center">
+  <img src="docs/public/badges/topic.svg" alt="topic" />
+  <img src="docs/public/badges/docs.svg" alt="docs" />
+  <img src="docs/public/badges/license.svg" alt="license" />
+  <img src="docs/public/badges/langs.svg" alt="langs" />
+</p>
+
+Go 语言知识体系 · [在线阅读](https://cuihairu.github.io/hello-golang/zh//) <a href="https://cuihairu.github.io/hello-golang/zh/"><img src="https://img.shields.io/badge/%E6%96%87%E6%A1%A3-blue" alt="docs"></a>
+</div>
 
 ---
 
-这里整理我作为游戏开发者使用 Go 时的实践、取舍和踩坑记录，涉及类型系统、并发、算法、常用库与工程项目。内容来自实际开发和资料查阅，观点可能不完整，欢迎交流。
+这里记录个人的 Go 学习笔记、心得与开发经验，以游戏开发者的视角分享类型系统、并发、算法、常用库和工程实践。不是课程或学习教程。
 
-知识点索引：[docs/knowledge.md](docs/knowledge.md)——汇总 2026-10-08 对书籍、官方文档和应用场景的查阅记录。
+知识点主文档：[docs/knowledge.md](docs/knowledge.md)——把 2026-10-08 的书籍、官方文档、应用场景三类调研收拢成一页。
 
 ## 本地开发
 

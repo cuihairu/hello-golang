@@ -1,6 +1,7 @@
 [English](README.md) | [中文](README.zh.md)
 
-<div align="center"><img src="docs/public/logo.svg" width="64" height="64" alt="logo" /> <img src="docs/public/badges/topic.svg" alt="topic" /> <img src="docs/public/badges/docs.svg" alt="docs" /> <img src="docs/public/badges/license.svg" alt="license" /> <img src="docs/public/badges/langs.svg" alt="langs" /> <a href="https://cuihairu.github.io/hello-golang/"><img src="https://img.shields.io/badge/docs-docs-blue" alt="docs"></a></div>
+<div align="center"><img src="docs/public/logo.svg" width="64" height="64" alt="logo" /> <img src="docs/public/badges/topic.svg" alt="topic" /> <img src="docs/public/badges/docs.svg" alt="docs" /> <img src="docs/public/badges/license.svg" alt="license" /> <img src="docs/public/badges/langs.svg" alt="langs" /> <a href="https://cuihairu.github.io/hello-golang//"><img src="https://img.shields.io/badge/docs-docs-blue" alt="docs"></a> <a href="https://cuihairu.github.io/hello-golang/"><img src="https://img.shields.io/badge/docs-blue" alt="docs"></a>
+</div>
 
 ---
 
