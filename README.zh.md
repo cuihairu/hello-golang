@@ -13,7 +13,7 @@
   <img src="docs/public/badges/langs.svg" alt="langs" />
 </p>
 
-Go 语言知识体系 · [在线阅读](https://cuihairu.github.io/hello-golang/zh//) <a href="https://cuihairu.github.io/hello-golang/zh/"><img src="https://img.shields.io/badge/%E6%96%87%E6%A1%A3-blue" alt="docs"></a>
+Go 语言知识体系 · [在线阅读](https://cuihairu.github.io/hello-golang/zh/) <a href="https://cuihairu.github.io/hello-golang/zh/"><img src="https://img.shields.io/badge/%E6%96%87%E6%A1%A3-blue" alt="docs"></a>
 </div>
 
 ---
@@ -25,10 +25,10 @@ Go 语言知识体系 · [在线阅读](https://cuihairu.github.io/hello-golang/
 ## 本地开发
 
 ```bash
-npm install        # 安装依赖
-npm run docs:dev   # 本地开发
-npm run docs:build # 构建到 docs/.vitepress/dist
-npm run docs:preview # 本地预览构建产物
+pnpm install        # 安装依赖
+pnpm run docs:dev   # 本地开发
+pnpm run docs:build # 构建到 docs/.vitepress/dist
+pnpm run docs:preview # 本地预览构建产物
 ```
 
 ## License
